@@ -1,5 +1,6 @@
 package main.java.superandes.negocio;
 
+import java.util.ArrayList;
 
 /**
  * @version 1.0
@@ -14,8 +15,9 @@ public class Bodega {
 	private int capacidadTotal;
 	private int cantidadProductos;
 	private long id;
-	private Categoria categoria;
-
+	private Sucursal sucursal;
+	private ArrayList<Producto> productos;
+	
 	public Bodega(){
 
 	}
@@ -90,25 +92,40 @@ public class Bodega {
 		this.id = id;
 	}
 
-	/**
-	 * @return the categoria
-	 */
-	public Categoria getCategoria() {
-		return categoria;
-	}
-
-	/**
-	 * @param categoria the categoria to set
-	 */
-	public void setCategoria(Categoria categoria) {
-		this.categoria = categoria;
-	}
 
 	/**
 	 * @return the nivelDeReorden
 	 */
 	public static String getNivelDeReorden() {
 		return NIVEL_DE_REORDEN;
+	}
+
+	/**
+	 * @return the sucursal
+	 */
+	public Sucursal getSucursal() {
+		return sucursal;
+	}
+
+	/**
+	 * @param sucursal the sucursal to set
+	 */
+	public void setSucursal(Sucursal sucursal) {
+		this.sucursal = sucursal;
+	}
+
+	/**
+	 * @return the productos
+	 */
+	public ArrayList<Producto> getProductos() {
+		return productos;
+	}
+
+	/**
+	 * @param productos the productos to set
+	 */
+	public void setProductos(ArrayList<Producto> productos) {
+		this.productos = productos;
 	}
 
 	

@@ -14,10 +14,59 @@ public class OrdenDePedido {
 	private String fecha;
 	private long id;
 	private Proveedor proveedor;
-	private ArrayList<ProductoOfrecidoTransaccion> productosOfrecidosTransaccion;
-
+	private int cantidadVenta;
+	private String unidadDeMedida;
+	private ProductoOfrecido productoOfrecido;
+	private Sucursal sucursal;
+	
 	public OrdenDePedido(){
 
+	}
+
+	
+	
+	
+
+	/**
+	 * @return the cantidadVenta
+	 */
+	public int getCantidadVenta() {
+		return cantidadVenta;
+	}
+
+	/**
+	 * @param cantidadVenta the cantidadVenta to set
+	 */
+	public void setCantidadVenta(int cantidadVenta) {
+		this.cantidadVenta = cantidadVenta;
+	}
+
+	/**
+	 * @return the unidadDeMedida
+	 */
+	public String getUnidadDeMedida() {
+		return unidadDeMedida;
+	}
+
+	/**
+	 * @param unidadDeMedida the unidadDeMedida to set
+	 */
+	public void setUnidadDeMedida(String unidadDeMedida) {
+		this.unidadDeMedida = unidadDeMedida;
+	}
+
+	/**
+	 * @return the productoOfrecido
+	 */
+	public ProductoOfrecido getProductoOfrecido() {
+		return productoOfrecido;
+	}
+
+	/**
+	 * @param productoOfrecido the productoOfrecido to set
+	 */
+	public void setProductoOfrecido(ProductoOfrecido productoOfrecido) {
+		this.productoOfrecido = productoOfrecido;
 	}
 
 	/**
@@ -104,19 +153,29 @@ public class OrdenDePedido {
 		this.proveedor = proveedor;
 	}
 
-	/**
-	 * @return the productosOfrecidosTransaccion
-	 */
-	public ArrayList<ProductoOfrecidoTransaccion> getProductosOfrecidosTransaccion() {
-		return productosOfrecidosTransaccion;
-	}
+
+
+
 
 	/**
-	 * @param productosOfrecidosTransaccion the productosOfrecidosTransaccion to set
+	 * @return the sucursal
 	 */
-	public void setProductosOfrecidosTransaccion(ArrayList<ProductoOfrecidoTransaccion> productosOfrecidosTransaccion) {
-		this.productosOfrecidosTransaccion = productosOfrecidosTransaccion;
+	public Sucursal getSucursal() {
+		return sucursal;
 	}
+
+
+
+
+
+	/**
+	 * @param sucursal the sucursal to set
+	 */
+	public void setSucursal(Sucursal sucursal) {
+		this.sucursal = sucursal;
+	}
+
+	
 
 	
 

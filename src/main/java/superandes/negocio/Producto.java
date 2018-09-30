@@ -1,5 +1,6 @@
 package main.java.superandes.negocio;
 
+import java.util.ArrayList;
 
 /**
  * @version 1.0
@@ -19,6 +20,8 @@ public class Producto {
 	private boolean estado;
 	private Categoria categoria;
 	private long id;
+	private ArrayList<Estante> estantes;
+	private ArrayList<Bodega> bodegas;
 
 	public Producto(){
 
@@ -190,6 +193,34 @@ public class Producto {
 	 */
 	public void setId(long id) {
 		this.id = id;
+	}
+
+	/**
+	 * @return the estantes
+	 */
+	public ArrayList<Estante> getEstantes() {
+		return estantes;
+	}
+
+	/**
+	 * @param estantes the estantes to set
+	 */
+	public void setEstantes(ArrayList<Estante> estantes) {
+		this.estantes = estantes;
+	}
+
+	/**
+	 * @return the bodegas
+	 */
+	public ArrayList<Bodega> getBodegas() {
+		return bodegas;
+	}
+
+	/**
+	 * @param bodegas the bodegas to set
+	 */
+	public void setBodegas(ArrayList<Bodega> bodegas) {
+		this.bodegas = bodegas;
 	}
 
 	

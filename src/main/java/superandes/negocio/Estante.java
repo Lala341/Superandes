@@ -1,5 +1,6 @@
 package main.java.superandes.negocio;
 
+import java.util.ArrayList;
 
 /**
  * @version 1.0
@@ -19,7 +20,7 @@ public class Estante {
 	private String equipamientoAdicional;
 	private long id;
 	private Sucursal sucursal;
-	private Categoria categoria;
+	private ArrayList<Producto> productos;
 
 	public Estante(){
 
@@ -151,25 +152,27 @@ public class Estante {
 		this.sucursal = sucursal;
 	}
 
-	/**
-	 * @return the categoria
-	 */
-	public Categoria getCategoria() {
-		return categoria;
-	}
-
-	/**
-	 * @param categoria the categoria to set
-	 */
-	public void setCategoria(Categoria categoria) {
-		this.categoria = categoria;
-	}
+	
 
 	/**
 	 * @return the nivelDeReorden
 	 */
 	public static String getNivelDeReorden() {
 		return NIVEL_DE_REORDEN;
+	}
+
+	/**
+	 * @return the productos
+	 */
+	public ArrayList<Producto> getProductos() {
+		return productos;
+	}
+
+	/**
+	 * @param productos the productos to set
+	 */
+	public void setProductos(ArrayList<Producto> productos) {
+		this.productos = productos;
 	}
 
 	
