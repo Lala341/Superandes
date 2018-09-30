@@ -2,6 +2,7 @@ package main.java.superandes.negocio;
 
 import java.util.ArrayList;
 
+
 /**
  * @version 1.0
  * @created 30-sep-2018 10:00:24
@@ -128,6 +129,14 @@ public class Bodega {
 		this.productos = productos;
 	}
 
-	
+	@Override
+	/**
+	 * @return Una cadena de caracteres con todos los atributos
+	 */
+	public String toString() 
+	{
+		return "Bodega [id=" + id + ", peso=" + peso + ", volumen=" + volumen + ", sucursal=" + sucursal.toString()
+				+ ", cantidadProductos=" + cantidadProductos + ", capacidadTotal=" + capacidadTotal +", productos=" + productos +"]";
+	}
 
 }
