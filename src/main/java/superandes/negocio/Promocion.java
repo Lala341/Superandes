@@ -1,5 +1,6 @@
 package main.java.superandes.negocio;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 /**
@@ -12,6 +13,7 @@ public class Promocion {
 	private String nombre;
 	private Date fechaInicio;
 	private Date fechaFinalizacion;
+	private ArrayList<Sucursal> sucursales;
 
 	public Promocion(){
 
@@ -71,6 +73,20 @@ public class Promocion {
 	 */
 	public void setFechaFinalizacion(Date fechaFinalizacion) {
 		this.fechaFinalizacion = fechaFinalizacion;
+	}
+
+	/**
+	 * @return the sucursales
+	 */
+	public ArrayList<Sucursal> getSucursales() {
+		return sucursales;
+	}
+
+	/**
+	 * @param sucursales the sucursales to set
+	 */
+	public void setSucursales(ArrayList<Sucursal> sucursales) {
+		this.sucursales = sucursales;
 	}
 
 	
