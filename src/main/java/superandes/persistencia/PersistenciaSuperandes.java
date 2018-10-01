@@ -7,6 +7,7 @@ import javax.jdo.JDOHelper;
 import javax.jdo.PersistenceManager;
 import javax.jdo.PersistenceManagerFactory;
 import javax.jdo.Query;
+import javax.jdo.Transaction;
 
 import org.apache.log4j.Logger;
 
@@ -201,4 +202,196 @@ public class PersistenciaSuperandes {
 		return tablas.get (4);
 	}
 
+	/**
+	 * @return La cadena de caracteres con el nombre de la tabla
+	 */
+	public String darTablaEstante ()
+	{
+		return tablas.get (5);
+	}
+	
+	/**
+	 * @return La cadena de caracteres con el nombre de la tabla
+	 */
+	public String darTablaCategoria ()
+	{
+		return tablas.get (6);
+	}
+	/**
+	 * @return La cadena de caracteres con el nombre de la tabla
+	 */
+	public String darTablaPerecedero ()
+	{
+		return tablas.get (7);
+	}
+	/**
+	 * @return La cadena de caracteres con el nombre de la tabla
+	 */
+	public String darTablaNoPerecedero ()
+	{
+		return tablas.get (8);
+	}
+	/**
+	 * @return La cadena de caracteres con el nombre de la tabla
+	 */
+	public String darTablaProducto ()
+	{
+		return tablas.get (9);
+	}
+	/**
+	 * @return La cadena de caracteres con el nombre de la tabla
+	 */
+	public String darTablaProductoEstante ()
+	{
+		return tablas.get (10);
+	}
+	/**
+	 * @return La cadena de caracteres con el nombre de la tabla
+	 */
+	public String darTablaProductoBodega ()
+	{
+		return tablas.get (11);
+	}
+	/**
+	 * @return La cadena de caracteres con el nombre de la tabla
+	 */
+	public String darTablaPersonaNatural ()
+	{
+		return tablas.get (12);
+	}
+	/**
+	 * @return La cadena de caracteres con el nombre de la tabla
+	 */
+	public String darTablaEmpresa ()
+	{
+		return tablas.get (13);
+	}
+	/**
+	 * @return La cadena de caracteres con el nombre de la tabla
+	 */
+	public String darTablaConsumidor ()
+	{
+		return tablas.get (14);
+	}
+	/**
+	 * @return La cadena de caracteres con el nombre de la tabla
+	 */
+	public String darTablaFidelizacion ()
+	{
+		return tablas.get (15);
+	}
+	/**
+	 * @return La cadena de caracteres con el nombre de la tabla
+	 */
+	public String darTablaProductoTransaccion ()
+	{
+		return tablas.get (16);
+	}
+	/**
+	 * @return La cadena de caracteres con el nombre de la tabla
+	 */
+	public String darTablaVenta ()
+	{
+		return tablas.get (17);
+	}
+	/**
+	 * @return La cadena de caracteres con el nombre de la tabla
+	 */
+	public String darTablaFactura ()
+	{
+		return tablas.get (18);
+	}
+	/**
+	 * @return La cadena de caracteres con el nombre de la tabla
+	 */
+	public String darTablaCarritoCompras ()
+	{
+		return tablas.get (19);
+	}
+	/**
+	 * @return La cadena de caracteres con el nombre de la tabla
+	 */
+	public String darTablaProductoVenta ()
+	{
+		return tablas.get (20);
+	}
+	/**
+	 * @return La cadena de caracteres con el nombre de la tabla
+	 */
+	public String darTablaProductoCarritoCompras ()
+	{
+		return tablas.get (21);
+	}
+	/**
+	 * @return La cadena de caracteres con el nombre de la tabla
+	 */
+	public String darTablaPromocion ()
+	{
+		return tablas.get (22);
+	}
+	/**
+	 * @return La cadena de caracteres con el nombre de la tabla
+	 */
+	public String darTablaPromocionSucursal ()
+	{
+		return tablas.get (23);
+	}
+	/**
+	 * @return La cadena de caracteres con el nombre de la tabla
+	 */
+	public String darTablaProveedores ()
+	{
+		return tablas.get (24);
+	}
+	/**
+	 * @return La cadena de caracteres con el nombre de la tabla
+	 */
+	public String darTablaProductoOfrecido ()
+	{
+		return tablas.get (25);
+	}
+	/**
+	 * @return La cadena de caracteres con el nombre de la tabla
+	 */
+	public String darTablaOrdenPedido ()
+	{
+		return tablas.get (26);
+	}
+	/**
+	 * Elimina todas las tuplas de todas las tablas de la base de datos 
+	 * Crea y ejecuta las sentencias SQL para cada tabla de la base de datos - EL ORDEN ES IMPORTANTE 
+	 */
+	public long [] limpiarSuperandes()
+	{
+		PersistenceManager pm = pmf.getPersistenceManager();
+        Transaction tx=pm.currentTransaction();
+        try
+        {
+            tx.begin();
+            long [] resp = sqlUtil.limpiarSuperandes (pm);
+            tx.commit ();
+            log.info ("Borrada la base de datos");
+            return resp;
+        }
+        catch (Exception e)
+        {
+        	e.printStackTrace();
+        	//log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+        	//return new long[] {-1, -1, -1, -1, -1, -1, -1};
+        }
+        finally
+        {
+            if (tx.isActive())
+            {
+                tx.rollback();
+            }
+            pm.close();
+        }
+		return null;
+		
+	}
+	private String darDetalleException(Exception e) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
