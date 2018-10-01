@@ -6,13 +6,16 @@ import java.io.FileReader;
 
 import javax.swing.JOptionPane;
 
+import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.google.gson.stream.JsonReader;
+
+import main.java.uniandes.isis2304.superandes.negocio.Superandes;
+import main.java.uniandes.isis2304.superandes.*;
 import org.junit.Test;
-import main.java.superandes.negocio.Superandes;
 
 public class ConexionTest {
 	/**
@@ -40,6 +43,8 @@ public class ConexionTest {
     @Test
     public void accessTest ()
   	{
+    	BasicConfigurator.configure(); 
+
   	  	try
 		{
 			log.info ("Probando el acceso a la base de datos con datos válidos (BD, credenciales, esquema");
