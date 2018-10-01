@@ -1,4 +1,4 @@
-package main.java.uniandes.isis2304.superandes.negocio;
+package uniandes.isis2304.superandes.negocio;
 
 import java.util.Date;
 

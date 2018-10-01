@@ -1,11 +1,11 @@
-package main.java.uniandes.isis2304.superandes.persistencia;
+package uniandes.isis2304.superandes.persistencia;
 
 import java.util.List;
 
 import javax.jdo.PersistenceManager;
 import javax.jdo.Query;
 
-import main.java.uniandes.isis2304.superandes.negocio.Ciudad;
+import uniandes.isis2304.superandes.negocio.Ciudad;
 
 
 public class SQLCiudad {

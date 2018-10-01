@@ -1,4 +1,4 @@
-package main.java.uniandes.isis2304.superandes.negocio;
+package uniandes.isis2304.superandes.negocio;
 
 import java.util.ArrayList;
 
@@ -6,7 +6,8 @@ import org.apache.log4j.Logger;
 
 import com.google.gson.JsonObject;
 
-import main.java.uniandes.isis2304.superandes.persistencia.PersistenciaSuperandes;
+import uniandes.isis2304.superandes.persistencia.PersistenciaSuperandes;
+
 
 
 /**

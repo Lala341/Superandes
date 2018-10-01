@@ -1,4 +1,4 @@
-package main.java.uniandes.isis2304.superandes.persistencia;
+package uniandes.isis2304.superandes.persistencia;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -52,6 +52,8 @@ public class PersistenciaSuperandes {
 	 * Atributo para el acceso a las sentencias SQL propias 
 	 */
 	private SQLUtil sqlUtil;
+
+	private SQLCiudad sqlCiudad;
 	
 	/* ****************************************************************
 	 * 			Métodos del MANEJADOR DE PERSISTENCIA
@@ -161,6 +163,7 @@ public class PersistenciaSuperandes {
 	
 	private void crearClasesSQL() {
 		// TODO Auto-generated method stub
+		sqlCiudad = new SQLCiudad(this);
 		
 	}
 	/**

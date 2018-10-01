@@ -1,4 +1,4 @@
-package main.java.uniandes.isis2304.superandes.persistencia;
+package uniandes.isis2304.superandes.persistencia;
 
 import javax.jdo.PersistenceManager;
 import javax.jdo.Query;

@@ -1,0 +1,34 @@
+{
+	"title": "Nombres de las tablas de Superandes",
+	"unidadPersistencia": "Superandes",
+	"tablas":
+	[
+		"Superandes_sequence",
+		"SUPERANDES",
+		"CIUDAD",
+		"SUCURSAL",
+		"BODEGA",
+		"ESTANTE",
+		"CATEGORIA",
+		"PERECEDERO",
+		"NO PERECEDERO",
+		"PRODUCTO",
+		"PRODUCTOESTANTE",
+		"PRODUCTOBODEGA",
+		"PERSONA NATURAL",
+		"EMPRESA",
+		"CONSUMIDOR",
+		"FIDELIZACION",
+		"PRODUCTOTRANSACCION",
+		"VENTA",
+		"FACTURA",
+		"CARRITOCOMPRAS",
+		"PRODUCTOVENTA",
+		"PRODUCTOCARRITOCOMPRAS",
+		"PROMOCION",
+		"PROMOCIONSUCURSAL",
+		"PROVEEDORES",
+		"PRODUCTO OFRECIDO",
+		"ORDENPEDIDO"
+	]
+}
