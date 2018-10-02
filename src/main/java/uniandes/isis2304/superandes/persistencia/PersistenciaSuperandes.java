@@ -56,8 +56,30 @@ public class PersistenciaSuperandes {
 	private SQLUtil sqlUtil;
 
 	private SQLCiudad sqlCiudad;
+	
+	private SQLSucursal sqlSucursal;
+	
+	private SQLBodega sqlBodega;
+	
+	private SQLEstante sqlEstante;
+	
+	private SQLCategoria sqlCategoria;
+	
+	private SQLPerecedero sqlPerecedero;
+	
+	private SQLNoPerecedero sqlNoPerecedero;
+	
+	private SQLProducto sqlProducto;
+	
+	private SQLProductoEstante sqlProductoEstante;
+	
+	private SQLProductoBodega sqlProductoBodega;
 
 	private SQLConsumidor sqlConsumidor;
+	
+	private SQLPersonaNatural sqlPersonaNatural;
+	
+	private SQLEmpresa sqlEmpresa;
 
 	private SQLFidelizacion sqlFidelizacion;
 
@@ -193,10 +215,32 @@ public class PersistenciaSuperandes {
 		// TODO Auto-generated method stub
 		
 		sqlUtil= new SQLUtil(this);
-
+		
 		sqlCiudad=new SQLCiudad(this);
+		
+		sqlSucursal = new SQLSucursal(this);
+		
+		sqlBodega = new SQLBodega(this);
+		
+		sqlEstante = new SQLEstante(this);
+		
+		sqlCategoria = new SQLCategoria(this);
+		
+		sqlPerecedero = new SQLPerecedero(this);
+		
+		sqlNoPerecedero = new SQLNoPerecedero(this);
+
+		sqlProducto = new SQLProducto(this);
+		
+		sqlProductoEstante = new SQLProductoEstante (this);
+		
+		sqlProductoBodega = new SQLProductoBodega (this);
 
 		sqlConsumidor= new SQLConsumidor(this);
+		
+		sqlPersonaNatural = new SQLPersonaNatural(this);
+		
+		sqlEmpresa = new SQLEmpresa(this);
 
 		sqlFidelizacion= new SQLFidelizacion(this);
 
@@ -549,6 +593,105 @@ public class PersistenciaSuperandes {
 	{
 		return sqlCiudad.darPorId (pmf.getPersistenceManager(), id);
 	}
+	
+	/* ****************************************************************
+	 * 			Métodos para manejar las SUCURSALES
+	 *****************************************************************/
+	
+	/**
+	 * Método que inserta, de manera transaccional, una tupla en la tabla 
+	 * Adiciona entradas al log de la aplicación
+	 * @param idSucursal - El identificador del sucursal
+	 * @param tamanho - El tamanho del sucursal
+	 * @param tipoDeMercado - el tipo de mercado del sucursal
+	 * @param ventasTotales - Las ventas totales de la sucursal
+	 * @param idCiudad
+	 * @return El objeto adicionado. null si ocurre alguna Excepción
+	 */
+	public Sucursal adicionarSucursal (long idSucursal, long tamanho, String tipoDeMercado, double ventasTotales, long idCiudad) 
+	{
+
+		PersistenceManager pm = pmf.getPersistenceManager();
+        Transaction tx=pm.currentTransaction();
+        try
+        {
+            tx.begin();
+            long tuplasInsertadas = sqlSucursal.adicionarSucursal(pmf.getPersistenceManager(), idSucursal, tamanho, tipoDeMercado, ventasTotales, idCiudad);
+            tx.commit();
+
+            log.trace ("Inserción de sucursal: " + idSucursal + ": " + tuplasInsertadas + " tuplas insertadas");
+            
+            return new Sucursal (idSucursal, tamanho, tipoDeMercado, ventasTotales, idCiudad);
+        }
+        catch (Exception e)
+        {
+//        	e.printStackTrace();
+        	log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+        	return null;
+        }
+        finally
+        {
+            if (tx.isActive())
+            {
+                tx.rollback();
+            }
+            pm.close();
+        }
+	}
+	
+	/**
+	 * Método que elimina, de manera transaccional, una tupla en la tabla SUCURSAL, dado el identificador del sucursal
+	 * Adiciona entradas al log de la aplicación
+	 * @param idSucursal - El identificador del sucursal
+	 * @return El número de tuplas eliminadas. -1 si ocurre alguna Excepción
+	 */
+	public long eliminarSucursalPorId (long idSucursal) 
+	{
+		PersistenceManager pm = pmf.getPersistenceManager();
+        Transaction tx=pm.currentTransaction();
+        try
+        {
+            tx.begin();
+            long resp = sqlSucursal.eliminarSucursalPorId (pm, idSucursal);
+            tx.commit();
+            return resp;
+        }
+        catch (Exception e)
+        {
+//        	e.printStackTrace();
+        	log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+            return -1;
+        }
+        finally
+        {
+            if (tx.isActive())
+            {
+                tx.rollback();
+            }
+            pm.close();
+        }
+	}
+	
+	/**
+	 * Método que consulta todas las tuplas en la tabla 
+	 * @return El objeto, construido con base en las tuplas de la tabla con el identificador dado
+	 */
+	public Sucursal darSucursalPorId (long id)
+	{
+		return sqlSucursal.darSucursalPorId (pmf.getPersistenceManager(), id);
+	}
+	
+	
+	/**
+	 * Método que consulta todas las tuplas en la tabla 
+	 * @return La lista de objetos 
+	 */
+	public List<Sucursal> darSucursalesPorId (String id)
+	{
+		return sqlSucursal.darSucursalesPorId(pmf.getPersistenceManager(), id);
+	}
+	
+	
 	/* ****************************************************************
 	 * 			Métodos para manejar los Consumidor
 	 *****************************************************************/
