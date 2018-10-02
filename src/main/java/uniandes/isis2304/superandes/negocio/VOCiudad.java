@@ -8,7 +8,15 @@ package uniandes.isis2304.superandes.negocio;
  */
 public interface VOCiudad {
 
-	
+	/**
+	 * @return the id
+	 */
+	public long getId();
+
+	/**
+	 * @param id the id to set
+	 */
+	public void setId(long id);
 
 	/**
 	 * @return the nombre

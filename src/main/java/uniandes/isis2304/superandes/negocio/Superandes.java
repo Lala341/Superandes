@@ -6,6 +6,7 @@ import org.apache.log4j.Logger;
 
 import com.google.gson.JsonObject;
 
+import uniandes.isis2304.parranderos.negocio.TipoBebida;
 import uniandes.isis2304.superandes.persistencia.PersistenciaSuperandes;
 
 
@@ -72,6 +73,12 @@ public class Superandes {
 	public void setCantidadDeRecompra(int cantidadDeRecompra) {
 		this.cantidadDeRecompra = cantidadDeRecompra;
 	}
+	/* ****************************************************************
+	 * 			M�todos para manejar CIUDAD
+	 *****************************************************************/
+	
+	
+	
 
 	/* ****************************************************************
 	 * 			Métodos para administración
@@ -88,5 +95,7 @@ public class Superandes {
         log.info ("Limpiando la BD de Superandes: Listo!");
         return borrrados;
 	}
+	
+	
 
 }

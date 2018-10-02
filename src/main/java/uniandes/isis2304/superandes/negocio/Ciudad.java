@@ -8,6 +8,7 @@ package uniandes.isis2304.superandes.negocio;
  */
 public class Ciudad implements VOCiudad {
 
+	private long id;
 	private String nombre;
 	private String direccion;
 
@@ -15,12 +16,14 @@ public class Ciudad implements VOCiudad {
 
 	}
 	
-	public Ciudad(String nombre, String direccion){
+	public Ciudad(long id, String nombre, String direccion){
+		this.id=id;
 		this.nombre=nombre;
 		this.direccion=direccion;
 	
 	}
 
+	
 	/**
 	 * @return the nombre
 	 */
@@ -48,13 +51,27 @@ public class Ciudad implements VOCiudad {
 	public void setDireccion(String direccion) {
 		this.direccion = direccion;
 	}
+	/**
+	 * @return the id
+	 */
+	public long getId() {
+		return id;
+	}
+
+	/**
+	 * @param id the id to set
+	 */
+	public void setId(long id) {
+		this.id = id;
+	}
+
 	@Override
 	/**
 	 * @return Una cadena de caracteres con todos los atributos
 	 */
 	public String toString() 
 	{
-		return "Ciudad [nombre=" + nombre + ", direccion=" + direccion +"]";
+		return "Ciudad [id=" + id +",nombre=" + nombre+ ", direccion=" + direccion +"]";
 	}
 
 	

@@ -15,6 +15,9 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
+import uniandes.isis2304.parranderos.negocio.TipoBebida;
+import uniandes.isis2304.superandes.negocio.*;
+
 public class PersistenciaSuperandes {
 	
 	/* ****************************************************************
@@ -359,6 +362,149 @@ public class PersistenciaSuperandes {
 	public String darTablaOrdenPedido ()
 	{
 		return tablas.get (26);
+	}
+
+	/* ****************************************************************
+	 * 			Métodos para manejar los CONSUMIDOR
+	 *****************************************************************/
+	
+	/**
+	 * Método que inserta, de manera transaccional, una tupla en la tabla 
+	 * Adiciona entradas al log de la aplicación
+	  * @return El objeto adicionado. null si ocurre alguna Excepción
+	 */
+	public Ciudad adicionarCiudad(String nombre,String direccion)
+	{
+		PersistenceManager pm = pmf.getPersistenceManager();
+        Transaction tx=pm.currentTransaction();
+        try
+        {
+            tx.begin();
+            long id = nextval ();
+            long tuplasInsertadas = sqlCiudad.adicionar(pm, id,nombre,direccion);
+            tx.commit();
+            
+            log.trace ("Inserción de Ciudad: " + nombre + ": " + tuplasInsertadas + " tuplas insertadas");
+            
+            return new Ciudad (id, nombre,direccion);
+        }
+        catch (Exception e)
+        {
+//        	e.printStackTrace();
+        	log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+        	return null;
+        }
+        finally
+        {
+            if (tx.isActive())
+            {
+                tx.rollback();
+            }
+            pm.close();
+        }
+	}
+	/**
+	 * Método que elimina, de manera transaccional, una tupla en la tabla
+	 * Adiciona entradas al log de la aplicación
+	 * @param nombre 
+	 * @return El número de tuplas eliminadas. -1 si ocurre alguna Excepción
+	 */
+	public long eliminarCiudadPorNombre (String nombre) 
+	{
+		PersistenceManager pm = pmf.getPersistenceManager();
+        Transaction tx=pm.currentTransaction();
+        try
+        {
+            tx.begin();
+            long resp = sqlCiudad.eliminarPorNombre(pm, nombre);
+            tx.commit();
+            return resp;
+        }
+        catch (Exception e)
+        {
+//        	e.printStackTrace();
+        	log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+            return -1;
+        }
+        finally
+        {
+            if (tx.isActive())
+            {
+                tx.rollback();
+            }
+            pm.close();
+        }
+	}
+
+	/**
+	 * Método que elimina, de manera transaccional, una tupla en la tabla
+	 * Adiciona entradas al log de la aplicación
+	 * @return El número de tuplas eliminadas. -1 si ocurre alguna Excepción
+	 */
+	public long eliminarCiudadPorId (long id) 
+	{
+		PersistenceManager pm = pmf.getPersistenceManager();
+        Transaction tx=pm.currentTransaction();
+        try
+        {
+            tx.begin();
+            long resp = sqlCiudad.eliminarPorId(pm, id);
+            tx.commit();
+            return resp;
+        }
+        catch (Exception e)
+        {
+//        	e.printStackTrace();
+        	log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+            return -1;
+        }
+        finally
+        {
+            if (tx.isActive())
+            {
+                tx.rollback();
+            }
+            pm.close();
+        }
+	}
+
+	/**
+	 * Método que consulta todas las tuplas en la tabla
+	 * @return La lista de objetos 
+	 */
+	public List<Ciudad> darCiudades ()
+	{
+		return sqlCiudad.darLista(pmf.getPersistenceManager());
+	}
+ 
+	/**
+	 * Método que consulta todas las tuplas en la tabla 
+	 * @return La lista de objetos 
+	 */
+	public List<Ciudad> darCiudadPorNombre (String nombre)
+	{
+		return sqlCiudad.darListaPorNombre (pmf.getPersistenceManager(), nombre);
+	}
+ 
+	/**
+	 * Método que consulta todas las tuplas en la tabla 
+	 * @return El objeto, construido con base en las tuplas de la tabla con el identificador dado
+	 */
+	public Ciudad darCiudadPorId (long id)
+	{
+		return sqlCiudad.darPorId (pmf.getPersistenceManager(), id);
+	}
+	
+	
+	
+	
+	
+	
+	private long nextval() {
+		// TODO Auto-generated method stub
+		long resp = sqlUtil.nextval (pmf.getPersistenceManager());
+        log.trace ("Generando secuencia: " + resp);
+        return resp;
 	}
 	/**
 	 * Elimina todas las tuplas de todas las tablas de la base de datos 
