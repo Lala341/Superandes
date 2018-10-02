@@ -66,25 +66,16 @@ public class SQLFidelizacion {
 		return (Fidelizacion) q.executeUnique();
 	}
 
-	/**
-	 * Crea y ejecuta la sentencia SQL para encontrar la información de los elementos
-	 */
-	public List<Ciudad> darListaPorNombre (PersistenceManager pm, String nombre) 
-	{
-		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaCiudad () + " WHERE nombre = ?");
-		q.setResultClass(Ciudad.class);
-		q.setParameters(nombre);
-		return (List<Ciudad>) q.executeList();
-	}
+	
 
 	/**
 	 * Crea y ejecuta la sentencia SQL para encontrar la información de los elementos
 	 */
-	public List<Ciudad> darLista (PersistenceManager pm)
+	public List<Fidelizacion> darLista (PersistenceManager pm)
 	{
-		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaCiudad ());
-		q.setResultClass(Ciudad.class);
-		return (List<Ciudad>) q.executeList();
+		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaFidelizacion ());
+		q.setResultClass(Fidelizacion.class);
+		return (List<Fidelizacion>) q.executeList();
 	}
 
 	
