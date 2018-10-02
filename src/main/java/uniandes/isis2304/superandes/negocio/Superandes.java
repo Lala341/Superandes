@@ -1199,7 +1199,79 @@ public class Superandes {
 	}
 
 	
+	/* ****************************************************************
+	 * 			Métodos para manejar OrdenPedido
+	 *****************************************************************/
+	/**
+	 * Adiciona OrdenPedido de manera persistente 
+	 * Adiciona entradas al log de la aplicación
+	* @return El objeto. null si ocurre alguna Excepción
+	 */
+	public OrdenPedido adicionarOrdenPedido (String estado, int calificacion, String fecha, String fechaEntrega, long proveedor, long productoOfrecido, double cantidadProducto, String unidadMedida, long sucursal)
+	{
+        log.info ("Adicionando OrdenPedido: " + proveedor);
+        OrdenPedido ordenPedido = pp.adicionarOrdenPedido (estado, calificacion, fecha, fechaEntrega, proveedor, productoOfrecido, cantidadProducto, unidadMedida, sucursal);		
+        log.info ("Adicionando OrdenPedido: " + proveedor);
+        return ordenPedido;
+	}
 	
+	
+	
+	/**
+	 * Elimina OrdenPedido por su identificador
+	 * Adiciona entradas al log de la aplicación
+	 * @return El número de tuplas eliminadas
+	 */
+	public long eliminarOrdenPedidoPorId (long id)
+	{
+		log.info ("Eliminando OrdenPedido por id: " + id);
+        long resp = pp.eliminarOrdenPedidoPorId (id);		
+        log.info ("Eliminando OrdenPedido por id: " + resp + " tuplas eliminadas");
+        return resp;
+	}
+	
+	/**
+	 *	Lista  OrdenPedido en Superandes
+	 * Adiciona entradas al log de la aplicación
+	 * @return Una lista de OrdenPedido, llenos con su información básica
+	 */
+	public List<OrdenPedido> darOrdenPedido ()
+	{
+		log.info ("Consultando OrdenPedido");
+        List<OrdenPedido> tiposBebida = pp.darOrdenesPedidos();	
+        log.info ("Consultando OrdenPedido: " + tiposBebida.size() + " existentes");
+        return tiposBebida;
+	}
+
+	/**
+	 * Encuentra OrdenPedido en Superandes y los devuelve como una lista de VOOrdenPedido
+	 * Adiciona entradas al log de la aplicación
+	 * @return Una lista de objetos VOOrdenPedido con todos los tipos de OrdenPedido que conoce la aplicación, llenos con su información básica
+	 */
+	public List<VOOrdenPedido> darVOOrdenPedidoes ()
+	{
+		log.info ("Generando los VO de OrdenPedido");        
+        List<VOOrdenPedido> voTipos = new LinkedList<VOOrdenPedido> ();
+        for (OrdenPedido tb : pp.darOrdenesPedidos())
+        {
+        	voTipos.add (tb);
+        }
+        log.info ("Generando los VO de OrdenPedido: " + voTipos.size() + " existentes");
+        return voTipos;
+	}
+
+	/**
+	 * Encuentra OrdenPedido en Superandes 
+	 * Adiciona entradas al log de la aplicación
+	 * @param nombre - El nombre de OrdenPedido
+	 * @return Un objeto OrdenPedido, con su información básica
+	 */
+	public OrdenPedido darOrdenPedidoPorId (long id)
+	{
+		log.info ("Buscando OrdenPedido por id: " + id);
+		List<OrdenPedido> tb = (List<OrdenPedido>) pp.darOrdenPedidoPorId(id);
+		return !tb.isEmpty () ? tb.get (0) : null;
+	}
 	
 	
 	

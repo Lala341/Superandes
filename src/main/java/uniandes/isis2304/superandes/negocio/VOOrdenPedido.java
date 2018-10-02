@@ -35,7 +35,7 @@ public interface VOOrdenPedido {
 	/**
 	 * @return the fechaEntrega
 	 */
-	public String getFechaEntrega():
+	public String getFechaEntrega();
 
 	/**
 	 * @param fechaEntrega the fechaEntrega to set
