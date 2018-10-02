@@ -5,6 +5,7 @@ import java.util.List;
 import javax.jdo.PersistenceManager;
 import javax.jdo.Query;
 
+import uniandes.isis2304.superandes.negocio.Administrador;
 import uniandes.isis2304.superandes.negocio.AdministradorSucursal;
 import uniandes.isis2304.superandes.negocio.Ciudad;
 
@@ -42,6 +43,26 @@ public class SQLAdministradorSucursal {
         Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaAdministradorSucursal()  + "(administrador, sucursal) values (?,  ?)");
         q.setParameters(administrador,sucursal);
         return (long) q.executeUnique();
+	}
+	/**
+	 * Crea y ejecuta la sentencia SQL para encontrar la información de un elemento por su identificador
+	 */
+	public AdministradorSucursal darPorIdAdministrador (PersistenceManager pm, long administrador) 
+	{
+		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaAdministradorSucursal () + " WHERE administrador = ?");
+		q.setResultClass(AdministradorSucursal.class);
+		q.setParameters(administrador);
+		return (AdministradorSucursal) q.executeUnique();
+	}
+	/**
+	 * Crea y ejecuta la sentencia SQL para encontrar la información de un elemento por su identificador
+	 */
+	public AdministradorSucursal darPorIdSucursal (PersistenceManager pm, long sucursal) 
+	{
+		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaAdministradorSucursal () + " WHERE sucursal = ?");
+		q.setResultClass(AdministradorSucursal.class);
+		q.setParameters(sucursal);
+		return (AdministradorSucursal) q.executeUnique();
 	}
 
 	

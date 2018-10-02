@@ -103,6 +103,10 @@ public class PersistenciaSuperandes {
 	private SQLProductoOfrecido sqlProductoOfrecido;
 
 	private SQLOrdenPedido sqlOrdenPedido;
+
+	private SQLAdministrador sqlAdministrador;
+
+	private SQLAdministradorSucursal sqlAdministradorSucursal;
 	
 	/* ****************************************************************
 	 * 			MÃ©todos del MANEJADOR DE PERSISTENCIA
@@ -2081,6 +2085,263 @@ public class PersistenciaSuperandes {
 	{
 		return sqlOrdenPedido.darPorId (pmf.getPersistenceManager(), id);
 	}
+	
+	/* ****************************************************************
+	 * 			Métodos para manejar  Administrador
+	 *****************************************************************/
+	
+	/**
+	 * Método que inserta, de manera transaccional, una tupla en la tabla 
+	 * Adiciona entradas al log de la aplicación
+	  * @return El objeto adicionado. null si ocurre alguna Excepción
+	 */
+	public Administrador adicionarAdministrador( int cantidadDeRecompra, String usuario,  String contrasenha)
+	{
+		PersistenceManager pm = pmf.getPersistenceManager();
+        Transaction tx=pm.currentTransaction();
+        try
+        {
+            tx.begin();
+            long id = nextval ();
+            long tuplasInsertadas = sqlAdministrador.adicionar(pm, id, cantidadDeRecompra, usuario, contrasenha);
+            tx.commit();
+            
+            log.trace ("Inserción de Administrador: " + usuario + ": " + tuplasInsertadas + " tuplas insertadas");
+            
+            return new Administrador (id, cantidadDeRecompra, usuario, contrasenha);
+        }
+        catch (Exception e)
+        {
+//        	e.printStackTrace();
+        	log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+        	return null;
+        }
+        finally
+        {
+            if (tx.isActive())
+            {
+                tx.rollback();
+            }
+            pm.close();
+        }
+	}
+	/**
+	 * Método que elimina, de manera transaccional, una tupla en la tabla
+	 * Adiciona entradas al log de la aplicación
+	 * @param nombre 
+	 * @return El número de tuplas eliminadas. -1 si ocurre alguna Excepción
+	 */
+	public long eliminarAdministradorPorUsuario (String nombre) 
+	{
+		PersistenceManager pm = pmf.getPersistenceManager();
+        Transaction tx=pm.currentTransaction();
+        try
+        {
+            tx.begin();
+            long resp = sqlAdministrador.eliminarPorUsuario(pm, nombre);
+            tx.commit();
+            return resp;
+        }
+        catch (Exception e)
+        {
+//        	e.printStackTrace();
+        	log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+            return -1;
+        }
+        finally
+        {
+            if (tx.isActive())
+            {
+                tx.rollback();
+            }
+            pm.close();
+        }
+	}
+
+	/**
+	 * Método que elimina, de manera transaccional, una tupla en la tabla
+	 * Adiciona entradas al log de la aplicación
+	 * @return El número de tuplas eliminadas. -1 si ocurre alguna Excepción
+	 */
+	public long eliminarAdministradorPorId (long id) 
+	{
+		PersistenceManager pm = pmf.getPersistenceManager();
+        Transaction tx=pm.currentTransaction();
+        try
+        {
+            tx.begin();
+            long resp = sqlAdministrador.eliminarPorId(pm, id);
+            tx.commit();
+            return resp;
+        }
+        catch (Exception e)
+        {
+//        	e.printStackTrace();
+        	log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+            return -1;
+        }
+        finally
+        {
+            if (tx.isActive())
+            {
+                tx.rollback();
+            }
+            pm.close();
+        }
+	}
+
+	/**
+	 * Método que consulta todas las tuplas en la tabla
+	 * @return La lista de objetos 
+	 */
+	public List<Administrador> darAdministradores ()
+	{
+		return sqlAdministrador.darLista(pmf.getPersistenceManager());
+	}
+ 
+	/**
+	 * Método que consulta todas las tuplas en la tabla 
+	 * @return El objeto, construido con base en las tuplas de la tabla con el identificador dado
+	 */
+	public Administrador darAdministradorPorId (long id)
+	{
+		return sqlAdministrador.darPorId (pmf.getPersistenceManager(), id);
+	}
+	
+	/* ****************************************************************
+	 * 			Métodos para manejar  AdministradorSucursal
+	 *****************************************************************/
+	
+	/**
+	 * Método que inserta, de manera transaccional, una tupla en la tabla 
+	 * Adiciona entradas al log de la aplicación
+	  * @return El objeto adicionado. null si ocurre alguna Excepción
+	 */
+	public AdministradorSucursal adicionarAdministradorSucursal(long administrador, long sucursal)
+	{
+		PersistenceManager pm = pmf.getPersistenceManager();
+        Transaction tx=pm.currentTransaction();
+        try
+        {
+            tx.begin();
+            
+            long tuplasInsertadas = sqlAdministradorSucursal.adicionar(pm,administrador, sucursal);
+            tx.commit();
+            
+            log.trace ("Inserción de AdministradorSucursal: " + administrador + ": " + tuplasInsertadas + " tuplas insertadas");
+            
+            return new AdministradorSucursal (administrador, sucursal);
+        }
+        catch (Exception e)
+        {
+//        	e.printStackTrace();
+        	log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+        	return null;
+        }
+        finally
+        {
+            if (tx.isActive())
+            {
+                tx.rollback();
+            }
+            pm.close();
+        }
+	}
+	
+	/**
+	 * Método que elimina, de manera transaccional, una tupla en la tabla
+	 * Adiciona entradas al log de la aplicación
+	 * @return El número de tuplas eliminadas. -1 si ocurre alguna Excepción
+	 */
+	public long eliminarAdministradorSucursalPorIdAdministrador (long id) 
+	{
+		PersistenceManager pm = pmf.getPersistenceManager();
+        Transaction tx=pm.currentTransaction();
+        try
+        {
+            tx.begin();
+            long resp = sqlAdministradorSucursal.eliminarPorIdAdministrador(pm, id);
+            tx.commit();
+            return resp;
+        }
+        catch (Exception e)
+        {
+//        	e.printStackTrace();
+        	log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+            return -1;
+        }
+        finally
+        {
+            if (tx.isActive())
+            {
+                tx.rollback();
+            }
+            pm.close();
+        }
+	}
+	/**
+	 * Método que elimina, de manera transaccional, una tupla en la tabla
+	 * Adiciona entradas al log de la aplicación
+	 * @return El número de tuplas eliminadas. -1 si ocurre alguna Excepción
+	 */
+	public long eliminarAdministradorSucursalPorIdSucursal (long id) 
+	{
+		PersistenceManager pm = pmf.getPersistenceManager();
+        Transaction tx=pm.currentTransaction();
+        try
+        {
+            tx.begin();
+            long resp = sqlAdministradorSucursal.eliminarPorIdSucursal(pm, id);
+            tx.commit();
+            return resp;
+        }
+        catch (Exception e)
+        {
+//        	e.printStackTrace();
+        	log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+            return -1;
+        }
+        finally
+        {
+            if (tx.isActive())
+            {
+                tx.rollback();
+            }
+            pm.close();
+        }
+	}
+
+	/**
+	 * Método que consulta todas las tuplas en la tabla
+	 * @return La lista de objetos 
+	 */
+	public List<AdministradorSucursal> darAdministradorSucursales ()
+	{
+		return sqlAdministradorSucursal.darLista(pmf.getPersistenceManager());
+	}
+ 
+	
+ 
+	/**
+	 * Método que consulta todas las tuplas en la tabla 
+	 * @return El objeto, construido con base en las tuplas de la tabla con el identificador dado
+	 */
+	public AdministradorSucursal darAdministradorSucursalPorIdAdministrador (long id)
+	{
+		return sqlAdministradorSucursal.darPorIdAdministrador (pmf.getPersistenceManager(), id);
+	}
+	/**
+	 * Método que consulta todas las tuplas en la tabla 
+	 * @return El objeto, construido con base en las tuplas de la tabla con el identificador dado
+	 */
+	public AdministradorSucursal darAdministradorSucursalPorIdSucursal (long id)
+	{
+		return sqlAdministradorSucursal.darPorIdSucursal (pmf.getPersistenceManager(), id);
+	}
+	
+	
+	
+	
 	
 	
 	

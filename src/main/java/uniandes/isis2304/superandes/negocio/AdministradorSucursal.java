@@ -6,7 +6,15 @@ public class AdministradorSucursal implements VOAdministradorSucursal {
 	
 	private long sucursal;
 	
-	
+	public AdministradorSucursal() {
+		// TODO Auto-generated constructor stub
+	}
+	public AdministradorSucursal(long administrador, long sucursal) {
+		// TODO Auto-generated constructor stub
+		this.administrador=administrador;
+		
+		this.sucursal=sucursal;
+	}
 
 	/**
 	 * @return the administrador
