@@ -36,10 +36,10 @@ public class SQLProductoOfrecido {
 	/**
 	 * Crea y ejecuta la sentencia SQL para adicionar 
 	 */
-	public long adicionar (PersistenceManager pm, long id, double precioProveedor, double calificacionTotal, String calidad, String cumplimiento,  long productoId) 
+	public long adicionar (PersistenceManager pm, long id, double precioProveedor, int calificacionTotal, int calidad, int cumplimiento,  long productoId, long proveedor) 
 	{
-        Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaProductoOfrecido () + "(id, precioProveedor, calificacionTotal, calidad, cumplimiento,  productoId) values (?, ?, ?, ?, ?, ?)");
-        q.setParameters(id, precioProveedor, calificacionTotal, calidad, cumplimiento,  productoId);
+        Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaProductoOfrecido () + "(id, precioProveedor, calificacionTotal, calidad, cumplimiento,  productoId, proveedor) values (?, ?, ?, ?, ?, ?, ?)");
+        q.setParameters(id, precioProveedor, calificacionTotal, calidad, cumplimiento,  productoId, proveedor);
         return (long) q.executeUnique();
 	}
 
