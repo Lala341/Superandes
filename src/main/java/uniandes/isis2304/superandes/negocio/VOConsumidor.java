@@ -25,10 +25,13 @@ public interface VOConsumidor {
 	public String getCorreoElectronico();
 
 	/**
-	 * @return the fidelizacion
+	 * @return the tipo
 	 */
-	public long getIdFidelizacion();
-
+	public String getTipo();
+	/**
+	 * @param tipo the tipo to set
+	 */
+	public void setTipo(String tipo);
 	
 	/**
 	 * @return Una cadena de caracteres con todos los atributos del Consumidor

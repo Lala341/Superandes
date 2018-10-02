@@ -13,19 +13,22 @@ public class Venta implements VOVenta{
 	private String formaDePago;
 	private double valorTotal;
 	private  long factura;
+	private long consumidor;
+	
 	
 
 	public Venta(){
 
 	}
 
-	public Venta(long id,String fecha, String formaDePago, double valorTotal,long factura){
+	public Venta(long id,String fecha, String formaDePago, double valorTotal,long factura,long consumidor){
 
 		this.id=id;
 		this.fecha=fecha;
 		this.formaDePago=formaDePago;
 		this.valorTotal=valorTotal;
 		this.factura=factura;
+		this.consumidor=consumidor;
 	}
 
 	/**
@@ -107,6 +110,20 @@ public class Venta implements VOVenta{
 		this.factura = factura;
 	}
 
+
+	/**
+	 * @return the consumidor
+	 */
+	public long getConsumidor() {
+		return consumidor;
+	}
+
+	/**
+	 * @param consumidor the consumidor to set
+	 */
+	public void setConsumidor(long consumidor) {
+		this.consumidor = consumidor;
+	}
 
 	@Override
 	/**

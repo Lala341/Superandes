@@ -69,7 +69,15 @@ public interface VOVenta {
 	 */
 	public void setFactura(long factura);
 
-	
+	/**
+	 * @return the consumidor
+	 */
+	public long getConsumidor() ;
+
+	/**
+	 * @param consumidor the consumidor to set
+	 */
+	public void setConsumidor(long consumidor);
 	@Override
 	/**
 	 * @return Una cadena de caracteres con todos los atributos de la Bodega

@@ -22,6 +22,12 @@ public class ProductoTransaccion implements VOProductoTransaccion {
 		this.producto=producto;
 
 	}
+	public ProductoTransaccion(int cantidadVenta, long producto){
+		this.cantidadVenta=cantidadVenta;
+		this.unidadDeMedida="";
+		this.producto=producto;
+
+	}
 
 	/**
 	 * @return the cantidadVenta

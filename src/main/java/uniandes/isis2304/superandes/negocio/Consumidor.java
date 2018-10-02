@@ -11,10 +11,15 @@ public class Consumidor implements VOConsumidor {
 	private long id;
 	private String nombre;
 	private String correoElectronico;
-	private long idFidelizacion;
-
+	private String tipo;
 	public Consumidor(){
 
+	}
+	public Consumidor(long id, String nombre, String correoElectronico, String tipo){
+		this.id=id;
+		this.nombre=nombre;
+		this.correoElectronico=correoElectronico;
+		this.tipo=tipo;
 	}
 	
 	/**
@@ -59,27 +64,27 @@ public class Consumidor implements VOConsumidor {
 		this.correoElectronico = correoElectronico;
 	}
 
-	/**
-	 * @return the fidelizacion
-	 */
-	public long getIdFidelizacion() {
-		return idFidelizacion;
-	}
+	
 
 	/**
-	 * @param idFidelizacion the fidelizacion to set
+	 * @return the tipo
 	 */
-	public void setFidelizacion(long idFidelizacion) {
-		this.idFidelizacion = idFidelizacion;
+	public String getTipo() {
+		return tipo;
 	}
-
+	/**
+	 * @param tipo the tipo to set
+	 */
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
 	@Override
 	/**
 	 * @return Una cadena de caracteres con todos los atributos de Consumidor
 	 */
 	public String toString() 
 	{
-		return "Consumidor [id=" + id + ", nombre=" + nombre + ", correoElectronico=" + correoElectronico + ", idFidelizacion=" + idFidelizacion
+		return "Consumidor [id=" + id + ", nombre=" + nombre + ", correoElectronico=" + correoElectronico + ", tipo=" + tipo
 				+  "]";
 	}
 

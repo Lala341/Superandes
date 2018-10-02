@@ -58,7 +58,7 @@ public class SQLFidelizacion {
 	/**
 	 * Crea y ejecuta la sentencia SQL para encontrar la información de un elemento por su identificador
 	 */
-	public Fidelizacion darPorIdConsumidor (PersistenceManager pm, long idConsumidor) 
+	public Fidelizacion darPorId (PersistenceManager pm, long idConsumidor) 
 	{
 		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaFidelizacion () + " WHERE idConsumidor = ?");
 		q.setResultClass(Fidelizacion.class);
