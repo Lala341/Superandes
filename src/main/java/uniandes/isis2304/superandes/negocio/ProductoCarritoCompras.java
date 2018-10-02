@@ -5,18 +5,25 @@ package uniandes.isis2304.superandes.negocio;
  * @version 1.0
  * @created 30-sep-2018 10:00:42
  */
-public class ProductoCarritoCompras {
+public class ProductoCarritoCompras implements VOProductoCarritoCompras {
 
-	private CarritoCompras carritoCompras;
+	private long carritoCompras;
 	private int cantidadVenta;
 	private String unidadDeMedida;
-	private Producto producto;
+	private long producto;
 	
 	
 	public ProductoCarritoCompras(){
 
 	}
 
+	public ProductoCarritoCompras(long carritoCompras,int cantidadVenta,String unidadDeMedida,long producto){
+		this.carritoCompras=carritoCompras;
+		this.cantidadVenta=cantidadVenta;
+		this.unidadDeMedida=unidadDeMedida;
+		this.producto=producto;
+
+	}
 
 	/**
 	 * @return the cantidadVenta
@@ -51,35 +58,40 @@ public class ProductoCarritoCompras {
 
 
 	/**
-	 * @return the producto
-	 */
-	public Producto getProducto() {
-		return producto;
-	}
-
-
-	/**
-	 * @param producto the producto to set
-	 */
-	public void setProducto(Producto producto) {
-		this.producto = producto;
-	}
-
-
-	/**
 	 * @return the carritoCompras
 	 */
-	public CarritoCompras getCarritoCompras() {
+	public long getCarritoCompras() {
 		return carritoCompras;
 	}
-
 
 	/**
 	 * @param carritoCompras the carritoCompras to set
 	 */
-	public void setCarritoCompras(CarritoCompras carritoCompras) {
+	public void setCarritoCompras(long carritoCompras) {
 		this.carritoCompras = carritoCompras;
 	}
 
+	/**
+	 * @return the producto
+	 */
+	public long getProducto() {
+		return producto;
+	}
 
+	/**
+	 * @param producto the producto to set
+	 */
+	public void setProducto(long producto) {
+		this.producto = producto;
+	}
+
+	@Override
+	/**
+	 * @return Una cadena de caracteres con todos los atributos
+	 */
+	public String toString() 
+	{
+		return "ProductoCarritoCompras [carritoCompras=" + carritoCompras + ", producto=" + producto + ", cantidadVenta=" + cantidadVenta + ", unidadDeMedida=" + unidadDeMedida
+				+"]";
+	}
 }

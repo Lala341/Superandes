@@ -6,14 +6,18 @@ import java.util.ArrayList;
  * @version 1.0
  * @created 30-sep-2018 10:00:44
  */
-public class Proveedores {
+public class Proveedores implements VOProveedores{
 
 	private int nit;
 	private String nombre;
-	private ArrayList<ProductoOfrecido> productoOfrecido;
 
 	public Proveedores(){
 
+	}
+	public Proveedores(int nit,String nombre){
+
+		this.nit=nit;
+		this.nombre=nombre;
 	}
 
 	/**
@@ -44,18 +48,13 @@ public class Proveedores {
 		this.nombre = nombre;
 	}
 
+	@Override
 	/**
-	 * @return the productoOfrecido
+	 * @return Una cadena de caracteres con todos los atributos de Consumidor
 	 */
-	public ArrayList<ProductoOfrecido> getProductoOfrecido() {
-		return productoOfrecido;
-	}
-
-	/**
-	 * @param productoOfrecido the productoOfrecido to set
-	 */
-	public void setProductoOfrecido(ArrayList<ProductoOfrecido> productoOfrecido) {
-		this.productoOfrecido = productoOfrecido;
+	public String toString() 
+	{
+		return "Proveedor [init=" + nit + ", nombre=" + nombre +  "]";
 	}
 
 	

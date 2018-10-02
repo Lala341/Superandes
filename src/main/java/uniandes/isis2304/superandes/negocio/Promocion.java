@@ -7,88 +7,79 @@ import java.util.Date;
  * @version 1.0
  * @created 30-sep-2018 10:00:43
  */
-public class Promocion {
+public class Promocion implements VOPromocion{
 
-	private String descripcion;
+	private long id;
 	private String nombre;
-	private Date fechaInicio;
-	private Date fechaFinalizacion;
-	private ArrayList<Sucursal> sucursales;
+	private String fechaInicio;
+	private String fechaFinalizacion;
 
 	public Promocion(){
 
 	}
-
-	/**
-	 * @return the descripcion
-	 */
-	public String getDescripcion() {
-		return descripcion;
+	public Promocion(long id, String nombre, String fechaInicio, String fechaFinalizacion){
+		this.id=id;
+		this.nombre=nombre;
+		this.fechaInicio=fechaInicio;
+		this.fechaFinalizacion=fechaFinalizacion;
 	}
 
 	/**
-	 * @param descripcion the descripcion to set
+	 * @return the id
 	 */
-	public void setDescripcion(String descripcion) {
-		this.descripcion = descripcion;
+	public long getId() {
+		return id;
 	}
-
+	/**
+	 * @param id the id to set
+	 */
+	public void setId(long id) {
+		this.id = id;
+	}
 	/**
 	 * @return the nombre
 	 */
 	public String getNombre() {
 		return nombre;
 	}
-
 	/**
 	 * @param nombre the nombre to set
 	 */
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-
 	/**
 	 * @return the fechaInicio
 	 */
-	public Date getFechaInicio() {
+	public String getFechaInicio() {
 		return fechaInicio;
 	}
-
 	/**
 	 * @param fechaInicio the fechaInicio to set
 	 */
-	public void setFechaInicio(Date fechaInicio) {
+	public void setFechaInicio(String fechaInicio) {
 		this.fechaInicio = fechaInicio;
 	}
-
 	/**
 	 * @return the fechaFinalizacion
 	 */
-	public Date getFechaFinalizacion() {
+	public String getFechaFinalizacion() {
 		return fechaFinalizacion;
 	}
-
 	/**
 	 * @param fechaFinalizacion the fechaFinalizacion to set
 	 */
-	public void setFechaFinalizacion(Date fechaFinalizacion) {
+	public void setFechaFinalizacion(String fechaFinalizacion) {
 		this.fechaFinalizacion = fechaFinalizacion;
 	}
-
+	@Override
 	/**
-	 * @return the sucursales
+	 * @return Una cadena de caracteres con todos los atributos
 	 */
-	public ArrayList<Sucursal> getSucursales() {
-		return sucursales;
+	public String toString() 
+	{
+		return "Promocion [id=" + id + ", nombre=" + nombre + ", fechaInicio=" + fechaInicio +  ", fechafin=" + fechaFinalizacion  +"]";
 	}
-
-	/**
-	 * @param sucursales the sucursales to set
-	 */
-	public void setSucursales(ArrayList<Sucursal> sucursales) {
-		this.sucursales = sucursales;
-	}
-
 	
 
 }

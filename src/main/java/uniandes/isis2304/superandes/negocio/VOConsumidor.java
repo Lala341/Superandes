@@ -29,10 +29,6 @@ public interface VOConsumidor {
 	 */
 	public long getIdFidelizacion();
 
-	/**
-	 * @return the ventas
-	 */
-	public ArrayList<Venta> getVentas();
 	
 	/**
 	 * @return Una cadena de caracteres con todos los atributos del Consumidor

@@ -7,13 +7,17 @@ import java.util.Date;
  * @version 1.0
  * @created 30-sep-2018 10:00:43
  */
-public class PromocionSucursal {
+public class PromocionSucursal implements VOPromocionSucursal{
 
 	private long promocion;
 	private long sucursal;
 	
 	public PromocionSucursal(){
 
+	}
+	public PromocionSucursal(long promocion,long sucursal){
+		this.promocion=promocion;
+		this.sucursal=sucursal;
 	}
 
 	/**
@@ -46,6 +50,13 @@ public class PromocionSucursal {
 
 	
 
-	
+	@Override
+	/**
+	 * @return Una cadena de caracteres con todos los atributos de Consumidor
+	 */
+	public String toString() 
+	{
+		return "PromocionSucursal [promocion=" + promocion + ", sucursal=" + sucursal +  "]";
+	}
 
 }

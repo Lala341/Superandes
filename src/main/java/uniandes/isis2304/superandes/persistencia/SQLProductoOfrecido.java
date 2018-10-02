@@ -5,7 +5,7 @@ import java.util.List;
 import javax.jdo.PersistenceManager;
 import javax.jdo.Query;
 
-import uniandes.isis2304.superandes.negocio.Ciudad;
+import uniandes.isis2304.superandes.negocio.ProductoOfrecido;
 
 
 public class SQLProductoOfrecido {
@@ -36,29 +36,21 @@ public class SQLProductoOfrecido {
 	/**
 	 * Crea y ejecuta la sentencia SQL para adicionar 
 	 */
-	public long adicionar (PersistenceManager pm, long id, String nombre, String direccion) 
+	public long adicionar (PersistenceManager pm, long id, double precioProveedor, double calificacionTotal, String calidad, String cumplimiento,  long productoId) 
 	{
-        Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaCiudad () + "(id, nombre, direccion) values (?, ?, ?)");
-        q.setParameters(id, nombre, direccion);
+        Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaProductoOfrecido () + "(id, precioProveedor, calificacionTotal, calidad, cumplimiento,  productoId) values (?, ?, ?, ?, ?, ?)");
+        q.setParameters(id, precioProveedor, calificacionTotal, calidad, cumplimiento,  productoId);
         return (long) q.executeUnique();
 	}
 
-	/**
-	 * Crea y ejecuta la sentencia SQL para eliminar 
-	 */
-	public long eliminarPorNombre (PersistenceManager pm, String nombre)
-	{
-        Query q = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaCiudad () + " WHERE nombre = ?");
-        q.setParameters(nombre);
-        return (long) q.executeUnique();
-	}
+	
 
 	/**
 	 * Crea y ejecuta la sentencia SQL para eliminar un elemento por por id
 	 */
 	public long eliminarPorId (PersistenceManager pm, long id)
 	{
-        Query q = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaCiudad () + " WHERE id = ?");
+        Query q = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaProductoOfrecido () + " WHERE id = ?");
         q.setParameters(id);
         return (long) q.executeUnique();
 	}
@@ -66,33 +58,24 @@ public class SQLProductoOfrecido {
 	/**
 	 * Crea y ejecuta la sentencia SQL para encontrar la información de un elemento por su identificador
 	 */
-	public Ciudad darPorId (PersistenceManager pm, long id) 
+	public ProductoOfrecido darPorId (PersistenceManager pm, long id) 
 	{
-		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaCiudad () + " WHERE id = ?");
-		q.setResultClass(Ciudad.class);
+		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaProductoOfrecido () + " WHERE id = ?");
+		q.setResultClass(ProductoOfrecido.class);
 		q.setParameters(id);
-		return (Ciudad) q.executeUnique();
+		return (ProductoOfrecido) q.executeUnique();
 	}
+
+	
 
 	/**
 	 * Crea y ejecuta la sentencia SQL para encontrar la información de los elementos
 	 */
-	public List<Ciudad> darListaPorNombre (PersistenceManager pm, String nombre) 
+	public List<ProductoOfrecido> darLista (PersistenceManager pm)
 	{
-		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaCiudad () + " WHERE nombre = ?");
-		q.setResultClass(Ciudad.class);
-		q.setParameters(nombre);
-		return (List<Ciudad>) q.executeList();
-	}
-
-	/**
-	 * Crea y ejecuta la sentencia SQL para encontrar la información de los elementos
-	 */
-	public List<Ciudad> darLista (PersistenceManager pm)
-	{
-		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaCiudad ());
-		q.setResultClass(Ciudad.class);
-		return (List<Ciudad>) q.executeList();
+		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaProductoOfrecido());
+		q.setResultClass(ProductoOfrecido.class);
+		return (List<ProductoOfrecido>) q.executeList();
 	}
 
 	

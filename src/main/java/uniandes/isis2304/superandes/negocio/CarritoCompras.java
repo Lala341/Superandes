@@ -6,16 +6,20 @@ import java.util.ArrayList;
  * @version 1.0
  * @created 30-sep-2018 10:00:26
  */
-public class CarritoCompras {
+public class CarritoCompras implements VOCarritoCompras{
 
+	private long id;
 	private String estado;
-	private Consumidor consumidor;
-	private ArrayList<ProductoTransaccion> productosTransaccion;
+	private long consumidor;
 
 	public CarritoCompras(){
 
 	}
-
+	public CarritoCompras(long id, String estado,long consumidor){
+		this.id=id;
+		this.estado=estado;
+		this.consumidor=consumidor;
+	}
 	
 
 	/**
@@ -33,31 +37,48 @@ public class CarritoCompras {
 	}
 
 	/**
+	 * @return the id
+	 */
+	public long getId() {
+		return id;
+	}
+
+
+
+	/**
+	 * @param id the id to set
+	 */
+	public void setId(long id) {
+		this.id = id;
+	}
+
+
+
+	/**
 	 * @return the consumidor
 	 */
-	public Consumidor getConsumidor() {
+	public long getConsumidor() {
 		return consumidor;
 	}
+
+
 
 	/**
 	 * @param consumidor the consumidor to set
 	 */
-	public void setConsumidor(Consumidor consumidor) {
+	public void setConsumidor(long consumidor) {
 		this.consumidor = consumidor;
 	}
 
-	/**
-	 * @return the productosTransaccion
-	 */
-	public ArrayList<ProductoTransaccion> getProductosTransaccion() {
-		return productosTransaccion;
-	}
 
+
+	@Override
 	/**
-	 * @param productosTransaccion the productosTransaccion to set
+	 * @return Una cadena de caracteres con todos los atributos
 	 */
-	public void setProductosTransaccion(ArrayList<ProductoTransaccion> productosTransaccion) {
-		this.productosTransaccion = productosTransaccion;
+	public String toString() 
+	{
+		return "CarritoCompras [id=" + id + ", estado=" + estado + ", consumidor=" + consumidor +"]";
 	}
 	
 

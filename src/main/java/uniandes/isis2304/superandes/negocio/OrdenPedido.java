@@ -6,23 +6,35 @@ import java.util.ArrayList;
  * @version 1.0
  * @created 30-sep-2018 10:00:37
  */
-public class OrdenDePedido {
+public class OrdenPedido implements VOOrdenPedido {
 
 	private String fechaEntrega;
 	private int calificacion;
 	private String estado;
 	private String fecha;
 	private long id;
-	private Proveedores proveedor;
+	private long proveedor;
 	private int cantidadVenta;
 	private String unidadDeMedida;
-	private ProductoOfrecido productoOfrecido;
-	private Sucursal sucursal;
+	private long productoOfrecido;
+	private long sucursal;
 	
-	public OrdenDePedido(){
+	public OrdenPedido(){
 
 	}
 
+	public OrdenPedido(String fechaEntrega,int calificacion,String estado, String fecha,long id, long proveedor, int cantidadVenta, String unidadDeMedida,long productoOfrecido,long sucursal){
+		this.fechaEntrega=fechaEntrega;
+		this.calificacion=calificacion;
+		this.estado=estado;
+		this.fecha=fecha;
+		this.id=id;
+		this.proveedor=proveedor;
+		this.cantidadVenta=cantidadVenta;
+		this.unidadDeMedida=unidadDeMedida;
+		this.productoOfrecido=productoOfrecido;
+		this.sucursal=sucursal;
+	}
 	
 	
 	
@@ -55,20 +67,7 @@ public class OrdenDePedido {
 		this.unidadDeMedida = unidadDeMedida;
 	}
 
-	/**
-	 * @return the productoOfrecido
-	 */
-	public ProductoOfrecido getProductoOfrecido() {
-		return productoOfrecido;
-	}
-
-	/**
-	 * @param productoOfrecido the productoOfrecido to set
-	 */
-	public void setProductoOfrecido(ProductoOfrecido productoOfrecido) {
-		this.productoOfrecido = productoOfrecido;
-	}
-
+	
 	/**
 	 * @return the fechaEntrega
 	 */
@@ -138,45 +137,54 @@ public class OrdenDePedido {
 	public void setId(long id) {
 		this.id = id;
 	}
-
-	/**
+/**
 	 * @return the proveedor
 	 */
-	public Proveedores getProveedor() {
+	public long getProveedor() {
 		return proveedor;
 	}
 
 	/**
-	 * @param proveedores the proveedores to set
+	 * @param proveedor the proveedor to set
 	 */
-	public void setProveedores(Proveedores proveedor) {
+	public void setProveedor(long proveedor) {
 		this.proveedor = proveedor;
 	}
 
+	/**
+	 * @return the productoOfrecido
+	 */
+	public long getProductoOfrecido() {
+		return productoOfrecido;
+	}
 
-
-
+	/**
+	 * @param productoOfrecido the productoOfrecido to set
+	 */
+	public void setProductoOfrecido(long productoOfrecido) {
+		this.productoOfrecido = productoOfrecido;
+	}
 
 	/**
 	 * @return the sucursal
 	 */
-	public Sucursal getSucursal() {
+	public long getSucursal() {
 		return sucursal;
 	}
-
-
-
-
 
 	/**
 	 * @param sucursal the sucursal to set
 	 */
-	public void setSucursal(Sucursal sucursal) {
+	public void setSucursal(long sucursal) {
 		this.sucursal = sucursal;
 	}
 
-	
-
+@Override
+	public String toString() 
+	{
+		return "OrdenPedido [id=" + id + ", cantidadVenta=" + cantidadVenta  + ", calificacion=" + calificacion  + ", estado=" + estado  + ", fecha=" + fecha  + ", fechaEntrega=" + fechaEntrega 
+				 + ", proveedor=" + proveedor+  ", productoOfrecido=" + productoOfrecido+  ", sucursal=" + sucursal+  ", unidadDeMedida=" + unidadDeMedida+ "]";
+	}
 	
 
 }

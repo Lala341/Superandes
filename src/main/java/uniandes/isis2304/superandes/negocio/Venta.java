@@ -6,20 +6,27 @@ import java.util.ArrayList;
  * @version 1.0
  * @created 30-sep-2018 10:00:46
  */
-public class Venta {
+public class Venta implements VOVenta{
 
 	private long id;
 	private String fecha;
 	private String formaDePago;
 	private double valorTotal;
-	private Factura factura;
-	private ArrayList<ProductoTransaccion> productosTransaccion;
-
+	private  long factura;
+	
 
 	public Venta(){
 
 	}
 
+	public Venta(long id,String fecha, String formaDePago, double valorTotal,long factura){
+
+		this.id=id;
+		this.fecha=fecha;
+		this.formaDePago=formaDePago;
+		this.valorTotal=valorTotal;
+		this.factura=factura;
+	}
 
 	/**
 	 * @return the id
@@ -88,7 +95,7 @@ public class Venta {
 	/**
 	 * @return the factura
 	 */
-	public Factura getFactura() {
+	public long getFactura() {
 		return factura;
 	}
 
@@ -96,24 +103,19 @@ public class Venta {
 	/**
 	 * @param factura the factura to set
 	 */
-	public void setFactura(Factura factura) {
+	public void setFactura(long factura) {
 		this.factura = factura;
 	}
 
 
+	@Override
 	/**
-	 * @return the productosTransaccion
+	 * @return Una cadena de caracteres con todos los atributos
 	 */
-	public ArrayList<ProductoTransaccion> getProductosTransaccion() {
-		return productosTransaccion;
-	}
-
-
-	/**
-	 * @param productosTransaccion the productosTransaccion to set
-	 */
-	public void setProductosTransaccion(ArrayList<ProductoTransaccion> productosTransaccion) {
-		this.productosTransaccion = productosTransaccion;
+	public String toString() 
+	{
+		return "Venta [id=" + id + ", fecha=" + fecha + ", formaDePago=" + formaDePago + ", valorTotal=" + valorTotal
+				+ ", factura=" + factura  +"]";
 	}
 
 	

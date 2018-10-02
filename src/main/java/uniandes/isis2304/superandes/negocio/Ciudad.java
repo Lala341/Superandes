@@ -6,13 +6,19 @@ package uniandes.isis2304.superandes.negocio;
  * @version 1.0
  * @created 30-sep-2018 10:00:28
  */
-public class Ciudad {
+public class Ciudad implements VOCiudad {
 
 	private String nombre;
 	private String direccion;
 
 	public Ciudad(){
 
+	}
+	
+	public Ciudad(String nombre, String direccion){
+		this.nombre=nombre;
+		this.direccion=direccion;
+	
 	}
 
 	/**
@@ -42,6 +48,15 @@ public class Ciudad {
 	public void setDireccion(String direccion) {
 		this.direccion = direccion;
 	}
+	@Override
+	/**
+	 * @return Una cadena de caracteres con todos los atributos
+	 */
+	public String toString() 
+	{
+		return "Ciudad [nombre=" + nombre + ", direccion=" + direccion +"]";
+	}
+
 	
 
 }

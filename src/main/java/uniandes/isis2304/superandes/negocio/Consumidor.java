@@ -12,7 +12,6 @@ public class Consumidor implements VOConsumidor {
 	private String nombre;
 	private String correoElectronico;
 	private long idFidelizacion;
-	private ArrayList<Venta> ventas;
 
 	public Consumidor(){
 
@@ -74,27 +73,14 @@ public class Consumidor implements VOConsumidor {
 		this.idFidelizacion = idFidelizacion;
 	}
 
-	/**
-	 * @return the ventas
-	 */
-	public ArrayList<Venta> getVentas() {
-		return ventas;
-	}
-
-	/**
-	 * @param ventas the ventas to set
-	 */
-	public void setVentas(ArrayList<Venta> ventas) {
-		this.ventas = ventas;
-	}
-
+	@Override
 	/**
 	 * @return Una cadena de caracteres con todos los atributos de Consumidor
 	 */
 	public String toString() 
 	{
 		return "Consumidor [id=" + id + ", nombre=" + nombre + ", correoElectronico=" + correoElectronico + ", idFidelizacion=" + idFidelizacion
-				+ ", ventas=" + ventas + "]";
+				+  "]";
 	}
 
 }
