@@ -25,6 +25,30 @@ public class Estante implements VOEstante {
 	public Estante(){
 
 	}
+	
+	/**
+	 * @param idEstante - El identificador del estante
+	 * @param cantidadProductos - la cantidad de productos en el estante
+	 * @param capacidadTotal - La capacidad de el estante
+	 * @param peso - El peso manejado en el estante
+	 * @param volumen - El volumen manejado en el estante
+	 * @param tipoProducto - El tipo de producto que maneja el estante
+	 * @param equipamientoAdicional el equipamiento adicional del estante
+	 * @param nivelDeAbastecimiento nivel de abastecimiento del estante
+	 * @param idSucursal
+	 */
+	public Estante (long idEstante, String nombre, int cantidadProductos, int capacidadTotal, double peso, double volumen, String tipoProducto, String equipamientoAdicional, int nivelDeAbastecimiento, long idSucursal) 
+	{
+		id = idEstante;
+		this.peso = peso;
+		this.volumen = volumen;
+		this.cantidadProductos = cantidadProductos;
+		this.nivelDeAbastecimiento = nivelDeAbastecimiento;
+		this.capacidadTotal = capacidadTotal;
+		this.nombre = nombre;
+		this.equipamientoAdicional = equipamientoAdicional;
+		this.idSucursal = idSucursal;
+	}
 
 	/**
 	 * @return the peso
@@ -181,7 +205,7 @@ public class Estante implements VOEstante {
 	public String toString() 
 	{
 		return "Estante [id=" + id + ", nombre=" + nombre + ", peso=" + peso +", volumen=" + volumen + ", idSucursal=" + idSucursal
-				+ ", cantidadProductos=" + cantidadProductos + ", capacidadTotal=" + capacidadTotal + ", equipamientoAdicional=" + equipamientoAdicional +", nivelDeAbastecimiento="+ nivelDeAbastecimiento + ", productos=" + productos +"]";
+				+ ", cantidadProductos=" + cantidadProductos + ", capacidadTotal=" + capacidadTotal + ", equipamientoAdicional=" + equipamientoAdicional +", nivelDeAbastecimiento="+ nivelDeAbastecimiento +"]";
 	}
 
 }

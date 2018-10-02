@@ -26,6 +26,34 @@ public class Producto implements VOProducto {
 	public Producto(){
 
 	}
+	
+	/**
+	 * @param idProducto - El identificador de la producto
+	 * @param nombre - El nombre de la producto
+	 * @param idCategoria - El identificador del tipo de categoria de la producto
+	 * @param cantidad - cantidad de producto
+	 * @param codigoDeBarras el codigo de barras
+	 * @param especificacionDeEmpaquetado especificacion del empaquetado
+	 * @param estado estado del producto
+	 * @param marca marca del producto
+	 * @param precioPorUnidadMedida precio por unidad medida
+	 * @param precioUnitario precio unitario 
+	 * @param presentacion presentacion
+	 * @param unidadDeMedida unidad de medida
+	 */
+	public Producto (long idProducto, String nombre, long idCategoria, int cantidad, String codigoDeBarras, String especificacionDeEmpaquetado, boolean estado, String marca, double precioPorUnidadMedida, double precioUnitario, String presentacion, String unidadDeMedida) 
+	{
+		id = idProducto;
+		this.nombre = nombre;
+		this.marca = marca;
+		this.precioUnitario = precioUnitario;
+		this.presentacion = presentacion;
+		this.precioPorUnidadDeMedida = precioPorUnidadMedida;
+		this.especificacionDeEmpaquetado = especificacionDeEmpaquetado;
+		this.codigoDeBarras = codigoDeBarras;
+		this.estado = estado;
+		this.idCategoria = idCategoria;
+	}
 
 	/**
 	 * @return the nombre

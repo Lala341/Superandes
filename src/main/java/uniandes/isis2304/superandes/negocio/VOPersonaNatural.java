@@ -8,6 +8,12 @@ package uniandes.isis2304.superandes.negocio;
 public interface VOPersonaNatural {
 
 	/**
+	 * 
+	 * @return el id de consumidor
+	 */
+	public long getIdConsumidor();
+	
+	/**
 	 * @return the documentoIdentidad
 	 */
 	public int getDocumentoIdentidad();

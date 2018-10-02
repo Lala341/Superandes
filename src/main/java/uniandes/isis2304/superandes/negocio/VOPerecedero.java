@@ -14,6 +14,12 @@ public interface VOPerecedero {
 	 * @return id
 	 */
 	public long getId();
+	
+	/**
+	 * 
+	 * @return the Categoria
+	 */
+	public long getIdCategoria();
 
 	/**
 	 * @return the fechaDeVencimiento

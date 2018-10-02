@@ -12,6 +12,12 @@ public interface VONoPerecedero {
 	 * @return id
 	 */
 	public long getId();
+	
+	/**
+	 * 
+	 * @return the Categoria
+	 */
+	public long getIdCategoria();
 
 	/**
 	 * @return the tipoCategoriaNoPerecedera

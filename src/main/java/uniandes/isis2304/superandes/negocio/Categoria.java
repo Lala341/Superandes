@@ -1,6 +1,5 @@
 package uniandes.isis2304.superandes.negocio;
 
-
 /**
  * @version 1.0
  * @created 30-sep-2018 10:00:27
@@ -16,6 +15,19 @@ public class Categoria {
 
 	}
 	
+	/**
+	 * @param idCategoria - El identificador de la categoria
+	 * @param nombre - El nombre de la categoria
+	 * @param tipoDeAlmacenamiento - El tipo de almacenamiento de la categoria
+	 * @param tipoDeManejo - El tipo de manejo de la categoria
+	 */
+	public Categoria (long idCategoria, String nombre, String tipoDeAlmacenamiento, String tipoDeManejo) 
+	{
+		id = idCategoria;
+		this.nombre = nombre;
+		this.tipoDeAlmacenamiento = tipoDeAlmacenamiento;
+		this.tipoDeAlmacenamiento = tipoDeManejo;
+	}
 	/**
 	 * 
 	 * @return el id

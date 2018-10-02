@@ -8,12 +8,25 @@ package uniandes.isis2304.superandes.negocio;
 public class NoPerecedero implements VONoPerecedero {
 
 	private long id;
+	private long idCategoria;
 	private String tipoCategoriaNoPerecedera;
 
 	public NoPerecedero(){
 
 	}
 	
+	
+	/**
+	 * @param idNoPerecedero - El identificador del noPerecedero
+	 * @param tipoCategoriaNoPerecedera - el tipo de cateogoria del producto noPerecedero
+	 * @param idCategoria
+	 */
+	public NoPerecedero (long idNoPerecedero, String tipoCategoriaNoPerecedera, long idCategoria) 
+	{
+		id = idNoPerecedero;
+		this.idCategoria = idCategoria;
+		this.tipoCategoriaNoPerecedera = tipoCategoriaNoPerecedera;
+	}
 	/**
 	 * 
 	 * @return id
@@ -28,6 +41,22 @@ public class NoPerecedero implements VONoPerecedero {
 	 */
 	public void setId(long id) {
 		this.id = id;
+	}
+	
+	/**
+	 * 
+	 * @return the Categoria
+	 */
+	public long getIdCategoria() {
+		return idCategoria;
+	}
+	
+	/**
+	 * Modifica la categoria
+	 * @param idCategoria la categoria
+	 */
+	public void setIdCategoria(long idCategoria) {
+		this.idCategoria = idCategoria;
 	}
 	
 	/**

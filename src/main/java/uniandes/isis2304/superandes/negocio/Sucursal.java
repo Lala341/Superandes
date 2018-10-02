@@ -16,9 +16,28 @@ public class Sucursal implements VOSucursal {
 	private ArrayList<Bodega> bodegas;
 	private ArrayList<Estante> estantes;
 
-	
+	/**
+	 * Constructor por defecto
+	 */
 	public Sucursal(){
 
+	}
+	
+	/**
+	 * Constructor con valores
+	 * @param id - El id de la sucursal
+	 * @param tamanho - El tamanho de la sucursal
+	 * @param tipoDeMercado - tipo de mercado
+	 * @param ventasTotales - ventas totales
+	 * @param idCiudad - id ciudad
+	 */
+	public Sucursal (long idSucursal, long tamanho, String tipoDeMercado, double ventasTotales, long idCiudad) 
+	{
+		this.id = idSucursal;
+		this.tamanho = tamanho;
+		this.tipoDeMercado = tipoDeMercado;
+		this.ventasTotales = ventasTotales;
+		this.idCiudad = idCiudad;
 	}
 
 
@@ -139,7 +158,7 @@ public class Sucursal implements VOSucursal {
 	public String toString() 
 	{
 		return "Sucursal [id=" + id + ", tamanho=" + tamanho + ", tipoDeMercado=" + tipoDeMercado + ", ventasTotales=" + ventasTotales
-				+ ", idCiudad=" + idCiudad + ", bodegas="+bodegas + ", estantes="+ estantes + "]";
+				+ ", idCiudad=" + idCiudad + "]";
 	}
 	
 
