@@ -191,7 +191,37 @@ public class PersistenciaSuperandes {
 	
 	private void crearClasesSQL() {
 		// TODO Auto-generated method stub
-		sqlCiudad = new SQLCiudad(this);
+		
+		sqlUtil= new SQLUtil(this);
+
+		sqlCiudad=new SQLCiudad(this);
+
+		sqlConsumidor= new SQLConsumidor(this);
+
+		sqlFidelizacion= new SQLFidelizacion(this);
+
+		sqlProductoTransaccion= new SQLProductoTransaccion(this) ;
+
+		sqlVenta= new  SQLVenta(this) ;
+
+		sqlFactura= new SQLFactura(this) ;
+
+		sqlCarritoCompras= new SQLCarritoCompras(this) ;
+
+		sqlProductoVenta= new SQLProductoVenta(this) ;
+
+		sqlProductoCarritoCompras= new SQLProductoCarritoCompras(this) ;
+
+		sqlPromocion= new SQLPromocion(this) ;
+
+		sqlPromocionSucursal= new SQLPromocionSucursal(this) ;
+
+		sqlProveedores= new SQLProveedores(this) ;
+
+		sqlProductoOfrecido= new SQLProductoOfrecido(this) ;
+
+		sqlOrdenPedido= new SQLOrdenPedido(this) ;
+		
 		
 	}
 	/**
