@@ -76,13 +76,13 @@ public class PersistenciaSuperandes {
 		tablas.add ("PRODUCTO");
 		tablas.add ("PRODUCTOESTANTE");
 		tablas.add ("PRODUCTOBODEGA");
+		tablas.add ("CONSUMIDOR");
 		tablas.add ("PERSONANATURAL");
 		tablas.add ("EMPRESA");
-		tablas.add ("CONSUMIDOR");
 		tablas.add ("FIDELIZACION");
 		tablas.add ("PRODUCTOTRANSACCION");
-		tablas.add ("VENTA");
 		tablas.add ("FACTURA");
+		tablas.add ("VENTA");
 		tablas.add ("CARRITOCOMPRAS");
 		tablas.add ("PRODUCTOVENTA");
 		tablas.add ("PRODUCTOCARRITOCOMPRAS");
@@ -260,21 +260,21 @@ public class PersistenciaSuperandes {
 	 */
 	public String darTablaPersonaNatural ()
 	{
-		return tablas.get (12);
+		return tablas.get (13);
 	}
 	/**
 	 * @return La cadena de caracteres con el nombre de la tabla
 	 */
 	public String darTablaEmpresa ()
 	{
-		return tablas.get (13);
+		return tablas.get (14);
 	}
 	/**
 	 * @return La cadena de caracteres con el nombre de la tabla
 	 */
 	public String darTablaConsumidor ()
 	{
-		return tablas.get (14);
+		return tablas.get (12);
 	}
 	/**
 	 * @return La cadena de caracteres con el nombre de la tabla
@@ -295,14 +295,14 @@ public class PersistenciaSuperandes {
 	 */
 	public String darTablaVenta ()
 	{
-		return tablas.get (17);
+		return tablas.get (18);
 	}
 	/**
 	 * @return La cadena de caracteres con el nombre de la tabla
 	 */
 	public String darTablaFactura ()
 	{
-		return tablas.get (18);
+		return tablas.get (17);
 	}
 	/**
 	 * @return La cadena de caracteres con el nombre de la tabla
