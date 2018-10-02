@@ -660,14 +660,13 @@ public class PersistenciaSuperandes {
 	 * Adiciona entradas al log de la aplicación
 	  * @return El objeto adicionado. null si ocurre alguna Excepción
 	 */
-	public Fidelizacion adicionarFidelizacion(int puntos)
+	public Fidelizacion adicionarFidelizacion(long id,int puntos)
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
         Transaction tx=pm.currentTransaction();
         try
         {
             tx.begin();
-            long id = nextval ();
             long tuplasInsertadas = sqlFidelizacion.adicionar(pm, id,puntos);
             tx.commit();
             
@@ -753,14 +752,13 @@ public class PersistenciaSuperandes {
 	 * Adiciona entradas al log de la aplicación
 	  * @return El objeto adicionado. null si ocurre alguna Excepción
 	 */
-	public ProductoTransaccion adicionarProductoTransaccion(int cantidad)
+	public ProductoTransaccion adicionarProductoTransaccion(long id, int cantidad)
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
         Transaction tx=pm.currentTransaction();
         try
         {
             tx.begin();
-            long id = nextval ();
             long tuplasInsertadas = sqlProductoTransaccion.adicionar(pm, id,cantidad);
             tx.commit();
             
@@ -1797,9 +1795,9 @@ public class PersistenciaSuperandes {
 	 * Método que consulta todas las tuplas en la tabla 
 	 * @return El objeto, construido con base en las tuplas de la tabla con el identificador dado
 	 */
-	public Proveedores darProveedoresPorId (long id)
+	public Proveedores darProveedoresPorNIT(int i)
 	{
-		return sqlProveedores.darPorId (pmf.getPersistenceManager(), id);
+		return sqlProveedores.darPorNIT (pmf.getPersistenceManager(), i);
 	}
 	
 	

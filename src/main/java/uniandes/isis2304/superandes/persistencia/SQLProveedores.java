@@ -66,7 +66,7 @@ public class SQLProveedores {
 	/**
 	 * Crea y ejecuta la sentencia SQL para encontrar la información de un elemento por su identificador
 	 */
-	public Proveedores darPorId (PersistenceManager pm, long nit) 
+	public Proveedores darPorNIT (PersistenceManager pm, int nit) 
 	{
 		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaProveedores() + " WHERE nit = ?");
 		q.setResultClass(Proveedores.class);
