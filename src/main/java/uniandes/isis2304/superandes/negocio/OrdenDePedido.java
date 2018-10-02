@@ -13,7 +13,7 @@ public class OrdenDePedido {
 	private String estado;
 	private String fecha;
 	private long id;
-	private Proveedor proveedor;
+	private Proveedores proveedor;
 	private int cantidadVenta;
 	private String unidadDeMedida;
 	private ProductoOfrecido productoOfrecido;
@@ -142,14 +142,14 @@ public class OrdenDePedido {
 	/**
 	 * @return the proveedor
 	 */
-	public Proveedor getProveedor() {
+	public Proveedores getProveedor() {
 		return proveedor;
 	}
 
 	/**
 	 * @param proveedores the proveedores to set
 	 */
-	public void setProveedores(Proveedor proveedor) {
+	public void setProveedores(Proveedores proveedor) {
 		this.proveedor = proveedor;
 	}
 

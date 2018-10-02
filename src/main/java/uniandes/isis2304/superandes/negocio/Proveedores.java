@@ -6,13 +6,13 @@ import java.util.ArrayList;
  * @version 1.0
  * @created 30-sep-2018 10:00:44
  */
-public class Proveedor {
+public class Proveedores {
 
 	private int nit;
 	private String nombre;
 	private ArrayList<ProductoOfrecido> productoOfrecido;
 
-	public Proveedor(){
+	public Proveedores(){
 
 	}
 

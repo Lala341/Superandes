@@ -6,13 +6,13 @@ import java.util.ArrayList;
  * @version 1.0
  * @created 30-sep-2018 10:00:26
  */
-public class CarritoDeCompras {
+public class CarritoCompras {
 
 	private String estado;
 	private Consumidor consumidor;
 	private ArrayList<ProductoTransaccion> productosTransaccion;
 
-	public CarritoDeCompras(){
+	public CarritoCompras(){
 
 	}
 

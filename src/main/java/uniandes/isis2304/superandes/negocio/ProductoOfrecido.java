@@ -12,7 +12,7 @@ public class ProductoOfrecido {
 	private int calidad;
 	private int cumplimiento;
 	private Producto producto;
-	private Proveedor proveedor;
+	private Proveedores proveedor;
 	
 	public ProductoOfrecido(){
 
@@ -91,14 +91,14 @@ public class ProductoOfrecido {
 	/**
 	 * @return the proveedor
 	 */
-	public Proveedor getProveedor() {
+	public Proveedores getProveedor() {
 		return proveedor;
 	}
 
 	/**
 	 * @param proveedor the proveedor to set
 	 */
-	public void setProveedor(Proveedor proveedor) {
+	public void setProveedor(Proveedores proveedor) {
 		this.proveedor = proveedor;
 	}
 

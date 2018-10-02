@@ -62,7 +62,7 @@ e.printStackTrace();
 			log.info ("La causa es: " + e.getCause ().toString ());
 
 			String msg = "Prueba de acceso normal a la base de datos falló !! Revise persistence.xml.\n";
-			msg += "Revise el log de parranderos y el de datanucleus para conocer el detalle de la excepción";
+			msg += "Revise el log  y el de datanucleus para conocer el detalle de la excepción";
 //			System.out.println (msg);
 			fail (msg);
 		}
