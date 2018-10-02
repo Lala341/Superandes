@@ -7,13 +7,82 @@ package uniandes.isis2304.superandes.negocio;
  */
 public class Categoria {
 
+	private long id;
 	private String nombre;
 	private String tipoDeAlmacenamiento;
 	private String tipoDeManejo;
-
+	
 	public Categoria(){
 
 	}
+	
+	/**
+	 * 
+	 * @return el id
+	 */
+	public long getId() {
+		return id;
+	}
+	
+	/**
+	 * 
+	 * @param id modifica el id
+	 */
+	public void setId(long id) {
+		this.id = id;
+	}
+	
+	/**
+	 * @return the Nombre
+	 */
+	public String getNombre() {
+		return nombre;
+	}
+	
+	/**
+	 * @param nombre modifica el nombre
+	 */
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+	
+	/**
+	 * @return el tipoDeAlmacenamiento
+	 */
+	public String getTipoDeAlmacenamiento() {
+		return tipoDeAlmacenamiento;
+	}
+	
+	/**
+	 * @param tipoDeAlmacenamiento modifica el tipo de almacenamiento 
+	 */
+	public void setTipoDeAlmacenamiento(String tipoDeAlmacenamiento) {
+		this.tipoDeAlmacenamiento = tipoDeAlmacenamiento;
+	}
+	
+	/**
+	 * @return el tipoDeManejo
+	 */
+	public String getTipoDeManejo() {
+		return tipoDeManejo;
+	}
+	
+	/**
+	 * @param tipoDeManejo modifica el tipo de manejo
+	 */
+	public void setTipoDeManejo(String tipoDeManejo) {
+		this.tipoDeManejo = tipoDeManejo;
+	}
+	
+	/**
+	 * @return Una cadena de caracteres con todos los atributos de la Categoria
+	 */
+	public String toString() 
+	{
+		return "Categoria [id=" + id + ", nombre=" + nombre + ", tipoDeAlmacenamiento=" + tipoDeAlmacenamiento + ", tipoDeManejo=" + tipoDeManejo
+				+ "]";
+	}
+	
 
 	
 }

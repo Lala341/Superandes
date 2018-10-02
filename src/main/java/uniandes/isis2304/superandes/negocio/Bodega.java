@@ -7,7 +7,7 @@ import java.util.ArrayList;
  * @version 1.0
  * @created 30-sep-2018 10:00:24
  */
-public class Bodega {
+public class Bodega implements VOBodega {
 
 	public static final String NIVEL_DE_REORDEN="";
 	
@@ -16,12 +16,10 @@ public class Bodega {
 	private int capacidadTotal;
 	private int cantidadProductos;
 	private long id;
-	private Sucursal sucursal;
+	private long idSucursal;
 	private ArrayList<Producto> productos;
 	
-	public Bodega(){
-
-	}
+	
 
 	/**
 	 * @return the volumen
@@ -104,15 +102,15 @@ public class Bodega {
 	/**
 	 * @return the sucursal
 	 */
-	public Sucursal getSucursal() {
-		return sucursal;
+	public long getIdSucursal() {
+		return idSucursal;
 	}
 
 	/**
-	 * @param sucursal the sucursal to set
+	 * @param idSucursal the sucursal to set
 	 */
-	public void setSucursal(Sucursal sucursal) {
-		this.sucursal = sucursal;
+	public void setIdSucursal(long idSucursal) {
+		this.idSucursal = idSucursal;
 	}
 
 	/**
@@ -135,7 +133,7 @@ public class Bodega {
 	 */
 	public String toString() 
 	{
-		return "Bodega [id=" + id + ", peso=" + peso + ", volumen=" + volumen + ", sucursal=" + sucursal.toString()
+		return "Bodega [id=" + id + ", peso=" + peso + ", volumen=" + volumen + ", idSucursal=" + idSucursal
 				+ ", cantidadProductos=" + cantidadProductos + ", capacidadTotal=" + capacidadTotal +", productos=" + productos +"]";
 	}
 

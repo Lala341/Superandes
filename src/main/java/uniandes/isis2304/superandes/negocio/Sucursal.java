@@ -6,13 +6,13 @@ import java.util.ArrayList;
  * @version 1.0
  * @created 30-sep-2018 10:00:45
  */
-public class Sucursal {
+public class Sucursal implements VOSucursal {
 
 	private double tamanho;
 	private String tipoDeMercado;
 	private double ventasTotales;
 	private long id;
-	private Ciudad ciudad;
+	private long idCiudad;
 	private ArrayList<Bodega> bodegas;
 	private ArrayList<Estante> estantes;
 
@@ -89,16 +89,16 @@ public class Sucursal {
 	/**
 	 * @return the ciudad
 	 */
-	public Ciudad getCiudad() {
-		return ciudad;
+	public long getIdCiudad() {
+		return idCiudad;
 	}
 
 
 	/**
-	 * @param ciudad the ciudad to set
+	 * @param idCiudad the ciudad to set
 	 */
-	public void setCiudad(Ciudad ciudad) {
-		this.ciudad = ciudad;
+	public void setIdCiudad(long idCiudad) {
+		this.idCiudad = idCiudad;
 	}
 
 
@@ -132,7 +132,15 @@ public class Sucursal {
 	public void setEstantes(ArrayList<Estante> estantes) {
 		this.estantes = estantes;
 	}
-
+	
+	/**
+	 * @return Una cadena de caracteres con todos los atributos de la Sucursal
+	 */
+	public String toString() 
+	{
+		return "Sucursal [id=" + id + ", tamanho=" + tamanho + ", tipoDeMercado=" + tipoDeMercado + ", ventasTotales=" + ventasTotales
+				+ ", idCiudad=" + idCiudad + ", bodegas="+bodegas + ", estantes="+ estantes + "]";
+	}
 	
 
 }

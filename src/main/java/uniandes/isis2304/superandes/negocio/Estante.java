@@ -6,7 +6,7 @@ import java.util.ArrayList;
  * @version 1.0
  * @created 30-sep-2018 10:00:33
  */
-public class Estante {
+public class Estante implements VOEstante {
 
 	public static final String NIVEL_DE_REORDEN="";
 	
@@ -19,7 +19,7 @@ public class Estante {
 	private String nombre;
 	private String equipamientoAdicional;
 	private long id;
-	private Sucursal sucursal;
+	private long idSucursal;
 	private ArrayList<Producto> productos;
 
 	public Estante(){
@@ -141,15 +141,15 @@ public class Estante {
 	/**
 	 * @return the sucursal
 	 */
-	public Sucursal getSucursal() {
-		return sucursal;
+	public long getIdSucursal() {
+		return idSucursal;
 	}
 
 	/**
-	 * @param sucursal the sucursal to set
+	 * @param idSucursal the sucursal to set
 	 */
-	public void setSucursal(Sucursal sucursal) {
-		this.sucursal = sucursal;
+	public void setIdSucursal(long idSucursal) {
+		this.idSucursal = idSucursal;
 	}
 
 	
@@ -175,6 +175,13 @@ public class Estante {
 		this.productos = productos;
 	}
 
-	
+	/**
+	 * @return Una cadena de caracteres con todos los atributos
+	 */
+	public String toString() 
+	{
+		return "Estante [id=" + id + ", nombre=" + nombre + ", peso=" + peso +", volumen=" + volumen + ", idSucursal=" + idSucursal
+				+ ", cantidadProductos=" + cantidadProductos + ", capacidadTotal=" + capacidadTotal + ", equipamientoAdicional=" + equipamientoAdicional +", nivelDeAbastecimiento="+ nivelDeAbastecimiento + ", productos=" + productos +"]";
+	}
 
 }

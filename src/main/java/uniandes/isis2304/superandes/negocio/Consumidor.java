@@ -6,15 +6,30 @@ import java.util.ArrayList;
  * @version 1.0
  * @created 30-sep-2018 10:00:29
  */
-public class Consumidor {
+public class Consumidor implements VOConsumidor {
 
+	private long id;
 	private String nombre;
 	private String correoElectronico;
-	private Fidelizacion fidelizacion;
+	private long idFidelizacion;
 	private ArrayList<Venta> ventas;
 
 	public Consumidor(){
 
+	}
+	
+	/**
+	 * @return the id
+	 */
+	public long getId() {
+		return id;
+	}
+
+	/**
+	 * @param id the id to set
+	 */
+	public void setId(long id) {
+		this.id = id;
 	}
 
 	/**
@@ -48,15 +63,15 @@ public class Consumidor {
 	/**
 	 * @return the fidelizacion
 	 */
-	public Fidelizacion getFidelizacion() {
-		return fidelizacion;
+	public long getIdFidelizacion() {
+		return idFidelizacion;
 	}
 
 	/**
-	 * @param fidelizacion the fidelizacion to set
+	 * @param idFidelizacion the fidelizacion to set
 	 */
-	public void setFidelizacion(Fidelizacion fidelizacion) {
-		this.fidelizacion = fidelizacion;
+	public void setFidelizacion(long idFidelizacion) {
+		this.idFidelizacion = idFidelizacion;
 	}
 
 	/**
@@ -73,6 +88,13 @@ public class Consumidor {
 		this.ventas = ventas;
 	}
 
-	
+	/**
+	 * @return Una cadena de caracteres con todos los atributos de Consumidor
+	 */
+	public String toString() 
+	{
+		return "Consumidor [id=" + id + ", nombre=" + nombre + ", correoElectronico=" + correoElectronico + ", idFidelizacion=" + idFidelizacion
+				+ ", ventas=" + ventas + "]";
+	}
 
 }

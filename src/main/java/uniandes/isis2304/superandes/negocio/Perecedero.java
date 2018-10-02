@@ -6,15 +6,32 @@ import java.util.Date;
  * @version 1.0
  * @created 30-sep-2018 10:00:38
  */
-public class Perecedero extends Categoria {
+public class Perecedero implements VOPerecedero {
 
+	private long id;
 	private Date fechaDeVencimiento;
 	private String tipoCategoriaPerecedera;
 
 	public Perecedero(){
 
 	}
-
+	
+	/**
+	 * 
+	 * @return id
+	 */
+	public long getId() {
+		return id;
+	}
+	
+	/**
+	 * 
+	 * @param id modifica el id
+	 */
+	public void setId(long id) {
+		this.id = id;
+	}
+	
 	/**
 	 * @return the fechaDeVencimiento
 	 */
@@ -43,6 +60,12 @@ public class Perecedero extends Categoria {
 		this.tipoCategoriaPerecedera = tipoCategoriaPerecedera;
 	}
 
-	
+	/**
+	 * @return Una cadena de caracteres con todos los atributos de la Sucursal
+	 */
+	public String toString() 
+	{
+		return "Perecedero [id=" + id + ", fechaDeVencimiento=" + fechaDeVencimiento + ", tipoDeCategoriaPerecedera=" + tipoCategoriaPerecedera + "]";
+	}
 
 }

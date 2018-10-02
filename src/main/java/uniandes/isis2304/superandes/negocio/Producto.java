@@ -6,7 +6,7 @@ import java.util.ArrayList;
  * @version 1.0
  * @created 30-sep-2018 10:00:40
  */
-public class Producto {
+public class Producto implements VOProducto {
 
 	private String nombre;
 	private String marca;
@@ -18,7 +18,7 @@ public class Producto {
 	private String especificacionDeEmpaquetado;
 	private String codigoDeBarras;
 	private boolean estado;
-	private Categoria categoria;
+	private long idCategoria;
 	private long id;
 	private ArrayList<Estante> estantes;
 	private ArrayList<Bodega> bodegas;
@@ -170,15 +170,15 @@ public class Producto {
 	/**
 	 * @return the categoria
 	 */
-	public Categoria getCategoria() {
-		return categoria;
+	public long getIdCategoria() {
+		return idCategoria;
 	}
 
 	/**
-	 * @param categoria the categoria to set
+	 * @param idCategoria the categoria to set
 	 */
-	public void setCategoria(Categoria categoria) {
-		this.categoria = categoria;
+	public void setCategoria(long idCategoria) {
+		this.idCategoria = idCategoria;
 	}
 
 	/**
@@ -222,7 +222,17 @@ public class Producto {
 	public void setBodegas(ArrayList<Bodega> bodegas) {
 		this.bodegas = bodegas;
 	}
-
+	
+	/**
+	 * @return Una cadena de caracteres con todos los atributos del Producto
+	 */
+	public String toString() 
+	{
+		return "Producto [id=" + id + ", nombre=" + nombre + ", marca=" + marca + ", precioUnitario=" + precioUnitario
+				+ ", precioPorUnidadDeMedida=" + precioPorUnidadDeMedida + ", cantidad=" + cantidad + ", idCategoria=" + idCategoria 
+				+ ", unidadDeMedida=" + unidadDeMedida + ", especificacionDeEmpaquetado=" + especificacionDeEmpaquetado 
+				+ ", codigoDeBarras=" + codigoDeBarras + ", estado=" + estado + ", bodegas="+bodegas + ", estantes="+ estantes + "]";
+	}
 	
 
 }
