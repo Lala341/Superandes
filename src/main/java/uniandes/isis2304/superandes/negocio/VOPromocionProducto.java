@@ -6,7 +6,7 @@ package uniandes.isis2304.superandes.negocio;
  * Sirve para proteger la información del negocio de posibles manipulaciones desde la interfaz 
  * 
  */
-public interface VOPromocionSucursal {
+public interface VOPromocionProducto {
 
 	
 
@@ -21,14 +21,14 @@ public interface VOPromocionSucursal {
 	public void setPromocion(long promocion);
 
 	/**
-	 * @return the sucursal
+	 * @return the Producto
 	 */
-	public long getSucursal();
+	public long getProducto();
 
 	/**
-	 * @param sucursal the sucursal to set
+	 * @param sucursal the Producto to set
 	 */
-	public void setSucursal(long sucursal);
+	public void setProducto(long producto);
 	
 	@Override
 	/**

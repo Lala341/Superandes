@@ -46,9 +46,10 @@ public class SQLUtil {
 	 */
 	public long [] limpiarSuperandes (PersistenceManager pm)
 	{
-        Query qSuperandes = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaSuperandes());          
         Query qCiudad = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaCiudad());   
         Query qSucursal = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaSucursal());   
+        Query qAdministrador = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaAdministrador());          
+        Query qAdministradorSucursal = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaAdministradorSucursal());          
         Query qBodega = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaBodega());   
         Query qEstante = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaEstante()); 
         Query qCategoria = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaCategoria());          
@@ -61,21 +62,26 @@ public class SQLUtil {
         Query qPersonaNatural = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaPersonaNatural());   
         Query qEmpresa = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaEmpresa());   
         Query qFidelizacion = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaFidelizacion());  
-        Query qProductoTransaccion = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaProductoTransaccion()); 
-        Query qFactura = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaFactura());   
         Query qVenta = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaVenta());   
+        Query qFactura = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaFactura());   
         Query qCarritoCompras = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaCarritoCompras());   
         Query qProductoVenta = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaProductoVenta());  
         Query qProductoCarritoCompras = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaProductoCarritoCompras());          
         Query qPromocion = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaPromocion());   
-        Query qPromocionSucursal = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaPromocionSucursal());   
+        Query qPromoDescuento = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaPromoDescuento());   
+        Query qPromoParteDescuento = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaPromoParteDescuento());   
+        Query qPromoUnidad = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaPromoUnidad());   
+        Query qPromoCantidad = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaPromoCantidad());   
+        Query qPromocionProducto = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaPromocionProducto());   
         Query qProveedores = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaProveedores());   
         Query qProductoOfrecido = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaProductoOfrecido());  
         Query qOrdenPedido = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaOrdenPedido());  
 
-        long qSuperandesEliminados = (long) qSuperandes.executeUnique ();
+        
         long qCiudadEliminados = (long) qCiudad.executeUnique ();
         long qSucursalEliminados = (long) qSucursal.executeUnique ();
+        long qAdministradorEliminados = (long) qAdministrador.executeUnique ();
+        long qAdministradorSucursalEliminados = (long) qAdministradorSucursal.executeUnique ();
         long qBodegaEliminados = (long) qBodega.executeUnique ();
         long qEstanteEliminados = (long) qEstante.executeUnique ();
         long qCategoriaEliminados = (long) qCategoria.executeUnique ();
@@ -88,24 +94,28 @@ public class SQLUtil {
         long qPersonaNaturalEliminados = (long) qPersonaNatural.executeUnique ();
         long qEmpresaEliminados = (long) qEmpresa.executeUnique ();
         long qFidelizacionEliminados = (long) qFidelizacion.executeUnique ();
-        long qProductoTransaccionEliminados = (long) qProductoTransaccion.executeUnique ();
-        long qFacturaEliminados = (long) qFactura.executeUnique ();
         long qVentaEliminados = (long) qVenta.executeUnique ();
+        long qFacturaEliminados = (long) qFactura.executeUnique ();
         long qCarritoComprasEliminados = (long) qCarritoCompras.executeUnique ();
         long qProductoVentaEliminados = (long) qProductoVenta.executeUnique ();
         long qProductoCarritoComprasEliminados = (long) qProductoCarritoCompras.executeUnique ();
         long qPromocionEliminados = (long) qPromocion.executeUnique ();
-        long qPromocionSucursalEliminados = (long) qPromocionSucursal.executeUnique ();
+        long qPromoDescuentoEliminados = (long) qPromoDescuento.executeUnique ();
+        long qPromoParteDescuentoEliminados = (long) qPromoParteDescuento.executeUnique ();
+        long qPromoUnidadEliminados = (long) qPromoUnidad.executeUnique ();
+        long qPromoCantidadEliminados = (long) qPromoCantidad.executeUnique ();
+        long qPromocionProductoEliminados = (long) qPromocionProducto.executeUnique ();
         long qProveedoresEliminados = (long) qProveedores.executeUnique ();
         long qProductoOfrecidoEliminados = (long) qProductoOfrecido.executeUnique ();
         long qOrdenPedidoEliminados = (long) qOrdenPedido.executeUnique ();
 
-        return new long[] {qSuperandesEliminados,qCiudadEliminados ,qSucursalEliminados,qBodegaEliminados, 
+        return new long[] {qCiudadEliminados ,qSucursalEliminados,qAdministradorEliminados, qAdministradorSucursalEliminados, qBodegaEliminados, 
         		qEstanteEliminados,qCategoriaEliminados ,qPerecederoEliminados ,qNoPerecederoEliminados, 
         		qProductoEliminados, qProductoEstanteEliminados,qProductoBodegaEliminados,qPersonaNaturalEliminados,
-        		qEmpresaEliminados,qConsumidorEliminados,qFidelizacionEliminados ,qProductoTransaccionEliminados,
+        		qEmpresaEliminados,qConsumidorEliminados,qFidelizacionEliminados,
         		qVentaEliminados, qFacturaEliminados ,qCarritoComprasEliminados, qProductoVentaEliminados,
-        		qProductoCarritoComprasEliminados, qPromocionEliminados, qPromocionSucursalEliminados,
+        		qProductoCarritoComprasEliminados, qPromocionEliminados,qPromoDescuentoEliminados,qPromoParteDescuentoEliminados,
+        		qPromoUnidadEliminados ,qPromoCantidadEliminados, qPromocionProductoEliminados,
         		qProveedoresEliminados, qProductoOfrecidoEliminados, qOrdenPedidoEliminados};
 	}
 

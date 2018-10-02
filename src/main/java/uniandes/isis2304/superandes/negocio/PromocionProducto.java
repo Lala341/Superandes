@@ -7,17 +7,17 @@ import java.util.Date;
  * @version 1.0
  * @created 30-sep-2018 10:00:43
  */
-public class PromocionSucursal implements VOPromocionSucursal{
+public class PromocionProducto implements VOPromocionProducto{
 
 	private long promocion;
-	private long sucursal;
+	private long producto;
 	
-	public PromocionSucursal(){
+	public PromocionProducto(){
 
 	}
-	public PromocionSucursal(long promocion,long sucursal){
+	public PromocionProducto(long promocion,long producto){
 		this.promocion=promocion;
-		this.sucursal=sucursal;
+		this.producto=producto;
 	}
 
 	/**
@@ -35,17 +35,17 @@ public class PromocionSucursal implements VOPromocionSucursal{
 	}
 
 	/**
-	 * @return the sucursal
+	 * @return the producto
 	 */
-	public long getSucursal() {
-		return sucursal;
+	public long getProducto() {
+		return producto;
 	}
 
 	/**
-	 * @param sucursal the sucursal to set
+	 * @param producto the producto to set
 	 */
-	public void setSucursal(long sucursal) {
-		this.sucursal = sucursal;
+	public void setProducto(long producto) {
+		this.producto = producto;
 	}
 
 	
@@ -56,7 +56,7 @@ public class PromocionSucursal implements VOPromocionSucursal{
 	 */
 	public String toString() 
 	{
-		return "PromocionSucursal [promocion=" + promocion + ", sucursal=" + sucursal +  "]";
+		return "PromocionProducto [promocion=" + promocion + ", producto=" + producto +  "]";
 	}
 
 }

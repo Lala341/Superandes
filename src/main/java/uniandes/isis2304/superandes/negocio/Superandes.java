@@ -19,7 +19,6 @@ import uniandes.isis2304.superandes.persistencia.PersistenciaSuperandes;
  */
 public class Superandes {
 
-	private int cantidadDeRecompra;
 	
 	/**
 	 * Logger para escribir la traza de la ejecuciÃ³n
@@ -62,19 +61,7 @@ public class Superandes {
 	}
 	
 
-	/**
-	 * @return the cantidadDeRecompra
-	 */
-	public int getCantidadDeRecompra() {
-		return cantidadDeRecompra;
-	}
-
-	/**
-	 * @param cantidadDeRecompra the cantidadDeRecompra to set
-	 */
-	public void setCantidadDeRecompra(int cantidadDeRecompra) {
-		this.cantidadDeRecompra = cantidadDeRecompra;
-	}
+	
 	
 	/* ****************************************************************
 	 * 			Métodos para manejar CIUDAD
@@ -312,78 +299,7 @@ public class Superandes {
 	}
 
 	
-	/* ****************************************************************
-	 * 			Métodos para manejar ProductoTransaccion
-	 *****************************************************************/
-	/**
-	 * Adiciona ProductoTransaccion de manera persistente 
-	 * Adiciona entradas al log de la aplicación
-	* @return El objeto. null si ocurre alguna Excepción
-	 */
-	public ProductoTransaccion adicionarProductoTransaccion (long idProducto, int cantidadVenta)
-	{
-        log.info ("Adicionando ProductoTransaccion: " + idProducto);
-        ProductoTransaccion ProductoTransaccion = pp.adicionarProductoTransaccion (idProducto, cantidadVenta);		
-        log.info ("Adicionando ProductoTransaccion: " + idProducto);
-        return ProductoTransaccion;
-	}
 	
-	/**
-	 * Elimina ProductoTransaccion por su cantidad
-	 * Adiciona entradas al log de la aplicación
-	 * @param nombre - El nombre a eliminar
-	 * @return El número de tuplas eliminadas
-	 */
-	public long eliminarProductoTransaccionPorCantidad (int c)
-	{
-		log.info ("Eliminando ProductoTransaccion por cantidad: " + c);
-        long resp = pp.eliminarProductoTransaccionPorCantidad (c);		
-        log.info ("Eliminando ProductoTransaccion por cantidad: " + resp + " tuplas eliminadas");
-        return resp;
-	}
-	
-	/**
-	 * Elimina ProductoTransaccion por su identificador
-	 * Adiciona entradas al log de la aplicación
-	 * @return El número de tuplas eliminadas
-	 */
-	public long eliminarProductoTransaccionPorId (long id)
-	{
-		log.info ("Eliminando ProductoTransaccion por id: " + id);
-        long resp = pp.eliminarProductoTransaccionPorId (id);		
-        log.info ("Eliminando ProductoTransaccion por id: " + resp + " tuplas eliminadas");
-        return resp;
-	}
-	
-	/**
-	 *	Lista  ProductoTransaccion en Superandes
-	 * Adiciona entradas al log de la aplicación
-	 * @return Una lista de ProductoTransaccion, llenos con su información básica
-	 */
-	public List<ProductoTransaccion> darProductoTransaccion ()
-	{
-		log.info ("Consultando ProductoTransaccion");
-        List<ProductoTransaccion> tiposBebida = pp.darProductoTransacciones();	
-        log.info ("Consultando ProductoTransaccion: " + tiposBebida.size() + " existentes");
-        return tiposBebida;
-	}
-
-	/**
-	 * Encuentra ProductoTransaccion en Superandes y los devuelve como una lista de VOProductoTransaccion
-	 * Adiciona entradas al log de la aplicación
-	 * @return Una lista de objetos VOProductoTransaccion con todos los tipos de ProductoTransaccion que conoce la aplicación, llenos con su información básica
-	 */
-	public List<VOProductoTransaccion> darVOProductoTransacciones ()
-	{
-		log.info ("Generando los VO de ProductoTransaccion");        
-        List<VOProductoTransaccion> voTipos = new LinkedList<VOProductoTransaccion> ();
-        for (ProductoTransaccion tb : pp.darProductoTransacciones ())
-        {
-        	voTipos.add (tb);
-        }
-        log.info ("Generando los VO de ProductoTransaccion: " + voTipos.size() + " existentes");
-        return voTipos;
-	}
 
 	
 	/* ****************************************************************
@@ -906,138 +822,140 @@ public class Superandes {
 	}
 	
 	
+	
+	
+	
 	/* ****************************************************************
-	 * 			Métodos para manejar PromocionSucursal
+	 * 			Métodos para manejar PromocionProducto
 	 *****************************************************************/
 	/**
-	 * Adiciona PromocionSucursal de manera persistente 
+	 * Adiciona PromocionProducto de manera persistente 
 	 * Adiciona entradas al log de la aplicación
 	* @return El objeto. null si ocurre alguna Excepción
 	 */
-	public PromocionSucursal adicionarPromocionSucursal (long promocion, long sucursal)
+	public PromocionProducto adicionarPromocionProducto (long promocion, long Producto)
 	{
-        log.info ("Adicionando PromocionSucursal: " + promocion);
-        PromocionSucursal PromocionSucursal = pp.adicionarPromocionSucursal ( promocion, sucursal);		
-        log.info ("Adicionando PromocionSucursal: " + promocion);
-        return PromocionSucursal;
+        log.info ("Adicionando PromocionProducto: " + promocion);
+        PromocionProducto PromocionProducto = pp.adicionarPromocionProducto( promocion, Producto);		
+        log.info ("Adicionando PromocionProducto: " + promocion);
+        return PromocionProducto;
 	}
 	
 	
 	
 	/**
-	 * Elimina PromocionSucursal por su identificadorSucursal
+	 * Elimina PromocionProducto por su identificadorProducto
 	 * Adiciona entradas al log de la aplicación
 	 * @return El número de tuplas eliminadas
 	 */
-	public long eliminarPromocionSucursalPorSucursal (long id)
+	public long eliminarPromocionProductoPorProducto (long id)
 	{
-		log.info ("Eliminando PromocionSucursal por idSucursal: " + id);
-        long resp = pp.eliminarPromocionSucursalPorIdSucursal (id);		
-        log.info ("Eliminando PromocionSucursal por idSucursal: " + resp + " tuplas eliminadas");
+		log.info ("Eliminando PromocionProducto por idProducto: " + id);
+        long resp = pp.eliminarPromocionProductoPorIdProducto (id);		
+        log.info ("Eliminando PromocionProducto por idProducto: " + resp + " tuplas eliminadas");
         return resp;
 	}
 	
 	/**
-	 * Elimina PromocionSucursal por su identificadorPromocion
+	 * Elimina PromocionProducto por su identificadorPromocion
 	 * Adiciona entradas al log de la aplicación
 	 * @return El número de tuplas eliminadas
 	 */
-	public long eliminarPromocionSucursalPorPromocion (long id)
+	public long eliminarPromocionProductoPorPromocion (long id)
 	{
-		log.info ("Eliminando PromocionSucursal por idPromocion: " + id);
-        long resp = pp.eliminarPromocionSucursalPorIdPromocion (id);		
-        log.info ("Eliminando PromocionSucursal por idPromocion: " + resp + " tuplas eliminadas");
+		log.info ("Eliminando PromocionProducto por idPromocion: " + id);
+        long resp = pp.eliminarPromocionProductoPorIdPromocion (id);		
+        log.info ("Eliminando PromocionProducto por idPromocion: " + resp + " tuplas eliminadas");
         return resp;
 	}
 	
 	/**
-	 *	Lista  PromocionSucursal en Superandes
+	 *	Lista  PromocionProducto en Superandes
 	 * Adiciona entradas al log de la aplicación
-	 * @return Una lista de PromocionSucursal, llenos con su información básica
+	 * @return Una lista de PromocionProducto, llenos con su información básica
 	 */
-	public List<PromocionSucursal> darPromocionSucursal ()
+	public List<PromocionProducto> darPromocionProducto ()
 	{
-		log.info ("Consultando PromocionSucursal");
-        List<PromocionSucursal> tiposBebida = pp.darPromocionesSucursales();	
-        log.info ("Consultando PromocionSucursal: " + tiposBebida.size() + " existentes");
+		log.info ("Consultando PromocionProducto");
+        List<PromocionProducto> tiposBebida = pp.darPromocionesProductoes();	
+        log.info ("Consultando PromocionProducto: " + tiposBebida.size() + " existentes");
         return tiposBebida;
 	}
 
 	/**
-	 * Encuentra PromocionSucursal en Superandes y los devuelve como una lista de VOPromocionSucursal
+	 * Encuentra PromocionProducto en Superandes y los devuelve como una lista de VOPromocionProducto
 	 * Adiciona entradas al log de la aplicación
-	 * @return Una lista de objetos VOPromocionSucursal con todos los tipos de PromocionSucursal que conoce la aplicación, llenos con su información básica
+	 * @return Una lista de objetos VOPromocionProducto con todos los tipos de PromocionProducto que conoce la aplicación, llenos con su información básica
 	 */
-	public List<VOPromocionSucursal> darVOPromocionSucursales ()
+	public List<VOPromocionProducto> darVOPromocionProductoes ()
 	{
-		log.info ("Generando los VO de PromocionSucursal");        
-        List<VOPromocionSucursal> voTipos = new LinkedList<VOPromocionSucursal> ();
-        for (PromocionSucursal tb : pp.darPromocionesSucursales ())
+		log.info ("Generando los VO de PromocionProducto");        
+        List<VOPromocionProducto> voTipos = new LinkedList<VOPromocionProducto> ();
+        for (PromocionProducto tb : pp.darPromocionesProductoes ())
         {
         	voTipos.add (tb);
         }
-        log.info ("Generando los VO de PromocionSucursal: " + voTipos.size() + " existentes");
+        log.info ("Generando los VO de PromocionProducto: " + voTipos.size() + " existentes");
         return voTipos;
 	}
 
 	/**
-	 * Encuentra PromocionSucursal en Superandes 
+	 * Encuentra PromocionProducto en Superandes 
 	 * Adiciona entradas al log de la aplicación
-	 * @param nombre - El nombre de PromocionSucursal
-	 * @return Un objeto PromocionSucursal, con su información básica
+	 * @param nombre - El nombre de PromocionProducto
+	 * @return Un objeto PromocionProducto, con su información básica
 	 */
-	public PromocionSucursal darPromocionSucursalPorSucursal (long sucursal)
+	public PromocionProducto darPromocionProductoPorProducto (long Producto)
 	{
-		log.info ("Buscando PromocionSucursal por sucursal: " + sucursal);
-		List<PromocionSucursal> tb = pp.darPromocionesSucursalPorSucursal(sucursal);
+		log.info ("Buscando PromocionProducto por Producto: " + Producto);
+		List<PromocionProducto> tb = pp.darPromocionesProductoPorProducto(Producto);
 		return !tb.isEmpty () ? tb.get (0) : null;
 	}
 	/**
-	 * Encuentra PromocionSucursal en Superandes y los devuelve como una lista de VOPromocionSucursal
+	 * Encuentra PromocionProducto en Superandes y los devuelve como una lista de VOPromocionProducto
 	 * Adiciona entradas al log de la aplicación
-	 * @return Una lista de objetos VOPromocionSucursal con todos los tipos de PromocionSucursal que conoce la aplicación, llenos con su información básica
+	 * @return Una lista de objetos VOPromocionProducto con todos los tipos de PromocionProducto que conoce la aplicación, llenos con su información básica
 	 */
-	public List<VOPromocionSucursal> darVOPromocionSucursalesPorSucursal (long sucursal)
+	public List<VOPromocionProducto> darVOPromocionProductoesPorProducto (long Producto)
 	{
-		log.info ("Generando los VO de PromocionSucursal");        
-        List<VOPromocionSucursal> voTipos = new LinkedList<VOPromocionSucursal> ();
-        for (PromocionSucursal tb : pp.darPromocionesSucursalPorSucursal(sucursal))
+		log.info ("Generando los VO de PromocionProducto");        
+        List<VOPromocionProducto> voTipos = new LinkedList<VOPromocionProducto> ();
+        for (PromocionProducto tb : pp.darPromocionesProductoPorProducto(Producto))
         {
         	voTipos.add (tb);
         }
-        log.info ("Generando los VO de PromocionSucursal: " + voTipos.size() + " existentes");
+        log.info ("Generando los VO de PromocionProducto: " + voTipos.size() + " existentes");
         return voTipos;
 	}
 	
 	/**
-	 * Encuentra PromocionSucursal en Superandes 
+	 * Encuentra PromocionProducto en Superandes 
 	 * Adiciona entradas al log de la aplicación
-	 * @param nombre - El nombre de PromocionSucursal
-	 * @return Un objeto PromocionSucursal, con su información básica
+	 * @param nombre - El nombre de PromocionProducto
+	 * @return Un objeto PromocionProducto, con su información básica
 	 */
-	public PromocionSucursal darPromocionSucursalPorPromocion (long p)
+	public PromocionProducto darPromocionProductoPorPromocion (long p)
 	{
-		log.info ("Buscando PromocionSucursal por Promocion: " + p);
-		List<PromocionSucursal> tb = pp.darPromocionesSucursalPorSucursal(p);
+		log.info ("Buscando PromocionProducto por Promocion: " + p);
+		List<PromocionProducto> tb = pp.darPromocionesProductoPorProducto(p);
 		return !tb.isEmpty () ? tb.get (0) : null;
 	}
 	/**
-	 * Encuentra PromocionSucursal en Superandes y los devuelve como una lista de VOPromocionSucursal
+	 * Encuentra PromocionProducto en Superandes y los devuelve como una lista de VOPromocionProducto
 	 * Adiciona entradas al log de la aplicación
-	 * @return Una lista de objetos VOPromocionSucursal con todos los tipos de PromocionSucursal que conoce la aplicación, llenos con su información básica
+	 * @return Una lista de objetos VOPromocionProducto con todos los tipos de PromocionProducto que conoce la aplicación, llenos con su información básica
 	 */
-	public List<VOPromocionSucursal> darVOPromocionSucursalesPorPromocion (long p)
+	public List<VOPromocionProducto> darVOPromocionProductoesPorPromocion (long p)
 	{
-		log.info ("Generando los VO de PromocionSucursal");        
-        List<VOPromocionSucursal> voTipos = new LinkedList<VOPromocionSucursal> ();
-        for (PromocionSucursal tb : pp.darPromocionesSucursalPorPromocion(p))
+		log.info ("Generando los VO de PromocionProducto");        
+        List<VOPromocionProducto> voTipos = new LinkedList<VOPromocionProducto> ();
+        for (PromocionProducto tb : pp.darPromocionesProductoPorPromocion(p))
         {
         	voTipos.add (tb);
         }
-        log.info ("Generando los VO de PromocionSucursal: " + voTipos.size() + " existentes");
+        log.info ("Generando los VO de PromocionProducto: " + voTipos.size() + " existentes");
         return voTipos;
 	}
-	
 	/* ****************************************************************
 	 * 			Métodos para manejar Proveedores
 	 *****************************************************************/
