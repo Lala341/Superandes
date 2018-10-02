@@ -2057,8 +2057,8 @@ public class PersistenciaSuperandes {
         catch (Exception e)
         {
         	e.printStackTrace();
-        	//log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
-        	//return new long[] {-1, -1, -1, -1, -1, -1, -1};
+        	log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+        	return new long[] {-1, -1, -1, -1, -1, -1, -1};
         }
         finally
         {
@@ -2068,7 +2068,6 @@ public class PersistenciaSuperandes {
             }
             pm.close();
         }
-		return null;
 		
 	}
 	private String darDetalleException(Exception e) {
