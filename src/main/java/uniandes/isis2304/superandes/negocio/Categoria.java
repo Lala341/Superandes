@@ -4,7 +4,7 @@ package uniandes.isis2304.superandes.negocio;
  * @version 1.0
  * @created 30-sep-2018 10:00:27
  */
-public class Categoria {
+public class Categoria implements VOCategoria {
 
 	private long id;
 	private String nombre;

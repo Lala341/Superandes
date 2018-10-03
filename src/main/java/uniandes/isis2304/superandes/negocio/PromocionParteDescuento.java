@@ -1,6 +1,6 @@
 package uniandes.isis2304.superandes.negocio;
 
-public class PromocionParteDescuento {
+public class PromocionParteDescuento implements VOPromocionParteDescuento {
 	
 	private long id;
 	private double descuento;

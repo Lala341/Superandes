@@ -1,6 +1,6 @@
 package uniandes.isis2304.superandes.negocio;
 
-public class PromocionUnidad {
+public class PromocionUnidad implements VOPromocionUnidad {
 	
 	private long idPromocion;
 	private int unidadVendidos;
