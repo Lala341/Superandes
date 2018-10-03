@@ -52,9 +52,9 @@ class SQLEmpresa
 	 * @param direccion direccion de Empresa
 	 * @return El número de tuplas insertadas
 	 */
-	public long adicionarEmpresa (PersistenceManager pm, long idConsumidor, int nit, String direccion) 
+	public long adicionarEmpresa (PersistenceManager pm, long idConsumidor, long nit, String direccion) 
 	{
-        Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaEmpresa () + "( idConsumidor, documentoIdentidad, direccion) values (?, ?, ?)");
+        Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaEmpresa () + "( idConsumidor, nit, direccion) values (?, ?, ?)");
         q.setParameters(idConsumidor, nit, direccion);
         return (long) q.executeUnique();
 	}

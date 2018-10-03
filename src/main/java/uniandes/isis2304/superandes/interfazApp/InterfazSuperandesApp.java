@@ -42,6 +42,7 @@ import com.google.gson.stream.JsonReader;
 import uniandes.isis2304.superandes.negocio.Superandes;
 import uniandes.isis2304.superandes.negocio.VOAdministrador;
 import uniandes.isis2304.superandes.negocio.VOCiudad;
+import uniandes.isis2304.superandes.negocio.VOConsumidor;
 import uniandes.isis2304.superandes.negocio.VOProducto;
 import uniandes.isis2304.superandes.negocio.VOPromocion;
 import uniandes.isis2304.superandes.negocio.VOProveedores;
@@ -593,6 +594,56 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 		}
    }
    public void RF3_RegistrarClientes(){
+	   try 
+		{
+			String nombre = JOptionPane.showInputDialog (this, "Nombre del cliente", "Adicionar Cliente", JOptionPane.QUESTION_MESSAGE);
+			String correoElectronico = JOptionPane.showInputDialog (this, "Correo Electronico del cliente", "Adicionar Cliente", JOptionPane.QUESTION_MESSAGE);
+			
+			String[] tipos= {"PNATURAL", "EMPRESA"};
+			String tipo = (String) JOptionPane.showInputDialog(null,"Seleccione el tipo de cliente", "Adicionar producto", JOptionPane.DEFAULT_OPTION, null, tipos, tipos[0]);
+			
+			String numeroIdentficacion="";
+			String nit="";
+			String direccion="";
+			if(tipo.equals(tipos[0])){
+			numeroIdentficacion = JOptionPane.showInputDialog (this, "Numero Identficacion (Ingrese solo numeros, sin puntos)", "Adicionar Cliente", JOptionPane.QUESTION_MESSAGE);
+			}
+			else if(tipo.equals(tipos[1])){
+			nit = JOptionPane.showInputDialog (this, "NIT del cliente (Ingrese solo numeros, sin puntos)", "Adicionar Cliente", JOptionPane.QUESTION_MESSAGE);
+			direccion = JOptionPane.showInputDialog (this, "Direccion del cliente", "Adicionar Cliente", JOptionPane.QUESTION_MESSAGE);
+			}
+			
+			
+			if (nombre != null&&tipo!=null&&correoElectronico!=null)
+			{
+				VOConsumidor tb= null;
+				if(tipo.equals(tipos[0])){
+					tb= superandes.registrarConsumidorPersonaNatural(nombre, correoElectronico, tipo, Long.parseLong(numeroIdentficacion));
+				}
+				else if(tipo.equals(tipos[1])){
+					tb= superandes.registrarConsumidorEmpresa(nombre, correoElectronico, tipo, Long.parseLong(nit), direccion);
+				}
+				
+				if (tb == null)
+	    		{
+	    			throw new Exception ("No se pudo crear un cliente con nombre: " + nombre);
+	    		}
+	    		String resultado = "En adicionarCliente\n\n";
+	    		resultado += "Cliente adicionado exitosamente: " + tb;
+				resultado += "\n Operación terminada";
+				panelDatos.actualizarInterfaz(resultado);
+			}
+			else
+			{
+				panelDatos.actualizarInterfaz("Operación cancelada por el usuario, llene todos los campos.");
+			}
+		} 
+		catch (Exception e) 
+		{
+//			e.printStackTrace();
+			String resultado = generarMensajeError(e);
+			panelDatos.actualizarInterfaz(resultado);
+		}
 	   
    }
    public void RF4_RegistrarSucursal(){

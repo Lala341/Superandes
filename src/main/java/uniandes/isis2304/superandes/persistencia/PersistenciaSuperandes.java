@@ -1716,7 +1716,7 @@ public class PersistenciaSuperandes {
 	 * @param idConsumidor - El identificador del Consumidor
 	 * @param documentoIdentidad - documentoIdentidad de PersonaNatural
 	 */
-	public PersonaNatural adicionarPersonaNatural (long idConsumidor, int documentoIdentidad) 
+	public PersonaNatural adicionarPersonaNatural (long idConsumidor, long documentoIdentidad) 
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
         Transaction tx=pm.currentTransaction();
@@ -1812,7 +1812,7 @@ public class PersistenciaSuperandes {
 	 * @param direccion direccion de Empresa
 	 * @return El número de tuplas insertadas
 	 */
-	public Empresa adicionarEmpresa (long idConsumidor, int nit, String direccion) 
+	public Empresa adicionarEmpresa (long idConsumidor, long nit, String direccion) 
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
         Transaction tx=pm.currentTransaction();

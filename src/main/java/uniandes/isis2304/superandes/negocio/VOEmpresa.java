@@ -16,7 +16,7 @@ public interface VOEmpresa {
 	/**
 	 * @return the nit
 	 */
-	public int getNit();
+	public long getNit();
 	
 	/**
 	 * @return Una cadena de caracteres con todos los atributos de la Empresa

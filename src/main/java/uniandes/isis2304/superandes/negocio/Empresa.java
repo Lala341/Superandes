@@ -8,7 +8,7 @@ public class Empresa extends Consumidor implements VOEmpresa {
 
 	private long idConsumidor;
 	private String direccion;
-	private int nit;
+	private long nit;
 
 	public Empresa(){
 
@@ -19,7 +19,7 @@ public class Empresa extends Consumidor implements VOEmpresa {
 	 * @param nit - id de Empresa
 	 * @param direccion direccion de Empresa
 	 */
-	public Empresa (long idConsumidor, int nit, String direccion) 
+	public Empresa (long idConsumidor, long nit, String direccion) 
 	{
 		this.idConsumidor = idConsumidor;
 		this.direccion = direccion;
@@ -59,14 +59,14 @@ public class Empresa extends Consumidor implements VOEmpresa {
 	/**
 	 * @return the nit
 	 */
-	public int getNit() {
+	public long getNit() {
 		return nit;
 	}
 
 	/**
 	 * @param nit the nit to set
 	 */
-	public void setNit(int nit) {
+	public void setNit(long nit) {
 		this.nit = nit;
 	}
 

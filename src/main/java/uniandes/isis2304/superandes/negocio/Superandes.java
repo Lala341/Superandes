@@ -1449,7 +1449,22 @@ public class Superandes {
         return producto;
 	}
 	
-	
+	public Consumidor registrarConsumidorPersonaNatural(String nombre, String correo,String tipo, long numI){
+		
+		Consumidor consu= pp.adicionarConsumidor(nombre, correo, tipo);
+		pp.adicionarPersonaNatural(consu.getId(), numI);
+		
+		return consu;
+		
+	}
+	public Consumidor registrarConsumidorEmpresa(String nombre, String correo,String tipo, long nit, String direccion){
+		
+		Consumidor consu= pp.adicionarConsumidor(nombre, correo, tipo);
+		pp.adicionarEmpresa(consu.getId(),nit,direccion);
+		
+		return consu;
+		
+	}
 	
 	
 

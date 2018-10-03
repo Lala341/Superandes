@@ -9,7 +9,7 @@ package uniandes.isis2304.superandes.negocio;
 public class PersonaNatural extends Consumidor implements VOPersonaNatural {
 
 	private long idConsumidor;
-	private int documentoIdentidad;
+	private long documentoIdentidad;
 
 	public PersonaNatural(){
 
@@ -20,7 +20,7 @@ public class PersonaNatural extends Consumidor implements VOPersonaNatural {
 	 * @param idConsumidor - El identificador del Consumidor
 	 * @param documentoIdentidad - documentoIdentidad de PersonaNatural
 	 */
-	public PersonaNatural (long idConsumidor, int documentoIdentidad) 
+	public PersonaNatural (long idConsumidor, long documentoIdentidad) 
 	{
 		this.idConsumidor = idConsumidor;
 		this.documentoIdentidad = documentoIdentidad;
@@ -46,14 +46,14 @@ public class PersonaNatural extends Consumidor implements VOPersonaNatural {
 	/**
 	 * @return the documentoIdentidad
 	 */
-	public int getDocumentoIdentidad() {
+	public long getDocumentoIdentidad() {
 		return documentoIdentidad;
 	}
 
 	/**
 	 * @param documentoIdentidad the documentoIdentidad to set
 	 */
-	public void setDocumentoIdentidad(int documentoIdentidad) {
+	public void setDocumentoIdentidad(long documentoIdentidad) {
 		this.documentoIdentidad = documentoIdentidad;
 	}
 

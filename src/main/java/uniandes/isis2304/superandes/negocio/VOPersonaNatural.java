@@ -16,7 +16,7 @@ public interface VOPersonaNatural {
 	/**
 	 * @return the documentoIdentidad
 	 */
-	public int getDocumentoIdentidad();
+	public long getDocumentoIdentidad();
 	
 	/**
 	 * @return Una cadena de caracteres con todos los atributos de PersonaNatural

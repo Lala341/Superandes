@@ -51,7 +51,7 @@ class SQLPersonaNatural
 	 * @param documentoIdentidad - documentoIdentidad de PersonaNatural
 	 * @return El número de tuplas insertadas
 	 */
-	public long adicionarPersonaNatural (PersistenceManager pm, long idConsumidor, int documentoIdentidad) 
+	public long adicionarPersonaNatural (PersistenceManager pm, long idConsumidor, long documentoIdentidad) 
 	{
         Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaPersonaNatural () + "( idConsumidor, documentoIdentidad) values (?, ?)");
         q.setParameters(idConsumidor, documentoIdentidad);
