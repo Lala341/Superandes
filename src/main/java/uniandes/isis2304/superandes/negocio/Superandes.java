@@ -71,10 +71,10 @@ public class Superandes {
 	 * Adiciona entradas al log de la aplicación
 	* @return El objeto. null si ocurre alguna Excepción
 	 */
-	public Ciudad adicionarCiudad (String nombre, String direccion)
+	public Ciudad adicionarCiudad (String nombre)
 	{
         log.info ("Adicionando Ciudad: " + nombre);
-        Ciudad ciudad = pp.adicionarCiudad (nombre, direccion);		
+        Ciudad ciudad = pp.adicionarCiudad (nombre);		
         log.info ("Adicionando ciudad: " + nombre);
         return ciudad;
 	}

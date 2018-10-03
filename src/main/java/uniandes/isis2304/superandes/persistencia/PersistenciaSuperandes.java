@@ -513,7 +513,7 @@ public class PersistenciaSuperandes {
 	 * Adiciona entradas al log de la aplicación
 	  * @return El objeto adicionado. null si ocurre alguna Excepción
 	 */
-	public Ciudad adicionarCiudad(String nombre,String direccion)
+	public Ciudad adicionarCiudad(String nombre)
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
         Transaction tx=pm.currentTransaction();
@@ -521,12 +521,12 @@ public class PersistenciaSuperandes {
         {
             tx.begin();
             long id = nextval ();
-            long tuplasInsertadas = sqlCiudad.adicionar(pm, id,nombre,direccion);
+            long tuplasInsertadas = sqlCiudad.adicionar(pm, id,nombre);
             tx.commit();
             
             log.trace ("Inserción de Ciudad: " + nombre + ": " + tuplasInsertadas + " tuplas insertadas");
             
-            return new Ciudad (id, nombre,direccion);
+            return new Ciudad (id, nombre);
         }
         catch (Exception e)
         {
