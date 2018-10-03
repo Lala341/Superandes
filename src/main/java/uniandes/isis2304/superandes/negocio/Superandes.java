@@ -2225,23 +2225,7 @@ public class Superandes {
         log.info ("Generando los VO de Proveedores: " + voTipos.size() + " existentes");
         return voTipos;
 	}
-	/**
-	 * Encuentra Proveedores en Superandes y los devuelve como una lista de VOProveedores
-	 * Adiciona entradas al log de la aplicación
-	 * @return Una lista de objetos VOProveedores con todos los tipos de Proveedores que conoce la aplicación, llenos con su información básica
-	 */
-	public List<VOProducto> darVOProductos ()
-	{
-		log.info ("Generando los VO de Productos");        
-        List<VOProducto> voTipos = new LinkedList<VOProducto> ();
-        for (Producto tb : pp.darProductos())
-        {
-        	voTipos.add (tb);
-        }
-        log.info ("Generando los VO de Productos: " + voTipos.size() + " existentes");
-        return voTipos;
-	}
-
+	
 	/**
 	 * Encuentra Proveedores en Superandes con el nombre solicitado
 	 * Adiciona entradas al log de la aplicación
