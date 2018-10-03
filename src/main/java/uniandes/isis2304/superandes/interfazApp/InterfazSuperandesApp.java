@@ -40,10 +40,13 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.stream.JsonReader;
 
+import uniandes.isis2304.superandes.negocio.Sucursal;
 import uniandes.isis2304.superandes.negocio.Superandes;
 import uniandes.isis2304.superandes.negocio.VOAdministrador;
+import uniandes.isis2304.superandes.negocio.VOBodega;
 import uniandes.isis2304.superandes.negocio.VOCiudad;
 import uniandes.isis2304.superandes.negocio.VOConsumidor;
+import uniandes.isis2304.superandes.negocio.VOEstante;
 import uniandes.isis2304.superandes.negocio.VOProducto;
 import uniandes.isis2304.superandes.negocio.VOPromocion;
 import uniandes.isis2304.superandes.negocio.VOProveedores;
@@ -707,9 +710,133 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
    }
    public void RF5_RegistrarBodega(){
 	   
+	   try 
+		{
+		  List<VOSucursal> sucursales=superandes.darVOSucursales();
+		    
+		   String[] sucursalesn= new String[sucursales.size()];
+		     
+		   int i=0;
+		   for (VOSucursal voSucursal :superandes.darSucursales()) {
+			   sucursalesn[i]=voSucursal.getNombre();
+			   i=i+1;
+			   
+		   }
+		   if(sucursales.size()==0){
+			   System.out.println("voy4");
+			   JOptionPane.showMessageDialog(this, "Agrege una Sucursal antes de registrar un bodega (Menu requerimientos F).");
+			   
+		   }else{
+		   
+			String volumen = JOptionPane.showInputDialog (this, "Volumen de la Bodega", "Adicionar Bodega", JOptionPane.QUESTION_MESSAGE);
+			String peso = JOptionPane.showInputDialog (this, "Peso de la Bodega", "Adicionar Bodega", JOptionPane.QUESTION_MESSAGE);
+
+			String nivelReorden = JOptionPane.showInputDialog (this, "Nivel Reorden de la Bodega", "Adicionar Bodega", JOptionPane.QUESTION_MESSAGE);
+			String capacidadTotal = JOptionPane.showInputDialog (this, "Capacidad total de la Bodega", "Adicionar Bodega", JOptionPane.QUESTION_MESSAGE);
+			
+			String sucursal= (String) JOptionPane.showInputDialog(null,"Seleccione la sucursal de la bodega", "Adicionar Bodega", JOptionPane.DEFAULT_OPTION, null, sucursalesn, sucursalesn[0]);
+			
+			String cantidadProducto = JOptionPane.showInputDialog (this, "Cantidad de productos de la Bodega", "Adicionar Bodega", JOptionPane.QUESTION_MESSAGE);
+			
+			String[] tcategorias= {"ASEO", "ABARROTES", "PRENDASDEVESTIR", "MUEBLES", "HERRAMIENTAS", "ELECTRODOMESTICOS", "CONGELADOS"};
+			String tipoCategoria = (String) JOptionPane.showInputDialog(null,"Seleccione el tipo de producto de la bodega", "Adicionar bodega", JOptionPane.DEFAULT_OPTION, null, tcategorias, tcategorias[0]);
+			
+			
+			
+			
+			
+			if (volumen != null&&peso!=null&&capacidadTotal!=null&&sucursal!=null&&cantidadProducto!=null&&tipoCategoria!=null)
+			{
+				VOBodega tb= superandes.registrarBodegaASucursal(Integer.parseInt(cantidadProducto), Integer.parseInt(capacidadTotal), Double.parseDouble(peso), Double.parseDouble(volumen), tipoCategoria, Double.parseDouble(nivelReorden), sucursales.get(i-1).getId());
+				
+				if (tb == null)
+	    		{
+	    			throw new Exception ("No se pudo crear la Bodega");
+	    		}
+	    		String resultado = "En adicionarBodega\n\n";
+	    		resultado += "Bodega adicionado exitosamente: " + tb;
+				resultado += "\n Operación terminada";
+				panelDatos.actualizarInterfaz(resultado);
+			}
+			else
+			{
+				panelDatos.actualizarInterfaz("Operación cancelada por el usuario, llene todos los campos.");
+			}
+		   }
+		} 
+		catch (Exception e) 
+		{
+//			e.printStackTrace();
+			String resultado = generarMensajeError(e);
+			panelDatos.actualizarInterfaz(resultado);
+		}
+	   
    }
    public void RF6_RegistrarEstante(){
 	   
+	   try 
+		{
+		  List<VOSucursal> sucursales=superandes.darVOSucursales();
+		    
+		   String[] sucursalesn= new String[sucursales.size()];
+		     
+		   int i=0;
+		   for (VOSucursal voSucursal :superandes.darSucursales()) {
+			   sucursalesn[i]=voSucursal.getNombre();
+			   i=i+1;
+			   
+		   }
+		   if(sucursales.size()==0){
+			   System.out.println("voy4");
+			   JOptionPane.showMessageDialog(this, "Agrege una Sucursal antes de registrar un Estante (Menu requerimientos F).");
+			   
+		   }else{
+		   
+			String volumen = JOptionPane.showInputDialog (this, "Volumen de la Estante", "Adicionar Estante", JOptionPane.QUESTION_MESSAGE);
+			String peso = JOptionPane.showInputDialog (this, "Peso de la Estante", "Adicionar Estante", JOptionPane.QUESTION_MESSAGE);
+
+			String nivelAbastecimiento = JOptionPane.showInputDialog (this, "Nivel Abastecimiento de la Estante", "Adicionar Estante", JOptionPane.QUESTION_MESSAGE);
+
+			String nivelReorden = JOptionPane.showInputDialog (this, "Nivel Reorden de la Estante", "Adicionar Estante", JOptionPane.QUESTION_MESSAGE);
+			String capacidadTotal = JOptionPane.showInputDialog (this, "Capacidad total de la Estante", "Adicionar Estante", JOptionPane.QUESTION_MESSAGE);
+			
+			String sucursal= (String) JOptionPane.showInputDialog(null,"Seleccione la sucursal de la Estante", "Adicionar Estante", JOptionPane.DEFAULT_OPTION, null, sucursalesn, sucursalesn[0]);
+			
+			String cantidadProducto = JOptionPane.showInputDialog (this, "Cantidad de productos de la Estante", "Adicionar Estante", JOptionPane.QUESTION_MESSAGE);
+			
+			String[] tcategorias= {"ASEO", "ABARROTES", "PRENDASDEVESTIR", "MUEBLES", "HERRAMIENTAS", "ELECTRODOMESTICOS", "CONGELADOS"};
+			String tipoCategoria = (String) JOptionPane.showInputDialog(null,"Seleccione el tipo de producto de la Estante", "Adicionar Estante", JOptionPane.DEFAULT_OPTION, null, tcategorias, tcategorias[0]);
+			String equipamientoAdicional = JOptionPane.showInputDialog (this, "Equipamiento Adicional de la Estante", "Adicionar Estante", JOptionPane.QUESTION_MESSAGE);
+
+			
+			
+			
+			
+			if (volumen != null&&peso!=null&&capacidadTotal!=null&&sucursal!=null&&cantidadProducto!=null&&tipoCategoria!=null)
+			{
+				VOEstante tb= superandes.registrarEstanteASucursal(Integer.parseInt(cantidadProducto), Integer.parseInt(capacidadTotal), Double.parseDouble(peso), Double.parseDouble(volumen), tipoCategoria, equipamientoAdicional,Long.parseLong(nivelReorden), Integer.parseInt(nivelAbastecimiento), sucursales.get(i-1).getId());
+				
+				if (tb == null)
+	    		{
+	    			throw new Exception ("No se pudo crear la Estante");
+	    		}
+	    		String resultado = "En adicionarEstante\n\n";
+	    		resultado += "Estante adicionado exitosamente: " + tb;
+				resultado += "\n Operación terminada";
+				panelDatos.actualizarInterfaz(resultado);
+			}
+			else
+			{
+				panelDatos.actualizarInterfaz("Operación cancelada por el usuario, llene todos los campos.");
+			}
+		   }
+		} 
+		catch (Exception e) 
+		{
+//			e.printStackTrace();
+			String resultado = generarMensajeError(e);
+			panelDatos.actualizarInterfaz(resultado);
+		}
    }
    public void RF7_RegistrarPromocion(){
 	   try 

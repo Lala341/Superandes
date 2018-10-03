@@ -678,7 +678,7 @@ public class PersistenciaSuperandes {
 
             log.trace ("Inserción de sucursal: " + idSucursal + ": " + tuplasInsertadas + " tuplas insertadas");
             
-            return new Sucursal (idSucursal, nombre,  tamanho, tipoDeMercado, ventasTotales, idCiudad);
+            return new Sucursal (idSucursal, nombre,  tamanho, tipoDeMercado, ventasTotales, idCiudad, direccion);
         }
         catch (Exception e)
         {
@@ -747,6 +747,10 @@ public class PersistenciaSuperandes {
 	{
 		return sqlSucursal.darSucursalesPorId(pmf.getPersistenceManager(), id);
 	}
+	public List<Sucursal> darSucursales ()
+	{
+		return sqlSucursal.darSucursales(pmf.getPersistenceManager());
+	}
 	
 	/* ****************************************************************
 	 * 			Métodos para manejar LAS BODEGAS
@@ -763,13 +767,14 @@ public class PersistenciaSuperandes {
 	 * @param nivelDeAbastecimiento
 	 * @param idSucursal
 	 */
-	public Bodega adicionarBodega(long idBodega, int cantidadProductos, int capacidadTotal, double peso, double volumen, String tipoProducto, String nivelDeReorden, long idSucursal) 
+	public Bodega adicionarBodega( int cantidadProductos, int capacidadTotal, double peso, double volumen, String tipoProducto, double nivelDeReorden, long idSucursal) 
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
         Transaction tx=pm.currentTransaction();
         try
         {
             tx.begin();
+            long idBodega= nextval();
             long tuplasInsertadas = sqlBodega.adicionarBodega(pmf.getPersistenceManager(), idBodega, cantidadProductos, capacidadTotal, peso, volumen, tipoProducto, nivelDeReorden, idSucursal);
             tx.commit();
 
@@ -862,19 +867,20 @@ public class PersistenciaSuperandes {
 	 * @param idSucursal
 	 * @return El número de tuplas insertadas
 	 */
-	public Estante adicionarEstante (long idEstante, int cantidadProductos, int capacidadTotal, double peso, double volumen, String tipoProducto, String equipamientoAdicional, int nivelDeAbastecimiento, long idSucursal) 
+	public Estante adicionarEstante ( int cantidadProductos, int capacidadTotal, double peso, double volumen, String tipoProducto, String equipamientoAdicional, long nivelReorden, int nivelDeAbastecimiento, long idSucursal) 
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
         Transaction tx=pm.currentTransaction();
         try
         {
             tx.begin();
-            long tuplasInsertadas = sqlEstante.adicionarEstante(pmf.getPersistenceManager(), idEstante, cantidadProductos, capacidadTotal, peso, volumen, tipoProducto, equipamientoAdicional, nivelDeAbastecimiento, idSucursal);
+            long idEstante= nextval();
+            long tuplasInsertadas = sqlEstante.adicionarEstante(pmf.getPersistenceManager(), idEstante, cantidadProductos, capacidadTotal, peso, volumen, tipoProducto, equipamientoAdicional,nivelReorden, nivelDeAbastecimiento, idSucursal);
             tx.commit();
 
             log.trace ("Inserción de Estante: " + idEstante + ": " + tuplasInsertadas + " tuplas insertadas");
             
-            return new Estante (idEstante, cantidadProductos, capacidadTotal, peso, volumen, tipoProducto, equipamientoAdicional, nivelDeAbastecimiento, idSucursal);
+            return new Estante (idEstante, cantidadProductos, capacidadTotal, peso, volumen, tipoProducto, equipamientoAdicional, nivelReorden, nivelDeAbastecimiento, idSucursal);
         }
         catch (Exception e)
         {

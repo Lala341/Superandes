@@ -9,7 +9,6 @@ import java.util.ArrayList;
  */
 public class Bodega implements VOBodega {
 
-	public static final String NIVEL_DE_REORDEN="";
 	
 	private double volumen;
 	private double peso;
@@ -17,7 +16,7 @@ public class Bodega implements VOBodega {
 	private int cantidadProductos;
 	private long id;
 	private long idSucursal;
-	private ArrayList<Producto> productos;
+	private double nivelReorden;
 	
 	
 	/**
@@ -39,7 +38,7 @@ public class Bodega implements VOBodega {
 	 * @param nivelDeAbastecimiento
 	 * @param idSucursal
 	 */
-	public Bodega (long idBodega, int cantidadProductos, int capacidadTotal, double peso, double volumen, String tipoProducto, String nivelDeReorden, long idSucursal) 
+	public Bodega (long idBodega, int cantidadProductos, int capacidadTotal, double peso, double volumen, String tipoProducto, double nivelDeReorden, long idSucursal) 
 	{
 		id=idBodega;
 		this.volumen = volumen;
@@ -47,6 +46,7 @@ public class Bodega implements VOBodega {
 		this.capacidadTotal = capacidadTotal;
 		this.cantidadProductos = cantidadProductos;
 		this.idSucursal = idSucursal;
+		this.nivelReorden= nivelDeReorden;
 	}
 
 	/**
@@ -123,8 +123,8 @@ public class Bodega implements VOBodega {
 	/**
 	 * @return the nivelDeReorden
 	 */
-	public static String getNivelDeReorden() {
-		return NIVEL_DE_REORDEN;
+	public  double getNivelDeReorden() {
+		return nivelReorden;
 	}
 
 	/**
@@ -141,19 +141,7 @@ public class Bodega implements VOBodega {
 		this.idSucursal = idSucursal;
 	}
 
-	/**
-	 * @return the productos
-	 */
-	public ArrayList<Producto> getProductos() {
-		return productos;
-	}
-
-	/**
-	 * @param productos the productos to set
-	 */
-	public void setProductos(ArrayList<Producto> productos) {
-		this.productos = productos;
-	}
+	
 
 	@Override
 	/**
@@ -162,7 +150,7 @@ public class Bodega implements VOBodega {
 	public String toString() 
 	{
 		return "Bodega [id=" + id + ", peso=" + peso + ", volumen=" + volumen + ", idSucursal=" + idSucursal
-				+ ", cantidadProductos=" + cantidadProductos + ", capacidadTotal=" + capacidadTotal +", productos=" + productos +"]";
+				+ ", cantidadProductos=" + cantidadProductos + ", capacidadTotal=" + capacidadTotal +"]";
 	}
 
 }

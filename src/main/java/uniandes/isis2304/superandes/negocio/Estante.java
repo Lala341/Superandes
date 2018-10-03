@@ -8,7 +8,6 @@ import java.util.ArrayList;
  */
 public class Estante implements VOEstante {
 
-	public static final String NIVEL_DE_REORDEN="";
 	
 
 	private double peso;
@@ -20,7 +19,7 @@ public class Estante implements VOEstante {
 	private String equipamientoAdicional;
 	private long id;
 	private long idSucursal;
-	private ArrayList<Producto> productos;
+	private long nivelReorden;
 
 	public Estante(){
 
@@ -37,7 +36,7 @@ public class Estante implements VOEstante {
 	 * @param nivelDeAbastecimiento nivel de abastecimiento del estante
 	 * @param idSucursal
 	 */
-	public Estante (long idEstante, int cantidadProductos, int capacidadTotal, double peso, double volumen, String tipoProducto, String equipamientoAdicional, int nivelDeAbastecimiento, long idSucursal) 
+	public Estante (long idEstante, int cantidadProductos, int capacidadTotal, double peso, double volumen, String tipoProducto, String equipamientoAdicional, long nivelReorden, int nivelDeAbastecimiento, long idSucursal) 
 	{
 		id = idEstante;
 		this.peso = peso;
@@ -48,6 +47,7 @@ public class Estante implements VOEstante {
 		this.nombre = nombre;
 		this.equipamientoAdicional = equipamientoAdicional;
 		this.idSucursal = idSucursal;
+		this.nivelReorden=nivelReorden;
 	}
 
 	/**
@@ -178,25 +178,19 @@ public class Estante implements VOEstante {
 
 	
 
+	
 	/**
-	 * @return the nivelDeReorden
+	 * @return the nivelReorden
 	 */
-	public static String getNivelDeReorden() {
-		return NIVEL_DE_REORDEN;
+	public long getNivelReorden() {
+		return nivelReorden;
 	}
 
 	/**
-	 * @return the productos
+	 * @param nivelReorden the nivelReorden to set
 	 */
-	public ArrayList<Producto> getProductos() {
-		return productos;
-	}
-
-	/**
-	 * @param productos the productos to set
-	 */
-	public void setProductos(ArrayList<Producto> productos) {
-		this.productos = productos;
+	public void setNivelReorden(long nivelReorden) {
+		this.nivelReorden = nivelReorden;
 	}
 
 	/**

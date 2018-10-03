@@ -11,36 +11,85 @@ import java.util.ArrayList;
 public interface VOSucursal {
 
 	/**
-	 * @return El tamanho de la Sucursal
+	 * @return the tamanho
 	 */
-	public double getTamanho();
-	
+	public double getTamanho() ;
+
+
 	/**
-	 * @return el tipo de mercado de la Sucursal
+	 * @param tamanho the tamanho to set
 	 */
-	public String getTipoDeMercado();	
-	
+	public void setTamanho(double tamanho) ;
+
+
 	/**
-	 * @return las ventas locales de la Sucursal
+	 * @return the tipoDeMercado
 	 */
-	public double getVentasTotales();
-	
+	public String getTipoMercado() ;
+
+
 	/**
-	 * @return El id de la Sucursal
+	 * @param tipoDeMercado the tipoDeMercado to set
+	 */
+	public void setTipoMercado(String tipoDeMercado) ;
+
+
+	/**
+	 * @return the ventasTotales
+	 */
+	public double getVentasTotales() ;
+
+
+	/**
+	 * @param ventasTotales the ventasTotales to set
+	 */
+	public void setVentasTotales(double ventasTotales);
+
+	/**
+	 * @return the id
 	 */
 	public long getId();
-	
+
+
 	/**
-	 * @return la ciudad de la Sucursal
+	 * @param id the id to set
 	 */
-	public long getIdCiudad();
+	public void setId(long id) ;
+
+
+	/**
+	 * @return the ciudad
+	 */
+	public long getCiudad() ;
+
+
+	/**
+	 * @param idCiudad the ciudad to set
+	 */
+	public void setCiudad(long idCiudad) ;
+
+
+	
 	
 	/**
 	 * @return the direccion
 	 */
-	public String getDireccion();
+	public String getDireccion() ;
 
-	public String getNombre();
+	/**
+	 * @param direccion the direccion to set
+	 */
+	public void setDireccion(String direccion) ;
+
+	/**
+	 * @return the nombre
+	 */
+	public String getNombre() ;
+
+	/**
+	 * @param nombre the nombre to set
+	 */
+	public void setNombre(String nombre);
 	@Override
 	/**
 	 * @return Una cadena de caracteres con todos los atributos de la Sucursal

@@ -9,7 +9,6 @@ import org.apache.log4j.Logger;
 
 import com.google.gson.JsonObject;
 
-
 import uniandes.isis2304.superandes.persistencia.PersistenciaSuperandes;
 
 
@@ -1474,7 +1473,40 @@ public class Superandes {
 		return sucu;
 		
 	}
+	/**
+	 * Encuentra Ciudad en Superandes y los devuelve como una lista de VOCiudad
+	 * Adiciona entradas al log de la aplicación
+	 * @return Una lista de objetos VOCiudad con todos los tipos de Ciudad que conoce la aplicación, llenos con su información básica
+	 */
+	public List<VOSucursal> darVOSucursales ()
+	{
+		log.info ("Generando los VO de Sucursal");        
+        List<VOSucursal> voTipos = new LinkedList<VOSucursal> ();
+        for (Sucursal tb : pp.darSucursales ())
+        {
+        	voTipos.add (tb);
+        }
+        log.info ("Generando los VO de Sucursal: " + voTipos.size() + " existentes");
+        return voTipos;
+	}
+	public List<Sucursal> darSucursales() {
+		// TODO Auto-generated method stub
+		return pp.darSucursales ();
+	}
+	public Bodega registrarBodegaASucursal(int cantidadProductos, int capacidadTotal, double peso, double volumen, String tipoProducto, double nivelDeReorden, long sucursal){
+		
+		Bodega bode=pp.adicionarBodega(cantidadProductos, capacidadTotal, peso, volumen, tipoProducto, nivelDeReorden, sucursal);
+		
+		return bode;
+		
+		
+		
+	}
+	public Estante registrarEstanteASucursal(int cantidadProductos, int capacidadTotal, double peso, double volumen, String tipoProducto, String equipamientoAdicional,long nivelReorden, int nivelAbaste, long sucursal){
+			Estante bode= pp.adicionarEstante(cantidadProductos, capacidadTotal, peso, volumen, tipoProducto,equipamientoAdicional, nivelReorden, nivelAbaste, sucursal);
 	
+		return bode;
+	}
 	
 
 	/* ****************************************************************
@@ -1492,6 +1524,10 @@ public class Superandes {
         log.info ("Limpiando la BD de Superandes: Listo!");
         return borrrados;
 	}
+
+	
+
+	
 	
 	
 

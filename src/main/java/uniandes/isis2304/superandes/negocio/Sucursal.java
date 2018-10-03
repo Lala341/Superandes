@@ -9,10 +9,10 @@ import java.util.ArrayList;
 public class Sucursal implements VOSucursal {
 
 	private double tamanho;
-	private String tipoDeMercado;
+	private String tipoMercado;
 	private double ventasTotales;
 	private long id;
-	private long idCiudad;
+	private long ciudad;
 	private String direccion;
 	private String nombre;
 	/**
@@ -30,14 +30,15 @@ public class Sucursal implements VOSucursal {
 	 * @param ventasTotales - ventas totales
 	 * @param idCiudad - id ciudad
 	 */
-	public Sucursal (long idSucursal, String nombre, long tamanho, String tipoDeMercado, double ventasTotales, long idCiudad) 
+	public Sucursal (long idSucursal, String nombre, long tamanho, String tipoMercado, double ventasTotales, long idCiudad,String direccion) 
 	{
 		this.id = idSucursal;
 		this.nombre= nombre;
 		this.tamanho = tamanho;
-		this.tipoDeMercado = tipoDeMercado;
+		this.tipoMercado = tipoMercado;
 		this.ventasTotales = ventasTotales;
-		this.idCiudad = idCiudad;
+		this.ciudad = idCiudad;
+		this.direccion=direccion;
 	}
 
 
@@ -60,16 +61,16 @@ public class Sucursal implements VOSucursal {
 	/**
 	 * @return the tipoDeMercado
 	 */
-	public String getTipoDeMercado() {
-		return tipoDeMercado;
+	public String getTipoMercado() {
+		return tipoMercado;
 	}
 
 
 	/**
 	 * @param tipoDeMercado the tipoDeMercado to set
 	 */
-	public void setTipoDeMercado(String tipoDeMercado) {
-		this.tipoDeMercado = tipoDeMercado;
+	public void setTipoMercado(String tipoDeMercado) {
+		this.tipoMercado = tipoDeMercado;
 	}
 
 
@@ -108,16 +109,16 @@ public class Sucursal implements VOSucursal {
 	/**
 	 * @return the ciudad
 	 */
-	public long getIdCiudad() {
-		return idCiudad;
+	public long getCiudad() {
+		return ciudad;
 	}
 
 
 	/**
 	 * @param idCiudad the ciudad to set
 	 */
-	public void setIdCiudad(long idCiudad) {
-		this.idCiudad = idCiudad;
+	public void setCiudad(long idCiudad) {
+		this.ciudad = idCiudad;
 	}
 
 
@@ -156,8 +157,8 @@ public class Sucursal implements VOSucursal {
 	 */
 	public String toString() 
 	{
-		return "Sucursal [id=" + id + ", tamanho=" + tamanho + ", tipoDeMercado=" + tipoDeMercado + ", ventasTotales=" + ventasTotales
-				+ ", idCiudad=" + idCiudad + "]";
+		return "Sucursal [id=" + id + ", tamanho=" + tamanho + ", tipoDeMercado=" + tipoMercado + ", ventasTotales=" + ventasTotales
+				+ ", idCiudad=" + ciudad + "]";
 	}
 	
 

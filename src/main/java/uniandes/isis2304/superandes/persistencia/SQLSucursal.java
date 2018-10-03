@@ -131,6 +131,8 @@ class SQLSucursal
 		q.setParameters(idSucursal);
 		return (Sucursal) q.executeUnique();
 	}
+
+	
 	
 }
 

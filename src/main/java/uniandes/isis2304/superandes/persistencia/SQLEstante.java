@@ -58,10 +58,10 @@ class SQLEstante
 	 * @param idSucursal
 	 * @return El número de tuplas insertadas
 	 */
-	public long adicionarEstante (PersistenceManager pm, long idEstante, int cantidadProductos, int capacidadTotal, double peso, double volumen, String tipoProducto, String equipamientoAdicional, int nivelDeAbastecimiento, long idSucursal) 
+	public long adicionarEstante (PersistenceManager pm, long id, int cantidadProductos, int capacidadTotal, double peso, double volumen, String tipoProducto, String equipamientoAdicional, long nivelReorden, int nivelDeAbastecimiento, long sucursal) 
 	{
-        Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaEstante () + "(idBodega, cantidadProductos, capacidadTotal, peso, volumen,tipoProducto, equipamientoAdicional, nivelDeAbastecimiento, idSucursal) values (?, ?, ?, ?, ?, ?, ?, ?, ?)");
-        q.setParameters(idEstante, cantidadProductos, capacidadTotal, peso, volumen, tipoProducto, equipamientoAdicional, nivelDeAbastecimiento, idSucursal);
+        Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaEstante () + "(id, cantidadProductos, capacidadTotal, tipoProducto, peso, volumen, equipamientoAdicional, nivelReorden, nivelAbastecimiento, sucursal) values (?, ?, ?, ?, ?, ?, ?, ?, ?,?)");
+        q.setParameters(id, cantidadProductos, capacidadTotal, tipoProducto,  peso, volumen, equipamientoAdicional, nivelReorden, nivelDeAbastecimiento, sucursal);
         return (long) q.executeUnique();
 	}
 

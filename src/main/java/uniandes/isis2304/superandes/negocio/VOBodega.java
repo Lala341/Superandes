@@ -12,6 +12,7 @@ public interface VOBodega {
 	
 	/**
 	 * @return the volumen de la Bodega
+	 * 
 	 */
 	public double getVolumen();
 
@@ -41,10 +42,7 @@ public interface VOBodega {
 	 */
 	public long getIdSucursal();
 
-	/**
-	 * @return the productos
-	 */
-	public ArrayList<Producto> getProductos();
+	public double getNivelDeReorden();
 	
 	@Override
 	/**

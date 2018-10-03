@@ -11,7 +11,12 @@ public interface VOEstante {
 	/**
 	 * @return the peso
 	 */
-	public double getPeso();
+	public double getPeso() ;
+
+	/**
+	 * @param peso the peso to set
+	 */
+	public void setPeso(double peso);
 
 	/**
 	 * @return the volumen
@@ -19,9 +24,19 @@ public interface VOEstante {
 	public double getVolumen();
 
 	/**
+	 * @param volumen the volumen to set
+	 */
+	public void setVolumen(double volumen);
+
+	/**
 	 * @return the capacidadTotal
 	 */
 	public int getCapacidadTotal();
+
+	/**
+	 * @param capacidadTotal the capacidadTotal to set
+	 */
+	public void setCapacidadTotal(int capacidadTotal);
 
 	/**
 	 * @return the cantidadProductos
@@ -29,9 +44,19 @@ public interface VOEstante {
 	public int getCantidadProductos();
 
 	/**
+	 * @param cantidadProductos the cantidadProductos to set
+	 */
+	public void setCantidadProductos(int cantidadProductos);
+
+	/**
 	 * @return the nivelDeAbastecimiento
 	 */
 	public int getNivelDeAbastecimiento();
+
+	/**
+	 * @param nivelDeAbastecimiento the nivelDeAbastecimiento to set
+	 */
+	public void setNivelDeAbastecimiento(int nivelDeAbastecimiento) ;
 
 	/**
 	 * @return the nombre
@@ -39,9 +64,19 @@ public interface VOEstante {
 	public String getNombre();
 
 	/**
+	 * @param nombre the nombre to set
+	 */
+	public void setNombre(String nombre);
+
+	/**
 	 * @return the equipamientoAdicional
 	 */
 	public String getEquipamientoAdicional();
+
+	/**
+	 * @param equipamientoAdicional the equipamientoAdicional to set
+	 */
+	public void setEquipamientoAdicional(String equipamientoAdicional) ;
 
 	/**
 	 * @return the id
@@ -49,15 +84,33 @@ public interface VOEstante {
 	public long getId();
 
 	/**
+	 * @param id the id to set
+	 */
+	public void setId(long id);
+
+	/**
 	 * @return the sucursal
 	 */
 	public long getIdSucursal();
 
 	/**
-	 * @param productos the productos to set
+	 * @param idSucursal the sucursal to set
 	 */
-	public ArrayList<Producto> getProductos();
+	public void setIdSucursal(long idSucursal);
+
 	
+
+	
+	/**
+	 * @return the nivelReorden
+	 */
+	public long getNivelReorden() ;
+
+	/**
+	 * @param nivelReorden the nivelReorden to set
+	 */
+	public void setNivelReorden(long nivelReorden);
+
 	
 	/**
 	 * @return Una cadena de caracteres con todos los atributos del Estante

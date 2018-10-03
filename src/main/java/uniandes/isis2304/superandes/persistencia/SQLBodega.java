@@ -57,9 +57,9 @@ class SQLBodega
 	 * @param idSucursal
 	 * @return El número de tuplas insertadas
 	 */
-	public long adicionarBodega (PersistenceManager pm, long idBodega, int cantidadProductos, int capacidadTotal, double peso, double volumen, String tipoProducto, String nivelDeReorden, long idSucursal) 
+	public long adicionarBodega (PersistenceManager pm, long idBodega, int cantidadProductos, int capacidadTotal, double peso, double volumen, String tipoProducto, double nivelDeReorden, long idSucursal) 
 	{
-        Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaBodega () + "(idBodega, cantidadProductos, capacidadTotal, peso, volumen,tipoProducto, nivelDeReorden, idSucursal) values (?, ?, ?, ?, ?, ?, ?, ?)");
+        Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaBodega () + "(id, cantidadProductos, capacidadTotal, peso, volumen,tipoProducto, nivelReorden, sucursal) values (?, ?, ?, ?, ?, ?, ?, ?)");
         q.setParameters(idBodega, cantidadProductos, capacidadTotal, peso, volumen, tipoProducto, nivelDeReorden, idSucursal);
         return (long) q.executeUnique();
 	}
