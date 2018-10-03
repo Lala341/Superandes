@@ -6,6 +6,7 @@ import javax.jdo.PersistenceManager;
 import javax.jdo.Query;
 
 import uniandes.isis2304.superandes.negocio.PromocionCantidad;
+import uniandes.isis2304.superandes.negocio.PromocionCantidad;
 
 /**
  * Clase que encapsula los métodos que hacen acceso a la base de datos para el concepto PROMOCION_CANTIDAD de Superandes
@@ -69,7 +70,18 @@ class SQLPromocionCantidad
         q.setParameters(idPromocionCantidad);
         return (long) q.executeUnique();            
 	}
-
+	
+	
+	/**
+	 * Crea y ejecuta la sentencia SQL para encontrar la informaciÃ³n de un elemento por su identificador
+	 */
+	public PromocionCantidad darPromocionCantidadPorId (PersistenceManager pm, long id) 
+	{
+		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaPromocionCantidad () + " WHERE id = ?");
+		q.setResultClass(PromocionCantidad.class);
+		q.setParameters(id);
+		return (PromocionCantidad) q.executeUnique();
+	}
 
 	/**
 	 * Crea y ejecuta la sentencia SQL para encontrar la información de LAS PROMOCIONES_CANTIDAD de la 

@@ -84,7 +84,6 @@ public class PersistenciaSuperandes {
 
 	private SQLFidelizacion sqlFidelizacion;
 
-
 	private SQLVenta sqlVenta;
 
 	private SQLFactura sqlFactura;
@@ -96,6 +95,14 @@ public class PersistenciaSuperandes {
 	private SQLProductoCarritoCompras sqlProductoCarritoCompras;
 
 	private SQLPromocion sqlPromocion;
+	
+	private SQLPromocionUnidad sqlPromocionUnidad;
+	
+	private SQLPromocionDescuento sqlPromocionDescuento;
+	
+	private SQLPromocionParteDescuento sqlPromocionParteDescuento;
+	
+	private SQLPromocionCantidad sqlPromocionCantidad;
 
 	private SQLPromocionProducto sqlPromocionProducto;
 
@@ -253,7 +260,6 @@ public class PersistenciaSuperandes {
 
 		sqlFidelizacion= new SQLFidelizacion(this);
 
-
 		sqlVenta= new  SQLVenta(this) ;
 
 		sqlFactura= new SQLFactura(this) ;
@@ -265,6 +271,14 @@ public class PersistenciaSuperandes {
 		sqlProductoCarritoCompras= new SQLProductoCarritoCompras(this) ;
 
 		sqlPromocion= new SQLPromocion(this) ;
+		
+		sqlPromocionUnidad= new SQLPromocionUnidad(this);
+		
+		sqlPromocionDescuento= new SQLPromocionDescuento(this);
+		
+		sqlPromocionParteDescuento= new SQLPromocionParteDescuento(this);
+		
+		sqlPromocionCantidad= new SQLPromocionCantidad(this);
 
 		sqlPromocionProducto= new SQLPromocionProducto(this) ;
 
@@ -451,28 +465,28 @@ public class PersistenciaSuperandes {
 	/**
 	 * @return La cadena de caracteres con el nombre de la tabla
 	 */
-	public String darTablaPromoDescuento ()
+	public String darTablaPromocionDescuento ()
 	{
 		return tablas.get (23);
 	}
 	/**
 	 * @return La cadena de caracteres con el nombre de la tabla
 	 */
-	public String darTablaPromoParteDescuento ()
+	public String darTablaPromocionParteDescuento ()
 	{
 		return tablas.get (24);
 	}
 	/**
 	 * @return La cadena de caracteres con el nombre de la tabla
 	 */
-	public String darTablaPromoUnidad ()
+	public String darTablaPromocionUnidad ()
 	{
 		return tablas.get (25);
 	}
 	/**
 	 * @return La cadena de caracteres con el nombre de la tabla
 	 */
-	public String darTablaPromoCantidad ()
+	public String darTablaPromocionCantidad ()
 	{
 		return tablas.get (26);
 	}
@@ -1423,8 +1437,8 @@ public class PersistenciaSuperandes {
 	}
 
 	/**
-	 * Método que elimina, de manera transaccional, una tupla en la tabla PRODUCTO_ESTANTE, dados los identificadores de bebedor y bebida
-	 * @param idEstante - El identificador del bebedor
+	 * Método que elimina, de manera transaccional, una tupla en la tabla PRODUCTO_ESTANTE, dados los identificadores de promocionUnidad y bebida
+	 * @param idEstante - El identificador del promocionUnidad
 	 * @param idProducto - El identificador de la bebida
 	 * @return El número de tuplas eliminadas. -1 si ocurre alguna Excepción
 	 */
@@ -1472,7 +1486,7 @@ public class PersistenciaSuperandes {
 	/**
 	 * Método que inserta, de manera transaccional, una tupla en la tabla PRODUCTO_BODEGA
 	 * Adiciona entradas al log de la aplicación
-	 * @param idBodega - El identificador del bebedor - Debe haber un bebedor con ese identificador
+	 * @param idBodega - El identificador del promocionUnidad - Debe haber un promocionUnidad con ese identificador
 	 * @param idProducto - El identificador de la bebida - Debe haber una bebida con ese identificador
 	 * @return Un objeto PRODUCTO_BODEGA con la información dada. Null si ocurre alguna Excepción
 	 */
@@ -1507,7 +1521,7 @@ public class PersistenciaSuperandes {
 	}
 
 	/**
-	 * Método que elimina, de manera transaccional, una tupla en la tabla PRODUCTO_BODEGA, dados los identificadores de bebedor y bebida
+	 * Método que elimina, de manera transaccional, una tupla en la tabla PRODUCTO_BODEGA, dados los identificadores de promocionUnidad y bebida
 	 * @param idBodega - El identificador del bodega
 	 * @param idProducto - El identificador de la producto
 	 * @return El número de tuplas eliminadas. -1 si ocurre alguna Excepción
@@ -2632,6 +2646,380 @@ public class PersistenciaSuperandes {
 	}
 	
 	
+	/* ****************************************************************
+	 * 			Métodos para manejar los PROMOCION_UNIDAD
+	 *****************************************************************/
+	
+	/**
+	 * Método que inserta, de manera transaccional, una tupla en la tabla PROMOCION_UNIDAD
+	 * Adiciona entradas al log de la aplicación
+	 * @param idPromocion - id de la promocion
+	 * @param unidadVendidos unidad vendidos
+	 * @param unidadPagados unidad pagados
+	 * @return El objeto PROMOCION_UNIDAD adicionado. null si ocurre alguna Excepción
+	 */
+	public PromocionUnidad adicionarPromocionUnidad(long idPromocion, int unidadVendidos, int unidadPagados) 
+	{
+		PersistenceManager pm = pmf.getPersistenceManager();
+        Transaction tx=pm.currentTransaction();
+        try
+        {
+            tx.begin();
+            long tuplasInsertadas = sqlPromocionUnidad.adicionarPromocionUnidad(pmf.getPersistenceManager(), idPromocion, unidadVendidos, unidadPagados);
+            tx.commit();
+
+            log.trace ("Inserción de promocionUnidad: " + idPromocion + ": " + tuplasInsertadas + " tuplas insertadas");
+            
+            return new PromocionUnidad (idPromocion, unidadVendidos, unidadPagados);
+        }
+        catch (Exception e)
+        {
+//        	e.printStackTrace();
+        	log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+        	return null;
+        }
+        finally
+        {
+            if (tx.isActive())
+            {
+                tx.rollback();
+            }
+            pm.close();
+        }
+	}
+
+	/**
+	 * Método que elimina, de manera transaccional, una tupla en la tabla PROMOCION_UNIDAD, dado el identificador del promocionUnidad
+	 * Adiciona entradas al log de la aplicación
+	 * @param idPromocionUnidad - El identificador del promocionUnidad
+	 * @return El número de tuplas eliminadas. -1 si ocurre alguna Excepción
+	 */
+	public long eliminarPromocionUnidadPorId (long idPromocionUnidad) 
+	{
+		PersistenceManager pm = pmf.getPersistenceManager();
+        Transaction tx=pm.currentTransaction();
+        try
+        {
+            tx.begin();
+            long resp = sqlPromocionUnidad.eliminarPromocionUnidadPorId (pm, idPromocionUnidad);
+            tx.commit();
+            return resp;
+        }
+        catch (Exception e)
+        {
+//        	e.printStackTrace();
+        	log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+            return -1;
+        }
+        finally
+        {
+            if (tx.isActive())
+            {
+                tx.rollback();
+            }
+            pm.close();
+        }
+	}
+
+	/**
+	 * Método que consulta todas las tuplas en la tabla PROMOCION_UNIDAD que tienen el identificador dado
+	 * @param idPromocionUnidad - El identificador del promocionUnidad
+	 * @return El objeto PROMOCION_UNIDAD, construido con base en la tuplas de la tabla PROMOCION_UNIDAD, que tiene el identificador dado
+	 */
+	public PromocionUnidad darPromocionUnidadPorId (long idPromocionUnidad) 
+	{
+		return (PromocionUnidad) sqlPromocionUnidad.darPromocionUnidadPorId (pmf.getPersistenceManager(), idPromocionUnidad);
+	}
+
+	/**
+	 * Método que consulta todas las tuplas en la tabla PROMOCION_UNIDAD
+	 * @return La lista de objetos PROMOCION_UNIDAD, construidos con base en las tuplas de la tabla PROMOCION_UNIDAD
+	 */
+	public List<PromocionUnidad> darPromocionesUnidad ()
+	{
+		return sqlPromocionUnidad.darPromocionesUnidad (pmf.getPersistenceManager());
+	}
+	
+	/* ****************************************************************
+	 * 			Métodos para manejar los PROMOCION_DESCUENTO
+	 *****************************************************************/
+	
+	/**
+	 * Método que inserta, de manera transaccional, una tupla en la tabla PROMOCION_DESCUENTO
+	 * Adiciona entradas al log de la aplicación
+	 * @param idPromocion - id de la promocion
+	 * @param descuento el descuento
+	 * @return El objeto PROMOCION_DESCUENTO adicionado. null si ocurre alguna Excepción
+	 */
+	public PromocionDescuento adicionarPromocionDescuento(long idPromocion, double descuento) 
+	{
+		PersistenceManager pm = pmf.getPersistenceManager();
+        Transaction tx=pm.currentTransaction();
+        try
+        {
+            tx.begin();
+            long tuplasInsertadas = sqlPromocionDescuento.adicionarPromocionDescuento(pmf.getPersistenceManager(), idPromocion, descuento);
+            tx.commit();
+
+            log.trace ("Inserción de promocionDescuento: " + idPromocion + ": " + tuplasInsertadas + " tuplas insertadas");
+            
+            return new PromocionDescuento (idPromocion, descuento);
+        }
+        catch (Exception e)
+        {
+//        	e.printStackTrace();
+        	log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+        	return null;
+        }
+        finally
+        {
+            if (tx.isActive())
+            {
+                tx.rollback();
+            }
+            pm.close();
+        }
+	}
+
+	/**
+	 * Método que elimina, de manera transaccional, una tupla en la tabla PROMOCION_DESCUENTO, dado el identificador del promocionDescuento
+	 * Adiciona entradas al log de la aplicación
+	 * @param idPromocionDescuento - El identificador del promocionDescuento
+	 * @return El número de tuplas eliminadas. -1 si ocurre alguna Excepción
+	 */
+	public long eliminarPromocionDescuentoPorId (long idPromocionDescuento) 
+	{
+		PersistenceManager pm = pmf.getPersistenceManager();
+        Transaction tx=pm.currentTransaction();
+        try
+        {
+            tx.begin();
+            long resp = sqlPromocionDescuento.eliminarPromocionDescuentoPorId (pm, idPromocionDescuento);
+            tx.commit();
+            return resp;
+        }
+        catch (Exception e)
+        {
+//        	e.printStackTrace();
+        	log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+            return -1;
+        }
+        finally
+        {
+            if (tx.isActive())
+            {
+                tx.rollback();
+            }
+            pm.close();
+        }
+	}
+
+	/**
+	 * Método que consulta todas las tuplas en la tabla PROMOCION_DESCUENTO que tienen el identificador dado
+	 * @param idPromocionDescuento - El identificador del promocionDescuento
+	 * @return El objeto PROMOCION_DESCUENTO, construido con base en la tuplas de la tabla PROMOCION_DESCUENTO, que tiene el identificador dado
+	 */
+	public PromocionDescuento darPromocionDescuentoPorId (long idPromocionDescuento) 
+	{
+		return (PromocionDescuento) sqlPromocionDescuento.darPromocionDescuentoPorId (pmf.getPersistenceManager(), idPromocionDescuento);
+	}
+
+	/**
+	 * Método que consulta todas las tuplas en la tabla PROMOCION_DESCUENTO
+	 * @return La lista de objetos PROMOCION_DESCUENTO, construidos con base en las tuplas de la tabla PROMOCION_DESCUENTO
+	 */
+	public List<PromocionDescuento> darPromocionesDescuento ()
+	{
+		return sqlPromocionDescuento.darPromocionesDescuento (pmf.getPersistenceManager());
+	}
+	
+	
+	/* ****************************************************************
+	 * 			Métodos para manejar los PROMOCION_PARTE_DESCUENTO
+	 *****************************************************************/
+	
+	/**
+	 * Método que inserta, de manera transaccional, una tupla en la tabla PROMOCION_PARTE_DESCUENTO
+	 * Adiciona entradas al log de la aplicación
+	 * @param idPromocion - id de la promocion
+	 * @param descuento el descuento
+	 * @return El objeto PROMOCION_PARTE_DESCUENTO adicionado. null si ocurre alguna Excepción
+	 */
+	public PromocionParteDescuento adicionarPromocionParteDescuento(long idPromocion, double descuento, int unidadVendidos) 
+	{
+		PersistenceManager pm = pmf.getPersistenceManager();
+        Transaction tx=pm.currentTransaction();
+        try
+        {
+            tx.begin();
+            long tuplasInsertadas = sqlPromocionParteDescuento.adicionarPromocionParteDescuento(pmf.getPersistenceManager(), idPromocion, descuento, unidadVendidos);
+            tx.commit();
+
+            log.trace ("Inserción de promocionParteDescuento: " + idPromocion + ": " + tuplasInsertadas + " tuplas insertadas");
+            
+            return new PromocionParteDescuento (idPromocion, descuento, unidadVendidos);
+        }
+        catch (Exception e)
+        {
+//        	e.printStackTrace();
+        	log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+        	return null;
+        }
+        finally
+        {
+            if (tx.isActive())
+            {
+                tx.rollback();
+            }
+            pm.close();
+        }
+	}
+
+	/**
+	 * Método que elimina, de manera transaccional, una tupla en la tabla PROMOCION_PARTE_DESCUENTO, dado el identificador del promocionParteDescuento
+	 * Adiciona entradas al log de la aplicación
+	 * @param idPromocionParteDescuento - El identificador del promocionParteDescuento
+	 * @return El número de tuplas eliminadas. -1 si ocurre alguna Excepción
+	 */
+	public long eliminarPromocionParteDescuentoPorId (long idPromocionParteDescuento) 
+	{
+		PersistenceManager pm = pmf.getPersistenceManager();
+        Transaction tx=pm.currentTransaction();
+        try
+        {
+            tx.begin();
+            long resp = sqlPromocionParteDescuento.eliminarPromocionParteDescuentoPorId (pm, idPromocionParteDescuento);
+            tx.commit();
+            return resp;
+        }
+        catch (Exception e)
+        {
+//        	e.printStackTrace();
+        	log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+            return -1;
+        }
+        finally
+        {
+            if (tx.isActive())
+            {
+                tx.rollback();
+            }
+            pm.close();
+        }
+	}
+
+	/**
+	 * Método que consulta todas las tuplas en la tabla PROMOCION_PARTE_DESCUENTO que tienen el identificador dado
+	 * @param idPromocionParteDescuento - El identificador del promocionParteDescuento
+	 * @return El objeto PROMOCION_PARTE_DESCUENTO, construido con base en la tuplas de la tabla PROMOCION_PARTE_DESCUENTO, que tiene el identificador dado
+	 */
+	public PromocionParteDescuento darPromocionParteDescuentoPorId (long idPromocionParteDescuento) 
+	{
+		return (PromocionParteDescuento) sqlPromocionParteDescuento.darPromocionParteDescuentoPorId (pmf.getPersistenceManager(), idPromocionParteDescuento);
+	}
+
+	/**
+	 * Método que consulta todas las tuplas en la tabla PROMOCION_PARTE_DESCUENTO
+	 * @return La lista de objetos PROMOCION_PARTE_DESCUENTO, construidos con base en las tuplas de la tabla PROMOCION_PARTE_DESCUENTO
+	 */
+	public List<PromocionParteDescuento> darPromocionesParteDescuento ()
+	{
+		return sqlPromocionParteDescuento.darPromocionesParteDescuento (pmf.getPersistenceManager());
+	}
+	
+	/* ****************************************************************
+	 * 			Métodos para manejar los PROMOCION_CANTIDAD
+	 *****************************************************************/
+	
+	/**
+	 * Método que inserta, de manera transaccional, una tupla en la tabla PROMOCION_CANTIDAD
+	 * Adiciona entradas al log de la aplicación
+	 * @param idPromocion - id de la promocion
+	 * @param cantidadVendidos cantidad vendidos
+	 * @param cantidadPagados cantidad pagados
+	 * @return El objeto PROMOCION_CANTIDAD adicionado. null si ocurre alguna Excepción
+	 */
+	public PromocionCantidad adicionarPromocionCantidad(long idPromocion, int cantidadVendidos, int cantidadPagados) 
+	{
+		PersistenceManager pm = pmf.getPersistenceManager();
+        Transaction tx=pm.currentTransaction();
+        try
+        {
+            tx.begin();
+            long tuplasInsertadas = sqlPromocionCantidad.adicionarPromocionCantidad(pmf.getPersistenceManager(), idPromocion, cantidadVendidos, cantidadPagados);
+            tx.commit();
+
+            log.trace ("Inserción de PromocionCantidad: " + idPromocion + ": " + tuplasInsertadas + " tuplas insertadas");
+            
+            return new PromocionCantidad (idPromocion, cantidadVendidos, cantidadPagados);
+        }
+        catch (Exception e)
+        {
+//        	e.printStackTrace();
+        	log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+        	return null;
+        }
+        finally
+        {
+            if (tx.isActive())
+            {
+                tx.rollback();
+            }
+            pm.close();
+        }
+	}
+
+	/**
+	 * Método que elimina, de manera transaccional, una tupla en la tabla PROMOCION_CANTIDAD, dado el identificador del PromocionCantidad
+	 * Adiciona entradas al log de la aplicación
+	 * @param idPromocionCantidad - El identificador del PromocionCantidad
+	 * @return El número de tuplas eliminadas. -1 si ocurre alguna Excepción
+	 */
+	public long eliminarPromocionCantidadPorId (long idPromocionCantidad) 
+	{
+		PersistenceManager pm = pmf.getPersistenceManager();
+        Transaction tx=pm.currentTransaction();
+        try
+        {
+            tx.begin();
+            long resp = sqlPromocionCantidad.eliminarPromocionCantidadPorId (pm, idPromocionCantidad);
+            tx.commit();
+            return resp;
+        }
+        catch (Exception e)
+        {
+//        	e.printStackTrace();
+        	log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+            return -1;
+        }
+        finally
+        {
+            if (tx.isActive())
+            {
+                tx.rollback();
+            }
+            pm.close();
+        }
+	}
+
+	/**
+	 * Método que consulta todas las tuplas en la tabla PROMOCION_CANTIDAD que tienen el identificador dado
+	 * @param idPromocionCantidad - El identificador del PromocionCantidad
+	 * @return El objeto PROMOCION_CANTIDAD, construido con base en la tuplas de la tabla PROMOCION_CANTIDAD, que tiene el identificador dado
+	 */
+	public PromocionCantidad darPromocionCantidadPorId (long idPromocionCantidad) 
+	{
+		return (PromocionCantidad) sqlPromocionCantidad.darPromocionCantidadPorId (pmf.getPersistenceManager(), idPromocionCantidad);
+	}
+
+	/**
+	 * Método que consulta todas las tuplas en la tabla PROMOCION_CANTIDAD
+	 * @return La lista de objetos PROMOCION_CANTIDAD, construidos con base en las tuplas de la tabla PROMOCION_CANTIDAD
+	 */
+	public List<PromocionCantidad> darPromocionesCantidad ()
+	{
+		return sqlPromocionCantidad.darPromocionesCantidad (pmf.getPersistenceManager());
+	}
 	
 
 	/* ****************************************************************

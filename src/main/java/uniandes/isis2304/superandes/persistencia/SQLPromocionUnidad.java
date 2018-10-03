@@ -69,7 +69,17 @@ class SQLPromocionUnidad
         q.setParameters(idPromocionUnidad);
         return (long) q.executeUnique();            
 	}
-
+	
+	/**
+	 * Crea y ejecuta la sentencia SQL para encontrar la informaciÃ³n de un elemento por su identificador
+	 */
+	public PromocionUnidad darPromocionUnidadPorId (PersistenceManager pm, long id) 
+	{
+		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaPromocionUnidad () + " WHERE id = ?");
+		q.setResultClass(PromocionUnidad.class);
+		q.setParameters(id);
+		return (PromocionUnidad) q.executeUnique();
+	}
 
 	/**
 	 * Crea y ejecuta la sentencia SQL para encontrar la información de LAS PROMOCIONES_UNIDAD de la 

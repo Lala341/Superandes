@@ -6,6 +6,7 @@ import javax.jdo.PersistenceManager;
 import javax.jdo.Query;
 
 import uniandes.isis2304.superandes.negocio.PromocionDescuento;
+import uniandes.isis2304.superandes.negocio.PromocionDescuento;
 
 /**
  * Clase que encapsula los métodos que hacen acceso a la base de datos para el concepto PROMOCION_DESCUENTO de Superandes
@@ -67,6 +68,17 @@ class SQLPromocionDescuento
         Query q = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaPromocionDescuento () + " WHERE id = ?");
         q.setParameters(idPromocionDescuento);
         return (long) q.executeUnique();            
+	}
+	
+	/**
+	 * Crea y ejecuta la sentencia SQL para encontrar la informaciÃ³n de un elemento por su identificador
+	 */
+	public PromocionDescuento darPromocionDescuentoPorId (PersistenceManager pm, long id) 
+	{
+		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaPromocionDescuento () + " WHERE id = ?");
+		q.setResultClass(PromocionDescuento.class);
+		q.setParameters(id);
+		return (PromocionDescuento) q.executeUnique();
 	}
 
 

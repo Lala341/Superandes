@@ -6,6 +6,7 @@ import javax.jdo.PersistenceManager;
 import javax.jdo.Query;
 
 import uniandes.isis2304.superandes.negocio.PromocionParteDescuento;
+import uniandes.isis2304.superandes.negocio.PromocionParteDescuento;
 
 /**
  * Clase que encapsula los métodos que hacen acceso a la base de datos para el concepto PROMOCION_PARTE_DESCUENTO de Superandes
@@ -68,7 +69,17 @@ class SQLPromocionParteDescuento
         q.setParameters(idPromocionParteDescuento);
         return (long) q.executeUnique();            
 	}
-
+	
+	/**
+	 * Crea y ejecuta la sentencia SQL para encontrar la informaciÃ³n de un elemento por su identificador
+	 */
+	public PromocionParteDescuento darPromocionParteDescuentoPorId (PersistenceManager pm, long id) 
+	{
+		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaPromocionParteDescuento () + " WHERE id = ?");
+		q.setResultClass(PromocionParteDescuento.class);
+		q.setParameters(id);
+		return (PromocionParteDescuento) q.executeUnique();
+	}
 
 	/**
 	 * Crea y ejecuta la sentencia SQL para encontrar la información de LAS PROMOCIONES_PARTE_DESCUENTO de la 
