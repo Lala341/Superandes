@@ -828,3 +828,19 @@ null
 09:40:57,620 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
 09:40:57,621 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
 09:40:57,642 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+10:21:03,701 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+10:21:03,702 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+10:21:03,723 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+10:21:08,494 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Ciudad
+10:21:08,597 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Ciudad: 0 existentes
+10:21:17,989 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Ciudad: Cali
+10:21:18,058 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando ciudad: Cali
+10:21:25,098 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Ciudad
+10:21:25,105 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Ciudad: 1 existentes
+10:21:46,121 (AWT-EventQueue-0) ERROR [uniandes.isis2304.superandes.persistencia.PersistenciaSuperandes] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO SUCURSAL(idSucursal, nombre,tamanho, tipoDeMercado, ventasTotales, idCiudad, direccion ) values (?, ?, ?, ?, ?,?)".
+null
+10:23:42,283 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+10:23:42,284 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+10:23:42,305 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+10:23:47,086 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Ciudad
+10:23:47,188 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Ciudad: 1 existentes

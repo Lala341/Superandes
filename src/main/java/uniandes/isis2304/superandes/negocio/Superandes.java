@@ -1466,8 +1466,12 @@ public class Superandes {
 		
 	}
 	
-	public Sucursal registrarSucursal(){
-		return null;
+	public Sucursal registrarSucursal(String nombre,long tamanho, String tipoDeMercado, double ventasTotales, String ciudad, String direccion){
+		
+		
+		Sucursal sucu= pp.adicionarSucursal(nombre, tamanho, tipoDeMercado, ventasTotales, pp.darCiudadPorNombre(ciudad).get(0).getId(), direccion);
+		
+		return sucu;
 		
 	}
 	

@@ -14,6 +14,7 @@ public class Sucursal implements VOSucursal {
 	private long id;
 	private long idCiudad;
 	private String direccion;
+	private String nombre;
 	/**
 	 * Constructor por defecto
 	 */
@@ -29,9 +30,10 @@ public class Sucursal implements VOSucursal {
 	 * @param ventasTotales - ventas totales
 	 * @param idCiudad - id ciudad
 	 */
-	public Sucursal (long idSucursal, long tamanho, String tipoDeMercado, double ventasTotales, long idCiudad) 
+	public Sucursal (long idSucursal, String nombre, long tamanho, String tipoDeMercado, double ventasTotales, long idCiudad) 
 	{
 		this.id = idSucursal;
+		this.nombre= nombre;
 		this.tamanho = tamanho;
 		this.tipoDeMercado = tipoDeMercado;
 		this.ventasTotales = ventasTotales;
@@ -133,6 +135,20 @@ public class Sucursal implements VOSucursal {
 	 */
 	public void setDireccion(String direccion) {
 		this.direccion = direccion;
+	}
+
+	/**
+	 * @return the nombre
+	 */
+	public String getNombre() {
+		return nombre;
+	}
+
+	/**
+	 * @param nombre the nombre to set
+	 */
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
 	}
 
 	/**

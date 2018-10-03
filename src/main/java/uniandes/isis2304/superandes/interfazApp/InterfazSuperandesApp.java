@@ -16,6 +16,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.lang.reflect.Method;
 import java.sql.Date;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.jdo.JDODataStoreException;
@@ -46,6 +47,7 @@ import uniandes.isis2304.superandes.negocio.VOConsumidor;
 import uniandes.isis2304.superandes.negocio.VOProducto;
 import uniandes.isis2304.superandes.negocio.VOPromocion;
 import uniandes.isis2304.superandes.negocio.VOProveedores;
+import uniandes.isis2304.superandes.negocio.VOSucursal;
 
 
 
@@ -647,6 +649,60 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 	   
    }
    public void RF4_RegistrarSucursal(){
+	   try 
+		{
+		   List<VOCiudad> ciudades=superandes.darVOCiudades();
+		   String[] ciudadesn= new String[ciudades.size()];
+		   int i=0;
+		   for (VOCiudad voCiudad : ciudades) {
+			   ciudadesn[i]=voCiudad.getNombre();
+			   i=i+1;
+		   }
+		   if(ciudadesn.length==0){
+			  
+			   JOptionPane.showMessageDialog(this, "Agrege una ciudad antes de registrar una sucursal (Menu agregar).");
+			   
+		   }else{
+		   
+			String nombre = JOptionPane.showInputDialog (this, "Nombre de la Sucursal", "Adicionar Sucursal", JOptionPane.QUESTION_MESSAGE);
+			String tamanho = JOptionPane.showInputDialog (this, "Tamaño de la Sucursal", "Adicionar Sucursal", JOptionPane.QUESTION_MESSAGE);
+
+			String tipoMercado = JOptionPane.showInputDialog (this, "Tipo de mercado de la Sucursal", "Adicionar Sucursal", JOptionPane.QUESTION_MESSAGE);
+			String ventas = JOptionPane.showInputDialog (this, "Ventas iniciales de la Sucursal", "Adicionar Sucursal", JOptionPane.QUESTION_MESSAGE);
+			
+			String ciudad = (String) JOptionPane.showInputDialog(null,"Seleccione la ciudad de la sucursal", "Adicionar Sucursal", JOptionPane.DEFAULT_OPTION, null, ciudadesn, ciudadesn[0]);
+			
+			String direccion = JOptionPane.showInputDialog (this, "Direccion de la Sucursal", "Adicionar Sucursal", JOptionPane.QUESTION_MESSAGE);
+
+			
+			
+			
+			
+			if (nombre != null&&ciudad!=null&&tipoMercado!=null&&direccion!=null)
+			{
+				VOSucursal tb= superandes.registrarSucursal(nombre,Long.parseLong( tamanho), tipoMercado, Double.parseDouble(ventas), ciudad, direccion);
+				
+				if (tb == null)
+	    		{
+	    			throw new Exception ("No se pudo crear Sucursal con nombre: " + nombre);
+	    		}
+	    		String resultado = "En adicionarSucursal\n\n";
+	    		resultado += "Sucursal adicionado exitosamente: " + tb;
+				resultado += "\n Operación terminada";
+				panelDatos.actualizarInterfaz(resultado);
+			}
+			else
+			{
+				panelDatos.actualizarInterfaz("Operación cancelada por el usuario, llene todos los campos.");
+			}
+		   }
+		} 
+		catch (Exception e) 
+		{
+//			e.printStackTrace();
+			String resultado = generarMensajeError(e);
+			panelDatos.actualizarInterfaz(resultado);
+		}
 	   
    }
    public void RF5_RegistrarBodega(){
