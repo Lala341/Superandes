@@ -20,6 +20,15 @@ public interface VOFactura {
 	 */
 	public void setId(long id);
 	
+	/**
+	 * @return the textoFactura
+	 */
+	public String getTextoFactura() ;
+	/**
+	 * @param textoFactura the textoFactura to set
+	 */
+	public void setTextoFactura(String textoFactura);
+	
 	@Override
 	/**
 	 * @return Una cadena de caracteres con todos los atributos de la Bodega

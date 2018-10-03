@@ -384,10 +384,10 @@ public class Superandes {
 	 * Adiciona entradas al log de la aplicación
 	* @return El objeto. null si ocurre alguna Excepción
 	 */
-	public Factura adicionarFactura ()
+	public Factura adicionarFactura (String textoFactura)
 	{
         log.info ("Adicionando Factura: " );
-        Factura Factura = pp.adicionarFactura ();		
+        Factura Factura = pp.adicionarFactura (textoFactura);		
         log.info ("Adicionando Factura: " );
         return Factura;
 	}

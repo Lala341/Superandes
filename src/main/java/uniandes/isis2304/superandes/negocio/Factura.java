@@ -8,12 +8,14 @@ package uniandes.isis2304.superandes.negocio;
 public class Factura implements VOFactura {
 
 	private long id;
+	private String textoFactura;
 
 	public Factura(){
 
 	}
-	public Factura(long id){
+	public Factura(long id, String textoFactura){
 		this.id=id;
+		this.textoFactura=textoFactura;
 	}
 	/**
 	 * @return the id
@@ -29,6 +31,18 @@ public class Factura implements VOFactura {
 		this.id = id;
 	}
 
+	/**
+	 * @return the textoFactura
+	 */
+	public String getTextoFactura() {
+		return textoFactura;
+	}
+	/**
+	 * @param textoFactura the textoFactura to set
+	 */
+	public void setTextoFactura(String textoFactura) {
+		this.textoFactura = textoFactura;
+	}
 	@Override
 	/**
 	 * @return Una cadena de caracteres con todos los atributos de Consumidor

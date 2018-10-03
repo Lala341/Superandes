@@ -1092,7 +1092,7 @@ public class PersistenciaSuperandes {
 	 * Adiciona entradas al log de la aplicación
 	  * @return El objeto adicionado. null si ocurre alguna Excepción
 	 */
-	public Factura adicionarFactura()
+	public Factura adicionarFactura(String textoFactura)
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
         Transaction tx=pm.currentTransaction();
@@ -1100,12 +1100,12 @@ public class PersistenciaSuperandes {
         {
             tx.begin();
             long id = nextval ();
-            long tuplasInsertadas = sqlFactura.adicionar(pm, id);
+            long tuplasInsertadas = sqlFactura.adicionar(pm, id, textoFactura);
             tx.commit();
             
             log.trace ("Inserción de Factura: " + id + ": " + tuplasInsertadas + " tuplas insertadas");
             
-            return new Factura (id);
+            return new Factura (id,textoFactura);
         }
         catch (Exception e)
         {
