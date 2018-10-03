@@ -68,10 +68,10 @@ public class SQLUtil {
         Query qProductoVenta = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaProductoVenta());  
         Query qProductoCarritoCompras = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaProductoCarritoCompras());          
         Query qPromocion = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaPromocion());   
-        Query qPromoDescuento = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaPromoDescuento());   
-        Query qPromoParteDescuento = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaPromoParteDescuento());   
-        Query qPromoUnidad = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaPromoUnidad());   
-        Query qPromoCantidad = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaPromoCantidad());   
+        Query qPromoDescuento = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaPromocionDescuento());   
+        Query qPromoParteDescuento = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaPromocionParteDescuento());   
+        Query qPromoUnidad = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaPromocionUnidad());   
+        Query qPromoCantidad = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaPromocionCantidad());   
         Query qPromocionProducto = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaPromocionProducto());   
         Query qProveedores = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaProveedores());   
         Query qProductoOfrecido = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaProductoOfrecido());  

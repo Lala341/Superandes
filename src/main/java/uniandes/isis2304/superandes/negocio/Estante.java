@@ -37,7 +37,7 @@ public class Estante implements VOEstante {
 	 * @param nivelDeAbastecimiento nivel de abastecimiento del estante
 	 * @param idSucursal
 	 */
-	public Estante (long idEstante, String nombre, int cantidadProductos, int capacidadTotal, double peso, double volumen, String tipoProducto, String equipamientoAdicional, int nivelDeAbastecimiento, long idSucursal) 
+	public Estante (long idEstante, int cantidadProductos, int capacidadTotal, double peso, double volumen, String tipoProducto, String equipamientoAdicional, int nivelDeAbastecimiento, long idSucursal) 
 	{
 		id = idEstante;
 		this.peso = peso;
