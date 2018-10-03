@@ -12,57 +12,112 @@ public interface VOProducto {
 	/**
 	 * @return the nombre
 	 */
-	public String getNombre();
+	public String getnombre() ;
+
+	/**
+	 * @param nombre the nombre to set
+	 */
+	public void setnombre(String nombre);
 
 	/**
 	 * @return the marca
 	 */
-	public String getMarca();
+	public String getMarca() ;
+
+	/**
+	 * @param marca the marca to set
+	 */
+	public void setMarca(String marca) ;
 
 	/**
 	 * @return the precioUnitario
 	 */
-	public double getPrecioUnitario();
+	public double getPrecioUnitario() ;
+
+	/**
+	 * @param precioUnitario the precioUnitario to set
+	 */
+	public void setPrecioUnitario(double precioUnitario) ;
 
 	/**
 	 * @return the presentacion
 	 */
-	public String getPresentacion();
+	public String getPresentacion() ;
+
+	/**
+	 * @param presentacion the presentacion to set
+	 */
+	public void setPresentacion(String presentacion) ;
 
 	/**
 	 * @return the precioPorUnidadDeMedida
 	 */
-	public double getPrecioPorUnidadDeMedida();
+	public double getPrecioPorUnidadDeMedida() ;
+
+	/**
+	 * @param precioPorUnidadDeMedida the precioPorUnidadDeMedida to set
+	 */
+	public void setPrecioPorUnidadDeMedida(double precioPorUnidadDeMedida) ;
 
 	/**
 	 * @return the cantidad
 	 */
-	public int getCantidad();
-	
+	public int getCantidad() ;
+
+	/**
+	 * @param cantidad the cantidad to set
+	 */
+	public void setCantidad(int cantidad) ;
+
 	/**
 	 * @return the unidadDeMedida
 	 */
-	public String getUnidadDeMedida();
+	public String getUnidadMedida();
+
+	/**
+	 * @param unidadDeMedida the unidadDeMedida to set
+	 */
+	public void setUnidadMedida(String unidadDeMedida) ;
 
 	/**
 	 * @return the especificacionDeEmpaquetado
 	 */
-	public String getEspecificacionDeEmpaquetado();
+	public String getEspecificacionesEmpaquetado() ;
+
+	/**
+	 * @param especificacionDeEmpaquetado the especificacionDeEmpaquetado to set
+	 */
+	public void setEspecificacionesEmpaquetado(String especificacionDeEmpaquetado) ;
 
 	/**
 	 * @return the codigoDeBarras
 	 */
-	public String getCodigoDeBarras();
+	public String getCodigoBarras();
+
+	/**
+	 * @param codigoDeBarras the codigoDeBarras to set
+	 */
+	public void setCodigoBarras(String codigoDeBarras);
 
 	/**
 	 * @return the estado
 	 */
-	public boolean isEstado();
+	public String getEstado() ;
+
+	/**
+	 * @param estado the estado to set
+	 */
+	public void setEstado(boolean estado);
 
 	/**
 	 * @return the categoria
 	 */
-	public long getIdCategoria();
+	public long getCategoria() ;
+
+	/**
+	 * @param idCategoria the categoria to set
+	 */
+	public void setCategoria(long idCategoria);
 
 	/**
 	 * @return the id
@@ -70,18 +125,42 @@ public interface VOProducto {
 	public long getId();
 
 	/**
-	 * @return the estantes
+	 * @param id the id to set
 	 */
-	public ArrayList<Estante> getEstantes();
+	public void setId(long id);
+	
+	/**
+	 * @return the precioPorUnidadMedida
+	 */
+	public double getPrecioPorUnidadMedida();
 
 	/**
-	 * @return the bodegas
+	 * @param precioPorUnidadMedida the precioPorUnidadMedida to set
 	 */
-	public ArrayList<Bodega> getBodegas();
-	
+	public void setPrecioPorUnidadMedida(double precioPorUnidadMedida);
+
+	/**
+	 * @return the estado1
+	 */
+	public boolean isEstado1();
+
+	/**
+	 * @param estado1 the estado1 to set
+	 */
+	public void setEstado1(boolean estado1);
+
+	/**
+	 * @param estado the estado to set
+	 */
+	public void setEstado(String estado);
 	/**
 	 * @return Una cadena de caracteres con todos los atributos del Producto
 	 */
 	public String toString();
 
+	public String getNombre();
+	
+
+	public void setNombre(String n);
+	
 }

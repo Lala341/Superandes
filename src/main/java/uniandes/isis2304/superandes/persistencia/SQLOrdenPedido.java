@@ -63,6 +63,16 @@ public class SQLOrdenPedido {
 		q.setParameters(id);
 		return (OrdenPedido) q.executeUnique();
 	}
+	/**
+	 * Crea y ejecuta la sentencia SQL para encontrar la información de un elemento por su identificador
+	 */
+	public List<OrdenPedido> darPorIdProveedor (PersistenceManager pm, long id) 
+	{
+		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaOrdenPedido () + " WHERE proveedor = ?");
+		q.setResultClass(OrdenPedido.class);
+		q.setParameters(id);
+		return (List<OrdenPedido>) q.executeUnique();
+	}
 
 	/**
 	 * Crea y ejecuta la sentencia SQL para encontrar la información de los elementos

@@ -93,6 +93,10 @@
                     {
                         "label": "Agregar administrador",
                         "event": "agregarAdministrador"
+                    },
+                    {
+                        "label": "Agregar producto proveedor",
+                        "event": "agregarProductoOfrecido"
                     }
                     
               ]

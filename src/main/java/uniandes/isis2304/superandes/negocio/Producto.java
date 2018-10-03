@@ -8,20 +8,21 @@ import java.util.ArrayList;
  */
 public class Producto implements VOProducto {
 
-	private String nombre;
-	private String marca;
-	private double precioUnitario;
-	private String presentacion;
-	private double precioPorUnidadDeMedida;
-	private int cantidad;
-	private String unidadDeMedida;
-	private String especificacionDeEmpaquetado;
-	private String codigoDeBarras;
-	private boolean estado;
-	private long idCategoria;
-	private long id;
-	private ArrayList<Estante> estantes;
-	private ArrayList<Bodega> bodegas;
+	public String nombre;
+	public String marca;
+	public double precioUnitario;
+	public String presentacion;
+	public double precioPorUnidadMedida;
+	public int cantidad;
+	public String unidadMedida;
+	public String especificacionesEmpaquetado;
+	public String codigoBarras;
+	public boolean estado1;
+	public String estado;
+	
+	public long categoria;
+	public long id;
+	
 
 	public Producto(){
 
@@ -30,16 +31,16 @@ public class Producto implements VOProducto {
 	/**
 	 * @param idProducto - El identificador de la producto
 	 * @param nombre - El nombre de la producto
-	 * @param idCategoria - El identificador del tipo de categoria de la producto
+	 * @param categoria - El identificador del tipo de categoria de la producto
 	 * @param cantidad - cantidad de producto
-	 * @param codigoDeBarras el codigo de barras
-	 * @param especificacionDeEmpaquetado especificacion del empaquetado
-	 * @param estado estado del producto
+	 * @param codigoBarras el codigo de barras
+	 * @param especificacionesEmpaquetado especificacion del empaquetado
+	 * @param estado1 estado1 del producto
 	 * @param marca marca del producto
 	 * @param precioPorUnidadMedida precio por unidad medida
 	 * @param precioUnitario precio unitario 
 	 * @param presentacion presentacion
-	 * @param unidadDeMedida unidad de medida
+	 * @param unidadMedida unidad de medida
 	 */
 	public Producto (long idProducto, String nombre, long idCategoria, int cantidad, String codigoDeBarras, String especificacionDeEmpaquetado, boolean estado, String marca, double precioPorUnidadMedida, double precioUnitario, String presentacion, String unidadDeMedida) 
 	{
@@ -48,11 +49,11 @@ public class Producto implements VOProducto {
 		this.marca = marca;
 		this.precioUnitario = precioUnitario;
 		this.presentacion = presentacion;
-		this.precioPorUnidadDeMedida = precioPorUnidadMedida;
-		this.especificacionDeEmpaquetado = especificacionDeEmpaquetado;
-		this.codigoDeBarras = codigoDeBarras;
-		this.estado = estado;
-		this.idCategoria = idCategoria;
+		this.precioPorUnidadMedida = precioPorUnidadMedida;
+		this.especificacionesEmpaquetado = especificacionDeEmpaquetado;
+		this.codigoBarras = codigoDeBarras;
+		this.estado1 = estado;
+		this.categoria = idCategoria;
 	}
 
 	/**
@@ -112,17 +113,17 @@ public class Producto implements VOProducto {
 	}
 
 	/**
-	 * @return the precioPorUnidadDeMedida
+	 * @return the precioPorUnidadMedida
 	 */
 	public double getPrecioPorUnidadDeMedida() {
-		return precioPorUnidadDeMedida;
+		return precioPorUnidadMedida;
 	}
 
 	/**
-	 * @param precioPorUnidadDeMedida the precioPorUnidadDeMedida to set
+	 * @param precioPorUnidadMedida the precioPorUnidadMedida to set
 	 */
 	public void setPrecioPorUnidadDeMedida(double precioPorUnidadDeMedida) {
-		this.precioPorUnidadDeMedida = precioPorUnidadDeMedida;
+		this.precioPorUnidadMedida = precioPorUnidadDeMedida;
 	}
 
 	/**
@@ -140,73 +141,68 @@ public class Producto implements VOProducto {
 	}
 
 	/**
-	 * @return the unidadDeMedida
+	 * @return the unidadMedida
 	 */
-	public String getUnidadDeMedida() {
-		return unidadDeMedida;
+	public String getUnidadMedida() {
+		return unidadMedida;
 	}
 
 	/**
-	 * @param unidadDeMedida the unidadDeMedida to set
+	 * @param unidadMedida the unidadMedida to set
 	 */
-	public void setUnidadDeMedida(String unidadDeMedida) {
-		this.unidadDeMedida = unidadDeMedida;
+	public void setUnidadMedida(String unidadDeMedida) {
+		this.unidadMedida = unidadDeMedida;
 	}
 
 	/**
-	 * @return the especificacionDeEmpaquetado
+	 * @return the especificacionesEmpaquetado
 	 */
-	public String getEspecificacionDeEmpaquetado() {
-		return especificacionDeEmpaquetado;
+	public String getEspecificacionesEmpaquetado() {
+		return especificacionesEmpaquetado;
 	}
 
 	/**
-	 * @param especificacionDeEmpaquetado the especificacionDeEmpaquetado to set
+	 * @param especificacionesEmpaquetado the especificacionesEmpaquetado to set
 	 */
-	public void setEspecificacionDeEmpaquetado(String especificacionDeEmpaquetado) {
-		this.especificacionDeEmpaquetado = especificacionDeEmpaquetado;
+	public void setEspecificacionesEmpaquetado(String especificacionDeEmpaquetado) {
+		this.especificacionesEmpaquetado = especificacionDeEmpaquetado;
 	}
 
 	/**
-	 * @return the codigoDeBarras
+	 * @return the codigoBarras
 	 */
-	public String getCodigoDeBarras() {
-		return codigoDeBarras;
+	public String getCodigoBarras() {
+		return codigoBarras;
 	}
 
 	/**
-	 * @param codigoDeBarras the codigoDeBarras to set
+	 * @param codigoBarras the codigoBarras to set
 	 */
-	public void setCodigoDeBarras(String codigoDeBarras) {
-		this.codigoDeBarras = codigoDeBarras;
+	public void setCodigoBarras(String codigoDeBarras) {
+		this.codigoBarras = codigoDeBarras;
 	}
 
 	/**
-	 * @return the estado
+	 * @return the estado1
 	 */
-	public boolean isEstado() {
+	public String getEstado() {
 		return estado;
 	}
 
-	/**
-	 * @param estado the estado to set
-	 */
-	public void setEstado(boolean estado) {
-		this.estado = estado;
-	}
+	
 
 	/**
 	 * @return the categoria
 	 */
-	public long getIdCategoria() {
-		return idCategoria;
+	public long getCategoria() {
+		return categoria;
 	}
 
 	/**
-	 * @param idCategoria the categoria to set
+	 * @param categoria the categoria to set
 	 */
 	public void setCategoria(long idCategoria) {
-		this.idCategoria = idCategoria;
+		this.categoria = idCategoria;
 	}
 
 	/**
@@ -223,43 +219,72 @@ public class Producto implements VOProducto {
 		this.id = id;
 	}
 
-	/**
-	 * @return the estantes
-	 */
-	public ArrayList<Estante> getEstantes() {
-		return estantes;
-	}
-
-	/**
-	 * @param estantes the estantes to set
-	 */
-	public void setEstantes(ArrayList<Estante> estantes) {
-		this.estantes = estantes;
-	}
-
-	/**
-	 * @return the bodegas
-	 */
-	public ArrayList<Bodega> getBodegas() {
-		return bodegas;
-	}
-
-	/**
-	 * @param bodegas the bodegas to set
-	 */
-	public void setBodegas(ArrayList<Bodega> bodegas) {
-		this.bodegas = bodegas;
-	}
 	
+
+	
+
+	/**
+	 * @return the precioPorUnidadMedida
+	 */
+	public double getPrecioPorUnidadMedida() {
+		return precioPorUnidadMedida;
+	}
+
+	/**
+	 * @param precioPorUnidadMedida the precioPorUnidadMedida to set
+	 */
+	public void setPrecioPorUnidadMedida(double precioPorUnidadMedida) {
+		this.precioPorUnidadMedida = precioPorUnidadMedida;
+	}
+
+	/**
+	 * @return the estado1
+	 */
+	public boolean isEstado1() {
+		return estado1;
+	}
+
+	/**
+	 * @param estado1 the estado1 to set
+	 */
+	public void setEstado1(boolean estado1) {
+		this.estado1 = estado1;
+	}
+
+	/**
+	 * @param estado the estado to set
+	 */
+	public void setEstado(String estado) {
+		this.estado = estado;
+	}
+
 	/**
 	 * @return Una cadena de caracteres con todos los atributos del Producto
 	 */
 	public String toString() 
 	{
 		return "Producto [id=" + id + ", nombre=" + nombre + ", marca=" + marca + ", precioUnitario=" + precioUnitario
-				+ ", precioPorUnidadDeMedida=" + precioPorUnidadDeMedida + ", cantidad=" + cantidad + ", idCategoria=" + idCategoria 
-				+ ", unidadDeMedida=" + unidadDeMedida + ", especificacionDeEmpaquetado=" + especificacionDeEmpaquetado 
-				+ ", codigoDeBarras=" + codigoDeBarras + ", estado=" + estado + ", bodegas="+bodegas + ", estantes="+ estantes + "]";
+				+ ", precioPorUnidadMedida=" + precioPorUnidadMedida + ", cantidad=" + cantidad + ", categoria=" + categoria 
+				+ ", unidadMedida=" + unidadMedida + ", especificacionesEmpaquetado=" + especificacionesEmpaquetado 
+				+ ", codigoBarras=" + codigoBarras + ", estado1=" + estado1 + "]";
+	}
+
+	@Override
+	public String getnombre() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setnombre(String nombre) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void setEstado(boolean estado) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 

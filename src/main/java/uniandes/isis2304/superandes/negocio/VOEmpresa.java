@@ -14,7 +14,7 @@ public interface VOEmpresa {
 	public String getDireccion();
 
 	/**
-	 * @return the nit
+	 * @return the NIT
 	 */
 	public long getNit();
 	

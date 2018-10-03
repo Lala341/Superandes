@@ -48,13 +48,13 @@ class SQLEmpresa
 	 * Crea y ejecuta la sentencia SQL para adicionar un EMPRESA a la base de datos de Superandes
 	 * @param pm - El manejador de persistencia
 	 * @param idConsumidor - El identificador del Consumidor
-	 * @param nit - id de Empresa
+	 * @param NIT - id de Empresa
 	 * @param direccion direccion de Empresa
 	 * @return El número de tuplas insertadas
 	 */
 	public long adicionarEmpresa (PersistenceManager pm, long idConsumidor, long nit, String direccion) 
 	{
-        Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaEmpresa () + "( idConsumidor, nit, direccion) values (?, ?, ?)");
+        Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaEmpresa () + "( idConsumidor, NIT, direccion) values (?, ?, ?)");
         q.setParameters(idConsumidor, nit, direccion);
         return (long) q.executeUnique();
 	}
