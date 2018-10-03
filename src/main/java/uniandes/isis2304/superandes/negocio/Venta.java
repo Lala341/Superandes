@@ -12,7 +12,6 @@ public class Venta implements VOVenta{
 	private String fecha;
 	private String formaDePago;
 	private double valorTotal;
-	private  long factura;
 	private long consumidor;
 	
 	
@@ -21,13 +20,12 @@ public class Venta implements VOVenta{
 
 	}
 
-	public Venta(long id,String fecha, String formaDePago, double valorTotal,long factura,long consumidor){
+	public Venta(long id,String fecha, String formaDePago, double valorTotal,long consumidor){
 
 		this.id=id;
 		this.fecha=fecha;
 		this.formaDePago=formaDePago;
 		this.valorTotal=valorTotal;
-		this.factura=factura;
 		this.consumidor=consumidor;
 	}
 
@@ -95,20 +93,7 @@ public class Venta implements VOVenta{
 	}
 
 
-	/**
-	 * @return the factura
-	 */
-	public long getFactura() {
-		return factura;
-	}
-
-
-	/**
-	 * @param factura the factura to set
-	 */
-	public void setFactura(long factura) {
-		this.factura = factura;
-	}
+	
 
 
 	/**
@@ -132,7 +117,7 @@ public class Venta implements VOVenta{
 	public String toString() 
 	{
 		return "Venta [id=" + id + ", fecha=" + fecha + ", formaDePago=" + formaDePago + ", valorTotal=" + valorTotal
-				+ ", factura=" + factura  +"]";
+				+"]";
 	}
 
 	

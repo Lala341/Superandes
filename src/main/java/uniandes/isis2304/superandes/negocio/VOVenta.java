@@ -58,16 +58,7 @@ public interface VOVenta {
 	public void setValorTotal(double valorTotal);
 
 
-	/**
-	 * @return the factura
-	 */
-	public long getFactura();
-
-
-	/**
-	 * @param factura the factura to set
-	 */
-	public void setFactura(long factura);
+	
 
 	/**
 	 * @return the consumidor
