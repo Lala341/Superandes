@@ -10,16 +10,15 @@ public class Ciudad implements VOCiudad {
 
 	private long id;
 	private String nombre;
-	private String direccion;
-
+	
 	public Ciudad(){
 
 	}
 	
-	public Ciudad(long id, String nombre, String direccion){
+	public Ciudad(long id, String nombre){
 		this.id=id;
 		this.nombre=nombre;
-		this.direccion=direccion;
+		
 	
 	}
 
@@ -38,19 +37,7 @@ public class Ciudad implements VOCiudad {
 		this.nombre = nombre;
 	}
 
-	/**
-	 * @return the direccion
-	 */
-	public String getDireccion() {
-		return direccion;
-	}
-
-	/**
-	 * @param direccion the direccion to set
-	 */
-	public void setDireccion(String direccion) {
-		this.direccion = direccion;
-	}
+	
 	/**
 	 * @return the id
 	 */
@@ -71,7 +58,7 @@ public class Ciudad implements VOCiudad {
 	 */
 	public String toString() 
 	{
-		return "Ciudad [id=" + id +",nombre=" + nombre+ ", direccion=" + direccion +"]";
+		return "Ciudad [id=" + id +",nombre=" + nombre+"]";
 	}
 
 	

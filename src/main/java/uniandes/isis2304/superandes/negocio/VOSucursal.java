@@ -36,14 +36,9 @@ public interface VOSucursal {
 	public long getIdCiudad();
 	
 	/**
-	 * @return la lista de Bodegas
+	 * @return the direccion
 	 */
-	public ArrayList<Bodega> getBodegas();
-	
-	/**
-	 * @return La lista de los Estantes
-	 */
-	public ArrayList<Estante> getEstantes();
+	public String getDireccion();
 
 	@Override
 	/**

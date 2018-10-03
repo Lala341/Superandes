@@ -28,15 +28,7 @@ public interface VOCiudad {
 	 */
 	public void setNombre(String nombre);
 
-	/**
-	 * @return the direccion
-	 */
-	public String getDireccion();
-
-	/**
-	 * @param direccion the direccion to set
-	 */
-	public void setDireccion(String direccion);
+	
 	
 	
 	@Override

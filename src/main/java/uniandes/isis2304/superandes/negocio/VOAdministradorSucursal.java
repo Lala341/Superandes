@@ -6,28 +6,34 @@ package uniandes.isis2304.superandes.negocio;
  * Sirve para proteger la información del negocio de posibles manipulaciones desde la interfaz 
  * 
  */
-public interface VOFactura {
-
-	
+public interface VOAdministradorSucursal {
 
 	/**
-	 * @return the id
+	 * @return the administrador
 	 */
-	public long getId();
+	public long getAdministrador();
+
+
 
 	/**
-	 * @param id the id to set
+	 * @param administrador the administrador to set
 	 */
-	public void setId(long id);
-	
+	public void setAdministrador(long administrador);
+
+
+
 	/**
-	 * @return the textoFactura
+	 * @return the sucursal
 	 */
-	public String getTextoFactura() ;
+	public long getSucursal();
+
+
+
 	/**
-	 * @param textoFactura the textoFactura to set
+	 * @param sucursal the sucursal to set
 	 */
-	public void setTextoFactura(String textoFactura);
+	public void setSucursal(long sucursal);
+
 	
 	@Override
 	/**

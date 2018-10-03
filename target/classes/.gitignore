@@ -3,6 +3,7 @@
 /TablasBD_ErrorDataStore.json
 /TablasBD_ErrorInvalidUser.json
 /hbase-site.xml
+/interfaceConfigApp.json
 /log4j.properties
 /logo.png
 /package-cassandra.orm

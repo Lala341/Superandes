@@ -94,28 +94,23 @@ public class CiudadTest {
 
 			// Lectura de Ciudad, Ciudad adicionada
 			String nombre = "Cali";
-			String direccion = "Calle 22 n. 2-22";
-			VOCiudad elemento = superandes.adicionarCiudad(nombre, direccion);
+			VOCiudad elemento = superandes.adicionarCiudad(nombre);
 			lista = superandes.darVOCiudades();
 			assertEquals ("Debe haber Ciudad creado !!", 1, lista.size ());
 			assertEquals ("El objeto creado y el traido de la BD deben ser iguales !!", elemento.getId(), lista.get (0).getId());
 			assertEquals ("El objeto creado y el traido de la BD deben ser iguales !!", elemento.getNombre(), lista.get (0).getNombre());
-			assertEquals ("El objeto creado y el traido de la BD deben ser iguales !!", elemento.getDireccion(), lista.get (0).getDireccion());
-
+			
 
 			// Lectura de los Ciudad
 			String nombre2 = "Bogota";
-			String direccion2 = "Calle 24 n. 2-22";
-			VOCiudad elemento2 = superandes.adicionarCiudad(nombre2, direccion2);
+			VOCiudad elemento2 = superandes.adicionarCiudad(nombre2);
 			lista = superandes.darVOCiudades();
 			assertEquals ("El primer Ciudad adicionado debe estar en la tabla !!", elemento.getId(), lista.get (0).getId());
 			assertEquals ("El primer Ciudad adicionado debe estar en la tabla !!", elemento.getNombre(), lista.get (0).getNombre());
-			assertEquals ("El primer Ciudad adicionado debe estar en la tabla !!", elemento.getDireccion(), lista.get (0).getDireccion());
-
+			
 			assertEquals ("El segundo Ciudad adicionado debe estar en la tabla", elemento2.getId(), lista.get (1).getId());
 			assertEquals ("El segundo Ciudad adicionado debe estar en la tabla", elemento2.getNombre(), lista.get (1).getNombre());
-			assertEquals ("El segundo Ciudad adicionado debe estar en la tabla", elemento2.getDireccion(), lista.get (1).getDireccion());
-
+			
 
 			// Prueba de eliminación, dado su identificador
 			long tbEliminados = superandes.eliminarCiudadPorId (elemento.getId ());
@@ -124,8 +119,7 @@ public class CiudadTest {
 			assertEquals ("Debe haber un Ciudad !!", 1, lista.size ());
 			assertEquals ("El segundo Ciudad adicionado debe estar en la tabla", elemento2.getId(), lista.get (0).getId());
 			assertEquals ("El segundo Ciudad adicionado debe estar en la tabla", elemento2.getNombre(), lista.get (0).getNombre());
-			assertEquals ("El segundo Ciudad adicionado debe estar en la tabla", elemento2.getDireccion(), lista.get (0).getDireccion());
-
+			
 			// Prueba de eliminación, dado su identificador
 			tbEliminados = superandes.eliminarCiudadPorId (elemento2.getId ());
 			assertEquals ("Debe haberse eliminado un Ciudad !!", 1, tbEliminados);
@@ -187,12 +181,11 @@ public class CiudadTest {
 
 			// Lectura 
 			String nombre = "Cali";
-			String direccion = "Calle 22 n. 2-22";
-			VOCiudad elemento1 = superandes.adicionarCiudad (nombre,direccion);
+			VOCiudad elemento1 = superandes.adicionarCiudad (nombre);
 			lista = superandes.darVOCiudades();
 			assertEquals ("Debe haber un Ciudad creado !!", 1, lista.size ());
 
-			VOCiudad elemento2 = superandes.adicionarCiudad (nombre, direccion);
+			VOCiudad elemento2 = superandes.adicionarCiudad (nombre);
 			assertNull ("No puede adicionar dos tipos de bebida con el mismo nombre !!", elemento2);
 		}
 		catch (Exception e)

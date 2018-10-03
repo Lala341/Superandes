@@ -36,10 +36,10 @@ public class SQLFactura {
 	/**
 	 * Crea y ejecuta la sentencia SQL para adicionar 
 	 */
-	public long adicionar (PersistenceManager pm, long id) 
+	public long adicionar (PersistenceManager pm, long id, String textoFactura) 
 	{
-        Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaFactura () + "(id) values (?)");
-        q.setParameters(id);
+        Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaFactura () + "(id, textoFactura) values (?, ?)");
+        q.setParameters(id,textoFactura);
         return (long) q.executeUnique();
 	}
 

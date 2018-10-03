@@ -36,10 +36,10 @@ public class SQLCiudad {
 	/**
 	 * Crea y ejecuta la sentencia SQL para adicionar 
 	 */
-	public long adicionar (PersistenceManager pm, long id, String nombre, String direccion) 
+	public long adicionar (PersistenceManager pm, long id, String nombre) 
 	{
-        Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaCiudad () + "(id, nombre, direccion) values (?, ?, ?)");
-        q.setParameters(id, nombre, direccion);
+        Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaCiudad () + "(id, nombre) values (?, ?)");
+        q.setParameters(id, nombre);
         return (long) q.executeUnique();
 	}
 
