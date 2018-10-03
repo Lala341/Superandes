@@ -12,11 +12,11 @@ public interface VOProveedores {
 	/**
 	 * @return the nit
 	 */
-	public int getNit();
+	public long getNit();
 	/**
 	 * @param nit the nit to set
 	 */
-	public void setNit(int nit);
+	public void setNit(long nit);
 
 	/**
 	 * @return the nombre

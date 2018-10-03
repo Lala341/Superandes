@@ -10,47 +10,47 @@
 			[
 				{
 					"label": "Registrar proveedores",
-					"event": "RF1-RegistrarProveedores"
+					"event": "RF1_RegistrarProveedores"
 				},
 				{
 					"label": "Registrar productos",
-					"event": "RF2-RegistrarProductos"
+					"event": "RF2_RegistrarProductos"
 				},
 				{
 					"label": "Registrar clientes",
-					"event": "RF3-RegistrarClientes"
+					"event": "RF3_RegistrarClientes"
 				},
 				{
 					"label": "Registrar una sucursal",
-					"event": "RF4-RegistrarSucursal"
+					"event": "RF4_RegistrarSucursal"
                 },
                 {
 					"label": "Registrar una bodega a una sucursal",
-					"event": "RF5-RegistrarBodega"
+					"event": "RF5_RegistrarBodega"
                 },
                 {
 					"label": "Registrar un estante a una sucursal",
-					"event": "RF6-RegistrarEstante"
+					"event": "RF6_RegistrarEstante"
                 },
                 {
 					"label": "Registrar una promocion",
-					"event": "RF7-RegistrarPromocion"
+					"event": "RF7_RegistrarPromocion"
                 },
                 {
 					"label": "Finalizar una promocion",
-					"event": "RF8-FinalizarPromocion"
+					"event": "RF8_FinalizarPromocion"
                 },
                 {
 					"label": "Registrar pedido para una sucursal",
-					"event": "RF9-RegistrarPedido"
+					"event": "RF9_RegistrarPedido"
                 },
                 {
 					"label": "Registrar la llegada de un pedido",
-					"event": "RF10-RegistrarLlegadaPedido"
+					"event": "RF10_RegistrarLlegadaPedido"
                 },
                 {
 					"label": "Registrar una venta",
-					"event": "RF11-RegistrarVenta"
+					"event": "RF11_RegistrarVenta"
 				}
 			]
         },
@@ -59,27 +59,27 @@
               [
                     {
                         "label": "Mostrar dinero recolectado por sucursal",
-                        "event": "RFC1-DineroRecolectado"
+                        "event": "RFC1_DineroRecolectado"
                     },
                   {
                       "label": "Mostrar 20 promociones mas populares",
-                      "event": "RFC2-PromocionesPopulares"
+                      "event": "RFC2_PromocionesPopulares"
                   },
                   {
                       "label": "Indice de ocupacion de cada bodega y estante",
-                      "event": "RFC3-IndiceOcupacionBodegaEstante"
+                      "event": "RFC3_IndiceOcupacionBodegaEstante"
                   },
                   {
                       "label": "Mostrar los productos con caracteristica",
-                      "event": "RFC4-ProductosCaracteristica"
+                      "event": "RFC4_ProductosCaracteristica"
                   },
                   {
                       "label": "Mostrar compras a proveedores",
-                      "event": "RFC5-ComprasProveedores"
+                      "event": "RFC5_ComprasProveedores"
                   },
                   {
                       "label": "Mostrar ventas de un usuario dado",
-                      "event": "RFC6-VentasUsuarioDado"
+                      "event": "RFC6_VentasUsuarioDado"
                   }
               ]
           },

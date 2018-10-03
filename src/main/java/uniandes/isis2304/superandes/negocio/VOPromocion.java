@@ -1,5 +1,6 @@
 package uniandes.isis2304.superandes.negocio;
 
+import java.sql.Date;
 
 /**
  * Interfaz para los métodos get de Bodega.
@@ -29,20 +30,28 @@ public interface VOPromocion {
 	/**
 	 * @return the fechaInicio
 	 */
-	public String getFechaInicio();
+	public Date getFechaInicio();
 	/**
 	 * @param fechaInicio the fechaInicio to set
 	 */
-	public void setFechaInicio(String fechaInicio);
+	public void setFechaInicio(Date fechaInicio);
 	/**
 	 * @return the fechaFinalizacion
 	 */
-	public String getFechaFinalizacion();
+	public Date getFechaFinalizacion();
 	/**
 	 * @param fechaFinalizacion the fechaFinalizacion to set
 	 */
-	public void setFechaFinalizacion(String fechaFinalizacion);
+	public void setFechaFinalizacion(Date fechaFinalizacion);
 	
+	/**
+	 * @return the estado
+	 */
+	public String getEstado();
+	/**
+	 * @param estado the estado to set
+	 */
+	public void setEstado(String estado);
 	@Override
 	/**
 	 * @return Una cadena de caracteres con todos los atributos de la Bodega

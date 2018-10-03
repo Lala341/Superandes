@@ -535,3 +535,117 @@ null
 19:42:57,557 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
 19:42:57,557 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
 19:42:57,578 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+02:06:36,787 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+02:06:36,788 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+02:06:36,809 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+02:07:05,610 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Proveedores: Exito
+02:07:05,743 (AWT-EventQueue-0) ERROR [uniandes.isis2304.superandes.persistencia.PersistenciaSuperandes] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO PROVEEDORES(id, nombre) values (?, ?)".
+null
+02:07:05,747 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Proveedores: Exito
+02:08:20,428 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Proveedores: 5
+02:08:20,432 (AWT-EventQueue-0) ERROR [uniandes.isis2304.superandes.persistencia.PersistenciaSuperandes] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO PROVEEDORES(id, nombre) values (?, ?)".
+null
+02:08:20,434 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Proveedores: 5
+02:10:35,550 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+02:10:35,551 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+02:10:35,572 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+02:10:50,302 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Proveedores: coco
+02:10:50,434 (AWT-EventQueue-0) ERROR [uniandes.isis2304.superandes.persistencia.PersistenciaSuperandes] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO PROVEEDORES(id, nombre) values (?, ?)".
+null
+02:10:50,438 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Proveedores: coco
+02:13:24,401 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+02:13:24,402 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+02:13:24,422 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+02:13:39,137 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Ciudad: Bogota
+02:13:39,307 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando ciudad: Bogota
+02:18:00,604 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+02:18:00,605 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+02:18:00,626 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+02:21:06,450 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+02:21:06,451 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+02:21:06,473 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+02:21:17,127 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Proveedores: coco
+02:21:17,270 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Proveedores: coco
+02:23:10,333 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+02:23:10,334 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+02:23:10,356 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+02:24:02,245 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Proveedores: hhuh
+02:24:02,378 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Proveedores: hhuh
+02:24:49,733 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+02:24:49,734 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+02:24:49,754 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+02:25:35,294 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Proveedores: coji
+02:25:35,429 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Proveedores: coji
+02:31:35,834 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+02:31:35,835 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+02:31:35,856 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+02:31:50,377 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Proveedores: RR
+02:31:50,520 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Proveedores: RR
+02:35:24,655 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+02:35:24,656 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+02:35:24,676 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+02:41:13,611 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+02:41:13,612 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+02:41:13,633 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+02:41:29,591 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Proveedores: rere
+02:41:29,732 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Proveedores: rere
+02:54:12,873 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+02:54:12,874 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+02:54:12,896 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+02:55:31,532 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+02:55:31,533 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+02:55:31,554 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+02:56:40,601 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+02:56:40,602 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+02:56:40,623 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+02:56:58,324 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Proveedores: coco
+02:56:58,458 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Proveedores: coco
+04:40:40,342 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+04:40:40,343 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+04:40:40,363 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+05:16:18,077 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+05:16:18,078 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+05:16:18,099 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+05:17:55,283 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+05:17:55,284 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+05:17:55,305 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+05:18:06,099 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+05:18:06,100 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+05:18:06,120 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+05:19:57,072 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+05:19:57,073 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+05:19:57,097 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+05:20:42,981 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+05:20:42,982 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+05:20:43,002 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+05:21:21,430 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+05:21:21,431 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+05:21:21,452 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+05:23:13,444 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+05:23:13,445 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+05:23:13,466 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+05:29:52,576 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+05:29:52,577 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+05:29:52,598 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+05:33:09,259 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+05:33:09,260 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+05:33:09,281 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+05:52:58,272 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+05:52:58,273 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+05:52:58,295 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+05:57:37,666 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+05:57:37,667 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+05:57:37,688 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+06:19:20,559 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+06:19:20,560 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+06:19:20,581 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+06:20:25,901 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+06:20:25,902 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+06:20:25,922 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+06:21:11,265 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+06:21:11,266 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+06:21:11,286 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+06:21:47,738 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Promocion: e
+06:21:47,912 (AWT-EventQueue-0) ERROR [uniandes.isis2304.superandes.persistencia.PersistenciaSuperandes] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO PROMOCION(id, nombre, fechaInicio, fechaFinalizacion, estado) values (?, ?, ?, ?, ?)".
+null
+06:21:47,915 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Promocion: e

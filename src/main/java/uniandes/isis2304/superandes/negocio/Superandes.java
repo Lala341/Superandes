@@ -1,5 +1,6 @@
 package uniandes.isis2304.superandes.negocio;
 
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -743,10 +744,10 @@ public class Superandes {
 	 * Adiciona entradas al log de la aplicación
 	* @return El objeto. null si ocurre alguna Excepción
 	 */
-	public Promocion adicionarPromocion (String nombre, String fecI, String fecF)
+	public Promocion adicionarPromocion (String nombre, String descripcion , String tipo, Date fecI, Date fecF, String estado)
 	{
         log.info ("Adicionando Promocion: " + nombre);
-        Promocion Promocion = pp.adicionarPromocion (nombre, fecI, fecF);		
+        Promocion Promocion = pp.adicionarPromocion (nombre,descripcion, tipo, fecI, fecF, estado);		
         log.info ("Adicionando Promocion: " + nombre);
         return Promocion;
 	}
@@ -964,7 +965,7 @@ public class Superandes {
 	 * Adiciona entradas al log de la aplicación
 	* @return El objeto. null si ocurre alguna Excepción
 	 */
-	public Proveedores adicionarProveedores (int nit, String nombre)
+	public Proveedores adicionarProveedores (long nit, String nombre)
 	{
         log.info ("Adicionando Proveedores: " + nombre);
         Proveedores Proveedores = pp.adicionarProveedores (nit, nombre);		

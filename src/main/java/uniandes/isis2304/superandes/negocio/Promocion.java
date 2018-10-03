@@ -1,7 +1,7 @@
 package uniandes.isis2304.superandes.negocio;
 
+import java.sql.Date;
 import java.util.ArrayList;
-import java.util.Date;
 
 /**
  * @version 1.0
@@ -11,17 +11,19 @@ public class Promocion implements VOPromocion{
 
 	private long id;
 	private String nombre;
-	private String fechaInicio;
-	private String fechaFinalizacion;
+	private Date fechaInicio;
+	private Date fechaFinalizacion;
+	private String estado;
 
 	public Promocion(){
 
 	}
-	public Promocion(long id, String nombre, String fechaInicio, String fechaFinalizacion){
+	public Promocion(long id, String nombre, Date fechaInicio, Date fechaFinalizacion, String estado){
 		this.id=id;
 		this.nombre=nombre;
 		this.fechaInicio=fechaInicio;
 		this.fechaFinalizacion=fechaFinalizacion;
+		this.estado=estado;
 	}
 
 	/**
@@ -51,26 +53,38 @@ public class Promocion implements VOPromocion{
 	/**
 	 * @return the fechaInicio
 	 */
-	public String getFechaInicio() {
+	public Date getFechaInicio() {
 		return fechaInicio;
 	}
 	/**
 	 * @param fechaInicio the fechaInicio to set
 	 */
-	public void setFechaInicio(String fechaInicio) {
+	public void setFechaInicio(Date fechaInicio) {
 		this.fechaInicio = fechaInicio;
 	}
 	/**
 	 * @return the fechaFinalizacion
 	 */
-	public String getFechaFinalizacion() {
+	public Date getFechaFinalizacion() {
 		return fechaFinalizacion;
 	}
 	/**
 	 * @param fechaFinalizacion the fechaFinalizacion to set
 	 */
-	public void setFechaFinalizacion(String fechaFinalizacion) {
+	public void setFechaFinalizacion(Date fechaFinalizacion) {
 		this.fechaFinalizacion = fechaFinalizacion;
+	}
+	/**
+	 * @return the estado
+	 */
+	public String getEstado() {
+		return estado;
+	}
+	/**
+	 * @param estado the estado to set
+	 */
+	public void setEstado(String estado) {
+		this.estado = estado;
 	}
 	@Override
 	/**
@@ -78,7 +92,7 @@ public class Promocion implements VOPromocion{
 	 */
 	public String toString() 
 	{
-		return "Promocion [id=" + id + ", nombre=" + nombre + ", fechaInicio=" + fechaInicio +  ", fechafin=" + fechaFinalizacion  +"]";
+		return "Promocion [id=" + id + ", nombre=" + nombre + ", fechaInicio=" + fechaInicio +  ", fechafin=" + fechaFinalizacion  +  ", estado=" + estado  +"]";
 	}
 	
 

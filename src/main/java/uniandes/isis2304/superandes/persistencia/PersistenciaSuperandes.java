@@ -1,5 +1,6 @@
 package uniandes.isis2304.superandes.persistencia;
 
+import java.sql.Date;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -1506,7 +1507,7 @@ public class PersistenciaSuperandes {
 	 * Adiciona entradas al log de la aplicación
 	  * @return El objeto adicionado. null si ocurre alguna Excepción
 	 */
-	public Promocion adicionarPromocion( String nombre, String fechaInicio, String fechaFinalizacion)
+	public Promocion adicionarPromocion( String nombre, String descripcion, String tipo, Date fechaInicio, Date fechaFinalizacion, String estado)
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
         Transaction tx=pm.currentTransaction();
@@ -1514,12 +1515,12 @@ public class PersistenciaSuperandes {
         {
             tx.begin();
             long id = nextval ();
-            long tuplasInsertadas = sqlPromocion.adicionar(pm, id,nombre,fechaInicio, fechaFinalizacion);
+            long tuplasInsertadas = sqlPromocion.adicionar(pm, id,nombre, descripcion, tipo, fechaInicio, fechaFinalizacion, estado);
             tx.commit();
             
             log.trace ("Inserción de Promocion: " + nombre + ": " + tuplasInsertadas + " tuplas insertadas");
             
-            return new Promocion (id,nombre,fechaInicio, fechaFinalizacion);
+            return new Promocion (id,nombre,fechaInicio, fechaFinalizacion, estado);
         }
         catch (Exception e)
         {
@@ -1776,7 +1777,7 @@ public class PersistenciaSuperandes {
 	 * Adiciona entradas al log de la aplicación
 	  * @return El objeto adicionado. null si ocurre alguna Excepción
 	 */
-	public Proveedores adicionarProveedores(int nit,String nombre)
+	public Proveedores adicionarProveedores(long nit,String nombre)
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
         Transaction tx=pm.currentTransaction();

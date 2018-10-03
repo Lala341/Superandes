@@ -2,7 +2,11 @@ package uniandes.isis2304.superandes.interfazApp;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Component;
+import java.awt.Container;
 import java.awt.Desktop;
+import java.awt.Dimension;
+import java.awt.LayoutManager;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.BufferedWriter;
@@ -11,6 +15,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.lang.reflect.Method;
+import java.sql.Date;
 import java.util.List;
 
 import javax.jdo.JDODataStoreException;
@@ -21,6 +26,9 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
 import javax.swing.UIManager;
 
 import org.apache.log4j.Logger;
@@ -32,6 +40,8 @@ import com.google.gson.JsonObject;
 import com.google.gson.stream.JsonReader;
 
 import uniandes.isis2304.superandes.negocio.Superandes;
+import uniandes.isis2304.superandes.negocio.VOPromocion;
+import uniandes.isis2304.superandes.negocio.VOProveedores;
 
 
 
@@ -142,7 +152,7 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 		{
 //			e.printStackTrace ();
 			log.info ("NO se encontró un archivo de configuración válido");			
-			JOptionPane.showMessageDialog(null, "No se encontró un archivo de configuración de interfaz válido: " + tipo, "Parranderos App", JOptionPane.ERROR_MESSAGE);
+			JOptionPane.showMessageDialog(null, "No se encontró un archivo de configuración de interfaz válido: " + tipo, "Superandes App", JOptionPane.ERROR_MESSAGE);
 		}	
         return config;
     }
@@ -458,7 +468,8 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
     @Override
 	public void actionPerformed(ActionEvent pEvento)
 	{
-		String evento = pEvento.getActionCommand( );		
+		String evento = pEvento.getActionCommand( );	
+		
         try 
         {
 			Method req = InterfazSuperandesApp.class.getMethod ( evento );			
@@ -467,9 +478,173 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
         catch (Exception e) 
         {
 			e.printStackTrace();
-		} 
+		}
+		
 	}
     
+    
+   public void RF1_RegistrarProveedores(){ 
+    try 
+	{
+		String nit = JOptionPane.showInputDialog (this, "NIT del proveedor \n (Ej: 444.333.222-1 ingresar: 4443332221 (sin puntos))", "Adicionar Proveedor", JOptionPane.QUESTION_MESSAGE);
+		String nombre = JOptionPane.showInputDialog (this, "Nombre del proveedor?", "Adicionar Proveedor", JOptionPane.QUESTION_MESSAGE);
+		
+		if(nit.length()!=10&&nit.contains(".")||nit.contains("-")){
+			throw new Exception ("El NIT debe cumplir con los requerimientos, sin puntos y de tamaño 10 " );
+		}
+		
+		if (nombre != null&&nit!=null&&nit.length()==10)
+		{
+    		VOProveedores tb = superandes.adicionarProveedores (Long.parseLong(nit), nombre);
+    		if (tb == null)
+    		{
+    			throw new Exception ("No se pudo crear un proveedor con nombre: " + nombre +", y nit:" + nit);
+    		}
+    		String resultado = "En adicionarProveedor\n\n";
+    		resultado += "Proveedor adicionado exitosamente: " + tb;
+			resultado += "\n Operación terminada";
+			panelDatos.actualizarInterfaz(resultado);
+		}
+		else
+		{
+			panelDatos.actualizarInterfaz("Operación cancelada por el usuario");
+		}
+	} 
+	catch (Exception e) 
+	{
+//		e.printStackTrace();
+		String resultado = generarMensajeError(e);
+		panelDatos.actualizarInterfaz(resultado);
+	}
+   }
+   
+   
+   public void RF2_RegistrarProductos(){
+	   
+   }
+   public void RF3_RegistrarClientes(){
+	   
+   }
+   public void RF4_RegistrarSucursal(){
+	   
+   }
+   public void RF5_RegistrarBodega(){
+	   
+   }
+   public void RF6_RegistrarEstante(){
+	   
+   }
+   public void RF7_RegistrarPromocion(){
+	   try 
+		{
+			String nombre = JOptionPane.showInputDialog (this, "Nombre de la promocion", "Adicionar promocion", JOptionPane.QUESTION_MESSAGE);
+			String descripcion = JOptionPane.showInputDialog (this, "Descripcion de la promocion", "Adicionar promocion", JOptionPane.QUESTION_MESSAGE);
+			Integer[] dias= {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31};
+			String diai =  JOptionPane.showInputDialog(null,"Seleccione un dia (Fecha inicial)", "Adicionar promocion", JOptionPane.DEFAULT_OPTION, null, dias, dias[0]) + "";
+			String[] meses= {"enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "noviembre", "diciembre"};
+			String mesi = (String) JOptionPane.showInputDialog(null,"Seleccione un mes  (Fecha inicial)", "Adicionar promocion", JOptionPane.DEFAULT_OPTION, null, meses, meses[0]);
+			String anhoi = JOptionPane.showInputDialog (this, "Seleccione un año  (Fecha inicial)", "Adicionar promocion", JOptionPane.QUESTION_MESSAGE);
+			String diaf = JOptionPane.showInputDialog(null,"Seleccione un dia (Fecha final)", "Adicionar promocion", JOptionPane.DEFAULT_OPTION, null, dias, dias[0])+ "";
+			String mesf = (String) JOptionPane.showInputDialog(null,"Seleccione un mes  (Fecha final)", "Adicionar promocion", JOptionPane.DEFAULT_OPTION, null, meses, meses[0]);
+			String anhof = JOptionPane.showInputDialog (this, "Seleccione un año  (Fecha final)", "Adicionar promocion", JOptionPane.QUESTION_MESSAGE);
+			String[] estados= {"FINALIZADO", "VIGENTE"};
+			String estado = (String) JOptionPane.showInputDialog(null,"Seleccione un estado", "Adicionar promocion", JOptionPane.DEFAULT_OPTION, null, estados, estados[0]);
+			String[] tipos= {"PROMODESCUENTO", "PROMOPARTEDESCUENTO", "PROMOUNIDAD", "PROMOCANTIDAD"};
+			String tipo = (String) JOptionPane.showInputDialog(null,"Seleccione un tipo", "Adicionar promocion", JOptionPane.DEFAULT_OPTION, null, tipos, tipos[0]);
+			
+			String posMesi= "0";
+			int i=0;
+			for (String string : meses) { i=i+1;
+			if(string.equals(mesi)){ posMesi=i+"";}}
+			
+			Date fecI= new Date(Date.parse(diai+"/"+posMesi+ "/"+anhoi));
+			
+			String posMesf= "0";
+			i=0;
+			for (String string : meses) { i=i+1;
+			if(string.equals(mesf)){ posMesf=i+"";}}
+			
+			Date fecF= new Date(Date.parse(diaf+"/"+posMesf+ "/"+anhof));
+			
+			
+			
+			if (nombre != null)
+			{
+	    		VOPromocion tb = superandes.adicionarPromocion(nombre, descripcion, tipo, fecI, fecF, estado);
+	    		if(tipo!=null){
+					if(tipo.equals(tipos[0])){
+						String desc = JOptionPane.showInputDialog (this, "Seleccione un porcentaje descuento (sin %)", "Adicionar promocion con descuento", JOptionPane.QUESTION_MESSAGE);
+						
+					}
+					else if(tipo.equals(tipos[1])){
+						String desc2 = JOptionPane.showInputDialog (this, "Seleccione un porcentaje descuento (sin %)", "Adicionar promocion con parte descuento", JOptionPane.QUESTION_MESSAGE);
+						String unip = JOptionPane.showInputDialog (this, "Seleccione cantidad unidades pagadas", "Adicionar promocion con parte descuento", JOptionPane.QUESTION_MESSAGE);
+						
+					}
+					else if(tipo.equals(tipos[2])){
+						String unip = JOptionPane.showInputDialog (this, "Seleccione cantidad unidades pagadas", "Adicionar promocion con parte descuento", JOptionPane.QUESTION_MESSAGE);
+						String univ = JOptionPane.showInputDialog (this, "Seleccione cantidad unidades vendidad (entregadas)", "Adicionar promocion con parte descuento", JOptionPane.QUESTION_MESSAGE);
+						
+					}
+					else if(tipo.equals(tipos[3])){
+						String cnip = JOptionPane.showInputDialog (this, "Seleccione cantidad pagado", "Adicionar promocion con parte descuento", JOptionPane.QUESTION_MESSAGE);
+						String cniv = JOptionPane.showInputDialog (this, "Seleccione cantidad vendido (entregado)", "Adicionar promocion con parte descuento", JOptionPane.QUESTION_MESSAGE);
+						
+					}
+					
+				}
+	    		
+	    		if (tb == null)
+	    		{
+	    			throw new Exception ("No se pudo crear un proveedor con nombre: " + nombre );
+	    		}
+	    		String resultado = "En adicionarProveedor\n\n";
+	    		resultado += "Proveedor adicionado exitosamente: " + tb;
+				resultado += "\n Operación terminada";
+				panelDatos.actualizarInterfaz(resultado);
+			}
+			else
+			{
+				panelDatos.actualizarInterfaz("Operación cancelada por el usuario");
+			}
+		} 
+		catch (Exception e) 
+		{
+//			e.printStackTrace();
+			String resultado = generarMensajeError(e);
+			panelDatos.actualizarInterfaz(resultado);
+		}
+   }
+   public void RF8_FinalizarPromocion(){
+	   
+   }
+   public void RF9_RegistrarPedido(){
+	   
+   }
+   public void RF10_RegistrarLlegadaPedido(){
+	   
+   }
+   public void RF11_RegistrarVenta(){
+	   
+   }
+   public void RFC1_DineroRecolectado(){
+	   
+   }
+   public void RFC2_PromocionesPopulares(){
+	   
+   }
+   public void RFC3_IndiceOcupacionBodegaEstante(){
+	   
+   }
+   public void RFC4_ProductosCaracteristica(){
+	   
+   }
+   public void RFC5_ComprasProveedores(){
+	   
+   }
+   public void RFC6_VentasUsuarioDado(){
+	   
+   }
 	/* ****************************************************************
 	 * 			Programa principal
 	 *****************************************************************/
