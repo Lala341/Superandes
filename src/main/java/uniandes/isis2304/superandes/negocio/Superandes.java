@@ -1191,7 +1191,192 @@ public class Superandes {
 		return !tb.isEmpty () ? tb.get (0) : null;
 	}
 	
+	/* ****************************************************************
+	 * 			Métodos para manejar Administrador
+	 *****************************************************************/
+	/**
+	 * Adiciona Administrador de manera persistente 
+	 * Adiciona entradas al log de la aplicación
+	* @return El objeto. null si ocurre alguna Excepción
+	 */
+	public Administrador adicionarAdministrador ( int cantidadDeRecompra, String usuario,  String contrasenha)
+	{
+        log.info ("Adicionando Administrador: " + usuario);
+        Administrador Administrador = pp.adicionarAdministrador (cantidadDeRecompra, usuario, contrasenha);		
+        log.info ("Adicionando Administrador: " + usuario);
+        return Administrador;
+	}
 	
+	/**
+	 * Elimina Administrador por su nombre
+	 * Adiciona entradas al log de la aplicación
+	 * @param nombre - El nombre a eliminar
+	 * @return El número de tuplas eliminadas
+	 */
+	public long eliminarAdministradorPorUsuario (String nombre)
+	{
+		log.info ("Eliminando Administrador por nombre: " + nombre);
+        long resp = pp.eliminarAdministradorPorUsuario (nombre);		
+        log.info ("Eliminando Administrador por nombre: " + resp + " tuplas eliminadas");
+        return resp;
+	}
+	
+	/**
+	 * Elimina Administrador por su identificador
+	 * Adiciona entradas al log de la aplicación
+	 * @return El número de tuplas eliminadas
+	 */
+	public long eliminarAdministradorPorId (long id)
+	{
+		log.info ("Eliminando Administrador por id: " + id);
+        long resp = pp.eliminarAdministradorPorId (id);		
+        log.info ("Eliminando Administrador por id: " + resp + " tuplas eliminadas");
+        return resp;
+	}
+	
+	/**
+	 *	Lista  Administrador en Superandes
+	 * Adiciona entradas al log de la aplicación
+	 * @return Una lista de Administrador, llenos con su información básica
+	 */
+	public List<Administrador> darAdministrador ()
+	{
+		log.info ("Consultando Administrador");
+        List<Administrador> tiposBebida = pp.darAdministradores();	
+        log.info ("Consultando Administrador: " + tiposBebida.size() + " existentes");
+        return tiposBebida;
+	}
+
+	/**
+	 * Encuentra Administrador en Superandes y los devuelve como una lista de VOAdministrador
+	 * Adiciona entradas al log de la aplicación
+	 * @return Una lista de objetos VOAdministrador con todos los tipos de Administrador que conoce la aplicación, llenos con su información básica
+	 */
+	public List<VOAdministrador> darVOAdministradores ()
+	{
+		log.info ("Generando los VO de Administrador");        
+        List<VOAdministrador> voTipos = new LinkedList<VOAdministrador> ();
+        for (Administrador tb : pp.darAdministradores ())
+        {
+        	voTipos.add (tb);
+        }
+        log.info ("Generando los VO de Administrador: " + voTipos.size() + " existentes");
+        return voTipos;
+	}
+	
+	/**
+	 * Encuentra en Superandes 
+	 * Adiciona entradas al log de la aplicación
+	 * @param nombre - El nombre de OrdenPedido
+	 * @return Un objeto OrdenPedido, con su información básica
+	 */
+	public Administrador darAdministradorPorId (long id)
+	{
+		log.info ("Buscando Administrador por id: " + id);
+		List<Administrador> tb = (List<Administrador>) pp.darAdministradorPorId(id);
+		return !tb.isEmpty () ? tb.get (0) : null;
+	}
+
+	/* ****************************************************************
+	 * 			Métodos para manejar AdministradorSucursal
+	 *****************************************************************/
+	/**
+	 * Adiciona AdministradorSucursal de manera persistente 
+	 * Adiciona entradas al log de la aplicación
+	* @return El objeto. null si ocurre alguna Excepción
+	 */
+	public AdministradorSucursal adicionarAdministradorSucursal (long ad, long su)
+	{
+        log.info ("Adicionando AdministradorSucursal: " + ad);
+        AdministradorSucursal AdministradorSucursal = pp.adicionarAdministradorSucursal (ad, su);		
+        log.info ("Adicionando AdministradorSucursal: " + ad);
+        return AdministradorSucursal;
+	}
+	
+	
+	
+	/**
+	 * Elimina AdministradorSucursal por su identificador
+	 * Adiciona entradas al log de la aplicación
+	 * @return El número de tuplas eliminadas
+	 */
+	public long eliminarAdministradorSucursalPorIdAdministrador (long id)
+	{
+		log.info ("Eliminando AdministradorSucursal por idAdmin: " + id);
+        long resp = pp.eliminarAdministradorSucursalPorIdAdministrador (id);		
+        log.info ("Eliminando AdministradorSucursal por idAdmin: " + resp + " tuplas eliminadas");
+        return resp;
+	}
+	/**
+	 * Elimina AdministradorSucursal por su identificador
+	 * Adiciona entradas al log de la aplicación
+	 * @return El número de tuplas eliminadas
+	 */
+	public long eliminarAdministradorSucursalPorIdSucursal (long id)
+	{
+		log.info ("Eliminando AdministradorSucursal por idSucu: " + id);
+        long resp = pp.eliminarAdministradorSucursalPorIdSucursal (id);		
+        log.info ("Eliminando AdministradorSucursal por idSucu: " + resp + " tuplas eliminadas");
+        return resp;
+	}
+	
+	/**
+	 *	Lista  AdministradorSucursal en Superandes
+	 * Adiciona entradas al log de la aplicación
+	 * @return Una lista de AdministradorSucursal, llenos con su información básica
+	 */
+	public List<AdministradorSucursal> darAdministradorSucursal ()
+	{
+		log.info ("Consultando AdministradorSucursal");
+        List<AdministradorSucursal> tiposBebida = pp.darAdministradorSucursales();	
+        log.info ("Consultando AdministradorSucursal: " + tiposBebida.size() + " existentes");
+        return tiposBebida;
+	}
+
+	/**
+	 * Encuentra AdministradorSucursal en Superandes y los devuelve como una lista de VOAdministradorSucursal
+	 * Adiciona entradas al log de la aplicación
+	 * @return Una lista de objetos VOAdministradorSucursal con todos los tipos de AdministradorSucursal que conoce la aplicación, llenos con su información básica
+	 */
+	public List<VOAdministradorSucursal> darVOAdministradorSucursales ()
+	{
+		log.info ("Generando los VO de AdministradorSucursal");        
+        List<VOAdministradorSucursal> voTipos = new LinkedList<VOAdministradorSucursal> ();
+        for (AdministradorSucursal tb : pp.darAdministradorSucursales ())
+        {
+        	voTipos.add (tb);
+        }
+        log.info ("Generando los VO de AdministradorSucursal: " + voTipos.size() + " existentes");
+        return voTipos;
+	}
+
+	/**
+	 * Encuentra en Superandes 
+	 * Adiciona entradas al log de la aplicación
+	 * @param nombre - El nombre de OrdenPedido
+	 * @return Un objeto OrdenPedido, con su información básica
+	 */
+	public AdministradorSucursal darAdministradorSucursalPorIdAdministrador (long id)
+	{
+		log.info ("Buscando AdministradorSucursal por idAdmin: " + id);
+		List<AdministradorSucursal> tb = (List<AdministradorSucursal>) pp.darAdministradorSucursalPorIdAdministrador(id);
+		return !tb.isEmpty () ? tb.get (0) : null;
+	}
+	/**
+	 * Encuentra en Superandes 
+	 * Adiciona entradas al log de la aplicación
+	 * @param nombre - El nombre de OrdenPedido
+	 * @return Un objeto OrdenPedido, con su información básica
+	 */
+	public AdministradorSucursal darAdministradorSucursalPorIdSucursal (long id)
+	{
+		log.info ("Buscando AdministradorSucursal por idSucu: " + id);
+		List<AdministradorSucursal> tb = (List<AdministradorSucursal>) pp.darAdministradorSucursalPorIdSucursal(id);
+		return !tb.isEmpty () ? tb.get (0) : null;
+	}
+	
+
+
 	
 	
 	

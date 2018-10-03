@@ -273,6 +273,10 @@ public class PersistenciaSuperandes {
 
 		sqlOrdenPedido= new SQLOrdenPedido(this) ;
 		
+		sqlAdministrador= new SQLAdministrador(this);
+		
+		sqlAdministradorSucursal= new SQLAdministradorSucursal(this);
+		
 		
 	}
 	/**
