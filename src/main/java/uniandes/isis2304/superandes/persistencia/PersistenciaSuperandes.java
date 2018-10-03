@@ -1170,7 +1170,7 @@ public class PersistenciaSuperandes {
 	 * Método que consulta todas las tuplas en la tabla 
 	 * @return El objeto, construido con base en las tuplas de la tabla con el identificador dado
 	 */
-	public Factura darFacturaPorId (long id)
+	public Factura darFacturaPorIdVenta (long id)
 	{
 		return sqlFactura.darPorId (pmf.getPersistenceManager(), id);
 	}
