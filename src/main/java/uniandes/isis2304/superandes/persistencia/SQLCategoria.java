@@ -51,10 +51,10 @@ class SQLCategoria
 	 * @param tipoDeManejo - El tipo de manejo de la categoria 
 	 * @return EL número de tuplas insertadas
 	 */
-	public long adicionarCategoria (PersistenceManager pm, long idCategoria, String nombre, String tipoDeAlmacenamiento, String tipoDeManejo) 
+	public long adicionarCategoria (PersistenceManager pm, long id, String nombre, String tipoAlmacenamiento, String tipoManejo) 
 	{
-        Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaCategoria () + "(idCategoria, nombre, tipoDeAlmacenamiento, tipoDeManejo) values (?, ?, ?, ?)");
-        q.setParameters(idCategoria, nombre, tipoDeAlmacenamiento, tipoDeManejo);
+        Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaCategoria () + "(id, nombre, tipoAlmacenamiento, tipoManejo) values (?, ?, ?, ?)");
+        q.setParameters(id, nombre, tipoAlmacenamiento, tipoManejo);
         return (long) q.executeUnique();            
 	}
 
@@ -82,6 +82,21 @@ class SQLCategoria
         Query q = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaCategoria () + " WHERE id = ?");
         q.setParameters(idCategoria);
         return (long) q.executeUnique();            
+	}
+
+	/**
+	 * Crea y ejecuta la sentencia SQL para encontrar la información de CATEGORIAS de la 
+	 * base de datos de Superandes, por su nombre
+	 * @param pm - El manejador de persistencia
+	 * @param nombreCategoria - El nombre de la categoria
+	 * @return Una lista de objetos CATEGORIA que tienen el nombre dado
+	 */
+	public Categoria darCategoriasPorId (PersistenceManager pm, long nombreCategoria) 
+	{
+		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaCategoria () + " WHERE id = ?");
+		q.setResultClass(Categoria.class);
+		q.setParameters(nombreCategoria);
+		return (Categoria) q.executeList();
 	}
 
 	/**

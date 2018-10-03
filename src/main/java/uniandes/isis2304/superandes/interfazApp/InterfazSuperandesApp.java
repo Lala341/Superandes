@@ -42,6 +42,7 @@ import com.google.gson.stream.JsonReader;
 import uniandes.isis2304.superandes.negocio.Superandes;
 import uniandes.isis2304.superandes.negocio.VOAdministrador;
 import uniandes.isis2304.superandes.negocio.VOCiudad;
+import uniandes.isis2304.superandes.negocio.VOProducto;
 import uniandes.isis2304.superandes.negocio.VOPromocion;
 import uniandes.isis2304.superandes.negocio.VOProveedores;
 
@@ -522,7 +523,74 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
    
    
    public void RF2_RegistrarProductos(){
-	   
+	   try 
+		{
+			String nombre = JOptionPane.showInputDialog (this, "Nombre del producto", "Adicionar Producto", JOptionPane.QUESTION_MESSAGE);
+			String cant = JOptionPane.showInputDialog (this, "Cantidad del producto", "Adicionar Producto", JOptionPane.QUESTION_MESSAGE);
+			String unidadDeMedida = JOptionPane.showInputDialog (this, "Unidad de medida del producto", "Adicionar Producto", JOptionPane.QUESTION_MESSAGE);
+			String marca = JOptionPane.showInputDialog (this, "Marca del producto", "Adicionar Producto", JOptionPane.QUESTION_MESSAGE);
+			
+			String[] categorias= {"PERECEDERO", "NOPERECEDERO"};
+			String categoria = (String) JOptionPane.showInputDialog(null,"Seleccione la categoria", "Adicionar producto", JOptionPane.DEFAULT_OPTION, null, categorias, categorias[0]);
+			String[] tcategorias= {"ASEO", "ABARROTES", "PRENDASDEVESTIR", "MUEBLES", "HERRAMIENTAS", "ELECTRODOMESTICOS", "CONGELADOS"};
+			String tipoCategoria = (String) JOptionPane.showInputDialog(null,"Seleccione el tipo de producto de la categoria", "Adicionar producto", JOptionPane.DEFAULT_OPTION, null, tcategorias, tcategorias[0]);
+			
+			int es= JOptionPane.showConfirmDialog(this, "¿El producto esta disponible?", "Estado producto", JOptionPane.YES_NO_OPTION );
+			boolean estado = (es ==0)?true:false;
+			
+			String codigoDeBarras = JOptionPane.showInputDialog (this, "Codigo de barras del producto", "Adicionar Producto", JOptionPane.QUESTION_MESSAGE);
+			String especificacionDeEmpaquetado = JOptionPane.showInputDialog (this, "Especificacion de empaquetado del producto", "Adicionar Producto", JOptionPane.QUESTION_MESSAGE);
+			String precioPorUnidadMedida = JOptionPane.showInputDialog (this, "Precio Por Unidad Medida del producto", "Adicionar Producto", JOptionPane.QUESTION_MESSAGE);
+			String precioUnitario = JOptionPane.showInputDialog (this, "Precio Unitario del producto", "Adicionar Producto", JOptionPane.QUESTION_MESSAGE);
+			String presentacion = JOptionPane.showInputDialog (this, "Presentacion del producto", "Adicionar Producto", JOptionPane.QUESTION_MESSAGE);
+			
+			Date fecI= new Date(0);
+			if(categoria.equals(categorias[0])){
+				Integer[] dias= {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31};
+				String diai =  JOptionPane.showInputDialog(null,"Seleccione un dia (Fecha vencimiento)", "Adicionar Producto", JOptionPane.DEFAULT_OPTION, null, dias, dias[0]) + "";
+				String[] meses= {"enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "noviembre", "diciembre"};
+				String mesi = (String) JOptionPane.showInputDialog(null,"Seleccione un mes  (Fecha vencimiento)", "Adicionar Producto", JOptionPane.DEFAULT_OPTION, null, meses, meses[0]);
+				String anhoi = JOptionPane.showInputDialog (this, "Seleccione un año  (Fecha vencimiento)", "Adicionar Producto", JOptionPane.QUESTION_MESSAGE);
+				
+				String posMesi= "0";
+				int i=0;
+				for (String string : meses) { i=i+1;
+				if(string.equals(mesi)){ posMesi=i+"";}}
+				
+				fecI= new Date(Date.parse(diai+"/"+posMesi+ "/"+anhoi));
+			}
+			
+			if (nombre != null&&cant!=null&&categoria!=null&&codigoDeBarras!=null&&marca!=null&&precioPorUnidadMedida!=null&&precioUnitario!=null&&unidadDeMedida!=null)
+			{
+				VOProducto tb;
+				if(categoria.equals(categorias[0])){
+					
+	    		 tb = superandes.registrarProductoPerecedero(nombre, categoria, Integer.parseInt(cant), codigoDeBarras, especificacionDeEmpaquetado, estado, marca, Double.parseDouble(precioPorUnidadMedida), Double.parseDouble(precioUnitario), presentacion, unidadDeMedida, tipoCategoria,fecI);
+				}
+				else{
+					 tb = superandes.registrarProductoNoPerecedero(nombre, categoria, Integer.parseInt(cant), codigoDeBarras, especificacionDeEmpaquetado, estado, marca, Double.parseDouble(precioPorUnidadMedida), Double.parseDouble(precioUnitario), presentacion, unidadDeMedida, tipoCategoria);
+							
+				}
+				if (tb == null)
+	    		{
+	    			throw new Exception ("No se pudo crear un producto con nombre: " + nombre);
+	    		}
+	    		String resultado = "En adicionarProveedor\n\n";
+	    		resultado += "Proveedor adicionado exitosamente: " + tb;
+				resultado += "\n Operación terminada";
+				panelDatos.actualizarInterfaz(resultado);
+			}
+			else
+			{
+				panelDatos.actualizarInterfaz("Operación cancelada por el usuario, llene todos los campos.");
+			}
+		} 
+		catch (Exception e) 
+		{
+//			e.printStackTrace();
+			String resultado = generarMensajeError(e);
+			panelDatos.actualizarInterfaz(resultado);
+		}
    }
    public void RF3_RegistrarClientes(){
 	   

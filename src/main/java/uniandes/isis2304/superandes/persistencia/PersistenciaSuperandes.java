@@ -956,13 +956,14 @@ public class PersistenciaSuperandes {
 	 * @param tipoDeManejo - El tipo de manejo de la categoria 
 	 * @return EL número de tuplas insertadas
 	 */
-	public Categoria adicionarCategoria (long idCategoria, String nombre, String tipoDeAlmacenamiento, String tipoDeManejo) 
+	public Categoria adicionarCategoria ( String nombre, String tipoDeAlmacenamiento, String tipoDeManejo) 
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
         Transaction tx=pm.currentTransaction();
         try
         {
             tx.begin();
+            long idCategoria= nextval();
             long tuplasInsertadas = sqlCategoria.adicionarCategoria(pmf.getPersistenceManager(), idCategoria, nombre, tipoDeAlmacenamiento, tipoDeManejo);
             tx.commit();
 
@@ -1061,6 +1062,15 @@ public class PersistenciaSuperandes {
 	{
 		return sqlCategoria.darCategoriasPorNombre (pmf.getPersistenceManager(), nombreCategoria);
 	}
+	/**
+	 * Método que consulta todas las tuplas en la tabla Categoria que tienen el nombre dado
+	 * @param nombreCategoria - El nombre del Categoria
+	 * @return La lista de objetos Categoria, construidos con base en las tuplas de la tabla Categoria
+	 */
+	public Categoria darCategoriasPorId (long categoria) 
+	{
+		return sqlCategoria.darCategoriasPorId (pmf.getPersistenceManager(), categoria);
+	}
 
 	/**
 	 * Método que consulta todas las tuplas en la tabla Categoria
@@ -1084,13 +1094,14 @@ public class PersistenciaSuperandes {
 	 * @param idCategoria
 	 * @return El número de tuplas insertadas
 	 */
-	public Perecedero adicionarPerecedero (long idPerecedero, Date fechaDeVencimiento, String tipoCategoriaPerecedera, long idCategoria) 
+	public Perecedero adicionarPerecedero (Date fechaDeVencimiento, String tipoCategoriaPerecedera, long idCategoria) 
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
         Transaction tx=pm.currentTransaction();
         try
         {
             tx.begin();
+            long idPerecedero=nextval();
             long tuplasInsertadas = sqlPerecedero.adicionarPerecedero(pmf.getPersistenceManager(), idPerecedero, fechaDeVencimiento, tipoCategoriaPerecedera, idCategoria);
             tx.commit();
 
@@ -1178,13 +1189,14 @@ public class PersistenciaSuperandes {
 	 * @param idCategoria
 	 * @return El número de tuplas insertadas
 	 */
-	public NoPerecedero adicionarNoPerecedero (long idNoPerecedero, String tipoCategoriaNoPerecedera, long idCategoria) 
+	public NoPerecedero adicionarNoPerecedero ( String tipoCategoriaNoPerecedera, long idCategoria) 
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
         Transaction tx=pm.currentTransaction();
         try
         {
             tx.begin();
+            long idNoPerecedero=nextval();
             long tuplasInsertadas = sqlNoPerecedero.adicionarNoPerecedero(pmf.getPersistenceManager(), idNoPerecedero, tipoCategoriaNoPerecedera, idCategoria);
             tx.commit();
 
@@ -1280,13 +1292,14 @@ public class PersistenciaSuperandes {
 	 * @param unidadDeMedida unidad de medida
 	 * @return EL número de tuplas insertadas
 	 */
-	public Producto adicionarProducto ( long idProducto, String nombre, long idCategoria, int cantidad, String codigoDeBarras, String especificacionDeEmpaquetado, boolean estado, String marca, double precioPorUnidadMedida, double precioUnitario, String presentacion, String unidadDeMedida) 
+	public Producto adicionarProducto (  String nombre, long idCategoria, int cantidad, String codigoDeBarras, String especificacionDeEmpaquetado, boolean estado, String marca, double precioPorUnidadMedida, double precioUnitario, String presentacion, String unidadDeMedida) 
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
         Transaction tx=pm.currentTransaction();
         try
         {
             tx.begin();
+            long idProducto = nextval ();
             long tuplasInsertadas = sqlProducto.adicionarProducto(pmf.getPersistenceManager(), idProducto, nombre, idCategoria, cantidad, codigoDeBarras, especificacionDeEmpaquetado, estado, marca, precioPorUnidadMedida, precioUnitario, presentacion, unidadDeMedida);
             tx.commit();
 
@@ -3234,7 +3247,7 @@ public class PersistenciaSuperandes {
 	 * Adiciona entradas al log de la aplicación
 	 * @return El número de tuplas eliminadas. -1 si ocurre alguna Excepción
 	 */
-	public long eliminarProveedoresPorNit (int nit) 
+	public long eliminarProveedoresPorNit (long nit) 
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
         Transaction tx=pm.currentTransaction();

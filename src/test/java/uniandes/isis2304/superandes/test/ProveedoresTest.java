@@ -15,7 +15,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.stream.JsonReader;
 
 import uniandes.isis2304.superandes.negocio.Superandes;
-import uniandes.isis2304.superandes.negocio.VOCiudad;
+import uniandes.isis2304.superandes.negocio.VOProveedores;
 
 
 
@@ -24,7 +24,8 @@ import uniandes.isis2304.superandes.negocio.VOCiudad;
  * Clase con los métdos de prueba 
  *
  */
-public class ProoveedoresTest {
+public class ProveedoresTest {
+
 
 	/* ****************************************************************
 	 * 			Constantes
@@ -32,7 +33,7 @@ public class ProoveedoresTest {
 	/**
 	 * Logger para escribir la traza de la ejecución
 	 */
-	private static Logger log = Logger.getLogger(ProoveedoresTest.class.getName());
+	private static Logger log = Logger.getLogger(ProveedoresTest.class.getName());
 	
 	/**
 	 * Ruta al archivo de configuración de los nombres de tablas de la base de datos: La unidad de persistencia existe y el esquema de la BD también
@@ -59,13 +60,13 @@ public class ProoveedoresTest {
 	 *****************************************************************/
 	/**
 	 * Método que prueba las operaciones sobre la tabla 
-	 * 1. Adicionar Ciudad
+	 * 1. Adicionar Proveedores
 	 * 2. Listar el contenido de la tabla con 0, 1 y 2 registros insertados
-	 * 3. Borrar Ciudad por su identificador
-	 * 4. Borrar Ciudad por su nombre
+	 * 3. Borrar Proveedores por su identificador
+	 * 4. Borrar Proveedores por su nombre
 	 */
     @Test
-	public void CRDCiudadTest() 
+	public void CRDProveedoresTest() 
 	{
     	// Probar primero la conexión a la base de datos
 		try
@@ -88,52 +89,56 @@ public class ProoveedoresTest {
 		
     	try
 		{
-			// Lectura Ciudad con la tabla vacía
-			List <VOCiudad> lista = superandes.darVOCiudades();
-			assertEquals ("No debe haber Ciudad creados!!", 0, lista.size ());
+			// Lectura Proveedores con la tabla vacía
+			List <VOProveedores> lista = superandes.darVOProveedoreses();
+			assertEquals ("No debe haber Proveedores creados!!", 0, lista.size ());
 
-			// Lectura de Ciudad, Ciudad adicionada
+			// Lectura de Proveedores, Proveedores adicionada
 			String nombre = "Cali";
-			VOCiudad elemento = superandes.adicionarCiudad(nombre);
-			lista = superandes.darVOCiudades();
-			assertEquals ("Debe haber Ciudad creado !!", 1, lista.size ());
-			assertEquals ("El objeto creado y el traido de la BD deben ser iguales !!", elemento.getId(), lista.get (0).getId());
+			long n = 1111111111;
+			
+			VOProveedores elemento = superandes.adicionarProveedores(n,nombre);
+			lista = superandes.darVOProveedoreses();
+			assertEquals ("Debe haber Proveedores creado !!", 1, lista.size ());
+			assertEquals ("El objeto creado y el traido de la BD deben ser iguales !!", elemento.getNit(), lista.get (0).getNit());
 			assertEquals ("El objeto creado y el traido de la BD deben ser iguales !!", elemento.getNombre(), lista.get (0).getNombre());
 			
 
-			// Lectura de los Ciudad
+			// Lectura de los Proveedores
 			String nombre2 = "Bogota";
-			VOCiudad elemento2 = superandes.adicionarCiudad(nombre2);
-			lista = superandes.darVOCiudades();
-			assertEquals ("El primer Ciudad adicionado debe estar en la tabla !!", elemento.getId(), lista.get (0).getId());
-			assertEquals ("El primer Ciudad adicionado debe estar en la tabla !!", elemento.getNombre(), lista.get (0).getNombre());
+			long n2 = 991211111;
 			
-			assertEquals ("El segundo Ciudad adicionado debe estar en la tabla", elemento2.getId(), lista.get (1).getId());
-			assertEquals ("El segundo Ciudad adicionado debe estar en la tabla", elemento2.getNombre(), lista.get (1).getNombre());
+			VOProveedores elemento2 = superandes.adicionarProveedores(n2,nombre2);
+			lista = superandes.darVOProveedoreses();
+			assertEquals ("El primer Proveedores adicionado debe estar en la tabla !!", elemento.getNit(), lista.get (0).getNit());
+			assertEquals ("El primer Proveedores adicionado debe estar en la tabla !!", elemento.getNombre(), lista.get (0).getNombre());
+			
+			assertEquals ("El segundo Proveedores adicionado debe estar en la tabla", elemento2.getNit(), lista.get (1).getNit());
+			assertEquals ("El segundo Proveedores adicionado debe estar en la tabla", elemento2.getNombre(), lista.get (1).getNombre());
 			
 
 			// Prueba de eliminación, dado su identificador
-			long tbEliminados = superandes.eliminarCiudadPorId (elemento.getId ());
-			assertEquals ("Debe haberse eliminado Ciudad !!", 1, tbEliminados);
-			lista = superandes.darVOCiudades();
-			assertEquals ("Debe haber un Ciudad !!", 1, lista.size ());
-			assertEquals ("El segundo Ciudad adicionado debe estar en la tabla", elemento2.getId(), lista.get (0).getId());
-			assertEquals ("El segundo Ciudad adicionado debe estar en la tabla", elemento2.getNombre(), lista.get (0).getNombre());
+			long tbEliminados = superandes.eliminarProveedoresPorId (elemento.getNit());
+			assertEquals ("Debe haberse eliminado Proveedores !!", 1, tbEliminados);
+			lista = superandes.darVOProveedoreses();
+			assertEquals ("Debe haber un Proveedores !!", 1, lista.size ());
+			assertEquals ("El segundo Proveedores adicionado debe estar en la tabla", elemento2.getNit(), lista.get (0).getNit());
+			assertEquals ("El segundo Proveedores adicionado debe estar en la tabla", elemento2.getNombre(), lista.get (0).getNombre());
 			
 			// Prueba de eliminación, dado su identificador
-			tbEliminados = superandes.eliminarCiudadPorId (elemento2.getId ());
-			assertEquals ("Debe haberse eliminado un Ciudad !!", 1, tbEliminados);
-			lista = superandes.darVOCiudades();
+			tbEliminados = superandes.eliminarProveedoresPorId (elemento2.getNit());
+			assertEquals ("Debe haberse eliminado un Proveedores !!", 1, tbEliminados);
+			lista = superandes.darVOProveedoreses();
 			assertEquals ("La tabla debió quedar vacía !!", 0, lista.size ());
 		}
 		catch (Exception e)
 		{
 //			e.printStackTrace();
-			String msg = "Error en la ejecución de las pruebas de operaciones sobre la tabla Ciudad.\n";
+			String msg = "Error en la ejecución de las pruebas de operaciones sobre la tabla Proveedores.\n";
 			msg += "Revise el log de superandes y el de datanucleus para conocer el detalle de la excepción";
 			System.out.println (msg);
 
-    		fail ("Error en las pruebas sobre la tabla Ciudad");
+    		fail ("Error en las pruebas sobre la tabla Proveedores");
 		}
 		finally
 		{
@@ -152,7 +157,7 @@ public class ProoveedoresTest {
 	 * 3. Pruebas de insercion de del primer y segundo registro
 	 */
 	@Test
-	public void unicidadCiudadTest() 
+	public void unicidadProveedoresTest() 
 	{
     	// Probar primero la conexión a la base de datos
 		try
@@ -163,10 +168,10 @@ public class ProoveedoresTest {
 		catch (Exception e)
 		{
 //			e.printStackTrace();
-			log.info ("Prueba de UNICIDAD de Ciudad incompleta. No se pudo conectar a la base de datos !!. La excepción generada es: " + e.getClass ().getName ());
+			log.info ("Prueba de UNICIDAD de Proveedores incompleta. No se pudo conectar a la base de datos !!. La excepción generada es: " + e.getClass ().getName ());
 			log.info ("La causa es: " + e.getCause ().toString ());
 
-			String msg = "Prueba de UNICIDAD de Ciudad incompleta. No se pudo conectar a la base de datos !!.\n";
+			String msg = "Prueba de UNICIDAD de Proveedores incompleta. No se pudo conectar a la base de datos !!.\n";
 			msg += "Revise el log de superandes y el de datanucleus para conocer el detalle de la excepción";
 			System.out.println (msg);
 			fail (msg);
@@ -176,22 +181,25 @@ public class ProoveedoresTest {
 		try
 		{
 			// Lectura con la tabla vacía
-			List <VOCiudad> lista = superandes.darVOCiudades();
+			List <VOProveedores> lista = superandes.darVOProveedoreses();
 			assertEquals ("No debe haber tipos de bebida creados!!", 0, lista.size ());
 
 			// Lectura 
 			String nombre = "Cali";
-			VOCiudad elemento1 = superandes.adicionarCiudad (nombre);
-			lista = superandes.darVOCiudades();
-			assertEquals ("Debe haber un Ciudad creado !!", 1, lista.size ());
+			long n = 1111111111;
+			
+			VOProveedores elemento1 = superandes.adicionarProveedores (n,nombre);
+			lista = superandes.darVOProveedoreses();
+			assertEquals ("Debe haber un Proveedores creado !!", 1, lista.size ());
 
-			VOCiudad elemento2 = superandes.adicionarCiudad (nombre);
+			
+			VOProveedores elemento2 = superandes.adicionarProveedores (n, nombre);
 			assertNull ("No puede adicionar dos tipos de bebida con el mismo nombre !!", elemento2);
 		}
 		catch (Exception e)
 		{
 //			e.printStackTrace();
-			String msg = "Error en la ejecución de las pruebas de UNICIDAD sobre la tabla ciudad.\n";
+			String msg = "Error en la ejecución de las pruebas de UNICIDAD sobre la tabla Proveedores.\n";
 			msg += "Revise el log de superandes y el de datanucleus para conocer el detalle de la excepción";
 			System.out.println (msg);
 
@@ -215,7 +223,7 @@ public class ProoveedoresTest {
 	*  d. Haga pruebas de borrado de tuplas maestras y dependientes.
 	*/
 	
-	//La entidad Ciudad no cuenta con restricciones de FK
+	//La entidad Proveedores no cuenta con restricciones de FK
 	
 	/* ****************************************************************
 	 * 			PRUEBAS INTEGRIDAD RESTRICCIONES DE CHEQUEO
@@ -229,7 +237,7 @@ public class ProoveedoresTest {
 
 	*/
 	
-	//La entidad Ciudad no cuenta con restricciones de chequeo
+	//La entidad Proveedores no cuenta con restricciones de chequeo
 
 	/* ****************************************************************
 	 * 			Métodos de configuración

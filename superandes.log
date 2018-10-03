@@ -652,3 +652,160 @@ null
 07:01:18,972 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
 07:01:18,973 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
 07:01:18,994 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+07:11:22,719 (main) INFO  [uniandes.isis2304.superandes.test.ProveedoresTest] - Probando las operaciones CRD
+07:11:22,773 (main) INFO  [uniandes.isis2304.superandes.test.ProveedoresTest] - Se encontró un archivo de configuración de tablas válido
+07:11:24,106 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores
+07:11:24,206 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores: 0 existentes
+07:11:24,206 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Proveedores: Cali
+07:11:24,273 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Proveedores: Cali
+07:11:24,273 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores
+07:11:24,279 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores: 1 existentes
+07:11:24,279 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Proveedores: Bogota
+07:11:24,283 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Proveedores: Bogota
+07:11:24,283 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores
+07:11:24,286 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores: 2 existentes
+07:11:24,286 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Eliminando Proveedores por id: 1111111111
+07:11:24,295 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Eliminando Proveedores por id: 1 tuplas eliminadas
+07:11:24,295 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores
+07:11:24,298 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores: 1 existentes
+07:11:24,298 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Eliminando Proveedores por id: 991211111
+07:11:24,302 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Eliminando Proveedores por id: 1 tuplas eliminadas
+07:11:24,302 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores
+07:11:24,305 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores: 0 existentes
+07:11:24,305 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Limpiando la BD de Superandes
+07:11:24,379 (main) INFO  [uniandes.isis2304.superandes.persistencia.PersistenciaSuperandes] - Borrada la base de datos
+07:11:24,379 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Limpiando la BD de Superandes: Listo!
+07:11:24,383 (main) INFO  [uniandes.isis2304.superandes.test.ProveedoresTest] - Probando la restricción de UNICIDAD 
+07:11:24,384 (main) INFO  [uniandes.isis2304.superandes.test.ProveedoresTest] - Se encontró un archivo de configuración de tablas válido
+07:11:24,456 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores
+07:11:24,458 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores: 0 existentes
+07:11:24,458 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Proveedores: Cali
+07:11:24,498 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Proveedores: Cali
+07:11:24,498 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores
+07:11:24,501 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores: 1 existentes
+07:11:24,501 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Proveedores: Cali
+07:11:24,504 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Proveedores: Cali
+07:11:24,504 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Limpiando la BD de Superandes
+07:11:24,532 (main) INFO  [uniandes.isis2304.superandes.persistencia.PersistenciaSuperandes] - Borrada la base de datos
+07:11:24,532 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Limpiando la BD de Superandes: Listo!
+07:11:48,201 (main) INFO  [uniandes.isis2304.superandes.test.ProveedoresTest] - Probando las operaciones CRD
+07:11:48,255 (main) INFO  [uniandes.isis2304.superandes.test.ProveedoresTest] - Se encontró un archivo de configuración de tablas válido
+07:11:49,524 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores
+07:11:49,619 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores: 0 existentes
+07:11:49,619 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Proveedores: Cali
+07:11:49,673 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Proveedores: Cali
+07:11:49,673 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores
+07:11:49,678 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores: 1 existentes
+07:11:49,678 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Proveedores: Bogota
+07:11:49,681 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Proveedores: Bogota
+07:11:49,681 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores
+07:11:49,685 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores: 2 existentes
+07:11:49,685 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Eliminando Proveedores por id: 1111111111
+07:11:49,689 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Eliminando Proveedores por id: 1 tuplas eliminadas
+07:11:49,689 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores
+07:11:49,692 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores: 1 existentes
+07:11:49,692 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Eliminando Proveedores por id: 991211111
+07:11:49,697 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Eliminando Proveedores por id: 1 tuplas eliminadas
+07:11:49,697 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores
+07:11:49,699 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores: 0 existentes
+07:11:49,699 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Limpiando la BD de Superandes
+07:11:49,729 (main) INFO  [uniandes.isis2304.superandes.persistencia.PersistenciaSuperandes] - Borrada la base de datos
+07:11:49,729 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Limpiando la BD de Superandes: Listo!
+07:11:49,733 (main) INFO  [uniandes.isis2304.superandes.test.ProveedoresTest] - Probando la restricción de UNICIDAD 
+07:11:49,734 (main) INFO  [uniandes.isis2304.superandes.test.ProveedoresTest] - Se encontró un archivo de configuración de tablas válido
+07:11:49,804 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores
+07:11:49,807 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores: 0 existentes
+07:11:49,807 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Proveedores: Cali
+07:11:49,845 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Proveedores: Cali
+07:11:49,845 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores
+07:11:49,848 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores: 1 existentes
+07:11:49,848 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Proveedores: Cali
+07:11:49,858 (main) ERROR [uniandes.isis2304.superandes.persistencia.PersistenciaSuperandes] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO PROVEEDORES(nit, nombre) values (?, ?)".
+null
+07:11:49,859 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Proveedores: Cali
+07:11:49,859 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Limpiando la BD de Superandes
+07:11:49,886 (main) INFO  [uniandes.isis2304.superandes.persistencia.PersistenciaSuperandes] - Borrada la base de datos
+07:11:49,886 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Limpiando la BD de Superandes: Listo!
+08:08:48,532 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+08:08:48,533 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+08:08:48,554 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+08:15:41,580 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+08:15:41,581 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+08:15:41,602 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+08:16:58,799 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+08:16:58,800 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+08:16:58,821 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+08:17:50,944 (AWT-EventQueue-0) ERROR [uniandes.isis2304.superandes.persistencia.PersistenciaSuperandes] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO CATEGORIA(idCategoria, nombre, tipoDeAlmacenamiento, tipoDeManejo) values (?, ?, ?, ?)".
+null
+08:20:10,186 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+08:20:10,187 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+08:20:10,208 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+08:20:51,779 (AWT-EventQueue-0) ERROR [uniandes.isis2304.superandes.persistencia.PersistenciaSuperandes] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO CATEGORIA(idCategoria, nombre, tipoDeAlmacenamiento, tipoDeManejo) values (?, ?, ?, ?)".
+null
+08:22:49,988 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+08:22:49,989 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+08:22:50,010 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+08:23:25,344 (AWT-EventQueue-0) ERROR [uniandes.isis2304.superandes.persistencia.PersistenciaSuperandes] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO CATEGORIA(id, nombre, tipoAlmacenamiento, tipoManejo) values (?, ?, ?, ?)".
+null
+08:27:49,198 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+08:27:49,199 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+08:27:49,221 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+08:28:30,158 (AWT-EventQueue-0) ERROR [uniandes.isis2304.superandes.persistencia.PersistenciaSuperandes] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO CATEGORIA(id, nombre, tipoAlmacenamiento, tipoManejo) values (?, ?, ?, ?)".
+null
+08:30:28,108 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+08:30:28,109 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+08:30:28,131 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+08:30:57,175 (AWT-EventQueue-0) ERROR [uniandes.isis2304.superandes.persistencia.PersistenciaSuperandes] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO CATEGORIA(id, nombre, tipoAlmacenamiento, tipoManejo) values (?, ?, ?, ?)".
+null
+08:31:25,048 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+08:31:25,049 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+08:31:25,071 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+08:31:43,163 (AWT-EventQueue-0) ERROR [uniandes.isis2304.superandes.persistencia.PersistenciaSuperandes] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO CATEGORIA(id, nombre, tipoAlmacenamiento, tipoManejo) values (?, ?, ?, ?)".
+null
+08:35:01,835 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+08:35:01,836 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+08:35:01,857 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+08:35:25,384 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Producto: 3
+08:35:25,400 (AWT-EventQueue-0) ERROR [uniandes.isis2304.superandes.persistencia.PersistenciaSuperandes] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO PRODUCTO(idProducto, nombre, idCategoria, cantidad, codigoDeBarras, especificacionDeEmpaquetado, estado, marca, precioPorUnidadMedida, precioUnitario, presentacion, unidadDeMedida) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)".
+null
+08:35:25,400 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Producto: 3
+08:39:09,713 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+08:39:09,714 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+08:39:09,736 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+08:39:17,552 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+08:39:17,553 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+08:39:17,575 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+08:39:40,581 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Producto: 3
+08:39:40,597 (AWT-EventQueue-0) ERROR [uniandes.isis2304.superandes.persistencia.PersistenciaSuperandes] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO PRODUCTO(id, nombre, cantidad, codigoDeBarras, especificacionDeEmpaquetado, estado, marca, precioPorUnidadMedida, precioUnitario, presentacion, unidadDeMedida, categoria ) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)".
+null
+08:39:40,597 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Producto: 3
+08:41:55,262 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+08:41:55,262 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+08:41:55,284 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+08:42:16,959 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Producto: 3
+08:42:16,974 (AWT-EventQueue-0) ERROR [uniandes.isis2304.superandes.persistencia.PersistenciaSuperandes] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO PRODUCTO(id, nombre, cantidad, codigoDeBarras, especificacionDeEmpaquetado, estado, marca, precioPorUnidadMedida, precioUnitario, presentacion, unidadMedida, categoria ) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)".
+null
+08:42:16,974 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Producto: 3
+08:45:42,544 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+08:45:42,545 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+08:45:42,566 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+08:46:05,865 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Producto: 3
+08:46:05,882 (AWT-EventQueue-0) ERROR [uniandes.isis2304.superandes.persistencia.PersistenciaSuperandes] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO PRODUCTO(id, nombre, cantidad, codigoBarras, especificacionEmpaquetado, estado, marca, precioPorUnidadMedida, precioUnitario, presentacion, unidadMedida, categoria ) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)".
+null
+08:46:05,883 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Producto: 3
+08:47:43,419 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+08:47:43,420 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+08:47:43,442 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+08:48:02,498 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Producto: 3
+08:48:02,518 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Producto: 3
+09:03:42,869 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+09:03:42,870 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+09:03:42,891 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+09:04:07,607 (AWT-EventQueue-0) ERROR [uniandes.isis2304.superandes.persistencia.PersistenciaSuperandes] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO NOPERECEDERO(idNoPerecedero, tipoCategoriaNoPerecedera, idCategoria) values (?, ?, ?)".
+null
+09:04:07,607 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Producto: 3
+09:04:07,616 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Producto: 3
+09:04:37,743 (AWT-EventQueue-0) ERROR [uniandes.isis2304.superandes.persistencia.PersistenciaSuperandes] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO PERECEDERO(idPerecedero, fechaDeVencimiento, tipoCategoriaPerecedera) values (?, ?, ?,? )".
+null
+09:04:37,743 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Producto: 3
+09:04:37,750 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Producto: 3

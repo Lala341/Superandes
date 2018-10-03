@@ -992,7 +992,7 @@ public class Superandes {
 	 * Adiciona entradas al log de la aplicación
 	 * @return El número de tuplas eliminadas
 	 */
-	public long eliminarProveedoresPorId (int nit)
+	public long eliminarProveedoresPorId (long nit)
 	{
 		log.info ("Eliminando Proveedores por id: " + nit);
         long resp = pp.eliminarProveedoresPorNit(nit);		
@@ -1192,6 +1192,7 @@ public class Superandes {
 		return !tb.isEmpty () ? tb.get (0) : null;
 	}
 	
+	
 	/* ****************************************************************
 	 * 			Métodos para manejar Administrador
 	 *****************************************************************/
@@ -1383,7 +1384,70 @@ public class Superandes {
 	
 	
 	
+	/* ****************************************************************
+	 * 			Métodos para manejar Requerimientos
+	 *****************************************************************/
 	
+	public Producto registrarProductoPerecedero(  String nombre, String categoria, int cantidad, String codigoDeBarras, String especificacionDeEmpaquetado, boolean estado, String marca, double precioPorUnidadMedida, double precioUnitario, String presentacion, String unidadDeMedida, String tipoCategoria, Date fechaDeVencimiento){
+		long cat = 0;
+		List<Categoria> list=pp.darCategoriasPorNombre(categoria);
+		if(list.size()==0){
+			cat=pp.adicionarCategoria( categoria, tipoCategoria, "").getId();
+			pp.adicionarPerecedero( fechaDeVencimiento, tipoCategoria, cat);
+			
+		}
+		else{
+			
+			boolean encontro=false;
+			for (Categoria categoria2 : list) {
+				if(categoria2.getTipoDeAlmacenamiento().equals(tipoCategoria)){
+					cat=categoria2.getId();
+					encontro=true;
+				}
+			}
+			if(encontro==false){
+				cat=pp.adicionarCategoria( categoria, tipoCategoria, "").getId();
+				pp.adicionarPerecedero( fechaDeVencimiento, tipoCategoria, cat);
+				
+			}
+			
+		}
+		log.info ("Adicionando Producto: " + nombre);
+		Producto producto = pp.adicionarProducto( nombre, cat, cantidad, codigoDeBarras, especificacionDeEmpaquetado, estado, marca, precioPorUnidadMedida, precioUnitario, presentacion, unidadDeMedida);		
+        log.info ("Adicionando Producto: " + nombre);
+       
+        return producto;
+	}
+	public Producto registrarProductoNoPerecedero(  String nombre, String categoria, int cantidad, String codigoDeBarras, String especificacionDeEmpaquetado, boolean estado, String marca, double precioPorUnidadMedida, double precioUnitario, String presentacion, String unidadDeMedida, String tipoCategoria){
+		long cat = 0;
+		List<Categoria> list=pp.darCategoriasPorNombre(categoria);
+		if(list.size()==0){
+			cat=pp.adicionarCategoria( categoria, tipoCategoria, "").getId();
+			pp.adicionarNoPerecedero(tipoCategoria,cat);
+			
+		}
+		else{
+			
+			boolean encontro=false;
+			for (Categoria categoria2 : list) {
+				if(categoria2.getTipoDeAlmacenamiento().equals(tipoCategoria)){
+					cat=categoria2.getId();
+					encontro=true;
+				}
+			}
+			if(encontro==false){
+				cat=pp.adicionarCategoria( categoria, tipoCategoria, "").getId();
+				pp.adicionarNoPerecedero(tipoCategoria,cat);
+				
+			}
+			
+		}
+		log.info ("Adicionando Producto: " + nombre);
+		Producto producto = pp.adicionarProducto( nombre, cat, cantidad, codigoDeBarras, especificacionDeEmpaquetado, estado, marca, precioPorUnidadMedida, precioUnitario, presentacion, unidadDeMedida);		
+        log.info ("Adicionando Producto: " + nombre);
+       
+        return producto;
+	}
 	
 	
 	
