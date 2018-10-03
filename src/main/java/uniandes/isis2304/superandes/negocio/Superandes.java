@@ -1206,7 +1206,12 @@ public class Superandes {
 		List<OrdenPedido> tb = (List<OrdenPedido>) pp.darOrdenPedidoPorId(id);
 		return !tb.isEmpty () ? tb.get (0) : null;
 	}
-	
+	public List<OrdenPedido> darOrdenPedidoPorIdProveedor (long id)
+	{
+		log.info ("Buscando OrdenPedido por idProveedor: " + id);
+		List<OrdenPedido> tb = (List<OrdenPedido>) pp.darOrdenPedidoPorIdProveedor(id);
+		return !tb.isEmpty () ? tb : null;
+	}
 	
 	/* ****************************************************************
 	 * 			Métodos para manejar Administrador

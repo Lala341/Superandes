@@ -3500,6 +3500,10 @@ public class PersistenciaSuperandes {
 	{
 		return sqlOrdenPedido.darPorId (pmf.getPersistenceManager(), id);
 	}
+	public List<OrdenPedido> darOrdenPedidoPorIdProveedor (long id)
+	{
+		return sqlOrdenPedido.darPorIdProveedor (pmf.getPersistenceManager(), id);
+	}
 	
 	/* ****************************************************************
 	 * 			Métodos para manejar  Administrador

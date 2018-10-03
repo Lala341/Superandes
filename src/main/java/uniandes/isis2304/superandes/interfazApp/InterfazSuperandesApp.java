@@ -40,6 +40,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.stream.JsonReader;
 
+import uniandes.isis2304.superandes.negocio.OrdenPedido;
 import uniandes.isis2304.superandes.negocio.Sucursal;
 import uniandes.isis2304.superandes.negocio.Superandes;
 import uniandes.isis2304.superandes.negocio.VOAdministrador;
@@ -1012,7 +1013,72 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 	   
    }
    public void RFC5_ComprasProveedores(){
+
+	   try{
+		   
+	   List<VOProveedores> proveedores=superandes.darVOProveedoreses();
 	   
+	   String[] proveedoresn= new String[proveedores.size()];
+	     
+	   int i=0;
+	   
+	   for (VOProveedores voproveedores :proveedores) {
+		   proveedoresn[i]=voproveedores.getNombre();
+		   i=i+1;
+		   
+	   }
+	   
+	   if(proveedores.size()==0){
+		   JOptionPane.showMessageDialog(this, "No existen proveedores registrados, por tanto no existen ordenes de pedido. (Menu requerimientos F).");
+
+	   }
+	   else{
+	   
+		
+		String proveedor= (String) JOptionPane.showInputDialog(null,"Seleccione el proveedor que desea ver", "Mostrar compras hechas por Superandes a proveedores", JOptionPane.DEFAULT_OPTION, null, proveedoresn, proveedoresn[0]);
+		
+		int posPro=0;
+		i=0;
+		for (String string : proveedoresn) {
+			if(string.equals(proveedor)){
+				posPro=i;
+			}
+			i=i+1;
+		}
+		i=0;
+		
+		
+		
+		if (proveedor!=null)
+		{
+			List<OrdenPedido> tb= superandes.darOrdenPedidoPorIdProveedor(proveedores.get(posPro).getNit());
+			
+			if (tb == null)
+    		{
+    			throw new Exception ("No se pudo obtener las ordenes de pedido");
+    		}
+			String resultado = "El proveedor con NIT:" + proveedores.get(posPro).getNit() + "tienen los siguientes pedidos:" ;
+			for (OrdenPedido ordenPedido : tb) {
+				resultado += "\n" + ordenPedido;
+			}
+			JOptionPane.showMessageDialog(this, "Los pedidos del proveedor se imprimieron en el panel de datos.");
+
+			panelDatos.actualizarInterfaz(resultado);
+		}
+		else
+		{
+			panelDatos.actualizarInterfaz("Operación cancelada por el usuario, llene todos los campos.");
+		}
+	   }
+	} 
+	catch (Exception e) 
+	{
+//		e.printStackTrace();
+		String resultado = generarMensajeError(e);
+		panelDatos.actualizarInterfaz(resultado);
+	}
+
+   
    }
    public void RFC6_VentasUsuarioDado(){
 	   
