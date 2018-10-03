@@ -83,6 +83,20 @@
                   }
               ]
           },
+          { "menuTitle": "Agregar elementos",
+            "options":
+              [
+                    {
+                        "label": "Agregar ciudad",
+                        "event": "agregarCiudad"
+                    },
+                    {
+                        "label": "Agregar administrador",
+                        "event": "agregarAdministrador"
+                    }
+                    
+              ]
+          },
 		{ "menuTitle": "Mantenimiento",
 		  "options":
 			[

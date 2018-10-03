@@ -40,6 +40,8 @@ import com.google.gson.JsonObject;
 import com.google.gson.stream.JsonReader;
 
 import uniandes.isis2304.superandes.negocio.Superandes;
+import uniandes.isis2304.superandes.negocio.VOAdministrador;
+import uniandes.isis2304.superandes.negocio.VOCiudad;
 import uniandes.isis2304.superandes.negocio.VOPromocion;
 import uniandes.isis2304.superandes.negocio.VOProveedores;
 
@@ -645,6 +647,77 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
    public void RFC6_VentasUsuarioDado(){
 	   
    }
+   
+   
+   
+   
+   
+   
+   
+   public void agregarCiudad(){
+   
+   try 
+	{
+		String nombre = JOptionPane.showInputDialog (this, "Nombre de la ciudad", "Adicionar Ciudad", JOptionPane.QUESTION_MESSAGE);
+		
+		
+		if (nombre != null)
+		{
+   		VOCiudad tb = superandes.adicionarCiudad (nombre);
+   		if (tb == null)
+   		{
+   			throw new Exception ("No se pudo crear la ciudad con nombre: " + nombre );
+   		}
+   		String resultado = "En adicionarCiudad\n\n";
+   		resultado += "Ciudad adicionado exitosamente: " + tb;
+			resultado += "\n Operación terminada";
+			panelDatos.actualizarInterfaz(resultado);
+		}
+		else
+		{
+			panelDatos.actualizarInterfaz("Operación cancelada por el usuario");
+		}
+	} 
+	catch (Exception e) 
+	{
+//		e.printStackTrace();
+		String resultado = generarMensajeError(e);
+		panelDatos.actualizarInterfaz(resultado);
+	}
+   }
+   public void agregarAdministrador(){
+	   
+	   try 
+		{
+			String nombre = JOptionPane.showInputDialog (this, "Usuario", "Adicionar administrador", JOptionPane.QUESTION_MESSAGE);
+			String con = JOptionPane.showInputDialog (this, "Contraseña", "Adicionar administrador", JOptionPane.QUESTION_MESSAGE);
+			String cantRecompra = JOptionPane.showInputDialog (this, "Cantidad recompra", "Adicionar administrador", JOptionPane.QUESTION_MESSAGE);
+			
+			
+			if (nombre != null)
+			{
+	   		VOAdministrador tb = superandes.adicionarAdministrador(Integer.parseInt(cantRecompra), nombre, con);
+	   		if (tb == null)
+	   		{
+	   			throw new Exception ("No se pudo crear administrador con usuario: " + nombre );
+	   		}
+	   		String resultado = "En adicionarAdministrador\n\n";
+	   		resultado += "Administrador adicionado exitosamente: " + tb;
+				resultado += "\n Operación terminada";
+				panelDatos.actualizarInterfaz(resultado);
+			}
+			else
+			{
+				panelDatos.actualizarInterfaz("Operación cancelada por el usuario");
+			}
+		} 
+		catch (Exception e) 
+		{
+//			e.printStackTrace();
+			String resultado = generarMensajeError(e);
+			panelDatos.actualizarInterfaz(resultado);
+		}
+	   }
 	/* ****************************************************************
 	 * 			Programa principal
 	 *****************************************************************/
