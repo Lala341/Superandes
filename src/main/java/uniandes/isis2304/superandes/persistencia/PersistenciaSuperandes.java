@@ -2543,7 +2543,7 @@ public class PersistenciaSuperandes {
 	 * Adiciona entradas al log de la aplicación
 	  * @return El objeto adicionado. null si ocurre alguna Excepción
 	 */
-	public Promocion adicionarPromocion( String nombre, String descripcion, String tipo, Date fechaInicio, Date fechaFinalizacion, String estado)
+	public Promocion adicionarPromocion( String nombre, String descripcion, String tipo, Date fechaInicio, Date fechaFinalizacion, String estado, int cantidadP)
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
         Transaction tx=pm.currentTransaction();
@@ -2551,12 +2551,12 @@ public class PersistenciaSuperandes {
         {
             tx.begin();
             long id = nextval ();
-            long tuplasInsertadas = sqlPromocion.adicionar(pm, id,nombre, descripcion, tipo, fechaInicio, fechaFinalizacion, estado);
+            long tuplasInsertadas = sqlPromocion.adicionar(pm, id,nombre, descripcion, tipo, fechaInicio, fechaFinalizacion, estado, cantidadP);
             tx.commit();
             
             log.trace ("Inserción de Promocion: " + nombre + ": " + tuplasInsertadas + " tuplas insertadas");
             
-            return new Promocion (id,nombre,fechaInicio, fechaFinalizacion, estado);
+            return new Promocion (id,nombre,fechaInicio, fechaFinalizacion, estado,cantidadP);
         }
         catch (Exception e)
         {

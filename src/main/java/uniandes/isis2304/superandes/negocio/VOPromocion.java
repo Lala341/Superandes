@@ -52,6 +52,14 @@ public interface VOPromocion {
 	 * @param estado the estado to set
 	 */
 	public void setEstado(String estado);
+	/**
+	 * @return the cantidadP
+	 */
+	public int getCantidadP();
+	/**
+	 * @param cantidadP the cantidadP to set
+	 */
+	public void setCantidadP(int cantidadP);
 	@Override
 	/**
 	 * @return Una cadena de caracteres con todos los atributos de la Promocion

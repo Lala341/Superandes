@@ -14,16 +14,18 @@ public class Promocion implements VOPromocion{
 	private Date fechaInicio;
 	private Date fechaFinalizacion;
 	private String estado;
+	private int cantidadP;
 
 	public Promocion(){
 
 	}
-	public Promocion(long id, String nombre, Date fechaInicio, Date fechaFinalizacion, String estado){
+	public Promocion(long id, String nombre, Date fechaInicio, Date fechaFinalizacion, String estado, int cantidadP){
 		this.id=id;
 		this.nombre=nombre;
 		this.fechaInicio=fechaInicio;
 		this.fechaFinalizacion=fechaFinalizacion;
 		this.estado=estado;
+		this.cantidadP=cantidadP;
 	}
 
 	/**
@@ -85,6 +87,18 @@ public class Promocion implements VOPromocion{
 	 */
 	public void setEstado(String estado) {
 		this.estado = estado;
+	}
+	/**
+	 * @return the cantidadP
+	 */
+	public int getCantidadP() {
+		return cantidadP;
+	}
+	/**
+	 * @param cantidadP the cantidadP to set
+	 */
+	public void setCantidadP(int cantidadP) {
+		this.cantidadP = cantidadP;
 	}
 	@Override
 	/**

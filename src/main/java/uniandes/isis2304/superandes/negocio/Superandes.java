@@ -743,10 +743,10 @@ public class Superandes {
 	 * Adiciona entradas al log de la aplicación
 	* @return El objeto. null si ocurre alguna Excepción
 	 */
-	public Promocion adicionarPromocion (String nombre, String descripcion , String tipo, Date fecI, Date fecF, String estado)
+	public Promocion adicionarPromocion (String nombre, String descripcion , String tipo, Date fecI, Date fecF, String estado, int cantidadP)
 	{
         log.info ("Adicionando Promocion: " + nombre);
-        Promocion Promocion = pp.adicionarPromocion (nombre,descripcion, tipo, fecI, fecF, estado);		
+        Promocion Promocion = pp.adicionarPromocion (nombre,descripcion, tipo, fecI, fecF, estado, cantidadP);		
         log.info ("Adicionando Promocion: " + nombre);
         return Promocion;
 	}
