@@ -45,7 +45,7 @@ public interface VOPromocion {
 	
 	@Override
 	/**
-	 * @return Una cadena de caracteres con todos los atributos de la Bodega
+	 * @return Una cadena de caracteres con todos los atributos de la Promocion
 	 */
 	public String toString();
 

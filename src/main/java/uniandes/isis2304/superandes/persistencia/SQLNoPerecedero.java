@@ -94,7 +94,7 @@ class SQLNoPerecedero
 	 * @param pm - El manejador de persistencia
 	 * @return Una lista de objetos NO_PERECEDERO
 	 */
-	public List<NoPerecedero> darNoNoPerecederos (PersistenceManager pm)
+	public List<NoPerecedero> darNoPerecederos (PersistenceManager pm)
 	{
 		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaNoPerecedero ());
 		q.setResultClass(NoPerecedero.class);

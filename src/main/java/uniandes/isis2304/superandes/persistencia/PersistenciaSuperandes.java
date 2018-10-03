@@ -1,5 +1,6 @@
 package uniandes.isis2304.superandes.persistencia;
 
+import java.sql.Date;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -691,6 +692,821 @@ public class PersistenciaSuperandes {
 		return sqlSucursal.darSucursalesPorId(pmf.getPersistenceManager(), id);
 	}
 	
+	/* ****************************************************************
+	 * 			Métodos para manejar LAS BODEGAS
+	 *****************************************************************/
+	
+	/**
+	 * @param pm - El manejador de persistencia
+	 * @param idBodega - El identificador del bodega
+	 * @param cantidadProductos - la cantidad de productos en la bodega
+	 * @param capacidadTotal - La capacidad de la bodega
+	 * @param peso - El peso manejado en la bodega
+	 * @param volumen - El volumen manejado en la bodega
+	 * @param tipoProducto - El tipo de producto que maneja la bodega
+	 * @param nivelDeAbastecimiento
+	 * @param idSucursal
+	 */
+	public Bodega adicionarBodega(long idBodega, int cantidadProductos, int capacidadTotal, double peso, double volumen, String tipoProducto, String nivelDeReorden, long idSucursal) 
+	{
+		PersistenceManager pm = pmf.getPersistenceManager();
+        Transaction tx=pm.currentTransaction();
+        try
+        {
+            tx.begin();
+            long tuplasInsertadas = sqlBodega.adicionarBodega(pmf.getPersistenceManager(), idBodega, cantidadProductos, capacidadTotal, peso, volumen, tipoProducto, nivelDeReorden, idSucursal);
+            tx.commit();
+
+            log.trace ("Inserción de Bodega: " + idBodega + ": " + tuplasInsertadas + " tuplas insertadas");
+            
+            return new Bodega (idBodega, cantidadProductos, capacidadTotal, peso, volumen, tipoProducto, nivelDeReorden, idSucursal);
+        }
+        catch (Exception e)
+        {
+//        	e.printStackTrace();
+        	log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+        	return null;
+        }
+        finally
+        {
+            if (tx.isActive())
+            {
+                tx.rollback();
+            }
+            pm.close();
+        }
+	}
+
+	/**
+	 * Método que elimina, de manera transaccional, una tupla en la tabla Bodega, dado el identificador del Bodega
+	 * Adiciona entradas al log de la aplicación
+	 * @param idBodega - El identificador del Bodega
+	 * @return El número de tuplas eliminadas. -1 si ocurre alguna Excepción
+	 */
+	public long eliminarBodegaPorId (long idBodega) 
+	{
+		PersistenceManager pm = pmf.getPersistenceManager();
+        Transaction tx=pm.currentTransaction();
+        try
+        {
+            tx.begin();
+            long resp = sqlBodega.eliminarBodegaPorId (pm, idBodega);
+            tx.commit();
+            return resp;
+        }
+        catch (Exception e)
+        {
+//        	e.printStackTrace();
+        	log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+            return -1;
+        }
+        finally
+        {
+            if (tx.isActive())
+            {
+                tx.rollback();
+            }
+            pm.close();
+        }
+	}
+
+	/**
+	 * Método que consulta todas las tuplas en la tabla Bodega que tienen el identificador dado
+	 * @param idBodega - El identificador del Bodega
+	 * @return El objeto Bodega, construido con base en la tuplas de la tabla Bodega, que tiene el identificador dado
+	 */
+	public Bodega darBodegaPorId (long idBodega) 
+	{
+		return (Bodega) sqlBodega.darBodegaPorId (pmf.getPersistenceManager(), idBodega);
+	}
+
+	/**
+	 * Método que consulta todas las tuplas en la tabla Bodega
+	 * @return La lista de objetos Bodega, construidos con base en las tuplas de la tabla Bodega
+	 */
+	public List<Bodega> darBodegas ()
+	{
+		return sqlBodega.darBodegas (pmf.getPersistenceManager());
+	}
+	
+	/* ****************************************************************
+	 * 			Métodos para manejar los Estantes
+	 *****************************************************************/
+	
+	/**
+	 * @param pm - El manejador de persistencia
+	 * @param idEstante - El identificador del estante
+	 * @param cantidadProductos - la cantidad de productos en el estante
+	 * @param capacidadTotal - La capacidad de el estante
+	 * @param peso - El peso manejado en el estante
+	 * @param volumen - El volumen manejado en el estante
+	 * @param tipoProducto - El tipo de producto que maneja el estante
+	 * @param equipamientoAdicional el equipamiento adicional del estante
+	 * @param nivelDeAbastecimiento nivel de abastecimiento del estante
+	 * @param idSucursal
+	 * @return El número de tuplas insertadas
+	 */
+	public Estante adicionarEstante (long idEstante, int cantidadProductos, int capacidadTotal, double peso, double volumen, String tipoProducto, String equipamientoAdicional, int nivelDeAbastecimiento, long idSucursal) 
+	{
+		PersistenceManager pm = pmf.getPersistenceManager();
+        Transaction tx=pm.currentTransaction();
+        try
+        {
+            tx.begin();
+            long tuplasInsertadas = sqlEstante.adicionarEstante(pmf.getPersistenceManager(), idEstante, cantidadProductos, capacidadTotal, peso, volumen, tipoProducto, equipamientoAdicional, nivelDeAbastecimiento, idSucursal);
+            tx.commit();
+
+            log.trace ("Inserción de Estante: " + idEstante + ": " + tuplasInsertadas + " tuplas insertadas");
+            
+            return new Estante (idEstante, cantidadProductos, capacidadTotal, peso, volumen, tipoProducto, equipamientoAdicional, nivelDeAbastecimiento, idSucursal);
+        }
+        catch (Exception e)
+        {
+//        	e.printStackTrace();
+        	log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+        	return null;
+        }
+        finally
+        {
+            if (tx.isActive())
+            {
+                tx.rollback();
+            }
+            pm.close();
+        }
+	}
+
+
+	/**
+	 * Método que elimina, de manera transaccional, una tupla en la tabla Estante, dado el identificador del Estante
+	 * Adiciona entradas al log de la aplicación
+	 * @param idEstante - El identificador del Estante
+	 * @return El número de tuplas eliminadas. -1 si ocurre alguna Excepción
+	 */
+	public long eliminarEstantePorId (long idEstante) 
+	{
+		PersistenceManager pm = pmf.getPersistenceManager();
+        Transaction tx=pm.currentTransaction();
+        try
+        {
+            tx.begin();
+            long resp = sqlEstante.eliminarEstantePorId (pm, idEstante);
+            tx.commit();
+            return resp;
+        }
+        catch (Exception e)
+        {
+//        	e.printStackTrace();
+        	log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+            return -1;
+        }
+        finally
+        {
+            if (tx.isActive())
+            {
+                tx.rollback();
+            }
+            pm.close();
+        }
+	}
+
+	/**
+	 * Método que consulta todas las tuplas en la tabla Estante que tienen el identificador dado
+	 * @param idEstante - El identificador del Estante
+	 * @return El objeto Estante, construido con base en la tuplas de la tabla Estante, que tiene el identificador dado
+	 */
+	public Estante darEstantePorId (long idEstante) 
+	{
+		return (Estante) sqlEstante.darEstantePorId (pmf.getPersistenceManager(), idEstante);
+	}
+
+	/**
+	 * Método que consulta todas las tuplas en la tabla Estante
+	 * @return La lista de objetos Estante, construidos con base en las tuplas de la tabla Estante
+	 */
+	public List<Estante> darEstantes ()
+	{
+		return sqlEstante.darEstantes (pmf.getPersistenceManager());
+	}
+	
+	/* ****************************************************************
+	 * 			Métodos para manejar los Categorias
+	 *****************************************************************/
+	
+	/**
+	 * @param pm - El manejador de persistencia
+	 * @param idCategoria - El identificador de la categoria
+	 * @param nombre - El nombre de la categoria
+	 * @param tipoDeAlmacenamiento - El tipo de almacenamiento de la categoria
+	 * @param tipoDeManejo - El tipo de manejo de la categoria 
+	 * @return EL número de tuplas insertadas
+	 */
+	public Categoria adicionarCategoria (long idCategoria, String nombre, String tipoDeAlmacenamiento, String tipoDeManejo) 
+	{
+		PersistenceManager pm = pmf.getPersistenceManager();
+        Transaction tx=pm.currentTransaction();
+        try
+        {
+            tx.begin();
+            long tuplasInsertadas = sqlCategoria.adicionarCategoria(pmf.getPersistenceManager(), idCategoria, nombre, tipoDeAlmacenamiento, tipoDeManejo);
+            tx.commit();
+
+            log.trace ("Inserción de Categoria: " + nombre + ": " + tuplasInsertadas + " tuplas insertadas");
+            
+            return new Categoria (idCategoria, nombre, tipoDeAlmacenamiento, tipoDeManejo);
+        }
+        catch (Exception e)
+        {
+//        	e.printStackTrace();
+        	log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+        	return null;
+        }
+        finally
+        {
+            if (tx.isActive())
+            {
+                tx.rollback();
+            }
+            pm.close();
+        }
+	}
+
+	/**
+	 * Método que elimina, de manera transaccional, una tupla en la tabla Categoria, dado el nombre del Categoria
+	 * Adiciona entradas al log de la aplicación
+	 * @param nombre - El nombre del Categoria
+	 * @return El número de tuplas eliminadas. -1 si ocurre alguna Excepción
+	 */
+	public long eliminarCategoriaPorNombre(String nombre) 
+	{
+		PersistenceManager pm = pmf.getPersistenceManager();
+        Transaction tx=pm.currentTransaction();
+        try
+        {
+            tx.begin();
+            long resp = sqlCategoria.eliminarCategoriaPorNombre (pm, nombre);
+            tx.commit();
+            return resp;
+        }
+        catch (Exception e)
+        {
+//        	e.printStackTrace();
+        	log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+            return -1;
+        }
+        finally
+        {
+            if (tx.isActive())
+            {
+                tx.rollback();
+            }
+            pm.close();
+        }
+	}
+
+	/**
+	 * Método que elimina, de manera transaccional, una tupla en la tabla Categoria, dado el identificador del Categoria
+	 * Adiciona entradas al log de la aplicación
+	 * @param idCategoria - El identificador del Categoria
+	 * @return El número de tuplas eliminadas. -1 si ocurre alguna Excepción
+	 */
+	public long eliminarCategoriaPorId (long idCategoria) 
+	{
+		PersistenceManager pm = pmf.getPersistenceManager();
+        Transaction tx=pm.currentTransaction();
+        try
+        {
+            tx.begin();
+            long resp = sqlCategoria.eliminarCategoriaPorId (pm, idCategoria);
+            tx.commit();
+            return resp;
+        }
+        catch (Exception e)
+        {
+//        	e.printStackTrace();
+        	log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+            return -1;
+        }
+        finally
+        {
+            if (tx.isActive())
+            {
+                tx.rollback();
+            }
+            pm.close();
+        }
+	}
+
+	/**
+	 * Método que consulta todas las tuplas en la tabla Categoria que tienen el nombre dado
+	 * @param nombreCategoria - El nombre del Categoria
+	 * @return La lista de objetos Categoria, construidos con base en las tuplas de la tabla Categoria
+	 */
+	public List<Categoria> darCategoriasPorNombre (String nombreCategoria) 
+	{
+		return sqlCategoria.darCategoriasPorNombre (pmf.getPersistenceManager(), nombreCategoria);
+	}
+
+	/**
+	 * Método que consulta todas las tuplas en la tabla Categoria
+	 * @return La lista de objetos Categoria, construidos con base en las tuplas de la tabla Categoria
+	 */
+	public List<Categoria> darCategorias ()
+	{
+		return sqlCategoria.darCategorias (pmf.getPersistenceManager());
+	}
+	
+	
+	/* ****************************************************************
+	 * 			Métodos para manejar los Perecederos
+	 *****************************************************************/
+	
+	/**
+	 * 
+	 * @param idPerecedero - El identificador del perecedero
+	 * @param fechaDeVencimiento - la fecha de vencimiento del producto perecedero
+	 * @param tipoCategoriaPerecedera - el tipo de cateogoria del producto perecedero
+	 * @param idCategoria
+	 * @return El número de tuplas insertadas
+	 */
+	public Perecedero adicionarPerecedero (long idPerecedero, Date fechaDeVencimiento, String tipoCategoriaPerecedera, long idCategoria) 
+	{
+		PersistenceManager pm = pmf.getPersistenceManager();
+        Transaction tx=pm.currentTransaction();
+        try
+        {
+            tx.begin();
+            long tuplasInsertadas = sqlPerecedero.adicionarPerecedero(pmf.getPersistenceManager(), idPerecedero, fechaDeVencimiento, tipoCategoriaPerecedera, idCategoria);
+            tx.commit();
+
+            log.trace ("Inserción de Perecedero: " + idPerecedero + ": " + tuplasInsertadas + " tuplas insertadas");
+            
+            return new Perecedero (idPerecedero, fechaDeVencimiento, tipoCategoriaPerecedera, idCategoria);
+        }
+        catch (Exception e)
+        {
+//        	e.printStackTrace();
+        	log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+        	return null;
+        }
+        finally
+        {
+            if (tx.isActive())
+            {
+                tx.rollback();
+            }
+            pm.close();
+        }
+	}
+
+	/**
+	 * Método que elimina, de manera transaccional, una tupla en la tabla Perecedero, dado el identificador del Perecedero
+	 * Adiciona entradas al log de la aplicación
+	 * @param idPerecedero - El identificador del Perecedero
+	 * @return El número de tuplas eliminadas. -1 si ocurre alguna Excepción
+	 */
+	public long eliminarPerecederoPorId (long idPerecedero) 
+	{
+		PersistenceManager pm = pmf.getPersistenceManager();
+        Transaction tx=pm.currentTransaction();
+        try
+        {
+            tx.begin();
+            long resp = sqlPerecedero.eliminarPerecederoPorId (pm, idPerecedero);
+            tx.commit();
+            return resp;
+        }
+        catch (Exception e)
+        {
+//        	e.printStackTrace();
+        	log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+            return -1;
+        }
+        finally
+        {
+            if (tx.isActive())
+            {
+                tx.rollback();
+            }
+            pm.close();
+        }
+	}
+
+	/**
+	 * Método que consulta todas las tuplas en la tabla Perecedero que tienen el identificador dado
+	 * @param idPerecedero - El identificador del Perecedero
+	 * @return El objeto Perecedero, construido con base en la tuplas de la tabla Perecedero, que tiene el identificador dado
+	 */
+	public Perecedero darPerecederoPorId (long idPerecedero) 
+	{
+		return (Perecedero) sqlPerecedero.darPerecederoPorId (pmf.getPersistenceManager(), idPerecedero);
+	}
+
+	/**
+	 * Método que consulta todas las tuplas en la tabla Perecedero
+	 * @return La lista de objetos Perecedero, construidos con base en las tuplas de la tabla Perecedero
+	 */
+	public List<Perecedero> darPerecederos ()
+	{
+		return sqlPerecedero.darPerecederos (pmf.getPersistenceManager());
+	}
+	
+	
+	/* ****************************************************************
+	 * 			Métodos para manejar los NoPerecederos
+	 *****************************************************************/
+	
+	/**
+	 * 
+	 * @param idNoPerecedero - El identificador del noPerecedero
+	 * @param tipoCategoriaNoPerecedera - el tipo de cateogoria del producto noPerecedero
+	 * @param idCategoria
+	 * @return El número de tuplas insertadas
+	 */
+	public NoPerecedero adicionarNoPerecedero (long idNoPerecedero, String tipoCategoriaNoPerecedera, long idCategoria) 
+	{
+		PersistenceManager pm = pmf.getPersistenceManager();
+        Transaction tx=pm.currentTransaction();
+        try
+        {
+            tx.begin();
+            long tuplasInsertadas = sqlNoPerecedero.adicionarNoPerecedero(pmf.getPersistenceManager(), idNoPerecedero, tipoCategoriaNoPerecedera, idCategoria);
+            tx.commit();
+
+            log.trace ("Inserción de NoPerecedero: " + idNoPerecedero + ": " + tuplasInsertadas + " tuplas insertadas");
+            
+            return new NoPerecedero (idNoPerecedero, tipoCategoriaNoPerecedera, idCategoria);
+        }
+        catch (Exception e)
+        {
+//        	e.printStackTrace();
+        	log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+        	return null;
+        }
+        finally
+        {
+            if (tx.isActive())
+            {
+                tx.rollback();
+            }
+            pm.close();
+        }
+	}
+
+	/**
+	 * Método que elimina, de manera transaccional, una tupla en la tabla NoPerecedero, dado el identificador del NoPerecedero
+	 * Adiciona entradas al log de la aplicación
+	 * @param idNoPerecedero - El identificador del NoPerecedero
+	 * @return El número de tuplas eliminadas. -1 si ocurre alguna Excepción
+	 */
+	public long eliminarNoPerecederoPorId (long idNoPerecedero) 
+	{
+		PersistenceManager pm = pmf.getPersistenceManager();
+        Transaction tx=pm.currentTransaction();
+        try
+        {
+            tx.begin();
+            long resp = sqlNoPerecedero.eliminarNoPerecederoPorId (pm, idNoPerecedero);
+            tx.commit();
+            return resp;
+        }
+        catch (Exception e)
+        {
+//        	e.printStackTrace();
+        	log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+            return -1;
+        }
+        finally
+        {
+            if (tx.isActive())
+            {
+                tx.rollback();
+            }
+            pm.close();
+        }
+	}
+
+	/**
+	 * Método que consulta todas las tuplas en la tabla NoPerecedero que tienen el identificador dado
+	 * @param idNoPerecedero - El identificador del NoPerecedero
+	 * @return El objeto NoPerecedero, construido con base en la tuplas de la tabla NoPerecedero, que tiene el identificador dado
+	 */
+	public NoPerecedero darNoPerecederoPorId (long idNoPerecedero) 
+	{
+		return (NoPerecedero) sqlNoPerecedero.darNoPerecederoPorId (pmf.getPersistenceManager(), idNoPerecedero);
+	}
+
+	/**
+	 * Método que consulta todas las tuplas en la tabla NoPerecedero
+	 * @return La lista de objetos NoPerecedero, construidos con base en las tuplas de la tabla NoPerecedero
+	 */
+	public List<NoPerecedero> darNoPerecederos ()
+	{
+		return sqlNoPerecedero.darNoPerecederos (pmf.getPersistenceManager());
+	}
+	
+	/* ****************************************************************
+	 * 			Métodos para manejar los Productos
+	 *****************************************************************/
+	
+	/**
+	 * 
+	 * @param idProducto - El identificador de la producto
+	 * @param nombre - El nombre de la producto
+	 * @param idCategoria - El identificador del tipo de categoria de la producto
+	 * @param cantidad - cantidad de producto
+	 * @param codigoDeBarras el codigo de barras
+	 * @param especificacionDeEmpaquetado especificacion del empaquetado
+	 * @param estado estado del producto
+	 * @param marca marca del producto
+	 * @param precioPorUnidadMedida precio por unidad medida
+	 * @param precioUnitario precio unitario 
+	 * @param presentacion presentacion
+	 * @param unidadDeMedida unidad de medida
+	 * @return EL número de tuplas insertadas
+	 */
+	public Producto adicionarProducto ( long idProducto, String nombre, long idCategoria, int cantidad, String codigoDeBarras, String especificacionDeEmpaquetado, boolean estado, String marca, double precioPorUnidadMedida, double precioUnitario, String presentacion, String unidadDeMedida) 
+	{
+		PersistenceManager pm = pmf.getPersistenceManager();
+        Transaction tx=pm.currentTransaction();
+        try
+        {
+            tx.begin();
+            long tuplasInsertadas = sqlProducto.adicionarProducto(pmf.getPersistenceManager(), idProducto, nombre, idCategoria, cantidad, codigoDeBarras, especificacionDeEmpaquetado, estado, marca, precioPorUnidadMedida, precioUnitario, presentacion, unidadDeMedida);
+            tx.commit();
+
+            log.trace ("Inserción de Producto: " + nombre + ": " + tuplasInsertadas + " tuplas insertadas");
+            
+            return new Producto (idProducto, nombre, idCategoria, cantidad, codigoDeBarras, especificacionDeEmpaquetado, estado, marca, precioPorUnidadMedida, precioUnitario, presentacion, unidadDeMedida);
+        }
+        catch (Exception e)
+        {
+//        	e.printStackTrace();
+        	log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+        	return null;
+        }
+        finally
+        {
+            if (tx.isActive())
+            {
+                tx.rollback();
+            }
+            pm.close();
+        }
+	}
+
+	/**
+	 * Método que elimina, de manera transaccional, una tupla en la tabla Producto, dado el nombre del Producto
+	 * Adiciona entradas al log de la aplicación
+	 * @param nombre - El nombre del Producto
+	 * @return El número de tuplas eliminadas. -1 si ocurre alguna Excepción
+	 */
+	public long eliminarProductoPorNombre(String nombre) 
+	{
+		PersistenceManager pm = pmf.getPersistenceManager();
+        Transaction tx=pm.currentTransaction();
+        try
+        {
+            tx.begin();
+            long resp = sqlProducto.eliminarProductoPorNombre (pm, nombre);
+            tx.commit();
+            return resp;
+        }
+        catch (Exception e)
+        {
+//        	e.printStackTrace();
+        	log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+            return -1;
+        }
+        finally
+        {
+            if (tx.isActive())
+            {
+                tx.rollback();
+            }
+            pm.close();
+        }
+	}
+
+	/**
+	 * Método que elimina, de manera transaccional, una tupla en la tabla Producto, dado el identificador del Producto
+	 * Adiciona entradas al log de la aplicación
+	 * @param idProducto - El identificador del Producto
+	 * @return El número de tuplas eliminadas. -1 si ocurre alguna Excepción
+	 */
+	public long eliminarProductoPorId (long idProducto) 
+	{
+		PersistenceManager pm = pmf.getPersistenceManager();
+        Transaction tx=pm.currentTransaction();
+        try
+        {
+            tx.begin();
+            long resp = sqlProducto.eliminarProductoPorId (pm, idProducto);
+            tx.commit();
+            return resp;
+        }
+        catch (Exception e)
+        {
+//        	e.printStackTrace();
+        	log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+            return -1;
+        }
+        finally
+        {
+            if (tx.isActive())
+            {
+                tx.rollback();
+            }
+            pm.close();
+        }
+	}
+
+	/**
+	 * Método que consulta todas las tuplas en la tabla Producto que tienen el nombre dado
+	 * @param nombreProducto - El nombre del Producto
+	 * @return La lista de objetos Producto, construidos con base en las tuplas de la tabla Producto
+	 */
+	public List<Producto> darProductosPorNombre (String nombreProducto) 
+	{
+		return sqlProducto.darProductosPorNombre (pmf.getPersistenceManager(), nombreProducto);
+	}
+
+	/**
+	 * Método que consulta todas las tuplas en la tabla Producto
+	 * @return La lista de objetos Producto, construidos con base en las tuplas de la tabla Producto
+	 */
+	public List<Producto> darProductos ()
+	{
+		return sqlProducto.darProductos (pmf.getPersistenceManager());
+	}
+	
+	/* ****************************************************************
+	 * 			Métodos para manejar la relación PRODUCTO_ESTANTE
+	 *****************************************************************/
+	
+	/**
+	 * Método que inserta, de manera transaccional, una tupla en la tabla PRODUCTO_ESTANTE
+	 * Adiciona entradas al log de la aplicación
+	 * @param idEstante - El identificador del estante
+	 * @param idProducto - El identificador de la producto
+	 * @return Un objeto PRODUCTO_ESTANTE con la información dada. Null si ocurre alguna Excepción
+	 */
+	public ProductoEstante adicionarProductoEstante(long idEstante, long idProducto) 
+	{
+		PersistenceManager pm = pmf.getPersistenceManager();
+        Transaction tx=pm.currentTransaction();
+        try
+        {
+            tx.begin();
+            long tuplasInsertadas = sqlProductoEstante.adicionarProductoEstante (pm, idEstante, idProducto);
+            tx.commit();
+
+            log.trace ("Inserción de productoEstante: [" + idEstante + ", " + idProducto + "]. " + tuplasInsertadas + " tuplas insertadas");
+
+            return new ProductoEstante (idEstante, idProducto);
+        }
+        catch (Exception e)
+        {
+//        	e.printStackTrace();
+        	log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+        	return null;
+        }
+        finally
+        {
+            if (tx.isActive())
+            {
+                tx.rollback();
+            }
+            pm.close();
+        }
+	}
+
+	/**
+	 * Método que elimina, de manera transaccional, una tupla en la tabla PRODUCTO_ESTANTE, dados los identificadores de bebedor y bebida
+	 * @param idEstante - El identificador del bebedor
+	 * @param idProducto - El identificador de la bebida
+	 * @return El número de tuplas eliminadas. -1 si ocurre alguna Excepción
+	 */
+	public long eliminarProductoEstante(long idEstante, long idProducto) 
+	{
+		PersistenceManager pm = pmf.getPersistenceManager();
+        Transaction tx=pm.currentTransaction();
+        try
+        {
+            tx.begin();
+            long resp = sqlProductoEstante.eliminarProductoEstante(pm, idEstante, idProducto);           
+            tx.commit();
+
+            return resp;
+        }
+        catch (Exception e)
+        {
+//        	e.printStackTrace();
+        	log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+        	return -1;
+        }
+        finally
+        {
+            if (tx.isActive())
+            {
+                tx.rollback();
+            }
+            pm.close();
+        }
+	}
+
+	/**
+	 * Método que consulta todas las tuplas en la tabla PRODUCTO_ESTANTE
+	 * @return La lista de objetos PRODUCTO_ESTANTE, construidos con base en las tuplas de la tabla PRODUCTO_ESTANTE
+	 */
+	public List<ProductoEstante> darProductoEstante ()
+	{
+		return sqlProductoEstante.darProductoEstante (pmf.getPersistenceManager());
+	}
+	
+	/* ****************************************************************
+	 * 			Métodos para manejar la relación PRODUCTO_BODEGA
+	 *****************************************************************/
+	
+	/**
+	 * Método que inserta, de manera transaccional, una tupla en la tabla PRODUCTO_BODEGA
+	 * Adiciona entradas al log de la aplicación
+	 * @param idBodega - El identificador del bebedor - Debe haber un bebedor con ese identificador
+	 * @param idProducto - El identificador de la bebida - Debe haber una bebida con ese identificador
+	 * @return Un objeto PRODUCTO_BODEGA con la información dada. Null si ocurre alguna Excepción
+	 */
+	public ProductoBodega adicionarProductoBodega(long idBodega, long idProducto) 
+	{
+		PersistenceManager pm = pmf.getPersistenceManager();
+        Transaction tx=pm.currentTransaction();
+        try
+        {
+            tx.begin();
+            long tuplasInsertadas = sqlProductoBodega.adicionarProductoBodega (pm, idBodega, idProducto);
+            tx.commit();
+
+            log.trace ("Inserción de productoBodega: [" + idBodega + ", " + idProducto + "]. " + tuplasInsertadas + " tuplas insertadas");
+
+            return new ProductoBodega (idBodega, idProducto);
+        }
+        catch (Exception e)
+        {
+//        	e.printStackTrace();
+        	log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+        	return null;
+        }
+        finally
+        {
+            if (tx.isActive())
+            {
+                tx.rollback();
+            }
+            pm.close();
+        }
+	}
+
+	/**
+	 * Método que elimina, de manera transaccional, una tupla en la tabla PRODUCTO_BODEGA, dados los identificadores de bebedor y bebida
+	 * @param idBodega - El identificador del bodega
+	 * @param idProducto - El identificador de la producto
+	 * @return El número de tuplas eliminadas. -1 si ocurre alguna Excepción
+	 */
+	public long eliminarProductoBodega(long idBodega, long idProducto) 
+	{
+		PersistenceManager pm = pmf.getPersistenceManager();
+        Transaction tx=pm.currentTransaction();
+        try
+        {
+            tx.begin();
+            long resp = sqlProductoBodega.eliminarProductoBodega(pm, idBodega, idProducto);           
+            tx.commit();
+
+            return resp;
+        }
+        catch (Exception e)
+        {
+//        	e.printStackTrace();
+        	log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+        	return -1;
+        }
+        finally
+        {
+            if (tx.isActive())
+            {
+                tx.rollback();
+            }
+            pm.close();
+        }
+	}
+
+	/**
+	 * Método que consulta todas las tuplas en la tabla PRODUCTO_BODEGA
+	 * @return La lista de objetos PRODUCTO_BODEGA, construidos con base en las tuplas de la tabla PRODUCTO_BODEGA
+	 */
+	public List<ProductoBodega> darProductoBodega ()
+	{
+		return sqlProductoBodega.darProductoBodega (pmf.getPersistenceManager());
+	}
 	
 	/* ****************************************************************
 	 * 			Métodos para manejar los Consumidor
@@ -822,7 +1638,194 @@ public class PersistenciaSuperandes {
 	{
 		return sqlConsumidor.darPorId (pmf.getPersistenceManager(), id);
 	}
+	
+	/* ****************************************************************
+	 * 			Métodos para manejar las PersonasNaturales
+	 *****************************************************************/
+	
+	/**
+	 * 
+	 * @param idConsumidor - El identificador del Consumidor
+	 * @param documentoIdentidad - documentoIdentidad de PersonaNatural
+	 */
+	public PersonaNatural adicionarPersonaNatural (long idConsumidor, int documentoIdentidad) 
+	{
+		PersistenceManager pm = pmf.getPersistenceManager();
+        Transaction tx=pm.currentTransaction();
+        try
+        {
+            tx.begin();
+            long idPersonaNatural = nextval ();
+            long tuplasInsertadas = sqlPersonaNatural.adicionarPersonaNatural(pmf.getPersistenceManager(), idConsumidor, documentoIdentidad);
+            tx.commit();
 
+            log.trace ("Inserción de PersonaNatural: " + idPersonaNatural + ": " + tuplasInsertadas + " tuplas insertadas");
+            
+            return new PersonaNatural (idConsumidor, documentoIdentidad);
+        }
+        catch (Exception e)
+        {
+//        	e.printStackTrace();
+        	log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+        	return null;
+        }
+        finally
+        {
+            if (tx.isActive())
+            {
+                tx.rollback();
+            }
+            pm.close();
+        }
+	}
+
+
+	/**
+	 * Método que elimina, de manera transaccional, una tupla en la tabla PersonaNatural, dado el identificador del PersonaNatural
+	 * Adiciona entradas al log de la aplicación
+	 * @param idPersonaNatural - El identificador del PersonaNatural
+	 * @return El número de tuplas eliminadas. -1 si ocurre alguna Excepción
+	 */
+	public long eliminarPersonaNaturalPorId (long idPersonaNatural) 
+	{
+		PersistenceManager pm = pmf.getPersistenceManager();
+        Transaction tx=pm.currentTransaction();
+        try
+        {
+            tx.begin();
+            long resp = sqlPersonaNatural.eliminarPersonaNaturalPorId (pm, idPersonaNatural);
+            tx.commit();
+            return resp;
+        }
+        catch (Exception e)
+        {
+//        	e.printStackTrace();
+        	log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+            return -1;
+        }
+        finally
+        {
+            if (tx.isActive())
+            {
+                tx.rollback();
+            }
+            pm.close();
+        }
+	}
+
+	/**
+	 * Método que consulta todas las tuplas en la tabla PersonaNatural que tienen el identificador dado
+	 * @param idPersonaNatural - El identificador del PersonaNatural
+	 * @return El objeto PersonaNatural, construido con base en la tuplas de la tabla PersonaNatural, que tiene el identificador dado
+	 */
+	public PersonaNatural darPersonaNaturalPorId (long idPersonaNatural) 
+	{
+		return (PersonaNatural) sqlPersonaNatural.darPersonaNaturalPorId (pmf.getPersistenceManager(), idPersonaNatural);
+	}
+
+	/**
+	 * Método que consulta todas las tuplas en la tabla PersonaNatural
+	 * @return La lista de objetos PersonaNatural, construidos con base en las tuplas de la tabla PersonaNatural
+	 */
+	public List<PersonaNatural> darPersonasNaturales ()
+	{
+		return sqlPersonaNatural.darPersonasNaturales (pmf.getPersistenceManager());
+	}
+	
+	/* ****************************************************************
+	 * 			Métodos para manejar las Empresas
+	 *****************************************************************/
+	
+	/**
+	 * Método que inserta, de manera transaccional, una tupla en la tabla Empresa
+	 * Adiciona entradas al log de la aplicación
+	 * @param idConsumidor - El identificador del Consumidor
+	 * @param nit - id de Empresa
+	 * @param direccion direccion de Empresa
+	 * @return El número de tuplas insertadas
+	 */
+	public Empresa adicionarEmpresa (long idConsumidor, int nit, String direccion) 
+	{
+		PersistenceManager pm = pmf.getPersistenceManager();
+        Transaction tx=pm.currentTransaction();
+        try
+        {
+            tx.begin();
+            long idEmpresa = nextval ();
+            long tuplasInsertadas = sqlEmpresa.adicionarEmpresa(pmf.getPersistenceManager(), idConsumidor, nit, direccion);
+            tx.commit();
+
+            log.trace ("Inserción de Empresa: " + idEmpresa + ": " + tuplasInsertadas + " tuplas insertadas");
+            
+            return new Empresa (idConsumidor, nit, direccion);
+        }
+        catch (Exception e)
+        {
+//        	e.printStackTrace();
+        	log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+        	return null;
+        }
+        finally
+        {
+            if (tx.isActive())
+            {
+                tx.rollback();
+            }
+            pm.close();
+        }
+	}
+
+	/**
+	 * Método que elimina, de manera transaccional, una tupla en la tabla Empresa, dado el identificador del Empresa
+	 * Adiciona entradas al log de la aplicación
+	 * @param idEmpresa - El identificador del Empresa
+	 * @return El número de tuplas eliminadas. -1 si ocurre alguna Excepción
+	 */
+	public long eliminarEmpresaPorId (long idEmpresa) 
+	{
+		PersistenceManager pm = pmf.getPersistenceManager();
+        Transaction tx=pm.currentTransaction();
+        try
+        {
+            tx.begin();
+            long resp = sqlEmpresa.eliminarEmpresaPorId (pm, idEmpresa);
+            tx.commit();
+            return resp;
+        }
+        catch (Exception e)
+        {
+//        	e.printStackTrace();
+        	log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+            return -1;
+        }
+        finally
+        {
+            if (tx.isActive())
+            {
+                tx.rollback();
+            }
+            pm.close();
+        }
+	}
+
+	/**
+	 * Método que consulta todas las tuplas en la tabla Empresa que tienen el identificador dado
+	 * @param idEmpresa - El identificador del Empresa
+	 * @return El objeto Empresa, construido con base en la tuplas de la tabla Empresa, que tiene el identificador dado
+	 */
+	public Empresa darEmpresaPorId (long idEmpresa) 
+	{
+		return (Empresa) sqlEmpresa.darEmpresaPorId (pmf.getPersistenceManager(), idEmpresa);
+	}
+
+	/**
+	 * Método que consulta todas las tuplas en la tabla Empresa
+	 * @return La lista de objetos Empresa, construidos con base en las tuplas de la tabla Empresa
+	 */
+	public List<Empresa> darEmpresas ()
+	{
+		return sqlEmpresa.darEmpresas (pmf.getPersistenceManager());
+	}
 	
 	/* ****************************************************************
 	 * 			Métodos para manejar los Fidelizacion
