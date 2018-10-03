@@ -1815,7 +1815,7 @@ public class PersistenciaSuperandes {
 	 * Método que inserta, de manera transaccional, una tupla en la tabla Empresa
 	 * Adiciona entradas al log de la aplicación
 	 * @param idConsumidor - El identificador del Consumidor
-	 * @param nit - id de Empresa
+	 * @param NIT - id de Empresa
 	 * @param direccion direccion de Empresa
 	 * @return El número de tuplas insertadas
 	 */

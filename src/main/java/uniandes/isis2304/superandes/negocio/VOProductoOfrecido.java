@@ -54,11 +54,11 @@ public interface VOProductoOfrecido {
 	/**
 	 * @return the producto
 	 */
-	public long getProducto();
+	public long getProductoId();
 	/**
 	 * @param producto the producto to set
 	 */
-	public void setProducto(long producto);
+	public void setProductoId(long producto);
 	/**
 	 * @return the proveedor
 	 */

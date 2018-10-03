@@ -10,11 +10,11 @@ public interface VOProveedores {
 
 	
 	/**
-	 * @return the nit
+	 * @return the NIT
 	 */
 	public long getNit();
 	/**
-	 * @param nit the nit to set
+	 * @param NIT the NIT to set
 	 */
 	public void setNit(long nit);
 

@@ -38,7 +38,7 @@ public class SQLProveedores {
 	 */
 	public long adicionar (PersistenceManager pm, long nit, String nombre) 
 	{
-        Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaProveedores() + "(nit, nombre) values (?, ?)");
+        Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaProveedores() + "(NIT, nombre) values (?, ?)");
         q.setParameters(nit, nombre);
         return (long) q.executeUnique();
 	}
@@ -58,7 +58,7 @@ public class SQLProveedores {
 	 */
 	public long eliminarPorNIT (PersistenceManager pm, long nit)
 	{
-        Query q = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaProveedores() + " WHERE nit = ?");
+        Query q = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaProveedores() + " WHERE NIT = ?");
         q.setParameters(nit);
         return (long) q.executeUnique();
 	}
@@ -68,7 +68,7 @@ public class SQLProveedores {
 	 */
 	public Proveedores darPorNIT (PersistenceManager pm, int nit) 
 	{
-		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaProveedores() + " WHERE nit = ?");
+		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaProveedores() + " WHERE NIT = ?");
 		q.setResultClass(Proveedores.class);
 		q.setParameters(nit);
 		return (Proveedores) q.executeUnique();

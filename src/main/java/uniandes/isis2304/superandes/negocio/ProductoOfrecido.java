@@ -11,7 +11,7 @@ public class ProductoOfrecido implements VOProductoOfrecido {
 	private int calificacionTotal;
 	private int calidad;
 	private int cumplimiento;
-	private long producto;
+	private long productoId;
 	private long proveedor;
 	private long id;
 	
@@ -24,7 +24,7 @@ public class ProductoOfrecido implements VOProductoOfrecido {
 		this.calificacionTotal=calificacionTotal;
 		this.calidad=calidad;
 		this.cumplimiento=cumplimiento;
-		this.producto=producto;
+		this.productoId=producto;
 		this.proveedor=proveedor;
 
 	}
@@ -86,16 +86,16 @@ public class ProductoOfrecido implements VOProductoOfrecido {
 	}
 
 	/**
-	 * @return the producto
+	 * @return the productoId
 	 */
-	public long getProducto() {
-		return producto;
+	public long getProductoId() {
+		return productoId;
 	}
 	/**
-	 * @param producto the producto to set
+	 * @param productoId the productoId to set
 	 */
-	public void setProducto(long producto) {
-		this.producto = producto;
+	public void setProductoId(long producto) {
+		this.productoId = producto;
 	}
 	/**
 	 * @return the proveedor
@@ -127,7 +127,7 @@ public class ProductoOfrecido implements VOProductoOfrecido {
 	 */
 	public String toString() 
 	{
-		return "ProductoOfrecido [id=" + id + ", calidad=" + calidad  + ", calificacion=" + calificacionTotal  + ", cumplimiento=" + cumplimiento  + ", precioProveedor=" + precioProveedor  + ", producto=" + producto 
+		return "ProductoOfrecido [id=" + id + ", calidad=" + calidad  + ", calificacion=" + calificacionTotal  + ", cumplimiento=" + cumplimiento  + ", precioProveedor=" + precioProveedor  + ", productoId=" + productoId 
 				 + ", proveedor=" + proveedor+  "]";
 	}
 

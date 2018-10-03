@@ -16,7 +16,7 @@ public class Empresa extends Consumidor implements VOEmpresa {
 	
 	/**
 	 * @param idConsumidor - El identificador del Consumidor
-	 * @param nit - id de Empresa
+	 * @param NIT - id de Empresa
 	 * @param direccion direccion de Empresa
 	 */
 	public Empresa (long idConsumidor, long nit, String direccion) 
@@ -57,14 +57,14 @@ public class Empresa extends Consumidor implements VOEmpresa {
 	}
 
 	/**
-	 * @return the nit
+	 * @return the NIT
 	 */
 	public long getNit() {
 		return nit;
 	}
 
 	/**
-	 * @param nit the nit to set
+	 * @param NIT the NIT to set
 	 */
 	public void setNit(long nit) {
 		this.nit = nit;
@@ -75,7 +75,7 @@ public class Empresa extends Consumidor implements VOEmpresa {
 	 */
 	public String toString() 
 	{
-		return "Empresa [nit=" + nit + ", direccion=" + direccion + "]";
+		return "Empresa [NIT=" + nit + ", direccion=" + direccion + "]";
 	}
 
 }

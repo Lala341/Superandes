@@ -8,30 +8,30 @@ import java.util.ArrayList;
  */
 public class Proveedores implements VOProveedores{
 
-	private long nit;
-	private String nombre;
+	public long NIT;
+	public String nombre;
 
 	public Proveedores(){
 
 	}
 	public Proveedores(long nit,String nombre){
 
-		this.nit=nit;
+		this.NIT=nit;
 		this.nombre=nombre;
 	}
 
 	/**
-	 * @return the nit
+	 * @return the NIT
 	 */
 	public long getNit() {
-		return nit;
+		return NIT;
 	}
 
 	/**
-	 * @param nit the nit to set
+	 * @param NIT the NIT to set
 	 */
 	public void setNit(long nit) {
-		this.nit = nit;
+		this.NIT = nit;
 	}
 
 	/**
@@ -54,7 +54,7 @@ public class Proveedores implements VOProveedores{
 	 */
 	public String toString() 
 	{
-		return "Proveedor [nit=" + nit + ", nombre=" + nombre +  "]";
+		return "Proveedor [NIT=" + NIT + ", nombre=" + nombre +  "]";
 	}
 
 	
