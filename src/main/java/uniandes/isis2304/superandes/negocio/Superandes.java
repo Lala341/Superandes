@@ -1466,6 +1466,11 @@ public class Superandes {
 		
 	}
 	
+	public Sucursal registrarSucursal(){
+		return null;
+		
+	}
+	
 	
 
 	/* ****************************************************************
