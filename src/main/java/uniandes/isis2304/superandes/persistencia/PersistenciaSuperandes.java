@@ -649,7 +649,7 @@ public class PersistenciaSuperandes {
 	 * @param idCiudad
 	 * @return El objeto adicionado. null si ocurre alguna Excepción
 	 */
-	public Sucursal adicionarSucursal (long idSucursal, long tamanho, String tipoDeMercado, double ventasTotales, long idCiudad) 
+	public Sucursal adicionarSucursal (long idSucursal, long tamanho, String tipoDeMercado, double ventasTotales, long idCiudad, String direccion) 
 	{
 
 		PersistenceManager pm = pmf.getPersistenceManager();
@@ -657,7 +657,7 @@ public class PersistenciaSuperandes {
         try
         {
             tx.begin();
-            long tuplasInsertadas = sqlSucursal.adicionarSucursal(pmf.getPersistenceManager(), idSucursal, tamanho, tipoDeMercado, ventasTotales, idCiudad);
+            long tuplasInsertadas = sqlSucursal.adicionarSucursal(pmf.getPersistenceManager(), idSucursal, tamanho, tipoDeMercado, ventasTotales, idCiudad,direccion);
             tx.commit();
 
             log.trace ("Inserción de sucursal: " + idSucursal + ": " + tuplasInsertadas + " tuplas insertadas");

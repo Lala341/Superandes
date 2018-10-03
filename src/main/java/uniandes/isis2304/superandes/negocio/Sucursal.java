@@ -13,9 +13,7 @@ public class Sucursal implements VOSucursal {
 	private double ventasTotales;
 	private long id;
 	private long idCiudad;
-	private ArrayList<Bodega> bodegas;
-	private ArrayList<Estante> estantes;
-
+	private String direccion;
 	/**
 	 * Constructor por defecto
 	 */
@@ -121,37 +119,22 @@ public class Sucursal implements VOSucursal {
 	}
 
 
-	/**
-	 * @return the bodegas
-	 */
-	public ArrayList<Bodega> getBodegas() {
-		return bodegas;
-	}
-
-
-	/**
-	 * @param bodegas the bodegas to set
-	 */
-	public void setBodegas(ArrayList<Bodega> bodegas) {
-		this.bodegas = bodegas;
-	}
-
-
-	/**
-	 * @return the estantes
-	 */
-	public ArrayList<Estante> getEstantes() {
-		return estantes;
-	}
-
-
-	/**
-	 * @param estantes the estantes to set
-	 */
-	public void setEstantes(ArrayList<Estante> estantes) {
-		this.estantes = estantes;
-	}
 	
+	
+	/**
+	 * @return the direccion
+	 */
+	public String getDireccion() {
+		return direccion;
+	}
+
+	/**
+	 * @param direccion the direccion to set
+	 */
+	public void setDireccion(String direccion) {
+		this.direccion = direccion;
+	}
+
 	/**
 	 * @return Una cadena de caracteres con todos los atributos de la Sucursal
 	 */
