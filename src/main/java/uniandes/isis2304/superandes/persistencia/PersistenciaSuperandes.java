@@ -2543,7 +2543,7 @@ public class PersistenciaSuperandes {
 	 * Adiciona entradas al log de la aplicación
 	  * @return El objeto adicionado. null si ocurre alguna Excepción
 	 */
-	public Promocion adicionarPromocion( String nombre, String descripcion, String tipo, Date fechaInicio, Date fechaFinalizacion, String estado)
+	public Promocion adicionarPromocion( String nombre, String descripcion, String tipo, Date fechaInicio, Date fechaFinalizacion, String estado, int cantidadP)
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
         Transaction tx=pm.currentTransaction();
@@ -2551,12 +2551,12 @@ public class PersistenciaSuperandes {
         {
             tx.begin();
             long id = nextval ();
-            long tuplasInsertadas = sqlPromocion.adicionar(pm, id,nombre, descripcion, tipo, fechaInicio, fechaFinalizacion, estado);
+            long tuplasInsertadas = sqlPromocion.adicionar(pm, id,nombre, descripcion, tipo, fechaInicio, fechaFinalizacion, estado, cantidadP);
             tx.commit();
             
             log.trace ("Inserción de Promocion: " + nombre + ": " + tuplasInsertadas + " tuplas insertadas");
             
-            return new Promocion (id,nombre,fechaInicio, fechaFinalizacion, estado);
+            return new Promocion (id,nombre,fechaInicio, fechaFinalizacion, estado,cantidadP);
         }
         catch (Exception e)
         {
@@ -2619,6 +2619,37 @@ public class PersistenciaSuperandes {
         {
             tx.begin();
             long resp = sqlPromocion.eliminarPorId(pm, id);
+            tx.commit();
+            return resp;
+        }
+        catch (Exception e)
+        {
+//        	e.printStackTrace();
+        	log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+            return -1;
+        }
+        finally
+        {
+            if (tx.isActive())
+            {
+                tx.rollback();
+            }
+            pm.close();
+        }
+	}
+	/**
+	 * Método que elimina, de manera transaccional, una tupla en la tabla
+	 * Adiciona entradas al log de la aplicación
+	 * @return El número de tuplas eliminadas. -1 si ocurre alguna Excepción
+	 */
+	public long finalizarPromocion (long id) 
+	{
+		PersistenceManager pm = pmf.getPersistenceManager();
+        Transaction tx=pm.currentTransaction();
+        try
+        {
+            tx.begin();
+            long resp = sqlPromocion.finalizarPromocion(pm, id);
             tx.commit();
             return resp;
         }
@@ -3390,6 +3421,14 @@ public class PersistenciaSuperandes {
 	{
 		return sqlProductoOfrecido.darLista(pmf.getPersistenceManager());
 	}
+	/**
+	 * Método que consulta todas las tuplas en la tabla
+	 * @return La lista de objetos 
+	 */
+	public List<ProductoOfrecido> darProductosOfrecidosPorIdProveedor (long id)
+	{
+		return sqlProductoOfrecido.darListaPorIdProveedor(pmf.getPersistenceManager(),id);
+	}
  
  
 	/**
@@ -3505,6 +3544,9 @@ public class PersistenciaSuperandes {
 		return sqlOrdenPedido.darPorIdProveedor (pmf.getPersistenceManager(), id);
 	}
 	
+	public Producto darProductoPorId(long id){
+		return sqlProducto.darCategoriaPorId(pmf.getPersistenceManager(), id);
+	}
 	/* ****************************************************************
 	 * 			Métodos para manejar  Administrador
 	 *****************************************************************/

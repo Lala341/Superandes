@@ -104,7 +104,7 @@ class SQLProducto
 	public Producto darCategoriaPorId (PersistenceManager pm, long idProducto) 
 	{
 		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaProducto () + " WHERE id = ?");
-		q.setResultClass(Categoria.class);
+		q.setResultClass(Producto.class);
 		q.setParameters(idProducto);
 		return (Producto) q.executeUnique();
 	}

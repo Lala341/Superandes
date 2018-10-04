@@ -846,7 +846,7 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
    public void RF7_RegistrarPromocion(){
 	   try 
 		{
-			String nombre = JOptionPane.showInputDialog (this, "Nombre de la promocion", "Adicionar promocion", JOptionPane.QUESTION_MESSAGE);
+		   String nombre = JOptionPane.showInputDialog (this, "Nombre de la promocion", "Adicionar promocion", JOptionPane.QUESTION_MESSAGE);
 			String descripcion = JOptionPane.showInputDialog (this, "Descripcion de la promocion", "Adicionar promocion", JOptionPane.QUESTION_MESSAGE);
 			Integer[] dias= {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31};
 			String diai =  JOptionPane.showInputDialog(null,"Seleccione un dia (Fecha inicial)", "Adicionar promocion", JOptionPane.DEFAULT_OPTION, null, dias, dias[0]) + "";
@@ -860,6 +860,7 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 			String estado = (String) JOptionPane.showInputDialog(null,"Seleccione un estado", "Adicionar promocion", JOptionPane.DEFAULT_OPTION, null, estados, estados[0]);
 			String[] tipos= {"PROMODESCUENTO", "PROMOPARTEDESCUENTO", "PROMOUNIDAD", "PROMOCANTIDAD"};
 			String tipo = (String) JOptionPane.showInputDialog(null,"Seleccione un tipo", "Adicionar promocion", JOptionPane.DEFAULT_OPTION, null, tipos, tipos[0]);
+			String cantidadP = JOptionPane.showInputDialog (this, "Cantidad de productos que pueden usar la promocion", "Adicionar promocion", JOptionPane.QUESTION_MESSAGE);
 			
 			String posMesi= "0";
 			int i=0;
@@ -879,7 +880,7 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 			
 			if (nombre != null)
 			{
-	    		VOPromocion tb = superandes.adicionarPromocion(nombre, descripcion, tipo, fecI, fecF, estado);
+	    		VOPromocion tb = superandes.adicionarPromocion(nombre, descripcion, tipo, fecI, fecF, estado, Integer.parseInt(cantidadP));
 	    		if(tipo!=null){
 					if(tipo.equals(tipos[0])){
 						String desc = JOptionPane.showInputDialog (this, "Seleccione un porcentaje descuento (sin %)", "Adicionar promocion con descuento", JOptionPane.QUESTION_MESSAGE);
@@ -998,6 +999,7 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 	   
    }
    public void RF10_RegistrarLlegadaPedido(){
+	   
 	   
    }
    public void RF11_RegistrarVenta(){

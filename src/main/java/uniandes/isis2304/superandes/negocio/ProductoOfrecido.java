@@ -7,13 +7,13 @@ package uniandes.isis2304.superandes.negocio;
  */
 public class ProductoOfrecido implements VOProductoOfrecido {
 
-	private double precioProveedor;
-	private int calificacionTotal;
-	private int calidad;
-	private int cumplimiento;
-	private long productoId;
-	private long proveedor;
-	private long id;
+	public double precioProveedor;
+	public int calificacionTotal;
+	public int calidad;
+	public int cumplimiento;
+	public long productoId;
+	public long proveedor;
+	public long id;
 	
 	public ProductoOfrecido(){
 

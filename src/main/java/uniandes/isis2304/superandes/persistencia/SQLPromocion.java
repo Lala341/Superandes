@@ -37,10 +37,10 @@ public class SQLPromocion {
 	/**
 	 * Crea y ejecuta la sentencia SQL para adicionar 
 	 */
-	public long adicionar (PersistenceManager pm, long id, String nombre,String descripcion , String tipo, Date fechaInicio, Date fechaFinalizacion, String estado) 
+	public long adicionar (PersistenceManager pm, long id, String nombre,String descripcion , String tipo, Date fechaInicio, Date fechaFinalizacion, String estado, int cantidadP) 
 	{
-        Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaPromocion () + "(id, nombre, descripcion,tipo, fechaInicio, fechaFinalizacion, estado) values (?, ?, ?, ?, ?, ?, ?)");
-        q.setParameters(id, nombre, descripcion, tipo, fechaInicio, fechaFinalizacion, estado);
+        Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaPromocion () + "(id, nombre, descripcion,tipo, fechaInicio, fechaFinalizacion, estado, cantidadP) values (?, ?, ?, ?, ?, ?, ?, ?)");
+        q.setParameters(id, nombre, descripcion, tipo, fechaInicio, fechaFinalizacion, estado, cantidadP);
         return (long) q.executeUnique();
 	}
 
@@ -60,6 +60,15 @@ public class SQLPromocion {
 	public long eliminarPorId (PersistenceManager pm, long id)
 	{
         Query q = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaPromocion () + " WHERE id = ?");
+        q.setParameters(id);
+        return (long) q.executeUnique();
+	}
+	/**
+	 * Crea y ejecuta la sentencia SQL para eliminar un elemento por por id
+	 */
+	public long finalizarPromocion (PersistenceManager pm, long id)
+	{
+        Query q = pm.newQuery(SQL, "UPDATE FROM " + pp.darTablaPromocion () + " SET estado= FINALIZADO WHERE id = ?");
         q.setParameters(id);
         return (long) q.executeUnique();
 	}

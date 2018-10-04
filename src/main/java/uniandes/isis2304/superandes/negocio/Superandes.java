@@ -1633,10 +1633,10 @@ public class Superandes {
 	 * Adiciona entradas al log de la aplicación
 	* @return El objeto. null si ocurre alguna Excepción
 	 */
-	public Promocion adicionarPromocion (String nombre, String descripcion , String tipo, Date fecI, Date fecF, String estado)
+	public Promocion adicionarPromocion (String nombre, String descripcion , String tipo, Date fecI, Date fecF, String estado, int cantidadP)
 	{
         log.info ("Adicionando Promocion: " + nombre);
-        Promocion Promocion = pp.adicionarPromocion (nombre,descripcion, tipo, fecI, fecF, estado);		
+        Promocion Promocion = pp.adicionarPromocion (nombre,descripcion, tipo, fecI, fecF, estado, cantidadP);		
         log.info ("Adicionando Promocion: " + nombre);
         return Promocion;
 	}
@@ -1710,7 +1710,18 @@ public class Superandes {
 		List<Promocion> tb = pp.darPromocionPorNombre (nombre);
 		return !tb.isEmpty () ? tb.get (0) : null;
 	}
-	
+	/**
+	 * Adiciona Promocion de manera persistente 
+	 * Adiciona entradas al log de la aplicación
+	* @return El objeto. null si ocurre alguna Excepción
+	 */
+	public long finalizarPromocion (long id)
+	{
+        log.info ("finalizarPromocion: " + id);
+        long Promocion = pp.finalizarPromocion (id);		
+        log.info ("finalizarPromocion: " + id);
+        return Promocion;
+	}
 	
 	/* ****************************************************************
 	 * 			Métodos para manejar los PROMOCION_UNIDAD
@@ -2310,6 +2321,17 @@ public class Superandes {
         log.info ("Generando los VO de ProductoOfrecido: " + voTipos.size() + " existentes");
         return voTipos;
 	}
+	public List<VOProductoOfrecido> darVOProductoOfrecidoesPorIdProveedor (long id)
+	{
+		log.info ("Generando los VO de ProductoOfrecido");        
+        List<VOProductoOfrecido> voTipos = new LinkedList<VOProductoOfrecido> ();
+        for (ProductoOfrecido tb : pp.darProductosOfrecidosPorIdProveedor(id))
+        {
+        	voTipos.add (tb);
+        }
+        log.info ("Generando los VO de ProductoOfrecido: " + voTipos.size() + " existentes");
+        return voTipos;
+	}
 
 	
 	/* ****************************************************************
@@ -2688,6 +2710,12 @@ public class Superandes {
 	{
 		return pp.adicionarVenta(fecha, formaPago, valorTotal, consumidor);
 	}
+
+	public Producto darProductoPorId(long id){
+		
+		return pp.darProductoPorId(id);
+	}
+
 	
 	/* ****************************************************************
 	 * 			MÃ©todos para administraciÃ³n

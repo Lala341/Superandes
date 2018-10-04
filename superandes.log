@@ -1202,6 +1202,128 @@ null
 15:25:52,344 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores: 1 existentes
 15:25:59,827 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando ProductoOfrecido: 126
 15:25:59,887 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando ProductoOfrecido: 126
+<<<<<<< HEAD
 19:03:19,148 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
 19:03:19,148 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
 19:03:19,194 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+=======
+18:22:39,235 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+18:22:39,236 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+18:22:39,257 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+18:23:15,422 (AWT-EventQueue-0) ERROR [uniandes.isis2304.superandes.persistencia.PersistenciaSuperandes] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO PERECEDERO(idPerecedero, fechaDeVencimiento, tipoCategoriaPerecedera) values (?, ?, ?,? )".
+null
+18:23:15,423 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Producto: w
+18:23:15,435 (AWT-EventQueue-0) ERROR [uniandes.isis2304.superandes.persistencia.PersistenciaSuperandes] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO PRODUCTO(id, nombre, cantidad, codigoBarras, especificacionesEmpaquetado, estado, marca, precioPorUnidadMedida, precioUnitario, presentacion, unidadMedida, categoria ) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)".
+null
+18:23:15,435 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Producto: w
+18:23:23,493 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+18:23:23,494 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+18:23:23,517 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+18:25:57,371 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+18:25:57,372 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+18:25:57,393 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+18:26:32,725 (AWT-EventQueue-0) ERROR [uniandes.isis2304.superandes.persistencia.PersistenciaSuperandes] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO PERECEDERO(idPerecedero, fechaDeVencimiento, tipoCategoriaPerecedera) values (?, ?, ?,? )".
+null
+18:26:32,725 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Producto: w
+18:26:32,732 (AWT-EventQueue-0) ERROR [uniandes.isis2304.superandes.persistencia.PersistenciaSuperandes] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO PRODUCTO(id, nombre, cantidad, codigoBarras, especificacionesEmpaquetado, estado, marca, precioPorUnidadMedida, precioUnitario, presentacion, unidadMedida, categoria ) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)".
+null
+18:26:32,732 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Producto: w
+18:27:37,543 (AWT-EventQueue-0) ERROR [uniandes.isis2304.superandes.persistencia.PersistenciaSuperandes] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO NOPERECEDERO(idNoPerecedero, tipoCategoriaNoPerecedera, idCategoria) values (?, ?, ?)".
+null
+18:27:37,544 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Producto: 3
+18:27:37,554 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Producto: 3
+18:28:44,440 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+18:28:44,441 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+18:28:44,463 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+18:29:35,065 (AWT-EventQueue-0) ERROR [uniandes.isis2304.superandes.persistencia.PersistenciaSuperandes] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO PERECEDERO(idPerecedero, fechaDeVencimiento, tipoCategoriaPerecedera) values (?, ?, ?,? )".
+null
+18:29:35,065 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Producto: w
+18:29:35,081 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Producto: w
+19:22:06,734 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+19:22:06,735 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+19:22:06,757 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+19:22:14,335 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Sucursal
+19:22:14,442 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Sucursal: 0 existentes
+19:22:14,442 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores
+19:22:14,448 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores: 0 existentes
+19:22:22,481 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Ciudad
+19:22:22,487 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Ciudad: 0 existentes
+19:22:31,309 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Ciudad: d
+19:22:31,381 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando ciudad: d
+19:22:35,020 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Ciudad
+19:22:35,026 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Ciudad: 1 existentes
+19:22:53,341 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Sucursal
+19:22:53,348 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Sucursal: 1 existentes
+19:22:53,348 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores
+19:22:53,350 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores: 0 existentes
+19:23:17,830 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Proveedores: e
+19:23:17,840 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Proveedores: e
+19:23:25,917 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Sucursal
+19:23:25,922 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Sucursal: 1 existentes
+19:23:25,922 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores
+19:23:25,927 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores: 1 existentes
+19:23:52,111 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de ProductoOfrecido
+19:23:52,118 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de ProductoOfrecido: 0 existentes
+19:29:58,480 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+19:29:58,480 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+19:29:58,503 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+19:30:07,968 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Sucursal
+19:30:08,073 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Sucursal: 1 existentes
+19:30:08,073 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores
+19:30:08,078 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores: 1 existentes
+19:30:28,354 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de ProductoOfrecido
+19:30:28,360 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de ProductoOfrecido: 0 existentes
+19:30:35,967 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Productos
+19:30:35,977 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Productos: 1 existentes
+19:30:35,977 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores
+19:30:35,981 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores: 1 existentes
+19:30:53,476 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando ProductoOfrecido: 163
+19:30:53,549 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando ProductoOfrecido: 163
+19:30:59,142 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Sucursal
+19:30:59,148 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Sucursal: 1 existentes
+19:30:59,148 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores
+19:30:59,152 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores: 1 existentes
+19:31:14,685 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de ProductoOfrecido
+19:34:23,626 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+19:34:23,627 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+19:34:23,648 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+19:34:58,183 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+19:34:58,184 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+19:34:58,205 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+19:35:03,928 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Sucursal
+19:35:04,029 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Sucursal: 1 existentes
+19:35:04,029 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores
+19:35:04,033 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores: 1 existentes
+19:35:20,503 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de ProductoOfrecido
+19:37:46,581 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+19:37:46,582 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+19:37:46,604 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+19:37:57,706 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Sucursal
+19:37:57,808 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Sucursal: 1 existentes
+19:37:57,808 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores
+19:37:57,812 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores: 1 existentes
+19:38:18,600 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de ProductoOfrecido
+19:38:18,607 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de ProductoOfrecido: 1 existentes
+19:42:39,930 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+19:42:39,931 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+19:42:39,953 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+19:42:47,144 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Sucursal
+19:42:47,247 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Sucursal: 1 existentes
+19:42:47,247 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores
+19:42:47,251 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores: 1 existentes
+19:43:04,412 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de ProductoOfrecido
+19:43:04,419 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de ProductoOfrecido: 1 existentes
+19:43:10,442 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando OrdenPedido: 2222222222
+19:43:10,511 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando OrdenPedido: 2222222222
+19:43:22,930 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores
+19:43:22,934 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores: 1 existentes
+19:43:25,045 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Buscando OrdenPedido por idProveedor: 2222222222
+19:43:32,378 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores
+19:43:32,382 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores: 1 existentes
+19:43:35,044 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Buscando OrdenPedido por idProveedor: 2222222222
+20:03:56,149 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+20:03:56,150 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+20:03:56,172 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+20:04:02,468 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Promocion
+20:04:02,577 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Promocion: 0 existentes
+>>>>>>> 5da203d3339ff75df8292648ecc1cdbfefe5bfbf
