@@ -2687,6 +2687,23 @@ public class Superandes {
 	 * 			M�todos para manejar Requerimientos
 	 *****************************************************************/
 	
+	public boolean actualizadoOrdenPedido(long idPedido)
+	{
+		List<OrdenPedido> pedidos= pp.darOrdenesPedidos();
+		boolean existePedido = false;
+		VOOrdenPedido pedido = null;
+		for (int i = 0; i < pedidos.size() && !existePedido; i++) {
+			if (pedidos.get(i).getId() == (idPedido)) {
+			existePedido = true;
+			pedido = pedidos.get(i);
+			}
+		}
+		pedido.setEstado("Registrado");
+		
+		return existePedido;
+	}
+
+	
 	public Producto registrarProductoPerecedero(  String nombre, String categoria, int cantidad, String codigoDeBarras, String especificacionDeEmpaquetado, boolean estado, String marca, double precioPorUnidadMedida, double precioUnitario, String presentacion, String unidadDeMedida, String tipoCategoria, Date fechaDeVencimiento){
 		long cat = 0;
 		List<Categoria> list=pp.darCategoriasPorNombre(categoria);
@@ -2799,7 +2816,7 @@ public class Superandes {
 		
 		return pp.darProductoPorId(id);
 	}
-
+	
 	
 	/* ****************************************************************
 	 * 			Métodos para administración

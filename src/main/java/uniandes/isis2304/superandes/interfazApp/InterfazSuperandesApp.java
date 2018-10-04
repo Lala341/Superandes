@@ -48,6 +48,7 @@ import uniandes.isis2304.superandes.negocio.VOBodega;
 import uniandes.isis2304.superandes.negocio.VOCiudad;
 import uniandes.isis2304.superandes.negocio.VOConsumidor;
 import uniandes.isis2304.superandes.negocio.VOEstante;
+import uniandes.isis2304.superandes.negocio.VOOrdenPedido;
 import uniandes.isis2304.superandes.negocio.VOProducto;
 import uniandes.isis2304.superandes.negocio.VOProductoCarritoCompras;
 import uniandes.isis2304.superandes.negocio.VOProductoEstante;
@@ -1000,6 +1001,30 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
    }
    public void RF10_RegistrarLlegadaPedido(){
 	   
+	   try {
+		   List<VOOrdenPedido> pedidos=superandes.darVOOrdenPedidoes();
+		   String pedidoN = JOptionPane.showInputDialog (this, "Ingrese el id del pedido", JOptionPane.QUESTION_MESSAGE);
+		   long idPedido = Long.valueOf(pedidoN);
+		   VOOrdenPedido pedido = null;
+		   
+		   
+		   if(pedidos.size()==0){
+			   if (!superandes.actualizadoOrdenPedido(idPedido)) {
+			JOptionPane.showMessageDialog(this, "Se debió haber registrado la orden de pedido ");
+			}			   
+		   }
+		   else{
+			   
+			   superandes.actualizadoOrdenPedido(idPedido);
+		   }
+		
+	   } 
+	   catch (Exception e) 
+	   {
+	//		e.printStackTrace();
+			String resultado = generarMensajeError(e);
+			panelDatos.actualizarInterfaz(resultado);
+	   }
 	   
    }
    public void RF11_RegistrarVenta(){
@@ -1058,6 +1083,8 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 	   
    }
    public void RFC1_DineroRecolectado(){
+	   
+	   
 	   
    }
    public void RFC2_PromocionesPopulares(){
