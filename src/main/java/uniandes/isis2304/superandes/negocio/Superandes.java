@@ -820,7 +820,18 @@ public class Superandes {
 		List<Promocion> tb = pp.darPromocionPorNombre (nombre);
 		return !tb.isEmpty () ? tb.get (0) : null;
 	}
-	
+	/**
+	 * Adiciona Promocion de manera persistente 
+	 * Adiciona entradas al log de la aplicación
+	* @return El objeto. null si ocurre alguna Excepción
+	 */
+	public long finalizarPromocion (long id)
+	{
+        log.info ("finalizarPromocion: " + id);
+        long Promocion = pp.finalizarPromocion (id);		
+        log.info ("finalizarPromocion: " + id);
+        return Promocion;
+	}
 	
 	
 	

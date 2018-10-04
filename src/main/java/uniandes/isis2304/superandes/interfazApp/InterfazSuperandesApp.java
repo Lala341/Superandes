@@ -925,6 +925,35 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 		}
    }
    public void RF8_FinalizarPromocion(){
+	   try 
+		{
+			List<VOPromocion> promociones= superandes.darVOPromociones();
+			
+			if (!promociones.isEmpty() )
+			{
+	    		java.util.Date fechaA= new java.util.Date();
+				for (VOPromocion voPromocion : promociones) {
+					if(voPromocion.getCantidadP()==0||voPromocion.getFechaFinalizacion().equals(fechaA)==true||voPromocion.getFechaFinalizacion().before(fechaA)==true){
+						superandes.finalizarPromocion(voPromocion.getId());
+					}
+				}
+	    		
+	    		String resultado = " Finalizaron las promociones con las condiciones dadas\n\n";
+	    		resultado += " Finalizaron las promociones con las condiciones dadas: " ;
+				resultado += "\n Operación terminada";
+				panelDatos.actualizarInterfaz(resultado);
+			}
+			else
+			{
+				panelDatos.actualizarInterfaz("No existen promociones");
+			}
+		} 
+		catch (Exception e) 
+		{
+//			e.printStackTrace();
+			String resultado = generarMensajeError(e);
+			panelDatos.actualizarInterfaz(resultado);
+		}
 	   
    }
    public void RF9_RegistrarPedido(){

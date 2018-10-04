@@ -2637,6 +2637,37 @@ public class PersistenciaSuperandes {
             pm.close();
         }
 	}
+	/**
+	 * Método que elimina, de manera transaccional, una tupla en la tabla
+	 * Adiciona entradas al log de la aplicación
+	 * @return El número de tuplas eliminadas. -1 si ocurre alguna Excepción
+	 */
+	public long finalizarPromocion (long id) 
+	{
+		PersistenceManager pm = pmf.getPersistenceManager();
+        Transaction tx=pm.currentTransaction();
+        try
+        {
+            tx.begin();
+            long resp = sqlPromocion.finalizarPromocion(pm, id);
+            tx.commit();
+            return resp;
+        }
+        catch (Exception e)
+        {
+//        	e.printStackTrace();
+        	log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+            return -1;
+        }
+        finally
+        {
+            if (tx.isActive())
+            {
+                tx.rollback();
+            }
+            pm.close();
+        }
+	}
 
 	/**
 	 * Método que consulta todas las tuplas en la tabla

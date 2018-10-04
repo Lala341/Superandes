@@ -63,6 +63,15 @@ public class SQLPromocion {
         q.setParameters(id);
         return (long) q.executeUnique();
 	}
+	/**
+	 * Crea y ejecuta la sentencia SQL para eliminar un elemento por por id
+	 */
+	public long finalizarPromocion (PersistenceManager pm, long id)
+	{
+        Query q = pm.newQuery(SQL, "UPDATE FROM " + pp.darTablaPromocion () + " SET estado= FINALIZADO WHERE id = ?");
+        q.setParameters(id);
+        return (long) q.executeUnique();
+	}
 
 	/**
 	 * Crea y ejecuta la sentencia SQL para encontrar la información de un elemento por su identificador
