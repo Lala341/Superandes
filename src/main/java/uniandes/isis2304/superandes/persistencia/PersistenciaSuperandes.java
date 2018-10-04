@@ -3390,6 +3390,14 @@ public class PersistenciaSuperandes {
 	{
 		return sqlProductoOfrecido.darLista(pmf.getPersistenceManager());
 	}
+	/**
+	 * Método que consulta todas las tuplas en la tabla
+	 * @return La lista de objetos 
+	 */
+	public List<ProductoOfrecido> darProductosOfrecidosPorIdProveedor (long id)
+	{
+		return sqlProductoOfrecido.darListaPorIdProveedor(pmf.getPersistenceManager(),id);
+	}
  
  
 	/**
@@ -3505,6 +3513,9 @@ public class PersistenciaSuperandes {
 		return sqlOrdenPedido.darPorIdProveedor (pmf.getPersistenceManager(), id);
 	}
 	
+	public Producto darProductoPorId(long id){
+		return sqlProducto.darCategoriaPorId(pmf.getPersistenceManager(), id);
+	}
 	/* ****************************************************************
 	 * 			Métodos para manejar  Administrador
 	 *****************************************************************/

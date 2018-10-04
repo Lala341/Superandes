@@ -48,6 +48,7 @@ import uniandes.isis2304.superandes.negocio.VOBodega;
 import uniandes.isis2304.superandes.negocio.VOCiudad;
 import uniandes.isis2304.superandes.negocio.VOConsumidor;
 import uniandes.isis2304.superandes.negocio.VOEstante;
+import uniandes.isis2304.superandes.negocio.VOOrdenPedido;
 import uniandes.isis2304.superandes.negocio.VOProducto;
 import uniandes.isis2304.superandes.negocio.VOProductoOfrecido;
 import uniandes.isis2304.superandes.negocio.VOPromocion;
@@ -931,9 +932,11 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 
 	   try 
 		{
-		  List<VOSucursal> sucursales=superandes.darVOSucursales();
-		    
+		   List<VOSucursal> sucursales=superandes.darVOSucursales();
+		   List<VOProveedores> proveedores=superandes.darVOProveedoreses();
+		   
 		   String[] sucursalesn= new String[sucursales.size()];
+		   String[] proveedoresn= new String[proveedores.size()];
 		     
 		   int i=0;
 		   for (VOSucursal voSucursal :superandes.darSucursales()) {
@@ -941,42 +944,98 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 			   i=i+1;
 			   
 		   }
-		   if(sucursales.size()==0){
-			   System.out.println("voy4");
-			   JOptionPane.showMessageDialog(this, "Agrege una Sucursal antes de registrar un Estante (Menu requerimientos F).");
+		   i=0;
+		   for (VOProveedores voSucursal :proveedores) {
+			   proveedoresn[i]=voSucursal.getNombre();
+			   i=i+1;
 			   
-		   }else{
+		   }
+		   if(sucursales.size()==0){
+			   JOptionPane.showMessageDialog(this, "Agrege una Sucursal antes de registrar una orden de pedido (Menu requerimientos F).");
+			   
+		   }else if(proveedores.size()==0){
+			   JOptionPane.showMessageDialog(this, "Agrege un proveedor antes de registrar una orden de pedido  (Menu requerimientos F).");
+
+		   }
+		   else{
 		   
-			String volumen = JOptionPane.showInputDialog (this, "Volumen de la Estante", "Adicionar Estante", JOptionPane.QUESTION_MESSAGE);
-			String peso = JOptionPane.showInputDialog (this, "Peso de la Estante", "Adicionar Estante", JOptionPane.QUESTION_MESSAGE);
-
-			String nivelAbastecimiento = JOptionPane.showInputDialog (this, "Nivel Abastecimiento de la Estante", "Adicionar Estante", JOptionPane.QUESTION_MESSAGE);
-
-			String nivelReorden = JOptionPane.showInputDialog (this, "Nivel Reorden de la Estante", "Adicionar Estante", JOptionPane.QUESTION_MESSAGE);
-			String capacidadTotal = JOptionPane.showInputDialog (this, "Capacidad total de la Estante", "Adicionar Estante", JOptionPane.QUESTION_MESSAGE);
-			
-			String sucursal= (String) JOptionPane.showInputDialog(null,"Seleccione la sucursal de la Estante", "Adicionar Estante", JOptionPane.DEFAULT_OPTION, null, sucursalesn, sucursalesn[0]);
-			
-			String cantidadProducto = JOptionPane.showInputDialog (this, "Cantidad de productos de la Estante", "Adicionar Estante", JOptionPane.QUESTION_MESSAGE);
-			
-			String[] tcategorias= {"ASEO", "ABARROTES", "PRENDASDEVESTIR", "MUEBLES", "HERRAMIENTAS", "ELECTRODOMESTICOS", "CONGELADOS"};
-			String tipoCategoria = (String) JOptionPane.showInputDialog(null,"Seleccione el tipo de producto de la Estante", "Adicionar Estante", JOptionPane.DEFAULT_OPTION, null, tcategorias, tcategorias[0]);
-			String equipamientoAdicional = JOptionPane.showInputDialog (this, "Equipamiento Adicional de la Estante", "Adicionar Estante", JOptionPane.QUESTION_MESSAGE);
+			String sucursal= (String) JOptionPane.showInputDialog(null,"Seleccione la sucursal", "Adicionar una orden de pedido", JOptionPane.DEFAULT_OPTION, null, sucursalesn, sucursalesn[0]);
+			String[] estados= {"VIGENTE", "FINALIZADO"};
+			String estado= (String) JOptionPane.showInputDialog(null,"Seleccione estado de la orden de pedido", "Adicionar una orden de pedido", JOptionPane.DEFAULT_OPTION, null, estados, estados[0]);
+				   
+			String calificacion = JOptionPane.showInputDialog (this, "calificacion", "Adicionar una orden de pedido", JOptionPane.QUESTION_MESSAGE);
 
 			
+			Integer[] dias= {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31};
+			String diai =  JOptionPane.showInputDialog(null,"Seleccione un dia (Fecha OP)", "Adicionar una orden de pedido", JOptionPane.DEFAULT_OPTION, null, dias, dias[0]) + "";
+			String[] meses= {"enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "noviembre", "diciembre"};
+			String mesi = (String) JOptionPane.showInputDialog(null,"Seleccione un mes  (Fecha OP)", "Adicionar una orden de pedido", JOptionPane.DEFAULT_OPTION, null, meses, meses[0]);
+			String anhoi = JOptionPane.showInputDialog (this, "Seleccione un año  (Fecha OP)", "Adicionar una orden de pedido", JOptionPane.QUESTION_MESSAGE);
+			String diaf = JOptionPane.showInputDialog(null,"Seleccione un dia (Fecha entrega)", "Adicionar una orden de pedido", JOptionPane.DEFAULT_OPTION, null, dias, dias[0])+ "";
+			String mesf = (String) JOptionPane.showInputDialog(null,"Seleccione un mes  (Fecha entrega)", "Adicionar una orden de pedido", JOptionPane.DEFAULT_OPTION, null, meses, meses[0]);
+			String anhof = JOptionPane.showInputDialog (this, "Seleccione un año  (Fecha entrega)", "Adicionar una orden de pedido", JOptionPane.QUESTION_MESSAGE);
+			
+			String proveedor =  JOptionPane.showInputDialog(null,"Seleccione el proveedor", "Adicionar una orden de pedido", JOptionPane.DEFAULT_OPTION, null, proveedoresn, proveedoresn[0]) + "";
+			
+			long id= 0;
+			i=0;
+			for (String string : proveedoresn) {
+				if(string.equals(proveedor)){
+					id=proveedores.get(i).getNit();
+							
+				}
+				i=i+1;
+			}
 			
 			
-			
-			if (volumen != null&&peso!=null&&capacidadTotal!=null&&sucursal!=null&&cantidadProducto!=null&&tipoCategoria!=null)
+			if (proveedor != null&&sucursal!=null&&estado!=null&&calificacion!=null)
 			{
-				VOEstante tb= superandes.registrarEstanteASucursal(Integer.parseInt(cantidadProducto), Integer.parseInt(capacidadTotal), Double.parseDouble(peso), Double.parseDouble(volumen), tipoCategoria, equipamientoAdicional,Long.parseLong(nivelReorden), Integer.parseInt(nivelAbastecimiento), sucursales.get(i-1).getId());
+				List<VOProductoOfrecido> productosOfrecidos=superandes.darVOProductoOfrecidoesPorIdProveedor(id);
+				   
+				String[] productosOfrecidosn= new String[productosOfrecidos.size()];
+				   i=0;
+				   long productoOfrecido=0;
+				 if(productosOfrecidos.size()==0){
+					   throw new Exception("El proveedor elegido no tiene productos que vender a superandes.");
+				}
+				for (VOProductoOfrecido voSucursal :productosOfrecidos) {
+					   productosOfrecidosn[i]=superandes.darProductoPorId(voSucursal.getProductoId()).getNombre();
+					   i=i+1;
+					   
+				 }
+				String producto = (String) JOptionPane.showInputDialog(null,"Seleccione un producto del proveedor", "Adicionar una orden de pedido", JOptionPane.DEFAULT_OPTION, null, productosOfrecidosn, productosOfrecidosn[0]);
+				i=0;
+				for (String voSucursal :productosOfrecidosn) {
+					 if(voSucursal.equals(producto)){
+						 productoOfrecido=productosOfrecidos.get(i).getId();
+					 }
+					
+					i=i+1;
+					   
+				   }
+				long sucu=0;
+				i=0;
+				for (String voSucursal :sucursalesn) {
+					 if(voSucursal.equals(sucursal)){
+						 sucu=sucursales.get(i).getId();
+					 }
+					
+					i=i+1;
+					   
+				   }
+				String cantidadProducto = JOptionPane.showInputDialog (this, "Cantidad de producto", "Adicionar una orden de pedido", JOptionPane.QUESTION_MESSAGE);
+				String[] unidadDeMedidas= {"UNIDAD", "GR", "LB", "LITRO"};
+				String unidadMedida = (String) JOptionPane.showInputDialog(null,"Seleccione una unidad de medida del producto", "Adicionar una orden de pedido", JOptionPane.DEFAULT_OPTION, null, unidadDeMedidas, unidadDeMedidas[0]);
+				String fecha= diai + "/"+ mesi+ "/" +anhoi;
+				String fechaEntrega= diaf + "/"+ mesf+ "/"+ anhof;
+				VOOrdenPedido tb= superandes.adicionarOrdenPedido(estado, Integer.parseInt(calificacion), fecha, fechaEntrega, id, productoOfrecido, Double.parseDouble(cantidadProducto), unidadMedida, sucu);
 				
 				if (tb == null)
 	    		{
 	    			throw new Exception ("No se pudo crear la Estante");
 	    		}
-	    		String resultado = "En adicionarEstante\n\n";
-	    		resultado += "Estante adicionado exitosamente: " + tb;
+	    		String resultado = "En Adicionar una orden de pedido\n\n";
+	    		resultado += "Adicionar una orden de pedido exitosamente: " + tb;
 				resultado += "\n Operación terminada";
 				panelDatos.actualizarInterfaz(resultado);
 			}

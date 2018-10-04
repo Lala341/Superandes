@@ -1131,6 +1131,17 @@ public class Superandes {
         log.info ("Generando los VO de ProductoOfrecido: " + voTipos.size() + " existentes");
         return voTipos;
 	}
+	public List<VOProductoOfrecido> darVOProductoOfrecidoesPorIdProveedor (long id)
+	{
+		log.info ("Generando los VO de ProductoOfrecido");        
+        List<VOProductoOfrecido> voTipos = new LinkedList<VOProductoOfrecido> ();
+        for (ProductoOfrecido tb : pp.darProductosOfrecidosPorIdProveedor(id))
+        {
+        	voTipos.add (tb);
+        }
+        log.info ("Generando los VO de ProductoOfrecido: " + voTipos.size() + " existentes");
+        return voTipos;
+	}
 
 	
 	/* ****************************************************************
@@ -1528,7 +1539,10 @@ public class Superandes {
 	
 		return bode;
 	}
-	
+	public Producto darProductoPorId(long id){
+		
+		return pp.darProductoPorId(id);
+	}
 
 	
 	/* ****************************************************************

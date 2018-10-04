@@ -77,6 +77,16 @@ public class SQLProductoOfrecido {
 		q.setResultClass(ProductoOfrecido.class);
 		return (List<ProductoOfrecido>) q.executeList();
 	}
+	/**
+	 * Crea y ejecuta la sentencia SQL para encontrar la información de los elementos
+	 */
+	public List<ProductoOfrecido> darListaPorIdProveedor (PersistenceManager pm, long proveedor)
+	{
+		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaProductoOfrecido()+ " WHERE proveedor = ?");
+		q.setResultClass(ProductoOfrecido.class);
+		q.setParameters(proveedor);
+		return (List<ProductoOfrecido>) q.executeList();
+	}
 
 	
 	
