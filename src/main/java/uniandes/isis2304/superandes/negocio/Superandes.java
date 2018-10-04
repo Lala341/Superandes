@@ -2715,6 +2715,22 @@ public class Superandes {
 		
 		return pp.darProductoPorId(id);
 	}
+	
+	public boolean actualizadoOrdenPedido(long idPedido)
+	{
+		List<OrdenPedido> pedidos= pp.darOrdenesPedidos();
+		boolean existePedido = false;
+		VOOrdenPedido pedido = null;
+		for (int i = 0; i < pedidos.size() && !existePedido; i++) {
+			if (pedidos.get(i).getId() == (idPedido)) {
+			existePedido = true;
+			pedido = pedidos.get(i);
+			}
+		}
+		pedido.setEstado("Registrado");
+		
+		return existePedido;
+	}
 
 	
 	/* ****************************************************************
