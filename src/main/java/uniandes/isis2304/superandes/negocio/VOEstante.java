@@ -94,7 +94,7 @@ public interface VOEstante {
 	public long getIdSucursal();
 
 	/**
-	 * @param idSucursal the sucursal to set
+	 * @param sucursal the sucursal to set
 	 */
 	public void setIdSucursal(long idSucursal);
 

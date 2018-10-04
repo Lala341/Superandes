@@ -1419,8 +1419,82 @@ public class Superandes {
 		return !tb.isEmpty () ? tb.get (0) : null;
 	}
 	
+	
+	public List<VOEstante> darVOEstantes ()
+	{
+		log.info ("Generando los VO ");        
+        List<VOEstante> voTipos = new LinkedList<VOEstante> ();
+        for (VOEstante tb : pp.darEstantes())
+        {
+        	voTipos.add (tb);
+        }
+        log.info ("Generando los VO " + voTipos.size() + " existentes");
+        return voTipos;
+	}
+	public List<VOEstante> darVOEstantesPorSucursal (long id)
+	{
+		log.info ("Generando los VO ");        
+        List<VOEstante> voTipos = new LinkedList<VOEstante> ();
+        for (VOEstante tb : pp.darEstantesPorSucursal (id))
+        {
+        	voTipos.add (tb);
+        }
+        log.info ("Generando los VO " + voTipos.size() + " existentes");
+        return voTipos;
+	}
 
 
+	public List<VOBodega> darVOBodegas ()
+	{
+		log.info ("Generando los VO ");        
+        List<VOBodega> voTipos = new LinkedList<VOBodega> ();
+        for (VOBodega tb : pp.darBodegas())
+        {
+        	voTipos.add (tb);
+        }
+        log.info ("Generando los VO " + voTipos.size() + " existentes");
+        return voTipos;
+	}
+	public List<VOBodega> darVOBodegasPorSucursal (long id)
+	{
+		log.info ("Generando los VO ");        
+        List<VOBodega> voTipos = new LinkedList<VOBodega> ();
+        for (VOBodega tb : pp.darBodegasPorSucursal(id))
+        {
+        	voTipos.add (tb);
+        }
+        log.info ("Generando los VO " + voTipos.size() + " existentes");
+        return voTipos;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	public List<VOProducto> darVOProductosRPrecioUnitario (double d1, double d2)
+	{
+		log.info ("Generando los VO ");        
+        List<VOProducto> voTipos = new LinkedList<VOProducto> ();
+        for (VOProducto tb : pp.ProductosRPrecioUnitario(d1,d2))
+        {
+        	voTipos.add (tb);
+        }
+        log.info ("Generando los VO " + voTipos.size() + " existentes");
+        return voTipos;
+	}
+	
+	
 	
 	
 	

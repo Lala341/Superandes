@@ -10,16 +10,17 @@ public class Estante implements VOEstante {
 
 	
 
-	private double peso;
-	private double volumen;
-	private int capacidadTotal;
-	private int cantidadProductos;
-	private int nivelDeAbastecimiento;
-	private String nombre;
-	private String equipamientoAdicional;
-	private long id;
-	private long idSucursal;
-	private long nivelReorden;
+	public double peso;
+	public double volumen;
+	public int capacidadTotal;
+	public int cantidadProductos;
+	public int nivelDeAbastecimiento;
+	public String nombre;
+	public String equipamientoAdicional;
+	public long id;
+	public long sucursal;
+	public long nivelReorden;
+	public String tipoProducto;
 
 	public Estante(){
 
@@ -34,7 +35,7 @@ public class Estante implements VOEstante {
 	 * @param tipoProducto - El tipo de producto que maneja el estante
 	 * @param equipamientoAdicional el equipamiento adicional del estante
 	 * @param nivelDeAbastecimiento nivel de abastecimiento del estante
-	 * @param idSucursal
+	 * @param sucursal
 	 */
 	public Estante (long idEstante, int cantidadProductos, int capacidadTotal, double peso, double volumen, String tipoProducto, String equipamientoAdicional, long nivelReorden, int nivelDeAbastecimiento, long idSucursal) 
 	{
@@ -46,7 +47,7 @@ public class Estante implements VOEstante {
 		this.capacidadTotal = capacidadTotal;
 		this.nombre = nombre;
 		this.equipamientoAdicional = equipamientoAdicional;
-		this.idSucursal = idSucursal;
+		this.sucursal = idSucursal;
 		this.nivelReorden=nivelReorden;
 	}
 
@@ -166,14 +167,14 @@ public class Estante implements VOEstante {
 	 * @return the sucursal
 	 */
 	public long getIdSucursal() {
-		return idSucursal;
+		return sucursal;
 	}
 
 	/**
-	 * @param idSucursal the sucursal to set
+	 * @param sucursal the sucursal to set
 	 */
 	public void setIdSucursal(long idSucursal) {
-		this.idSucursal = idSucursal;
+		this.sucursal = idSucursal;
 	}
 
 	
@@ -198,7 +199,7 @@ public class Estante implements VOEstante {
 	 */
 	public String toString() 
 	{
-		return "Estante [id=" + id + ", nombre=" + nombre + ", peso=" + peso +", volumen=" + volumen + ", idSucursal=" + idSucursal
+		return "Estante [id=" + id + ", nombre=" + nombre + ", peso=" + peso +", volumen=" + volumen + ", sucursal=" + sucursal
 				+ ", cantidadProductos=" + cantidadProductos + ", capacidadTotal=" + capacidadTotal + ", equipamientoAdicional=" + equipamientoAdicional +", nivelDeAbastecimiento="+ nivelDeAbastecimiento +"]";
 	}
 

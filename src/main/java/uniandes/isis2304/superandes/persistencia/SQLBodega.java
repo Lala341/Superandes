@@ -54,7 +54,7 @@ class SQLBodega
 	 * @param volumen - El volumen manejado en la bodega
 	 * @param tipoProducto - El tipo de producto que maneja la bodega
 	 * @param nivelDeAbastecimiento
-	 * @param idSucursal
+	 * @param sucursal
 	 * @return El número de tuplas insertadas
 	 */
 	public long adicionarBodega (PersistenceManager pm, long idBodega, int cantidadProductos, int capacidadTotal, double peso, double volumen, String tipoProducto, double nivelDeReorden, long idSucursal) 
@@ -102,6 +102,13 @@ class SQLBodega
 	{
 		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaBodega ());
 		q.setResultClass(Bodega.class);
+		return (List<Bodega>) q.executeList();
+	}
+	public List<Bodega> darBodegasPorSucursal (PersistenceManager pm, long id)
+	{
+		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaBodega ()+ " WHERE sucursal = ?");
+		q.setResultClass(Bodega.class);
+		q.setParameters(id);
 		return (List<Bodega>) q.executeList();
 	}
 	

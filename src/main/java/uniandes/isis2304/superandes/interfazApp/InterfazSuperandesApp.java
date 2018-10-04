@@ -1097,10 +1097,126 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 	   
    }
    public void RFC3_IndiceOcupacionBodegaEstante(){
+	   try{
+	   
+	   List<VOSucursal> sucursales=superandes.darVOSucursales();
+	    
+	   String[] sucursalesn= new String[sucursales.size()];
+	     
+	   int i=0;
+	   for (VOSucursal voSucursal :superandes.darSucursales()) {
+		   sucursalesn[i]=voSucursal.getNombre();
+		   i=i+1;
+		   
+	   }
+	   
+	   
+	   if(sucursales.size()==0){
+		   throw new Exception( "Agrege una Sucursal antes de consultar (Menu requerimientos F).");
+		   
+	   }
+	   String sucursal= (String) JOptionPane.showInputDialog(null,"Seleccione la sucursal", "Indice de ocupacion", JOptionPane.DEFAULT_OPTION, null, sucursalesn, sucursalesn[0]);
+		
+	   i=0;
+	   long idSucursal=0;
+	   for (String string : sucursalesn) {
+		if(string.equals(sucursal)){
+			idSucursal=sucursales.get(i).getId();
+		}
+		   i++;
+	}
+	   List<VOEstante> estantes=superandes.darVOEstantesPorSucursal(idSucursal);
+	   List<VOBodega> bodegas=superandes.darVOBodegasPorSucursal(idSucursal);
+	   
+	   String[] estantesn= new String[estantes.size()];
+	   String[] bodegasn= new String[bodegas.size()];
+	     
+	    i=0;
+	   for (VOEstante voSucursal :estantes) {
+		   estantesn[i]=voSucursal.getId()+"";
+		   i=i+1;
+		   
+	   }
+	   i=0;
+	   for (VOBodega voSucursal :bodegas) {
+		   bodegasn[i]=voSucursal.getId()+"";
+		   i=i+1;
+		   
+	   }
+	   
+	   
+	   if(estantes.size()==0&&bodegas.size()==0){if(estantes.size()==0){
+		   JOptionPane.showMessageDialog(this, "No existen estantes para esta sucursal (Menu requerimientos F).");
+		   
+	   }else if(bodegas.size()==0){
+		   JOptionPane.showMessageDialog(this, "No existen bodegas para esta sucursal  (Menu requerimientos F).");
+
+	   }}
+	   else{
+		   String resultado = "Estos son los Indices de ocupacion de cada una de las bodegas y estantes de una sucursal"+"\n Bodegas:"+bodegas.size();
+				
+		for (VOBodega string : bodegas) {
+			resultado+= "\n Bodega:"+ string;
+			resultado+= "\n BodegaIndice:"+ (double)string.getCantidadProductos()/string.getCapacidadTotal();
+		}
+		resultado+= "\n Estantes:"+estantes.size();
+		for (VOEstante string : estantes) {
+			resultado+= "\n Estante:"+ string;
+			resultado+= "\n EstanteIndice:"+ (double)string.getCantidadProductos()/string.getCapacidadTotal();
+		
+		}
+    		
+			resultado += "\n Operación terminada";
+			panelDatos.actualizarInterfaz(resultado);
+		
+	   }
+	} 
+	catch (Exception e) 
+	{
+//		e.printStackTrace();
+		String resultado = generarMensajeError(e);
+		panelDatos.actualizarInterfaz(resultado);
+	}
+
 	   
    }
    public void RFC4_ProductosCaracteristica(){
-	   
+	   String[] unidadDeMedidas= {"RANGO PRECIOUNITARIO", "RANGO PESO", "RANGO PRECIO", "RANGO FECHA VENCIMIENTO"};
+	String caracteristica = (String) JOptionPane.showInputDialog(null,"Seleccione criterio de busqueda", "Buscar un producto por una caracteristica", JOptionPane.DEFAULT_OPTION, null, unidadDeMedidas, unidadDeMedidas[0]);
+	try{
+		
+		if(caracteristica!=null){
+			if(caracteristica.equals(unidadDeMedidas[0])){
+				String d1 = (String) JOptionPane.showInputDialog(null,"Seleccione rango inferior");
+				String d2 = (String) JOptionPane.showInputDialog(null,"Seleccione rango superior");
+				
+				List<VOProducto> producto=superandes.darVOProductosRPrecioUnitario(Double.parseDouble(d1), Double.parseDouble(d2));
+			
+				String resultado = "Estos son productos que cumplieron la condicion:"+ producto.size();
+				
+				for (VOProducto voProducto : producto) {
+				resultado+="\n Producto:"+ voProducto ;
+			}
+				 	
+				panelDatos.actualizarInterfaz(resultado);
+			
+			}
+			
+			
+			
+		   }
+			else
+			{
+				panelDatos.actualizarInterfaz("Operación cancelada por el usuario, llene todos los campos.");
+			}
+		   
+		} 
+		catch (Exception e) 
+		{
+//			e.printStackTrace();
+			String resultado = generarMensajeError(e);
+			panelDatos.actualizarInterfaz(resultado);
+		}
    }
    public void RFC5_ComprasProveedores(){
 

@@ -136,5 +136,14 @@ class SQLProducto
 		q.setResultClass(Producto.class);
 		return (List<Producto>) q.executeList();
 	}
+	
+	public List<Producto> ProductosRPrecioUnitario(PersistenceManager pm, double d1, double d2 )
+	{
+		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaProducto ()+ " WHERE precioUnitario BETWEEN ? AND ?");
+		q.setResultClass(Producto.class);
+		q.setParameters(d1,d2);
+		
+		return (List<Producto>) q.executeList();
+	}
 
 }

@@ -657,7 +657,7 @@ public class PersistenciaSuperandes {
 	/**
 	 * Método que inserta, de manera transaccional, una tupla en la tabla 
 	 * Adiciona entradas al log de la aplicación
-	 * @param idSucursal - El identificador del sucursal
+	 * @param sucursal - El identificador del sucursal
 	 * @param tamanho - El tamanho del sucursal
 	 * @param tipoDeMercado - el tipo de mercado del sucursal
 	 * @param ventasTotales - Las ventas totales de la sucursal
@@ -699,7 +699,7 @@ public class PersistenciaSuperandes {
 	/**
 	 * Método que elimina, de manera transaccional, una tupla en la tabla SUCURSAL, dado el identificador del sucursal
 	 * Adiciona entradas al log de la aplicación
-	 * @param idSucursal - El identificador del sucursal
+	 * @param sucursal - El identificador del sucursal
 	 * @return El número de tuplas eliminadas. -1 si ocurre alguna Excepción
 	 */
 	public long eliminarSucursalPorId (long idSucursal) 
@@ -765,7 +765,7 @@ public class PersistenciaSuperandes {
 	 * @param volumen - El volumen manejado en la bodega
 	 * @param tipoProducto - El tipo de producto que maneja la bodega
 	 * @param nivelDeAbastecimiento
-	 * @param idSucursal
+	 * @param sucursal
 	 */
 	public Bodega adicionarBodega( int cantidadProductos, int capacidadTotal, double peso, double volumen, String tipoProducto, double nivelDeReorden, long idSucursal) 
 	{
@@ -849,6 +849,10 @@ public class PersistenciaSuperandes {
 	{
 		return sqlBodega.darBodegas (pmf.getPersistenceManager());
 	}
+	public List<Bodega> darBodegasPorSucursal (long id)
+	{
+		return sqlBodega.darBodegasPorSucursal (pmf.getPersistenceManager(), id);
+	}
 	
 	/* ****************************************************************
 	 * 			Métodos para manejar los Estantes
@@ -864,7 +868,7 @@ public class PersistenciaSuperandes {
 	 * @param tipoProducto - El tipo de producto que maneja el estante
 	 * @param equipamientoAdicional el equipamiento adicional del estante
 	 * @param nivelDeAbastecimiento nivel de abastecimiento del estante
-	 * @param idSucursal
+	 * @param sucursal
 	 * @return El número de tuplas insertadas
 	 */
 	public Estante adicionarEstante ( int cantidadProductos, int capacidadTotal, double peso, double volumen, String tipoProducto, String equipamientoAdicional, long nivelReorden, int nivelDeAbastecimiento, long idSucursal) 
@@ -950,6 +954,11 @@ public class PersistenciaSuperandes {
 	{
 		return sqlEstante.darEstantes (pmf.getPersistenceManager());
 	}
+	public List<Estante> darEstantesPorSucursal (long id)
+	{
+		return sqlEstante.darEstantesPorSucursal (pmf.getPersistenceManager(), id);
+	}
+	
 	
 	/* ****************************************************************
 	 * 			Métodos para manejar los Categorias
@@ -3854,5 +3863,9 @@ public class PersistenciaSuperandes {
 	private String darDetalleException(Exception e) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+	public List<Producto> ProductosRPrecioUnitario(double d1, double d2) {
+		// TODO Auto-generated method stub
+		return sqlProducto.ProductosRPrecioUnitario(pmf.getPersistenceManager(), d1, d2);
 	}
 }

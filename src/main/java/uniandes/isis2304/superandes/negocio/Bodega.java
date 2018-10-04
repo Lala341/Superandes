@@ -10,14 +10,14 @@ import java.util.ArrayList;
 public class Bodega implements VOBodega {
 
 	
-	private double volumen;
-	private double peso;
-	private int capacidadTotal;
-	private int cantidadProductos;
-	private long id;
-	private long idSucursal;
-	private double nivelReorden;
-	
+	public double volumen;
+	public double peso;
+	public int capacidadTotal;
+	public int cantidadProductos;
+	public long id;
+	public long sucursal;
+	public double nivelReorden;
+	public String tipoProducto;
 	
 	/**
 	 * Constructor por defecto
@@ -36,7 +36,7 @@ public class Bodega implements VOBodega {
 	 * @param volumen - El volumen manejado en la bodega
 	 * @param tipoProducto - El tipo de producto que maneja la bodega
 	 * @param nivelDeAbastecimiento
-	 * @param idSucursal
+	 * @param sucursal
 	 */
 	public Bodega (long idBodega, int cantidadProductos, int capacidadTotal, double peso, double volumen, String tipoProducto, double nivelDeReorden, long idSucursal) 
 	{
@@ -45,7 +45,7 @@ public class Bodega implements VOBodega {
 		this.peso = peso;
 		this.capacidadTotal = capacidadTotal;
 		this.cantidadProductos = cantidadProductos;
-		this.idSucursal = idSucursal;
+		this.sucursal = idSucursal;
 		this.nivelReorden= nivelDeReorden;
 	}
 
@@ -131,14 +131,14 @@ public class Bodega implements VOBodega {
 	 * @return the sucursal
 	 */
 	public long getIdSucursal() {
-		return idSucursal;
+		return sucursal;
 	}
 
 	/**
-	 * @param idSucursal the sucursal to set
+	 * @param sucursal the sucursal to set
 	 */
 	public void setIdSucursal(long idSucursal) {
-		this.idSucursal = idSucursal;
+		this.sucursal = idSucursal;
 	}
 
 	
@@ -149,7 +149,7 @@ public class Bodega implements VOBodega {
 	 */
 	public String toString() 
 	{
-		return "Bodega [id=" + id + ", peso=" + peso + ", volumen=" + volumen + ", idSucursal=" + idSucursal
+		return "Bodega [id=" + id + ", peso=" + peso + ", volumen=" + volumen + ", sucursal=" + sucursal
 				+ ", cantidadProductos=" + cantidadProductos + ", capacidadTotal=" + capacidadTotal +"]";
 	}
 

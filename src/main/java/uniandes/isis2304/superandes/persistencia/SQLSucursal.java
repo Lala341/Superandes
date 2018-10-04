@@ -47,7 +47,7 @@ class SQLSucursal
 	/**
 	 * Crea y ejecuta la sentencia SQL para adicionar un SUCURSAL a la base de datos de Superandes
 	 * @param pm - El manejador de persistencia
-	 * @param idSucursal - El identificador del sucursal
+	 * @param sucursal - El identificador del sucursal
 	 * @param tamanho - El tamanho del sucursal
 	 * @param tipoDeMercado - el tipo de mercado del sucursal
 	 * @param ventasTotales - Las ventas totales de la sucursal
@@ -64,7 +64,7 @@ class SQLSucursal
 	/**
 	 * Crea y ejecuta la sentencia SQL para eliminar UN SUCURSAL de la base de datos de Superandes, por su identificador
 	 * @param pm - El manejador de persistencia
-	 * @param idSucursal - El identificador del sucursal
+	 * @param sucursal - El identificador del sucursal
 	 * @return EL número de tuplas eliminadas
 	 */
 	public long eliminarSucursalPorId (PersistenceManager pm, long idSucursal)
@@ -78,7 +78,7 @@ class SQLSucursal
 	 * Crea y ejecuta la sentencia SQL para encontrar la información de UN SUCURSAL de la 
 	 * base de datos de Superandes, por su identificador
 	 * @param pm - El manejador de persistencia
-	 * @param idSucursal - El identificador del sucursal
+	 * @param sucursal - El identificador del sucursal
 	 * @return El objeto SUCURSAL que tiene el identificador dado
 	 */
 	public Sucursal darSucursalPorId (PersistenceManager pm, long idSucursal) 
@@ -93,7 +93,7 @@ class SQLSucursal
 	 * Crea y ejecuta la sentencia SQL para encontrar la información de LOS SUCURSALES de la 
 	 * base de datos de Superandes, por su id
 	 * @param pm - El manejador de persistencia
-	 * @param idSucursal - El id de sucursal buscado
+	 * @param sucursal - El id de sucursal buscado
 	 * @return Una lista de objetos SUCURSAL que tienen el id dado
 	 */
 	public List<Sucursal> darSucursalesPorId (PersistenceManager pm, String idSucursal) 
@@ -121,7 +121,7 @@ class SQLSucursal
 	 * Crea y ejecuta la sentencia SQL para encontrar la información de SUCURSAL de la 
 	 * base de datos de Superandes, por su identificador
 	 * @param pm - El manejador de persistencia
-	 * @param idSucursal - El identificador de la sucursal
+	 * @param sucursal - El identificador de la sucursal
 	 * @return El objeto SUCURSAL que tiene el identificador dado
 	 */
 	public Sucursal darCiudadPorId (PersistenceManager pm, long idSucursal) 

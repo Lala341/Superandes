@@ -55,7 +55,7 @@ class SQLEstante
 	 * @param tipoProducto - El tipo de producto que maneja el estante
 	 * @param equipamientoAdicional el equipamiento adicional del estante
 	 * @param nivelDeAbastecimiento nivel de abastecimiento del estante
-	 * @param idSucursal
+	 * @param sucursal
 	 * @return El número de tuplas insertadas
 	 */
 	public long adicionarEstante (PersistenceManager pm, long id, int cantidadProductos, int capacidadTotal, double peso, double volumen, String tipoProducto, String equipamientoAdicional, long nivelReorden, int nivelDeAbastecimiento, long sucursal) 
@@ -103,6 +103,13 @@ class SQLEstante
 	{
 		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaEstante ());
 		q.setResultClass(Estante.class);
+		return (List<Estante>) q.executeList();
+	}
+	public List<Estante> darEstantesPorSucursal (PersistenceManager pm, long id)
+	{
+		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaEstante ()+ " WHERE sucursal = ?");
+		q.setResultClass(Estante.class);
+		q.setParameters(id);
 		return (List<Estante>) q.executeList();
 	}
 	
