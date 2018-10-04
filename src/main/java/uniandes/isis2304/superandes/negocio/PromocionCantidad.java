@@ -1,6 +1,6 @@
 package uniandes.isis2304.superandes.negocio;
 
-public class PromocionCantidad {
+public class PromocionCantidad implements VOPromocionCantidad {
 	
 	private long idPromocion;
 	private int cantidadVendidos;
@@ -11,11 +11,8 @@ public class PromocionCantidad {
 	 */
 	public PromocionCantidad()
 	{
-		
-	}
-	
-	/**
-	 * @param idPromocion - id de la promocion
+mocion - id de la promocion
+Promocion - id de la promocion
 	 * @param cantidadVendidos cantidad vendidos
 	 * @param cantidadPagados cantidad pagados
 	 */
