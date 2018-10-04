@@ -49,10 +49,13 @@ import uniandes.isis2304.superandes.negocio.VOCiudad;
 import uniandes.isis2304.superandes.negocio.VOConsumidor;
 import uniandes.isis2304.superandes.negocio.VOEstante;
 import uniandes.isis2304.superandes.negocio.VOProducto;
+import uniandes.isis2304.superandes.negocio.VOProductoCarritoCompras;
+import uniandes.isis2304.superandes.negocio.VOProductoEstante;
 import uniandes.isis2304.superandes.negocio.VOProductoOfrecido;
 import uniandes.isis2304.superandes.negocio.VOPromocion;
 import uniandes.isis2304.superandes.negocio.VOProveedores;
 import uniandes.isis2304.superandes.negocio.VOSucursal;
+import uniandes.isis2304.superandes.negocio.Venta;
 
 
 
@@ -998,6 +1001,58 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 	   
    }
    public void RF11_RegistrarVenta(){
+	   
+	   try {
+		   List<VOConsumidor> consumidores=superandes.darVOConsumidores();
+		   List<VOProductoCarritoCompras> productos=superandes.darVOProductoCarritoComprases();
+		   String unidadMedida = "";
+		   String nombreProducto = JOptionPane.showInputDialog (this, "Nombre de producto a vender", JOptionPane.QUESTION_MESSAGE);
+		   boolean existeConsumidor = false;
+		   boolean existeProducto = false;
+		   long producto = 0;
+		   String idConsumidor = JOptionPane.showInputDialog (this, "Id del consumidor", JOptionPane.QUESTION_MESSAGE);
+		   long idCon = (long ) Integer.parseInt(idConsumidor);
+		   for (int i = 0; i < consumidores.size() && !existeConsumidor; i++) {
+			   if (consumidores.get(i).getId() == (Integer.parseInt(idConsumidor))) {
+				existeConsumidor = true;
+			}
+		   }
+		   for (int i = 0; i < productos.size() && !existeProducto; i++) {
+			   if (productos.get(i).equals(nombreProducto)) {
+				existeProducto = false;
+				unidadMedida = productos.get(i).getUnidadDeMedida();
+				producto = productos.get(i).getProducto();
+			}
+		   }
+		   
+		   if(consumidores.size()==0){
+			   if (!existeConsumidor) {
+			JOptionPane.showMessageDialog(this, "El consumidor debe de existir antes de registrar una venta ");
+			}if (!existeProducto) {
+				JOptionPane.showMessageDialog(this, "El producto debe de existir antes de registrar una venta.");
+				}			   
+		   }
+		   else{
+			   
+			   String fecha = JOptionPane.showInputDialog (this, "Ingrese la fecha de hoy", JOptionPane.QUESTION_MESSAGE);
+			   String formaPago = JOptionPane.showInputDialog (this, "Ingrese la forma de pago del cliente", JOptionPane.QUESTION_MESSAGE);
+			   String valorTotalS = JOptionPane.showInputDialog (this, "Ingrese el valor total de la venta", JOptionPane.QUESTION_MESSAGE);
+			   double valorTotal = Double.parseDouble(valorTotalS);
+			   String cantidadProducto = JOptionPane.showInputDialog (this, "Ingrese la cantidad del producto", JOptionPane.QUESTION_MESSAGE);
+			   String descripcionFactura = JOptionPane.showInputDialog (this, "Ingrese una descripcion de la factura", JOptionPane.QUESTION_MESSAGE);
+			   Venta venta = superandes.adicionarVenta(fecha, formaPago, valorTotal, idCon);
+			   superandes.adicionarProductoVenta(venta.getId(), producto, Integer.parseInt(cantidadProducto), unidadMedida);
+			   superandes.adicionarFactura(descripcionFactura);
+		   }
+		
+	   } 
+	   catch (Exception e) 
+	   {
+	//		e.printStackTrace();
+			String resultado = generarMensajeError(e);
+			panelDatos.actualizarInterfaz(resultado);
+	   }
+
 	   
    }
    public void RFC1_DineroRecolectado(){

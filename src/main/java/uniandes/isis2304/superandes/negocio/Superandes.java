@@ -2684,7 +2684,10 @@ public class Superandes {
 		return bode;
 	}
 	
-
+	public Venta registrarVentaAConsumidor (String fecha, String formaPago, double valorTotal, long consumidor)
+	{
+		return pp.adicionarVenta(fecha, formaPago, valorTotal, consumidor);
+	}
 	
 	/* ****************************************************************
 	 * 			Métodos para administración
