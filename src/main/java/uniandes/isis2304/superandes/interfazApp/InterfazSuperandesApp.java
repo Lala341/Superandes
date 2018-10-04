@@ -1175,7 +1175,7 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 	   
    }
    public void RFC4_ProductosCaracteristica(){
-	   String[] unidadDeMedidas= {"RANGO PRECIOUNITARIO", "RANGO PESO", "RANGO PRECIO", "RANGO FECHA VENCIMIENTO"};
+	   String[] unidadDeMedidas= {"RANGO PRECIOUNITARIO"};
 	String caracteristica = (String) JOptionPane.showInputDialog(null,"Seleccione criterio de busqueda", "Buscar un producto por una caracteristica", JOptionPane.DEFAULT_OPTION, null, unidadDeMedidas, unidadDeMedidas[0]);
 	try{
 		
