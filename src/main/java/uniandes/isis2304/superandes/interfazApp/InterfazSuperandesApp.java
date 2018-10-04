@@ -1084,6 +1084,8 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
    }
    public void RFC1_DineroRecolectado(){
 	   
+	   
+	   
    }
    public void RFC2_PromocionesPopulares(){
 	   
