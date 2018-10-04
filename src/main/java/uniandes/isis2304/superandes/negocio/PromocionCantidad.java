@@ -11,11 +11,9 @@ public class PromocionCantidad implements VOPromocionCantidad {
 	 */
 	public PromocionCantidad()
 	{
-mocion - id de la promocion
-Promocion - id de la promocion
-	 * @param cantidadVendidos cantidad vendidos
-	 * @param cantidadPagados cantidad pagados
-	 */
+	
+	}
+
 	public PromocionCantidad(long idPromocion, int cantidadVendidos, int cantidadPagados)
 	{
 		this.idPromocion = idPromocion;

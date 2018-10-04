@@ -483,7 +483,7 @@ public class Superandes {
         List<VOCategoria> voTipos = new LinkedList<VOCategoria> ();
         for (Categoria tb : pp.darCategorias ())
         {
-        	voTipos.add(tb);
+        	voTipos.add((VOCategoria) tb);
         }
         log.info ("Generando los VO de Categoria: " + voTipos.size() + " existentes");
         return voTipos;
@@ -1795,7 +1795,7 @@ public class Superandes {
          List<VOPromocionUnidad> voPromocionesUnidad = new LinkedList<VOPromocionUnidad> ();
         for (PromocionUnidad bdor : pp.darPromocionesUnidad ())
         {
-        	voPromocionesUnidad.add (bdor);
+        	voPromocionesUnidad.add((VOPromocionUnidad) bdor);
         }
         log.info ("Generando los VO de PromocionesUnidad: " + voPromocionesUnidad.size() + " promocionesUnidad existentes");
        return voPromocionesUnidad;
@@ -2596,21 +2596,10 @@ public class Superandes {
 		log.info ("Buscando AdministradorSucursal por idSucu: " + id);
 		List<AdministradorSucursal> tb = (List<AdministradorSucursal>) pp.darAdministradorSucursalPorIdSucursal(id);
 		return !tb.isEmpty () ? tb.get (0) : null;
-<<<<<<< HEAD
 	}
 	
 	
-	public List<VOEstante> darVOEstantes ()
-	{
-		log.info ("Generando los VO ");        
-        List<VOEstante> voTipos = new LinkedList<VOEstante> ();
-        for (VOEstante tb : pp.darEstantes())
-        {
-        	voTipos.add (tb);
-        }
-        log.info ("Generando los VO " + voTipos.size() + " existentes");
-        return voTipos;
-	}
+	
 	public List<VOEstante> darVOEstantesPorSucursal (long id)
 	{
 		log.info ("Generando los VO ");        
@@ -2624,17 +2613,7 @@ public class Superandes {
 	}
 
 
-	public List<VOBodega> darVOBodegas ()
-	{
-		log.info ("Generando los VO ");        
-        List<VOBodega> voTipos = new LinkedList<VOBodega> ();
-        for (VOBodega tb : pp.darBodegas())
-        {
-        	voTipos.add (tb);
-        }
-        log.info ("Generando los VO " + voTipos.size() + " existentes");
-        return voTipos;
-	}
+	
 	public List<VOBodega> darVOBodegasPorSucursal (long id)
 	{
 		log.info ("Generando los VO ");        
@@ -2676,11 +2655,7 @@ public class Superandes {
 	
 	
 	
-	
-	
-=======
-	}	
->>>>>>> eec704304aa761509fca9a0fe818c4183649b047
+
 	
 	
 	/* ****************************************************************
