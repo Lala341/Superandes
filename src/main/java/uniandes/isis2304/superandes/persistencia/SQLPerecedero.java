@@ -57,8 +57,8 @@ class SQLPerecedero
 	 */
 	public long adicionarPerecedero (PersistenceManager pm, long idPerecedero, Date fechaDeVencimiento, String tipoCategoriaPerecedera, long idCategoria) 
 	{
-        Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaPerecedero () + "(idPerecedero, fechaDeVencimiento, tipoCategoriaPerecedera) values (?, ?, ?,? )");
-        q.setParameters(idPerecedero, fechaDeVencimiento, tipoCategoriaPerecedera, idCategoria);
+        Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaPerecedero () + "(id, categoria, fechaVencimiento, tipoCategoriaP) values (?, ?, ?,? )");
+        q.setParameters(idPerecedero , idCategoria, fechaDeVencimiento, tipoCategoriaPerecedera);
         return (long) q.executeUnique();
 	}
 

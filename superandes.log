@@ -1376,3 +1376,108 @@ null
 =======
 >>>>>>> 5da203d3339ff75df8292648ecc1cdbfefe5bfbf
 >>>>>>> eec704304aa761509fca9a0fe818c4183649b047
+09:30:03,875 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+09:30:03,877 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+09:30:03,922 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+09:30:27,143 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Proveedores: T
+09:30:27,318 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Proveedores: T
+09:31:10,848 (AWT-EventQueue-0) ERROR [uniandes.isis2304.superandes.persistencia.PersistenciaSuperandes] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO PERECEDERO(idPerecedero, fechaDeVencimiento, tipoCategoriaPerecedera) values (?, ?, ?,? )".
+null
+09:31:10,849 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Producto: Holi
+09:31:10,861 (AWT-EventQueue-0) ERROR [uniandes.isis2304.superandes.persistencia.PersistenciaSuperandes] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO PRODUCTO(id, nombre, cantidad, codigoBarras, especificacionesEmpaquetado, estado, marca, precioPorUnidadMedida, precioUnitario, presentacion, unidadMedida, categoria ) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)".
+null
+09:31:10,862 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Producto: Holi
+09:32:18,487 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Ciudad
+09:32:18,499 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Ciudad: 1 existentes
+09:32:41,802 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Sucursales
+09:32:41,810 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Sucursales: 3 Sucursales existentes
+09:32:41,810 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales
+09:32:41,818 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales: 3 Sucursales existentes
+09:33:08,105 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Sucursales
+09:33:08,112 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Sucursales: 3 Sucursales existentes
+09:33:08,112 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales
+09:33:08,117 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales: 3 Sucursales existentes
+09:33:32,055 (AWT-EventQueue-0) ERROR [uniandes.isis2304.superandes.persistencia.PersistenciaSuperandes] - Exception : SQL query tiene parametro "10" pero no existe en el query : INSERT INTO ESTANTE(id, cantidadProductos, capacidadTotal, tipoProducto, peso, volumen, equipamientoAdicional, nivelReorden, nivelAbastecimiento, sucursal) values (?, ?, ?, ?, ?, ?, ?, ?, ?,?)
+null
+09:34:19,821 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Promocion: r
+09:34:19,837 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Promocion: r
+09:34:48,481 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Sucursales
+09:34:48,487 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Sucursales: 3 Sucursales existentes
+09:34:48,487 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales
+09:34:48,496 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales: 3 Sucursales existentes
+09:35:10,822 (AWT-EventQueue-0) ERROR [uniandes.isis2304.superandes.persistencia.PersistenciaSuperandes] - Exception : SQL query tiene parametro "10" pero no existe en el query : INSERT INTO ESTANTE(id, cantidadProductos, capacidadTotal, tipoProducto, peso, volumen, equipamientoAdicional, nivelReorden, nivelAbastecimiento, sucursal) values (?, ?, ?, ?, ?, ?, ?, ?, ?,?)
+null
+09:40:33,221 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Sucursales
+09:40:33,228 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Sucursales: 3 Sucursales existentes
+09:40:33,228 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales
+09:40:33,233 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales: 3 Sucursales existentes
+09:40:51,826 (AWT-EventQueue-0) ERROR [uniandes.isis2304.superandes.persistencia.PersistenciaSuperandes] - Exception : SQL query tiene parametro "10" pero no existe en el query : INSERT INTO ESTANTE(id, cantidadProductos, capacidadTotal, tipoProducto, peso, volumen, equipamientoAdicional, nivelReorden, nivelAbastecimiento, sucursal) values (?, ?, ?, ?, ?, ?, ?, ?, ?,?)
+null
+09:40:57,254 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Sucursales
+09:40:57,260 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Sucursales: 3 Sucursales existentes
+09:40:57,260 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales
+09:40:57,264 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales: 3 Sucursales existentes
+09:41:23,081 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Consumidor
+09:52:19,326 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+09:52:19,327 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+09:52:19,349 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+09:53:01,660 (AWT-EventQueue-0) ERROR [uniandes.isis2304.superandes.persistencia.PersistenciaSuperandes] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO PERECEDERO(idPerecedero, fechaDeVencimiento, tipoCategoriaPerecedera) values (?, ?, ?,? )".
+null
+09:53:01,660 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Producto: r
+09:53:01,667 (AWT-EventQueue-0) ERROR [uniandes.isis2304.superandes.persistencia.PersistenciaSuperandes] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO PRODUCTO(id, nombre, cantidad, codigoBarras, especificacionesEmpaquetado, estado, marca, precioPorUnidadMedida, precioUnitario, presentacion, unidadMedida, categoria ) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)".
+null
+09:53:01,667 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Producto: r
+10:03:48,981 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+10:03:48,982 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+10:03:49,004 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+10:04:24,863 (AWT-EventQueue-0) ERROR [uniandes.isis2304.superandes.persistencia.PersistenciaSuperandes] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO PERECEDERO(idPerecedero, fechaDeVencimiento, tipoCategoriaPerecedera) values (?, ?, ? )".
+null
+10:04:24,864 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Producto: r
+10:04:24,870 (AWT-EventQueue-0) ERROR [uniandes.isis2304.superandes.persistencia.PersistenciaSuperandes] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO PRODUCTO(id, nombre, cantidad, codigoBarras, especificacionesEmpaquetado, estado, marca, precioPorUnidadMedida, precioUnitario, presentacion, unidadMedida, categoria ) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)".
+null
+10:04:24,871 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Producto: r
+12:16:00,014 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+12:16:00,015 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+12:16:00,039 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+12:16:45,971 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Producto: r
+12:16:45,991 (AWT-EventQueue-0) ERROR [uniandes.isis2304.superandes.persistencia.PersistenciaSuperandes] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO PRODUCTO(id, nombre, cantidad, codigoBarras, especificacionesEmpaquetado, estado, marca, precioPorUnidadMedida, precioUnitario, presentacion, unidadMedida, categoria ) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)".
+null
+12:16:45,992 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Producto: r
+12:26:07,088 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+12:26:07,089 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+12:26:07,111 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+12:32:20,600 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Producto: Y
+12:32:20,617 (AWT-EventQueue-0) ERROR [uniandes.isis2304.superandes.persistencia.PersistenciaSuperandes] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO PRODUCTO(id, nombre, cantidad, codigoBarras, especificacionesEmpaquetado, estado, marca, precioPorUnidadMedida, precioUnitario, presentacion, unidadMedida, categoria ) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)".
+null
+12:32:20,617 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Producto: Y
+12:33:03,807 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Producto: e
+12:33:03,816 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Producto: e
+12:39:27,573 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+12:39:27,574 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+12:39:27,597 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+12:39:43,537 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Sucursales
+12:39:43,653 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Sucursales: 3 Sucursales existentes
+12:39:43,653 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales
+12:39:43,662 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales: 3 Sucursales existentes
+12:40:07,699 (AWT-EventQueue-0) ERROR [uniandes.isis2304.superandes.persistencia.PersistenciaSuperandes] - Exception : SQL query tiene parametro "10" pero no existe en el query : INSERT INTO ESTANTE(id, cantidadProductos, capacidadTotal, tipoProducto, peso, volumen, equipamientoAdicional, nivelReorden, nivelAbastecimiento, sucursal) values (?, ?, ?, ?, ?, ?, ?, ?, ?,?)
+null
+12:45:39,416 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+12:45:39,417 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+12:45:39,439 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+12:45:57,993 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Sucursales
+12:45:58,107 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Sucursales: 3 Sucursales existentes
+12:45:58,107 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales
+12:45:58,115 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales: 3 Sucursales existentes
+12:54:37,277 (AWT-EventQueue-0) ERROR [uniandes.isis2304.superandes.persistencia.PersistenciaSuperandes] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO ESTANTE(id, cantidadProductos, capacidadTotal, tipoProducto, peso, volumen, equipamientoAdicional, nivelReorden, nivelAbastecimiento, sucursal) values (?, ?, ?, ?, ?, ?, ?, ?, ?,?)".
+null
+13:37:36,443 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+13:37:36,444 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+13:37:36,469 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+13:37:57,148 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Sucursales
+13:37:57,304 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Sucursales: 3 Sucursales existentes
+13:37:57,304 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales
+13:37:57,315 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales: 3 Sucursales existentes
+13:42:26,524 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Sucursales
+13:42:26,533 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Sucursales: 3 Sucursales existentes
+13:42:26,533 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales
+13:42:26,540 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales: 3 Sucursales existentes
