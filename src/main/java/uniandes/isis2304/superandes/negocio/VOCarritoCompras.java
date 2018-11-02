@@ -10,16 +10,7 @@ public interface VOCarritoCompras {
 
 	
 
-	/**
-	 * @return the estado
-	 */
-	public String getEstado();
-
-	/**
-	 * @param estado the estado to set
-	 */
-	public void setEstado(String estado);
-
+	
 	/**
 	 * @return the id
 	 */

@@ -4,7 +4,7 @@ package uniandes.isis2304.superandes.negocio;
  * @version 1.0
  * @created 30-sep-2018 10:00:32
  */
-public class Empresa extends Consumidor implements VOEmpresa {
+public class Empresa implements VOEmpresa{
 
 	private long idConsumidor;
 	private String direccion;

@@ -22,12 +22,7 @@ public class Consumidor implements VOConsumidor {
 		this.tipo=tipo;
 	}
 	
-	/**
-	 * @return the id
-	 */
-	public long getId() {
-		return id;
-	}
+	
 
 	/**
 	 * @param id the id to set
@@ -86,6 +81,10 @@ public class Consumidor implements VOConsumidor {
 	{
 		return "Consumidor [id=" + id + ", nombre=" + nombre + ", correoElectronico=" + correoElectronico + ", tipo=" + tipo
 				+  "]";
+	}
+	public long getId() {
+		// TODO Auto-generated method stub
+		return id;
 	}
 
 }

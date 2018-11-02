@@ -14,10 +14,21 @@ public interface VOPersonaNatural {
 	public long getIdConsumidor();
 	
 	/**
+	 * Modificar id consumidor
+	 * @param idConsumidor id consumidor a modificar
+	 */
+	public void setIdConsumidor(long idConsumidor);
+
+	/**
 	 * @return the documentoIdentidad
 	 */
 	public long getDocumentoIdentidad();
-	
+
+	/**
+	 * @param documentoIdentidad the documentoIdentidad to set
+	 */
+	public void setDocumentoIdentidad(long documentoIdentidad);
+
 	/**
 	 * @return Una cadena de caracteres con todos los atributos de PersonaNatural
 	 */

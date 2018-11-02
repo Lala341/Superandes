@@ -66,7 +66,7 @@ class SQLPersonaNatural
 	 */
 	public long eliminarPersonaNaturalPorId (PersistenceManager pm, long idPersonaNatural)
 	{
-        Query q = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaPersonaNatural () + " WHERE id = ?");
+        Query q = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaPersonaNatural () + " WHERE DOCUMENTOIDENTIDAD  = ?");
         q.setParameters(idPersonaNatural);
         return (long) q.executeUnique();
 	}
@@ -80,7 +80,7 @@ class SQLPersonaNatural
 	 */
 	public PersonaNatural darPersonaNaturalPorId (PersistenceManager pm, long idPersonaNatural) 
 	{
-		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaPersonaNatural () + " WHERE id = ?");
+		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaPersonaNatural () + " WHERE DOCUMENTOIDENTIDAD = ?");
 		q.setResultClass(PersonaNatural.class);
 		q.setParameters(idPersonaNatural);
 		return (PersonaNatural) q.executeUnique();
@@ -108,7 +108,7 @@ class SQLPersonaNatural
 	 */
 	public PersonaNatural darConsumidorPorId (PersistenceManager pm, long idPersonaNatural) 
 	{
-		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaPersonaNatural () + " WHERE id = ?");
+		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaPersonaNatural () + " WHERE DOCUMENTOIDENTIDAD = ?");
 		q.setResultClass(Consumidor.class);
 		q.setParameters(idPersonaNatural);
 		return (PersonaNatural) q.executeUnique();

@@ -51,6 +51,10 @@
                 {
 					"label": "Registrar una venta",
 					"event": "RF11_RegistrarVenta"
+				},
+                {
+					"label": "Registrar un carrito de compras",
+					"event": "RF12_RegistrarCarritoCompras"
 				}
 			]
         },

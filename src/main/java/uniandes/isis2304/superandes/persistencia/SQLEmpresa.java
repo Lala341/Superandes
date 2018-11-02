@@ -67,7 +67,7 @@ class SQLEmpresa
 	 */
 	public long eliminarEmpresaPorId (PersistenceManager pm, long idEmpresa)
 	{
-        Query q = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaEmpresa () + " WHERE id = ?");
+        Query q = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaEmpresa () + " WHERE nit = ?");
         q.setParameters(idEmpresa);
         return (long) q.executeUnique();
 	}
@@ -81,7 +81,7 @@ class SQLEmpresa
 	 */
 	public Empresa darEmpresaPorId (PersistenceManager pm, long idEmpresa) 
 	{
-		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaEmpresa () + " WHERE id = ?");
+		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaEmpresa () + " WHERE nit = ?");
 		q.setResultClass(Empresa.class);
 		q.setParameters(idEmpresa);
 		return (Empresa) q.executeUnique();
@@ -109,7 +109,7 @@ class SQLEmpresa
 	 */
 	public Empresa darConsumidorPorId (PersistenceManager pm, long idEmpresa) 
 	{
-		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaEmpresa () + " WHERE id = ?");
+		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaEmpresa () + " WHERE nit = ?");
 		q.setResultClass(Consumidor.class);
 		q.setParameters(idEmpresa);
 		return (Empresa) q.executeUnique();

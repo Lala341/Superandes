@@ -36,10 +36,10 @@ public class SQLCarritoCompras {
 	/**
 	 * Crea y ejecuta la sentencia SQL para adicionar 
 	 */
-	public long adicionar (PersistenceManager pm, long id, String estado, long consumidor) 
+	public long adicionar (PersistenceManager pm, long id,long consumidor) 
 	{
-        Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaCarritoCompras () + "(id, estado, consumidor) values (?, ?, ?)");
-        q.setParameters(id, estado, consumidor);
+        Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaCarritoCompras () + "(id,consumidor) values (?, ?)");
+        q.setParameters(id, consumidor);
         return (long) q.executeUnique();
 	}
 

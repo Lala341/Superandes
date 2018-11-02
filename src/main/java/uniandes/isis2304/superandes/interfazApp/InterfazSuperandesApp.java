@@ -40,6 +40,8 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.stream.JsonReader;
 
+import uniandes.isis2304.superandes.negocio.CarritoCompras;
+import uniandes.isis2304.superandes.negocio.Consumidor;
 import uniandes.isis2304.superandes.negocio.OrdenPedido;
 import uniandes.isis2304.superandes.negocio.ProductoOfrecido;
 import uniandes.isis2304.superandes.negocio.Proveedores;
@@ -1147,7 +1149,7 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
    public void RF10_RegistrarLlegadaPedido(){
 	   
 	   try {
-		   List<VOOrdenPedido> pedidos=superandes.darVOOrdenPedidoes();
+		   List<OrdenPedido> pedidos=superandes.darOrdenPedido();
 		   String pedidoN = JOptionPane.showInputDialog (this, "Ingrese el id del pedido", JOptionPane.QUESTION_MESSAGE);
 		   long idPedido = Long.valueOf(pedidoN);
 		   VOOrdenPedido pedido = null;
@@ -1185,7 +1187,7 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 		   String idConsumidor = JOptionPane.showInputDialog (this, "Id del consumidor", JOptionPane.QUESTION_MESSAGE);
 		   long idCon = (long ) Integer.parseInt(idConsumidor);
 		   for (int i = 0; i < consumidores.size() && !existeConsumidor; i++) {
-			   if (consumidores.get(i).getId() == (Integer.parseInt(idConsumidor))) {
+			   if (consumidores.get(i).getId() == (Long.parseLong(idConsumidor))) {
 				existeConsumidor = true;
 			}
 		   }
@@ -1227,6 +1229,93 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 
 	   
    }
+ public void RF12_RegistrarCarritoCompras(){
+	   
+	   try {
+		   
+		   List<Consumidor> consumidores=superandes.darConsumidor();
+		   
+		   if(consumidores.isEmpty()){
+			   panelDatos.actualizarInterfaz("No existen clientes en la base de datos. Por favor agrege uno y proceda a solicitar un carrito de compras.");
+		   }
+		   else{
+		   String[] estados= {"PERSONA NATURAL", "EMPRESA"};
+		   String estado = (String) JOptionPane.showInputDialog(null,"Elija el tipo del cliente para el carrito de compras", "Adicionar Carrito Compras", JOptionPane.DEFAULT_OPTION, null, estados, estados[0]);
+		
+		   String consumidor="";
+		   Long consumidorId= null;
+		   
+		   if(estado.equals("PERSONA NATURAL")){
+			   consumidor= JOptionPane.showInputDialog (this, "Ingrese el documento de identidad del cliente.(Sin puntos) ", "Adicionar Carrito Compras", JOptionPane.QUESTION_MESSAGE);
+			   try{
+				   consumidorId= superandes.darPersonaNaturalPorId(Long.parseLong(consumidor)).getIdConsumidor();
+				    
+				   
+			   }catch (Exception e) {
+				   throw new Exception("No existen clientes en la base de datos con esa Identificacion. Por favor agregelo y proceda a solicitar un carrito de compras.");
+				
+				  
+			   }
+		   }else{
+			   consumidor= JOptionPane.showInputDialog (this, "Ingrese el NIT del cliente. ", "Adicionar Carrito Compras", JOptionPane.QUESTION_MESSAGE);
+			   
+			   try{
+				consumidorId= superandes.darEmpresaPorId(Long.parseLong(consumidor)).getIdConsumidor();
+				    
+				   
+			   }catch (Exception e) {
+				  
+				   throw new Exception("No existen clientes en la base de datos con esa Identificacion. Por favor agregelo y proceda a solicitar un carrito de compras.");
+				}
+		   }
+		   if(consumidorId!=null){
+			   
+			   CarritoCompras tb= superandes.adicionarCarritoCompras(consumidorId);
+				if (tb == null)
+	    		{
+	    			throw new Exception ("No se pudo crear el carrito de compras");
+	    		}
+	    		String resultado = "En  carrito de compraso\n\n";
+	    		resultado += " carrito de compras adicionado exitosamente: " + tb;
+				resultado += "\n Operación terminada";
+				panelDatos.actualizarInterfaz(resultado);
+			}
+			else
+			{
+				panelDatos.actualizarInterfaz("Operación cancelada por el usuario, llene todos los campos.");
+			}
+
+		   }
+	   } 
+	   catch (Exception e) 
+	   {
+	//		e.printStackTrace();
+			String resultado = generarMensajeError(e);
+			panelDatos.actualizarInterfaz(e.getMessage());
+	   }
+
+	   
+   }
+ public void RFF13_AdicionarUnProductoCarritoCompras(){
+	   
+	   
+	   
+ }
+ public void RFF14_EliminarUnProductoCarritoCompras(){
+	   
+	   
+	   
+ }
+ public void RFF15_PagarCompra(){
+	   
+	   
+	   
+ }
+ public void RFF16_AbandonarCarritoCompras(){
+	   
+	   
+	   
+ }
    public void RFC1_DineroRecolectado(){
 	   
 	   

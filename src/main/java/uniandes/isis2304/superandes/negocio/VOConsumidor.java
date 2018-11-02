@@ -14,16 +14,19 @@ public interface VOConsumidor {
 	 */
 	public long getId();
 
+	public void setId(long id);
 	/**
 	 * @return the nombre
 	 */
 	public String getNombre();
 
+	public void setNombre(String nombre);
 	/**
 	 * @return the correoElectronico
 	 */
 	public String getCorreoElectronico();
 
+	public void setCorreoElectronico(String correo);
 	/**
 	 * @return the tipo
 	 */

@@ -1111,6 +1111,11 @@ public class Superandes {
         log.info ("Generando los VO de Consumidor: " + voTipos.size() + " existentes");
         return voTipos;
 	}
+	public List<Consumidor> darConsumidores ()
+	{
+		return pp.darConsumidores ();
+	}
+
 
 	/**
 	 * Encuentra Consumidor en Superandes con el nombre solicitado
@@ -1335,10 +1340,10 @@ public class Superandes {
 	 * Adiciona entradas al log de la aplicación
 	* @return El objeto. null si ocurre alguna Excepción
 	 */
-	public CarritoCompras adicionarCarritoCompras (String estado, long consumidor)
+	public CarritoCompras adicionarCarritoCompras ( long consumidor)
 	{
         log.info ("Adicionando CarritoCompras: " + consumidor);
-        CarritoCompras CarritoCompras = pp.adicionarCarritoCompras (estado, consumidor);		
+        CarritoCompras CarritoCompras = pp.adicionarCarritoCompras (consumidor);		
         log.info ("Adicionando CarritoCompras: " + consumidor);
         return CarritoCompras;
 	}

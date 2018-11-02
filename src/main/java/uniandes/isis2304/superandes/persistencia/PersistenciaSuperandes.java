@@ -2232,7 +2232,7 @@ public class PersistenciaSuperandes {
 	 * Adiciona entradas al log de la aplicación
 	  * @return El objeto adicionado. null si ocurre alguna Excepción
 	 */
-	public CarritoCompras adicionarCarritoCompras(String estado, long consumidor)
+	public CarritoCompras adicionarCarritoCompras( long consumidor)
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
         Transaction tx=pm.currentTransaction();
@@ -2240,12 +2240,12 @@ public class PersistenciaSuperandes {
         {
             tx.begin();
             long id = nextval ();
-            long tuplasInsertadas = sqlCarritoCompras.adicionar(pm, id,estado, consumidor);
+            long tuplasInsertadas = sqlCarritoCompras.adicionar(pm, id, consumidor);
             tx.commit();
             
             log.trace ("Inserción de CarritoCompras: " + id + ": " + tuplasInsertadas + " tuplas insertadas");
             
-            return new CarritoCompras(id, estado, consumidor);
+            return new CarritoCompras(id, consumidor);
         }
         catch (Exception e)
         {

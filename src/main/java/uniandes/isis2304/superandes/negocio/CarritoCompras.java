@@ -9,32 +9,18 @@ import java.util.ArrayList;
 public class CarritoCompras implements VOCarritoCompras{
 
 	private long id;
-	private String estado;
 	private long consumidor;
 
 	public CarritoCompras(){
 
 	}
-	public CarritoCompras(long id, String estado,long consumidor){
+	public CarritoCompras(long id,long consumidor){
 		this.id=id;
-		this.estado=estado;
 		this.consumidor=consumidor;
 	}
 	
 
-	/**
-	 * @return the estado
-	 */
-	public String getEstado() {
-		return estado;
-	}
-
-	/**
-	 * @param estado the estado to set
-	 */
-	public void setEstado(String estado) {
-		this.estado = estado;
-	}
+	
 
 	/**
 	 * @return the id
@@ -78,7 +64,7 @@ public class CarritoCompras implements VOCarritoCompras{
 	 */
 	public String toString() 
 	{
-		return "CarritoCompras [id=" + id + ", estado=" + estado + ", consumidor=" + consumidor +"]";
+		return "CarritoCompras [id=" + id + ", consumidor=" + consumidor +"]";
 	}
 	
 

@@ -6,10 +6,10 @@ package uniandes.isis2304.superandes.negocio;
  * @version 1.0
  * @created 30-sep-2018 10:00:39
  */
-public class PersonaNatural extends Consumidor implements VOPersonaNatural {
+public class PersonaNatural  implements VOPersonaNatural {
 
-	private long idConsumidor;
-	private long documentoIdentidad;
+	public long idConsumidor;
+	public long documentoIdentidad;
 
 	public PersonaNatural(){
 
