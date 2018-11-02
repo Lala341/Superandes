@@ -2791,7 +2791,12 @@ public class Superandes {
 		
 		return pp.darProductoPorId(id);
 	}
-	
+	public List<ProductoOfrecido> darProductoOfrecidoPorIdProveedor (long id)
+	{
+		log.info ("Buscando ProductoOfrecidoPorIdProveedor: " + id);
+		List<ProductoOfrecido> tb = (List<ProductoOfrecido>) pp.darProductosOfrecidosPorIdProveedor(id);
+		return tb;
+	}
 	
 	/* ****************************************************************
 	 * 			Métodos para administración
