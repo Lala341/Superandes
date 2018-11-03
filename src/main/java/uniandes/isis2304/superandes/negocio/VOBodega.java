@@ -9,7 +9,15 @@ import java.util.ArrayList;
  */
 public interface VOBodega {
 
-	
+	/**
+	 * @return the nombre
+	 */
+	public String getNombre();
+
+	/**
+	 * @param nombre the nombre to set
+	 */
+	public void setNombre(String nombre);
 	/**
 	 * @return the volumen de la Bodega
 	 * 

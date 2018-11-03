@@ -14,7 +14,7 @@ public class Estante implements VOEstante {
 	public double volumen;
 	public int capacidadTotal;
 	public int cantidadProductos;
-	public int nivelDeAbastecimiento;
+	public int nivelAbastecimiento;
 	public String nombre;
 	public String equipamientoAdicional;
 	public long id;
@@ -37,13 +37,14 @@ public class Estante implements VOEstante {
 	 * @param nivelDeAbastecimiento nivel de abastecimiento del estante
 	 * @param sucursal
 	 */
-	public Estante (long idEstante, int cantidadProductos, int capacidadTotal, double peso, double volumen, String tipoProducto, String equipamientoAdicional, long nivelReorden, int nivelDeAbastecimiento, long idSucursal) 
+	public Estante (long idEstante, String nombre, int cantidadProductos, int capacidadTotal, double peso, double volumen, String tipoProducto, String equipamientoAdicional, long nivelReorden, int nivelDeAbastecimiento, long idSucursal) 
 	{
 		id = idEstante;
+		this.nombre=nombre;
 		this.peso = peso;
 		this.volumen = volumen;
 		this.cantidadProductos = cantidadProductos;
-		this.nivelDeAbastecimiento = nivelDeAbastecimiento;
+		this.nivelAbastecimiento = nivelDeAbastecimiento;
 		this.capacidadTotal = capacidadTotal;
 		this.nombre = nombre;
 		this.equipamientoAdicional = equipamientoAdicional;
@@ -111,14 +112,14 @@ public class Estante implements VOEstante {
 	 * @return the nivelDeAbastecimiento
 	 */
 	public int getNivelDeAbastecimiento() {
-		return nivelDeAbastecimiento;
+		return nivelAbastecimiento;
 	}
 
 	/**
 	 * @param nivelDeAbastecimiento the nivelDeAbastecimiento to set
 	 */
 	public void setNivelDeAbastecimiento(int nivelDeAbastecimiento) {
-		this.nivelDeAbastecimiento = nivelDeAbastecimiento;
+		this.nivelAbastecimiento = nivelDeAbastecimiento;
 	}
 
 	/**
@@ -200,7 +201,7 @@ public class Estante implements VOEstante {
 	public String toString() 
 	{
 		return "Estante [id=" + id + ", nombre=" + nombre + ", peso=" + peso +", volumen=" + volumen + ", sucursal=" + sucursal
-				+ ", cantidadProductos=" + cantidadProductos + ", capacidadTotal=" + capacidadTotal + ", equipamientoAdicional=" + equipamientoAdicional +", nivelDeAbastecimiento="+ nivelDeAbastecimiento +"]";
+				+ ", cantidadProductos=" + cantidadProductos + ", capacidadTotal=" + capacidadTotal + ", equipamientoAdicional=" + equipamientoAdicional +", nivelDeAbastecimiento="+ nivelAbastecimiento +"]";
 	}
 
 }

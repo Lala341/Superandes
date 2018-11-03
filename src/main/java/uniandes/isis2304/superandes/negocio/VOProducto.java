@@ -29,16 +29,7 @@ public interface VOProducto {
 	 */
 	public void setMarca(String marca) ;
 
-	/**
-	 * @return the precioUnitario
-	 */
-	public double getPrecioUnitario() ;
-
-	/**
-	 * @param precioUnitario the precioUnitario to set
-	 */
-	public void setPrecioUnitario(double precioUnitario) ;
-
+	
 	/**
 	 * @return the presentacion
 	 */
@@ -59,16 +50,7 @@ public interface VOProducto {
 	 */
 	public void setPrecioPorUnidadDeMedida(double precioPorUnidadDeMedida) ;
 
-	/**
-	 * @return the cantidad
-	 */
-	public int getCantidad() ;
-
-	/**
-	 * @param cantidad the cantidad to set
-	 */
-	public void setCantidad(int cantidad) ;
-
+	
 	/**
 	 * @return the unidadDeMedida
 	 */

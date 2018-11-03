@@ -10,10 +10,8 @@ public class Producto implements VOProducto {
 
 	public String nombre;
 	public String marca;
-	public double precioUnitario;
 	public String presentacion;
 	public double precioPorUnidadMedida;
-	public int cantidad;
 	public String unidadMedida;
 	public String especificacionesEmpaquetado;
 	public String codigoBarras;
@@ -42,12 +40,11 @@ public class Producto implements VOProducto {
 	 * @param presentacion presentacion
 	 * @param unidadMedida unidad de medida
 	 */
-	public Producto (long idProducto, String nombre, long idCategoria, int cantidad, String codigoDeBarras, String especificacionDeEmpaquetado, boolean estado, String marca, double precioPorUnidadMedida, double precioUnitario, String presentacion, String unidadDeMedida) 
+	public Producto (long idProducto, String nombre, long idCategoria,  String codigoDeBarras, String especificacionDeEmpaquetado, boolean estado, String marca, double precioPorUnidadMedida,  String presentacion, String unidadDeMedida) 
 	{
 		id = idProducto;
 		this.nombre = nombre;
 		this.marca = marca;
-		this.precioUnitario = precioUnitario;
 		this.presentacion = presentacion;
 		this.precioPorUnidadMedida = precioPorUnidadMedida;
 		this.especificacionesEmpaquetado = especificacionDeEmpaquetado;
@@ -84,19 +81,7 @@ public class Producto implements VOProducto {
 		this.marca = marca;
 	}
 
-	/**
-	 * @return the precioUnitario
-	 */
-	public double getPrecioUnitario() {
-		return precioUnitario;
-	}
-
-	/**
-	 * @param precioUnitario the precioUnitario to set
-	 */
-	public void setPrecioUnitario(double precioUnitario) {
-		this.precioUnitario = precioUnitario;
-	}
+	
 
 	/**
 	 * @return the presentacion
@@ -126,19 +111,7 @@ public class Producto implements VOProducto {
 		this.precioPorUnidadMedida = precioPorUnidadDeMedida;
 	}
 
-	/**
-	 * @return the cantidad
-	 */
-	public int getCantidad() {
-		return cantidad;
-	}
-
-	/**
-	 * @param cantidad the cantidad to set
-	 */
-	public void setCantidad(int cantidad) {
-		this.cantidad = cantidad;
-	}
+	
 
 	/**
 	 * @return the unidadMedida
@@ -263,8 +236,8 @@ public class Producto implements VOProducto {
 	 */
 	public String toString() 
 	{
-		return "Producto [id=" + id + ", nombre=" + nombre + ", marca=" + marca + ", precioUnitario=" + precioUnitario
-				+ ", precioPorUnidadMedida=" + precioPorUnidadMedida + ", cantidad=" + cantidad + ", categoria=" + categoria 
+		return "Producto [id=" + id + ", nombre=" + nombre + ", marca=" + marca 
+				+ ", precioPorUnidadMedida=" + precioPorUnidadMedida +  ", categoria=" + categoria 
 				+ ", unidadMedida=" + unidadMedida + ", especificacionesEmpaquetado=" + especificacionesEmpaquetado 
 				+ ", codigoBarras=" + codigoBarras + ", estado1=" + estado1 + "]";
 	}

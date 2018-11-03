@@ -58,10 +58,10 @@ class SQLEstante
 	 * @param sucursal
 	 * @return El número de tuplas insertadas
 	 */
-	public long adicionarEstante (PersistenceManager pm, long id, int cantidadProductos, int capacidadTotal, double peso, double volumen, String tipoProducto, String equipamientoAdicional, long nivelReorden, int nivelDeAbastecimiento, long sucursal) 
+	public long adicionarEstante (PersistenceManager pm, long id,String nombre,  int cantidadProductos, int capacidadTotal, double peso, double volumen, String tipoProducto, String equipamientoAdicional, long nivelReorden, int nivelDeAbastecimiento, long sucursal) 
 	{
-        Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaEstante () + "(id, cantidadProductos, capacidadTotal, tipoProducto, peso, volumen, equipamientoAdicional, nivelReorden, nivelAbastecimiento, sucursal) values (?, ?, ?, ?, ?, ?, ?, ?, ?,?)");
-        q.setParameters(id, cantidadProductos, capacidadTotal, tipoProducto, volumen,  peso,  equipamientoAdicional, nivelReorden, nivelDeAbastecimiento, sucursal);
+        Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaEstante () + "(id,nombre,  cantidadProductos, capacidadTotal, tipoProducto, peso, volumen, equipamientoAdicional, nivelReorden, nivelAbastecimiento, sucursal) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?)");
+        q.setParameters(id,nombre,  cantidadProductos, capacidadTotal, tipoProducto, volumen,  peso,  equipamientoAdicional, nivelReorden, nivelDeAbastecimiento, sucursal);
         return (long) q.executeUnique();
 	}
 
@@ -103,6 +103,20 @@ class SQLEstante
 	{
 		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaEstante ());
 		q.setResultClass(Estante.class);
+		return (List<Estante>) q.executeList();
+	}
+	public List<Estante> darEstantesPorTipo (PersistenceManager pm, String tipo)
+	{
+		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaEstante ()+ " WHERE tipoproducto = ?");
+		q.setResultClass(Estante.class);
+		q.setParameters(tipo);
+		return (List<Estante>) q.executeList();
+	}
+	public List<Estante> darEstantesPorTipoSucursal (PersistenceManager pm, String tipo, long sucursal)
+	{
+		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaEstante ()+ " WHERE (tipoproducto = ?) AND (sucursal = ?)");
+		q.setResultClass(Estante.class);
+		q.setParameters(tipo, sucursal);
 		return (List<Estante>) q.executeList();
 	}
 	public List<Estante> darEstantesPorSucursal (PersistenceManager pm, long id)

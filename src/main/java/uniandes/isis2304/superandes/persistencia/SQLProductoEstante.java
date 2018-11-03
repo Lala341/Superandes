@@ -51,7 +51,7 @@ class SQLProductoEstante
 	 */
 	public long adicionarProductoEstante(PersistenceManager pm, long idEstante, long idProducto) 
 	{
-        Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaProductoEstante () + "(idestante, idproducto) values (?, ?)");
+        Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaProductoEstante () + "(estante, producto) values (?, ?)");
         q.setParameters(idEstante, idProducto);
         return (long) q.executeUnique();
 	}
@@ -65,7 +65,7 @@ class SQLProductoEstante
 	 */
 	public long eliminarProductoEstante (PersistenceManager pm, long idEstante, long idProducto)
 	{
-        Query q = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaProductoEstante () + " WHERE idestante = ? AND idproducto = ?");
+        Query q = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaProductoEstante () + " WHERE estante = ? AND producto = ?");
         q.setParameters(idEstante, idProducto);
         return (long) q.executeUnique();
 	}

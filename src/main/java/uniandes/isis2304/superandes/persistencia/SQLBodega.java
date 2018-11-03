@@ -57,10 +57,10 @@ class SQLBodega
 	 * @param sucursal
 	 * @return El número de tuplas insertadas
 	 */
-	public long adicionarBodega (PersistenceManager pm, long idBodega, int cantidadProductos, int capacidadTotal, double peso, double volumen, String tipoProducto, double nivelDeReorden, long idSucursal) 
+	public long adicionarBodega (PersistenceManager pm, long idBodega,String nombre,  int cantidadProductos, int capacidadTotal, double peso, double volumen, String tipoProducto, double nivelDeReorden, long idSucursal) 
 	{
-        Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaBodega () + "(id, cantidadProductos, capacidadTotal, peso, volumen,tipoProducto, nivelReorden, sucursal) values (?, ?, ?, ?, ?, ?, ?, ?)");
-        q.setParameters(idBodega, cantidadProductos, capacidadTotal, peso, volumen, tipoProducto, nivelDeReorden, idSucursal);
+        Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaBodega () + "(id, nombre, cantidadProductos, capacidadTotal, peso, volumen,tipoProducto, nivelReorden, sucursal) values (?,?, ?, ?, ?, ?, ?, ?, ?)");
+        q.setParameters(idBodega,nombre, cantidadProductos, capacidadTotal, peso, volumen, tipoProducto, nivelDeReorden, idSucursal);
         return (long) q.executeUnique();
 	}
 
@@ -102,6 +102,32 @@ class SQLBodega
 	{
 		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaBodega ());
 		q.setResultClass(Bodega.class);
+		return (List<Bodega>) q.executeList();
+	}
+	/**
+	 * Crea y ejecuta la sentencia SQL para encontrar la información de LOS BODEGAS de la 
+	 * base de datos de Superandes
+	 * @param pm - El manejador de persistencia
+	 * @return Una lista de objetos BODEGA
+	 */
+	public List<Bodega> darBodegasPorTipo (PersistenceManager pm,String tipo)
+	{
+		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaBodega ()+ " WHERE tipoproducto = ?");
+		q.setResultClass(Bodega.class);
+		q.setParameters(tipo);
+		return (List<Bodega>) q.executeList();
+	}
+	/**
+	 * Crea y ejecuta la sentencia SQL para encontrar la información de LOS BODEGAS de la 
+	 * base de datos de Superandes
+	 * @param pm - El manejador de persistencia
+	 * @return Una lista de objetos BODEGA
+	 */
+	public List<Bodega> darBodegasPorTipoSucursal (PersistenceManager pm,String tipo,long id)
+	{
+		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaBodega ()+ " WHERE (tipoproducto = ?) AND (sucursal= ?)");
+		q.setResultClass(Bodega.class);
+		q.setParameters(tipo, id);
 		return (List<Bodega>) q.executeList();
 	}
 	public List<Bodega> darBodegasPorSucursal (PersistenceManager pm, long id)

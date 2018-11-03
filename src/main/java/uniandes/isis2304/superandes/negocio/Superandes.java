@@ -245,10 +245,10 @@ public class Superandes {
 	 * @param idSucursal
 	 * @return El objeto Bodega adicionado. null si ocurre alguna Excepción
 	 */
-	public Bodega adicionarBodega (int cantidadProductos, int capacidadTotal, double peso, double volumen, String tipoProducto, double nivelDeReorden, long idSucursal)
+	public Bodega adicionarBodega (String nombre, int cantidadProductos, int capacidadTotal, double peso, double volumen, String tipoProducto, double nivelDeReorden, long idSucursal)
 	{
         log.info ("Adicionando Bodega: " );
-        Bodega Bodega = pp.adicionarBodega (cantidadProductos, capacidadTotal, peso, volumen, tipoProducto, nivelDeReorden, idSucursal);
+        Bodega Bodega = pp.adicionarBodega (nombre, cantidadProductos, capacidadTotal, peso, volumen, tipoProducto, nivelDeReorden, idSucursal);
         log.info ("Adicionando Bodega: " + Bodega);
         return Bodega;
 	}
@@ -294,6 +294,30 @@ public class Superandes {
         log.info ("Listando Bodegas: " + Bodegas.size() + " Bodegas existentes");
         return Bodegas;
 	}
+	/**
+	 * Encuentra todos los Bodegas en Superandes
+	 * Adiciona entradas al log de la aplicación
+	 * @return Una lista de objetos Bodega con todos las Bodegas que conoce la aplicación, llenos con su información básica
+	 */
+	public List<Bodega> darBodegasPorTipo (String tipo)
+	{
+        log.info ("Listando Bodegas");
+        List<Bodega> Bodegas = pp.darBodegasPorTipo(tipo);	
+        log.info ("Listando Bodegas: " + Bodegas.size() + " Bodegas existentes");
+        return Bodegas;
+	}
+	/**
+	 * Encuentra todos los Bodegas en Superandes
+	 * Adiciona entradas al log de la aplicación
+	 * @return Una lista de objetos Bodega con todos las Bodegas que conoce la aplicación, llenos con su información básica
+	 */
+	public List<Bodega> darBodegasPorTipoSucursal (String tipo, long id)
+	{
+        log.info ("Listando Bodegas");
+        List<Bodega> Bodegas = pp.darBodegasPorTipoSucursal(tipo, id);	
+        log.info ("Listando Bodegas: " + Bodegas.size() + " Bodegas existentes");
+        return Bodegas;
+	}
 	
 	/**
 	 * Encuentra todos los Bodegas en Superandes y los devuelve como VOBodega
@@ -330,10 +354,10 @@ public class Superandes {
 	 * @param idSucursal
 	 * @return El objeto Estante adicionado. null si ocurre alguna Excepción
 	 */
-	public Estante adicionarEstante (int cantidadProductos, int capacidadTotal, double peso, double volumen, String tipoProducto, String equipamientoAdicional, long nivelReorden, int nivelDeAbastecimiento, long sucursal)
+	public Estante adicionarEstante (String nombre, int cantidadProductos, int capacidadTotal, double peso, double volumen, String tipoProducto, String equipamientoAdicional, long nivelReorden, int nivelDeAbastecimiento, long sucursal)
 	{
         log.info ("Adicionando Estante: " );
-        Estante Estante = pp.adicionarEstante (cantidadProductos, capacidadTotal, volumen,  peso, tipoProducto, equipamientoAdicional, nivelReorden, nivelDeAbastecimiento, sucursal);
+        Estante Estante = pp.adicionarEstante (nombre, cantidadProductos, capacidadTotal, volumen,  peso, tipoProducto, equipamientoAdicional, nivelReorden, nivelDeAbastecimiento, sucursal);
         log.info ("Adicionando Estante: " + Estante);
         return Estante;
 	}
@@ -378,7 +402,20 @@ public class Superandes {
         log.info ("Listando Estantes: " + Estantes.size() + " Estantes existentes");
         return Estantes;
 	}
-	
+	public List<Estante> darEstantesPorTipo (String tipo)
+	{
+        log.info ("Listando Estantes");
+        List<Estante> Estantes = pp.darEstantesPorTipo (tipo);	
+        log.info ("Listando Estantes: " + Estantes.size() + " Estantes existentes");
+        return Estantes;
+	}
+	public List<Estante> darEstantesPorTipoSucursal (String tipo, long sucursal)
+	{
+        log.info ("Listando Estantes");
+        List<Estante> Estantes = pp.darEstantesPorTipoSucursal (tipo, sucursal);	
+        log.info ("Listando Estantes: " + Estantes.size() + " Estantes existentes");
+        return Estantes;
+	}
 	/**
 	 * Encuentra todos los Estantes en Superandes y los devuelve como VOEstante
 	 * Adiciona entradas al log de la aplicación
@@ -457,6 +494,18 @@ public class Superandes {
         List<Categoria> Categorias = pp.darCategoriasPorNombre (nombre);
         log.info ("Dar información de Categorias por nombre: " + Categorias.size() + " Categorias con ese nombre existentes");
         return Categorias;
+ 	}
+	
+	/**
+	 * Encuentra la información básica de los Categorias, según su nombre
+	 * @param nombre - El nombre de Categoria a buscar
+	 * @return Una lista de Categorias con su información básica, donde todos tienen el nombre buscado.
+	 * 	La lista vacía indica que no existen Categorias con ese nombre
+	 */
+	public Categoria darCategoriasPorId (long id)
+	{
+        log.info ("Dar información de Categorias por id: " + id);
+        return pp.darCategoriasPorId(id);
  	}
 
 	/**
@@ -657,10 +706,10 @@ public class Superandes {
 	 * @param ciudad - La ciudad del Producto
 	 * @return El objeto Producto adicionado. null si ocurre alguna Excepción
 	 */
-	public Producto adicionarProducto (String nombre, long idCategoria, int cantidad, String codigoDeBarras, String especificacionDeEmpaquetado, boolean estado, String marca, double precioPorUnidadMedida, double precioUnitario, String presentacion, String unidadDeMedida)
+	public Producto adicionarProducto (String nombre, long idCategoria,  String codigoDeBarras, String especificacionDeEmpaquetado, boolean estado, String marca, double precioPorUnidadMedida, String presentacion, String unidadDeMedida)
 	{
         log.info ("Adicionando Producto: " + nombre);
-        Producto Producto = pp.adicionarProducto (nombre,idCategoria, cantidad, codigoDeBarras, especificacionDeEmpaquetado, estado, marca, precioPorUnidadMedida, precioUnitario, presentacion, unidadDeMedida);
+        Producto Producto = pp.adicionarProducto (nombre,idCategoria, codigoDeBarras, especificacionDeEmpaquetado, estado, marca, precioPorUnidadMedida, presentacion, unidadDeMedida);
         log.info ("Adicionando Producto: " + Producto);
         return Producto;
 	}
@@ -2684,7 +2733,7 @@ public class Superandes {
 	}
 
 	
-	public Producto registrarProductoPerecedero(  String nombre, String categoria, int cantidad, String codigoDeBarras, String especificacionDeEmpaquetado, boolean estado, String marca, double precioPorUnidadMedida, double precioUnitario, String presentacion, String unidadDeMedida, String tipoCategoria, Date fechaDeVencimiento){
+	public Producto registrarProductoPerecedero(  String nombre, String categoria, String codigoDeBarras, String especificacionDeEmpaquetado, boolean estado, String marca, double precioPorUnidadMedida,String presentacion, String unidadDeMedida, String tipoCategoria, Date fechaDeVencimiento){
 		long cat = 0;
 		List<Categoria> list=pp.darCategoriasPorNombre(categoria);
 		if(list.size()==0){
@@ -2709,12 +2758,12 @@ public class Superandes {
 			
 		}
 		log.info ("Adicionando Producto: " + nombre);
-		Producto producto = pp.adicionarProducto( nombre, cat, cantidad, codigoDeBarras, especificacionDeEmpaquetado, estado, marca, precioPorUnidadMedida, precioUnitario, presentacion, unidadDeMedida);		
+		Producto producto = pp.adicionarProducto( nombre, cat,  codigoDeBarras, especificacionDeEmpaquetado, estado, marca, precioPorUnidadMedida, presentacion, unidadDeMedida);		
         log.info ("Adicionando Producto: " + nombre);
        
         return producto;
 	}
-	public Producto registrarProductoNoPerecedero(  String nombre, String categoria, int cantidad, String codigoDeBarras, String especificacionDeEmpaquetado, boolean estado, String marca, double precioPorUnidadMedida, double precioUnitario, String presentacion, String unidadDeMedida, String tipoCategoria){
+	public Producto registrarProductoNoPerecedero(  String nombre, String categoria, String codigoDeBarras, String especificacionDeEmpaquetado, boolean estado, String marca, double precioPorUnidadMedida, String presentacion, String unidadDeMedida, String tipoCategoria){
 		long cat = 0;
 		List<Categoria> list=pp.darCategoriasPorNombre(categoria);
 		if(list.size()==0){
@@ -2739,7 +2788,7 @@ public class Superandes {
 			
 		}
 		log.info ("Adicionando Producto: " + nombre);
-		Producto producto = pp.adicionarProducto( nombre, cat, cantidad, codigoDeBarras, especificacionDeEmpaquetado, estado, marca, precioPorUnidadMedida, precioUnitario, presentacion, unidadDeMedida);		
+		Producto producto = pp.adicionarProducto( nombre, cat,  codigoDeBarras, especificacionDeEmpaquetado, estado, marca, precioPorUnidadMedida, presentacion, unidadDeMedida);		
         log.info ("Adicionando Producto: " + nombre);
        
         return producto;
@@ -2771,9 +2820,9 @@ public class Superandes {
 		
 	}
 	
-	public Bodega registrarBodegaASucursal(int cantidadProductos, int capacidadTotal, double peso, double volumen, String tipoProducto, double nivelDeReorden, long sucursal){
+	public Bodega registrarBodegaASucursal(String nombre, int cantidadProductos, int capacidadTotal, double peso, double volumen, String tipoProducto, double nivelDeReorden, long sucursal){
 		
-		Bodega bode=pp.adicionarBodega(cantidadProductos, capacidadTotal, peso, volumen, tipoProducto, nivelDeReorden, sucursal);
+		Bodega bode=pp.adicionarBodega(nombre, cantidadProductos, capacidadTotal, peso, volumen, tipoProducto, nivelDeReorden, sucursal);
 		
 		return bode;		
 		
@@ -2781,8 +2830,8 @@ public class Superandes {
 	
 	
 	
-	public Estante registrarEstanteASucursal(int cantidadProductos, int capacidadTotal, double peso, double volumen, String tipoProducto, String equipamientoAdicional,long nivelReorden, int nivelAbaste, long sucursal){
-			Estante bode= pp.adicionarEstante(cantidadProductos, capacidadTotal, peso, volumen, tipoProducto,equipamientoAdicional, nivelReorden, nivelAbaste, sucursal);
+	public Estante registrarEstanteASucursal(String nombre, int cantidadProductos, int capacidadTotal, double peso, double volumen, String tipoProducto, String equipamientoAdicional,long nivelReorden, int nivelAbaste, long sucursal){
+			Estante bode= pp.adicionarEstante(nombre, cantidadProductos, capacidadTotal, peso, volumen, tipoProducto,equipamientoAdicional, nivelReorden, nivelAbaste, sucursal);
 	
 		return bode;
 	}

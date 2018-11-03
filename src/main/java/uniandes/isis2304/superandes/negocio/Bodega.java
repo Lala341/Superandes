@@ -18,6 +18,7 @@ public class Bodega implements VOBodega {
 	public long sucursal;
 	public double nivelReorden;
 	public String tipoProducto;
+	public String nombre;
 	
 	/**
 	 * Constructor por defecto
@@ -38,9 +39,10 @@ public class Bodega implements VOBodega {
 	 * @param nivelDeAbastecimiento
 	 * @param sucursal
 	 */
-	public Bodega (long idBodega, int cantidadProductos, int capacidadTotal, double peso, double volumen, String tipoProducto, double nivelDeReorden, long idSucursal) 
+	public Bodega (long idBodega,String nombre,  int cantidadProductos, int capacidadTotal, double peso, double volumen, String tipoProducto, double nivelDeReorden, long idSucursal) 
 	{
-		id=idBodega;
+		this.id=idBodega;
+		this.nombre=nombre;
 		this.volumen = volumen;
 		this.peso = peso;
 		this.capacidadTotal = capacidadTotal;
@@ -49,6 +51,19 @@ public class Bodega implements VOBodega {
 		this.nivelReorden= nivelDeReorden;
 	}
 
+	/**
+	 * @return the nombre
+	 */
+	public String getNombre() {
+		return nombre;
+	}
+
+	/**
+	 * @param nombre the nombre to set
+	 */
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
 	/**
 	 * @return the volumen
 	 */

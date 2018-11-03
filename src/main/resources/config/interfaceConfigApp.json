@@ -101,6 +101,10 @@
                     {
                         "label": "Agregar producto proveedor",
                         "event": "agregarProductoOfrecido"
+                    },
+                    {
+                        "label": "Adicionar inventario de un producto",
+                        "event": "agregarInventarioProducto"
                     }
                     
               ]

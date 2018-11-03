@@ -51,7 +51,7 @@ class SQLProductoBodega
 	 */
 	public long adicionarProductoBodega(PersistenceManager pm, long idBodega, long idProducto) 
 	{
-        Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaProductoBodega () + "(idbodega, idproducto) values (?, ?)");
+        Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaProductoBodega () + "(bodega, producto) values (?, ?)");
         q.setParameters(idBodega, idProducto);
         return (long) q.executeUnique();
 	}

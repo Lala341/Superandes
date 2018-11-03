@@ -61,10 +61,10 @@ class SQLProducto
 	 * @param unidadDeMedida unidad de medida
 	 * @return EL número de tuplas insertadas
 	 */
-	public long adicionarProducto (PersistenceManager pm, long id, String nombre, long idCategoria, int cantidad, String codigoDeBarras, String especificacionDeEmpaquetado, boolean estado, String marca, double precioPorUnidadMedida, double precioUnitario, String presentacion, String unidadDeMedida) 
+	public long adicionarProducto (PersistenceManager pm, long id, String nombre, long idCategoria, String codigoDeBarras, String especificacionDeEmpaquetado, boolean estado, String marca, double precioPorUnidadMedida,String presentacion, String unidadDeMedida) 
 	{
-        Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaProducto () + "(id, nombre, cantidad, codigoBarras, especificacionesEmpaquetado, estado, marca, precioPorUnidadMedida, precioUnitario, presentacion, unidadMedida, categoria ) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-        q.setParameters( id, nombre, cantidad, codigoDeBarras, especificacionDeEmpaquetado, estado, marca, precioPorUnidadMedida, precioUnitario, presentacion, unidadDeMedida, idCategoria);
+        Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaProducto () + "(id, nombre, codigoBarras, especificacionesEmpaquetado, estado, marca, precioPorUnidadMedida, presentacion, unidadMedida, categoria ) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+        q.setParameters( id, nombre,  codigoDeBarras, especificacionDeEmpaquetado, estado, marca, precioPorUnidadMedida,presentacion, unidadDeMedida, idCategoria);
         return (long) q.executeUnique();            
 	}
 

@@ -40,9 +40,14 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.stream.JsonReader;
 
+import uniandes.isis2304.superandes.negocio.Bodega;
 import uniandes.isis2304.superandes.negocio.CarritoCompras;
 import uniandes.isis2304.superandes.negocio.Consumidor;
+import uniandes.isis2304.superandes.negocio.Estante;
 import uniandes.isis2304.superandes.negocio.OrdenPedido;
+import uniandes.isis2304.superandes.negocio.Producto;
+import uniandes.isis2304.superandes.negocio.ProductoBodega;
+import uniandes.isis2304.superandes.negocio.ProductoEstante;
 import uniandes.isis2304.superandes.negocio.ProductoOfrecido;
 import uniandes.isis2304.superandes.negocio.Proveedores;
 import uniandes.isis2304.superandes.negocio.Sucursal;
@@ -542,7 +547,6 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 	   try 
 		{
 			String nombre = JOptionPane.showInputDialog (this, "Nombre del producto", "Adicionar Producto", JOptionPane.QUESTION_MESSAGE);
-			String cant = JOptionPane.showInputDialog (this, "Cantidad del producto", "Adicionar Producto", JOptionPane.QUESTION_MESSAGE);
 			String[] unidadDeMedidas= {"UNIDAD", "GR", "LB", "LITRO"};
 			String unidadDeMedida = (String) JOptionPane.showInputDialog(null,"Seleccione la Unidad de medida del producto", "Adicionar Producto", JOptionPane.DEFAULT_OPTION, null, unidadDeMedidas, unidadDeMedidas[0]);
 			
@@ -559,7 +563,6 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 			String codigoDeBarras = JOptionPane.showInputDialog (this, "Codigo de barras del producto", "Adicionar Producto", JOptionPane.QUESTION_MESSAGE);
 			String especificacionDeEmpaquetado = JOptionPane.showInputDialog (this, "Especificacion de empaquetado del producto", "Adicionar Producto", JOptionPane.QUESTION_MESSAGE);
 			String precioPorUnidadMedida = JOptionPane.showInputDialog (this, "Precio Por Unidad Medida del producto", "Adicionar Producto", JOptionPane.QUESTION_MESSAGE);
-			String precioUnitario = JOptionPane.showInputDialog (this, "Precio Unitario del producto", "Adicionar Producto", JOptionPane.QUESTION_MESSAGE);
 			String presentacion = JOptionPane.showInputDialog (this, "Presentacion del producto", "Adicionar Producto", JOptionPane.QUESTION_MESSAGE);
 			
 			Date fecI= new Date(0);
@@ -578,23 +581,27 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 				fecI= new Date(Date.parse(diai+"/"+posMesi+ "/"+anhoi));
 			}
 			
-			if (nombre != null&&cant!=null&&categoria!=null&&codigoDeBarras!=null&&marca!=null&&precioPorUnidadMedida!=null&&precioUnitario!=null&&unidadDeMedida!=null)
+			if (nombre != null&&categoria!=null&&codigoDeBarras!=null&&marca!=null&&precioPorUnidadMedida!=null&&unidadDeMedida!=null)
 			{
 				VOProducto tb;
 				if(categoria.equals(categorias[0])){
 					
-	    		 tb = superandes.registrarProductoPerecedero(nombre, categoria, Integer.parseInt(cant), codigoDeBarras, especificacionDeEmpaquetado, estado, marca, Double.parseDouble(precioPorUnidadMedida), Double.parseDouble(precioUnitario), presentacion, unidadDeMedida, tipoCategoria,fecI);
+	    		 tb = superandes.registrarProductoPerecedero(nombre, categoria,  codigoDeBarras, especificacionDeEmpaquetado, estado, marca, Double.parseDouble(precioPorUnidadMedida),  presentacion, unidadDeMedida, tipoCategoria,fecI);
 				}
 				else{
-					 tb = superandes.registrarProductoNoPerecedero(nombre, categoria, Integer.parseInt(cant), codigoDeBarras, especificacionDeEmpaquetado, estado, marca, Double.parseDouble(precioPorUnidadMedida), Double.parseDouble(precioUnitario), presentacion, unidadDeMedida, tipoCategoria);
+					 tb = superandes.registrarProductoNoPerecedero(nombre, categoria, codigoDeBarras, especificacionDeEmpaquetado, estado, marca, Double.parseDouble(precioPorUnidadMedida),  presentacion, unidadDeMedida, tipoCategoria);
 							
 				}
+				
 				if (tb == null)
 	    		{
 	    			throw new Exception ("No se pudo crear un producto con nombre: " + nombre);
 	    		}
-	    		String resultado = "En adicionarProveedor\n\n";
-	    		resultado += "Proveedor adicionado exitosamente: " + tb;
+				
+				
+				
+	    		String resultado = "En adicionarProducto\n\n";
+	    		resultado += "Producto adicionado exitosamente (Al lugar solicitado): " + tb;
 				resultado += "\n Operación terminada";
 				panelDatos.actualizarInterfaz(resultado);
 			}
@@ -740,15 +747,16 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 			   
 		   }else{
 		   
+			String nombre = JOptionPane.showInputDialog (this, "Nombre de la Bodega", "Adicionar Bodega", JOptionPane.QUESTION_MESSAGE);
+				
 			String volumen = JOptionPane.showInputDialog (this, "Volumen de la Bodega", "Adicionar Bodega", JOptionPane.QUESTION_MESSAGE);
 			String peso = JOptionPane.showInputDialog (this, "Peso de la Bodega", "Adicionar Bodega", JOptionPane.QUESTION_MESSAGE);
-
+			
 			String nivelReorden = JOptionPane.showInputDialog (this, "Nivel Reorden de la Bodega", "Adicionar Bodega", JOptionPane.QUESTION_MESSAGE);
 			String capacidadTotal = JOptionPane.showInputDialog (this, "Capacidad total de la Bodega", "Adicionar Bodega", JOptionPane.QUESTION_MESSAGE);
 			
 			String sucursal= (String) JOptionPane.showInputDialog(null,"Seleccione la sucursal de la bodega", "Adicionar Bodega", JOptionPane.DEFAULT_OPTION, null, sucursalesn, sucursalesn[0]);
 			
-			String cantidadProducto = JOptionPane.showInputDialog (this, "Cantidad de productos de la Bodega", "Adicionar Bodega", JOptionPane.QUESTION_MESSAGE);
 			
 			String[] tcategorias= {"ASEO", "ABARROTES", "PRENDASDEVESTIR", "MUEBLES", "HERRAMIENTAS", "ELECTRODOMESTICOS", "CONGELADOS"};
 			String tipoCategoria = (String) JOptionPane.showInputDialog(null,"Seleccione el tipo de producto de la bodega", "Adicionar bodega", JOptionPane.DEFAULT_OPTION, null, tcategorias, tcategorias[0]);
@@ -757,9 +765,9 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 			
 			
 			
-			if (volumen != null&&peso!=null&&capacidadTotal!=null&&sucursal!=null&&cantidadProducto!=null&&tipoCategoria!=null)
+			if (nombre!=null&&volumen != null&&peso!=null&&capacidadTotal!=null&&sucursal!=null&&tipoCategoria!=null)
 			{
-				VOBodega tb= superandes.registrarBodegaASucursal(Integer.parseInt(cantidadProducto), Integer.parseInt(capacidadTotal), Double.parseDouble(peso), Double.parseDouble(volumen), tipoCategoria, Double.parseDouble(nivelReorden), sucursales.get(i-1).getId());
+				VOBodega tb= superandes.registrarBodegaASucursal(nombre, 0, Integer.parseInt(capacidadTotal), Double.parseDouble(peso), Double.parseDouble(volumen), tipoCategoria, Double.parseDouble(nivelReorden), sucursales.get(i-1).getId());
 				
 				if (tb == null)
 	    		{
@@ -804,17 +812,18 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 			   
 		   }else{
 		   
-			String volumen = JOptionPane.showInputDialog (this, "Volumen de la Estante", "Adicionar Estante", JOptionPane.QUESTION_MESSAGE);
+			String nombre = JOptionPane.showInputDialog (this, "Nombre del Estante", "Adicionar Estante", JOptionPane.QUESTION_MESSAGE);
+				
+			String volumen = JOptionPane.showInputDialog (this, "Volumen del Estante", "Adicionar Estante", JOptionPane.QUESTION_MESSAGE);
 			String peso = JOptionPane.showInputDialog (this, "Peso de la Estante", "Adicionar Estante", JOptionPane.QUESTION_MESSAGE);
 
-			String nivelAbastecimiento = JOptionPane.showInputDialog (this, "Nivel Abastecimiento de la Estante", "Adicionar Estante", JOptionPane.QUESTION_MESSAGE);
+			String nivelAbastecimiento = JOptionPane.showInputDialog (this, "Nivel Abastecimiento del Estante", "Adicionar Estante", JOptionPane.QUESTION_MESSAGE);
 
 			String nivelReorden = JOptionPane.showInputDialog (this, "Nivel Reorden de la Estante", "Adicionar Estante", JOptionPane.QUESTION_MESSAGE);
-			String capacidadTotal = JOptionPane.showInputDialog (this, "Capacidad total de la Estante", "Adicionar Estante", JOptionPane.QUESTION_MESSAGE);
+			String capacidadTotal = JOptionPane.showInputDialog (this, "Capacidad total del Estante", "Adicionar Estante", JOptionPane.QUESTION_MESSAGE);
 			
-			String sucursal= (String) JOptionPane.showInputDialog(null,"Seleccione la sucursal de la Estante", "Adicionar Estante", JOptionPane.DEFAULT_OPTION, null, sucursalesn, sucursalesn[0]);
+			String sucursal= (String) JOptionPane.showInputDialog(null,"Seleccione la sucursal del Estante", "Adicionar Estante", JOptionPane.DEFAULT_OPTION, null, sucursalesn, sucursalesn[0]);
 			
-			String cantidadProducto = JOptionPane.showInputDialog (this, "Cantidad de productos de la Estante", "Adicionar Estante", JOptionPane.QUESTION_MESSAGE);
 			
 			String[] tcategorias= {"ASEO", "ABARROTES", "PRENDASDEVESTIR", "MUEBLES", "HERRAMIENTAS", "ELECTRODOMESTICOS", "CONGELADOS"};
 			String tipoCategoria = (String) JOptionPane.showInputDialog(null,"Seleccione el tipo de producto de la Estante", "Adicionar Estante", JOptionPane.DEFAULT_OPTION, null, tcategorias, tcategorias[0]);
@@ -824,9 +833,9 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 			
 			
 			
-			if (volumen != null&&peso!=null&&capacidadTotal!=null&&sucursal!=null&&cantidadProducto!=null&&tipoCategoria!=null)
+			if (nombre!=null&&volumen != null&&peso!=null&&capacidadTotal!=null&&sucursal!=null&&tipoCategoria!=null)
 			{
-				VOEstante tb= superandes.registrarEstanteASucursal(Integer.parseInt(cantidadProducto), Integer.parseInt(capacidadTotal), Double.parseDouble(peso), Double.parseDouble(volumen), tipoCategoria, equipamientoAdicional,Long.parseLong(nivelReorden), Integer.parseInt(nivelAbastecimiento), sucursales.get(i-1).getId());
+				VOEstante tb= superandes.registrarEstanteASucursal(nombre, 0, Integer.parseInt(capacidadTotal), Double.parseDouble(peso), Double.parseDouble(volumen), tipoCategoria, equipamientoAdicional,Long.parseLong(nivelReorden), Integer.parseInt(nivelAbastecimiento), sucursales.get(i-1).getId());
 				
 				if (tb == null)
 	    		{
@@ -973,14 +982,13 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 			
 			if (volumen != null&&peso!=null&&capacidadTotal!=null&&sucursal!=null&&cantidadProducto!=null&&tipoCategoria!=null)
 			{
-				VOEstante tb= superandes.registrarEstanteASucursal(Integer.parseInt(cantidadProducto), Integer.parseInt(capacidadTotal), Double.parseDouble(peso), Double.parseDouble(volumen), tipoCategoria, equipamientoAdicional,Long.parseLong(nivelReorden), Integer.parseInt(nivelAbastecimiento), sucursales.get(i-1).getId());
 				
-				if (tb == null)
+				if (null == null)
 	    		{
 	    			throw new Exception ("No se pudo crear la Estante");
 	    		}
 	    		String resultado = "En adicionarEstante\n\n";
-	    		resultado += "Estante adicionado exitosamente: " + tb;
+	    		resultado += "Estante adicionado exitosamente: " + null;
 				resultado += "\n Operación terminada";
 				panelDatos.actualizarInterfaz(resultado);
 			}
@@ -1297,8 +1305,7 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 	   
    }
  public void RFF13_AdicionarUnProductoCarritoCompras(){
-	   
-	   
+	
 	   
  }
  public void RFF14_EliminarUnProductoCarritoCompras(){
@@ -1306,6 +1313,164 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 	   
 	   
  }
+ public void agregarInventarioProducto(){
+	 try{
+		 
+		 List<Producto> productos=superandes.darProductos();
+		    
+		   String[] productosn= new String[productos.size()];
+		     
+		   int i=0;
+		   for (Producto voSucursal :productos) {
+			   productosn[i]=voSucursal.getNombre();
+			   i=i+1;
+			   
+		   }
+		   if(productos.size()==0){
+
+			   JOptionPane.showMessageDialog(this, "Agrege un producto antes de registrar un producto (Menu requerimientos F).");
+			   
+		   }
+	String producto= (String) JOptionPane.showInputDialog(null,"Seleccione el producto, que desea agregar inventario", "Adicionar inventario", JOptionPane.DEFAULT_OPTION, null, productosn, productosn[0]);
+	   
+	Producto tb=null;
+	i=0;
+	for (String string : productosn) {
+		if(string.equals(producto)){
+			tb=productos.get(i);
+			break;
+		}
+		i=i+1;
+	}		 
+		 
+	 List<VOSucursal> sucursales=superandes.darVOSucursales();
+	    
+	   String[] sucursalesn= new String[sucursales.size()];
+	     
+	   i=0;
+	   for (VOSucursal voSucursal :superandes.darSucursales()) {
+		   sucursalesn[i]=voSucursal.getNombre();
+		   i=i+1;
+		   
+	   }
+	   if(sucursales.size()==0){
+
+		   JOptionPane.showMessageDialog(this, "Agrege una Sucursal antes de registrar un producto (Menu requerimientos F).");
+		   
+	   }
+	String sucursal= (String) JOptionPane.showInputDialog(null,"Seleccione la sucursal para el producto", "Adicionar producto", JOptionPane.DEFAULT_OPTION, null, sucursalesn, sucursalesn[0]);
+	i=0;
+	Long sucuId=null;
+	for (VOSucursal voSucursal :superandes.darSucursales()) {
+		   
+		if(sucursal.equals(voSucursal.getNombre())){
+			sucuId=voSucursal.getId();
+			break;
+		}
+		   i=i+1;
+		   
+	   }
+	
+	String[] donde1= {"ESTANTE", "BODEGA"};
+	String donde = (String) JOptionPane.showInputDialog(null,"Seleccione donde desea almacenar el producto", "Adicionar producto", JOptionPane.DEFAULT_OPTION, null, donde1, donde1[0]);
+	String tipoCategoria=superandes.darCategoriasPorId(tb.getCategoria()).getTipoDeAlmacenamiento();
+	
+	if(tb!=null&&sucuId!=null){
+	
+		if(donde.equals("ESTANTE")){
+		List<Estante> estantes= superandes.darEstantesPorTipoSucursal(tipoCategoria,sucuId );
+	 	String[] estantesn=new String[estantes.size()];
+	 	Long estanteid=null;
+	 	i=0;
+	 	for (Estante estante : estantes) {
+	 		estantesn[i]=estante.getNombre();
+	 		i=i+1;
+		}
+	 	if(estantes.isEmpty()){
+	 		throw new Exception("No existen estantes en la sucursal para este tipo de producto.");
+	 	}
+		String estante = (String) JOptionPane.showInputDialog(null,"Seleccione el estante a donde quiere registrar el  producto \n (Estantes seleccionados segun Categoria Producto)", "Adicionar producto a estante", JOptionPane.DEFAULT_OPTION, null, estantesn, estantesn[0]);
+		
+		i=0;
+		for (String estante1 : estantesn) {
+			if(estante1.equals(estantes.get(i).getNombre())){
+				estanteid=estantes.get(i).getId();
+				break;
+			}
+	 		i=i+1;
+		}
+		String cant= JOptionPane.showInputDialog (this, "Ingrese la cantidad de producto (Por unidad medida: "+tb.unidadMedida+") \n a adicionar en el estante.", "Adicionar Inventario", JOptionPane.QUESTION_MESSAGE);
+		if (tb != null&&Integer.parseInt(cant)!=0&&tipoCategoria!=null&&estanteid!=null)
+		{
+				
+  		ProductoEstante tb2=superandes.adicionarProductoEstante(estanteid, tb.getId());
+  		
+  		
+			if (tb2 == null)
+  		{
+  			throw new Exception ("No se pudo agregar el producto al estante: "+tb.getId() );
+  		}
+  		String resultado = "En agregar el producto al estante\n\n";
+  		resultado += "Agregar el producto al estante adicionado exitosamente: " + tb;
+			resultado += "\n Operación terminada";
+			panelDatos.actualizarInterfaz(resultado);
+		}
+		else
+		{
+			panelDatos.actualizarInterfaz("Operación cancelada por el usuario, llene todos los campos.");
+		}
+	}else if(donde.equals( "BODEGA")){
+		List<Bodega> bodegas= superandes.darBodegasPorTipoSucursal(tipoCategoria,sucuId );
+		String[] bodegasn=new String[bodegas.size()];
+	 	Long bodegaid=null;
+	 	i=0;
+	 	for (Bodega bodega : bodegas) {
+	 		bodegasn[i]=bodega.getNombre();
+	 		i=i+1;
+		}
+	 	if(bodegas.isEmpty()){
+	 		throw new Exception("No existen bodegas en la sucursal para este tipo de producto.");
+	 	}
+		String bodega = (String) JOptionPane.showInputDialog(null,"Seleccione la bodega a donde quiere registrar el  producto \n (Estantes seleccionados segun Categoria Producto)", "Adicionar producto a estante", JOptionPane.DEFAULT_OPTION, null, bodegasn, bodegasn[0]);
+		
+		i=0;
+		for (String bodega1 : bodegasn) {
+			if(bodega1.equals(bodegas.get(i).getNombre())){
+				bodegaid=bodegas.get(i).getId();
+				break;
+			}
+	 		i=i+1;
+		}
+		String cant= JOptionPane.showInputDialog (this, "Ingrese la cantidad de producto (Por unidad medida: "+tb.unidadMedida+") \n a adicionar en la bodega.", "Adicionar Inventario", JOptionPane.QUESTION_MESSAGE);
+		
+		if (tb != null&&Integer.parseInt(cant)!=0&&tipoCategoria!=null&&bodegaid!=null)
+		{
+				
+  		ProductoBodega tb2=superandes.adicionarProductoBodega(bodegaid, tb.getId());
+  		
+  		
+			if (tb2 == null)
+  		{
+  			throw new Exception ("No se pudo agregar el producto a la bodega: "+tb.getId() );
+  		}
+  		String resultado = "En agregar el producto a la bodega\n\n";
+  		resultado += "Agregar el producto a la bodega adicionado exitosamente: " + tb;
+			resultado += "\n Operación terminada";
+			panelDatos.actualizarInterfaz(resultado);
+		}
+		else
+		{
+			panelDatos.actualizarInterfaz("Operación cancelada por el usuario, llene todos los campos.");
+		}
+		
+	}
+	}}catch (Exception e) {
+//		e.printStackTrace();
+		String resultado = generarMensajeError(e);
+		panelDatos.actualizarInterfaz(resultado);
+	}
+ }
+ 
  public void RFF15_PagarCompra(){
 	   
 	   
