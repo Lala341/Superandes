@@ -49,10 +49,10 @@ class SQLProductoEstante
 	 * @param idProducto - El identificador de la producto
 	 * @return EL número de tuplas insertadas
 	 */
-	public long adicionarProductoEstante(PersistenceManager pm, long idEstante, long idProducto) 
+	public long adicionarProductoEstante(PersistenceManager pm, long idEstante, long idProducto, int cant) 
 	{
-        Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaProductoEstante () + "(estante, producto) values (?, ?)");
-        q.setParameters(idEstante, idProducto);
+        Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaProductoEstante () + "(estante, producto, cantidadproducto) values (?, ?, ?)");
+        q.setParameters(idEstante, idProducto, cant);
         return (long) q.executeUnique();
 	}
 

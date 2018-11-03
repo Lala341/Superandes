@@ -4,6 +4,7 @@ public class ProductoEstante implements VOProductoEstante {
 
 	private long idEstante;
 	private long idProducto;
+	private int cantidadProducto;
 	
 	public ProductoEstante()
 	{
@@ -14,10 +15,11 @@ public class ProductoEstante implements VOProductoEstante {
 	 * @param idEstante - El identificador del estante
 	 * @param idProducto - El identificador de la producto
 	 */
-	public ProductoEstante(long idEstante, long idProducto) 
+	public ProductoEstante(long idEstante, long idProducto, int cant) 
 	{
 		this.idEstante = idEstante;
 		this.idProducto = idProducto;
+		this.cantidadProducto=cant;
 	}
 	
 	/**
@@ -57,7 +59,7 @@ public class ProductoEstante implements VOProductoEstante {
 	 */
 	public String toString() 
 	{
-		return "ProductoEstante [idEstante=" + idEstante + ", idProducto=" + idProducto + "]";
+		return "ProductoEstante [idEstante=" + idEstante + ", idProducto=" + idProducto + "cantidadProducto:"+cantidadProducto+"]";
 	}
 	
 	

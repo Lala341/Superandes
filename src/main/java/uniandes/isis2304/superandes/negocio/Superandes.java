@@ -815,10 +815,10 @@ public class Superandes {
 	 * @param idProducto - El identificador de la producto
 	 * @return Un objeto ProductoEstante con los valores dados
 	 */
-	public ProductoEstante adicionarProductoEstante (long idEstante, long idProducto)
+	public ProductoEstante adicionarProductoEstante (long idEstante, long idProducto, int cant)
 	{
         log.info ("Adicionando ProductoEstante [" + idEstante + ", " + idProducto + "]");
-        ProductoEstante resp = pp.adicionarProductoEstante (idEstante, idProducto);
+        ProductoEstante resp = pp.adicionarProductoEstante (idEstante, idProducto, cant);
         log.info ("Adicionando ProductoEstante: " + resp + " tuplas insertadas");
         return resp;
 	}
@@ -879,10 +879,10 @@ public class Superandes {
 	 * @param idProducto - El identificador de la producto
 	 * @return Un objeto ProductoBodega con los valores dados
 	 */
-	public ProductoBodega adicionarProductoBodega (long idBodega, long idProducto)
+	public ProductoBodega adicionarProductoBodega (long idBodega, long idProducto, int cant)
 	{
         log.info ("Adicionando ProductoBodega [" + idBodega + ", " + idProducto + "]");
-        ProductoBodega resp = pp.adicionarProductoBodega (idBodega, idProducto);
+        ProductoBodega resp = pp.adicionarProductoBodega (idBodega, idProducto, cant);
         log.info ("Adicionando ProductoBodega: " + resp + " tuplas insertadas");
         return resp;
 	}

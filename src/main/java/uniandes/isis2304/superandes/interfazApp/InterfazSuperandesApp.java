@@ -1403,7 +1403,7 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 		if (tb != null&&Integer.parseInt(cant)!=0&&tipoCategoria!=null&&estanteid!=null)
 		{
 				
-  		ProductoEstante tb2=superandes.adicionarProductoEstante(estanteid, tb.getId());
+  		ProductoEstante tb2=superandes.adicionarProductoEstante(estanteid, tb.getId(),Integer.parseInt(cant) );
   		
   		
 			if (tb2 == null)
@@ -1446,7 +1446,7 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 		if (tb != null&&Integer.parseInt(cant)!=0&&tipoCategoria!=null&&bodegaid!=null)
 		{
 				
-  		ProductoBodega tb2=superandes.adicionarProductoBodega(bodegaid, tb.getId());
+  		ProductoBodega tb2=superandes.adicionarProductoBodega(bodegaid, tb.getId(),Integer.parseInt(cant));
   		
   		
 			if (tb2 == null)

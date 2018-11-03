@@ -10,6 +10,7 @@ public class ProductoBodega implements VOProductoBodega {
 
 	private long idBodega;
 	private long idProducto;
+	private int cantidadProducto;
 	
 	public ProductoBodega()
 	{
@@ -20,10 +21,11 @@ public class ProductoBodega implements VOProductoBodega {
 	 * @param idBodega - El identificador del bodega
 	 * @param idProducto - El identificador de la producto
 	 */
-	public ProductoBodega( long idBodega, long idProducto) 
+	public ProductoBodega( long idBodega, long idProducto, int cant) 
 	{
 		this.idBodega = idBodega;
 		this.idProducto = idProducto;
+		this.cantidadProducto= cant;
 	}
 	
 	/**

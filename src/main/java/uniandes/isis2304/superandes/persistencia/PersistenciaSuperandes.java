@@ -1459,19 +1459,19 @@ public class PersistenciaSuperandes {
 	 * @param idProducto - El identificador de la producto
 	 * @return Un objeto PRODUCTO_ESTANTE con la información dada. Null si ocurre alguna Excepción
 	 */
-	public ProductoEstante adicionarProductoEstante(long idEstante, long idProducto) 
+	public ProductoEstante adicionarProductoEstante(long idEstante, long idProducto, int cant) 
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
         Transaction tx=pm.currentTransaction();
         try
         {
             tx.begin();
-            long tuplasInsertadas = sqlProductoEstante.adicionarProductoEstante (pm, idEstante, idProducto);
+            long tuplasInsertadas = sqlProductoEstante.adicionarProductoEstante (pm, idEstante, idProducto, cant);
             tx.commit();
 
             log.trace ("Inserción de productoEstante: [" + idEstante + ", " + idProducto + "]. " + tuplasInsertadas + " tuplas insertadas");
 
-            return new ProductoEstante (idEstante, idProducto);
+            return new ProductoEstante (idEstante, idProducto, cant);
         }
         catch (Exception e)
         {
@@ -1543,19 +1543,19 @@ public class PersistenciaSuperandes {
 	 * @param idProducto - El identificador de la bebida - Debe haber una bebida con ese identificador
 	 * @return Un objeto PRODUCTO_BODEGA con la información dada. Null si ocurre alguna Excepción
 	 */
-	public ProductoBodega adicionarProductoBodega(long idBodega, long idProducto) 
+	public ProductoBodega adicionarProductoBodega(long idBodega, long idProducto, int cant) 
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
         Transaction tx=pm.currentTransaction();
         try
         {
             tx.begin();
-            long tuplasInsertadas = sqlProductoBodega.adicionarProductoBodega (pm, idBodega, idProducto);
+            long tuplasInsertadas = sqlProductoBodega.adicionarProductoBodega (pm, idBodega, idProducto, cant);
             tx.commit();
 
             log.trace ("Inserción de productoBodega: [" + idBodega + ", " + idProducto + "]. " + tuplasInsertadas + " tuplas insertadas");
 
-            return new ProductoBodega (idBodega, idProducto);
+            return new ProductoBodega (idBodega, idProducto, cant);
         }
         catch (Exception e)
         {
