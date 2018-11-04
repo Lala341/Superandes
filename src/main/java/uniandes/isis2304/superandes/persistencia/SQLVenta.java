@@ -36,10 +36,10 @@ public class SQLVenta {
 	/**
 	 * Crea y ejecuta la sentencia SQL para adicionar 
 	 */
-	public long adicionar (PersistenceManager pm, long id, String fecha, String formaPago, double valorTotal, long consumidor) 
+	public long adicionar (PersistenceManager pm, long id, String fecha, String formaPago, double valorTotal, long consumidor, long sucursal) 
 	{
-        Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaVenta () + "(id, fecha, formaPago, valorTotal, consumidor) values (?, ?, ?,?,?)");
-        q.setParameters(id, fecha, formaPago, valorTotal, consumidor);
+        Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaVenta () + "(id, fecha, formaPago, valorTotal, consumidor, sucursal) values (?, ?, ?, ?,?,?)");
+        q.setParameters(id, fecha, formaPago, valorTotal, consumidor, sucursal);
         return (long) q.executeUnique();
 	}
 

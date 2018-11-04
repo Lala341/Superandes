@@ -1223,7 +1223,33 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 			   double valorTotal = Double.parseDouble(valorTotalS);
 			   String cantidadProducto = JOptionPane.showInputDialog (this, "Ingrese la cantidad del producto", JOptionPane.QUESTION_MESSAGE);
 			   String descripcionFactura = JOptionPane.showInputDialog (this, "Ingrese una descripcion de la factura", JOptionPane.QUESTION_MESSAGE);
-			   Venta venta = superandes.adicionarVenta(fecha, formaPago, valorTotal, idCon);
+			   List<VOSucursal> sucursales=superandes.darVOSucursales();
+			    
+			   String[] sucursalesn= new String[sucursales.size()];
+			     
+			   int i=0;
+			   for (VOSucursal voSucursal :superandes.darSucursales()) {
+				   sucursalesn[i]=voSucursal.getNombre();
+				   i=i+1;
+				   
+			   }
+			   if(sucursales.size()==0){
+
+				   JOptionPane.showMessageDialog(this, "Agrege una Sucursal antes de registrar un producto (Menu requerimientos F).");
+				   
+			   }
+			String sucursal= (String) JOptionPane.showInputDialog(null,"Seleccione la sucursal de la venta", "Venta", JOptionPane.DEFAULT_OPTION, null, sucursalesn, sucursalesn[0]);
+			Sucursal sucu=null;
+			i=0;
+			for (String string : sucursalesn) {
+				if(string.equals(sucursal)){
+					sucu=(Sucursal) sucursales.get(i);
+					break;
+				}
+				i=i+1;
+			}
+			   
+			   Venta venta = superandes.adicionarVenta(fecha, formaPago, valorTotal, idCon, sucu.getId());
 			   superandes.adicionarProductoVenta(venta.getId(), producto, Integer.parseInt(cantidadProducto), unidadMedida);
 			   superandes.adicionarFactura(descripcionFactura);
 		   }

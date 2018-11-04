@@ -118,6 +118,13 @@ class SQLBodega
 		q.setParameters(tipo, s);
 		return (List<Bodega>) q.executeList();
 	}
+	public List<Bodega> darBodegasPorTipo (PersistenceManager pm,String tipo)
+	{
+		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaBodega ()+ " WHERE (tipoproducto = ?) ");
+		q.setResultClass(Bodega.class);
+		q.setParameters(tipo);
+		return (List<Bodega>) q.executeList();
+	}
 	/**
 	 * Crea y ejecuta la sentencia SQL para encontrar la información de LOS BODEGAS de la 
 	 * base de datos de Superandes

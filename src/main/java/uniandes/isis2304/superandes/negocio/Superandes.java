@@ -1310,10 +1310,10 @@ public class Superandes {
 	 * Adiciona entradas al log de la aplicación
 	* @return El objeto. null si ocurre alguna Excepción
 	 */
-	public Venta adicionarVenta (String fecha, String formaPago, double valorTotal, long consumidor)
+	public Venta adicionarVenta (String fecha, String formaPago, double valorTotal, long consumidor, long sucu)
 	{
         log.info ("Adicionando Venta: " + consumidor);
-        Venta Venta = pp.adicionarVenta (fecha, formaPago, valorTotal,  consumidor);		
+        Venta Venta = pp.adicionarVenta (fecha, formaPago, valorTotal,  consumidor, sucu);		
         log.info ("Adicionando Venta: " + consumidor);
         return Venta;
 	}
@@ -2899,9 +2899,9 @@ public class Superandes {
 		return bode;
 	}
 	
-	public Venta registrarVentaAConsumidor (String fecha, String formaPago, double valorTotal, long consumidor)
+	public Venta registrarVentaAConsumidor (String fecha, String formaPago, double valorTotal, long consumidor, long sucu)
 	{
-		return pp.adicionarVenta(fecha, formaPago, valorTotal, consumidor);
+		return pp.adicionarVenta(fecha, formaPago, valorTotal, consumidor, sucu);
 	}
 
 	public Producto darProductoPorId(long id){

@@ -13,6 +13,7 @@ public class Venta implements VOVenta{
 	private String formaDePago;
 	private double valorTotal;
 	private long consumidor;
+	private long sucursal;
 	
 	
 
@@ -20,13 +21,14 @@ public class Venta implements VOVenta{
 
 	}
 
-	public Venta(long id,String fecha, String formaDePago, double valorTotal,long consumidor){
+	public Venta(long id,String fecha, String formaDePago, double valorTotal,long consumidor, long sucursal){
 
 		this.id=id;
 		this.fecha=fecha;
 		this.formaDePago=formaDePago;
 		this.valorTotal=valorTotal;
 		this.consumidor=consumidor;
+		this.sucursal=sucursal;
 	}
 
 	/**
@@ -108,6 +110,20 @@ public class Venta implements VOVenta{
 	 */
 	public void setConsumidor(long consumidor) {
 		this.consumidor = consumidor;
+	}
+
+	/**
+	 * @return the sucursal
+	 */
+	public long getSucursal() {
+		return sucursal;
+	}
+
+	/**
+	 * @param sucursal the sucursal to set
+	 */
+	public void setSucursal(long sucursal) {
+		this.sucursal = sucursal;
 	}
 
 	@Override
