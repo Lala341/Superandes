@@ -1927,7 +1927,7 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 			   
 		   }
 		   else{
-			 
+			   
 			
 		   }
 		} 
