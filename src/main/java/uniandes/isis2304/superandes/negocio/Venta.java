@@ -8,12 +8,13 @@ import java.util.ArrayList;
  */
 public class Venta implements VOVenta{
 
-	private long id;
-	private String fecha;
-	private String formaDePago;
-	private double valorTotal;
-	private long consumidor;
-	private long sucursal;
+	public long id;
+	public String fecha;
+	public String formaPago;
+	public double valorTotal;
+	public long consumidor;
+	public long sucursal;
+	
 	
 	
 
@@ -25,7 +26,7 @@ public class Venta implements VOVenta{
 
 		this.id=id;
 		this.fecha=fecha;
-		this.formaDePago=formaDePago;
+		this.formaPago=formaDePago;
 		this.valorTotal=valorTotal;
 		this.consumidor=consumidor;
 		this.sucursal=sucursal;
@@ -64,18 +65,18 @@ public class Venta implements VOVenta{
 
 
 	/**
-	 * @return the formaDePago
+	 * @return the formaPago
 	 */
 	public String getFormaDePago() {
-		return formaDePago;
+		return formaPago;
 	}
 
 
 	/**
-	 * @param formaDePago the formaDePago to set
+	 * @param formaPago the formaPago to set
 	 */
 	public void setFormaDePago(String formaDePago) {
-		this.formaDePago = formaDePago;
+		this.formaPago = formaDePago;
 	}
 
 
@@ -132,7 +133,7 @@ public class Venta implements VOVenta{
 	 */
 	public String toString() 
 	{
-		return "Venta [id=" + id + ", fecha=" + fecha + ", formaDePago=" + formaDePago + ", valorTotal=" + valorTotal
+		return "Venta [id=" + id + ", fecha=" + fecha + ", formaPago=" + formaPago + ", valorTotal=" + valorTotal
 				+"]";
 	}
 

@@ -28,11 +28,11 @@ public interface VOConsumidor {
 
 	public void setCorreoElectronico(String correo);
 	/**
-	 * @return the tipo
+	 * @return the tipoconsumidor
 	 */
 	public String getTipo();
 	/**
-	 * @param tipo the tipo to set
+	 * @param tipoconsumidor the tipoconsumidor to set
 	 */
 	public void setTipo(String tipo);
 	

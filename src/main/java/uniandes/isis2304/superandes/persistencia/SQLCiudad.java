@@ -11,7 +11,7 @@ import uniandes.isis2304.superandes.negocio.Ciudad;
 public class SQLCiudad {
 	
 	/**
-	 * Cadena que representa el tipo de consulta que se va a realizar en las sentencias de acceso a la base de datos
+	 * Cadena que representa el tipoconsumidor de consulta que se va a realizar en las sentencias de acceso a la base de datos
 	 */
 	private final static String SQL = PersistenciaSuperandes.SQL;
 

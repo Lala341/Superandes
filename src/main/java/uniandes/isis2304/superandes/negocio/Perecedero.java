@@ -21,7 +21,7 @@ public class Perecedero implements VOPerecedero {
 	/**
 	 * @param idPerecedero - El identificador del perecedero
 	 * @param fechaDeVencimiento - la fecha de vencimiento del producto perecedero
-	 * @param tipoCategoriaPerecedera - el tipo de cateogoria del producto perecedero
+	 * @param tipoCategoriaPerecedera - el tipoconsumidor de cateogoria del producto perecedero
 	 * @param idCategoria
 	 */
 	public Perecedero (long idPerecedero, Date fechaDeVencimiento, String tipoCategoriaPerecedera, long idCategoria) 

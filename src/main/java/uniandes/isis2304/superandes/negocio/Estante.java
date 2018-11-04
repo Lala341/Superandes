@@ -32,7 +32,7 @@ public class Estante implements VOEstante {
 	 * @param capacidadTotal - La capacidad de el estante
 	 * @param peso - El peso manejado en el estante
 	 * @param volumen - El volumen manejado en el estante
-	 * @param tipoProducto - El tipo de producto que maneja el estante
+	 * @param tipoProducto - El tipoconsumidor de producto que maneja el estante
 	 * @param equipamientoAdicional el equipamiento adicional del estante
 	 * @param nivelDeAbastecimiento nivel de abastecimiento del estante
 	 * @param sucursal

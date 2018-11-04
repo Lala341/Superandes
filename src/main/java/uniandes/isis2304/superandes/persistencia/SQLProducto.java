@@ -19,7 +19,7 @@ class SQLProducto
 	 * 			Constantes
 	 *****************************************************************/
 	/**
-	 * Cadena que representa el tipo de consulta que se va a realizar en las sentencias de acceso a la base de datos
+	 * Cadena que representa el tipoconsumidor de consulta que se va a realizar en las sentencias de acceso a la base de datos
 	 * Se renombra acá para facilitar la escritura de las sentencias
 	 */
 	private final static String SQL = PersistenciaSuperandes.SQL;
@@ -49,7 +49,7 @@ class SQLProducto
 	 * @param pm - El manejador de persistencia
 	 * @param idProducto - El identificador de la producto
 	 * @param nombre - El nombre de la producto
-	 * @param idCategoria - El identificador del tipo de categoria de la producto
+	 * @param idCategoria - El identificador del tipoconsumidor de categoria de la producto
 	 * @param cantidad - cantidad de producto
 	 * @param codigoDeBarras el codigo de barras
 	 * @param especificacionDeEmpaquetado especificacion del empaquetado
@@ -139,7 +139,7 @@ class SQLProducto
 	
 	public List<Producto> ProductosRPrecioUnitario(PersistenceManager pm, double d1, double d2 )
 	{
-		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaProducto ()+ " WHERE precioUnitario BETWEEN ? AND ?");
+		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaProducto ()+ " WHERE precioporunidadmedida BETWEEN ? AND ?");
 		q.setResultClass(Producto.class);
 		q.setParameters(d1,d2);
 		

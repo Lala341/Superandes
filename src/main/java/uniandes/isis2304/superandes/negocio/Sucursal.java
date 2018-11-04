@@ -26,7 +26,7 @@ public class Sucursal implements VOSucursal {
 	 * Constructor con valores
 	 * @param id - El id de la sucursal
 	 * @param tamanho - El tamanho de la sucursal
-	 * @param tipoDeMercado - tipo de mercado
+	 * @param tipoDeMercado - tipoconsumidor de mercado
 	 * @param ventasTotales - ventas totales
 	 * @param idCiudad - id ciudad
 	 */

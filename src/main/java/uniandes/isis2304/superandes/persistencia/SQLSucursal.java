@@ -18,7 +18,7 @@ class SQLSucursal
 	 * 			Constantes
 	 *****************************************************************/
 	/**
-	 * Cadena que representa el tipo de consulta que se va a realizar en las sentencias de acceso a la base de datos
+	 * Cadena que representa el tipoconsumidor de consulta que se va a realizar en las sentencias de acceso a la base de datos
 	 * Se renombra acá para facilitar la escritura de las sentencias
 	 */
 	private final static String SQL = PersistenciaSuperandes.SQL;
@@ -49,7 +49,7 @@ class SQLSucursal
 	 * @param pm - El manejador de persistencia
 	 * @param sucursal - El identificador del sucursal
 	 * @param tamanho - El tamanho del sucursal
-	 * @param tipoDeMercado - el tipo de mercado del sucursal
+	 * @param tipoDeMercado - el tipoconsumidor de mercado del sucursal
 	 * @param ventasTotales - Las ventas totales de la sucursal
 	 * @param idCiudad
 	 * @return El número de tuplas insertadas

@@ -18,8 +18,8 @@ public class Categoria {
 	/**
 	 * @param idCategoria - El identificador de la categoria
 	 * @param nombre - El nombre de la categoria
-	 * @param tipoDeAlmacenamiento - El tipo de almacenamiento de la categoria
-	 * @param tipoDeManejo - El tipo de manejo de la categoria
+	 * @param tipoDeAlmacenamiento - El tipoconsumidor de almacenamiento de la categoria
+	 * @param tipoDeManejo - El tipoconsumidor de manejo de la categoria
 	 */
 	public Categoria (long idCategoria, String nombre, String tipoDeAlmacenamiento, String tipoDeManejo) 
 	{
@@ -66,7 +66,7 @@ public class Categoria {
 	}
 	
 	/**
-	 * @param tipoDeAlmacenamiento modifica el tipo de almacenamiento 
+	 * @param tipoDeAlmacenamiento modifica el tipoconsumidor de almacenamiento 
 	 */
 	public void setTipoDeAlmacenamiento(String tipoDeAlmacenamiento) {
 		this.tipoDeAlmacenamiento = tipoDeAlmacenamiento;
@@ -80,7 +80,7 @@ public class Categoria {
 	}
 	
 	/**
-	 * @param tipoDeManejo modifica el tipo de manejo
+	 * @param tipoDeManejo modifica el tipoconsumidor de manejo
 	 */
 	public void setTipoDeManejo(String tipoDeManejo) {
 		this.tipoDeManejo = tipoDeManejo;

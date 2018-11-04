@@ -159,7 +159,7 @@ public class Superandes {
 	 * Adiciona entradas al log de la aplicación
 	 * @param idSucursal - El identificador del sucursal
 	 * @param tamanho - El tamanho del sucursal
-	 * @param tipoDeMercado - el tipo de mercado del sucursal
+	 * @param tipoDeMercado - el tipoconsumidor de mercado del sucursal
 	 * @param ventasTotales - Las ventas totales de la sucursal
 	 * @param idCiudad
 	 * @return El objeto Sucursal adicionado. null si ocurre alguna Excepción
@@ -242,7 +242,7 @@ public class Superandes {
 	 * @param capacidadTotal - La capacidad de la bodega
 	 * @param peso - El peso manejado en la bodega
 	 * @param volumen - El volumen manejado en la bodega
-	 * @param tipoProducto - El tipo de producto que maneja la bodega
+	 * @param tipoProducto - El tipoconsumidor de producto que maneja la bodega
 	 * @param nivelDeAbastecimiento
 	 * @param idSucursal
 	 * @return El objeto Bodega adicionado. null si ocurre alguna Excepción
@@ -357,7 +357,7 @@ public class Superandes {
 	 * @param capacidadTotal - La capacidad de el estante
 	 * @param peso - El peso manejado en el estante
 	 * @param volumen - El volumen manejado en el estante
-	 * @param tipoProducto - El tipo de producto que maneja el estante
+	 * @param tipoProducto - El tipoconsumidor de producto que maneja el estante
 	 * @param equipamientoAdicional el equipamiento adicional del estante
 	 * @param nivelDeAbastecimiento nivel de abastecimiento del estante
 	 * @param idSucursal
@@ -451,8 +451,8 @@ public class Superandes {
 	 * Adiciona entradas al log de la aplicación
 	 * @param idCategoria - El identificador de la categoria
 	 * @param nombre - El nombre de la categoria
-	 * @param tipoDeAlmacenamiento - El tipo de almacenamiento de la categoria
-	 * @param tipoDeManejo - El tipo de manejo de la categoria 
+	 * @param tipoDeAlmacenamiento - El tipoconsumidor de almacenamiento de la categoria
+	 * @param tipoDeManejo - El tipoconsumidor de manejo de la categoria 
 	 * @return El objeto Categoria adicionado. null si ocurre alguna Excepción
 	 */
 	public Categoria adicionarCategoria (long id, String nombre, String tipoAlmacenamiento, String tipoManejo)

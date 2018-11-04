@@ -8,10 +8,10 @@ import java.util.ArrayList;
  */
 public class Consumidor implements VOConsumidor {
 
-	private long id;
-	private String nombre;
-	private String correoElectronico;
-	private String tipo;
+	public long id;
+	public String nombre;
+	public String correoElectronico;
+	public String tipoconsumidor;
 	public Consumidor(){
 
 	}
@@ -19,7 +19,7 @@ public class Consumidor implements VOConsumidor {
 		this.id=id;
 		this.nombre=nombre;
 		this.correoElectronico=correoElectronico;
-		this.tipo=tipo;
+		this.tipoconsumidor=tipo;
 	}
 	
 	
@@ -62,16 +62,16 @@ public class Consumidor implements VOConsumidor {
 	
 
 	/**
-	 * @return the tipo
+	 * @return the tipoconsumidor
 	 */
 	public String getTipo() {
-		return tipo;
+		return tipoconsumidor;
 	}
 	/**
-	 * @param tipo the tipo to set
+	 * @param tipoconsumidor the tipoconsumidor to set
 	 */
 	public void setTipo(String tipo) {
-		this.tipo = tipo;
+		this.tipoconsumidor = tipo;
 	}
 	@Override
 	/**
@@ -79,7 +79,7 @@ public class Consumidor implements VOConsumidor {
 	 */
 	public String toString() 
 	{
-		return "Consumidor [id=" + id + ", nombre=" + nombre + ", correoElectronico=" + correoElectronico + ", tipo=" + tipo
+		return "Consumidor [id=" + id + ", nombre=" + nombre + ", correoElectronico=" + correoElectronico + ", tipoconsumidor=" + tipoconsumidor
 				+  "]";
 	}
 	public long getId() {
