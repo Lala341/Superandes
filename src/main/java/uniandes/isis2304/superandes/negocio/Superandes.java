@@ -1,6 +1,8 @@
 package uniandes.isis2304.superandes.negocio;
 
 import java.sql.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
@@ -65,12 +67,12 @@ public class Superandes {
 	
 	
 	/* ****************************************************************
-	 * 			Métodos para manejar CIUDAD
+	 * 			Mï¿½todos para manejar CIUDAD
 	 *****************************************************************/
 	/**
 	 * Adiciona Ciudad de manera persistente 
-	 * Adiciona entradas al log de la aplicación
-	* @return El objeto. null si ocurre alguna Excepción
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	* @return El objeto. null si ocurre alguna Excepciï¿½n
 	 */
 	public Ciudad adicionarCiudad (String nombre)
 	{
@@ -82,9 +84,9 @@ public class Superandes {
 	
 	/**
 	 * Elimina Ciudad por su nombre
-	 * Adiciona entradas al log de la aplicación
+	 * Adiciona entradas al log de la aplicaciï¿½n
 	 * @param nombre - El nombre a eliminar
-	 * @return El número de tuplas eliminadas
+	 * @return El nï¿½mero de tuplas eliminadas
 	 */
 	public long eliminarCiudadPorNombre (String nombre)
 	{
@@ -96,8 +98,8 @@ public class Superandes {
 	
 	/**
 	 * Elimina Ciudad por su identificador
-	 * Adiciona entradas al log de la aplicación
-	 * @return El número de tuplas eliminadas
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return El nï¿½mero de tuplas eliminadas
 	 */
 	public long eliminarCiudadPorId (long id)
 	{
@@ -109,8 +111,8 @@ public class Superandes {
 	
 	/**
 	 *	Lista  Ciudad en Superandes
-	 * Adiciona entradas al log de la aplicación
-	 * @return Una lista de Ciudad, llenos con su información básica
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return Una lista de Ciudad, llenos con su informaciï¿½n bï¿½sica
 	 */
 	public List<Ciudad> darCiudad ()
 	{
@@ -122,8 +124,8 @@ public class Superandes {
 
 	/**
 	 * Encuentra Ciudad en Superandes y los devuelve como una lista de VOCiudad
-	 * Adiciona entradas al log de la aplicación
-	 * @return Una lista de objetos VOCiudad con todos los tipos de Ciudad que conoce la aplicación, llenos con su información básica
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return Una lista de objetos VOCiudad con todos los tipos de Ciudad que conoce la aplicaciï¿½n, llenos con su informaciï¿½n bï¿½sica
 	 */
 	public List<VOCiudad> darVOCiudades ()
 	{
@@ -139,9 +141,9 @@ public class Superandes {
 
 	/**
 	 * Encuentra Ciudad en Superandes con el nombre solicitado
-	 * Adiciona entradas al log de la aplicación
+	 * Adiciona entradas al log de la aplicaciï¿½n
 	 * @param nombre - El nombre de Ciudad
-	 * @return Un objeto Ciudad, con su información básica
+	 * @return Un objeto Ciudad, con su informaciï¿½n bï¿½sica
 	 */
 	public Ciudad darCiudadPorNombre (String nombre)
 	{
@@ -151,18 +153,18 @@ public class Superandes {
 	}
 	
 	/* ****************************************************************
-	 * 			Métodos para manejar los Sucursales
+	 * 			Mï¿½todos para manejar los Sucursales
 	 *****************************************************************/
 
 	/**
 	 * Adiciona de manera persistente un Sucursal 
-	 * Adiciona entradas al log de la aplicación
+	 * Adiciona entradas al log de la aplicaciï¿½n
 	 * @param idSucursal - El identificador del sucursal
 	 * @param tamanho - El tamanho del sucursal
 	 * @param tipoDeMercado - el tipo de mercado del sucursal
 	 * @param ventasTotales - Las ventas totales de la sucursal
 	 * @param idCiudad
-	 * @return El objeto Sucursal adicionado. null si ocurre alguna Excepción
+	 * @return El objeto Sucursal adicionado. null si ocurre alguna Excepciï¿½n
 	 */
 	public Sucursal adicionarSucursal (String nombre,long tamanho, String tipoDeMercado, double ventasTotales, long idCiudad,String direccion)
 	{
@@ -174,9 +176,9 @@ public class Superandes {
 
 	/**
 	 * Elimina un Sucursal por su identificador
-	 * Adiciona entradas al log de la aplicación
+	 * Adiciona entradas al log de la aplicaciï¿½n
 	 * @param idSucursal - El identificador del Sucursal a eliminar
-	 * @return El número de tuplas eliminadas
+	 * @return El nï¿½mero de tuplas eliminadas
 	 */
 	public long eliminarSucursalPorId (long idSucursal)
 	{
@@ -187,14 +189,14 @@ public class Superandes {
 	}
 
 	/**
-	 * Encuentra un Sucursal y su información básica, según su identificador
+	 * Encuentra un Sucursal y su informaciï¿½n bï¿½sica, segï¿½n su identificador
 	 * @param idSucursal - El identificador del Sucursal buscado
-	 * @return Un objeto Sucursal que corresponde con el identificador buscado y lleno con su información básica
+	 * @return Un objeto Sucursal que corresponde con el identificador buscado y lleno con su informaciï¿½n bï¿½sica
 	 * 			null, si un Sucursal con dicho identificador no existe
 	 */
 	public Sucursal darSucursalPorId (long idSucursal)
 	{
-        log.info ("Dar información de un Sucursal por id: " + idSucursal);
+        log.info ("Dar informaciï¿½n de un Sucursal por id: " + idSucursal);
         Sucursal Sucursal = pp.darSucursalPorId (idSucursal);
         log.info ("Buscando Sucursal por Id: " + Sucursal != null ? Sucursal : "NO EXISTE");
         return Sucursal;
@@ -202,8 +204,8 @@ public class Superandes {
 
 	/**
 	 * Encuentra todos los Sucursales en Superandes
-	 * Adiciona entradas al log de la aplicación
-	 * @return Una lista de objetos Sucursal con todos las Sucursales que conoce la aplicación, llenos con su información básica
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return Una lista de objetos Sucursal con todos las Sucursales que conoce la aplicaciï¿½n, llenos con su informaciï¿½n bï¿½sica
 	 */
 	public List<Sucursal> darSucursales ()
 	{
@@ -215,8 +217,8 @@ public class Superandes {
 	
 	/**
 	 * Encuentra todos los Sucursales en Superandes y los devuelve como VOSucursal
-	 * Adiciona entradas al log de la aplicación
-	 * @return Una lista de objetos VOSucursal con todos las Sucursales que conoce la aplicación, llenos con su información básica
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return Una lista de objetos VOSucursal con todos las Sucursales que conoce la aplicaciï¿½n, llenos con su informaciï¿½n bï¿½sica
 	 */
 	public List<VOSucursal> darVOSucursales ()
 	{
@@ -231,12 +233,12 @@ public class Superandes {
 	}
 	
 	/* ****************************************************************
-	 * 			Métodos para manejar los Bodegas
+	 * 			Mï¿½todos para manejar los Bodegas
 	 *****************************************************************/
 
 	/**
 	 * Adiciona de manera persistente un Bodega 
-	 * Adiciona entradas al log de la aplicación
+	 * Adiciona entradas al log de la aplicaciï¿½n
 	 * @param nidBodega - El identificador del bodega
 	 * @param cantidadProductos - la cantidad de productos en la bodega
 	 * @param capacidadTotal - La capacidad de la bodega
@@ -245,7 +247,7 @@ public class Superandes {
 	 * @param tipoProducto - El tipo de producto que maneja la bodega
 	 * @param nivelDeAbastecimiento
 	 * @param idSucursal
-	 * @return El objeto Bodega adicionado. null si ocurre alguna Excepción
+	 * @return El objeto Bodega adicionado. null si ocurre alguna Excepciï¿½n
 	 */
 	public Bodega adicionarBodega (String nombre, int cantidadProductos, int capacidadTotal, double peso, double volumen, String tipoProducto, double nivelDeReorden, long idSucursal)
 	{
@@ -258,9 +260,9 @@ public class Superandes {
 
 	/**
 	 * Elimina un Bodega por su identificador
-	 * Adiciona entradas al log de la aplicación
+	 * Adiciona entradas al log de la aplicaciï¿½n
 	 * @param idBodega - El identificador del Bodega a eliminar
-	 * @return El número de tuplas eliminadas
+	 * @return El nï¿½mero de tuplas eliminadas
 	 */
 	public long eliminarBodegaPorId (long idBodega)
 	{
@@ -271,14 +273,14 @@ public class Superandes {
 	}
 
 	/**
-	 * Encuentra un Bodega y su información básica, según su identificador
+	 * Encuentra un Bodega y su informaciï¿½n bï¿½sica, segï¿½n su identificador
 	 * @param idBodega - El identificador del Bodega buscado
-	 * @return Un objeto Bodega que corresponde con el identificador buscado y lleno con su información básica
+	 * @return Un objeto Bodega que corresponde con el identificador buscado y lleno con su informaciï¿½n bï¿½sica
 	 * 			null, si un Bodega con dicho identificador no existe
 	 */
 	public Bodega darBodegaPorId (long idBodega)
 	{
-        log.info ("Dar información de un Bodega por id: " + idBodega);
+        log.info ("Dar informaciï¿½n de un Bodega por id: " + idBodega);
         Bodega Bodega = pp.darBodegaPorId (idBodega);
         log.info ("Buscando Bodega por Id: " + Bodega != null ? Bodega : "NO EXISTE");
         return Bodega;
@@ -286,8 +288,8 @@ public class Superandes {
 
 	/**
 	 * Encuentra todos los Bodegas en Superandes
-	 * Adiciona entradas al log de la aplicación
-	 * @return Una lista de objetos Bodega con todos las Bodegas que conoce la aplicación, llenos con su información básica
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return Una lista de objetos Bodega con todos las Bodegas que conoce la aplicaciï¿½n, llenos con su informaciï¿½n bï¿½sica
 	 */
 	public List<Bodega> darBodegas ()
 	{
@@ -298,8 +300,8 @@ public class Superandes {
 	}
 	/**
 	 * Encuentra todos los Bodegas en Superandes
-	 * Adiciona entradas al log de la aplicación
-	 * @return Una lista de objetos Bodega con todos las Bodegas que conoce la aplicación, llenos con su información básica
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return Una lista de objetos Bodega con todos las Bodegas que conoce la aplicaciï¿½n, llenos con su informaciï¿½n bï¿½sica
 	 */
 	public List<Bodega> darBodegasPorTipo (String tipo)
 	{
@@ -317,8 +319,8 @@ public class Superandes {
 	}
 	/**
 	 * Encuentra todos los Bodegas en Superandes
-	 * Adiciona entradas al log de la aplicación
-	 * @return Una lista de objetos Bodega con todos las Bodegas que conoce la aplicación, llenos con su información básica
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return Una lista de objetos Bodega con todos las Bodegas que conoce la aplicaciï¿½n, llenos con su informaciï¿½n bï¿½sica
 	 */
 	public List<Bodega> darBodegasPorTipoSucursal (String tipo, long id)
 	{
@@ -330,8 +332,8 @@ public class Superandes {
 	
 	/**
 	 * Encuentra todos los Bodegas en Superandes y los devuelve como VOBodega
-	 * Adiciona entradas al log de la aplicación
-	 * @return Una lista de objetos VOBodega con todos las Bodegas que conoce la aplicación, llenos con su información básica
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return Una lista de objetos VOBodega con todos las Bodegas que conoce la aplicaciï¿½n, llenos con su informaciï¿½n bï¿½sica
 	 */
 	public List<VOBodega> darVOBodegas ()
 	{
@@ -346,12 +348,12 @@ public class Superandes {
 	}
 	
 	/* ****************************************************************
-	 * 			Métodos para manejar los Estantes
+	 * 			Mï¿½todos para manejar los Estantes
 	 *****************************************************************/
 
 	/**
 	 * Adiciona de manera persistente un Estante 
-	 * Adiciona entradas al log de la aplicación
+	 * Adiciona entradas al log de la aplicaciï¿½n
 	 * @param idEstante - El identificador del estante
 	 * @param cantidadProductos - la cantidad de productos en el estante
 	 * @param capacidadTotal - La capacidad de el estante
@@ -361,7 +363,7 @@ public class Superandes {
 	 * @param equipamientoAdicional el equipamiento adicional del estante
 	 * @param nivelDeAbastecimiento nivel de abastecimiento del estante
 	 * @param idSucursal
-	 * @return El objeto Estante adicionado. null si ocurre alguna Excepción
+	 * @return El objeto Estante adicionado. null si ocurre alguna Excepciï¿½n
 	 */
 	public Estante adicionarEstante (String nombre, int cantidadProductos, int capacidadTotal, double peso, double volumen, String tipoProducto, String equipamientoAdicional, long nivelReorden, int nivelDeAbastecimiento, long sucursal)
 	{
@@ -373,9 +375,9 @@ public class Superandes {
 
 	/**
 	 * Elimina un Estante por su identificador
-	 * Adiciona entradas al log de la aplicación
+	 * Adiciona entradas al log de la aplicaciï¿½n
 	 * @param idEstante - El identificador del Estante a eliminar
-	 * @return El número de tuplas eliminadas
+	 * @return El nï¿½mero de tuplas eliminadas
 	 */
 	public long eliminarEstantePorId (long idEstante)
 	{
@@ -386,14 +388,14 @@ public class Superandes {
 	}
 
 	/**
-	 * Encuentra un Estante y su información básica, según su identificador
+	 * Encuentra un Estante y su informaciï¿½n bï¿½sica, segï¿½n su identificador
 	 * @param idEstante - El identificador del Estante buscado
-	 * @return Un objeto Estante que corresponde con el identificador buscado y lleno con su información básica
+	 * @return Un objeto Estante que corresponde con el identificador buscado y lleno con su informaciï¿½n bï¿½sica
 	 * 			null, si un Estante con dicho identificador no existe
 	 */
 	public Estante darEstantePorId (long idEstante)
 	{
-        log.info ("Dar información de un Estante por id: " + idEstante);
+        log.info ("Dar informaciï¿½n de un Estante por id: " + idEstante);
         Estante Estante = pp.darEstantePorId (idEstante);
         log.info ("Buscando Estante por Id: " + Estante != null ? Estante : "NO EXISTE");
         return Estante;
@@ -401,8 +403,8 @@ public class Superandes {
 
 	/**
 	 * Encuentra todos los Estantes en Superandes
-	 * Adiciona entradas al log de la aplicación
-	 * @return Una lista de objetos Estante con todos las Estantes que conoce la aplicación, llenos con su información básica
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return Una lista de objetos Estante con todos las Estantes que conoce la aplicaciï¿½n, llenos con su informaciï¿½n bï¿½sica
 	 */
 	public List<Estante> darEstantes ()
 	{
@@ -427,8 +429,8 @@ public class Superandes {
 	}
 	/**
 	 * Encuentra todos los Estantes en Superandes y los devuelve como VOEstante
-	 * Adiciona entradas al log de la aplicación
-	 * @return Una lista de objetos VOEstante con todos las Estantes que conoce la aplicación, llenos con su información básica
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return Una lista de objetos VOEstante con todos las Estantes que conoce la aplicaciï¿½n, llenos con su informaciï¿½n bï¿½sica
 	 */
 	public List<VOEstante> darVOEstantes ()
 	{
@@ -443,17 +445,17 @@ public class Superandes {
 	}
 	
 	/* ****************************************************************
-	 * 			Métodos para manejar los Categorias
+	 * 			Mï¿½todos para manejar los Categorias
 	 *****************************************************************/
 
 	/**
 	 * Adiciona de manera persistente un Categoria 
-	 * Adiciona entradas al log de la aplicación
+	 * Adiciona entradas al log de la aplicaciï¿½n
 	 * @param idCategoria - El identificador de la categoria
 	 * @param nombre - El nombre de la categoria
 	 * @param tipoDeAlmacenamiento - El tipo de almacenamiento de la categoria
 	 * @param tipoDeManejo - El tipo de manejo de la categoria 
-	 * @return El objeto Categoria adicionado. null si ocurre alguna Excepción
+	 * @return El objeto Categoria adicionado. null si ocurre alguna Excepciï¿½n
 	 */
 	public Categoria adicionarCategoria (long id, String nombre, String tipoAlmacenamiento, String tipoManejo)
 	{
@@ -465,9 +467,9 @@ public class Superandes {
 
 	/**
 	 * Elimina un Categoria por su nombre
-	 * Adiciona entradas al log de la aplicación
+	 * Adiciona entradas al log de la aplicaciï¿½n
 	 * @param nombre - El nombre del Categoria a eliminar
-	 * @return El número de tuplas eliminadas
+	 * @return El nï¿½mero de tuplas eliminadas
 	 */
 	public long eliminarCategoriaPorNombre (String nombre)
 	{
@@ -479,9 +481,9 @@ public class Superandes {
 
 	/**
 	 * Elimina un Categoria por su identificador
-	 * Adiciona entradas al log de la aplicación
+	 * Adiciona entradas al log de la aplicaciï¿½n
 	 * @param idCategoria - El identificador del Categoria a eliminar
-	 * @return El número de tuplas eliminadas
+	 * @return El nï¿½mero de tuplas eliminadas
 	 */
 	public long eliminarCategoriaPorId (long idCategoria)
 	{
@@ -492,35 +494,35 @@ public class Superandes {
 	}
 
 	/**
-	 * Encuentra la información básica de los Categorias, según su nombre
+	 * Encuentra la informaciï¿½n bï¿½sica de los Categorias, segï¿½n su nombre
 	 * @param nombre - El nombre de Categoria a buscar
-	 * @return Una lista de Categorias con su información básica, donde todos tienen el nombre buscado.
-	 * 	La lista vacía indica que no existen Categorias con ese nombre
+	 * @return Una lista de Categorias con su informaciï¿½n bï¿½sica, donde todos tienen el nombre buscado.
+	 * 	La lista vacï¿½a indica que no existen Categorias con ese nombre
 	 */
 	public List<Categoria> darCategoriasPorNombre (String nombre)
 	{
-        log.info ("Dar información de Categorias por nombre: " + nombre);
+        log.info ("Dar informaciï¿½n de Categorias por nombre: " + nombre);
         List<Categoria> Categorias = pp.darCategoriasPorNombre (nombre);
-        log.info ("Dar información de Categorias por nombre: " + Categorias.size() + " Categorias con ese nombre existentes");
+        log.info ("Dar informaciï¿½n de Categorias por nombre: " + Categorias.size() + " Categorias con ese nombre existentes");
         return Categorias;
  	}
 	
 	/**
-	 * Encuentra la información básica de los Categorias, según su nombre
+	 * Encuentra la informaciï¿½n bï¿½sica de los Categorias, segï¿½n su nombre
 	 * @param nombre - El nombre de Categoria a buscar
-	 * @return Una lista de Categorias con su información básica, donde todos tienen el nombre buscado.
-	 * 	La lista vacía indica que no existen Categorias con ese nombre
+	 * @return Una lista de Categorias con su informaciï¿½n bï¿½sica, donde todos tienen el nombre buscado.
+	 * 	La lista vacï¿½a indica que no existen Categorias con ese nombre
 	 */
 	public Categoria darCategoriasPorId (long id)
 	{
-        log.info ("Dar información de Categorias por id: " + id);
+        log.info ("Dar informaciï¿½n de Categorias por id: " + id);
         return pp.darCategoriasPorId(id);
  	}
 
 	/**
 	 * Encuentra todos los Categorias en Superandes
-	 * Adiciona entradas al log de la aplicación
-	 * @return Una lista de objetos Categoria con todos las Categorias que conoce la aplicación, llenos con su información básica
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return Una lista de objetos Categoria con todos las Categorias que conoce la aplicaciï¿½n, llenos con su informaciï¿½n bï¿½sica
 	 */
 	public List<Categoria> darCategorias ()
 	{
@@ -532,8 +534,8 @@ public class Superandes {
 	
 	/**
 	 * Encuentra todos los Categorias en Superandes y los devuelve como VOCategoria
-	 * Adiciona entradas al log de la aplicación
-	 * @return Una lista de objetos VOCategoria con todos las Categorias que conoce la aplicación, llenos con su información básica
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return Una lista de objetos VOCategoria con todos las Categorias que conoce la aplicaciï¿½n, llenos con su informaciï¿½n bï¿½sica
 	 */
 	public List<VOCategoria> darVOCategorias ()
 	{
@@ -548,16 +550,16 @@ public class Superandes {
 	}
 	
 	/* ****************************************************************
-	 * 			Métodos para manejar los Perecederos
+	 * 			Mï¿½todos para manejar los Perecederos
 	 *****************************************************************/
 
 	/**
 	 * Adiciona de manera persistente un Perecedero 
-	 * Adiciona entradas al log de la aplicación
+	 * Adiciona entradas al log de la aplicaciï¿½n
 	 * @param nombre - El nombre del Perecedero
 	 * @param presupuesto - El presupuesto del Perecedero (ALTO, MEDIO, BAJO)
 	 * @param ciudad - La ciudad del Perecedero
-	 * @return El objeto Perecedero adicionado. null si ocurre alguna Excepción
+	 * @return El objeto Perecedero adicionado. null si ocurre alguna Excepciï¿½n
 	 */
 	public Perecedero adicionarPerecedero (Date fechaDeVencimiento, String tipoCategoriaPerecedera, long idCategoria)
 	{
@@ -569,9 +571,9 @@ public class Superandes {
 
 	/**
 	 * Elimina un Perecedero por su identificador
-	 * Adiciona entradas al log de la aplicación
+	 * Adiciona entradas al log de la aplicaciï¿½n
 	 * @param idPerecedero - El identificador del Perecedero a eliminar
-	 * @return El número de tuplas eliminadas
+	 * @return El nï¿½mero de tuplas eliminadas
 	 */
 	public long eliminarPerecederoPorId (long idPerecedero)
 	{
@@ -582,14 +584,14 @@ public class Superandes {
 	}
 
 	/**
-	 * Encuentra un Perecedero y su información básica, según su identificador
+	 * Encuentra un Perecedero y su informaciï¿½n bï¿½sica, segï¿½n su identificador
 	 * @param idPerecedero - El identificador del Perecedero buscado
-	 * @return Un objeto Perecedero que corresponde con el identificador buscado y lleno con su información básica
+	 * @return Un objeto Perecedero que corresponde con el identificador buscado y lleno con su informaciï¿½n bï¿½sica
 	 * 			null, si un Perecedero con dicho identificador no existe
 	 */
 	public Perecedero darPerecederoPorId (long idPerecedero)
 	{
-        log.info ("Dar información de un Perecedero por id: " + idPerecedero);
+        log.info ("Dar informaciï¿½n de un Perecedero por id: " + idPerecedero);
         Perecedero Perecedero = pp.darPerecederoPorId (idPerecedero);
         log.info ("Buscando Perecedero por Id: " + Perecedero != null ? Perecedero : "NO EXISTE");
         return Perecedero;
@@ -597,8 +599,8 @@ public class Superandes {
 
 	/**
 	 * Encuentra todos los Perecederos en Superandes
-	 * Adiciona entradas al log de la aplicación
-	 * @return Una lista de objetos Perecedero con todos las Perecederos que conoce la aplicación, llenos con su información básica
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return Una lista de objetos Perecedero con todos las Perecederos que conoce la aplicaciï¿½n, llenos con su informaciï¿½n bï¿½sica
 	 */
 	public List<Perecedero> darPerecederos ()
 	{
@@ -610,8 +612,8 @@ public class Superandes {
 	
 	/**
 	 * Encuentra todos los Perecederos en Superandes y los devuelve como VOPerecedero
-	 * Adiciona entradas al log de la aplicación
-	 * @return Una lista de objetos VOPerecedero con todos las Perecederos que conoce la aplicación, llenos con su información básica
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return Una lista de objetos VOPerecedero con todos las Perecederos que conoce la aplicaciï¿½n, llenos con su informaciï¿½n bï¿½sica
 	 */
 	public List<VOPerecedero> darVOPerecederos ()
 	{
@@ -626,16 +628,16 @@ public class Superandes {
 	}
 	
 	/* ****************************************************************
-	 * 			Métodos para manejar los NoPerecederos
+	 * 			Mï¿½todos para manejar los NoPerecederos
 	 *****************************************************************/
 
 	/**
 	 * Adiciona de manera persistente un NoPerecedero 
-	 * Adiciona entradas al log de la aplicación
+	 * Adiciona entradas al log de la aplicaciï¿½n
 	 * @param nombre - El nombre del NoPerecedero
 	 * @param presupuesto - El presupuesto del NoPerecedero (ALTO, MEDIO, BAJO)
 	 * @param ciudad - La ciudad del NoPerecedero
-	 * @return El objeto NoPerecedero adicionado. null si ocurre alguna Excepción
+	 * @return El objeto NoPerecedero adicionado. null si ocurre alguna Excepciï¿½n
 	 */
 	public NoPerecedero adicionarNoPerecedero (String tipoCategoriaNoPerecedera, long idCategoria)
 	{
@@ -647,9 +649,9 @@ public class Superandes {
 
 	/**
 	 * Elimina un NoPerecedero por su identificador
-	 * Adiciona entradas al log de la aplicación
+	 * Adiciona entradas al log de la aplicaciï¿½n
 	 * @param idNoPerecedero - El identificador del NoPerecedero a eliminar
-	 * @return El número de tuplas eliminadas
+	 * @return El nï¿½mero de tuplas eliminadas
 	 */
 	public long eliminarNoPerecederoPorId (long idNoPerecedero)
 	{
@@ -660,14 +662,14 @@ public class Superandes {
 	}
 
 	/**
-	 * Encuentra un NoPerecedero y su información básica, según su identificador
+	 * Encuentra un NoPerecedero y su informaciï¿½n bï¿½sica, segï¿½n su identificador
 	 * @param idNoPerecedero - El identificador del NoPerecedero buscado
-	 * @return Un objeto NoPerecedero que corresponde con el identificador buscado y lleno con su información básica
+	 * @return Un objeto NoPerecedero que corresponde con el identificador buscado y lleno con su informaciï¿½n bï¿½sica
 	 * 			null, si un NoPerecedero con dicho identificador no existe
 	 */
 	public NoPerecedero darNoPerecederoPorId (long idNoPerecedero)
 	{
-        log.info ("Dar información de un NoPerecedero por id: " + idNoPerecedero);
+        log.info ("Dar informaciï¿½n de un NoPerecedero por id: " + idNoPerecedero);
         NoPerecedero NoPerecedero = pp.darNoPerecederoPorId (idNoPerecedero);
         log.info ("Buscando NoPerecedero por Id: " + NoPerecedero != null ? NoPerecedero : "NO EXISTE");
         return NoPerecedero;
@@ -675,8 +677,8 @@ public class Superandes {
 	
 	/**
 	 * Encuentra todos los NoPerecederos en Superandes
-	 * Adiciona entradas al log de la aplicación
-	 * @return Una lista de objetos NoPerecedero con todos las NoPerecederos que conoce la aplicación, llenos con su información básica
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return Una lista de objetos NoPerecedero con todos las NoPerecederos que conoce la aplicaciï¿½n, llenos con su informaciï¿½n bï¿½sica
 	 */
 	public List<NoPerecedero> darNoPerecederos ()
 	{
@@ -688,8 +690,8 @@ public class Superandes {
 	
 	/**
 	 * Encuentra todos los NoPerecederos en Superandes y los devuelve como VONoPerecedero
-	 * Adiciona entradas al log de la aplicación
-	 * @return Una lista de objetos VONoPerecedero con todos las NoPerecederos que conoce la aplicación, llenos con su información básica
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return Una lista de objetos VONoPerecedero con todos las NoPerecederos que conoce la aplicaciï¿½n, llenos con su informaciï¿½n bï¿½sica
 	 */
 	public List<VONoPerecedero> darVONoPerecederos ()
 	{
@@ -704,16 +706,16 @@ public class Superandes {
 	}
 	
 	/* ****************************************************************
-	 * 			Métodos para manejar los Productos
+	 * 			Mï¿½todos para manejar los Productos
 	 *****************************************************************/
 
 	/**
 	 * Adiciona de manera persistente un Producto 
-	 * Adiciona entradas al log de la aplicación
+	 * Adiciona entradas al log de la aplicaciï¿½n
 	 * @param nombre - El nombre del Producto
 	 * @param presupuesto - El presupuesto del Producto (ALTO, MEDIO, BAJO)
 	 * @param ciudad - La ciudad del Producto
-	 * @return El objeto Producto adicionado. null si ocurre alguna Excepción
+	 * @return El objeto Producto adicionado. null si ocurre alguna Excepciï¿½n
 	 */
 	public Producto adicionarProducto (String nombre, long idCategoria,  String codigoDeBarras, String especificacionDeEmpaquetado, boolean estado, String marca, double precioPorUnidadMedida, String presentacion, String unidadDeMedida)
 	{
@@ -725,9 +727,9 @@ public class Superandes {
 
 	/**
 	 * Elimina un Producto por su nombre
-	 * Adiciona entradas al log de la aplicación
+	 * Adiciona entradas al log de la aplicaciï¿½n
 	 * @param nombre - El nombre del Producto a eliminar
-	 * @return El número de tuplas eliminadas
+	 * @return El nï¿½mero de tuplas eliminadas
 	 */
 	public long eliminarProductoPorNombre (String nombre)
 	{
@@ -739,9 +741,9 @@ public class Superandes {
 
 	/**
 	 * Elimina un Producto por su identificador
-	 * Adiciona entradas al log de la aplicación
+	 * Adiciona entradas al log de la aplicaciï¿½n
 	 * @param idProducto - El identificador del Producto a eliminar
-	 * @return El número de tuplas eliminadas
+	 * @return El nï¿½mero de tuplas eliminadas
 	 */
 	public long eliminarProductoPorId (long idProducto)
 	{
@@ -752,24 +754,24 @@ public class Superandes {
 	}
 
 	/**
-	 * Encuentra la información básica de los Productos, según su nombre
+	 * Encuentra la informaciï¿½n bï¿½sica de los Productos, segï¿½n su nombre
 	 * @param nombre - El nombre de Producto a buscar
-	 * @return Una lista de Productos con su información básica, donde todos tienen el nombre buscado.
-	 * 	La lista vacía indica que no existen Productos con ese nombre
+	 * @return Una lista de Productos con su informaciï¿½n bï¿½sica, donde todos tienen el nombre buscado.
+	 * 	La lista vacï¿½a indica que no existen Productos con ese nombre
 	 */
 	public List<Producto> darProductosPorNombre (String nombre)
 	{
-        log.info ("Dar información de Productos por nombre: " + nombre);
+        log.info ("Dar informaciï¿½n de Productos por nombre: " + nombre);
         List<Producto> Productos = pp.darProductosPorNombre (nombre);
-        log.info ("Dar información de Productos por nombre: " + Productos.size() + " Productos con ese nombre existentes");
+        log.info ("Dar informaciï¿½n de Productos por nombre: " + Productos.size() + " Productos con ese nombre existentes");
         return Productos;
  	}
 
 	/**
-	 * Encuentra la información básica de los Productos, según su nombre y los devuelve como VO
+	 * Encuentra la informaciï¿½n bï¿½sica de los Productos, segï¿½n su nombre y los devuelve como VO
 	 * @param nombre - El nombre de Producto a buscar
-	 * @return Una lista de Productos con su información básica, donde todos tienen el nombre buscado.
-	 * 	La lista vacía indica que no existen Productos con ese nombre
+	 * @return Una lista de Productos con su informaciï¿½n bï¿½sica, donde todos tienen el nombre buscado.
+	 * 	La lista vacï¿½a indica que no existen Productos con ese nombre
 	 */
 	public List<VOProducto> darVOProductosPorNombre (String nombre)
 	{
@@ -785,8 +787,8 @@ public class Superandes {
 
 	/**
 	 * Encuentra todos los Productos en Superandes
-	 * Adiciona entradas al log de la aplicación
-	 * @return Una lista de objetos Producto con todos las Productos que conoce la aplicación, llenos con su información básica
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return Una lista de objetos Producto con todos las Productos que conoce la aplicaciï¿½n, llenos con su informaciï¿½n bï¿½sica
 	 */
 	public List<Producto> darProductos ()
 	{
@@ -798,8 +800,8 @@ public class Superandes {
 	
 	/**
 	 * Encuentra todos los Productos en Superandes y los devuelve como VOProducto
-	 * Adiciona entradas al log de la aplicación
-	 * @return Una lista de objetos VOProducto con todos las Productos que conoce la aplicación, llenos con su información básica
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return Una lista de objetos VOProducto con todos las Productos que conoce la aplicaciï¿½n, llenos con su informaciï¿½n bï¿½sica
 	 */
 	public List<VOProducto> darVOProductos ()
 	{
@@ -814,12 +816,12 @@ public class Superandes {
 	}
 	
 	/* ****************************************************************
-	 * 			Métodos para manejar la relación ProductoEstante
+	 * 			Mï¿½todos para manejar la relaciï¿½n ProductoEstante
 	 *****************************************************************/
 
 	/**
 	 * Adiciona de manera persistente una preferencia de una bebida por un PersonaNatural
-	 * Adiciona entradas al log de la aplicación
+	 * Adiciona entradas al log de la aplicaciï¿½n
 	 * @param idEstante - El identificador del estante
 	 * @param idProducto - El identificador de la producto
 	 * @return Un objeto ProductoEstante con los valores dados
@@ -876,10 +878,10 @@ public class Superandes {
 	
 	/**
 	 * Elimina de manera persistente una preferencia de una bebida por un PersonaNatural
-	 * Adiciona entradas al log de la aplicación
+	 * Adiciona entradas al log de la aplicaciï¿½n
 	 * @param idEstante - El identificador del estante
 	 * @param idProducto - El identificador de la producto
-	 * @return El número de tuplas eliminadas
+	 * @return El nï¿½mero de tuplas eliminadas
 	 */
 	public long eliminarProductoEstante (long idEstante, long idProducto)
 	{
@@ -891,8 +893,8 @@ public class Superandes {
 	
 	/**
 	 * Encuentra todos los ProductoEstante en Superandes
-	 * Adiciona entradas al log de la aplicación
-	 * @return Una lista de objetos ProductoEstante con todos los ProductoEstante que conoce la aplicación, llenos con su información básica
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return Una lista de objetos ProductoEstante con todos los ProductoEstante que conoce la aplicaciï¿½n, llenos con su informaciï¿½n bï¿½sica
 	 */
 	public List<ProductoEstante> darProductoEstante ()
 	{
@@ -904,8 +906,8 @@ public class Superandes {
 
 	/**
 	 * Encuentra todos los ProductoEstante en Superandes y los devuelve como VO
-	 * Adiciona entradas al log de la aplicación
-	 * @return Una lista de objetos ProductoEstante con todos los ProductoEstante que conoce la aplicación, llenos con su información básica
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return Una lista de objetos ProductoEstante con todos los ProductoEstante que conoce la aplicaciï¿½n, llenos con su informaciï¿½n bï¿½sica
 	 */
 	public List<VOProductoEstante> darVOProductoEstante ()
 	{
@@ -920,12 +922,12 @@ public class Superandes {
 	}
 	
 	/* ****************************************************************
-	 * 			Métodos para manejar la relación ProductoBodega
+	 * 			Mï¿½todos para manejar la relaciï¿½n ProductoBodega
 	 *****************************************************************/
 
 	/**
 	 * Adiciona de manera persistente una preferencia de una bebida por un PersonaNatural
-	 * Adiciona entradas al log de la aplicación
+	 * Adiciona entradas al log de la aplicaciï¿½n
 	 * @param idBodega - El identificador del bodega
 	 * @param idProducto - El identificador de la producto
 	 * @return Un objeto ProductoBodega con los valores dados
@@ -940,10 +942,10 @@ public class Superandes {
 	
 	/**
 	 * Elimina de manera persistente una preferencia de una bebida por un PersonaNatural
-	 * Adiciona entradas al log de la aplicación
+	 * Adiciona entradas al log de la aplicaciï¿½n
 	 * @param idBodega - El identificador del bodega
 	 * @param idProducto - El identificador de la producto
-	 * @return El número de tuplas eliminadas
+	 * @return El nï¿½mero de tuplas eliminadas
 	 */
 	public long eliminarProductoBodega (long idBodega, long idProducto)
 	{
@@ -955,8 +957,8 @@ public class Superandes {
 	
 	/**
 	 * Encuentra todos los ProductoBodega en Superandes
-	 * Adiciona entradas al log de la aplicación
-	 * @return Una lista de objetos ProductoBodega con todos los ProductoBodega que conoce la aplicación, llenos con su información básica
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return Una lista de objetos ProductoBodega con todos los ProductoBodega que conoce la aplicaciï¿½n, llenos con su informaciï¿½n bï¿½sica
 	 */
 	public List<ProductoBodega> darProductoBodega ()
 	{
@@ -975,8 +977,8 @@ public class Superandes {
 
 	/**
 	 * Encuentra todos los ProductoBodega en Superandes y los devuelve como VO
-	 * Adiciona entradas al log de la aplicación
-	 * @return Una lista de objetos ProductoBodega con todos los ProductoBodega que conoce la aplicación, llenos con su información básica
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return Una lista de objetos ProductoBodega con todos los ProductoBodega que conoce la aplicaciï¿½n, llenos con su informaciï¿½n bï¿½sica
 	 */
 	public List<VOProductoBodega> darVOProductoBodega ()
 	{
@@ -991,15 +993,15 @@ public class Superandes {
 	}
 	
 	/* ****************************************************************
-	 * 			Métodos para manejar los PersonasNaturales
+	 * 			Mï¿½todos para manejar los PersonasNaturales
 	 *****************************************************************/
 
 	/**
 	 * Adiciona de manera persistente un PersonaNatural 
-	 * Adiciona entradas al log de la aplicación
+	 * Adiciona entradas al log de la aplicaciï¿½n
 	 * @param idConsumidor - El identificador del Consumidor
 	 * @param documentoIdentidad - documentoIdentidad de PersonaNatural
-	 * @return El objeto PersonaNatural adicionado. null si ocurre alguna Excepción
+	 * @return El objeto PersonaNatural adicionado. null si ocurre alguna Excepciï¿½n
 	 */
 	public PersonaNatural adicionarPersonaNatural (long idConsumidor, long documentoIdentidad)
 	{
@@ -1011,9 +1013,9 @@ public class Superandes {
 
 	/**
 	 * Elimina un PersonaNatural por su identificador
-	 * Adiciona entradas al log de la aplicación
+	 * Adiciona entradas al log de la aplicaciï¿½n
 	 * @param idPersonaNatural - El identificador del PersonaNatural a eliminar
-	 * @return El número de tuplas eliminadas
+	 * @return El nï¿½mero de tuplas eliminadas
 	 */
 	public long eliminarPersonaNaturalPorId (long idPersonaNatural)
 	{
@@ -1024,14 +1026,14 @@ public class Superandes {
 	}
 
 	/**
-	 * Encuentra un PersonaNatural y su información básica, según su identificador
+	 * Encuentra un PersonaNatural y su informaciï¿½n bï¿½sica, segï¿½n su identificador
 	 * @param idPersonaNatural - El identificador del PersonaNatural buscado
-	 * @return Un objeto PersonaNatural que corresponde con el identificador buscado y lleno con su información básica
+	 * @return Un objeto PersonaNatural que corresponde con el identificador buscado y lleno con su informaciï¿½n bï¿½sica
 	 * 			null, si un PersonaNatural con dicho identificador no existe
 	 */
 	public PersonaNatural darPersonaNaturalPorId (long idPersonaNatural)
 	{
-        log.info ("Dar información de un PersonaNatural por id: " + idPersonaNatural);
+        log.info ("Dar informaciï¿½n de un PersonaNatural por id: " + idPersonaNatural);
         PersonaNatural PersonaNatural = pp.darPersonaNaturalPorId (idPersonaNatural);
         log.info ("Buscando PersonaNatural por Id: " + PersonaNatural != null ? PersonaNatural : "NO EXISTE");
         return PersonaNatural;
@@ -1039,8 +1041,8 @@ public class Superandes {
 
 	/**
 	 * Encuentra todos los PersonasNaturales en Superandes
-	 * Adiciona entradas al log de la aplicación
-	 * @return Una lista de objetos PersonaNatural con todos las PersonasNaturales que conoce la aplicación, llenos con su información básica
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return Una lista de objetos PersonaNatural con todos las PersonasNaturales que conoce la aplicaciï¿½n, llenos con su informaciï¿½n bï¿½sica
 	 */
 	public List<PersonaNatural> darPersonasNaturales ()
 	{
@@ -1052,8 +1054,8 @@ public class Superandes {
 	
 	/**
 	 * Encuentra todos los PersonasNaturales en Superandes y los devuelve como VOPersonaNatural
-	 * Adiciona entradas al log de la aplicación
-	 * @return Una lista de objetos VOPersonaNatural con todos las PersonasNaturales que conoce la aplicación, llenos con su información básica
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return Una lista de objetos VOPersonaNatural con todos las PersonasNaturales que conoce la aplicaciï¿½n, llenos con su informaciï¿½n bï¿½sica
 	 */
 	public List<VOPersonaNatural> darVOPersonasNaturales ()
 	{
@@ -1068,16 +1070,16 @@ public class Superandes {
 	}
 	
 	/* ****************************************************************
-	 * 			Métodos para manejar los EMPRESAS
+	 * 			Mï¿½todos para manejar los EMPRESAS
 	 *****************************************************************/
 
 	/**
 	 * Adiciona de manera persistente un empresa 
-	 * Adiciona entradas al log de la aplicación
+	 * Adiciona entradas al log de la aplicaciï¿½n
 	 * @param nombre - El nombre del empresa
 	 * @param presupuesto - El presupuesto del empresa (ALTO, MEDIO, BAJO)
 	 * @param ciudad - La ciudad del empresa
-	 * @return El objeto PROMOCION_PARTE_DESCUENTO adicionado. null si ocurre alguna Excepción
+	 * @return El objeto PROMOCION_PARTE_DESCUENTO adicionado. null si ocurre alguna Excepciï¿½n
 	 */
 	public Empresa adicionarEmpresa (long idConsumidor, long nit, String direccion)
 	{
@@ -1090,9 +1092,9 @@ public class Superandes {
 
 	/**
 	 * Elimina un empresa por su identificador
-	 * Adiciona entradas al log de la aplicación
+	 * Adiciona entradas al log de la aplicaciï¿½n
 	 * @param idEmpresa - El identificador del empresa a eliminar
-	 * @return El número de tuplas eliminadas
+	 * @return El nï¿½mero de tuplas eliminadas
 	 */
 	public long eliminarEmpresaPorId (long idEmpresa)
 	{
@@ -1103,14 +1105,14 @@ public class Superandes {
 	}
 
 	/**
-	 * Encuentra un empresa y su información básica, según su identificador
+	 * Encuentra un empresa y su informaciï¿½n bï¿½sica, segï¿½n su identificador
 	 * @param idEmpresa - El identificador del empresa buscado
-	 * @return Un objeto Empresa que corresponde con el identificador buscado y lleno con su información básica
+	 * @return Un objeto Empresa que corresponde con el identificador buscado y lleno con su informaciï¿½n bï¿½sica
 	 * 			null, si un empresa con dicho identificador no existe
 	 */
 	public Empresa darEmpresaPorId (long idEmpresa)
 	{
-        log.info ("Dar información de un empresa por id: " + idEmpresa);
+        log.info ("Dar informaciï¿½n de un empresa por id: " + idEmpresa);
         Empresa empresa = pp.darEmpresaPorId (idEmpresa);
         log.info ("Buscando empresa por Id: " + empresa != null ? empresa : "NO EXISTE");
         return empresa;
@@ -1118,8 +1120,8 @@ public class Superandes {
 
 	/**
 	 * Encuentra todos los empresas en Superandes
-	 * Adiciona entradas al log de la aplicación
-	 * @return Una lista de objetos Empresa con todos las empresas que conoce la aplicación, llenos con su información básica
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return Una lista de objetos Empresa con todos las empresas que conoce la aplicaciï¿½n, llenos con su informaciï¿½n bï¿½sica
 	 */
 	public List<Empresa> darEmpresas ()
 	{
@@ -1131,8 +1133,8 @@ public class Superandes {
 	
 	/**
 	 * Encuentra todos los empresas en Superandes y los devuelve como VOEmpresa
-	 * Adiciona entradas al log de la aplicación
-	 * @return Una lista de objetos VOEmpresa con todos las empresas que conoce la aplicación, llenos con su información básica
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return Una lista de objetos VOEmpresa con todos las empresas que conoce la aplicaciï¿½n, llenos con su informaciï¿½n bï¿½sica
 	 */
 	public List<VOEmpresa> darVOEmpresas ()
 	{
@@ -1147,12 +1149,12 @@ public class Superandes {
 	}
 
 	/* ****************************************************************
-	 * 			Métodos para manejar Consumidor
+	 * 			Mï¿½todos para manejar Consumidor
 	 *****************************************************************/
 	/**
 	 * Adiciona Consumidor de manera persistente 
-	 * Adiciona entradas al log de la aplicación
-	* @return El objeto. null si ocurre alguna Excepción
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	* @return El objeto. null si ocurre alguna Excepciï¿½n
 	 */
 	public Consumidor adicionarConsumidor (String nombre, String correoElectronico, String tipo)
 	{
@@ -1164,9 +1166,9 @@ public class Superandes {
 	
 	/**
 	 * Elimina Consumidor por su nombre
-	 * Adiciona entradas al log de la aplicación
+	 * Adiciona entradas al log de la aplicaciï¿½n
 	 * @param nombre - El nombre a eliminar
-	 * @return El número de tuplas eliminadas
+	 * @return El nï¿½mero de tuplas eliminadas
 	 */
 	public long eliminarConsumidorPorNombre (String nombre)
 	{
@@ -1178,8 +1180,8 @@ public class Superandes {
 	
 	/**
 	 * Elimina Consumidor por su identificador
-	 * Adiciona entradas al log de la aplicación
-	 * @return El número de tuplas eliminadas
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return El nï¿½mero de tuplas eliminadas
 	 */
 	public long eliminarConsumidorPorId (long id)
 	{
@@ -1191,8 +1193,8 @@ public class Superandes {
 	
 	/**
 	 *	Lista  Consumidor en Superandes
-	 * Adiciona entradas al log de la aplicación
-	 * @return Una lista de Consumidor, llenos con su información básica
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return Una lista de Consumidor, llenos con su informaciï¿½n bï¿½sica
 	 */
 	public List<Consumidor> darConsumidor ()
 	{
@@ -1204,8 +1206,8 @@ public class Superandes {
 
 	/**
 	 * Encuentra Consumidor en Superandes y los devuelve como una lista de VOConsumidor
-	 * Adiciona entradas al log de la aplicación
-	 * @return Una lista de objetos VOConsumidor con todos los tipos de Consumidor que conoce la aplicación, llenos con su información básica
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return Una lista de objetos VOConsumidor con todos los tipos de Consumidor que conoce la aplicaciï¿½n, llenos con su informaciï¿½n bï¿½sica
 	 */
 	public List<VOConsumidor> darVOConsumidores ()
 	{
@@ -1226,9 +1228,9 @@ public class Superandes {
 
 	/**
 	 * Encuentra Consumidor en Superandes con el nombre solicitado
-	 * Adiciona entradas al log de la aplicación
+	 * Adiciona entradas al log de la aplicaciï¿½n
 	 * @param nombre - El nombre de Consumidor
-	 * @return Un objeto Consumidor, con su información básica
+	 * @return Un objeto Consumidor, con su informaciï¿½n bï¿½sica
 	 */
 	public Consumidor darConsumidorPorNombre (String nombre)
 	{
@@ -1246,12 +1248,12 @@ public class Superandes {
 	
 	
 	/* ****************************************************************
-	 * 			Métodos para manejar Fidelizacion
+	 * 			Mï¿½todos para manejar Fidelizacion
 	 *****************************************************************/
 	/**
 	 * Adiciona Fidelizacion de manera persistente 
-	 * Adiciona entradas al log de la aplicación
-	* @return El objeto. null si ocurre alguna Excepción
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	* @return El objeto. null si ocurre alguna Excepciï¿½n
 	 */
 	public Fidelizacion adicionarFidelizacion (long idConsumidor, int cantidadPuntos)
 	{
@@ -1265,8 +1267,8 @@ public class Superandes {
 	
 	/**
 	 * Elimina Fidelizacion por su identificador
-	 * Adiciona entradas al log de la aplicación
-	 * @return El número de tuplas eliminadas
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return El nï¿½mero de tuplas eliminadas
 	 */
 	public long eliminarFidelizacionPorId (long id)
 	{
@@ -1278,8 +1280,8 @@ public class Superandes {
 	
 	/**
 	 *	Lista  Fidelizacion en Superandes
-	 * Adiciona entradas al log de la aplicación
-	 * @return Una lista de Fidelizacion, llenos con su información básica
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return Una lista de Fidelizacion, llenos con su informaciï¿½n bï¿½sica
 	 */
 	public List<Fidelizacion> darFidelizaciones ()
 	{
@@ -1291,8 +1293,8 @@ public class Superandes {
 
 	/**
 	 * Encuentra Fidelizacion en Superandes y los devuelve como una lista de VOFidelizacion
-	 * Adiciona entradas al log de la aplicación
-	 * @return Una lista de objetos VOFidelizacion con todos los tipos de Fidelizacion que conoce la aplicación, llenos con su información básica
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return Una lista de objetos VOFidelizacion con todos los tipos de Fidelizacion que conoce la aplicaciï¿½n, llenos con su informaciï¿½n bï¿½sica
 	 */
 	public List<VOFidelizacion> darVOFidelizaciones ()
 	{
@@ -1311,12 +1313,12 @@ public class Superandes {
 
 	
 	/* ****************************************************************
-	 * 			Métodos para manejar Venta
+	 * 			Mï¿½todos para manejar Venta
 	 *****************************************************************/
 	/**
 	 * Adiciona Venta de manera persistente 
-	 * Adiciona entradas al log de la aplicación
-	* @return El objeto. null si ocurre alguna Excepción
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	* @return El objeto. null si ocurre alguna Excepciï¿½n
 	 */
 	public Venta adicionarVenta (String fecha, String formaPago, double valorTotal, long consumidor, long sucu)
 	{
@@ -1328,9 +1330,9 @@ public class Superandes {
 	
 	/**
 	 * Elimina Venta por su fecha
-	 * Adiciona entradas al log de la aplicación
+	 * Adiciona entradas al log de la aplicaciï¿½n
 	 * @param nombre - El nombre a eliminar
-	 * @return El número de tuplas eliminadas
+	 * @return El nï¿½mero de tuplas eliminadas
 	 */
 	public long eliminarVentaPorFecha (String f)
 	{
@@ -1342,8 +1344,8 @@ public class Superandes {
 	
 	/**
 	 * Elimina Venta por su identificador
-	 * Adiciona entradas al log de la aplicación
-	 * @return El número de tuplas eliminadas
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return El nï¿½mero de tuplas eliminadas
 	 */
 	public long eliminarVentaPorId (long id)
 	{
@@ -1355,8 +1357,8 @@ public class Superandes {
 	
 	/**
 	 *	Lista  Venta en Superandes
-	 * Adiciona entradas al log de la aplicación
-	 * @return Una lista de Venta, llenos con su información básica
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return Una lista de Venta, llenos con su informaciï¿½n bï¿½sica
 	 */
 	public List<Venta> darVentas ()
 	{
@@ -1375,8 +1377,8 @@ public class Superandes {
 
 	/**
 	 * Encuentra Venta en Superandes y los devuelve como una lista de VOVenta
-	 * Adiciona entradas al log de la aplicación
-	 * @return Una lista de objetos VOVenta con todos los tipos de Venta que conoce la aplicación, llenos con su información básica
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return Una lista de objetos VOVenta con todos los tipos de Venta que conoce la aplicaciï¿½n, llenos con su informaciï¿½n bï¿½sica
 	 */
 	public List<VOVenta> darVOVentas ()
 	{
@@ -1392,12 +1394,12 @@ public class Superandes {
 
 	
 	/* ****************************************************************
-	 * 			Métodos para manejar Factura
+	 * 			Mï¿½todos para manejar Factura
 	 *****************************************************************/
 	/**
 	 * Adiciona Factura de manera persistente 
-	 * Adiciona entradas al log de la aplicación
-	* @return El objeto. null si ocurre alguna Excepción
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	* @return El objeto. null si ocurre alguna Excepciï¿½n
 	 */
 	public Factura adicionarFactura (String textoFactura)
 	{
@@ -1411,8 +1413,8 @@ public class Superandes {
 	
 	/**
 	 * Elimina Factura por su identificador
-	 * Adiciona entradas al log de la aplicación
-	 * @return El número de tuplas eliminadas
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return El nï¿½mero de tuplas eliminadas
 	 */
 	public long eliminarFacturaPorId (long id)
 	{
@@ -1424,8 +1426,8 @@ public class Superandes {
 	
 	/**
 	 *	Lista  Factura en Superandes
-	 * Adiciona entradas al log de la aplicación
-	 * @return Una lista de Factura, llenos con su información básica
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return Una lista de Factura, llenos con su informaciï¿½n bï¿½sica
 	 */
 	public List<Factura> darFactura ()
 	{
@@ -1437,8 +1439,8 @@ public class Superandes {
 
 	/**
 	 * Encuentra Factura en Superandes y los devuelve como una lista de VOFactura
-	 * Adiciona entradas al log de la aplicación
-	 * @return Una lista de objetos VOFactura con todos los tipos de Factura que conoce la aplicación, llenos con su información básica
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return Una lista de objetos VOFactura con todos los tipos de Factura que conoce la aplicaciï¿½n, llenos con su informaciï¿½n bï¿½sica
 	 */
 	public List<VOFactura> darVOFacturaes ()
 	{
@@ -1453,12 +1455,12 @@ public class Superandes {
 	}
 
 	/* ****************************************************************
-	 * 			Métodos para manejar CarritoCompras
+	 * 			Mï¿½todos para manejar CarritoCompras
 	 *****************************************************************/
 	/**
 	 * Adiciona CarritoCompras de manera persistente 
-	 * Adiciona entradas al log de la aplicación
-	* @return El objeto. null si ocurre alguna Excepción
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	* @return El objeto. null si ocurre alguna Excepciï¿½n
 	 */
 	public CarritoCompras adicionarCarritoCompras ( long consumidor, long s)
 	{
@@ -1470,9 +1472,9 @@ public class Superandes {
 	
 	/**
 	 * Elimina CarritoCompras por idConsumidor
-	 * Adiciona entradas al log de la aplicación
+	 * Adiciona entradas al log de la aplicaciï¿½n
 	 * @param nombre - El nombre a eliminar
-	 * @return El número de tuplas eliminadas
+	 * @return El nï¿½mero de tuplas eliminadas
 	 */
 	public long eliminarCarritoComprasPorIdConsumidor (long idConsumidor)
 	{
@@ -1484,8 +1486,8 @@ public class Superandes {
 	
 	/**
 	 * Elimina CarritoCompras por su identificador
-	 * Adiciona entradas al log de la aplicación
-	 * @return El número de tuplas eliminadas
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return El nï¿½mero de tuplas eliminadas
 	 */
 	public long eliminarCarritoComprasPorId (long id)
 	{
@@ -1497,8 +1499,8 @@ public class Superandes {
 	
 	/**
 	 *	Lista  CarritoCompras en Superandes
-	 * Adiciona entradas al log de la aplicación
-	 * @return Una lista de CarritoCompras, llenos con su información básica
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return Una lista de CarritoCompras, llenos con su informaciï¿½n bï¿½sica
 	 */
 	public List<CarritoCompras> darCarritoCompras ()
 	{
@@ -1510,8 +1512,8 @@ public class Superandes {
 	
 	/**
 	 *	Lista  CarritoCompras en Superandes
-	 * Adiciona entradas al log de la aplicación
-	 * @return Una lista de CarritoCompras, llenos con su información básica
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return Una lista de CarritoCompras, llenos con su informaciï¿½n bï¿½sica
 	 */
 	public List<CarritoCompras> darCarritosComprasPorIdConsumidor (long id)
 	{
@@ -1523,8 +1525,8 @@ public class Superandes {
 
 	/**
 	 * Encuentra CarritoCompras en Superandes y los devuelve como una lista de VOCarritoCompras
-	 * Adiciona entradas al log de la aplicación
-	 * @return Una lista de objetos VOCarritoCompras con todos los tipos de CarritoCompras que conoce la aplicación, llenos con su información básica
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return Una lista de objetos VOCarritoCompras con todos los tipos de CarritoCompras que conoce la aplicaciï¿½n, llenos con su informaciï¿½n bï¿½sica
 	 */
 	public List<VOCarritoCompras> darVOCarritoComprasPorIdConsumidor (long id)
 	{
@@ -1539,8 +1541,8 @@ public class Superandes {
 	}
 	/**
 	 * Encuentra CarritoCompras en Superandes y los devuelve como una lista de VOCarritoCompras
-	 * Adiciona entradas al log de la aplicación
-	 * @return Una lista de objetos VOCarritoCompras con todos los tipos de CarritoCompras que conoce la aplicación, llenos con su información básica
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return Una lista de objetos VOCarritoCompras con todos los tipos de CarritoCompras que conoce la aplicaciï¿½n, llenos con su informaciï¿½n bï¿½sica
 	 */
 	public List<VOCarritoCompras> darVOCarritoCompras ()
 	{
@@ -1556,9 +1558,9 @@ public class Superandes {
 
 	/**
 	 * Encuentra CarritoCompras en Superandes
-	 * Adiciona entradas al log de la aplicación
+	 * Adiciona entradas al log de la aplicaciï¿½n
 	 * @param nombre - El nombre de CarritoCompras
-	 * @return Un objeto CarritoCompras, con su información básica
+	 * @return Un objeto CarritoCompras, con su informaciï¿½n bï¿½sica
 	 */
 	public CarritoCompras darCarritoComprasPorIdConsumidor (long idConsumidor)
 	{
@@ -1569,12 +1571,12 @@ public class Superandes {
 	
 	
 	/* ****************************************************************
-	 * 			Métodos para manejar ProductoVenta
+	 * 			Mï¿½todos para manejar ProductoVenta
 	 *****************************************************************/
 	/**
 	 * Adiciona ProductoVenta de manera persistente 
-	 * Adiciona entradas al log de la aplicación
-	* @return El objeto. null si ocurre alguna Excepción
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	* @return El objeto. null si ocurre alguna Excepciï¿½n
 	 */
 	public ProductoVenta adicionarProductoVenta ( long venta, long producto, int cantidadProducto, String unidadMedida)
 	{
@@ -1587,8 +1589,8 @@ public class Superandes {
 	
 	/**
 	 * Elimina ProductoVenta por su identificador
-	 * Adiciona entradas al log de la aplicación
-	 * @return El número de tuplas eliminadas
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return El nï¿½mero de tuplas eliminadas
 	 */
 	public long eliminarProductoVentaPorIdVenta (long id)
 	{
@@ -1600,8 +1602,8 @@ public class Superandes {
 	
 	/**
 	 *	Lista  ProductoVenta en Superandes
-	 * Adiciona entradas al log de la aplicación
-	 * @return Una lista de ProductoVenta, llenos con su información básica
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return Una lista de ProductoVenta, llenos con su informaciï¿½n bï¿½sica
 	 */
 	public List<ProductoVenta> darProductoVenta ()
 	{
@@ -1613,8 +1615,8 @@ public class Superandes {
 
 	/**
 	 * Encuentra ProductoVenta en Superandes y los devuelve como una lista de VOProductoVenta
-	 * Adiciona entradas al log de la aplicación
-	 * @return Una lista de objetos VOProductoVenta con todos los tipos de ProductoVenta que conoce la aplicación, llenos con su información básica
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return Una lista de objetos VOProductoVenta con todos los tipos de ProductoVenta que conoce la aplicaciï¿½n, llenos con su informaciï¿½n bï¿½sica
 	 */
 	public List<VOProductoVenta> darVOProductoVentaes ()
 	{
@@ -1630,8 +1632,8 @@ public class Superandes {
 
 	/**
 	 *	Lista  ProductoVenta en Superandes
-	 * Adiciona entradas al log de la aplicación
-	 * @return Una lista de ProductoVenta, llenos con su información básica
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return Una lista de ProductoVenta, llenos con su informaciï¿½n bï¿½sica
 	 */
 	public List<ProductoVenta> darProductosVentaPorIdVenta (long id)
 	{
@@ -1643,8 +1645,8 @@ public class Superandes {
 
 	/**
 	 * Encuentra ProductoVenta en Superandes y los devuelve como una lista de VOProductoVenta
-	 * Adiciona entradas al log de la aplicación
-	 * @return Una lista de objetos VOProductoVenta con todos los tipos de ProductoVenta que conoce la aplicación, llenos con su información básica
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return Una lista de objetos VOProductoVenta con todos los tipos de ProductoVenta que conoce la aplicaciï¿½n, llenos con su informaciï¿½n bï¿½sica
 	 */
 	public List<VOProductoVenta> darVOProductoVentasPorIdVenta (long id)
 	{
@@ -1660,12 +1662,12 @@ public class Superandes {
 	
 
 	/* ****************************************************************
-	 * 			Métodos para manejar ProductoCarritoCompras
+	 * 			Mï¿½todos para manejar ProductoCarritoCompras
 	 *****************************************************************/
 	/**
 	 * Adiciona ProductoCarritoCompras de manera persistente 
-	 * Adiciona entradas al log de la aplicación
-	* @return El objeto. null si ocurre alguna Excepción
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	* @return El objeto. null si ocurre alguna Excepciï¿½n
 	 */
 	public ProductoCarritoCompras adicionarProductoCarritoCompras ( long carritoCompras, long producto, int cantidadProducto, String unidadMedida)
 	{
@@ -1678,8 +1680,8 @@ public class Superandes {
 	
 	/**
 	 * Elimina ProductoCarritoCompras por su identificador
-	 * Adiciona entradas al log de la aplicación
-	 * @return El número de tuplas eliminadas
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return El nï¿½mero de tuplas eliminadas
 	 */
 	public long eliminarProductoCarritoComprasPorIdcarritoCompras (long id)
 	{
@@ -1698,8 +1700,8 @@ public class Superandes {
 	
 	/**
 	 *	Lista  ProductoCarritoCompras en Superandes
-	 * Adiciona entradas al log de la aplicación
-	 * @return Una lista de ProductoCarritoCompras, llenos con su información básica
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return Una lista de ProductoCarritoCompras, llenos con su informaciï¿½n bï¿½sica
 	 */
 	public List<ProductoCarritoCompras> darProductoCarritoCompras ()
 	{
@@ -1711,8 +1713,8 @@ public class Superandes {
 
 	/**
 	 * Encuentra ProductoCarritoCompras en Superandes y los devuelve como una lista de VOProductoCarritoCompras
-	 * Adiciona entradas al log de la aplicación
-	 * @return Una lista de objetos VOProductoCarritoCompras con todos los tipos de ProductoCarritoCompras que conoce la aplicación, llenos con su información básica
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return Una lista de objetos VOProductoCarritoCompras con todos los tipos de ProductoCarritoCompras que conoce la aplicaciï¿½n, llenos con su informaciï¿½n bï¿½sica
 	 */
 	public List<VOProductoCarritoCompras> darVOProductoCarritoComprases ()
 	{
@@ -1728,8 +1730,8 @@ public class Superandes {
 
 	/**
 	 *	Lista  ProductoCarritoCompras en Superandes
-	 * Adiciona entradas al log de la aplicación
-	 * @return Una lista de ProductoCarritoCompras, llenos con su información básica
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return Una lista de ProductoCarritoCompras, llenos con su informaciï¿½n bï¿½sica
 	 */
 	public List<ProductoCarritoCompras> darProductoscarritoComprasPorIdcarritoCompras (long id)
 	{
@@ -1741,8 +1743,8 @@ public class Superandes {
 
 	/**
 	 * Encuentra ProductoCarritoCompras en Superandes y los devuelve como una lista de VOProductoCarritoCompras
-	 * Adiciona entradas al log de la aplicación
-	 * @return Una lista de objetos VOProductoCarritoCompras con todos los tipos de ProductoCarritoCompras que conoce la aplicación, llenos con su información básica
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return Una lista de objetos VOProductoCarritoCompras con todos los tipos de ProductoCarritoCompras que conoce la aplicaciï¿½n, llenos con su informaciï¿½n bï¿½sica
 	 */
 	public List<VOProductoCarritoCompras> darVOProductoCarritoComprassPorIdcarritoCompras (long id)
 	{
@@ -1758,12 +1760,12 @@ public class Superandes {
 	
 	
 	/* ****************************************************************
-	 * 			Métodos para manejar Promocion
+	 * 			Mï¿½todos para manejar Promocion
 	 *****************************************************************/
 	/**
 	 * Adiciona Promocion de manera persistente 
-	 * Adiciona entradas al log de la aplicación
-	* @return El objeto. null si ocurre alguna Excepción
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	* @return El objeto. null si ocurre alguna Excepciï¿½n
 	 */
 	public Promocion adicionarPromocion (String nombre, String descripcion , String tipo, Date fecI, Date fecF, String estado, int cantidadP)
 	{
@@ -1775,9 +1777,9 @@ public class Superandes {
 	
 	/**
 	 * Elimina Promocion por su nombre
-	 * Adiciona entradas al log de la aplicación
+	 * Adiciona entradas al log de la aplicaciï¿½n
 	 * @param nombre - El nombre a eliminar
-	 * @return El número de tuplas eliminadas
+	 * @return El nï¿½mero de tuplas eliminadas
 	 */
 	public long eliminarPromocionPorNombre (String nombre)
 	{
@@ -1789,8 +1791,8 @@ public class Superandes {
 	
 	/**
 	 * Elimina Promocion por su identificador
-	 * Adiciona entradas al log de la aplicación
-	 * @return El número de tuplas eliminadas
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return El nï¿½mero de tuplas eliminadas
 	 */
 	public long eliminarPromocionPorId (long id)
 	{
@@ -1802,8 +1804,8 @@ public class Superandes {
 	
 	/**
 	 *	Lista  Promocion en Superandes
-	 * Adiciona entradas al log de la aplicación
-	 * @return Una lista de Promocion, llenos con su información básica
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return Una lista de Promocion, llenos con su informaciï¿½n bï¿½sica
 	 */
 	public List<Promocion> darPromocion ()
 	{
@@ -1815,8 +1817,8 @@ public class Superandes {
 
 	/**
 	 * Encuentra Promocion en Superandes y los devuelve como una lista de VOPromocion
-	 * Adiciona entradas al log de la aplicación
-	 * @return Una lista de objetos VOPromocion con todos los tipos de Promocion que conoce la aplicación, llenos con su información básica
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return Una lista de objetos VOPromocion con todos los tipos de Promocion que conoce la aplicaciï¿½n, llenos con su informaciï¿½n bï¿½sica
 	 */
 	public List<VOPromocion> darVOPromociones ()
 	{
@@ -1832,9 +1834,9 @@ public class Superandes {
 
 	/**
 	 * Encuentra Promocion en Superandes con el nombre solicitado
-	 * Adiciona entradas al log de la aplicación
+	 * Adiciona entradas al log de la aplicaciï¿½n
 	 * @param nombre - El nombre de Promocion
-	 * @return Un objeto Promocion, con su información básica
+	 * @return Un objeto Promocion, con su informaciï¿½n bï¿½sica
 	 */
 	public Promocion darPromocionPorNombre (String nombre)
 	{
@@ -1844,8 +1846,8 @@ public class Superandes {
 	}
 	/**
 	 * Adiciona Promocion de manera persistente 
-	 * Adiciona entradas al log de la aplicación
-	* @return El objeto. null si ocurre alguna Excepción
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	* @return El objeto. null si ocurre alguna Excepciï¿½n
 	 */
 	public long finalizarPromocion (long id)
 	{
@@ -1856,16 +1858,16 @@ public class Superandes {
 	}
 	
 	/* ****************************************************************
-	 * 			Métodos para manejar los PROMOCION_UNIDAD
+	 * 			Mï¿½todos para manejar los PROMOCION_UNIDAD
 	 *****************************************************************/
 
 	/**
 	 * Adiciona de manera persistente un promocionUnidad 
-	 * Adiciona entradas al log de la aplicación
+	 * Adiciona entradas al log de la aplicaciï¿½n
 	 * @param idPromocion - id de la promocion
 	 * @param unidadVendidos unidad vendidos
 	 * @param unidadPagados unidad pagados
-	 * @return El objeto PROMOCION_PARTE_DESCUENTO adicionado. null si ocurre alguna Excepción
+	 * @return El objeto PROMOCION_PARTE_DESCUENTO adicionado. null si ocurre alguna Excepciï¿½n
 	 */
 	public PromocionUnidad adicionarPromocionUnidad (long idPromocion, int unidadVendidos, int unidadPagados)
 	{
@@ -1877,9 +1879,9 @@ public class Superandes {
 
 	/**
 	 * Elimina un promocionUnidad por su identificador
-	 * Adiciona entradas al log de la aplicación
+	 * Adiciona entradas al log de la aplicaciï¿½n
 	 * @param idPromocionUnidad - El identificador del promocionUnidad a eliminar
-	 * @return El número de tuplas eliminadas
+	 * @return El nï¿½mero de tuplas eliminadas
 	 */
 	public long eliminarPromocionUnidadPorId (long idPromocionUnidad)
 	{
@@ -1890,14 +1892,14 @@ public class Superandes {
 	}
 
 	/**
-	 * Encuentra un promocionUnidad y su información básica, según su identificador
+	 * Encuentra un promocionUnidad y su informaciï¿½n bï¿½sica, segï¿½n su identificador
 	 * @param idPromocionUnidad - El identificador del promocionUnidad buscado
-	 * @return Un objeto PromocionUnidad que corresponde con el identificador buscado y lleno con su información básica
+	 * @return Un objeto PromocionUnidad que corresponde con el identificador buscado y lleno con su informaciï¿½n bï¿½sica
 	 * 			null, si un promocionUnidad con dicho identificador no existe
 	 */
 	public PromocionUnidad darPromocionUnidadPorId (long idPromocionUnidad)
 	{
-        log.info ("Dar información de un promocionUnidad por id: " + idPromocionUnidad);
+        log.info ("Dar informaciï¿½n de un promocionUnidad por id: " + idPromocionUnidad);
         PromocionUnidad promocionUnidad = pp.darPromocionUnidadPorId (idPromocionUnidad);
         log.info ("Buscando promocionUnidad por Id: " + promocionUnidad != null ? promocionUnidad : "NO EXISTE");
         return promocionUnidad;
@@ -1905,8 +1907,8 @@ public class Superandes {
 
 	/**
 	 * Encuentra todos los promocionesUnidad en Superandes
-	 * Adiciona entradas al log de la aplicación
-	 * @return Una lista de objetos PromocionUnidad con todos las promocionesUnidad que conoce la aplicación, llenos con su información básica
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return Una lista de objetos PromocionUnidad con todos las promocionesUnidad que conoce la aplicaciï¿½n, llenos con su informaciï¿½n bï¿½sica
 	 */
 	public List<PromocionUnidad> darPromocionesUnidad ()
 	{
@@ -1918,8 +1920,8 @@ public class Superandes {
 	
 	/**
 	 * Encuentra todos los promocionesUnidad en Superandes y los devuelve como VOPromocionUnidad
-	 * Adiciona entradas al log de la aplicación
-	 * @return Una lista de objetos VOPromocionUnidad con todos las promocionesUnidad que conoce la aplicación, llenos con su información básica
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return Una lista de objetos VOPromocionUnidad con todos las promocionesUnidad que conoce la aplicaciï¿½n, llenos con su informaciï¿½n bï¿½sica
 	 */
 	public List<VOPromocionUnidad> darVOPromocionesUnidad ()
 	{
@@ -1934,15 +1936,15 @@ public class Superandes {
 	}
 	
 	/* ****************************************************************
-	 * 			Métodos para manejar los PROMOCION_DESCUENTO
+	 * 			Mï¿½todos para manejar los PROMOCION_DESCUENTO
 	 *****************************************************************/
 
 	/**
 	 * Adiciona de manera persistente un promocionDescuento 
-	 * Adiciona entradas al log de la aplicación
+	 * Adiciona entradas al log de la aplicaciï¿½n
 	 * @param idPromocion - id de la promocion
 	 * @param descuento el descuento
-	 * @return El objeto PROMOCION_PARTE_DESCUENTO adicionado. null si ocurre alguna Excepción
+	 * @return El objeto PROMOCION_PARTE_DESCUENTO adicionado. null si ocurre alguna Excepciï¿½n
 	 */
 	public PromocionDescuento adicionarPromocionDescuento (long idPromocion, double descuento)
 	{
@@ -1954,9 +1956,9 @@ public class Superandes {
 
 	/**
 	 * Elimina un promocionDescuento por su identificador
-	 * Adiciona entradas al log de la aplicación
+	 * Adiciona entradas al log de la aplicaciï¿½n
 	 * @param idPromocionDescuento - El identificador del promocionDescuento a eliminar
-	 * @return El número de tuplas eliminadas
+	 * @return El nï¿½mero de tuplas eliminadas
 	 */
 	public long eliminarPromocionDescuentoPorId (long idPromocionDescuento)
 	{
@@ -1967,14 +1969,14 @@ public class Superandes {
 	}
 
 	/**
-	 * Encuentra un promocionDescuento y su información básica, según su identificador
+	 * Encuentra un promocionDescuento y su informaciï¿½n bï¿½sica, segï¿½n su identificador
 	 * @param idPromocionDescuento - El identificador del promocionDescuento buscado
-	 * @return Un objeto PromocionDescuento que corresponde con el identificador buscado y lleno con su información básica
+	 * @return Un objeto PromocionDescuento que corresponde con el identificador buscado y lleno con su informaciï¿½n bï¿½sica
 	 * 			null, si un promocionDescuento con dicho identificador no existe
 	 */
 	public PromocionDescuento darPromocionDescuentoPorId (long idPromocionDescuento)
 	{
-        log.info ("Dar información de un promocionDescuento por id: " + idPromocionDescuento);
+        log.info ("Dar informaciï¿½n de un promocionDescuento por id: " + idPromocionDescuento);
         PromocionDescuento promocionDescuento = pp.darPromocionDescuentoPorId (idPromocionDescuento);
         log.info ("Buscando promocionDescuento por Id: " + promocionDescuento != null ? promocionDescuento : "NO EXISTE");
         return promocionDescuento;
@@ -1982,8 +1984,8 @@ public class Superandes {
 
 	/**
 	 * Encuentra todos los promocionDescuento en Superandes
-	 * Adiciona entradas al log de la aplicación
-	 * @return Una lista de objetos PromocionDescuento con todos las promocionDescuento que conoce la aplicación, llenos con su información básica
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return Una lista de objetos PromocionDescuento con todos las promocionDescuento que conoce la aplicaciï¿½n, llenos con su informaciï¿½n bï¿½sica
 	 */
 	public List<PromocionDescuento> darPromocionesDescuento ()
 	{
@@ -1995,8 +1997,8 @@ public class Superandes {
 	
 	/**
 	 * Encuentra todos los promocionDescuento en Superandes y los devuelve como VOPromocionDescuento
-	 * Adiciona entradas al log de la aplicación
-	 * @return Una lista de objetos VOPromocionDescuento con todos las promocionDescuento que conoce la aplicación, llenos con su información básica
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return Una lista de objetos VOPromocionDescuento con todos las promocionDescuento que conoce la aplicaciï¿½n, llenos con su informaciï¿½n bï¿½sica
 	 */
 	public List<VOPromocionDescuento> darVOPromocionesDescuento ()
 	{
@@ -2011,15 +2013,15 @@ public class Superandes {
 	}
 	
 	/* ****************************************************************
-	 * 			Métodos para manejar los PROMOCION_PARTE_DESCUENTO
+	 * 			Mï¿½todos para manejar los PROMOCION_PARTE_DESCUENTO
 	 *****************************************************************/
 
 	/**
 	 * Adiciona de manera persistente un promocionParteDescuento 
-	 * Adiciona entradas al log de la aplicación
+	 * Adiciona entradas al log de la aplicaciï¿½n
 	 * @param idPromocion - id de la promocion
 	 * @param descuento el descuento
-	 * @return El objeto PROMOCION_PARTE_DESCUENTO adicionado. null si ocurre alguna Excepción
+	 * @return El objeto PROMOCION_PARTE_DESCUENTO adicionado. null si ocurre alguna Excepciï¿½n
 	 */
 	public PromocionParteDescuento adicionarPromocionParteDescuento (long idPromocion, double descuento, int unidadVendidos)
 	{
@@ -2031,9 +2033,9 @@ public class Superandes {
 
 	/**
 	 * Elimina un promocionParteDescuento por su identificador
-	 * Adiciona entradas al log de la aplicación
+	 * Adiciona entradas al log de la aplicaciï¿½n
 	 * @param idPromocionParteDescuento - El identificador del promocionParteDescuento a eliminar
-	 * @return El número de tuplas eliminadas
+	 * @return El nï¿½mero de tuplas eliminadas
 	 */
 	public long eliminarPromocionParteDescuentoPorId (long idPromocionParteDescuento)
 	{
@@ -2044,14 +2046,14 @@ public class Superandes {
 	}
 
 	/**
-	 * Encuentra un promocionParteDescuento y su información básica, según su identificador
+	 * Encuentra un promocionParteDescuento y su informaciï¿½n bï¿½sica, segï¿½n su identificador
 	 * @param idPromocionParteDescuento - El identificador del promocionParteDescuento buscado
-	 * @return Un objeto PromocionParteDescuento que corresponde con el identificador buscado y lleno con su información básica
+	 * @return Un objeto PromocionParteDescuento que corresponde con el identificador buscado y lleno con su informaciï¿½n bï¿½sica
 	 * 			null, si un promocionParteDescuento con dicho identificador no existe
 	 */
 	public PromocionParteDescuento darPromocionParteDescuentoPorId (long idPromocionParteDescuento)
 	{
-        log.info ("Dar información de un promocionParteDescuento por id: " + idPromocionParteDescuento);
+        log.info ("Dar informaciï¿½n de un promocionParteDescuento por id: " + idPromocionParteDescuento);
         PromocionParteDescuento promocionParteDescuento = pp.darPromocionParteDescuentoPorId (idPromocionParteDescuento);
         log.info ("Buscando promocionParteDescuento por Id: " + promocionParteDescuento != null ? promocionParteDescuento : "NO EXISTE");
         return promocionParteDescuento;
@@ -2059,8 +2061,8 @@ public class Superandes {
 
 	/**
 	 * Encuentra todos los promocionesParteDescuento en Superandes
-	 * Adiciona entradas al log de la aplicación
-	 * @return Una lista de objetos PromocionParteDescuento con todos las promocionesParteDescuento que conoce la aplicación, llenos con su información básica
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return Una lista de objetos PromocionParteDescuento con todos las promocionesParteDescuento que conoce la aplicaciï¿½n, llenos con su informaciï¿½n bï¿½sica
 	 */
 	public List<PromocionParteDescuento> darPromocionesParteDescuento ()
 	{
@@ -2072,8 +2074,8 @@ public class Superandes {
 	
 	/**
 	 * Encuentra todos los promocionesParteDescuento en Superandes y los devuelve como VOPromocionParteDescuento
-	 * Adiciona entradas al log de la aplicación
-	 * @return Una lista de objetos VOPromocionParteDescuento con todos las promocionesParteDescuento que conoce la aplicación, llenos con su información básica
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return Una lista de objetos VOPromocionParteDescuento con todos las promocionesParteDescuento que conoce la aplicaciï¿½n, llenos con su informaciï¿½n bï¿½sica
 	 */
 	public List<VOPromocionParteDescuento> darVOPromocionesParteDescuento ()
 	{
@@ -2088,16 +2090,16 @@ public class Superandes {
 	}
 	
 	/* ****************************************************************
-	 * 			Métodos para manejar los PROMOCION_CANTIDADES
+	 * 			Mï¿½todos para manejar los PROMOCION_CANTIDADES
 	 *****************************************************************/
 
 	/**
 	 * Adiciona de manera persistente un promocionCantidad 
-	 * Adiciona entradas al log de la aplicación
+	 * Adiciona entradas al log de la aplicaciï¿½n
 	 * @param idPromocion - id de la promocion
 	 * @param cantidadVendidos cantidad vendidos
 	 * @param cantidadPagados cantidad pagados
-	 * @return El objeto PROMOCION_CANTIDAD adicionado. null si ocurre alguna Excepción
+	 * @return El objeto PROMOCION_CANTIDAD adicionado. null si ocurre alguna Excepciï¿½n
 	 */
 	public PromocionCantidad adicionarPromocionCantidad (long idPromocion, int cantidadVendidos, int cantidadPagados)
 	{
@@ -2109,9 +2111,9 @@ public class Superandes {
 
 	/**
 	 * Elimina un promocionCantidad por su identificador
-	 * Adiciona entradas al log de la aplicación
+	 * Adiciona entradas al log de la aplicaciï¿½n
 	 * @param idPromocionCantidad - El identificador del promocionCantidad a eliminar
-	 * @return El número de tuplas eliminadas
+	 * @return El nï¿½mero de tuplas eliminadas
 	 */
 	public long eliminarPromocionCantidadPorId (long idPromocionCantidad)
 	{
@@ -2122,14 +2124,14 @@ public class Superandes {
 	}
 
 	/**
-	 * Encuentra un promocionCantidad y su información básica, según su identificador
+	 * Encuentra un promocionCantidad y su informaciï¿½n bï¿½sica, segï¿½n su identificador
 	 * @param idPromocionCantidad - El identificador del promocionCantidad buscado
-	 * @return Un objeto PromocionCantidad que corresponde con el identificador buscado y lleno con su información básica
+	 * @return Un objeto PromocionCantidad que corresponde con el identificador buscado y lleno con su informaciï¿½n bï¿½sica
 	 * 			null, si un promocionCantidad con dicho identificador no existe
 	 */
 	public PromocionCantidad darPromocionCantidadPorId (long idPromocionCantidad)
 	{
-        log.info ("Dar información de un promocionCantidad por id: " + idPromocionCantidad);
+        log.info ("Dar informaciï¿½n de un promocionCantidad por id: " + idPromocionCantidad);
         PromocionCantidad promocionCantidad = pp.darPromocionCantidadPorId (idPromocionCantidad);
         log.info ("Buscando promocionCantidad por Id: " + promocionCantidad != null ? promocionCantidad : "NO EXISTE");
         return promocionCantidad;
@@ -2137,8 +2139,8 @@ public class Superandes {
 
 	/**
 	 * Encuentra todos los promocionesCantidad en Superandes
-	 * Adiciona entradas al log de la aplicación
-	 * @return Una lista de objetos PromocionCantidad con todos las promocionesCantidad que conoce la aplicación, llenos con su información básica
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return Una lista de objetos PromocionCantidad con todos las promocionesCantidad que conoce la aplicaciï¿½n, llenos con su informaciï¿½n bï¿½sica
 	 */
 	public List<PromocionCantidad> darPromocionesCantidad ()
 	{
@@ -2150,8 +2152,8 @@ public class Superandes {
 	
 	/**
 	 * Encuentra todos los promocionesCantidad en Superandes y los devuelve como VOPromocionCantidad
-	 * Adiciona entradas al log de la aplicación
-	 * @return Una lista de objetos VOPromocionCantidad con todos las promocionesCantidad que conoce la aplicación, llenos con su información básica
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return Una lista de objetos VOPromocionCantidad con todos las promocionesCantidad que conoce la aplicaciï¿½n, llenos con su informaciï¿½n bï¿½sica
 	 */
 	public List<VOPromocionCantidad> darVOPromocionesCantidad ()
 	{
@@ -2166,12 +2168,12 @@ public class Superandes {
 	}
 	
 	/* ****************************************************************
-	 * 			Métodos para manejar PromocionProducto
+	 * 			Mï¿½todos para manejar PromocionProducto
 	 *****************************************************************/
 	/**
 	 * Adiciona PromocionProducto de manera persistente 
-	 * Adiciona entradas al log de la aplicación
-	* @return El objeto. null si ocurre alguna Excepción
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	* @return El objeto. null si ocurre alguna Excepciï¿½n
 	 */
 	public PromocionProducto adicionarPromocionProducto (long promocion, long Producto)
 	{
@@ -2185,8 +2187,8 @@ public class Superandes {
 	
 	/**
 	 * Elimina PromocionProducto por su identificadorProducto
-	 * Adiciona entradas al log de la aplicación
-	 * @return El número de tuplas eliminadas
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return El nï¿½mero de tuplas eliminadas
 	 */
 	public long eliminarPromocionProductoPorProducto (long id)
 	{
@@ -2198,8 +2200,8 @@ public class Superandes {
 	
 	/**
 	 * Elimina PromocionProducto por su identificadorPromocion
-	 * Adiciona entradas al log de la aplicación
-	 * @return El número de tuplas eliminadas
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return El nï¿½mero de tuplas eliminadas
 	 */
 	public long eliminarPromocionProductoPorPromocion (long id)
 	{
@@ -2211,8 +2213,8 @@ public class Superandes {
 	
 	/**
 	 *	Lista  PromocionProducto en Superandes
-	 * Adiciona entradas al log de la aplicación
-	 * @return Una lista de PromocionProducto, llenos con su información básica
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return Una lista de PromocionProducto, llenos con su informaciï¿½n bï¿½sica
 	 */
 	public List<PromocionProducto> darPromocionProducto ()
 	{
@@ -2224,8 +2226,8 @@ public class Superandes {
 
 	/**
 	 * Encuentra PromocionProducto en Superandes y los devuelve como una lista de VOPromocionProducto
-	 * Adiciona entradas al log de la aplicación
-	 * @return Una lista de objetos VOPromocionProducto con todos los tipos de PromocionProducto que conoce la aplicación, llenos con su información básica
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return Una lista de objetos VOPromocionProducto con todos los tipos de PromocionProducto que conoce la aplicaciï¿½n, llenos con su informaciï¿½n bï¿½sica
 	 */
 	public List<VOPromocionProducto> darVOPromocionProductoes ()
 	{
@@ -2241,9 +2243,9 @@ public class Superandes {
 
 	/**
 	 * Encuentra PromocionProducto en Superandes 
-	 * Adiciona entradas al log de la aplicación
+	 * Adiciona entradas al log de la aplicaciï¿½n
 	 * @param nombre - El nombre de PromocionProducto
-	 * @return Un objeto PromocionProducto, con su información básica
+	 * @return Un objeto PromocionProducto, con su informaciï¿½n bï¿½sica
 	 */
 	public PromocionProducto darPromocionProductoPorProducto (long Producto)
 	{
@@ -2253,8 +2255,8 @@ public class Superandes {
 	}
 	/**
 	 * Encuentra PromocionProducto en Superandes y los devuelve como una lista de VOPromocionProducto
-	 * Adiciona entradas al log de la aplicación
-	 * @return Una lista de objetos VOPromocionProducto con todos los tipos de PromocionProducto que conoce la aplicación, llenos con su información básica
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return Una lista de objetos VOPromocionProducto con todos los tipos de PromocionProducto que conoce la aplicaciï¿½n, llenos con su informaciï¿½n bï¿½sica
 	 */
 	public List<VOPromocionProducto> darVOPromocionProductoesPorProducto (long Producto)
 	{
@@ -2270,9 +2272,9 @@ public class Superandes {
 	
 	/**
 	 * Encuentra PromocionProducto en Superandes 
-	 * Adiciona entradas al log de la aplicación
+	 * Adiciona entradas al log de la aplicaciï¿½n
 	 * @param nombre - El nombre de PromocionProducto
-	 * @return Un objeto PromocionProducto, con su información básica
+	 * @return Un objeto PromocionProducto, con su informaciï¿½n bï¿½sica
 	 */
 	public PromocionProducto darPromocionProductoPorPromocion (long p)
 	{
@@ -2282,8 +2284,8 @@ public class Superandes {
 	}
 	/**
 	 * Encuentra PromocionProducto en Superandes y los devuelve como una lista de VOPromocionProducto
-	 * Adiciona entradas al log de la aplicación
-	 * @return Una lista de objetos VOPromocionProducto con todos los tipos de PromocionProducto que conoce la aplicación, llenos con su información básica
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return Una lista de objetos VOPromocionProducto con todos los tipos de PromocionProducto que conoce la aplicaciï¿½n, llenos con su informaciï¿½n bï¿½sica
 	 */
 	public List<VOPromocionProducto> darVOPromocionProductoesPorPromocion (long p)
 	{
@@ -2297,12 +2299,12 @@ public class Superandes {
         return voTipos;
 	}
 	/* ****************************************************************
-	 * 			Métodos para manejar Proveedores
+	 * 			Mï¿½todos para manejar Proveedores
 	 *****************************************************************/
 	/**
 	 * Adiciona Proveedores de manera persistente 
-	 * Adiciona entradas al log de la aplicación
-	* @return El objeto. null si ocurre alguna Excepción
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	* @return El objeto. null si ocurre alguna Excepciï¿½n
 	 */
 	public Proveedores adicionarProveedores (long nit, String nombre)
 	{
@@ -2314,9 +2316,9 @@ public class Superandes {
 	
 	/**
 	 * Elimina Proveedores por su nombre
-	 * Adiciona entradas al log de la aplicación
+	 * Adiciona entradas al log de la aplicaciï¿½n
 	 * @param nombre - El nombre a eliminar
-	 * @return El número de tuplas eliminadas
+	 * @return El nï¿½mero de tuplas eliminadas
 	 */
 	public long eliminarProveedoresPorNombre (String nombre)
 	{
@@ -2328,8 +2330,8 @@ public class Superandes {
 	
 	/**
 	 * Elimina Proveedores por su identificador
-	 * Adiciona entradas al log de la aplicación
-	 * @return El número de tuplas eliminadas
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return El nï¿½mero de tuplas eliminadas
 	 */
 	public long eliminarProveedoresPorId (long nit)
 	{
@@ -2341,8 +2343,8 @@ public class Superandes {
 	
 	/**
 	 *	Lista  Proveedores en Superandes
-	 * Adiciona entradas al log de la aplicación
-	 * @return Una lista de Proveedores, llenos con su información básica
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return Una lista de Proveedores, llenos con su informaciï¿½n bï¿½sica
 	 */
 	public List<Proveedores> darProveedores ()
 	{
@@ -2354,8 +2356,8 @@ public class Superandes {
 
 	/**
 	 * Encuentra Proveedores en Superandes y los devuelve como una lista de VOProveedores
-	 * Adiciona entradas al log de la aplicación
-	 * @return Una lista de objetos VOProveedores con todos los tipos de Proveedores que conoce la aplicación, llenos con su información básica
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return Una lista de objetos VOProveedores con todos los tipos de Proveedores que conoce la aplicaciï¿½n, llenos con su informaciï¿½n bï¿½sica
 	 */
 	public List<VOProveedores> darVOProveedoreses ()
 	{
@@ -2371,9 +2373,9 @@ public class Superandes {
 	
 	/**
 	 * Encuentra Proveedores en Superandes con el nombre solicitado
-	 * Adiciona entradas al log de la aplicación
+	 * Adiciona entradas al log de la aplicaciï¿½n
 	 * @param nombre - El nombre de Proveedores
-	 * @return Un objeto Proveedores, con su información básica
+	 * @return Un objeto Proveedores, con su informaciï¿½n bï¿½sica
 	 */
 	public Proveedores darProveedoresPorNombre (String nombre)
 	{
@@ -2384,9 +2386,9 @@ public class Superandes {
 	
 	/**
 	 * Encuentra Proveedores en Superandes 
-	 * Adiciona entradas al log de la aplicación
+	 * Adiciona entradas al log de la aplicaciï¿½n
 	 * @param nombre - El nombre de Proveedores
-	 * @return Un objeto Proveedores, con su información básica
+	 * @return Un objeto Proveedores, con su informaciï¿½n bï¿½sica
 	 */
 	public Proveedores darProveedoresPor (int n)
 	{
@@ -2396,12 +2398,12 @@ public class Superandes {
 	}
 	
 	/* ****************************************************************
-	 * 			Métodos para manejar ProductoOfrecido
+	 * 			Mï¿½todos para manejar ProductoOfrecido
 	 *****************************************************************/
 	/**
 	 * Adiciona ProductoOfrecido de manera persistente 
-	 * Adiciona entradas al log de la aplicación
-	* @return El objeto. null si ocurre alguna Excepción
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	* @return El objeto. null si ocurre alguna Excepciï¿½n
 	 */
 	public ProductoOfrecido adicionarProductoOfrecido (double precioProveedor, int calificacionTotal, int calidad, int cumplimiento,  long proveedor, long productoId)
 	{
@@ -2413,8 +2415,8 @@ public class Superandes {
 	
 	/**
 	 * Elimina ProductoOfrecido por su identificador
-	 * Adiciona entradas al log de la aplicación
-	 * @return El número de tuplas eliminadas
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return El nï¿½mero de tuplas eliminadas
 	 */
 	public long eliminarProductoOfrecidoPorId (long id)
 	{
@@ -2426,8 +2428,8 @@ public class Superandes {
 	
 	/**
 	 *	Lista  ProductoOfrecido en Superandes
-	 * Adiciona entradas al log de la aplicación
-	 * @return Una lista de ProductoOfrecido, llenos con su información básica
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return Una lista de ProductoOfrecido, llenos con su informaciï¿½n bï¿½sica
 	 */
 	public List<ProductoOfrecido> darProductoOfrecido ()
 	{
@@ -2439,8 +2441,8 @@ public class Superandes {
 
 	/**
 	 * Encuentra ProductoOfrecido en Superandes y los devuelve como una lista de VOProductoOfrecido
-	 * Adiciona entradas al log de la aplicación
-	 * @return Una lista de objetos VOProductoOfrecido con todos los tipos de ProductoOfrecido que conoce la aplicación, llenos con su información básica
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return Una lista de objetos VOProductoOfrecido con todos los tipos de ProductoOfrecido que conoce la aplicaciï¿½n, llenos con su informaciï¿½n bï¿½sica
 	 */
 	public List<VOProductoOfrecido> darVOProductoOfrecidoes ()
 	{
@@ -2467,12 +2469,12 @@ public class Superandes {
 
 	
 	/* ****************************************************************
-	 * 			Métodos para manejar OrdenPedido
+	 * 			Mï¿½todos para manejar OrdenPedido
 	 *****************************************************************/
 	/**
 	 * Adiciona OrdenPedido de manera persistente 
-	 * Adiciona entradas al log de la aplicación
-	* @return El objeto. null si ocurre alguna Excepción
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	* @return El objeto. null si ocurre alguna Excepciï¿½n
 	 */
 	public OrdenPedido adicionarOrdenPedido (String estado, int calificacion, String fecha, String fechaEntrega, long proveedor, long productoOfrecido, double cantidadProducto, String unidadMedida, long sucursal)
 	{
@@ -2486,8 +2488,8 @@ public class Superandes {
 	
 	/**
 	 * Elimina OrdenPedido por su identificador
-	 * Adiciona entradas al log de la aplicación
-	 * @return El número de tuplas eliminadas
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return El nï¿½mero de tuplas eliminadas
 	 */
 	public long eliminarOrdenPedidoPorId (long id)
 	{
@@ -2499,8 +2501,8 @@ public class Superandes {
 	
 	/**
 	 *	Lista  OrdenPedido en Superandes
-	 * Adiciona entradas al log de la aplicación
-	 * @return Una lista de OrdenPedido, llenos con su información básica
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return Una lista de OrdenPedido, llenos con su informaciï¿½n bï¿½sica
 	 */
 	public List<OrdenPedido> darOrdenPedido ()
 	{
@@ -2512,8 +2514,8 @@ public class Superandes {
 
 	/**
 	 * Encuentra OrdenPedido en Superandes y los devuelve como una lista de VOOrdenPedido
-	 * Adiciona entradas al log de la aplicación
-	 * @return Una lista de objetos VOOrdenPedido con todos los tipos de OrdenPedido que conoce la aplicación, llenos con su información básica
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return Una lista de objetos VOOrdenPedido con todos los tipos de OrdenPedido que conoce la aplicaciï¿½n, llenos con su informaciï¿½n bï¿½sica
 	 */
 	public List<VOOrdenPedido> darVOOrdenPedidoes ()
 	{
@@ -2529,9 +2531,9 @@ public class Superandes {
 
 	/**
 	 * Encuentra OrdenPedido en Superandes 
-	 * Adiciona entradas al log de la aplicación
+	 * Adiciona entradas al log de la aplicaciï¿½n
 	 * @param nombre - El nombre de OrdenPedido
-	 * @return Un objeto OrdenPedido, con su información básica
+	 * @return Un objeto OrdenPedido, con su informaciï¿½n bï¿½sica
 	 */
 	public OrdenPedido darOrdenPedidoPorId (long id)
 	{
@@ -2547,12 +2549,12 @@ public class Superandes {
 	}
 	
 	/* ****************************************************************
-	 * 			Métodos para manejar Administrador
+	 * 			Mï¿½todos para manejar Administrador
 	 *****************************************************************/
 	/**
 	 * Adiciona Administrador de manera persistente 
-	 * Adiciona entradas al log de la aplicación
-	* @return El objeto. null si ocurre alguna Excepción
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	* @return El objeto. null si ocurre alguna Excepciï¿½n
 	 */
 	public Administrador adicionarAdministrador ( int cantidadDeRecompra, String usuario,  String contrasenha)
 	{
@@ -2564,9 +2566,9 @@ public class Superandes {
 	
 	/**
 	 * Elimina Administrador por su nombre
-	 * Adiciona entradas al log de la aplicación
+	 * Adiciona entradas al log de la aplicaciï¿½n
 	 * @param nombre - El nombre a eliminar
-	 * @return El número de tuplas eliminadas
+	 * @return El nï¿½mero de tuplas eliminadas
 	 */
 	public long eliminarAdministradorPorUsuario (String nombre)
 	{
@@ -2578,8 +2580,8 @@ public class Superandes {
 	
 	/**
 	 * Elimina Administrador por su identificador
-	 * Adiciona entradas al log de la aplicación
-	 * @return El número de tuplas eliminadas
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return El nï¿½mero de tuplas eliminadas
 	 */
 	public long eliminarAdministradorPorId (long id)
 	{
@@ -2591,8 +2593,8 @@ public class Superandes {
 	
 	/**
 	 *	Lista  Administrador en Superandes
-	 * Adiciona entradas al log de la aplicación
-	 * @return Una lista de Administrador, llenos con su información básica
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return Una lista de Administrador, llenos con su informaciï¿½n bï¿½sica
 	 */
 	public List<Administrador> darAdministrador ()
 	{
@@ -2604,8 +2606,8 @@ public class Superandes {
 
 	/**
 	 * Encuentra Administrador en Superandes y los devuelve como una lista de VOAdministrador
-	 * Adiciona entradas al log de la aplicación
-	 * @return Una lista de objetos VOAdministrador con todos los tipos de Administrador que conoce la aplicación, llenos con su información básica
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return Una lista de objetos VOAdministrador con todos los tipos de Administrador que conoce la aplicaciï¿½n, llenos con su informaciï¿½n bï¿½sica
 	 */
 	public List<VOAdministrador> darVOAdministradores ()
 	{
@@ -2621,9 +2623,9 @@ public class Superandes {
 	
 	/**
 	 * Encuentra en Superandes 
-	 * Adiciona entradas al log de la aplicación
+	 * Adiciona entradas al log de la aplicaciï¿½n
 	 * @param nombre - El nombre de OrdenPedido
-	 * @return Un objeto OrdenPedido, con su información básica
+	 * @return Un objeto OrdenPedido, con su informaciï¿½n bï¿½sica
 	 */
 	public Administrador darAdministradorPorId (long id)
 	{
@@ -2633,12 +2635,12 @@ public class Superandes {
 	}
 
 	/* ****************************************************************
-	 * 			Métodos para manejar AdministradorSucursal
+	 * 			Mï¿½todos para manejar AdministradorSucursal
 	 *****************************************************************/
 	/**
 	 * Adiciona AdministradorSucursal de manera persistente 
-	 * Adiciona entradas al log de la aplicación
-	* @return El objeto. null si ocurre alguna Excepción
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	* @return El objeto. null si ocurre alguna Excepciï¿½n
 	 */
 	public AdministradorSucursal adicionarAdministradorSucursal (long ad, long su)
 	{
@@ -2652,8 +2654,8 @@ public class Superandes {
 	
 	/**
 	 * Elimina AdministradorSucursal por su identificador
-	 * Adiciona entradas al log de la aplicación
-	 * @return El número de tuplas eliminadas
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return El nï¿½mero de tuplas eliminadas
 	 */
 	public long eliminarAdministradorSucursalPorIdAdministrador (long id)
 	{
@@ -2664,8 +2666,8 @@ public class Superandes {
 	}
 	/**
 	 * Elimina AdministradorSucursal por su identificador
-	 * Adiciona entradas al log de la aplicación
-	 * @return El número de tuplas eliminadas
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return El nï¿½mero de tuplas eliminadas
 	 */
 	public long eliminarAdministradorSucursalPorIdSucursal (long id)
 	{
@@ -2677,8 +2679,8 @@ public class Superandes {
 	
 	/**
 	 *	Lista  AdministradorSucursal en Superandes
-	 * Adiciona entradas al log de la aplicación
-	 * @return Una lista de AdministradorSucursal, llenos con su información básica
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return Una lista de AdministradorSucursal, llenos con su informaciï¿½n bï¿½sica
 	 */
 	public List<AdministradorSucursal> darAdministradorSucursal ()
 	{
@@ -2690,8 +2692,8 @@ public class Superandes {
 
 	/**
 	 * Encuentra AdministradorSucursal en Superandes y los devuelve como una lista de VOAdministradorSucursal
-	 * Adiciona entradas al log de la aplicación
-	 * @return Una lista de objetos VOAdministradorSucursal con todos los tipos de AdministradorSucursal que conoce la aplicación, llenos con su información básica
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return Una lista de objetos VOAdministradorSucursal con todos los tipos de AdministradorSucursal que conoce la aplicaciï¿½n, llenos con su informaciï¿½n bï¿½sica
 	 */
 	public List<VOAdministradorSucursal> darVOAdministradorSucursales ()
 	{
@@ -2707,9 +2709,9 @@ public class Superandes {
 
 	/**
 	 * Encuentra en Superandes 
-	 * Adiciona entradas al log de la aplicación
+	 * Adiciona entradas al log de la aplicaciï¿½n
 	 * @param nombre - El nombre de OrdenPedido
-	 * @return Un objeto OrdenPedido, con su información básica
+	 * @return Un objeto OrdenPedido, con su informaciï¿½n bï¿½sica
 	 */
 	public AdministradorSucursal darAdministradorSucursalPorIdAdministrador (long id)
 	{
@@ -2719,9 +2721,9 @@ public class Superandes {
 	}
 	/**
 	 * Encuentra en Superandes 
-	 * Adiciona entradas al log de la aplicación
+	 * Adiciona entradas al log de la aplicaciï¿½n
 	 * @param nombre - El nombre de OrdenPedido
-	 * @return Un objeto OrdenPedido, con su información básica
+	 * @return Un objeto OrdenPedido, con su informaciï¿½n bï¿½sica
 	 */
 	public AdministradorSucursal darAdministradorSucursalPorIdSucursal (long id)
 	{
@@ -2791,7 +2793,7 @@ public class Superandes {
 	
 	
 	/* ****************************************************************
-	 * 			Métodos para manejar Requerimientos
+	 * 			Mï¿½todos para manejar Requerimientos
 	 *****************************************************************/
 	
 	public boolean actualizadoOrdenPedido(long idPedido)
@@ -2943,6 +2945,26 @@ public class Superandes {
 		   
 		 fecha = ano+mes+dia+hora+minuto+segundo;
 		 return fecha;
+	}
+	public String darFechaCortaDeHoy()
+	{
+		SimpleDateFormat d = new SimpleDateFormat("dd/MM/yy");
+		String fecha = "";
+		Calendar fechaActual = new GregorianCalendar();
+		   String ano = String.valueOf(fechaActual.get(Calendar.YEAR));
+	       String mes = String.valueOf(fechaActual.get(Calendar.MONTH));
+	       String dia = String.valueOf(fechaActual.get(Calendar.DAY_OF_MONTH));
+	      
+	    fecha = ano+mes+dia;
+	    Calendar cal = Calendar.getInstance();
+	    try {
+			cal.setTime(d.parse(fecha));
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		String fechaF = cal.toString();
+		 
+		 return fechaF;
 	}
 	
 	/* ****************************************************************

@@ -18,6 +18,8 @@ import java.lang.reflect.Method;
 import java.sql.Date;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import javax.jdo.JDODataStoreException;
@@ -65,6 +67,7 @@ import uniandes.isis2304.superandes.negocio.VOProducto;
 import uniandes.isis2304.superandes.negocio.VOProductoCarritoCompras;
 import uniandes.isis2304.superandes.negocio.VOProductoEstante;
 import uniandes.isis2304.superandes.negocio.VOProductoOfrecido;
+import uniandes.isis2304.superandes.negocio.VOProductoVenta;
 import uniandes.isis2304.superandes.negocio.VOPromocion;
 import uniandes.isis2304.superandes.negocio.VOProveedores;
 import uniandes.isis2304.superandes.negocio.VOSucursal;
@@ -80,17 +83,17 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 	 * 			Constantes
 	 *****************************************************************/
 	/**
-	 * Logger para escribir la traza de la ejecución
+	 * Logger para escribir la traza de la ejecuciï¿½n
 	 */
 	private static Logger log = Logger.getLogger(InterfazSuperandesApp.class.getName());
 	
 	/**
-	 * Ruta al archivo de configuración de la interfaz
+	 * Ruta al archivo de configuraciï¿½n de la interfaz
 	 */
 	private static final String CONFIG_INTERFAZ = "./src/main/resources/config/interfaceConfigApp.json"; 
 	
 	/**
-	 * Ruta al archivo de configuración de los nombres de tablas de la base de datos
+	 * Ruta al archivo de configuraciï¿½n de los nombres de tablas de la base de datos
 	 */
 	private static final String CONFIG_TABLAS = "./src/main/resources/config/TablasA.json"; 
 	
@@ -103,7 +106,7 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
     private JsonObject tableConfig;
     
     /**
-     * Asociación a la clase principal del negocio.
+     * Asociaciï¿½n a la clase principal del negocio.
      */
     private Superandes superandes;
     
@@ -111,33 +114,33 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 	 * 			Atributos de interfaz
 	 *****************************************************************/
     /**
-     * Objeto JSON con la configuración de interfaz de la app.
+     * Objeto JSON con la configuraciï¿½n de interfaz de la app.
      */
     private JsonObject guiConfig;
     
     /**
-     * Panel de despliegue de interacción para los requerimientos
+     * Panel de despliegue de interacciï¿½n para los requerimientos
      */
     private PanelDatos panelDatos;
     
     /**
-     * Menú de la aplicación
+     * Menï¿½ de la aplicaciï¿½n
      */
     private JMenuBar menuBar;
 
 	/* ****************************************************************
-	 * 			Métodos
+	 * 			Mï¿½todos
 	 *****************************************************************/
     /**
-     * Construye la ventana principal de la aplicación. <br>
+     * Construye la ventana principal de la aplicaciï¿½n. <br>
      * <b>post:</b> Todos los componentes de la interfaz fueron inicializados.
      */
     public InterfazSuperandesApp( )
     {
-        // Carga la configuración de la interfaz desde un archivo JSON
+        // Carga la configuraciï¿½n de la interfaz desde un archivo JSON
         guiConfig = openConfig ("Interfaz", CONFIG_INTERFAZ);
         
-        // Configura la apariencia del frame que contiene la interfaz gráfica
+        // Configura la apariencia del frame que contiene la interfaz grï¿½fica
         configurarFrame ( );
         if (guiConfig != null) 	   
         {
@@ -156,13 +159,13 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
     }
     
 	/* ****************************************************************
-	 * 			Métodos de configuración de la interfaz
+	 * 			Mï¿½todos de configuraciï¿½n de la interfaz
 	 *****************************************************************/
     /**
-     * Lee datos de configuración para la aplicació, a partir de un archivo JSON o con valores por defecto si hay errores.
-     * @param tipo - El tipo de configuración deseada
-     * @param archConfig - Archivo Json que contiene la configuración
-     * @return Un objeto JSON con la configuración del tipo especificado
+     * Lee datos de configuraciï¿½n para la aplicaciï¿½, a partir de un archivo JSON o con valores por defecto si hay errores.
+     * @param tipo - El tipo de configuraciï¿½n deseada
+     * @param archConfig - Archivo Json que contiene la configuraciï¿½n
+     * @return Un objeto JSON con la configuraciï¿½n del tipo especificado
      * 			NULL si hay un error en el archivo.
      */
     private JsonObject openConfig (String tipo, String archConfig)
@@ -174,19 +177,19 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 			FileReader file = new FileReader (archConfig);
 			JsonReader reader = new JsonReader ( file );
 			config = gson.fromJson(reader, JsonObject.class);
-			log.info ("Se encontró un archivo de configuración válido: " + tipo);
+			log.info ("Se encontrï¿½ un archivo de configuraciï¿½n vï¿½lido: " + tipo);
 		} 
 		catch (Exception e)
 		{
 //			e.printStackTrace ();
-			log.info ("NO se encontró un archivo de configuración válido");			
-			JOptionPane.showMessageDialog(null, "No se encontró un archivo de configuración de interfaz válido: " + tipo, "Superandes App", JOptionPane.ERROR_MESSAGE);
+			log.info ("NO se encontrï¿½ un archivo de configuraciï¿½n vï¿½lido");			
+			JOptionPane.showMessageDialog(null, "No se encontrï¿½ un archivo de configuraciï¿½n de interfaz vï¿½lido: " + tipo, "Superandes App", JOptionPane.ERROR_MESSAGE);
 		}	
         return config;
     }
     
     /**
-     * Método para configurar el frame principal de la aplicación
+     * Mï¿½todo para configurar el frame principal de la aplicaciï¿½n
      */
     private void configurarFrame(  )
     {
@@ -196,14 +199,14 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
     	
     	if ( guiConfig == null )
     	{
-    		log.info ( "Se aplica configuración por defecto" );			
+    		log.info ( "Se aplica configuraciï¿½n por defecto" );			
 			titulo = "Parranderos APP Default";
 			alto = 300;
 			ancho = 500;
     	}
     	else
     	{
-			log.info ( "Se aplica configuración indicada en el archivo de configuración" );
+			log.info ( "Se aplica configuraciï¿½n indicada en el archivo de configuraciï¿½n" );
     		titulo = guiConfig.get("title").getAsString();
 			alto= guiConfig.get("frameH").getAsInt();
 			ancho = guiConfig.get("frameW").getAsInt();
@@ -219,17 +222,17 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
     }
 
     /**
-     * Método para crear el menú de la aplicación con base em el objeto JSON leído
-     * Genera una barra de menú y los menús con sus respectivas opciones
-     * @param jsonMenu - Arreglo Json con los menùs deseados
+     * Mï¿½todo para crear el menï¿½ de la aplicaciï¿½n con base em el objeto JSON leï¿½do
+     * Genera una barra de menï¿½ y los menï¿½s con sus respectivas opciones
+     * @param jsonMenu - Arreglo Json con los menï¿½s deseados
      */
     private void crearMenu(  JsonArray jsonMenu )
     {    	
-    	// Creación de la barra de menús
+    	// Creaciï¿½n de la barra de menï¿½s
         menuBar = new JMenuBar();       
         for (JsonElement men : jsonMenu)
         {
-        	// Creación de cada uno de los menús
+        	// Creaciï¿½n de cada uno de los menï¿½s
         	JsonObject jom = men.getAsJsonObject(); 
 
         	String menuTitle = jom.get("menuTitle").getAsString();        	
@@ -239,7 +242,7 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
         	
         	for (JsonElement op : opciones)
         	{       	
-        		// Creación de cada una de las opciones del menú
+        		// Creaciï¿½n de cada una de las opciones del menï¿½
         		JsonObject jo = op.getAsJsonObject(); 
         		String lb =   jo.get("label").getAsString();
         		String event = jo.get("event").getAsString();
@@ -257,7 +260,7 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
     
 	
 	/* ****************************************************************
-	 * 			Métodos administrativos
+	 * 			Mï¿½todos administrativos
 	 *****************************************************************/
 	/**
 	 * Muestra el log de Parranderos
@@ -277,14 +280,14 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 	
 	/**
 	 * Limpia el contenido del log de parranderos
-	 * Muestra en el panel de datos la traza de la ejecución
+	 * Muestra en el panel de datos la traza de la ejecuciï¿½n
 	 */
 	public void limpiarLogSuperandes ()
 	{
-		// Ejecución de la operación y recolección de los resultados
+		// Ejecuciï¿½n de la operaciï¿½n y recolecciï¿½n de los resultados
 		boolean resp = limpiarArchivo ("superandes.log");
 
-		// Generación de la cadena de caracteres con la traza de la ejecución de la demo
+		// Generaciï¿½n de la cadena de caracteres con la traza de la ejecuciï¿½n de la demo
 		String resultado = "\n\n************ Limpiando el log de parranderos ************ \n";
 		resultado += "Archivo " + (resp ? "limpiado exitosamente" : "NO PUDO ser limpiado !!");
 		resultado += "\nLimpieza terminada";
@@ -294,14 +297,14 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 	
 	/**
 	 * Limpia el contenido del log de datanucleus
-	 * Muestra en el panel de datos la traza de la ejecución
+	 * Muestra en el panel de datos la traza de la ejecuciï¿½n
 	 */
 	public void limpiarLogDatanucleus ()
 	{
-		// Ejecución de la operación y recolección de los resultados
+		// Ejecuciï¿½n de la operaciï¿½n y recolecciï¿½n de los resultados
 		boolean resp = limpiarArchivo ("datanucleus.log");
 
-		// Generación de la cadena de caracteres con la traza de la ejecución de la demo
+		// Generaciï¿½n de la cadena de caracteres con la traza de la ejecuciï¿½n de la demo
 		String resultado = "\n\n************ Limpiando el log de datanucleus ************ \n";
 		resultado += "Archivo " + (resp ? "limpiado exitosamente" : "NO PUDO ser limpiado !!");
 		resultado += "\nLimpieza terminada";
@@ -311,16 +314,16 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 	
 	/**
 	 * Limpia todas las tuplas de todas las tablas de la base de datos de parranderos
-	 * Muestra en el panel de datos el número de tuplas eliminadas de cada tabla
+	 * Muestra en el panel de datos el nï¿½mero de tuplas eliminadas de cada tabla
 	 */
 	public void limpiarBD ()
 	{
 		try 
 		{
-    		// Ejecución de la demo y recolección de los resultados
+    		// Ejecuciï¿½n de la demo y recolecciï¿½n de los resultados
 			long eliminados [] = superandes.limpiarSuperandes();
 			
-			// Generación de la cadena de caracteres con la traza de la ejecución de la demo
+			// Generaciï¿½n de la cadena de caracteres con la traza de la ejecuciï¿½n de la demo
 			String resultado = "\n\n************ Limpiando la base de datos ************ \n";
 			resultado += eliminados [0] + " Gustan eliminados\n";
 			resultado += eliminados [1] + " Sirven eliminados\n";
@@ -342,7 +345,7 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 	}
 	
 	/**
-	 * Muestra la presentación general del proyecto
+	 * Muestra la presentaciï¿½n general del proyecto
 	 */
 	public void mostrarPresentacionGeneral ()
 	{
@@ -366,7 +369,7 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 	}
 	
 	/**
-	 * Muestra el script de creación de la base de datos
+	 * Muestra el script de creaciï¿½n de la base de datos
 	 */
 	public void mostrarScriptBD ()
 	{
@@ -382,7 +385,7 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 	}
 	
 	/**
-	 * Muestra la documentación Javadoc del proyectp
+	 * Muestra la documentaciï¿½n Javadoc del proyectp
 	 */
 	public void mostrarJavadoc ()
 	{
@@ -390,22 +393,22 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 	}
 	
 	/**
-     * Muestra la información acerca del desarrollo de esta apicación
+     * Muestra la informaciï¿½n acerca del desarrollo de esta apicaciï¿½n
      */
     public void acercaDe ()
     {
 		String resultado = "\n\n ************************************\n\n";
-		resultado += " * Universidad	de	los	Andes	(Bogotá	- Colombia)\n";
-		resultado += " * Departamento	de	Ingeniería	de	Sistemas	y	Computación\n";
-		resultado += " * Licenciado	bajo	el	esquema	Academic Free License versión 2.1\n";
+		resultado += " * Universidad	de	los	Andes	(Bogotï¿½	- Colombia)\n";
+		resultado += " * Departamento	de	Ingenierï¿½a	de	Sistemas	y	Computaciï¿½n\n";
+		resultado += " * Licenciado	bajo	el	esquema	Academic Free License versiï¿½n 2.1\n";
 		resultado += " * \n";		
 		resultado += " * Curso: isis2304 - Sistemas Transaccionales\n";
 		resultado += " * Proyecto: Parranderos Uniandes\n";
 		resultado += " * @version 1.0\n";
-		resultado += " * @author Germán Bravo\n";
+		resultado += " * @author Germï¿½n Bravo\n";
 		resultado += " * Julio de 2018\n";
 		resultado += " * \n";
-		resultado += " * Revisado por: Claudia Jiménez, Christian Ariza\n";
+		resultado += " * Revisado por: Claudia Jimï¿½nez, Christian Ariza\n";
 		resultado += "\n ************************************\n\n";
 
 		panelDatos.actualizarInterfaz(resultado);		
@@ -413,14 +416,14 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
     
 
 	/* ****************************************************************
-	 * 			Métodos privados para la presentación de resultados y otras operaciones
+	 * 			Mï¿½todos privados para la presentaciï¿½n de resultados y otras operaciones
 	 *****************************************************************/
     
 
     /**
-     * Genera una cadena de caracteres con la descripción de la excepcion e, haciendo énfasis en las excepcionsde JDO
-     * @param e - La excepción recibida
-     * @return La descripción de la excepción, cuando es javax.jdo.JDODataStoreException, "" de lo contrario
+     * Genera una cadena de caracteres con la descripciï¿½n de la excepcion e, haciendo ï¿½nfasis en las excepcionsde JDO
+     * @param e - La excepciï¿½n recibida
+     * @return La descripciï¿½n de la excepciï¿½n, cuando es javax.jdo.JDODataStoreException, "" de lo contrario
      */
 	private String darDetalleException(Exception e) 
 	{
@@ -434,15 +437,15 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 	}
 
 	/**
-	 * Genera una cadena para indicar al usuario que hubo un error en la aplicación
-	 * @param e - La excepción generada
-	 * @return La cadena con la información de la excepción y detalles adicionales
+	 * Genera una cadena para indicar al usuario que hubo un error en la aplicaciï¿½n
+	 * @param e - La excepciï¿½n generada
+	 * @return La cadena con la informaciï¿½n de la excepciï¿½n y detalles adicionales
 	 */
 	private String generarMensajeError(Exception e) 
 	{
-		String resultado = "************ Error en la ejecución\n";
+		String resultado = "************ Error en la ejecuciï¿½n\n";
 		resultado += e.getLocalizedMessage() + ", " + darDetalleException(e);
-		resultado += "\n\nRevise datanucleus.log y parranderos.log para más detalles";
+		resultado += "\n\nRevise datanucleus.log y parranderos.log para mï¿½s detalles";
 		return resultado;
 	}
 
@@ -469,7 +472,7 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 	}
 
 	/**
-	 * Abre el archivo dado como parámetro con la aplicación por defecto del sistema
+	 * Abre el archivo dado como parï¿½metro con la aplicaciï¿½n por defecto del sistema
 	 * @param nombreArchivo - El nombre del archivo que se quiere mostrar
 	 */
 	private void mostrarArchivo (String nombreArchivo)
@@ -486,11 +489,11 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 	}
 
 	/* ****************************************************************
-	 * 			Métodos de la Interacción
+	 * 			Mï¿½todos de la Interacciï¿½n
 	 *****************************************************************/
     /**
-     * Método para la ejecución de los eventos que enlazan el menú con los métodos de negocio
-     * Invoca al método correspondiente según el evento recibido
+     * Mï¿½todo para la ejecuciï¿½n de los eventos que enlazan el menï¿½ con los mï¿½todos de negocio
+     * Invoca al mï¿½todo correspondiente segï¿½n el evento recibido
      * @param pEvento - El evento del usuario
      */
     @Override
@@ -518,7 +521,7 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 		String nombre = JOptionPane.showInputDialog (this, "Nombre del proveedor?", "Adicionar Proveedor", JOptionPane.QUESTION_MESSAGE);
 		
 		if(nit.length()!=10&&nit.contains(".")||nit.contains("-")){
-			throw new Exception ("El NIT debe cumplir con los requerimientos, sin puntos y de tamaño 10 " );
+			throw new Exception ("El NIT debe cumplir con los requerimientos, sin puntos y de tamaï¿½o 10 " );
 		}
 		
 		if (nombre != null&&nit!=null&&nit.length()==10)
@@ -530,12 +533,12 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
     		}
     		String resultado = "En adicionarProveedor\n\n";
     		resultado += "Proveedor adicionado exitosamente: " + tb;
-			resultado += "\n Operación terminada";
+			resultado += "\n Operaciï¿½n terminada";
 			panelDatos.actualizarInterfaz(resultado);
 		}
 		else
 		{
-			panelDatos.actualizarInterfaz("Operación cancelada por el usuario");
+			panelDatos.actualizarInterfaz("Operaciï¿½n cancelada por el usuario");
 		}
 	} 
 	catch (Exception e) 
@@ -561,7 +564,7 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 			String[] tcategorias= {"ASEO", "ABARROTES", "PRENDASDEVESTIR", "MUEBLES", "HERRAMIENTAS", "ELECTRODOMESTICOS", "CONGELADOS"};
 			String tipoCategoria = (String) JOptionPane.showInputDialog(null,"Seleccione el tipo de producto de la categoria", "Adicionar producto", JOptionPane.DEFAULT_OPTION, null, tcategorias, tcategorias[0]);
 			
-			int es= JOptionPane.showConfirmDialog(this, "¿El producto esta disponible?", "Estado producto", JOptionPane.YES_NO_OPTION );
+			int es= JOptionPane.showConfirmDialog(this, "ï¿½El producto esta disponible?", "Estado producto", JOptionPane.YES_NO_OPTION );
 			boolean estado = (es ==0)?true:false;
 			
 			String codigoDeBarras = JOptionPane.showInputDialog (this, "Codigo de barras del producto", "Adicionar Producto", JOptionPane.QUESTION_MESSAGE);
@@ -575,7 +578,7 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 				String diai =  JOptionPane.showInputDialog(null,"Seleccione un dia (Fecha vencimiento)", "Adicionar Producto", JOptionPane.DEFAULT_OPTION, null, dias, dias[0]) + "";
 				String[] meses= {"enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "noviembre", "diciembre"};
 				String mesi = (String) JOptionPane.showInputDialog(null,"Seleccione un mes  (Fecha vencimiento)", "Adicionar Producto", JOptionPane.DEFAULT_OPTION, null, meses, meses[0]);
-				String anhoi = JOptionPane.showInputDialog (this, "Seleccione un año  (Fecha vencimiento)", "Adicionar Producto", JOptionPane.QUESTION_MESSAGE);
+				String anhoi = JOptionPane.showInputDialog (this, "Seleccione un aï¿½o  (Fecha vencimiento)", "Adicionar Producto", JOptionPane.QUESTION_MESSAGE);
 				
 				String posMesi= "0";
 				int i=0;
@@ -606,12 +609,12 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 				
 	    		String resultado = "En adicionarProducto\n\n";
 	    		resultado += "Producto adicionado exitosamente (Al lugar solicitado): " + tb;
-				resultado += "\n Operación terminada";
+				resultado += "\n Operaciï¿½n terminada";
 				panelDatos.actualizarInterfaz(resultado);
 			}
 			else
 			{
-				panelDatos.actualizarInterfaz("Operación cancelada por el usuario, llene todos los campos.");
+				panelDatos.actualizarInterfaz("Operaciï¿½n cancelada por el usuario, llene todos los campos.");
 			}
 		} 
 		catch (Exception e) 
@@ -658,12 +661,12 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 	    		}
 	    		String resultado = "En adicionarCliente\n\n";
 	    		resultado += "Cliente adicionado exitosamente: " + tb;
-				resultado += "\n Operación terminada";
+				resultado += "\n Operaciï¿½n terminada";
 				panelDatos.actualizarInterfaz(resultado);
 			}
 			else
 			{
-				panelDatos.actualizarInterfaz("Operación cancelada por el usuario, llene todos los campos.");
+				panelDatos.actualizarInterfaz("Operaciï¿½n cancelada por el usuario, llene todos los campos.");
 			}
 		} 
 		catch (Exception e) 
@@ -691,7 +694,7 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 		   }else{
 		   
 			String nombre = JOptionPane.showInputDialog (this, "Nombre de la Sucursal", "Adicionar Sucursal", JOptionPane.QUESTION_MESSAGE);
-			String tamanho = JOptionPane.showInputDialog (this, "Tamaño de la Sucursal", "Adicionar Sucursal", JOptionPane.QUESTION_MESSAGE);
+			String tamanho = JOptionPane.showInputDialog (this, "Tamaï¿½o de la Sucursal", "Adicionar Sucursal", JOptionPane.QUESTION_MESSAGE);
 
 			String tipoMercado = JOptionPane.showInputDialog (this, "Tipo de mercado de la Sucursal", "Adicionar Sucursal", JOptionPane.QUESTION_MESSAGE);
 			String ventas = JOptionPane.showInputDialog (this, "Ventas iniciales de la Sucursal", "Adicionar Sucursal", JOptionPane.QUESTION_MESSAGE);
@@ -714,12 +717,12 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 	    		}
 	    		String resultado = "En adicionarSucursal\n\n";
 	    		resultado += "Sucursal adicionado exitosamente: " + tb;
-				resultado += "\n Operación terminada";
+				resultado += "\n Operaciï¿½n terminada";
 				panelDatos.actualizarInterfaz(resultado);
 			}
 			else
 			{
-				panelDatos.actualizarInterfaz("Operación cancelada por el usuario, llene todos los campos.");
+				panelDatos.actualizarInterfaz("Operaciï¿½n cancelada por el usuario, llene todos los campos.");
 			}
 		   }
 		} 
@@ -779,12 +782,12 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 	    		}
 	    		String resultado = "En adicionarBodega\n\n";
 	    		resultado += "Bodega adicionado exitosamente: " + tb;
-				resultado += "\n Operación terminada";
+				resultado += "\n Operaciï¿½n terminada";
 				panelDatos.actualizarInterfaz(resultado);
 			}
 			else
 			{
-				panelDatos.actualizarInterfaz("Operación cancelada por el usuario, llene todos los campos.");
+				panelDatos.actualizarInterfaz("Operaciï¿½n cancelada por el usuario, llene todos los campos.");
 			}
 		   }
 		} 
@@ -847,12 +850,12 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 	    		}
 	    		String resultado = "En adicionarEstante\n\n";
 	    		resultado += "Estante adicionado exitosamente: " + tb;
-				resultado += "\n Operación terminada";
+				resultado += "\n Operaciï¿½n terminada";
 				panelDatos.actualizarInterfaz(resultado);
 			}
 			else
 			{
-				panelDatos.actualizarInterfaz("Operación cancelada por el usuario, llene todos los campos.");
+				panelDatos.actualizarInterfaz("Operaciï¿½n cancelada por el usuario, llene todos los campos.");
 			}
 		   }
 		} 
@@ -872,10 +875,10 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 			String diai =  JOptionPane.showInputDialog(null,"Seleccione un dia (Fecha inicial)", "Adicionar promocion", JOptionPane.DEFAULT_OPTION, null, dias, dias[0]) + "";
 			String[] meses= {"enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "noviembre", "diciembre"};
 			String mesi = (String) JOptionPane.showInputDialog(null,"Seleccione un mes  (Fecha inicial)", "Adicionar promocion", JOptionPane.DEFAULT_OPTION, null, meses, meses[0]);
-			String anhoi = JOptionPane.showInputDialog (this, "Seleccione un año  (Fecha inicial)", "Adicionar promocion", JOptionPane.QUESTION_MESSAGE);
+			String anhoi = JOptionPane.showInputDialog (this, "Seleccione un aï¿½o  (Fecha inicial)", "Adicionar promocion", JOptionPane.QUESTION_MESSAGE);
 			String diaf = JOptionPane.showInputDialog(null,"Seleccione un dia (Fecha final)", "Adicionar promocion", JOptionPane.DEFAULT_OPTION, null, dias, dias[0])+ "";
 			String mesf = (String) JOptionPane.showInputDialog(null,"Seleccione un mes  (Fecha final)", "Adicionar promocion", JOptionPane.DEFAULT_OPTION, null, meses, meses[0]);
-			String anhof = JOptionPane.showInputDialog (this, "Seleccione un año  (Fecha final)", "Adicionar promocion", JOptionPane.QUESTION_MESSAGE);
+			String anhof = JOptionPane.showInputDialog (this, "Seleccione un aï¿½o  (Fecha final)", "Adicionar promocion", JOptionPane.QUESTION_MESSAGE);
 			String[] estados= {"FINALIZADO", "VIGENTE"};
 			String estado = (String) JOptionPane.showInputDialog(null,"Seleccione un estado", "Adicionar promocion", JOptionPane.DEFAULT_OPTION, null, estados, estados[0]);
 			String[] tipos= {"PROMODESCUENTO", "PROMOPARTEDESCUENTO", "PROMOUNIDAD", "PROMOCANTIDAD"};
@@ -930,12 +933,12 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 	    		}
 	    		String resultado = "En adicionarProveedor\n\n";
 	    		resultado += "Proveedor adicionado exitosamente: " + tb;
-				resultado += "\n Operación terminada";
+				resultado += "\n Operaciï¿½n terminada";
 				panelDatos.actualizarInterfaz(resultado);
 			}
 			else
 			{
-				panelDatos.actualizarInterfaz("Operación cancelada por el usuario");
+				panelDatos.actualizarInterfaz("Operaciï¿½n cancelada por el usuario");
 			}
 		} 
 		catch (Exception e) 
@@ -993,12 +996,12 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 	    		}
 	    		String resultado = "En adicionarEstante\n\n";
 	    		resultado += "Estante adicionado exitosamente: " + null;
-				resultado += "\n Operación terminada";
+				resultado += "\n Operaciï¿½n terminada";
 				panelDatos.actualizarInterfaz(resultado);
 			}
 			else
 			{
-				panelDatos.actualizarInterfaz("Operación cancelada por el usuario, llene todos los campos.");
+				panelDatos.actualizarInterfaz("Operaciï¿½n cancelada por el usuario, llene todos los campos.");
 			}
 		   }
 		} 
@@ -1055,10 +1058,10 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 			String diai =  JOptionPane.showInputDialog(null,"Seleccione un dia (Fecha del pedido)", "Adicionar orden de pedido", JOptionPane.DEFAULT_OPTION, null, dias, dias[0]) + "";
 			String[] meses= {"enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "noviembre", "diciembre"};
 			String mesi = (String) JOptionPane.showInputDialog(null,"Seleccione un mes  (Fecha del pedido)", "Adicionar orden de pedido", JOptionPane.DEFAULT_OPTION, null, meses, meses[0]);
-			String anhoi = JOptionPane.showInputDialog (this, "Seleccione un año  (Fecha del pedido)", "Adicionar orden de pedido", JOptionPane.QUESTION_MESSAGE);
+			String anhoi = JOptionPane.showInputDialog (this, "Seleccione un aï¿½o  (Fecha del pedido)", "Adicionar orden de pedido", JOptionPane.QUESTION_MESSAGE);
 			String diaf = JOptionPane.showInputDialog(null,"Seleccione un dia (Fecha entrega estimada del pedido)", "Adicionar orden de pedido", JOptionPane.DEFAULT_OPTION, null, dias, dias[0])+ "";
 			String mesf = (String) JOptionPane.showInputDialog(null,"Seleccione un mes  (Fecha entrega estimada del pedido)", "Adicionar orden de pedido", JOptionPane.DEFAULT_OPTION, null, meses, meses[0]);
-			String anhof = JOptionPane.showInputDialog (this, "Seleccione un año  (Fecha entrega estimada del pedido)", "Adicionar orden de pedido", JOptionPane.QUESTION_MESSAGE);
+			String anhof = JOptionPane.showInputDialog (this, "Seleccione un aï¿½o  (Fecha entrega estimada del pedido)", "Adicionar orden de pedido", JOptionPane.QUESTION_MESSAGE);
 			String proveedor= (String) JOptionPane.showInputDialog(null,"Seleccione el proveedor de la orden de pedido", "Adicionar orden de pedido", JOptionPane.DEFAULT_OPTION, null, provedoresn, provedoresn[0]);
 			
 			
@@ -1111,7 +1114,7 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 			   
 		   }
 		   if(productosOfrecidos.size()==0){
-			   panelDatos.actualizarInterfaz("Operación cancelada, el proveedor seleccionado no tiene productos ofrecidos.");
+			   panelDatos.actualizarInterfaz("Operaciï¿½n cancelada, el proveedor seleccionado no tiene productos ofrecidos.");
 		   }
 		   String productoOfrecido= (String) JOptionPane.showInputDialog(null,"Seleccione el producto del proveedor seleccionado.", "Adicionar orden de pedido", JOptionPane.DEFAULT_OPTION, null, productosOfrecidosn, productosOfrecidosn[0]);
 		   
@@ -1139,12 +1142,12 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 	    		}
 	    		String resultado = "En  orden de pedido\n\n";
 	    		resultado += " orden de pedido adicionado exitosamente: " + tb;
-				resultado += "\n Operación terminada";
+				resultado += "\n Operaciï¿½n terminada";
 				panelDatos.actualizarInterfaz(resultado);
 			}
 			else
 			{
-				panelDatos.actualizarInterfaz("Operación cancelada por el usuario, llene todos los campos.");
+				panelDatos.actualizarInterfaz("Operaciï¿½n cancelada por el usuario, llene todos los campos.");
 			}
 		   }
 		} 
@@ -1169,7 +1172,7 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 		   
 		   if(pedidos.size()==0){
 			   if (!superandes.actualizadoOrdenPedido(idPedido)) {
-			JOptionPane.showMessageDialog(this, "Se debió haber registrado la orden de pedido ");
+			JOptionPane.showMessageDialog(this, "Se debiï¿½ haber registrado la orden de pedido ");
 			}			   
 		   }
 		   else{
@@ -1195,6 +1198,9 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 				 JOptionPane.showMessageDialog(this, consumidores.get(i).getId());
 			}
 		   List<VOProducto> productos=superandes.darVOProductos();
+			for (int i = 0; i < productos.size(); i++) {
+				JOptionPane.showMessageDialog(this,productos.get(i).getNombre());
+			}
 		   String unidadMedida = "";
 		   boolean existeConsumidor = false;
 		   boolean existeProducto = false;
@@ -1223,7 +1229,7 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 		   }
 		   else{
 			   
-			   String fecha = superandes.darFechaDeHoy();
+			   String fecha = superandes.darFechaCortaDeHoy();
 			   String formaPago = JOptionPane.showInputDialog (this, "Ingrese la forma de pago del cliente", JOptionPane.QUESTION_MESSAGE);
 			   String valorTotalS = JOptionPane.showInputDialog (this, "Ingrese el valor total de la venta", JOptionPane.QUESTION_MESSAGE);
 			   double valorTotal = Double.parseDouble(valorTotalS);
@@ -1342,12 +1348,12 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 	    		}
 	    		String resultado = "En  carrito de compraso\n\n";
 	    		resultado += " carrito de compras adicionado exitosamente: " + tb;
-				resultado += "\n Operación terminada";
+				resultado += "\n Operaciï¿½n terminada";
 				panelDatos.actualizarInterfaz(resultado);
 			}
 			else
 			{
-				panelDatos.actualizarInterfaz("Operación cancelada por el usuario, llene todos los campos.");
+				panelDatos.actualizarInterfaz("Operaciï¿½n cancelada por el usuario, llene todos los campos.");
 			}
 
 		   }
@@ -1366,7 +1372,7 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 		
 		 List<Consumidor> consumidores=superandes.darConsumidor();
 		if (consumidores.isEmpty()) {
-			 panelDatos.actualizarInterfaz("No existen ningún cliente. Es necesario agregar uno nuevo para añadir un producto al carrito de compras");
+			 panelDatos.actualizarInterfaz("No existen ningï¿½n cliente. Es necesario agregar uno nuevo para aï¿½adir un producto al carrito de compras");
 		}
 		else
 		{
@@ -1409,7 +1415,7 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 					JOptionPane.showMessageDialog(this,productos.get(i).getNombre());
 				}
 				
-				String productoAgregar = JOptionPane.showInputDialog (this, "Escriba el producto que quiere añadir al carrito de compras", JOptionPane.QUESTION_MESSAGE);
+				String productoAgregar = JOptionPane.showInputDialog (this, "Escriba el producto que quiere aï¿½adir al carrito de compras", JOptionPane.QUESTION_MESSAGE);
 				long producto = 0;
 				String unidadMedida = "";
 				boolean encontrado = false;
@@ -1445,7 +1451,7 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 					superandes.sacarCantidadDeProductoB(idConsumidor, producto, cantidadProducto);	
 					superandes.adicionarProductoEstante(estante.getId(), producto, estante.getNivelDeAbastecimiento()-nuevaCantidad);
 				}
-				JOptionPane.showMessageDialog(this, "Se ha añadido exitosamente el producto");
+				JOptionPane.showMessageDialog(this, "Se ha aï¿½adido exitosamente el producto");
 				
 			}
 			else
@@ -1549,12 +1555,12 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 	    		}
 	    		String resultado = "En  carrito de compraso\n\n";
 	    		resultado += "Producto eliminado del carrito de compras adicionado exitosamente: " + tb;
-				resultado += "\n Operación terminada";
+				resultado += "\n Operaciï¿½n terminada";
 				panelDatos.actualizarInterfaz(resultado);
 			}
 			else
 			{
-				panelDatos.actualizarInterfaz("Operación cancelada por el usuario, llene todos los campos.");
+				panelDatos.actualizarInterfaz("Operaciï¿½n cancelada por el usuario, llene todos los campos.");
 			}
 
 		   }
@@ -1667,12 +1673,12 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
   		}
   		String resultado = "En agregar el producto al estante\n\n";
   		resultado += "Agregar el producto al estante adicionado exitosamente: " + tb;
-			resultado += "\n Operación terminada";
+			resultado += "\n Operaciï¿½n terminada";
 			panelDatos.actualizarInterfaz(resultado);
 		}
 		else
 		{
-			panelDatos.actualizarInterfaz("Operación cancelada por el usuario, llene todos los campos.");
+			panelDatos.actualizarInterfaz("Operaciï¿½n cancelada por el usuario, llene todos los campos.");
 		}
 	}else if(donde.equals( "BODEGA")){
 		List<Bodega> bodegas= superandes.darBodegasPorTipoSucursal(tipoCategoria,sucuId );
@@ -1710,12 +1716,12 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
   		}
   		String resultado = "En agregar el producto a la bodega\n\n";
   		resultado += "Agregar el producto a la bodega adicionado exitosamente: " + tb;
-			resultado += "\n Operación terminada";
+			resultado += "\n Operaciï¿½n terminada";
 			panelDatos.actualizarInterfaz(resultado);
 		}
 		else
 		{
-			panelDatos.actualizarInterfaz("Operación cancelada por el usuario, llene todos los campos.");
+			panelDatos.actualizarInterfaz("Operaciï¿½n cancelada por el usuario, llene todos los campos.");
 		}
 		
 	}
@@ -1735,7 +1741,7 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 				 JOptionPane.showMessageDialog(this, productos.get(i).getProducto());
 			}
 		   if (productos.isEmpty()) {
-			   JOptionPane.showMessageDialog(this, "El carrito de compras no tiene ningún producto para vender");
+			   JOptionPane.showMessageDialog(this, "El carrito de compras no tiene ningï¿½n producto para vender");
 		   }
 		   else
 		   {
@@ -1887,12 +1893,12 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 	    		}
 	    		String resultado = "En  carrito de compraso\n\n";
 	    		resultado += "Productos eliminados del carrito de compras exitosamente: " + tb;
-				resultado += "\n Operación terminada";
+				resultado += "\n Operaciï¿½n terminada";
 				panelDatos.actualizarInterfaz(resultado);
 			}
 			else
 			{
-				panelDatos.actualizarInterfaz("Operación cancelada por el usuario, llene todos los campos.");
+				panelDatos.actualizarInterfaz("Operaciï¿½n cancelada por el usuario, llene todos los campos.");
 			}
 
 		   }
@@ -1906,6 +1912,9 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 	   
 	   
 	   
+ }
+ public void RFF17_RecolectarProductosAbandonados(){
+	 
  }
  public void RFC1_DineroRecolectado(){
 	   
@@ -1927,7 +1936,28 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 			   
 		   }
 		   else{
+			   String fechaInicial= JOptionPane.showInputDialog (this, "Ingrese la fecha inicial. (Ej: 03/12/2016)", "Fecha inicial", JOptionPane.QUESTION_MESSAGE);
+			   String fechaFinal = JOptionPane.showInputDialog (this, "Ingrese la fecha final. (Ej: 22/12/2016)", "Fecha final", JOptionPane.QUESTION_MESSAGE);
 			   
+			   List<VOVenta> ventas=superandes.darVOVentas();
+			   
+			   String mensaje = "El dinero recolectado por ventas dentro de ese rango de fecha en cada Sucursal fueron:\n";
+			   for (int j = 1; j <= ventas.size(); j++) {
+				   if (ventas.get(i).getFecha().compareTo(fechaInicial)>=0 || ventas.get(i).getFecha().compareTo(fechaFinal)<=0) {
+					
+					mensaje += i + ". " + sucursales.get(i).getVentasTotales() + "\n";
+					
+				   }
+			   }
+			   JOptionPane.showMessageDialog(this, mensaje);
+			   
+			   String mensaje1 = "El dinero recolectado por ventas en el aÃ±o corrido en cada Sucursal fueron:\n";
+			   for (int j = 0; j < ventas.size(); j++) {
+				   String hoy = superandes.darFechaCortaDeHoy();
+				   if (ventas.get(i).getFecha().compareTo(fechaInicial)>=0 || ventas.get(i).getFecha().compareTo(hoy)<=0) {
+						mensaje1 += i + ". " + sucursales.get(i).getVentasTotales() + "\n";
+					   }
+			   }JOptionPane.showMessageDialog(this, mensaje1);
 			
 		   }
 		} 
@@ -1948,7 +1978,7 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 			   
 			   
 		for (int i = 0; i < promociones.size(); i++) {
-			System.out.println(promociones.get(i).getCantidadP());			
+					
 		}
 		
 	   } 
@@ -2032,7 +2062,7 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 		
 		}
     		
-			resultado += "\n Operación terminada";
+			resultado += "\n Operaciï¿½n terminada";
 			panelDatos.actualizarInterfaz(resultado);
 		
 	   }
@@ -2073,7 +2103,7 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 		   }
 			else
 			{
-				panelDatos.actualizarInterfaz("Operación cancelada por el usuario, llene todos los campos.");
+				panelDatos.actualizarInterfaz("Operaciï¿½n cancelada por el usuario, llene todos los campos.");
 			}
 		   
 		} 
@@ -2139,7 +2169,7 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 		}
 		else
 		{
-			panelDatos.actualizarInterfaz("Operación cancelada por el usuario, llene todos los campos.");
+			panelDatos.actualizarInterfaz("Operaciï¿½n cancelada por el usuario, llene todos los campos.");
 		}
 	   }
 	} 
@@ -2155,9 +2185,9 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
    public void RFC6_VentasUsuarioDado(){
 		  
 	   try{		   
+		   String idConsumidor = JOptionPane.showInputDialog (this, "Id del consumidor", JOptionPane.QUESTION_MESSAGE);
 		   List<VOVenta> ventas=superandes.darVOVentas();
 		   boolean existeConsumidor = false;
-		   String idConsumidor = JOptionPane.showInputDialog (this, "Id del consumidor", JOptionPane.QUESTION_MESSAGE);
 		   for (int i = 0; i < ventas.size() && !existeConsumidor; i++) {
 			   if (ventas.get(i).getConsumidor() == (Long.parseLong(idConsumidor))) {
 				existeConsumidor = true;
@@ -2169,14 +2199,15 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 			JOptionPane.showMessageDialog(this, "El consumidor no ha realizado ninguna venta");
 		    }
 		   else{
+			   String mensaje = "";
 			   String fechaInicial = JOptionPane.showInputDialog (this, "Ingrese la fecha inicial (Ej: 22/01/2018)", JOptionPane.QUESTION_MESSAGE);
 			   String fechaFinal = JOptionPane.showInputDialog (this, "Ingrese la fecha final (Ej: 03/11/2018)", JOptionPane.QUESTION_MESSAGE);
 			   for (int i = 0; i < ventas.size() && (ventas.get(i).getConsumidor() == (Long.parseLong(idConsumidor))); i++) {
 				if (ventas.get(i).getFecha().compareTo(fechaInicial)>=0 || ventas.get(i).getFecha().compareTo(fechaFinal)<=0) {
-					JOptionPane.showMessageDialog(null, "Venta#"+ i + " " + ventas.get(i).getId()
-                            + "\n");
+					mensaje += "Venta#"+ i + " " + ventas.get(i).getId()+ "\n";
+					
 				}
-			}
+			}JOptionPane.showMessageDialog(null, mensaje);
 		   }
 		   
 		} 
@@ -2187,6 +2218,121 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 			panelDatos.actualizarInterfaz(resultado);
 		}
    }
+
+   
+	public void RFC7_AnalisisDeLaOperacion()
+	{
+		try{		   
+			 
+			List<VOSucursal> sucursales=superandes.darVOSucursales();
+		    
+			   String[] sucursalesn= new String[sucursales.size()];
+			     
+			   int i=0;
+			   for (VOSucursal voSucursal :superandes.darSucursales()) {
+				   sucursalesn[i]=voSucursal.getNombre();
+				   i=i+1;
+				   
+			   }
+			   if(sucursales.size()==0){
+				   System.out.println("voy4");
+				   JOptionPane.showMessageDialog(this, "Agrege una Sucursal antes de hacer esta consulta (Menu requerimientos F).");
+				   
+			   }else{
+				   String[] pTemporalidad= {"1", "7", "30", "365", "3650"};
+					String sTemporalidad = (String) JOptionPane.showInputDialog(null,"Seleccione la temporalidad en dias", "Analisis de operacion", JOptionPane.DEFAULT_OPTION, null, pTemporalidad, pTemporalidad[0]);
+					
+					String[] tcategorias= {"ASEO", "ABARROTES", "PRENDASDEVESTIR", "MUEBLES", "HERRAMIENTAS", "ELECTRODOMESTICOS", "CONGELADOS"};
+					String tipoCategoria = (String) JOptionPane.showInputDialog(null,"Seleccione el tipo de producto", "Tipo producto", JOptionPane.DEFAULT_OPTION, null, tcategorias, tcategorias[0]);
+					
+					String[] tOpciones= {"MAYORDEMANDA", "MAYORESINGRESOS", "MENORESINGRESOS"};
+					String opcion = (String) JOptionPane.showInputDialog(null,"Seleccione el tipo de consulta", "Analisis de operacion", JOptionPane.DEFAULT_OPTION, null, tOpciones, tOpciones[0]);
+					
+					
+					VOSucursal sucursal = null;
+					String sSucursal= (String) JOptionPane.showInputDialog(null,"Seleccione la sucursal", "Analisis de operacion", JOptionPane.DEFAULT_OPTION, null, sucursalesn, sucursalesn[0]);
+					for (int j = 0; j < sucursales.size(); j++) {
+						if (sSucursal.equals(sucursales.get(i).getNombre())) {
+							sucursal = sucursales.get(i);
+						}
+					}
+					List<VOVenta> ventas=superandes.darVOVentas();
+					List<VOProductoVenta> productos = superandes.darVOProductoVentaes();
+					int temporalidad = Integer.parseInt(sTemporalidad);
+					
+					productos.sort(Comparator.comparing(VOProductoVenta::getCantidadVenta));
+					ventas.sort(Comparator.comparing(VOVenta::getValorTotal));
+					
+					
+					String mensaje = "";
+					if (opcion.equals("MAYORDEMANDA")) {
+						List<String> fechasMayorDemanda = new ArrayList<>();
+						int contador = 0;
+						for (int j = 0; j < ventas.size(); j++) {
+							if (ventas.get(i).getSucursal() == sucursal.getId()) {
+								fechasMayorDemanda.add(ventas.get(i).getFecha());
+								if (!ventas.get(i).getFecha().equals(ventas.get(i+1).getFecha())) {
+									if (contador == temporalidad) {
+										break;
+									}
+									contador++;
+								}
+							}
+						}
+						for (int j = 1; j <= fechasMayorDemanda.size(); j++) {
+							mensaje += j + ". " + fechasMayorDemanda.get(i) + "\n"; 
+							   
+						}
+						JOptionPane.showMessageDialog(this, mensaje);
+						
+					}else if (opcion.equals("MAYORESINGRESOS")) {
+						int contador = 0;
+						List<Integer> fechasMayoresIngresos = new ArrayList<>();
+						for (int j = 0; j < productos.size(); j++) {
+								fechasMayoresIngresos.add(productos.get(i).getCantidadVenta());
+								if (productos.get(i).getCantidadVenta() != productos.get(i+1).getCantidadVenta()) {
+									if (contador == temporalidad) {
+										break;
+									}
+									contador++;
+								}
+						}
+						for (int j = 1; j <= fechasMayoresIngresos.size(); j++) {
+							mensaje += j + ". " + fechasMayoresIngresos.get(i) + "\n"; 
+							   
+						}
+						JOptionPane.showMessageDialog(this, mensaje);
+					}else
+					{
+						Collections.reverse(productos);
+						int contador = 0;
+						List<Integer> fechasMenoresIngresos = new ArrayList<>();
+						for (int j = 0; j < productos.size(); j++) {
+								fechasMenoresIngresos.add(productos.get(i).getCantidadVenta());
+								if (productos.get(i).getCantidadVenta() != productos.get(i+1).getCantidadVenta()) {
+									if (contador == temporalidad) {
+										break;
+									}
+									contador++;
+								}
+						}
+						for (int j = 1; j <= fechasMenoresIngresos.size(); j++) {
+							mensaje += j + ". " + fechasMenoresIngresos.get(i) + "\n"; 
+							   
+						}
+						JOptionPane.showMessageDialog(this, mensaje);
+					}
+			   }
+			   
+			} 
+		catch (Exception e) 
+		{
+//			e.printStackTrace();
+			String resultado = generarMensajeError(e);
+			panelDatos.actualizarInterfaz(resultado);
+		}
+	}
+   
 public void RFC8_EncontrarClientesFrecuentes(){
 	try{
 		 List<VOSucursal> sucursales=superandes.darVOSucursales();
@@ -2388,12 +2534,12 @@ public void RFC8_EncontrarClientesFrecuentes(){
     		}
     		String resultado = "En adicionarProductoOfrecido\n\n";
     		resultado += "ProductoOfrecido adicionado exitosamente: " + tb;
-			resultado += "\n Operación terminada";
+			resultado += "\n Operaciï¿½n terminada";
 			panelDatos.actualizarInterfaz(resultado);
 		}
 		else
 		{
-			panelDatos.actualizarInterfaz("Operación cancelada por el usuario, llene todos los campos.");
+			panelDatos.actualizarInterfaz("Operaciï¿½n cancelada por el usuario, llene todos los campos.");
 		}
 	   }
 	} 
@@ -2425,12 +2571,12 @@ public void RFC8_EncontrarClientesFrecuentes(){
    		}
    		String resultado = "En adicionarCiudad\n\n";
    		resultado += "Ciudad adicionado exitosamente: " + tb;
-			resultado += "\n Operación terminada";
+			resultado += "\n Operaciï¿½n terminada";
 			panelDatos.actualizarInterfaz(resultado);
 		}
 		else
 		{
-			panelDatos.actualizarInterfaz("Operación cancelada por el usuario");
+			panelDatos.actualizarInterfaz("Operaciï¿½n cancelada por el usuario");
 		}
 	} 
 	catch (Exception e) 
@@ -2445,7 +2591,7 @@ public void RFC8_EncontrarClientesFrecuentes(){
 	   try 
 		{
 			String nombre = JOptionPane.showInputDialog (this, "Usuario", "Adicionar administrador", JOptionPane.QUESTION_MESSAGE);
-			String con = JOptionPane.showInputDialog (this, "Contraseña", "Adicionar administrador", JOptionPane.QUESTION_MESSAGE);
+			String con = JOptionPane.showInputDialog (this, "Contraseï¿½a", "Adicionar administrador", JOptionPane.QUESTION_MESSAGE);
 			String cantRecompra = JOptionPane.showInputDialog (this, "Cantidad recompra", "Adicionar administrador", JOptionPane.QUESTION_MESSAGE);
 			
 			
@@ -2458,12 +2604,12 @@ public void RFC8_EncontrarClientesFrecuentes(){
 	   		}
 	   		String resultado = "En adicionarAdministrador\n\n";
 	   		resultado += "Administrador adicionado exitosamente: " + tb;
-				resultado += "\n Operación terminada";
+				resultado += "\n Operaciï¿½n terminada";
 				panelDatos.actualizarInterfaz(resultado);
 			}
 			else
 			{
-				panelDatos.actualizarInterfaz("Operación cancelada por el usuario");
+				panelDatos.actualizarInterfaz("Operaciï¿½n cancelada por el usuario");
 			}
 		} 
 		catch (Exception e) 
@@ -2477,8 +2623,8 @@ public void RFC8_EncontrarClientesFrecuentes(){
 	 * 			Programa principal
 	 *****************************************************************/
     /**
-     * Este método ejecuta la aplicación, creando una nueva interfaz
-     * @param args Arreglo de argumentos que se recibe por línea de comandos
+     * Este mï¿½todo ejecuta la aplicaciï¿½n, creando una nueva interfaz
+     * @param args Arreglo de argumentos que se recibe por lï¿½nea de comandos
      */
     public static void main( String[] args )
     {
