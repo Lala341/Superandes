@@ -92,6 +92,10 @@
                   {
                       "label": "Mostrar ventas de un usuario dado",
                       "event": "RFC6_VentasUsuarioDado"
+				  },
+                  {
+                      "label": "Mostrar clientes frecuentes dada una sucursal",
+                      "event": "RFC8_EncontrarClientesFrecuentes"
                   }
               ]
           },

@@ -425,14 +425,14 @@ public class PersistenciaSuperandes {
 	 */
 	public String darTablaVenta ()
 	{
-		return tablas.get (18);
+		return tablas.get (17);
 	}
 	/**
 	 * @return La cadena de caracteres con el nombre de la tabla
 	 */
 	public String darTablaFactura ()
 	{
-		return tablas.get (17);
+		return tablas.get (18);
 	}
 	/**
 	 * @return La cadena de caracteres con el nombre de la tabla
@@ -2173,6 +2173,10 @@ public class PersistenciaSuperandes {
 		return sqlVenta.darLista(pmf.getPersistenceManager());
 	}
  
+	public List<Venta> darVentasPorSucursal (long id)
+	{
+		return sqlVenta.darListaPorSucursal(pmf.getPersistenceManager(), id);
+	}
 	
  
 	/**
