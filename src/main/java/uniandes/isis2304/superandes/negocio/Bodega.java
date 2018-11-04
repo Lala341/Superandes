@@ -158,6 +158,14 @@ public class Bodega implements VOBodega {
 
 	
 
+	public String getTipoProducto() {
+		return tipoProducto;
+	}
+
+	public void setTipoProducto(String tipoProducto) {
+		this.tipoProducto = tipoProducto;
+	}
+
 	@Override
 	/**
 	 * @return Una cadena de caracteres con todos los atributos

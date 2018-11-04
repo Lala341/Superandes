@@ -12,12 +12,12 @@ public interface VOProducto {
 	/**
 	 * @return the nombre
 	 */
-	public String getnombre() ;
+	public String getNombre() ;
 
 	/**
 	 * @param nombre the nombre to set
 	 */
-	public void setnombre(String nombre);
+	public void setNombre(String nombre);
 
 	/**
 	 * @return the marca
@@ -140,9 +140,5 @@ public interface VOProducto {
 	 */
 	public String toString();
 
-	public String getNombre();
-	
-
-	public void setNombre(String n);
 	
 }

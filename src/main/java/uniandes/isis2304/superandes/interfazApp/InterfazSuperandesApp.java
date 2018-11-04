@@ -55,6 +55,7 @@ import uniandes.isis2304.superandes.negocio.Sucursal;
 import uniandes.isis2304.superandes.negocio.Superandes;
 import uniandes.isis2304.superandes.negocio.VOAdministrador;
 import uniandes.isis2304.superandes.negocio.VOBodega;
+import uniandes.isis2304.superandes.negocio.VOCarritoCompras;
 import uniandes.isis2304.superandes.negocio.VOCiudad;
 import uniandes.isis2304.superandes.negocio.VOConsumidor;
 import uniandes.isis2304.superandes.negocio.VOEstante;
@@ -66,6 +67,7 @@ import uniandes.isis2304.superandes.negocio.VOProductoOfrecido;
 import uniandes.isis2304.superandes.negocio.VOPromocion;
 import uniandes.isis2304.superandes.negocio.VOProveedores;
 import uniandes.isis2304.superandes.negocio.VOSucursal;
+import uniandes.isis2304.superandes.negocio.VOVenta;
 import uniandes.isis2304.superandes.negocio.Venta;
 
 
@@ -1186,10 +1188,13 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
    public void RF11_RegistrarVenta(){
 	   
 	   try {
-		   List<VOConsumidor> consumidores=superandes.darVOConsumidores();
-		   List<VOProductoCarritoCompras> productos=superandes.darVOProductoCarritoComprases();
-		   String unidadMedida = "";
 		   String nombreProducto = JOptionPane.showInputDialog (this, "Nombre de producto a vender", JOptionPane.QUESTION_MESSAGE);
+		   List<Consumidor> consumidores=superandes.darConsumidor();
+		   for (int i = 0; i < consumidores.size(); i++) {
+				 JOptionPane.showMessageDialog(this, consumidores.get(i).getId());
+			}
+		   List<VOProducto> productos=superandes.darVOProductos();
+		   String unidadMedida = "";
 		   boolean existeConsumidor = false;
 		   boolean existeProducto = false;
 		   long producto = 0;
@@ -1201,23 +1206,23 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 			}
 		   }
 		   for (int i = 0; i < productos.size() && !existeProducto; i++) {
-			   if (productos.get(i).equals(nombreProducto)) {
+			   if (productos.get(i).getNombre().equals(nombreProducto)) {
 				existeProducto = false;
-				unidadMedida = productos.get(i).getUnidadDeMedida();
-				producto = productos.get(i).getProducto();
+				unidadMedida = productos.get(i).getUnidadMedida();
+				producto = productos.get(i).getId();
 			}
 		   }
 		   
 		   if(consumidores.size()==0){
 			   if (!existeConsumidor) {
-			JOptionPane.showMessageDialog(this, "El consumidor debe de existir antes de registrar una venta ");
+				  JOptionPane.showMessageDialog(this, "El consumidor debe de existir antes de registrar una venta ");
 			}if (!existeProducto) {
 				JOptionPane.showMessageDialog(this, "El producto debe de existir antes de registrar una venta.");
 				}			   
 		   }
 		   else{
 			   
-			   String fecha = JOptionPane.showInputDialog (this, "Ingrese la fecha de hoy", JOptionPane.QUESTION_MESSAGE);
+			   String fecha = superandes.darFechaDeHoy();
 			   String formaPago = JOptionPane.showInputDialog (this, "Ingrese la forma de pago del cliente", JOptionPane.QUESTION_MESSAGE);
 			   String valorTotalS = JOptionPane.showInputDialog (this, "Ingrese el valor total de la venta", JOptionPane.QUESTION_MESSAGE);
 			   double valorTotal = Double.parseDouble(valorTotalS);
@@ -1356,8 +1361,106 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 	   
    }
  public void RFF13_AdicionarUnProductoCarritoCompras(){
-	
-	   
+	 try {
+		
+		 List<Consumidor> consumidores=superandes.darConsumidor();
+		if (consumidores.isEmpty()) {
+			 panelDatos.actualizarInterfaz("No existen ningún cliente. Es necesario agregar uno nuevo para añadir un producto al carrito de compras");
+		}
+		else
+		{
+			String idCon = JOptionPane.showInputDialog (this, "Para acceder al carrito de compras ingrese el Id del consumidor", JOptionPane.QUESTION_MESSAGE);
+			long idConsumidor = Long.parseLong(idCon);
+			List<VOCarritoCompras> carritos=superandes.darVOCarritoCompras();
+			VOCarritoCompras carritoPorId = null;
+			for (int i = 0; i < carritos.size(); i++) {
+				 JOptionPane.showMessageDialog(this, carritos.get(i).toString());
+				   
+				if (idConsumidor == carritos.get(i).getConsumidor()) {
+					carritoPorId = carritos.get(i);				
+				}
+			}
+			if(carritoPorId!=null){
+				String[] tcategorias= {"ASEO", "ABARROTES", "PRENDASDEVESTIR", "MUEBLES", "HERRAMIENTAS", "ELECTRODOMESTICOS", "CONGELADOS"};
+				String tipoCategoria = (String) JOptionPane.showInputDialog(null,"Seleccione el tipo de producto", "Tipo producto", JOptionPane.DEFAULT_OPTION, null, tcategorias, tcategorias[0]);
+				
+				
+				List<VOBodega> bodegas = superandes.darVOBodegas();
+				List<VOEstante> estantes = superandes.darVOEstantes();
+				long idBodega = 0;
+				VOEstante estante = null;
+				boolean encontro = false;
+				for (int i = 0; i < bodegas.size() && !encontro; i++) {
+					if (bodegas.get(i).getTipoProducto().equals(tipoCategoria)) {
+						encontro = true;
+						idBodega = bodegas.get(i).getId();
+					}
+				}
+				encontro = false;
+				for (int i = 0; i < estantes.size() && !encontro; i++) {
+					if (estantes.get(i).getTipoProducto().equals(tipoCategoria)) {
+						encontro = true;
+						estante = estantes.get(i);
+					}
+				}
+				List<VOProducto> productos = superandes.darVOProductos();
+				for (int i = 0; i < productos.size(); i++) {
+					JOptionPane.showMessageDialog(this,productos.get(i).getNombre());
+				}
+				
+				String productoAgregar = JOptionPane.showInputDialog (this, "Escriba el producto que quiere añadir al carrito de compras", JOptionPane.QUESTION_MESSAGE);
+				long producto = 0;
+				String unidadMedida = "";
+				boolean encontrado = false;
+				
+				
+				for (int i = 0; i < productos.size(); i++) {
+					JOptionPane.showMessageDialog(this,productos.get(i).getNombre());
+				}
+				
+				for (int j = 0; j < productos.size() && !encontrado; j++) {
+					
+					if (productos.get(j).getNombre().equals(productoAgregar)) {
+						producto = productos.get(j).getId();
+						unidadMedida = productos.get(j).getUnidadMedida();
+						encontrado = true;
+					}
+				}
+				
+				String cantidadP = JOptionPane.showInputDialog (this, "Ingrese la cantidad del producto", JOptionPane.QUESTION_MESSAGE);
+				int cantidadProducto = Integer.parseInt(cantidadP);
+				superandes.adicionarProductoCarritoCompras(carritoPorId.getId(), producto, cantidadProducto, unidadMedida);
+				
+				List<ProductoCarritoCompras> pp = superandes.darProductoCarritoCompras();
+				for (int i = 0; i < pp.size(); i++) {
+					JOptionPane.showMessageDialog(this,pp.get(i).getCantidadProducto());
+				}
+				
+				int cant = estante.getCantidadProductos();
+				int nuevaCantidad = cant - cantidadProducto;			
+				
+				
+				if (nuevaCantidad <= estante.getNivelDeAbastecimiento()) {
+					superandes.sacarCantidadDeProductoB(idConsumidor, producto, cantidadProducto);	
+					superandes.adicionarProductoEstante(estante.getId(), producto, estante.getNivelDeAbastecimiento()-nuevaCantidad);
+				}
+				JOptionPane.showMessageDialog(this, "Se ha añadido exitosamente el producto");
+				
+			}
+			else
+			{
+				panelDatos.actualizarInterfaz("El consumidor no tiene un carrito de compras creado");
+			}
+		}
+		 
+	} 
+	catch (Exception e) 
+	{
+	 //e.printStackTrace();
+		String resultado = generarMensajeError(e);
+		panelDatos.actualizarInterfaz(e.getMessage());
+	}
+
  }
  public void RFF14_EliminarUnProductoCarritoCompras(){
 	 
@@ -1410,7 +1513,7 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 					     
 						   int i=0;
 						   for (ProductoCarritoCompras voSucursal :productos) {
-							   productosn[i]=superandes.darProductoPorId(voSucursal.getProducto()).getnombre();
+							   productosn[i]=superandes.darProductoPorId(voSucursal.getProducto()).getNombre();
 							   i=i+1;
 							   
 						   }
@@ -1419,7 +1522,7 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 						   ProductoCarritoCompras pro=null;
 						   i=0;
 						   for (ProductoCarritoCompras voSucursal :productos) {
-							   if(producto.equals(superandes.darProductoPorId(voSucursal.getProducto()).getnombre())){
+							   if(producto.equals(superandes.darProductoPorId(voSucursal.getProducto()).getNombre())){
 								   productoId=voSucursal.getProducto();
 								   pro=voSucursal;
 								   break;
@@ -1624,7 +1727,106 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
  
  public void RFF15_PagarCompra(){
 	   
-	   
+	 try {
+		   String nombreProducto = JOptionPane.showInputDialog (this, "P1", JOptionPane.QUESTION_MESSAGE);
+		   List<VOProductoCarritoCompras> productos=superandes.darVOProductoCarritoComprases();
+		   for (int i = 0; i < productos.size(); i++) {
+				 JOptionPane.showMessageDialog(this, productos.get(i).getProducto());
+			}
+		   if (productos.isEmpty()) {
+			   JOptionPane.showMessageDialog(this, "El carrito de compras no tiene ningún producto para vender");
+		   }
+		   else
+		   {
+			   String idCon = JOptionPane.showInputDialog (this, "Ingrese el Id del consumidor", JOptionPane.QUESTION_MESSAGE);
+				long idConsumidor = Long.parseLong(idCon);
+				List<VOCarritoCompras> carritos=superandes.darVOCarritoCompras();
+				VOCarritoCompras carritoPorId = null;
+				long idCarrito = 0;
+				for (int i = 0; i < carritos.size(); i++) {
+					 JOptionPane.showMessageDialog(this, carritos.get(i).toString());
+					   
+					if (idConsumidor == carritos.get(i).getConsumidor()) {
+						carritoPorId = carritos.get(i);
+						idCarrito = carritos.get(i).getId();
+					}
+				}
+				if(carritoPorId!=null){
+					String unidadMedida = "";
+					long idProducto = 0;
+					
+					String fecha = superandes.darFechaDeHoy();
+					String productoAgregar = JOptionPane.showInputDialog (this, "Escriba el nombre de producto que quiere comprar", JOptionPane.QUESTION_MESSAGE);
+					boolean encontrado = false;
+					
+					List<VOProducto> productosP = superandes.darVOProductos();
+					for (int i = 0; i < productosP.size(); i++) {
+						JOptionPane.showMessageDialog(this,productosP.get(i).getNombre());
+					}
+					
+					for (int j = 0; j < productosP.size() && !encontrado; j++) {
+						
+						if (productosP.get(j).getNombre().equals(productoAgregar)) {
+							idProducto = productosP.get(j).getId();
+							unidadMedida = productosP.get(j).getUnidadMedida();
+							encontrado = true;
+						}
+					}
+					int cantidadProducto = 0;
+					for (int i = 0; i < productos.size(); i++) {
+						if (productos.get(i).getProducto() == idProducto) {
+							cantidadProducto = productos.get(i).getCantidadProducto();
+						}
+					}
+					   String formaPago = JOptionPane.showInputDialog (this, "Ingrese la forma de pago del cliente", JOptionPane.QUESTION_MESSAGE);
+					   String valorTotalS = JOptionPane.showInputDialog (this, "Ingrese el valor total de la venta", JOptionPane.QUESTION_MESSAGE);
+					   double valorTotal = Double.parseDouble(valorTotalS);
+					   String descripcionFactura = JOptionPane.showInputDialog (this, "Ingrese una descripcion de la factura", JOptionPane.QUESTION_MESSAGE);
+					   List<VOSucursal> sucursales=superandes.darVOSucursales();
+					    
+					   String[] sucursalesn= new String[sucursales.size()];
+					     
+					   int i=0;
+					   for (VOSucursal voSucursal :superandes.darSucursales()) {
+						   sucursalesn[i]=voSucursal.getNombre();
+						   i=i+1;
+						   
+					   }
+					   if(sucursales.size()==0){
+
+						   JOptionPane.showMessageDialog(this, "Agrege una Sucursal antes de registrar un producto (Menu requerimientos F).");
+						   
+					   }
+					String sucursal= (String) JOptionPane.showInputDialog(null,"Seleccione la sucursal de la venta", "Venta", JOptionPane.DEFAULT_OPTION, null, sucursalesn, sucursalesn[0]);
+					Sucursal sucu=null;
+					i=0;
+					for (String string : sucursalesn) {
+						if(string.equals(sucursal)){
+							sucu=(Sucursal) sucursales.get(i);
+							break;
+						}
+						i=i+1;
+					}
+					     
+					Venta venta = superandes.adicionarVenta(fecha, formaPago, valorTotal, idConsumidor, sucu.getId());
+					superandes.adicionarProductoVenta(venta.getId(), idProducto, cantidadProducto, unidadMedida);									   
+					superandes.adicionarFactura(descripcionFactura);				
+					superandes.eliminarCarritoComprasPorId(idCarrito);
+					
+				}
+				else
+				{
+					JOptionPane.showMessageDialog(this, "El usuario no tiene un carrito de compras registrado");
+				}				   
+		   }
+		
+	   } 
+	   catch (Exception e) 
+	   {
+	//		e.printStackTrace();
+			String resultado = generarMensajeError(e);
+			panelDatos.actualizarInterfaz(resultado);
+	   }
 	   
  }
  public void RFF16_AbandonarCarritoCompras(){
@@ -1704,14 +1906,61 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 	   
 	   
  }
-   public void RFC1_DineroRecolectado(){
+ public void RFC1_DineroRecolectado(){
+	   
+	   try{
+		   
+		   List<VOSucursal> sucursales=superandes.darVOSucursales();
+		    
+		   String[] sucursalesn= new String[sucursales.size()];
+		     
+		   int i=0;
+		   for (VOSucursal voSucursal :superandes.darSucursales()) {
+			   sucursalesn[i]=voSucursal.getNombre();
+			   i=i+1;
+			   
+		   }	   
+		   
+		   if(sucursales.size()==0){
+			   throw new Exception( "Agrege una Sucursal antes de consultar (Menu requerimientos F).");
+			   
+		   }
+		   else{
+			 
+			
+		   }
+		} 
+		catch (Exception e) 
+		{
+//			e.printStackTrace();
+			String resultado = generarMensajeError(e);
+			panelDatos.actualizarInterfaz(resultado);
+		}
+	   
+ }
+ public void RFC2_PromocionesPopulares(){
+	   
+	   try {
+		   		   
+		int cantidadPromociones = 0;
+		List<VOPromocion> promociones = superandes.darVOPromociones();
+			   
+			   
+		for (int i = 0; i < promociones.size(); i++) {
+			System.out.println(promociones.get(i).getCantidadP());			
+		}
+		
+	   } 
+	   catch (Exception e) 
+	   {
+	//		e.printStackTrace();
+			String resultado = generarMensajeError(e);
+			panelDatos.actualizarInterfaz(resultado);
+	   }
 	   
 	   
 	   
-   }
-   public void RFC2_PromocionesPopulares(){
-	   
-   }
+ }
    public void RFC3_IndiceOcupacionBodegaEstante(){
 	   try{
 	   
@@ -1903,11 +2152,41 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
    
    }
    public void RFC6_VentasUsuarioDado(){
+		  
+	   try{		   
+		   List<VOVenta> ventas=superandes.darVOVentas();
+		   boolean existeConsumidor = false;
+		   String idConsumidor = JOptionPane.showInputDialog (this, "Id del consumidor", JOptionPane.QUESTION_MESSAGE);
+		   for (int i = 0; i < ventas.size() && !existeConsumidor; i++) {
+			   if (ventas.get(i).getConsumidor() == (Long.parseLong(idConsumidor))) {
+				existeConsumidor = true;
+			 
+			}
+		   }
+		   
+		    if (!existeConsumidor) {
+			JOptionPane.showMessageDialog(this, "El consumidor no ha realizado ninguna venta");
+		    }
+		   else{
+			   String fechaInicial = JOptionPane.showInputDialog (this, "Ingrese la fecha inicial (Ej: 22/01/2018)", JOptionPane.QUESTION_MESSAGE);
+			   String fechaFinal = JOptionPane.showInputDialog (this, "Ingrese la fecha final (Ej: 03/11/2018)", JOptionPane.QUESTION_MESSAGE);
+			   for (int i = 0; i < ventas.size() && (ventas.get(i).getConsumidor() == (Long.parseLong(idConsumidor))); i++) {
+				if (ventas.get(i).getFecha().compareTo(fechaInicial)>=0 || ventas.get(i).getFecha().compareTo(fechaFinal)<=0) {
+					JOptionPane.showMessageDialog(null, "Venta#"+ i + " " + ventas.get(i).getId()
+                            + "\n");
+				}
+			}
+		   }
+		   
+		} 
+		catch (Exception e) 
+		{
+//			e.printStackTrace();
+			String resultado = generarMensajeError(e);
+			panelDatos.actualizarInterfaz(resultado);
+		}
 	   
-   }
-   
-   
-   
+   }  
    
    public void agregarProductoOfrecido(){
 	   

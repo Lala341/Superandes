@@ -110,6 +110,10 @@ public interface VOEstante {
 	 * @param nivelReorden the nivelReorden to set
 	 */
 	public void setNivelReorden(long nivelReorden);
+	
+	public String getTipoProducto();
+
+	public void setTipoProducto(String tipoProducto);
 
 	
 	/**

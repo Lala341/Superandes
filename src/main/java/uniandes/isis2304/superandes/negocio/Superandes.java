@@ -2,6 +2,8 @@ package uniandes.isis2304.superandes.negocio;
 
 import java.sql.Date;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -2913,6 +2915,21 @@ public class Superandes {
 		log.info ("Buscando ProductoOfrecidoPorIdProveedor: " + id);
 		List<ProductoOfrecido> tb = (List<ProductoOfrecido>) pp.darProductosOfrecidosPorIdProveedor(id);
 		return tb;
+	}
+	
+	public String darFechaDeHoy()
+	{
+		String fecha = "";
+		Calendar fechaActual = new GregorianCalendar();
+		   String ano = String.valueOf(fechaActual.get(Calendar.YEAR));
+	       String mes = String.valueOf(fechaActual.get(Calendar.MONTH));
+	       String dia = String.valueOf(fechaActual.get(Calendar.DAY_OF_MONTH));
+	       String hora = String.valueOf(fechaActual.get(Calendar.HOUR_OF_DAY));
+	       String minuto = String.valueOf(fechaActual.get(Calendar.MINUTE));
+	       String segundo = String.valueOf(fechaActual.get(Calendar.SECOND));
+		   
+		 fecha = ano+mes+dia+hora+minuto+segundo;
+		 return fecha;
 	}
 	
 	/* ****************************************************************

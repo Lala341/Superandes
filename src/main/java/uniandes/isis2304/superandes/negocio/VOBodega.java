@@ -52,6 +52,10 @@ public interface VOBodega {
 
 	public double getNivelDeReorden();
 	
+	public String getTipoProducto();
+
+	public void setTipoProducto(String tipoProducto);
+	
 	@Override
 	/**
 	 * @return Una cadena de caracteres con todos los atributos de la Bodega

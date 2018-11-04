@@ -195,6 +195,14 @@ public class Estante implements VOEstante {
 		this.nivelReorden = nivelReorden;
 	}
 
+	public String getTipoProducto() {
+		return tipoProducto;
+	}
+
+	public void setTipoProducto(String tipoProducto) {
+		this.tipoProducto = tipoProducto;
+	}
+
 	/**
 	 * @return Una cadena de caracteres con todos los atributos
 	 */

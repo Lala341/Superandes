@@ -243,18 +243,6 @@ public class Producto implements VOProducto {
 	}
 
 	@Override
-	public String getnombre() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void setnombre(String nombre) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
 	public void setEstado(boolean estado) {
 		// TODO Auto-generated method stub
 		
