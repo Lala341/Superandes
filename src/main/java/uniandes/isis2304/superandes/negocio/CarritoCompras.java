@@ -10,13 +10,15 @@ public class CarritoCompras implements VOCarritoCompras{
 
 	private long id;
 	private long consumidor;
+	private long sucursal;
 
 	public CarritoCompras(){
 
 	}
-	public CarritoCompras(long id,long consumidor){
+	public CarritoCompras(long id,long consumidor, long s){
 		this.id=id;
 		this.consumidor=consumidor;
+		this.sucursal=s;
 	}
 	
 
@@ -58,6 +60,18 @@ public class CarritoCompras implements VOCarritoCompras{
 
 
 
+	/**
+	 * @return the sucursal
+	 */
+	public long getSucursal() {
+		return sucursal;
+	}
+	/**
+	 * @param sucursal the sucursal to set
+	 */
+	public void setSucursal(long sucursal) {
+		this.sucursal = sucursal;
+	}
 	@Override
 	/**
 	 * @return Una cadena de caracteres con todos los atributos

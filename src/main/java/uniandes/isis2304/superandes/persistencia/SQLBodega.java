@@ -111,11 +111,11 @@ class SQLBodega
 	 * @param pm - El manejador de persistencia
 	 * @return Una lista de objetos BODEGA
 	 */
-	public List<Bodega> darBodegasPorTipo (PersistenceManager pm,String tipo)
+	public List<Bodega> darBodegasPorTipoYSucursal (PersistenceManager pm,String tipo, long s)
 	{
-		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaBodega ()+ " WHERE tipoproducto = ?");
+		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaBodega ()+ " WHERE (tipoproducto = ?) AND (sucursal=?)");
 		q.setResultClass(Bodega.class);
-		q.setParameters(tipo);
+		q.setParameters(tipo, s);
 		return (List<Bodega>) q.executeList();
 	}
 	/**

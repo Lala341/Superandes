@@ -306,6 +306,13 @@ public class Superandes {
         log.info ("Listando Bodegas: " + Bodegas.size() + " Bodegas existentes");
         return Bodegas;
 	}
+	public List<Bodega> darBodegasPorTipoYSucursal (String tipo, long s)
+	{
+        log.info ("Listando Bodegas");
+        List<Bodega> Bodegas = pp.darBodegasPorTipoYSucursal(tipo, s);	
+        log.info ("Listando Bodegas: " + Bodegas.size() + " Bodegas existentes");
+        return Bodegas;
+	}
 	/**
 	 * Encuentra todos los Bodegas en Superandes
 	 * Adiciona entradas al log de la aplicación
@@ -1438,10 +1445,10 @@ public class Superandes {
 	 * Adiciona entradas al log de la aplicación
 	* @return El objeto. null si ocurre alguna Excepción
 	 */
-	public CarritoCompras adicionarCarritoCompras ( long consumidor)
+	public CarritoCompras adicionarCarritoCompras ( long consumidor, long s)
 	{
         log.info ("Adicionando CarritoCompras: " + consumidor);
-        CarritoCompras CarritoCompras = pp.adicionarCarritoCompras (consumidor);		
+        CarritoCompras CarritoCompras = pp.adicionarCarritoCompras (consumidor, s);		
         log.info ("Adicionando CarritoCompras: " + consumidor);
         return CarritoCompras;
 	}

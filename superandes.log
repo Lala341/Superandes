@@ -1924,3 +1924,16 @@ null
 12:05:21,138 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
 12:05:30,883 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Productos
 12:05:31,185 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Productos: 0 Productos existentes
+20:33:21,645 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+20:33:21,645 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+20:33:21,692 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+20:33:33,941 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Consumidor
+20:33:34,222 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Consumidor: 0 existentes
+20:33:52,513 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Consumidor
+20:33:52,513 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Consumidor: 0 existentes
+20:40:12,037 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Consumidor
+20:40:12,053 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Consumidor: 0 existentes
+20:40:18,570 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Dar información de un PersonaNatural por id: 200
+20:40:18,585 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - PersonaNatural [documentoIdentidad=200]
+20:40:18,585 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando CarritoCompras: 321
+20:40:18,616 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando CarritoCompras: 321

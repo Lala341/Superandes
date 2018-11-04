@@ -1278,8 +1278,32 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 				}
 		   }
 		   if(consumidorId!=null){
-			   
-			   CarritoCompras tb= superandes.adicionarCarritoCompras(consumidorId);
+			   List<VOSucursal> sucursales=superandes.darVOSucursales();
+			    
+			   String[] sucursalesn= new String[sucursales.size()];
+			     
+			   int i=0;
+			   for (VOSucursal voSucursal :superandes.darSucursales()) {
+				   sucursalesn[i]=voSucursal.getNombre();
+				   i=i+1;
+				   
+			   }
+			   if(sucursales.size()==0){
+
+				   JOptionPane.showMessageDialog(this, "Agrege una Sucursal antes de registrar un producto (Menu requerimientos F).");
+				   
+			   }
+			String sucursal= (String) JOptionPane.showInputDialog(null,"Seleccione la sucursal para el producto", "Adicionar carrito compras", JOptionPane.DEFAULT_OPTION, null, sucursalesn, sucursalesn[0]);
+			Sucursal sucu=null;
+			i=0;
+			for (String string : sucursalesn) {
+				if(string.equals(sucursal)){
+					sucu=(Sucursal) sucursales.get(i);
+					break;
+				}
+				i=i+1;
+			}
+			   CarritoCompras tb= superandes.adicionarCarritoCompras(consumidorId, sucu.getId());
 				if (tb == null)
 	    		{
 	    			throw new Exception ("No se pudo crear el carrito de compras");
@@ -1378,7 +1402,7 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 							   
 						   }
 						   superandes.eliminarProductoCarritoComprasPorIdProducto(tb.getId(), productoId);
-						   List<Bodega> bodega= superandes.darBodegasPorTipo(superandes.darCategoriasPorId(superandes.darProductoPorId(productoId).getCategoria()).getTipoDeAlmacenamiento());
+						   List<Bodega> bodega= superandes.darBodegasPorTipoYSucursal(superandes.darCategoriasPorId(superandes.darProductoPorId(productoId).getCategoria()).getTipoDeAlmacenamiento(), tb.getSucursal());
 						   
 						   if(!superandes.darProductoBodegaIdBodegaProducto (bodega.get(0).getId(), productoId).isEmpty()){
 						   superandes.ingresarCantidadDeProductoB(bodega.get(0).getId(), pro.getProducto(), pro.getCantidadProducto());
@@ -1578,6 +1602,78 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 	   
  }
  public void RFF16_AbandonarCarritoCompras(){
+
+	   try {
+		   
+		   List<Consumidor> consumidores=superandes.darConsumidor();
+		   
+		   if(consumidores.isEmpty()){
+			   panelDatos.actualizarInterfaz("No existen clientes en la base de datos. Por favor agrege uno y proceda a elegir el carrito de compras.");
+		   }
+		   else{
+		   String[] estados= {"PERSONA NATURAL", "EMPRESA"};
+		   String estado = (String) JOptionPane.showInputDialog(null,"Elija el tipo del cliente que abandono el carrito de compras", "Abandonar Carrito Compras", JOptionPane.DEFAULT_OPTION, null, estados, estados[0]);
+		
+		   String consumidor="";
+		   Long consumidorId= null;
+		   
+		   if(estado.equals("PERSONA NATURAL")){
+			   consumidor= JOptionPane.showInputDialog (this, "Ingrese el documento de identidad del cliente.(Sin puntos) ", "Abandonar Carrito Compras", JOptionPane.QUESTION_MESSAGE);
+			   try{
+				   consumidorId= superandes.darPersonaNaturalPorId(Long.parseLong(consumidor)).getIdConsumidor();
+				    
+				   
+			   }catch (Exception e) {
+				   throw new Exception("No existen clientes en la base de datos con esa Identificacion. Por favor agregelo.");
+				
+				  
+			   }
+		   }else{
+			   consumidor= JOptionPane.showInputDialog (this, "Ingrese el NIT del cliente. ", "Abandonar Carrito Compras", JOptionPane.QUESTION_MESSAGE);
+			   try{
+				consumidorId= superandes.darEmpresaPorId(Long.parseLong(consumidor)).getIdConsumidor();
+				    
+				   
+			   }catch (Exception e) {
+				  
+				   throw new Exception("No existen clientes en la base de datos con esa Identificacion.");
+				}
+		   }
+		   if(consumidorId!=null){
+			   
+			   CarritoCompras tb= superandes.darCarritoComprasPorIdConsumidor(consumidorId);
+				if(tb!=null){
+					List<ProductoCarritoCompras> productos= superandes.darProductoscarritoComprasPorIdcarritoCompras(tb.getId());
+					superandes.eliminarProductoCarritoComprasPorIdcarritoCompras(tb.getId());
+					superandes.eliminarCarritoComprasPorId(tb.getId());
+					for (ProductoCarritoCompras productoCarritoCompras : productos) {
+						List<Bodega> bodegas= superandes.darBodegasPorTipoYSucursal(superandes.darCategoriasPorId(superandes.darProductoPorId(productoCarritoCompras.getProducto()).getCategoria()).getTipoDeAlmacenamiento(), tb.getSucursal());
+						superandes.ingresarCantidadDeProductoB(bodegas.get(0).getId(), productoCarritoCompras.getProducto(), productoCarritoCompras.getCantidadProducto());
+					}
+							   
+				}
+			   if (tb == null)
+	    		{
+	    			throw new Exception ("No se pudo encontrar el carrito de compras");
+	    		}
+	    		String resultado = "En  carrito de compraso\n\n";
+	    		resultado += "Productos eliminados del carrito de compras exitosamente: " + tb;
+				resultado += "\n Operación terminada";
+				panelDatos.actualizarInterfaz(resultado);
+			}
+			else
+			{
+				panelDatos.actualizarInterfaz("Operación cancelada por el usuario, llene todos los campos.");
+			}
+
+		   }
+	   } 
+	   catch (Exception e) 
+	   {
+	//		e.printStackTrace();
+			String resultado = generarMensajeError(e);
+			panelDatos.actualizarInterfaz(e.getMessage());
+	   }
 	   
 	   
 	   

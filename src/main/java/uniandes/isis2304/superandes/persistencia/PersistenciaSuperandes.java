@@ -857,6 +857,10 @@ public class PersistenciaSuperandes {
 	{
 		return sqlBodega.darBodegasPorTipo (pmf.getPersistenceManager(), tipo);
 	}
+	public List<Bodega> darBodegasPorTipoYSucursal (String tipo, long s)
+	{
+		return sqlBodega.darBodegasPorTipoYSucursal (pmf.getPersistenceManager(), tipo, s);
+	}
 	/**
 	 * Método que consulta todas las tuplas en la tabla Bodega
 	 * @return La lista de objetos Bodega, construidos con base en las tuplas de la tabla Bodega
@@ -2284,7 +2288,7 @@ public class PersistenciaSuperandes {
 	 * Adiciona entradas al log de la aplicación
 	  * @return El objeto adicionado. null si ocurre alguna Excepción
 	 */
-	public CarritoCompras adicionarCarritoCompras( long consumidor)
+	public CarritoCompras adicionarCarritoCompras( long consumidor, long s)
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
         Transaction tx=pm.currentTransaction();
@@ -2292,12 +2296,12 @@ public class PersistenciaSuperandes {
         {
             tx.begin();
             long id = nextval ();
-            long tuplasInsertadas = sqlCarritoCompras.adicionar(pm, id, consumidor);
+            long tuplasInsertadas = sqlCarritoCompras.adicionar(pm, id, consumidor,s);
             tx.commit();
             
             log.trace ("Inserción de CarritoCompras: " + id + ": " + tuplasInsertadas + " tuplas insertadas");
             
-            return new CarritoCompras(id, consumidor);
+            return new CarritoCompras(id, consumidor, s);
         }
         catch (Exception e)
         {
