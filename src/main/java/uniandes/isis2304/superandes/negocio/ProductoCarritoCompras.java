@@ -7,10 +7,10 @@ package uniandes.isis2304.superandes.negocio;
  */
 public class ProductoCarritoCompras implements VOProductoCarritoCompras {
 
-	private long carritoCompras;
-	private int cantidadProducto;
-	private String unidadDeMedida;
-	private long producto;
+	public long carritoCompras;
+	public int cantidadProducto;
+	public String unidadMedida;
+	public long producto;
 	
 	
 	public ProductoCarritoCompras(){
@@ -20,7 +20,7 @@ public class ProductoCarritoCompras implements VOProductoCarritoCompras {
 	public ProductoCarritoCompras(long carritoCompras,int cantidadVenta,String unidadDeMedida,long producto){
 		this.carritoCompras=carritoCompras;
 		this.cantidadProducto=cantidadVenta;
-		this.unidadDeMedida=unidadDeMedida;
+		this.unidadMedida=unidadDeMedida;
 		this.producto=producto;
 
 	}
@@ -42,18 +42,18 @@ public class ProductoCarritoCompras implements VOProductoCarritoCompras {
 
 
 	/**
-	 * @return the unidadDeMedida
+	 * @return the unidadMedida
 	 */
 	public String getUnidadDeMedida() {
-		return unidadDeMedida;
+		return unidadMedida;
 	}
 
 
 	/**
-	 * @param unidadDeMedida the unidadDeMedida to set
+	 * @param unidadMedida the unidadMedida to set
 	 */
 	public void setUnidadDeMedida(String unidadDeMedida) {
-		this.unidadDeMedida = unidadDeMedida;
+		this.unidadMedida = unidadDeMedida;
 	}
 
 
@@ -91,7 +91,7 @@ public class ProductoCarritoCompras implements VOProductoCarritoCompras {
 	 */
 	public String toString() 
 	{
-		return "ProductoCarritoCompras [carritoCompras=" + carritoCompras + ", producto=" + producto + ", cantidadProducto=" + cantidadProducto + ", unidadDeMedida=" + unidadDeMedida
+		return "ProductoCarritoCompras [carritoCompras=" + carritoCompras + ", producto=" + producto + ", cantidadProducto=" + cantidadProducto + ", unidadMedida=" + unidadMedida
 				+"]";
 	}
 }

@@ -58,7 +58,7 @@ class SQLProducto
 	 * @param precioPorUnidadMedida precio por unidad medida
 	 * @param precioUnitario precio unitario 
 	 * @param presentacion presentacion
-	 * @param unidadDeMedida unidad de medida
+	 * @param unidadMedida unidad de medida
 	 * @return EL número de tuplas insertadas
 	 */
 	public long adicionarProducto (PersistenceManager pm, long id, String nombre, long idCategoria, String codigoDeBarras, String especificacionDeEmpaquetado, boolean estado, String marca, double precioPorUnidadMedida,String presentacion, String unidadDeMedida) 

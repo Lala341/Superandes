@@ -96,7 +96,7 @@ class SQLCategoria
 		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaCategoria () + " WHERE id = ?");
 		q.setResultClass(Categoria.class);
 		q.setParameters(nombreCategoria);
-		return (Categoria) q.executeList();
+		return (Categoria) q.executeUnique();
 	}
 
 	/**

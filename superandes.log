@@ -2886,3 +2886,255 @@ null
 15:59:35,265 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO 40 existentes
 15:59:56,474 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Consumidor
 15:59:56,531 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Consumidor: 60 existentes
+16:10:44,024 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+16:10:44,027 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+16:10:44,094 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+16:10:57,217 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Consumidor
+16:10:57,578 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Consumidor: 60 existentes
+16:11:45,765 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Dar información de un PersonaNatural por id: 3504886269
+16:11:45,785 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - PersonaNatural [documentoIdentidad=3504886269]
+16:11:45,785 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Buscando CarritoCompras por IdConsumidor: 1
+16:15:01,313 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+16:15:01,316 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+16:15:01,385 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+16:15:10,320 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Consumidor
+16:15:10,663 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Consumidor: 60 existentes
+16:15:15,717 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Dar información de un PersonaNatural por id: 3504886269
+16:15:15,733 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - PersonaNatural [documentoIdentidad=3504886269]
+16:15:15,733 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Buscando CarritoCompras por IdConsumidor: 1
+16:15:15,751 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando ProductoCarritoCompras
+16:15:15,770 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando ProductoCarritoCompras: 0 existentes
+16:15:30,187 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Consumidor
+16:15:30,236 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Consumidor: 60 existentes
+16:15:34,959 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Dar información de un PersonaNatural por id: 3504886269
+16:15:34,968 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - PersonaNatural [documentoIdentidad=3504886269]
+16:15:34,968 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Buscando CarritoCompras por IdConsumidor: 1
+16:15:34,977 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando ProductoCarritoCompras
+16:15:34,987 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando ProductoCarritoCompras: 0 existentes
+16:18:41,756 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+16:18:41,759 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+16:18:41,825 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+16:18:49,817 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Consumidor
+16:18:50,155 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Consumidor: 60 existentes
+16:19:20,567 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Dar información de un PersonaNatural por id: 3504886269
+16:19:20,583 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - PersonaNatural [documentoIdentidad=3504886269]
+16:19:20,583 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Buscando CarritoCompras por IdConsumidor: 1
+16:19:20,596 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando ProductoCarritoCompras
+16:19:20,611 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando ProductoCarritoCompras: 0 existentes
+16:20:31,608 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+16:20:31,611 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+16:20:31,677 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+16:20:39,276 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Consumidor
+16:20:39,621 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Consumidor: 60 existentes
+16:20:43,754 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Dar información de un PersonaNatural por id: 3504886269
+16:20:43,770 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - PersonaNatural [documentoIdentidad=3504886269]
+16:20:43,771 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Buscando CarritoCompras por IdConsumidor: 1
+16:20:43,785 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando ProductoCarritoCompras
+16:20:43,799 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando ProductoCarritoCompras: 3 existentes
+16:20:54,292 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Eliminando ProductoCarritoCompras por idV: 1
+16:20:54,411 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Eliminando ProductoCarritoCompras por idV: 1 tuplas eliminadas
+16:20:54,421 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Dar información de Categorias por id: 7
+16:22:17,896 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+16:22:17,898 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+16:22:17,964 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+16:22:24,750 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Consumidor
+16:22:25,096 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Consumidor: 60 existentes
+16:22:29,414 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Dar información de un PersonaNatural por id: 3504886269
+16:22:29,430 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - PersonaNatural [documentoIdentidad=3504886269]
+16:22:29,431 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Buscando CarritoCompras por IdConsumidor: 1
+16:22:29,445 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando ProductoCarritoCompras
+16:22:29,459 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando ProductoCarritoCompras: 2 existentes
+16:22:39,926 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Eliminando ProductoCarritoCompras por idV: 1
+16:22:40,039 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Eliminando ProductoCarritoCompras por idV: 1 tuplas eliminadas
+16:22:40,049 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Dar información de Categorias por id: 7
+16:27:00,151 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+16:27:00,154 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+16:27:00,212 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+16:27:07,146 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Consumidor
+16:27:07,497 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Consumidor: 60 existentes
+16:28:51,326 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Dar información de un PersonaNatural por id: 3504886269
+16:28:51,342 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - PersonaNatural [documentoIdentidad=3504886269]
+16:28:51,343 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Buscando CarritoCompras por IdConsumidor: 1
+16:28:51,356 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando ProductoCarritoCompras
+16:28:51,371 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando ProductoCarritoCompras: 3 existentes
+16:28:55,319 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Eliminando ProductoCarritoCompras por idV: 1
+16:28:55,442 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Eliminando ProductoCarritoCompras por idV: 1 tuplas eliminadas
+16:28:55,452 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Dar información de Categorias por id: 7
+16:32:23,661 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+16:32:23,663 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+16:32:23,721 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+16:32:30,859 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Consumidor
+16:32:31,201 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Consumidor: 60 existentes
+16:32:35,105 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Dar información de un PersonaNatural por id: 3504886269
+16:32:35,122 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - PersonaNatural [documentoIdentidad=3504886269]
+16:32:35,122 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Buscando CarritoCompras por IdConsumidor: 1
+16:32:35,136 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando ProductoCarritoCompras
+16:32:35,148 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando ProductoCarritoCompras: 2 existentes
+16:32:40,101 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Eliminando ProductoCarritoCompras por idV: 1
+16:32:40,215 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Eliminando ProductoCarritoCompras por idV: 1 tuplas eliminadas
+16:32:40,225 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Dar información de Categorias por id: 6
+16:32:40,234 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Bodegas
+16:32:40,247 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Bodegas: 0 Bodegas existentes
+16:37:26,822 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+16:37:26,825 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+16:37:26,891 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+16:37:36,665 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Consumidor
+16:37:36,997 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Consumidor: 60 existentes
+16:37:45,306 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Dar información de un PersonaNatural por id: 3504886269
+16:37:45,323 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - PersonaNatural [documentoIdentidad=3504886269]
+16:37:45,324 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Buscando CarritoCompras por IdConsumidor: 1
+16:37:45,337 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando ProductoCarritoCompras
+16:37:45,349 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando ProductoCarritoCompras: 1 existentes
+16:37:47,202 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Eliminando ProductoCarritoCompras por idV: 1
+16:37:47,316 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Eliminando ProductoCarritoCompras por idV: 1 tuplas eliminadas
+16:37:47,326 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Dar información de Categorias por id: 7
+16:37:47,337 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Bodegas
+16:37:47,346 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Bodegas: 0 Bodegas existentes
+16:37:47,353 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Dar información de Categorias por id: 7
+16:37:47,360 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Bodega: 
+16:37:47,380 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Bodega: Bodega [id=401, peso=200.0, volumen=200.0, sucursal=9, cantidadProductos=0, capacidadTotal=200]
+16:37:47,380 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando ProductoBodega [401, 1]
+16:37:47,394 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando ProductoBodega: ProductoBodega [idBodega=401, idProducto=1] tuplas insertadas
+16:37:47,394 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Actualizando Bodega [401]
+16:38:54,601 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+16:38:54,604 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+16:38:54,669 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+16:39:01,620 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Consumidor
+16:39:01,961 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Consumidor: 60 existentes
+16:39:05,895 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Dar información de un PersonaNatural por id: 3504886269
+16:39:05,910 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - PersonaNatural [documentoIdentidad=3504886269]
+16:39:05,911 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Buscando CarritoCompras por IdConsumidor: 1
+16:39:05,923 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando ProductoCarritoCompras
+16:39:05,937 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando ProductoCarritoCompras: 3 existentes
+16:39:09,795 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Eliminando ProductoCarritoCompras por idV: 1
+16:39:09,908 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Eliminando ProductoCarritoCompras por idV: 1 tuplas eliminadas
+16:39:09,918 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Dar información de Categorias por id: 7
+16:39:09,928 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Bodegas
+16:39:09,940 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Bodegas: 1 Bodegas existentes
+16:39:09,940 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando ProductoBodega
+16:44:26,790 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+16:44:26,793 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+16:44:26,862 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+16:44:33,309 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Consumidor
+16:44:33,652 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Consumidor: 60 existentes
+16:45:29,822 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Consumidor
+16:45:29,873 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Consumidor: 60 existentes
+16:45:33,546 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Dar información de un PersonaNatural por id: 3504886269
+16:45:33,562 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - PersonaNatural [documentoIdentidad=3504886269]
+16:45:33,562 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Buscando CarritoCompras por IdConsumidor: 1
+16:45:33,575 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando ProductoCarritoCompras
+16:45:33,588 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando ProductoCarritoCompras: 2 existentes
+16:45:38,913 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Eliminando ProductoCarritoCompras por idV: 1
+16:45:39,031 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Eliminando ProductoCarritoCompras por idV: 1 tuplas eliminadas
+16:45:39,041 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Dar información de Categorias por id: 7
+16:45:39,050 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Bodegas
+16:45:39,061 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Bodegas: 1 Bodegas existentes
+16:45:39,061 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando ProductoBodega
+16:49:02,951 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+16:49:02,952 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+16:49:02,982 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+16:49:08,876 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Consumidor
+16:49:09,213 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Consumidor: 60 existentes
+16:49:19,761 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Dar información de un PersonaNatural por id: 3504886269
+16:49:19,777 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - PersonaNatural [documentoIdentidad=3504886269]
+16:49:19,778 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Buscando CarritoCompras por IdConsumidor: 1
+16:49:19,792 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando ProductoCarritoCompras
+16:49:19,804 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando ProductoCarritoCompras: 1 existentes
+16:49:23,015 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Eliminando ProductoCarritoCompras por idV: 1
+16:49:23,127 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Eliminando ProductoCarritoCompras por idV: 1 tuplas eliminadas
+16:49:23,137 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Dar información de Categorias por id: 6
+16:49:23,146 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Bodegas
+16:49:23,156 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Bodegas: 0 Bodegas existentes
+16:49:23,164 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Dar información de Categorias por id: 6
+16:49:23,170 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Bodega: 
+16:49:23,188 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Bodega: Bodega [id=402, peso=200.0, volumen=200.0, sucursal=9, cantidadProductos=0, capacidadTotal=200]
+16:49:23,188 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando ProductoBodega [402, 29]
+16:49:23,201 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando ProductoBodega: ProductoBodega [idBodega=402, idProducto=29] tuplas insertadas
+16:49:23,201 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Actualizando Bodega [402]
+16:56:01,616 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+16:56:01,619 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+16:56:01,687 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+16:56:15,393 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Consumidor
+16:56:15,750 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Consumidor: 60 existentes
+16:56:38,626 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Dar información de un PersonaNatural por id: 3504886269
+16:56:38,644 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - PersonaNatural [documentoIdentidad=3504886269]
+16:56:38,644 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Buscando CarritoCompras por IdConsumidor: 1
+16:56:38,659 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando ProductoCarritoCompras
+16:56:38,669 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando ProductoCarritoCompras: 0 existentes
+16:57:33,339 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+16:57:33,341 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+16:57:33,401 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+16:57:41,851 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+16:57:41,853 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+16:57:41,919 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+16:57:48,987 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Consumidor
+16:57:49,322 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Consumidor: 60 existentes
+16:57:53,376 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Dar información de un PersonaNatural por id: 3504886269
+16:57:53,391 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - PersonaNatural [documentoIdentidad=3504886269]
+16:57:53,391 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Buscando CarritoCompras por IdConsumidor: 1
+16:57:53,404 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando ProductoCarritoCompras
+16:57:53,421 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando ProductoCarritoCompras: 3 existentes
+16:57:56,435 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Eliminando ProductoCarritoCompras por idV: 1
+16:57:56,550 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Eliminando ProductoCarritoCompras por idV: 1 tuplas eliminadas
+16:57:56,559 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Dar información de Categorias por id: 7
+16:57:56,569 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Bodegas
+16:57:56,581 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Bodegas: 1 Bodegas existentes
+16:57:56,581 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando ProductoBodega
+16:57:56,592 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando ProductoBodega: 0 preferencias de gusto existentes
+16:57:56,592 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando ProductoBodega [401, 3]
+16:57:56,602 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando ProductoBodega: ProductoBodega [idBodega=401, idProducto=3] tuplas insertadas
+16:57:56,602 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Actualizando Bodega [401]
+17:01:09,053 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+17:01:09,055 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+17:01:09,115 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+17:01:15,574 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Consumidor
+17:01:15,897 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Consumidor: 60 existentes
+17:01:20,281 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Dar información de un PersonaNatural por id: 3504886269
+17:01:20,296 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - PersonaNatural [documentoIdentidad=3504886269]
+17:01:20,296 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Buscando CarritoCompras por IdConsumidor: 1
+17:01:20,309 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando ProductoCarritoCompras
+17:01:20,322 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando ProductoCarritoCompras: 2 existentes
+17:01:22,677 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Eliminando ProductoCarritoCompras por idV: 1
+17:01:22,793 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Eliminando ProductoCarritoCompras por idV: 1 tuplas eliminadas
+17:01:22,803 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Dar información de Categorias por id: 7
+17:01:22,813 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Bodegas
+17:01:22,824 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Bodegas: 1 Bodegas existentes
+17:01:22,824 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando ProductoBodega
+17:01:22,837 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando ProductoBodega: 0 preferencias de gusto existentes
+17:01:22,837 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Actualizando Estante [401]
+17:02:49,361 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+17:02:49,364 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+17:02:49,428 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+17:02:57,219 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Consumidor
+17:02:57,552 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Consumidor: 60 existentes
+17:03:00,951 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Dar información de un PersonaNatural por id: 3504886269
+17:03:00,967 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - PersonaNatural [documentoIdentidad=3504886269]
+17:03:00,967 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Buscando CarritoCompras por IdConsumidor: 1
+17:03:00,981 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando ProductoCarritoCompras
+17:03:00,993 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando ProductoCarritoCompras: 1 existentes
+17:03:03,296 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Eliminando ProductoCarritoCompras por idV: 1
+17:03:03,416 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Eliminando ProductoCarritoCompras por idV: 1 tuplas eliminadas
+17:03:03,427 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Dar información de Categorias por id: 6
+17:03:03,439 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Bodegas
+17:03:03,452 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Bodegas: 1 Bodegas existentes
+17:03:03,453 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando ProductoBodega
+17:03:03,466 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando ProductoBodega: 0 preferencias de gusto existentes
+17:03:03,467 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Actualizando Estante [402]
+17:03:03,475 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Actualizando Estante [402]
+17:03:11,493 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Consumidor
+17:03:11,540 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Consumidor: 60 existentes
+17:03:14,514 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Dar información de un PersonaNatural por id: 3504886269
+17:03:14,522 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - PersonaNatural [documentoIdentidad=3504886269]
+17:03:14,522 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Buscando CarritoCompras por IdConsumidor: 1
+17:03:14,530 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando ProductoCarritoCompras
+17:03:14,535 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando ProductoCarritoCompras: 0 existentes
+17:04:16,398 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+17:04:16,401 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+17:04:16,472 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+17:04:21,920 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Consumidor
+17:04:22,260 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Consumidor: 60 existentes
+17:04:27,081 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Dar información de un PersonaNatural por id: 3504886269
+17:04:27,097 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - PersonaNatural [documentoIdentidad=3504886269]
+17:04:27,098 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Buscando CarritoCompras por IdConsumidor: 1
+17:04:27,111 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando ProductoCarritoCompras
+17:04:27,121 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando ProductoCarritoCompras: 0 existentes

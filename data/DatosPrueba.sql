@@ -43,13 +43,13 @@ insert into sucursal (id, nombre, tamanho, tipomercado, ventastotales, ciudad, d
 insert into sucursal (id, nombre, tamanho, tipomercado, ventastotales, ciudad, direccion) values (7, 'Dixon', 1536, 'Major Pharmaceuticals', 0, 4, '56 Carberry Circle');
 insert into sucursal (id, nombre, tamanho, tipomercado, ventastotales, ciudad, direccion) values (8, 'Kinsman', 1338, 'Computer Software: Prepackaged Software', 0, 9, '5931 Lukken Street');
 insert into sucursal (id, nombre, tamanho, tipomercado, ventastotales, ciudad, direccion) values (9, 'Dapin', 1909, 'Major Pharmaceuticals', 0, 9, '92987 Bultman Avenue');
-insert into sucursal (id, nombre, tamanho, tipomercado, ventastotales, ciudad, direccion) values (10, 'Fulton', 322, 'Biotechnology: Electromedical & Electrotherapeutic Apparatus', 0, 10, '469 Grayhawk Place');
+insert into sucursal (id, nombre, tamanho, tipomercado, ventastotales, ciudad, direccion) values (10, 'Fulton', 322, 'Biotechnology: Electromedical Electrotherapeutic Apparatus', 0, 10, '469 Grayhawk Place');
 insert into sucursal (id, nombre, tamanho, tipomercado, ventastotales, ciudad, direccion) values (11, 'Crownhardt', 641, 'n/a', 0, 8, '8037 Ridgeview Terrace');
 insert into sucursal (id, nombre, tamanho, tipomercado, ventastotales, ciudad, direccion) values (12, 'Kim', 736, 'Major Banks', 0, 4, '3 Reindahl Road');
 insert into sucursal (id, nombre, tamanho, tipomercado, ventastotales, ciudad, direccion) values (13, 'Orin', 517, 'Other Consumer Services', 0, 9, '49 Express Plaza');
 insert into sucursal (id, nombre, tamanho, tipomercado, ventastotales, ciudad, direccion) values (14, 'Michigan', 1286, 'Major Banks', 0, 2, '2 Orin Place');
 insert into sucursal (id, nombre, tamanho, tipomercado, ventastotales, ciudad, direccion) values (15, 'Pankratz', 742, 'Oil Refining/Marketing', 0, 8, '5 Bellgrove Junction');
-insert into sucursal (id, nombre, tamanho, tipomercado, ventastotales, ciudad, direccion) values (16, 'Farmco', 1031, 'Oil & Gas Production', 0, 7, '447 Crowley Place');
+insert into sucursal (id, nombre, tamanho, tipomercado, ventastotales, ciudad, direccion) values (16, 'Farmco', 1031, 'Oil Gas Production', 0, 7, '447 Crowley Place');
 insert into sucursal (id, nombre, tamanho, tipomercado, ventastotales, ciudad, direccion) values (17, 'Macpherson', 1158, 'Other Consumer Services', 0, 10, '85192 Bunker Hill Junction');
 insert into sucursal (id, nombre, tamanho, tipomercado, ventastotales, ciudad, direccion) values (18, 'Service', 1483, 'Industrial Machinery/Components', 0, 9, '20 Little Fleur Parkway');
 insert into sucursal (id, nombre, tamanho, tipomercado, ventastotales, ciudad, direccion) values (19, 'Oneill', 531, 'Plastic Products', 0, 1, '60 Blaine Court');
@@ -584,11 +584,14 @@ insert into carritocompras (id, consumidor, sucursal) values (40, 40, 17);
 --NoPercedero
 --Percedero
 commit;
---ProductoCarritoCompras
---update bodega set cantidadproductos=(cantidadproductos-27) where id=19;
+--ProductoCarritoCompra
+insert into productocarritocompras (carritocompras,  producto, cantidadproducto, unidadMedida) values (1, 1, 16,'UNIDAD');
+insert into productocarritocompras (carritocompras,  producto, cantidadproducto, unidadMedida) values (1, 3, 16,'UNIDAD');
+insert into productocarritocompras (carritocompras,  producto, cantidadproducto, unidadMedida) values (1, 29, 16,'UNIDAD');
+update bodega set cantidadproductos=(cantidadproductos-48) where id=19;
 
 
-insert into productocarritocompras (carritocompras,  producto, cantidadproducto, unidadMedida) values (2, 8, 16,"UNIDAD");
+insert into productocarritocompras (carritocompras,  producto, cantidadproducto, unidadMedida) values (2, 8, 16,'UNIDAD');
 update bodega set cantidadproductos=(cantidadproductos-16) where id=8;
 
 

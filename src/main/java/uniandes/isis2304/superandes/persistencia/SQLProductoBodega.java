@@ -51,7 +51,7 @@ class SQLProductoBodega
 	 */
 	public long adicionarProductoBodega(PersistenceManager pm, long idBodega, long idProducto, int cant) 
 	{
-        Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaProductoBodega () + "(bodega, producto, cantidadproducto) values (?, ?, ?)");
+        Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaProductoBodega () + " (bodega, producto, cantidadproducto) values (?, ?, ?)");
         q.setParameters(idBodega, idProducto, cant);
         return (long) q.executeUnique();
 	}
@@ -85,21 +85,21 @@ class SQLProductoBodega
 	}
 	public List<ProductoBodega> darProductoBodegaIdBodegaProducto (PersistenceManager pm, long b, long p)
 	{
-		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaProductoBodega () + " WHERE bodega = ? AND producto = ?");
+		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaProductoBodega () + " WHERE (bodega = ?) AND (producto = ?)");
 		q.setResultClass(ProductoBodega.class);
 		q.setParameters(b, p);
-		List<ProductoBodega> resp = (List<ProductoBodega>) q.execute();
+		List<ProductoBodega> resp = (List<ProductoBodega>) q.executeList();
 		return resp;
 	}
 	public void sacarCantidadDeProducto (PersistenceManager pm, long id, long idProducto,int cant)
 	{
-        Query q = pm.newQuery(SQL, "UPDATE " + pp.darTablaProductoBodega () + "SET CANTIDADPRODUCTO=(CANTIDADPRODUCTO-?) WHERE bodega = ? AND producto = ?");
+        Query q = pm.newQuery(SQL, "UPDATE " + pp.darTablaProductoBodega () + " SET CANTIDADPRODUCTO=(CANTIDADPRODUCTO-?) WHERE bodega = ? AND producto = ?");
         q.setParameters(cant, id, idProducto);
         q.executeUnique();
 	}
 	public void ingresarCantidadDeProducto (PersistenceManager pm, long id, long idProducto,int cant)
 	{
-        Query q = pm.newQuery(SQL, "UPDATE " + pp.darTablaProductoBodega () + "SET CANTIDADPRODUCTO=(CANTIDADPRODUCTO+?) WHERE bodega = ? AND producto = ?");
+        Query q = pm.newQuery(SQL, "UPDATE " + pp.darTablaProductoBodega () + " SET CANTIDADPRODUCTO=(CANTIDADPRODUCTO+?) WHERE bodega = ? AND producto = ?");
         q.setParameters(cant, id, idProducto);
        q.executeUnique();
 	}

@@ -82,7 +82,7 @@ public class SQLCarritoCompras {
 	 */
 	public List<CarritoCompras> darPorIdConsumidor (PersistenceManager pm, long idConsumidor) 
 	{
-		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaCarritoCompras () + " WHERE idConsumidor = ?");
+		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaCarritoCompras () + " WHERE consumidor = ?");
 		q.setResultClass(CarritoCompras.class);
 		q.setParameters(idConsumidor);
 		return (List<CarritoCompras>) q.executeList();

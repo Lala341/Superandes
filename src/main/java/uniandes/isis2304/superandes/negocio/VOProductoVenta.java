@@ -23,13 +23,13 @@ public interface VOProductoVenta {
 
 
 	/**
-	 * @return the unidadDeMedida
+	 * @return the unidadMedida
 	 */
 	public String getUnidadDeMedida() ;
 
 
 	/**
-	 * @param unidadDeMedida the unidadDeMedida to set
+	 * @param unidadMedida the unidadMedida to set
 	 */
 	public void setUnidadDeMedida(String unidadDeMedida);
 

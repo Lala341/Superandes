@@ -54,14 +54,14 @@ public class OrdenPedido implements VOOrdenPedido {
 	}
 
 	/**
-	 * @return the unidadDeMedida
+	 * @return the unidadMedida
 	 */
 	public String getUnidadDeMedida() {
 		return unidadDeMedida;
 	}
 
 	/**
-	 * @param unidadDeMedida the unidadDeMedida to set
+	 * @param unidadMedida the unidadMedida to set
 	 */
 	public void setUnidadDeMedida(String unidadDeMedida) {
 		this.unidadDeMedida = unidadDeMedida;
@@ -183,7 +183,7 @@ public class OrdenPedido implements VOOrdenPedido {
 	public String toString() 
 	{
 		return "OrdenPedido [id=" + id + ", cantidadVenta=" + cantidadVenta  + ", calificacion=" + calificacion  + ", estado=" + estado  + ", fecha=" + fecha  + ", fechaEntrega=" + fechaEntrega 
-				 + ", proveedor=" + proveedor+  ", productoOfrecido=" + productoOfrecido+  ", sucursal=" + sucursal+  ", unidadDeMedida=" + unidadDeMedida+ "]";
+				 + ", proveedor=" + proveedor+  ", productoOfrecido=" + productoOfrecido+  ", sucursal=" + sucursal+  ", unidadMedida=" + unidadDeMedida+ "]";
 	}
 	
 

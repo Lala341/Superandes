@@ -160,12 +160,12 @@ class SQLBodega
 		q.setParameters(idBodega);
 		return (Bodega) q.executeUnique();
 	}
-	public Bodega aumentarCantidadDeProductosUno (PersistenceManager pm, long id) 
+	public long aumentarCantidadDeProductosUno (PersistenceManager pm, long id) 
 	{
-		Query q = pm.newQuery(SQL, "UPDATE " + pp.darTablaBodega() + "SET CANTIDADPRODUCTO=(CANTIDADPRODUCTO+1) WHERE id = ?");
+		Query q = pm.newQuery(SQL, "UPDATE " + pp.darTablaBodega() + " SET CANTIDADPRODUCTOS=(CANTIDADPRODUCTOS+1) WHERE id = ?");
 		q.setResultClass(Sucursal.class);
 		q.setParameters(id);
-		return (Bodega) q.executeUnique();
+		return (long) q.executeUnique();
 	}
 	
 }

@@ -6,10 +6,10 @@ package uniandes.isis2304.superandes.negocio;
  */
 public class Categoria {
 
-	private long id;
-	private String nombre;
-	private String tipoDeAlmacenamiento;
-	private String tipoDeManejo;
+	public long id;
+	public String nombre;
+	public String tipoAlmacenamiento;
+	public String tipoManejo;
 	
 	public Categoria(){
 
@@ -18,15 +18,15 @@ public class Categoria {
 	/**
 	 * @param idCategoria - El identificador de la categoria
 	 * @param nombre - El nombre de la categoria
-	 * @param tipoDeAlmacenamiento - El tipoconsumidor de almacenamiento de la categoria
-	 * @param tipoDeManejo - El tipoconsumidor de manejo de la categoria
+	 * @param tipoAlmacenamiento - El tipoconsumidor de almacenamiento de la categoria
+	 * @param tipoManejo - El tipoconsumidor de manejo de la categoria
 	 */
-	public Categoria (long idCategoria, String nombre, String tipoDeAlmacenamiento, String tipoDeManejo) 
+	public Categoria (long id, String nombre, String tipoDeAlmacenamiento, String tipoDeManejo) 
 	{
-		id = idCategoria;
+		this.id = id;
 		this.nombre = nombre;
-		this.tipoDeAlmacenamiento = tipoDeAlmacenamiento;
-		this.tipoDeAlmacenamiento = tipoDeManejo;
+		this.tipoAlmacenamiento = tipoDeAlmacenamiento;
+		this.tipoAlmacenamiento = tipoDeManejo;
 	}
 	/**
 	 * 
@@ -59,31 +59,31 @@ public class Categoria {
 	}
 	
 	/**
-	 * @return el tipoDeAlmacenamiento
+	 * @return el tipoAlmacenamiento
 	 */
 	public String getTipoDeAlmacenamiento() {
-		return tipoDeAlmacenamiento;
+		return tipoAlmacenamiento;
 	}
 	
 	/**
-	 * @param tipoDeAlmacenamiento modifica el tipoconsumidor de almacenamiento 
+	 * @param tipoAlmacenamiento modifica el tipoconsumidor de almacenamiento 
 	 */
 	public void setTipoDeAlmacenamiento(String tipoDeAlmacenamiento) {
-		this.tipoDeAlmacenamiento = tipoDeAlmacenamiento;
+		this.tipoAlmacenamiento = tipoDeAlmacenamiento;
 	}
 	
 	/**
-	 * @return el tipoDeManejo
+	 * @return el tipoManejo
 	 */
 	public String getTipoDeManejo() {
-		return tipoDeManejo;
+		return tipoManejo;
 	}
 	
 	/**
-	 * @param tipoDeManejo modifica el tipoconsumidor de manejo
+	 * @param tipoManejo modifica el tipoconsumidor de manejo
 	 */
 	public void setTipoDeManejo(String tipoDeManejo) {
-		this.tipoDeManejo = tipoDeManejo;
+		this.tipoManejo = tipoDeManejo;
 	}
 	
 	/**
@@ -91,7 +91,7 @@ public class Categoria {
 	 */
 	public String toString() 
 	{
-		return "Categoria [id=" + id + ", nombre=" + nombre + ", tipoDeAlmacenamiento=" + tipoDeAlmacenamiento + ", tipoDeManejo=" + tipoDeManejo
+		return "Categoria [id=" + id + ", nombre=" + nombre + ", tipoAlmacenamiento=" + tipoAlmacenamiento + ", tipoManejo=" + tipoManejo
 				+ "]";
 	}
 	

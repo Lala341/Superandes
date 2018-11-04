@@ -780,7 +780,7 @@ public class PersistenciaSuperandes {
 
             log.trace ("Inserción de Bodega: " + idBodega + ": " + tuplasInsertadas + " tuplas insertadas");
             
-            return new Bodega (idBodega,nombre,  cantidadProductos, capacidadTotal, peso, volumen, tipoProducto, nivelDeReorden, idSucursal);
+            return new Bodega (idBodega,nombre,  cantidadProductos, capacidadTotal, tipoProducto, peso, volumen,nivelDeReorden, idSucursal);
         }
         catch (Exception e)
         {
@@ -1333,7 +1333,7 @@ public class PersistenciaSuperandes {
 	 * @param precioPorUnidadMedida precio por unidad medida
 	 * @param precioUnitario precio unitario 
 	 * @param presentacion presentacion
-	 * @param unidadDeMedida unidad de medida
+	 * @param unidadMedida unidad de medida
 	 * @return EL número de tuplas insertadas
 	 */
 	public Producto adicionarProducto (  String nombre, long idCategoria, String codigoDeBarras, String especificacionDeEmpaquetado, boolean estado, String marca, double precioPorUnidadMedida, String presentacion, String unidadDeMedida) 

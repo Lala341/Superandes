@@ -1507,7 +1507,7 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 				if(tb!=null){
 					List<ProductoCarritoCompras> productos= superandes.darProductoscarritoComprasPorIdcarritoCompras(tb.getId());
 					if(productos.isEmpty()){
-						   panelDatos.actualizarInterfaz("No existen productos en el carrito de compras.");
+						   throw new Exception("No existen productos en el carrito de compras.");
 					}
 					else{
 						 String[] productosn= new String[productos.size()];
@@ -1533,12 +1533,24 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 						   }
 						   superandes.eliminarProductoCarritoComprasPorIdProducto(tb.getId(), productoId);
 						   List<Bodega> bodega= superandes.darBodegasPorTipoYSucursal(superandes.darCategoriasPorId(superandes.darProductoPorId(productoId).getCategoria()).getTipoDeAlmacenamiento(), tb.getSucursal());
-						   
+						   if(!bodega.isEmpty()){
 						   if(!superandes.darProductoBodegaIdBodegaProducto (bodega.get(0).getId(), productoId).isEmpty()){
 						   superandes.ingresarCantidadDeProductoB(bodega.get(0).getId(), pro.getProducto(), pro.getCantidadProducto());
 						   }else{
 							   superandes.adicionarProductoBodega(bodega.get(0).getId(), pro.getProducto(), pro.getCantidadProducto());
 							   superandes.aumentarCantidadDeProductosUnoB(bodega.get(0).getId());
+						   }
+						   }
+						   else{
+							   System.out.println("voy2");
+							   Bodega t= superandes.adicionarBodega("BodegaReserva", 0, 200, 200, 200,superandes.darCategoriasPorId(superandes.darProductoPorId(productoId).getCategoria()).getTipoDeAlmacenamiento(), 2, tb.getSucursal());
+							   System.out.println("voy1");
+							   
+							   superandes.adicionarProductoBodega(t.getId(), productoId, pro.getCantidadProducto());
+							   
+							   System.out.println("voy3");
+							   superandes.aumentarCantidadDeProductosUnoB(t.getId());
+							   
 						   }
 					}
 							   
