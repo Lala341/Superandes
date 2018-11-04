@@ -65,7 +65,7 @@ class SQLProductoBodega
 	 */
 	public long eliminarProductoBodega (PersistenceManager pm, long idBodega, long idProducto)
 	{
-        Query q = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaProductoBodega () + " WHERE idbodega = ? AND idproducto = ?");
+        Query q = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaProductoBodega () + " WHERE bodega = ? AND producto = ?");
         q.setParameters(idBodega, idProducto);
         return (long) q.executeUnique();
 	}
@@ -82,6 +82,26 @@ class SQLProductoBodega
 		q.setResultClass(ProductoBodega.class);
 		List<ProductoBodega> resp = (List<ProductoBodega>) q.execute();
 		return resp;
+	}
+	public List<ProductoBodega> darProductoBodegaIdBodegaProducto (PersistenceManager pm, long b, long p)
+	{
+		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaProductoBodega () + " WHERE bodega = ? AND producto = ?");
+		q.setResultClass(ProductoBodega.class);
+		q.setParameters(b, p);
+		List<ProductoBodega> resp = (List<ProductoBodega>) q.execute();
+		return resp;
+	}
+	public void sacarCantidadDeProducto (PersistenceManager pm, long id, long idProducto,int cant)
+	{
+        Query q = pm.newQuery(SQL, "UPDATE " + pp.darTablaProductoBodega () + "SET CANTIDADPRODUCTO=(CANTIDADPRODUCTO-?) WHERE bodega = ? AND producto = ?");
+        q.setParameters(cant, id, idProducto);
+        q.executeUnique();
+	}
+	public void ingresarCantidadDeProducto (PersistenceManager pm, long id, long idProducto,int cant)
+	{
+        Query q = pm.newQuery(SQL, "UPDATE " + pp.darTablaProductoBodega () + "SET CANTIDADPRODUCTO=(CANTIDADPRODUCTO+?) WHERE bodega = ? AND producto = ?");
+        q.setParameters(cant, id, idProducto);
+       q.executeUnique();
 	}
 
 }

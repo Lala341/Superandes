@@ -84,4 +84,16 @@ class SQLProductoEstante
 		return resp;
 	}
 
+	public void sacarCantidadDeProducto (PersistenceManager pm, long id, long idProducto,int cant)
+	{
+        Query q = pm.newQuery(SQL, "UPDATE " + pp.darTablaProductoEstante() + "SET CANTIDADPRODUCTO=(CANTIDADPRODUCTO-?) WHERE estante = ? AND producto = ?");
+        q.setParameters(cant, id, idProducto);
+        q.executeUnique();
+	}
+	public void ingresarCantidadDeProducto (PersistenceManager pm, long id, long idProducto,int cant)
+	{
+        Query q = pm.newQuery(SQL, "UPDATE " + pp.darTablaProductoEstante() + "SET CANTIDADPRODUCTO=(CANTIDADPRODUCTO+?) WHERE estante = ? AND producto = ?");
+        q.setParameters(cant, id, idProducto);
+       q.executeUnique();
+	}
 }

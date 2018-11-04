@@ -55,6 +55,12 @@ public class SQLProductoCarritoCompras {
         return (long) q.executeUnique();
 	}
 
+	public long eliminarPorIdCarritoComprasProducto (PersistenceManager pm, long carritoCompras, long id)
+	{
+        Query q = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaProductoCarritoCompras () + " WHERE (carritoCompras = ?) AND (producto = ?)");
+        q.setParameters(carritoCompras, id);
+        return (long) q.executeUnique();
+	}
 	
 
 	/**

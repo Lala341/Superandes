@@ -1531,6 +1531,30 @@ public class PersistenciaSuperandes {
 	{
 		return sqlProductoEstante.darProductoEstante (pmf.getPersistenceManager());
 	}
+	public void aumentarCantidadDeProductosUno (long id)
+	{
+		sqlEstante.aumentarCantidadDeProductosUno(pmf.getPersistenceManager(), id);
+	}
+	public void aumentarCantidadDeProductosUnoB (long id)
+	{
+		sqlBodega.aumentarCantidadDeProductosUno(pmf.getPersistenceManager(), id);
+	}
+	public void ingresarCantidadDeProducto (long id, long idp, int cant)
+	{
+		sqlProductoEstante.ingresarCantidadDeProducto(pmf.getPersistenceManager(), id, idp, cant);
+	}
+	public void ingresarCantidadDeProductoB (long id, long idp, int cant)
+	{
+		sqlProductoBodega.ingresarCantidadDeProducto(pmf.getPersistenceManager(), id, idp, cant);
+	}
+	public void sacarCantidadDeProducto (long id, long idp, int cant)
+	{
+		sqlProductoEstante.sacarCantidadDeProducto(pmf.getPersistenceManager(), id, idp, cant);
+	}
+	public void sacarCantidadDeProductoB (long id, long idp, int cant)
+	{
+		sqlProductoBodega.sacarCantidadDeProducto(pmf.getPersistenceManager(), id, idp, cant);
+	}
 	
 	/* ****************************************************************
 	 * 			Métodos para manejar la relación PRODUCTO_BODEGA
@@ -1614,6 +1638,10 @@ public class PersistenciaSuperandes {
 	public List<ProductoBodega> darProductoBodega ()
 	{
 		return sqlProductoBodega.darProductoBodega (pmf.getPersistenceManager());
+	}
+	public List<ProductoBodega> darProductoBodegaIdBodegaProducto (long b, long p)
+	{
+		return sqlProductoBodega.darProductoBodegaIdBodegaProducto (pmf.getPersistenceManager(), b, p);
 	}
 	
 	/* ****************************************************************
@@ -2528,6 +2556,32 @@ public class PersistenciaSuperandes {
         {
             tx.begin();
             long resp = sqlProductoCarritoCompras.eliminarPorIdCarritoCompras(pm, id);
+            tx.commit();
+            return resp;
+        }
+        catch (Exception e)
+        {
+//        	e.printStackTrace();
+        	log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+            return -1;
+        }
+        finally
+        {
+            if (tx.isActive())
+            {
+                tx.rollback();
+            }
+            pm.close();
+        }
+	}
+	public long eliminarProductoCarritoComprasPorIdProducto (long id, long p) 
+	{
+		PersistenceManager pm = pmf.getPersistenceManager();
+        Transaction tx=pm.currentTransaction();
+        try
+        {
+            tx.begin();
+            long resp = sqlProductoCarritoCompras.eliminarPorIdCarritoComprasProducto (pm, id, p);
             tx.commit();
             return resp;
         }

@@ -6,6 +6,7 @@ import javax.jdo.PersistenceManager;
 import javax.jdo.Query;
 
 import uniandes.isis2304.superandes.negocio.Bodega;
+import uniandes.isis2304.superandes.negocio.Estante;
 import uniandes.isis2304.superandes.negocio.Sucursal;
 
 /**
@@ -150,6 +151,13 @@ class SQLBodega
 		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaBodega () + " WHERE id = ?");
 		q.setResultClass(Sucursal.class);
 		q.setParameters(idBodega);
+		return (Bodega) q.executeUnique();
+	}
+	public Bodega aumentarCantidadDeProductosUno (PersistenceManager pm, long id) 
+	{
+		Query q = pm.newQuery(SQL, "UPDATE " + pp.darTablaBodega() + "SET CANTIDADPRODUCTO=(CANTIDADPRODUCTO+1) WHERE id = ?");
+		q.setResultClass(Sucursal.class);
+		q.setParameters(id);
 		return (Bodega) q.executeUnique();
 	}
 	

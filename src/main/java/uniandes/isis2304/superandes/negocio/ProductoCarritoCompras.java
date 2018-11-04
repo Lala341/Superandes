@@ -8,7 +8,7 @@ package uniandes.isis2304.superandes.negocio;
 public class ProductoCarritoCompras implements VOProductoCarritoCompras {
 
 	private long carritoCompras;
-	private int cantidadVenta;
+	private int cantidadProducto;
 	private String unidadDeMedida;
 	private long producto;
 	
@@ -19,25 +19,25 @@ public class ProductoCarritoCompras implements VOProductoCarritoCompras {
 
 	public ProductoCarritoCompras(long carritoCompras,int cantidadVenta,String unidadDeMedida,long producto){
 		this.carritoCompras=carritoCompras;
-		this.cantidadVenta=cantidadVenta;
+		this.cantidadProducto=cantidadVenta;
 		this.unidadDeMedida=unidadDeMedida;
 		this.producto=producto;
 
 	}
 
 	/**
-	 * @return the cantidadVenta
+	 * @return the cantidadProducto
 	 */
-	public int getCantidadVenta() {
-		return cantidadVenta;
+	public int getCantidadProducto() {
+		return cantidadProducto;
 	}
 
 
 	/**
-	 * @param cantidadVenta the cantidadVenta to set
+	 * @param cantidadProducto the cantidadProducto to set
 	 */
-	public void setCantidadVenta(int cantidadVenta) {
-		this.cantidadVenta = cantidadVenta;
+	public void setCantidadProducto(int cantidadVenta) {
+		this.cantidadProducto = cantidadVenta;
 	}
 
 
@@ -91,7 +91,7 @@ public class ProductoCarritoCompras implements VOProductoCarritoCompras {
 	 */
 	public String toString() 
 	{
-		return "ProductoCarritoCompras [carritoCompras=" + carritoCompras + ", producto=" + producto + ", cantidadVenta=" + cantidadVenta + ", unidadDeMedida=" + unidadDeMedida
+		return "ProductoCarritoCompras [carritoCompras=" + carritoCompras + ", producto=" + producto + ", cantidadProducto=" + cantidadProducto + ", unidadDeMedida=" + unidadDeMedida
 				+"]";
 	}
 }

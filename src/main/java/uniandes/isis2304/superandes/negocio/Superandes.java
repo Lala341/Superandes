@@ -822,6 +822,48 @@ public class Superandes {
         log.info ("Adicionando ProductoEstante: " + resp + " tuplas insertadas");
         return resp;
 	}
+	public void aumentarCantidadDeProductosUno (long id)
+	{
+        log.info ("Actualizando Estante [" + id+"]");
+        pp.aumentarCantidadDeProductosUno  (id);
+        log.info ("Actualizando Estante [" + id+"]");
+        
+	}
+	public void aumentarCantidadDeProductosUnoB (long id)
+	{
+        log.info ("Actualizando Bodega [" + id+"]");
+        pp.aumentarCantidadDeProductosUnoB  (id);
+        log.info ("Actualizando Bodega [" + id+"]");
+        
+	}
+	public void ingresarCantidadDeProducto (long id, long idp, int cant)
+	{
+        log.info ("Actualizando Estante [" + id+"]");
+        pp.ingresarCantidadDeProducto (id, idp, cant);
+        log.info ("Actualizando Estante [" + id+"]");
+        
+	}
+	public void ingresarCantidadDeProductoB (long id, long idp, int cant)
+	{
+        log.info ("Actualizando Estante [" + id+"]");
+        pp.ingresarCantidadDeProductoB (id, idp, cant);
+        log.info ("Actualizando Estante [" + id+"]");
+        
+	}
+	public void sacarCantidadDeProducto (long id, long idp, int cant)
+	{
+        log.info ("Actualizando Estante [" + id+"]");
+        pp.sacarCantidadDeProducto (id, idp, cant);
+        log.info ("Actualizando Estante [" + id+"]");
+        
+	}
+	public void sacarCantidadDeProductoB (long id, long idp, int cant)
+	{
+        log.info ("Actualizando Estante [" + id+"]");
+        pp.sacarCantidadDeProductoB (id, idp, cant);
+        log.info ("Actualizando Estante [" + id+"]");
+        
+	}
 	
 	/**
 	 * Elimina de manera persistente una preferencia de una bebida por un PersonaNatural
@@ -911,6 +953,13 @@ public class Superandes {
 	{
         log.info ("Listando ProductoBodega");
         List<ProductoBodega> ProductoBodega = pp.darProductoBodega ();	
+        log.info ("Listando ProductoBodega: " + ProductoBodega.size() + " preferencias de gusto existentes");
+        return ProductoBodega;
+	}
+	public List<ProductoBodega> darProductoBodegaIdBodegaProducto (long bo, long pro)
+	{
+        log.info ("Listando ProductoBodega");
+        List<ProductoBodega> ProductoBodega = pp.darProductoBodegaIdBodegaProducto (bo, pro);	
         log.info ("Listando ProductoBodega: " + ProductoBodega.size() + " preferencias de gusto existentes");
         return ProductoBodega;
 	}
@@ -1614,6 +1663,13 @@ public class Superandes {
 	{
 		log.info ("Eliminando ProductoCarritoCompras por idV: " + id);
         long resp = pp.eliminarProductoCarritoComprasPorIdcarritoCompras (id);		
+        log.info ("Eliminando ProductoCarritoCompras por idV: " + resp + " tuplas eliminadas");
+        return resp;
+	}
+	public long eliminarProductoCarritoComprasPorIdProducto (long id, long pro)
+	{
+		log.info ("Eliminando ProductoCarritoCompras por idV: " + id);
+        long resp = pp.eliminarProductoCarritoComprasPorIdProducto (id, pro);		
         log.info ("Eliminando ProductoCarritoCompras por idV: " + resp + " tuplas eliminadas");
         return resp;
 	}

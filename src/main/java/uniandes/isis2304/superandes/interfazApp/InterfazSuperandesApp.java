@@ -47,6 +47,7 @@ import uniandes.isis2304.superandes.negocio.Estante;
 import uniandes.isis2304.superandes.negocio.OrdenPedido;
 import uniandes.isis2304.superandes.negocio.Producto;
 import uniandes.isis2304.superandes.negocio.ProductoBodega;
+import uniandes.isis2304.superandes.negocio.ProductoCarritoCompras;
 import uniandes.isis2304.superandes.negocio.ProductoEstante;
 import uniandes.isis2304.superandes.negocio.ProductoOfrecido;
 import uniandes.isis2304.superandes.negocio.Proveedores;
@@ -1309,7 +1310,107 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 	   
  }
  public void RFF14_EliminarUnProductoCarritoCompras(){
-	   
+	 
+	   try {
+		   
+		   List<Consumidor> consumidores=superandes.darConsumidor();
+		   
+		   if(consumidores.isEmpty()){
+			   panelDatos.actualizarInterfaz("No existen clientes en la base de datos. Por favor agrege uno y proceda a solicitar un carrito de compras.");
+		   }
+		   else{
+		   String[] estados= {"PERSONA NATURAL", "EMPRESA"};
+		   String estado = (String) JOptionPane.showInputDialog(null,"Elija el tipo del cliente para agregar el producto al carrito de compras", "Eliminar Producto Carrito Compras", JOptionPane.DEFAULT_OPTION, null, estados, estados[0]);
+		
+		   String consumidor="";
+		   Long consumidorId= null;
+		   
+		   if(estado.equals("PERSONA NATURAL")){
+			   consumidor= JOptionPane.showInputDialog (this, "Ingrese el documento de identidad del cliente.(Sin puntos) ", "Eliminar Producto Carrito Compras", JOptionPane.QUESTION_MESSAGE);
+			   try{
+				   consumidorId= superandes.darPersonaNaturalPorId(Long.parseLong(consumidor)).getIdConsumidor();
+				    
+				   
+			   }catch (Exception e) {
+				   throw new Exception("No existen clientes en la base de datos con esa Identificacion. Por favor agregelo y proceda a solicitar un carrito de compras.");
+				
+				  
+			   }
+		   }else{
+			   consumidor= JOptionPane.showInputDialog (this, "Ingrese el NIT del cliente. ", "Eliminar Producto Carrito Compras", JOptionPane.QUESTION_MESSAGE);
+			   try{
+				consumidorId= superandes.darEmpresaPorId(Long.parseLong(consumidor)).getIdConsumidor();
+				    
+				   
+			   }catch (Exception e) {
+				  
+				   throw new Exception("No existen clientes en la base de datos con esa Identificacion. Por favor agregelo y proceda a solicitar un carrito de compras.");
+				}
+		   }
+		   if(consumidorId!=null){
+			   
+			   CarritoCompras tb= superandes.darCarritoComprasPorIdConsumidor(consumidorId);
+				if(tb!=null){
+					List<ProductoCarritoCompras> productos= superandes.darProductoscarritoComprasPorIdcarritoCompras(tb.getId());
+					if(productos.isEmpty()){
+						   panelDatos.actualizarInterfaz("No existen productos en el carrito de compras.");
+					}
+					else{
+						 String[] productosn= new String[productos.size()];
+					     
+						   int i=0;
+						   for (ProductoCarritoCompras voSucursal :productos) {
+							   productosn[i]=superandes.darProductoPorId(voSucursal.getProducto()).getnombre();
+							   i=i+1;
+							   
+						   }
+						   String producto= (String) JOptionPane.showInputDialog(null,"Seleccione el producto, que desea eliminar", "Eliminar Producto Carrito Compras", JOptionPane.DEFAULT_OPTION, null, productosn, productosn[0]);
+						   Long productoId=null;
+						   ProductoCarritoCompras pro=null;
+						   i=0;
+						   for (ProductoCarritoCompras voSucursal :productos) {
+							   if(producto.equals(superandes.darProductoPorId(voSucursal.getProducto()).getnombre())){
+								   productoId=voSucursal.getProducto();
+								   pro=voSucursal;
+								   break;
+							   }
+							   i=i+1;
+							   
+						   }
+						   superandes.eliminarProductoCarritoComprasPorIdProducto(tb.getId(), productoId);
+						   List<Bodega> bodega= superandes.darBodegasPorTipo(superandes.darCategoriasPorId(superandes.darProductoPorId(productoId).getCategoria()).getTipoDeAlmacenamiento());
+						   
+						   if(!superandes.darProductoBodegaIdBodegaProducto (bodega.get(0).getId(), productoId).isEmpty()){
+						   superandes.ingresarCantidadDeProductoB(bodega.get(0).getId(), pro.getProducto(), pro.getCantidadProducto());
+						   }else{
+							   superandes.adicionarProductoBodega(bodega.get(0).getId(), pro.getProducto(), pro.getCantidadProducto());
+							   superandes.aumentarCantidadDeProductosUnoB(bodega.get(0).getId());
+						   }
+					}
+							   
+				}
+			   if (tb == null)
+	    		{
+	    			throw new Exception ("No se pudo encontrar el carrito de compras");
+	    		}
+	    		String resultado = "En  carrito de compraso\n\n";
+	    		resultado += "Producto eliminado del carrito de compras adicionado exitosamente: " + tb;
+				resultado += "\n Operación terminada";
+				panelDatos.actualizarInterfaz(resultado);
+			}
+			else
+			{
+				panelDatos.actualizarInterfaz("Operación cancelada por el usuario, llene todos los campos.");
+			}
+
+		   }
+	   } 
+	   catch (Exception e) 
+	   {
+	//		e.printStackTrace();
+			String resultado = generarMensajeError(e);
+			panelDatos.actualizarInterfaz(e.getMessage());
+	   }
 	   
 	   
  }

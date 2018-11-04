@@ -142,5 +142,13 @@ class SQLEstante
 		return (Estante) q.executeUnique();
 	}
 	
+	public void aumentarCantidadDeProductosUno (PersistenceManager pm, long id) 
+	{
+		Query q = pm.newQuery(SQL, "UPDATE " + pp.darTablaEstante () + "SET CANTIDADPRODUCTO=(CANTIDADPRODUCTO+1) WHERE id = ?");
+		q.setResultClass(Sucursal.class);
+		q.setParameters(id);
+		q.executeUnique();
+	}
+	
 }
 

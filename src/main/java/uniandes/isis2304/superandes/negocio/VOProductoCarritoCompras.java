@@ -13,13 +13,13 @@ public interface VOProductoCarritoCompras {
 	/**
 	 * @return the cantidadVenta
 	 */
-	public int getCantidadVenta();
+	public int getCantidadProducto();
 
 
 	/**
 	 * @param cantidadVenta the cantidadVenta to set
 	 */
-	public void setCantidadVenta(int cantidadVenta);
+	public void setCantidadProducto(int cantidadVenta);
 
 
 	/**

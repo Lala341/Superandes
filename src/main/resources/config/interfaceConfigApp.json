@@ -55,6 +55,14 @@
                 {
 					"label": "Registrar un carrito de compras",
 					"event": "RF12_RegistrarCarritoCompras"
+				},
+                {
+					"label": "Adicionar producto a un carrito de compras",
+					"event": "RFF13_AdicionarUnProductoCarritoCompras"
+				},
+                {
+					"label": "Eliminar producto de un carrito de compras",
+					"event": "RFF14_EliminarUnProductoCarritoCompras"
 				}
 			]
         },
