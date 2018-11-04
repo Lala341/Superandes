@@ -42,7 +42,7 @@ public class ProductoVenta implements VOProductoVenta{
 
 
 	/**
-	 * @return the unidadDeMedida
+	 * @return the unidadMedida
 	 */
 	public String getUnidadDeMedida() {
 		return unidadDeMedida;
@@ -50,7 +50,7 @@ public class ProductoVenta implements VOProductoVenta{
 
 
 	/**
-	 * @param unidadDeMedida the unidadDeMedida to set
+	 * @param unidadMedida the unidadMedida to set
 	 */
 	public void setUnidadDeMedida(String unidadDeMedida) {
 		this.unidadDeMedida = unidadDeMedida;
@@ -91,7 +91,7 @@ public class ProductoVenta implements VOProductoVenta{
 	 */
 	public String toString() 
 	{
-		return "ProductoVenta [venta=" + venta + ", producto=" + producto + ", cantidadVenta=" + cantidadVenta + ", unidadDeMedida=" + unidadDeMedida
+		return "ProductoVenta [venta=" + venta + ", producto=" + producto + ", cantidadVenta=" + cantidadVenta + ", unidadMedida=" + unidadDeMedida
 				+"]";
 	}
 

@@ -18,7 +18,7 @@ public class NoPerecedero implements VONoPerecedero {
 	
 	/**
 	 * @param idNoPerecedero - El identificador del noPerecedero
-	 * @param tipoCategoriaNoPerecedera - el tipo de cateogoria del producto noPerecedero
+	 * @param tipoCategoriaNoPerecedera - el tipoconsumidor de cateogoria del producto noPerecedero
 	 * @param idCategoria
 	 */
 	public NoPerecedero (long idNoPerecedero, String tipoCategoriaNoPerecedera, long idCategoria) 

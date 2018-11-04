@@ -29,7 +29,7 @@ public class Producto implements VOProducto {
 	/**
 	 * @param idProducto - El identificador de la producto
 	 * @param nombre - El nombre de la producto
-	 * @param categoria - El identificador del tipo de categoria de la producto
+	 * @param categoria - El identificador del tipoconsumidor de categoria de la producto
 	 * @param cantidad - cantidad de producto
 	 * @param codigoBarras el codigo de barras
 	 * @param especificacionesEmpaquetado especificacion del empaquetado

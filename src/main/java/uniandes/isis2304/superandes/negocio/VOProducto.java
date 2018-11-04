@@ -52,12 +52,12 @@ public interface VOProducto {
 
 	
 	/**
-	 * @return the unidadDeMedida
+	 * @return the unidadMedida
 	 */
 	public String getUnidadMedida();
 
 	/**
-	 * @param unidadDeMedida the unidadDeMedida to set
+	 * @param unidadMedida the unidadMedida to set
 	 */
 	public void setUnidadMedida(String unidadDeMedida) ;
 

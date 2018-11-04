@@ -71,9 +71,9 @@ e.printStackTrace();
     
     /**
     * Lee datos de configuración para la aplicación, a partir de un archivo JSON o con valores por defecto si hay errores.
-    * @param tipo - El tipo de configuración deseada
+    * @param tipoconsumidor - El tipoconsumidor de configuración deseada
     * @param archConfig - Archivo Json que contiene la configuración
-    * @return Un objeto JSON con la configuración del tipo especificado
+    * @return Un objeto JSON con la configuración del tipoconsumidor especificado
     * 			NULL si hay un error en el archivo.
     */
    private JsonObject openConfig (String archConfig)

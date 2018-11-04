@@ -35,11 +35,11 @@ public class Bodega implements VOBodega {
 	 * @param capacidadTotal - La capacidad de la bodega
 	 * @param peso - El peso manejado en la bodega
 	 * @param volumen - El volumen manejado en la bodega
-	 * @param tipoProducto - El tipo de producto que maneja la bodega
+	 * @param tipoProducto - El tipoconsumidor de producto que maneja la bodega
 	 * @param nivelDeAbastecimiento
 	 * @param sucursal
 	 */
-	public Bodega (long idBodega,String nombre,  int cantidadProductos, int capacidadTotal, double peso, double volumen, String tipoProducto, double nivelDeReorden, long idSucursal) 
+	public Bodega (long idBodega,String nombre,  int cantidadProductos, int capacidadTotal, String tipoProducto,  double peso, double volumen, double nivelDeReorden, long idSucursal) 
 	{
 		this.id=idBodega;
 		this.nombre=nombre;

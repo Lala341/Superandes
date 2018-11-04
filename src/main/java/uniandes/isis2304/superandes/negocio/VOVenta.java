@@ -35,13 +35,13 @@ public interface VOVenta {
 
 
 	/**
-	 * @return the formaDePago
+	 * @return the formaPago
 	 */
 	public String getFormaDePago();
 
 
 	/**
-	 * @param formaDePago the formaDePago to set
+	 * @param formaPago the formaPago to set
 	 */
 	public void setFormaDePago(String formaDePago);
 

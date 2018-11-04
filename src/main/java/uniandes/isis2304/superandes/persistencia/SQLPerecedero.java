@@ -20,7 +20,7 @@ class SQLPerecedero
 	 * 			Constantes
 	 *****************************************************************/
 	/**
-	 * Cadena que representa el tipo de consulta que se va a realizar en las sentencias de acceso a la base de datos
+	 * Cadena que representa el tipoconsumidor de consulta que se va a realizar en las sentencias de acceso a la base de datos
 	 * Se renombra acá para facilitar la escritura de las sentencias
 	 */
 	private final static String SQL = PersistenciaSuperandes.SQL;
@@ -51,7 +51,7 @@ class SQLPerecedero
 	 * @param pm - El manejador de persistencia
 	 * @param idPerecedero - El identificador del perecedero
 	 * @param fechaDeVencimiento - la fecha de vencimiento del producto perecedero
-	 * @param tipoCategoriaPerecedera - el tipo de cateogoria del producto perecedero
+	 * @param tipoCategoriaPerecedera - el tipoconsumidor de cateogoria del producto perecedero
 	 * @param idCategoria
 	 * @return El número de tuplas insertadas
 	 */

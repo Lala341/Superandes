@@ -8,16 +8,16 @@ import java.util.ArrayList;
  */
 public class OrdenPedido implements VOOrdenPedido {
 
-	private String fechaEntrega;
-	private int calificacion;
-	private String estado;
-	private String fecha;
-	private long id;
-	private long proveedor;
-	private int cantidadVenta;
-	private String unidadDeMedida;
-	private long productoOfrecido;
-	private long sucursal;
+	public String fechaEntrega;
+	public int calificacion;
+	public String estado;
+	public String fecha;
+	public long id;
+	public long proveedor;
+	public int cantidadVenta;
+	public String unidadDeMedida;
+	public long productoOfrecido;
+	public long sucursal;
 	
 	public OrdenPedido(){
 
@@ -54,14 +54,14 @@ public class OrdenPedido implements VOOrdenPedido {
 	}
 
 	/**
-	 * @return the unidadDeMedida
+	 * @return the unidadMedida
 	 */
 	public String getUnidadDeMedida() {
 		return unidadDeMedida;
 	}
 
 	/**
-	 * @param unidadDeMedida the unidadDeMedida to set
+	 * @param unidadMedida the unidadMedida to set
 	 */
 	public void setUnidadDeMedida(String unidadDeMedida) {
 		this.unidadDeMedida = unidadDeMedida;
@@ -183,7 +183,7 @@ public class OrdenPedido implements VOOrdenPedido {
 	public String toString() 
 	{
 		return "OrdenPedido [id=" + id + ", cantidadVenta=" + cantidadVenta  + ", calificacion=" + calificacion  + ", estado=" + estado  + ", fecha=" + fecha  + ", fechaEntrega=" + fechaEntrega 
-				 + ", proveedor=" + proveedor+  ", productoOfrecido=" + productoOfrecido+  ", sucursal=" + sucursal+  ", unidadDeMedida=" + unidadDeMedida+ "]";
+				 + ", proveedor=" + proveedor+  ", productoOfrecido=" + productoOfrecido+  ", sucursal=" + sucursal+  ", unidadMedida=" + unidadDeMedida+ "]";
 	}
 	
 

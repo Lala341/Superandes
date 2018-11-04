@@ -33,23 +33,23 @@ public interface VOProductoOfrecido {
 	/**
 	 * @return the calidad
 	 */
-	public int getCalidad();
+	public String getCalidad();
 	
 
 	/**
 	 * @param calidad the calidad to set
 	 */
-	public void setCalidad(int calidad);
+	public void setCalidad(String calidad);
 
 	/**
 	 * @return the cumplimiento
 	 */
-	public int getCumplimiento();
+	public String  getCumplimiento();
 
 	/**
 	 * @param cumplimiento the cumplimiento to set
 	 */
-	public void setCumplimiento(int cumplimiento);
+	public void setCumplimiento(String  cumplimiento);
 
 	/**
 	 * @return the producto

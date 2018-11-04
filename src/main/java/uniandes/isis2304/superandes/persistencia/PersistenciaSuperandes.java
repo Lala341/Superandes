@@ -29,7 +29,7 @@ public class PersistenciaSuperandes {
 	private static Logger log = Logger.getLogger(PersistenciaSuperandes.class.getName());
 	
 	/**
-	 * Cadena para indicar el tipo de sentencias que se va a utilizar en una consulta
+	 * Cadena para indicar el tipoconsumidor de sentencias que se va a utilizar en una consulta
 	 */
 	public final static String SQL = "javax.jdo.query.SQL";
 
@@ -659,7 +659,7 @@ public class PersistenciaSuperandes {
 	 * Adiciona entradas al log de la aplicación
 	 * @param sucursal - El identificador del sucursal
 	 * @param tamanho - El tamanho del sucursal
-	 * @param tipoDeMercado - el tipo de mercado del sucursal
+	 * @param tipoDeMercado - el tipoconsumidor de mercado del sucursal
 	 * @param ventasTotales - Las ventas totales de la sucursal
 	 * @param idCiudad
 	 * @return El objeto adicionado. null si ocurre alguna Excepción
@@ -763,7 +763,7 @@ public class PersistenciaSuperandes {
 	 * @param capacidadTotal - La capacidad de la bodega
 	 * @param peso - El peso manejado en la bodega
 	 * @param volumen - El volumen manejado en la bodega
-	 * @param tipoProducto - El tipo de producto que maneja la bodega
+	 * @param tipoProducto - El tipoconsumidor de producto que maneja la bodega
 	 * @param nivelDeAbastecimiento
 	 * @param sucursal
 	 */
@@ -780,7 +780,7 @@ public class PersistenciaSuperandes {
 
             log.trace ("Inserción de Bodega: " + idBodega + ": " + tuplasInsertadas + " tuplas insertadas");
             
-            return new Bodega (idBodega,nombre,  cantidadProductos, capacidadTotal, peso, volumen, tipoProducto, nivelDeReorden, idSucursal);
+            return new Bodega (idBodega,nombre,  cantidadProductos, capacidadTotal, tipoProducto, peso, volumen,nivelDeReorden, idSucursal);
         }
         catch (Exception e)
         {
@@ -885,7 +885,7 @@ public class PersistenciaSuperandes {
 	 * @param capacidadTotal - La capacidad de el estante
 	 * @param peso - El peso manejado en el estante
 	 * @param volumen - El volumen manejado en el estante
-	 * @param tipoProducto - El tipo de producto que maneja el estante
+	 * @param tipoProducto - El tipoconsumidor de producto que maneja el estante
 	 * @param equipamientoAdicional el equipamiento adicional del estante
 	 * @param nivelDeAbastecimiento nivel de abastecimiento del estante
 	 * @param sucursal
@@ -996,8 +996,8 @@ public class PersistenciaSuperandes {
 	 * @param pm - El manejador de persistencia
 	 * @param idCategoria - El identificador de la categoria
 	 * @param nombre - El nombre de la categoria
-	 * @param tipoDeAlmacenamiento - El tipo de almacenamiento de la categoria
-	 * @param tipoDeManejo - El tipo de manejo de la categoria 
+	 * @param tipoDeAlmacenamiento - El tipoconsumidor de almacenamiento de la categoria
+	 * @param tipoDeManejo - El tipoconsumidor de manejo de la categoria 
 	 * @return EL número de tuplas insertadas
 	 */
 	public Categoria adicionarCategoria ( String nombre, String tipoDeAlmacenamiento, String tipoDeManejo) 
@@ -1134,7 +1134,7 @@ public class PersistenciaSuperandes {
 	 * 
 	 * @param idPerecedero - El identificador del perecedero
 	 * @param fechaDeVencimiento - la fecha de vencimiento del producto perecedero
-	 * @param tipoCategoriaPerecedera - el tipo de cateogoria del producto perecedero
+	 * @param tipoCategoriaPerecedera - el tipoconsumidor de cateogoria del producto perecedero
 	 * @param idCategoria
 	 * @return El número de tuplas insertadas
 	 */
@@ -1229,7 +1229,7 @@ public class PersistenciaSuperandes {
 	/**
 	 * 
 	 * @param idNoPerecedero - El identificador del noPerecedero
-	 * @param tipoCategoriaNoPerecedera - el tipo de cateogoria del producto noPerecedero
+	 * @param tipoCategoriaNoPerecedera - el tipoconsumidor de cateogoria del producto noPerecedero
 	 * @param idCategoria
 	 * @return El número de tuplas insertadas
 	 */
@@ -1324,7 +1324,7 @@ public class PersistenciaSuperandes {
 	 * 
 	 * @param idProducto - El identificador de la producto
 	 * @param nombre - El nombre de la producto
-	 * @param idCategoria - El identificador del tipo de categoria de la producto
+	 * @param idCategoria - El identificador del tipoconsumidor de categoria de la producto
 	 * @param cantidad - cantidad de producto
 	 * @param codigoDeBarras el codigo de barras
 	 * @param especificacionDeEmpaquetado especificacion del empaquetado
@@ -1333,7 +1333,7 @@ public class PersistenciaSuperandes {
 	 * @param precioPorUnidadMedida precio por unidad medida
 	 * @param precioUnitario precio unitario 
 	 * @param presentacion presentacion
-	 * @param unidadDeMedida unidad de medida
+	 * @param unidadMedida unidad de medida
 	 * @return EL número de tuplas insertadas
 	 */
 	public Producto adicionarProducto (  String nombre, long idCategoria, String codigoDeBarras, String especificacionDeEmpaquetado, boolean estado, String marca, double precioPorUnidadMedida, String presentacion, String unidadDeMedida) 
@@ -3444,7 +3444,7 @@ public class PersistenciaSuperandes {
 	 * Adiciona entradas al log de la aplicación
 	  * @return El objeto adicionado. null si ocurre alguna Excepción
 	 */
-	public ProductoOfrecido adicionarProductoOfrecido( double precioProveedor, int calificacionTotal, int calidad, int cumplimiento,  long productoId, long proveedor)
+	public ProductoOfrecido adicionarProductoOfrecido( double precioProveedor, int calificacionTotal, String calidad, String cumplimiento,  long productoId, long proveedor)
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
         Transaction tx=pm.currentTransaction();
@@ -3616,6 +3616,11 @@ public class PersistenciaSuperandes {
 	{
 		return sqlOrdenPedido.darLista(pmf.getPersistenceManager());
 	}
+	public long finalizarPedido (long p)
+	{
+		return sqlOrdenPedido.finalizarOrden(pmf.getPersistenceManager(), p);
+	}
+ 
  
 	/**
 	 * Método que consulta todas las tuplas en la tabla 

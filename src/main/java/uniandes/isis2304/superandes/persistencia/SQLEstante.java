@@ -18,7 +18,7 @@ class SQLEstante
 	 * 			Constantes
 	 *****************************************************************/
 	/**
-	 * Cadena que representa el tipo de consulta que se va a realizar en las sentencias de acceso a la base de datos
+	 * Cadena que representa el tipoconsumidor de consulta que se va a realizar en las sentencias de acceso a la base de datos
 	 * Se renombra acá para facilitar la escritura de las sentencias
 	 */
 	private final static String SQL = PersistenciaSuperandes.SQL;
@@ -52,7 +52,7 @@ class SQLEstante
 	 * @param capacidadTotal - La capacidad de el estante
 	 * @param peso - El peso manejado en el estante
 	 * @param volumen - El volumen manejado en el estante
-	 * @param tipoProducto - El tipo de producto que maneja el estante
+	 * @param tipoProducto - El tipoconsumidor de producto que maneja el estante
 	 * @param equipamientoAdicional el equipamiento adicional del estante
 	 * @param nivelDeAbastecimiento nivel de abastecimiento del estante
 	 * @param sucursal

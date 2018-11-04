@@ -19,7 +19,7 @@ class SQLBodega
 	 * 			Constantes
 	 *****************************************************************/
 	/**
-	 * Cadena que representa el tipo de consulta que se va a realizar en las sentencias de acceso a la base de datos
+	 * Cadena que representa el tipoconsumidor de consulta que se va a realizar en las sentencias de acceso a la base de datos
 	 * Se renombra acá para facilitar la escritura de las sentencias
 	 */
 	private final static String SQL = PersistenciaSuperandes.SQL;
@@ -53,7 +53,7 @@ class SQLBodega
 	 * @param capacidadTotal - La capacidad de la bodega
 	 * @param peso - El peso manejado en la bodega
 	 * @param volumen - El volumen manejado en la bodega
-	 * @param tipoProducto - El tipo de producto que maneja la bodega
+	 * @param tipoProducto - El tipoconsumidor de producto que maneja la bodega
 	 * @param nivelDeAbastecimiento
 	 * @param sucursal
 	 * @return El número de tuplas insertadas
@@ -160,12 +160,12 @@ class SQLBodega
 		q.setParameters(idBodega);
 		return (Bodega) q.executeUnique();
 	}
-	public Bodega aumentarCantidadDeProductosUno (PersistenceManager pm, long id) 
+	public long aumentarCantidadDeProductosUno (PersistenceManager pm, long id) 
 	{
-		Query q = pm.newQuery(SQL, "UPDATE " + pp.darTablaBodega() + "SET CANTIDADPRODUCTO=(CANTIDADPRODUCTO+1) WHERE id = ?");
+		Query q = pm.newQuery(SQL, "UPDATE " + pp.darTablaBodega() + " SET CANTIDADPRODUCTOS=(CANTIDADPRODUCTOS+1) WHERE id = ?");
 		q.setResultClass(Sucursal.class);
 		q.setParameters(id);
-		return (Bodega) q.executeUnique();
+		return (long) q.executeUnique();
 	}
 	
 }

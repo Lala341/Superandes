@@ -11,7 +11,7 @@ import uniandes.isis2304.superandes.negocio.OrdenPedido;
 public class SQLOrdenPedido {
 	
 	/**
-	 * Cadena que representa el tipo de consulta que se va a realizar en las sentencias de acceso a la base de datos
+	 * Cadena que representa el tipoconsumidor de consulta que se va a realizar en las sentencias de acceso a la base de datos
 	 */
 	private final static String SQL = PersistenciaSuperandes.SQL;
 
@@ -93,6 +93,14 @@ public class SQLOrdenPedido {
 		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaOrdenPedido ());
 		q.setResultClass(OrdenPedido.class);
 		return (List<OrdenPedido>) q.executeList();
+	}
+	public long finalizarOrden (PersistenceManager pm, long p)
+	{
+		Query q = pm.newQuery(SQL, "UPDATE  " + pp.darTablaOrdenPedido ()+ " SET ESTADO='FINALIZADO' WHERE id= ?");
+		q.setResultClass(OrdenPedido.class);
+		q.setParameters(p);
+		
+		return (long) q.executeUnique();
 	}
 
 	

@@ -22,12 +22,12 @@ public interface VOOrdenPedido {
 	public void setCantidadVenta(int cantidadVenta);
 
 	/**
-	 * @return the unidadDeMedida
+	 * @return the unidadMedida
 	 */
 	public String getUnidadDeMedida();
 
 	/**
-	 * @param unidadDeMedida the unidadDeMedida to set
+	 * @param unidadMedida the unidadMedida to set
 	 */
 	public void setUnidadDeMedida(String unidadDeMedida);
 

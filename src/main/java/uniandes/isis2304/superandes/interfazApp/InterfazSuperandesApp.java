@@ -162,10 +162,17 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 	 * 			M�todos de configuraci�n de la interfaz
 	 *****************************************************************/
     /**
+<<<<<<< HEAD
      * Lee datos de configuraci�n para la aplicaci�, a partir de un archivo JSON o con valores por defecto si hay errores.
      * @param tipo - El tipo de configuraci�n deseada
      * @param archConfig - Archivo Json que contiene la configuraci�n
      * @return Un objeto JSON con la configuraci�n del tipo especificado
+=======
+     * Lee datos de configuraci�n para la aplicaci�, a partir de un archivo JSON o con valores por defecto si hay errores.
+     * @param tipoconsumidor - El tipoconsumidor de configuraci�n deseada
+     * @param archConfig - Archivo Json que contiene la configuraci�n
+     * @return Un objeto JSON con la configuraci�n del tipoconsumidor especificado
+>>>>>>> branch 'master' of https://github.com/Lala341/Superandes.git
      * 			NULL si hay un error en el archivo.
      */
     private JsonObject openConfig (String tipo, String archConfig)
@@ -562,7 +569,7 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 			String[] categorias= {"PERECEDERO", "NOPERECEDERO"};
 			String categoria = (String) JOptionPane.showInputDialog(null,"Seleccione la categoria", "Adicionar producto", JOptionPane.DEFAULT_OPTION, null, categorias, categorias[0]);
 			String[] tcategorias= {"ASEO", "ABARROTES", "PRENDASDEVESTIR", "MUEBLES", "HERRAMIENTAS", "ELECTRODOMESTICOS", "CONGELADOS"};
-			String tipoCategoria = (String) JOptionPane.showInputDialog(null,"Seleccione el tipo de producto de la categoria", "Adicionar producto", JOptionPane.DEFAULT_OPTION, null, tcategorias, tcategorias[0]);
+			String tipoCategoria = (String) JOptionPane.showInputDialog(null,"Seleccione el tipoconsumidor de producto de la categoria", "Adicionar producto", JOptionPane.DEFAULT_OPTION, null, tcategorias, tcategorias[0]);
 			
 			int es= JOptionPane.showConfirmDialog(this, "�El producto esta disponible?", "Estado producto", JOptionPane.YES_NO_OPTION );
 			boolean estado = (es ==0)?true:false;
@@ -631,7 +638,7 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 			String correoElectronico = JOptionPane.showInputDialog (this, "Correo Electronico del cliente", "Adicionar Cliente", JOptionPane.QUESTION_MESSAGE);
 			
 			String[] tipos= {"PNATURAL", "EMPRESA"};
-			String tipo = (String) JOptionPane.showInputDialog(null,"Seleccione el tipo de cliente", "Adicionar producto", JOptionPane.DEFAULT_OPTION, null, tipos, tipos[0]);
+			String tipo = (String) JOptionPane.showInputDialog(null,"Seleccione el tipoconsumidor de cliente", "Adicionar producto", JOptionPane.DEFAULT_OPTION, null, tipos, tipos[0]);
 			
 			String numeroIdentficacion="";
 			String nit="";
@@ -766,7 +773,7 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 			
 			
 			String[] tcategorias= {"ASEO", "ABARROTES", "PRENDASDEVESTIR", "MUEBLES", "HERRAMIENTAS", "ELECTRODOMESTICOS", "CONGELADOS"};
-			String tipoCategoria = (String) JOptionPane.showInputDialog(null,"Seleccione el tipo de producto de la bodega", "Adicionar bodega", JOptionPane.DEFAULT_OPTION, null, tcategorias, tcategorias[0]);
+			String tipoCategoria = (String) JOptionPane.showInputDialog(null,"Seleccione el tipoconsumidor de producto de la bodega", "Adicionar bodega", JOptionPane.DEFAULT_OPTION, null, tcategorias, tcategorias[0]);
 			
 			
 			
@@ -833,7 +840,7 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 			
 			
 			String[] tcategorias= {"ASEO", "ABARROTES", "PRENDASDEVESTIR", "MUEBLES", "HERRAMIENTAS", "ELECTRODOMESTICOS", "CONGELADOS"};
-			String tipoCategoria = (String) JOptionPane.showInputDialog(null,"Seleccione el tipo de producto de la Estante", "Adicionar Estante", JOptionPane.DEFAULT_OPTION, null, tcategorias, tcategorias[0]);
+			String tipoCategoria = (String) JOptionPane.showInputDialog(null,"Seleccione el tipoconsumidor de producto de la Estante", "Adicionar Estante", JOptionPane.DEFAULT_OPTION, null, tcategorias, tcategorias[0]);
 			String equipamientoAdicional = JOptionPane.showInputDialog (this, "Equipamiento Adicional de la Estante", "Adicionar Estante", JOptionPane.QUESTION_MESSAGE);
 
 			
@@ -882,7 +889,7 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 			String[] estados= {"FINALIZADO", "VIGENTE"};
 			String estado = (String) JOptionPane.showInputDialog(null,"Seleccione un estado", "Adicionar promocion", JOptionPane.DEFAULT_OPTION, null, estados, estados[0]);
 			String[] tipos= {"PROMODESCUENTO", "PROMOPARTEDESCUENTO", "PROMOUNIDAD", "PROMOCANTIDAD"};
-			String tipo = (String) JOptionPane.showInputDialog(null,"Seleccione un tipo", "Adicionar promocion", JOptionPane.DEFAULT_OPTION, null, tipos, tipos[0]);
+			String tipo = (String) JOptionPane.showInputDialog(null,"Seleccione un tipoconsumidor", "Adicionar promocion", JOptionPane.DEFAULT_OPTION, null, tipos, tipos[0]);
 			String cantidadP = JOptionPane.showInputDialog (this, "Cantidad de productos que pueden usar la promocion", "Adicionar promocion", JOptionPane.QUESTION_MESSAGE);
 			
 			String posMesi= "0";
@@ -980,7 +987,7 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 			String cantidadProducto = JOptionPane.showInputDialog (this, "Cantidad de productos de la Estante", "Adicionar Estante", JOptionPane.QUESTION_MESSAGE);
 			
 			String[] tcategorias= {"ASEO", "ABARROTES", "PRENDASDEVESTIR", "MUEBLES", "HERRAMIENTAS", "ELECTRODOMESTICOS", "CONGELADOS"};
-			String tipoCategoria = (String) JOptionPane.showInputDialog(null,"Seleccione el tipo de producto de la Estante", "Adicionar Estante", JOptionPane.DEFAULT_OPTION, null, tcategorias, tcategorias[0]);
+			String tipoCategoria = (String) JOptionPane.showInputDialog(null,"Seleccione el tipoconsumidor de producto de la Estante", "Adicionar Estante", JOptionPane.DEFAULT_OPTION, null, tcategorias, tcategorias[0]);
 			String equipamientoAdicional = JOptionPane.showInputDialog (this, "Equipamiento Adicional de la Estante", "Adicionar Estante", JOptionPane.QUESTION_MESSAGE);
 
 			
@@ -1114,8 +1121,9 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 			   
 		   }
 		   if(productosOfrecidos.size()==0){
-			   panelDatos.actualizarInterfaz("Operaci�n cancelada, el proveedor seleccionado no tiene productos ofrecidos.");
+			   throw new Exception("Operación cancelada, el proveedor seleccionado no tiene productos ofrecidos.");
 		   }
+		   
 		   String productoOfrecido= (String) JOptionPane.showInputDialog(null,"Seleccione el producto del proveedor seleccionado.", "Adicionar orden de pedido", JOptionPane.DEFAULT_OPTION, null, productosOfrecidosn, productosOfrecidosn[0]);
 		   
 		   i=0;
@@ -1153,7 +1161,7 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 		} 
 		catch (Exception e) 
 		{
-//			e.printStackTrace();
+			e.printStackTrace();
 			String resultado = generarMensajeError(e);
 			panelDatos.actualizarInterfaz(resultado);
 		}
@@ -1167,18 +1175,15 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 		   List<OrdenPedido> pedidos=superandes.darOrdenPedido();
 		   String pedidoN = JOptionPane.showInputDialog (this, "Ingrese el id del pedido", JOptionPane.QUESTION_MESSAGE);
 		   long idPedido = Long.valueOf(pedidoN);
-		   VOOrdenPedido pedido = null;
+		   Long t=superandes.finalizarOrdenPedido(idPedido);
+		   String resultado="";
+		   if(t!=null){
+			   resultado+="Se finalizo el pedido solicitado." ;
+			   panelDatos.actualizarInterfaz(resultado);
+		   }
+		   			   
 		   
 		   
-		   if(pedidos.size()==0){
-			   if (!superandes.actualizadoOrdenPedido(idPedido)) {
-			JOptionPane.showMessageDialog(this, "Se debi� haber registrado la orden de pedido ");
-			}			   
-		   }
-		   else{
-			   
-			   superandes.actualizadoOrdenPedido(idPedido);
-		   }
 		
 	   } 
 	   catch (Exception e) 
@@ -1287,7 +1292,7 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 		   }
 		   else{
 		   String[] estados= {"PERSONA NATURAL", "EMPRESA"};
-		   String estado = (String) JOptionPane.showInputDialog(null,"Elija el tipo del cliente para el carrito de compras", "Adicionar Carrito Compras", JOptionPane.DEFAULT_OPTION, null, estados, estados[0]);
+		   String estado = (String) JOptionPane.showInputDialog(null,"Elija el tipoconsumidor del cliente para el carrito de compras", "Adicionar Carrito Compras", JOptionPane.DEFAULT_OPTION, null, estados, estados[0]);
 		
 		   String consumidor="";
 		   Long consumidorId= null;
@@ -1389,7 +1394,7 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 			}
 			if(carritoPorId!=null){
 				String[] tcategorias= {"ASEO", "ABARROTES", "PRENDASDEVESTIR", "MUEBLES", "HERRAMIENTAS", "ELECTRODOMESTICOS", "CONGELADOS"};
-				String tipoCategoria = (String) JOptionPane.showInputDialog(null,"Seleccione el tipo de producto", "Tipo producto", JOptionPane.DEFAULT_OPTION, null, tcategorias, tcategorias[0]);
+				String tipoCategoria = (String) JOptionPane.showInputDialog(null,"Seleccione el tipoconsumidor de producto", "Tipo producto", JOptionPane.DEFAULT_OPTION, null, tcategorias, tcategorias[0]);
 				
 				
 				List<VOBodega> bodegas = superandes.darVOBodegas();
@@ -1480,7 +1485,7 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 		   }
 		   else{
 		   String[] estados= {"PERSONA NATURAL", "EMPRESA"};
-		   String estado = (String) JOptionPane.showInputDialog(null,"Elija el tipo del cliente para agregar el producto al carrito de compras", "Eliminar Producto Carrito Compras", JOptionPane.DEFAULT_OPTION, null, estados, estados[0]);
+		   String estado = (String) JOptionPane.showInputDialog(null,"Elija el tipoconsumidor del cliente para agregar el producto al carrito de compras", "Eliminar Producto Carrito Compras", JOptionPane.DEFAULT_OPTION, null, estados, estados[0]);
 		
 		   String consumidor="";
 		   Long consumidorId= null;
@@ -1513,7 +1518,7 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 				if(tb!=null){
 					List<ProductoCarritoCompras> productos= superandes.darProductoscarritoComprasPorIdcarritoCompras(tb.getId());
 					if(productos.isEmpty()){
-						   panelDatos.actualizarInterfaz("No existen productos en el carrito de compras.");
+						   throw new Exception("No existen productos en el carrito de compras.");
 					}
 					else{
 						 String[] productosn= new String[productos.size()];
@@ -1539,12 +1544,24 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 						   }
 						   superandes.eliminarProductoCarritoComprasPorIdProducto(tb.getId(), productoId);
 						   List<Bodega> bodega= superandes.darBodegasPorTipoYSucursal(superandes.darCategoriasPorId(superandes.darProductoPorId(productoId).getCategoria()).getTipoDeAlmacenamiento(), tb.getSucursal());
-						   
+						   if(!bodega.isEmpty()){
 						   if(!superandes.darProductoBodegaIdBodegaProducto (bodega.get(0).getId(), productoId).isEmpty()){
 						   superandes.ingresarCantidadDeProductoB(bodega.get(0).getId(), pro.getProducto(), pro.getCantidadProducto());
 						   }else{
 							   superandes.adicionarProductoBodega(bodega.get(0).getId(), pro.getProducto(), pro.getCantidadProducto());
 							   superandes.aumentarCantidadDeProductosUnoB(bodega.get(0).getId());
+						   }
+						   }
+						   else{
+							   System.out.println("voy2");
+							   Bodega t= superandes.adicionarBodega("BodegaReserva", 0, 200, 200, 200,superandes.darCategoriasPorId(superandes.darProductoPorId(productoId).getCategoria()).getTipoDeAlmacenamiento(), 2, tb.getSucursal());
+							   System.out.println("voy1");
+							   
+							   superandes.adicionarProductoBodega(t.getId(), productoId, pro.getCantidadProducto());
+							   
+							   System.out.println("voy3");
+							   superandes.aumentarCantidadDeProductosUnoB(t.getId());
+							   
 						   }
 					}
 							   
@@ -1648,7 +1665,7 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 	 		i=i+1;
 		}
 	 	if(estantes.isEmpty()){
-	 		throw new Exception("No existen estantes en la sucursal para este tipo de producto.");
+	 		throw new Exception("No existen estantes en la sucursal para este tipoconsumidor de producto.");
 	 	}
 		String estante = (String) JOptionPane.showInputDialog(null,"Seleccione el estante a donde quiere registrar el  producto \n (Estantes seleccionados segun Categoria Producto)", "Adicionar producto a estante", JOptionPane.DEFAULT_OPTION, null, estantesn, estantesn[0]);
 		
@@ -1690,7 +1707,7 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 	 		i=i+1;
 		}
 	 	if(bodegas.isEmpty()){
-	 		throw new Exception("No existen bodegas en la sucursal para este tipo de producto.");
+	 		throw new Exception("No existen bodegas en la sucursal para este tipoconsumidor de producto.");
 	 	}
 		String bodega = (String) JOptionPane.showInputDialog(null,"Seleccione la bodega a donde quiere registrar el  producto \n (Estantes seleccionados segun Categoria Producto)", "Adicionar producto a estante", JOptionPane.DEFAULT_OPTION, null, bodegasn, bodegasn[0]);
 		
@@ -1847,7 +1864,7 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 		   }
 		   else{
 		   String[] estados= {"PERSONA NATURAL", "EMPRESA"};
-		   String estado = (String) JOptionPane.showInputDialog(null,"Elija el tipo del cliente que abandono el carrito de compras", "Abandonar Carrito Compras", JOptionPane.DEFAULT_OPTION, null, estados, estados[0]);
+		   String estado = (String) JOptionPane.showInputDialog(null,"Elija el tipoconsumidor del cliente que abandono el carrito de compras", "Abandonar Carrito Compras", JOptionPane.DEFAULT_OPTION, null, estados, estados[0]);
 		
 		   String consumidor="";
 		   Long consumidorId= null;
@@ -2361,54 +2378,61 @@ public void RFC8_EncontrarClientesFrecuentes(){
 			i=i+1;
 		}   
 		
-		Date fechaIOperacion= new Date(Date.parse("01/06/2018"));
-		List<Venta> ventas=superandes.darVentasPorSucursal(sucu.getId());
+		Date fechaIOperacion= new Date(Date.parse("6/1/2018"));
+		List<Venta> ventasR=superandes.darVentasPorSucursal(sucu.getId());
+		List<Venta> ventas= ventasR;
 		int d=1;
 		int m=6;
 		int a=2018;
-		Date voy=new Date((Date.parse(d+"/"+m+"/"+a)));
+		Date voy=new Date((Date.parse(m+"/"+d+"/"+a)));
 		int d2=1;
 		int m2=7;
 		int a2=2018;
-		Date voy2=new Date((Date.parse(d2+"/"+m2+"/"+a2)));
+		Date voy2=new Date((Date.parse(m2+"/"+d2+"/"+a2)));
 		
 		Long[] t= new Long[2];
 		List<Long[] > cli= new ArrayList();
 		List<Consumidor> clientesF= new ArrayList();
 		
 		Date actual = new Date(Calendar.getInstance().getTimeInMillis());
-		
-		while(voy.after(actual)&&!ventas.isEmpty()){
+		while(!voy2.after(actual)&&!ventas.isEmpty()){
+			voy=new Date((Date.parse(m+"/"+d+"/"+a)));
+			voy2=new Date((Date.parse(m2+"/"+d2+"/"+a2)));
 			
-			for (int j=0; j<ventas.size();j++) {
-				Date t2=new Date((Date.parse(ventas.get(j).getFecha())));
+			for (Venta v : ventas) {
+				String[] t3=v.getFecha().split("/");
+				Date t2=new Date(Date.parse(t3[1]+"/"+t3[0]+"/"+t3[2]));
 				
 				if(t2.after(voy)&&t2.before(voy2)){
 					boolean entre=false;
 					for (Long[] longs : cli) {
-						if(longs[0]==ventas.get(j).getConsumidor()){
+						if(longs[0]==v.getConsumidor()){
 							longs[1]=longs[1]+1;
 							entre=true;
 						}
 					}
 					if(entre==false){
-						Long[] te={ventas.get(j).getConsumidor(), (long) 1};
+						Long[] te={v.getConsumidor(), (long) 1};
 						cli.add(te);
+						
 					}
-					ventas.remove(j);
+					//ventas.remove(j);
 				}
 			}
 			if(voy.equals(fechaIOperacion)){
+				System.out.println(cli.size());
+				
 				for (Long[] longs : cli) {
+					
 					if(longs[1]>=2){
-						clientesF.add(superandes.darConsumidorPorId(longs[1]));
+						clientesF.add(superandes.darConsumidorPorId(longs[0]));
 					}
 				}
 			}else{
 			for(int j=0; j<clientesF.size();j++){
 				boolean enc=false;
 				for (Long[] longs : cli) {
-					if(clientesF.get(j).getId()==longs[1]&&longs[1]>=2){
+					if(clientesF.get(j).getId()==longs[0]&&longs[1]>=2){
 						enc=true;
 					}
 				}
@@ -2430,9 +2454,7 @@ public void RFC8_EncontrarClientesFrecuentes(){
 				a2=a2+1;
 			}
 		}
-		
-		
-		  if (!clientesF.isEmpty())
+		if (!clientesF.isEmpty())
 			{
 			  String resultado = "La lista de clientes Frecuentes de la sucursal :" + sucursal ;
 				for (Consumidor ordenPedido : clientesF) {
@@ -2451,7 +2473,7 @@ public void RFC8_EncontrarClientesFrecuentes(){
 		} 
 		catch (Exception e) 
 		{
-//			e.printStackTrace();
+		e.printStackTrace();
 			String resultado = generarMensajeError(e);
 			panelDatos.actualizarInterfaz(resultado);
 		}
@@ -2526,7 +2548,7 @@ public void RFC8_EncontrarClientesFrecuentes(){
 		
 		if (precioProveedor != null&&cumplimiento!=null&&calificacion!=null&&proveedor!=null&&producto!=null)
 		{
-			VOProductoOfrecido tb= superandes.adicionarProductoOfrecido(Double.parseDouble(precioProveedor), Integer.parseInt(calificacion), Integer.parseInt(calidad), Integer.parseInt(cumplimiento), proveedores.get(posPro).getNit(), productos.get(posProd).getId());
+			VOProductoOfrecido tb= superandes.adicionarProductoOfrecido(Double.parseDouble(precioProveedor), Integer.parseInt(calificacion), calidad, cumplimiento, proveedores.get(posPro).getNit(), productos.get(posProd).getId());
 			
 			if (tb == null)
     		{

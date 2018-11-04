@@ -11,7 +11,7 @@ import uniandes.isis2304.superandes.negocio.CarritoCompras;
 public class SQLCarritoCompras {
 	
 	/**
-	 * Cadena que representa el tipo de consulta que se va a realizar en las sentencias de acceso a la base de datos
+	 * Cadena que representa el tipoconsumidor de consulta que se va a realizar en las sentencias de acceso a la base de datos
 	 */
 	private final static String SQL = PersistenciaSuperandes.SQL;
 
@@ -82,7 +82,7 @@ public class SQLCarritoCompras {
 	 */
 	public List<CarritoCompras> darPorIdConsumidor (PersistenceManager pm, long idConsumidor) 
 	{
-		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaCarritoCompras () + " WHERE idConsumidor = ?");
+		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaCarritoCompras () + " WHERE consumidor = ?");
 		q.setResultClass(CarritoCompras.class);
 		q.setParameters(idConsumidor);
 		return (List<CarritoCompras>) q.executeList();

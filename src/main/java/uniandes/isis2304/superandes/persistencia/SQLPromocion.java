@@ -12,7 +12,7 @@ import uniandes.isis2304.superandes.negocio.Promocion;
 public class SQLPromocion {
 	
 	/**
-	 * Cadena que representa el tipo de consulta que se va a realizar en las sentencias de acceso a la base de datos
+	 * Cadena que representa el tipoconsumidor de consulta que se va a realizar en las sentencias de acceso a la base de datos
 	 */
 	private final static String SQL = PersistenciaSuperandes.SQL;
 
@@ -39,7 +39,7 @@ public class SQLPromocion {
 	 */
 	public long adicionar (PersistenceManager pm, long id, String nombre,String descripcion , String tipo, Date fechaInicio, Date fechaFinalizacion, String estado, int cantidadP) 
 	{
-        Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaPromocion () + "(id, nombre, descripcion,tipo, fechaInicio, fechaFinalizacion, estado, cantidadP) values (?, ?, ?, ?, ?, ?, ?, ?)");
+        Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaPromocion () + "(id, nombre, descripcion,tipoconsumidor, fechaInicio, fechaFinalizacion, estado, cantidadP) values (?, ?, ?, ?, ?, ?, ?, ?)");
         q.setParameters(id, nombre, descripcion, tipo, fechaInicio, fechaFinalizacion, estado, cantidadP);
         return (long) q.executeUnique();
 	}

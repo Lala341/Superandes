@@ -17,7 +17,7 @@ class SQLCategoria
 	 * 			Constantes
 	 *****************************************************************/
 	/**
-	 * Cadena que representa el tipo de consulta que se va a realizar en las sentencias de acceso a la base de datos
+	 * Cadena que representa el tipoconsumidor de consulta que se va a realizar en las sentencias de acceso a la base de datos
 	 * Se renombra acá para facilitar la escritura de las sentencias
 	 */
 	private final static String SQL = PersistenciaSuperandes.SQL;
@@ -47,8 +47,8 @@ class SQLCategoria
 	 * @param pm - El manejador de persistencia
 	 * @param idCategoria - El identificador de la categoria
 	 * @param nombre - El nombre de la categoria
-	 * @param tipoDeAlmacenamiento - El tipo de almacenamiento de la categoria
-	 * @param tipoDeManejo - El tipo de manejo de la categoria 
+	 * @param tipoDeAlmacenamiento - El tipoconsumidor de almacenamiento de la categoria
+	 * @param tipoDeManejo - El tipoconsumidor de manejo de la categoria 
 	 * @return EL número de tuplas insertadas
 	 */
 	public long adicionarCategoria (PersistenceManager pm, long id, String nombre, String tipoAlmacenamiento, String tipoManejo) 
@@ -96,7 +96,7 @@ class SQLCategoria
 		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaCategoria () + " WHERE id = ?");
 		q.setResultClass(Categoria.class);
 		q.setParameters(nombreCategoria);
-		return (Categoria) q.executeList();
+		return (Categoria) q.executeUnique();
 	}
 
 	/**
