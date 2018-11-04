@@ -71,7 +71,7 @@ public class SQLOrdenPedido {
 		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaOrdenPedido () + " WHERE proveedor = ?");
 		q.setResultClass(OrdenPedido.class);
 		q.setParameters(id);
-		return (List<OrdenPedido>) q.executeUnique();
+		return (List<OrdenPedido>) q.executeList();
 	}
 
 	/**

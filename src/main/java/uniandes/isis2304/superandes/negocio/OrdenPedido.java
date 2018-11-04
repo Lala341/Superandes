@@ -14,8 +14,8 @@ public class OrdenPedido implements VOOrdenPedido {
 	public String fecha;
 	public long id;
 	public long proveedor;
-	public int cantidadVenta;
-	public String unidadDeMedida;
+	public int cantidadProducto;
+	public String unidadMedida;
 	public long productoOfrecido;
 	public long sucursal;
 	
@@ -30,8 +30,8 @@ public class OrdenPedido implements VOOrdenPedido {
 		this.fecha=fecha;
 		this.id=id;
 		this.proveedor=proveedor;
-		this.cantidadVenta=cantidadVenta;
-		this.unidadDeMedida=unidadDeMedida;
+		this.cantidadProducto=cantidadVenta;
+		this.unidadMedida=unidadDeMedida;
 		this.productoOfrecido=productoOfrecido;
 		this.sucursal=sucursal;
 	}
@@ -40,31 +40,31 @@ public class OrdenPedido implements VOOrdenPedido {
 	
 
 	/**
-	 * @return the cantidadVenta
+	 * @return the cantidadProducto
 	 */
 	public int getCantidadVenta() {
-		return cantidadVenta;
+		return cantidadProducto;
 	}
 
 	/**
-	 * @param cantidadVenta the cantidadVenta to set
+	 * @param cantidadProducto the cantidadProducto to set
 	 */
 	public void setCantidadVenta(int cantidadVenta) {
-		this.cantidadVenta = cantidadVenta;
+		this.cantidadProducto = cantidadVenta;
 	}
 
 	/**
 	 * @return the unidadMedida
 	 */
 	public String getUnidadDeMedida() {
-		return unidadDeMedida;
+		return unidadMedida;
 	}
 
 	/**
 	 * @param unidadMedida the unidadMedida to set
 	 */
 	public void setUnidadDeMedida(String unidadDeMedida) {
-		this.unidadDeMedida = unidadDeMedida;
+		this.unidadMedida = unidadDeMedida;
 	}
 
 	
@@ -182,8 +182,8 @@ public class OrdenPedido implements VOOrdenPedido {
 @Override
 	public String toString() 
 	{
-		return "OrdenPedido [id=" + id + ", cantidadVenta=" + cantidadVenta  + ", calificacion=" + calificacion  + ", estado=" + estado  + ", fecha=" + fecha  + ", fechaEntrega=" + fechaEntrega 
-				 + ", proveedor=" + proveedor+  ", productoOfrecido=" + productoOfrecido+  ", sucursal=" + sucursal+  ", unidadMedida=" + unidadDeMedida+ "]";
+		return "OrdenPedido [id=" + id + ", cantidadProducto=" + cantidadProducto  + ", calificacion=" + calificacion  + ", estado=" + estado  + ", fecha=" + fecha  + ", fechaEntrega=" + fechaEntrega 
+				 + ", proveedor=" + proveedor+  ", productoOfrecido=" + productoOfrecido+  ", sucursal=" + sucursal+  ", unidadMedida=" + unidadMedida+ "]";
 	}
 	
 

@@ -12,12 +12,12 @@ public interface VOOrdenPedido {
 	
 
 	/**
-	 * @return the cantidadVenta
+	 * @return the cantidadProducto
 	 */
 	public int getCantidadVenta();
 
 	/**
-	 * @param cantidadVenta the cantidadVenta to set
+	 * @param cantidadProducto the cantidadProducto to set
 	 */
 	public void setCantidadVenta(int cantidadVenta);
 

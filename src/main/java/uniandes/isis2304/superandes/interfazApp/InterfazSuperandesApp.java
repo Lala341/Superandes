@@ -1168,7 +1168,7 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 		   Long t=superandes.finalizarOrdenPedido(idPedido);
 		   String resultado="";
 		   if(t!=null){
-			   resultado+="Se finalizo la promocion solicitada." ;
+			   resultado+="Se finalizo el pedido solicitado." ;
 			   panelDatos.actualizarInterfaz(resultado);
 		   }
 		   			   
@@ -2137,7 +2137,7 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 			
 			if (tb == null)
     		{
-    			throw new Exception ("No se pudo obtener las ordenes de pedido");
+    			throw new Exception ("No existen ordenes de pedido para el proveedor seleccionado");
     		}
 			String resultado = "El proveedor con NIT:" + proveedores.get(posPro).getNit() + "tienen los siguientes pedidos:" ;
 			for (OrdenPedido ordenPedido : tb) {

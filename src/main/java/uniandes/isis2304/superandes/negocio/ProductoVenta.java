@@ -26,7 +26,7 @@ public class ProductoVenta implements VOProductoVenta{
 	}
 
 	/**
-	 * @return the cantidadVenta
+	 * @return the cantidadProducto
 	 */
 	public int getCantidadVenta() {
 		return cantidadVenta;
@@ -34,7 +34,7 @@ public class ProductoVenta implements VOProductoVenta{
 
 
 	/**
-	 * @param cantidadVenta the cantidadVenta to set
+	 * @param cantidadProducto the cantidadProducto to set
 	 */
 	public void setCantidadVenta(int cantidadVenta) {
 		this.cantidadVenta = cantidadVenta;
@@ -91,7 +91,7 @@ public class ProductoVenta implements VOProductoVenta{
 	 */
 	public String toString() 
 	{
-		return "ProductoVenta [venta=" + venta + ", producto=" + producto + ", cantidadVenta=" + cantidadVenta + ", unidadMedida=" + unidadDeMedida
+		return "ProductoVenta [venta=" + venta + ", producto=" + producto + ", cantidadProducto=" + cantidadVenta + ", unidadMedida=" + unidadDeMedida
 				+"]";
 	}
 

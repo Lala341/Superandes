@@ -63,6 +63,14 @@
                 {
 					"label": "Eliminar producto de un carrito de compras",
 					"event": "RFF14_EliminarUnProductoCarritoCompras"
+				},
+                {
+					"label": "Pagar compra",
+					"event": "RFF15_PagarCompra"
+				},
+                {
+					"label": "Abandonar carrito de compras",
+					"event": "RFF16_AbandonarCarritoCompras"
 				}
 			]
         },
