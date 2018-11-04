@@ -1111,8 +1111,9 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 			   
 		   }
 		   if(productosOfrecidos.size()==0){
-			   panelDatos.actualizarInterfaz("Operación cancelada, el proveedor seleccionado no tiene productos ofrecidos.");
+			   throw new Exception("Operación cancelada, el proveedor seleccionado no tiene productos ofrecidos.");
 		   }
+		   
 		   String productoOfrecido= (String) JOptionPane.showInputDialog(null,"Seleccione el producto del proveedor seleccionado.", "Adicionar orden de pedido", JOptionPane.DEFAULT_OPTION, null, productosOfrecidosn, productosOfrecidosn[0]);
 		   
 		   i=0;
@@ -1150,7 +1151,7 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 		} 
 		catch (Exception e) 
 		{
-//			e.printStackTrace();
+			e.printStackTrace();
 			String resultado = generarMensajeError(e);
 			panelDatos.actualizarInterfaz(resultado);
 		}
@@ -1164,18 +1165,15 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 		   List<OrdenPedido> pedidos=superandes.darOrdenPedido();
 		   String pedidoN = JOptionPane.showInputDialog (this, "Ingrese el id del pedido", JOptionPane.QUESTION_MESSAGE);
 		   long idPedido = Long.valueOf(pedidoN);
-		   VOOrdenPedido pedido = null;
+		   Long t=superandes.finalizarOrdenPedido(idPedido);
+		   String resultado="";
+		   if(t!=null){
+			   resultado+="Se finalizo la promocion solicitada." ;
+			   panelDatos.actualizarInterfaz(resultado);
+		   }
+		   			   
 		   
 		   
-		   if(pedidos.size()==0){
-			   if (!superandes.actualizadoOrdenPedido(idPedido)) {
-			JOptionPane.showMessageDialog(this, "Se debió haber registrado la orden de pedido ");
-			}			   
-		   }
-		   else{
-			   
-			   superandes.actualizadoOrdenPedido(idPedido);
-		   }
 		
 	   } 
 	   catch (Exception e) 
@@ -2397,7 +2395,7 @@ public void RFC8_EncontrarClientesFrecuentes(){
 		
 		if (precioProveedor != null&&cumplimiento!=null&&calificacion!=null&&proveedor!=null&&producto!=null)
 		{
-			VOProductoOfrecido tb= superandes.adicionarProductoOfrecido(Double.parseDouble(precioProveedor), Integer.parseInt(calificacion), Integer.parseInt(calidad), Integer.parseInt(cumplimiento), proveedores.get(posPro).getNit(), productos.get(posProd).getId());
+			VOProductoOfrecido tb= superandes.adicionarProductoOfrecido(Double.parseDouble(precioProveedor), Integer.parseInt(calificacion), calidad, cumplimiento, proveedores.get(posPro).getNit(), productos.get(posProd).getId());
 			
 			if (tb == null)
     		{

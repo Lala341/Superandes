@@ -7,18 +7,18 @@ package uniandes.isis2304.superandes.negocio;
  */
 public class ProductoOfrecido implements VOProductoOfrecido {
 
+	public  long id;
 	public double precioProveedor;
-	public int calificacionTotal;
-	public int calidad;
-	public int cumplimiento;
-	public long productoId;
-	public long proveedor;
-	public long id;
+	public  int calificacionTotal;
+	public  String calidad;
+	public  String cumplimiento;
+	public   long productoId;
+	public   long proveedor;
 	
 	public ProductoOfrecido(){
 
 	}
-	public ProductoOfrecido(long id,double precioProveedor, int calificacionTotal, int calidad, int cumplimiento, long producto, long proveedor){
+	public ProductoOfrecido(long id,double precioProveedor, int calificacionTotal, String calidad, String cumplimiento, long producto, long proveedor){
 		this.id=id;
 		this.precioProveedor=precioProveedor;
 		this.calificacionTotal=calificacionTotal;
@@ -60,28 +60,28 @@ public class ProductoOfrecido implements VOProductoOfrecido {
 	/**
 	 * @return the calidad
 	 */
-	public int getCalidad() {
+	public String getCalidad() {
 		return calidad;
 	}
 
 	/**
 	 * @param calidad the calidad to set
 	 */
-	public void setCalidad(int calidad) {
+	public void setCalidad(String calidad) {
 		this.calidad = calidad;
 	}
 
 	/**
 	 * @return the cumplimiento
 	 */
-	public int getCumplimiento() {
+	public String getCumplimiento() {
 		return cumplimiento;
 	}
 
 	/**
 	 * @param cumplimiento the cumplimiento to set
 	 */
-	public void setCumplimiento(int cumplimiento) {
+	public void setCumplimiento(String cumplimiento) {
 		this.cumplimiento = cumplimiento;
 	}
 

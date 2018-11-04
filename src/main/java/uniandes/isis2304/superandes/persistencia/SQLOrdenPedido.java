@@ -94,6 +94,14 @@ public class SQLOrdenPedido {
 		q.setResultClass(OrdenPedido.class);
 		return (List<OrdenPedido>) q.executeList();
 	}
+	public long finalizarOrden (PersistenceManager pm, long p)
+	{
+		Query q = pm.newQuery(SQL, "UPDATE  " + pp.darTablaOrdenPedido ()+ " SET ESTADO='FINALIZADO' WHERE id= ?");
+		q.setResultClass(OrdenPedido.class);
+		q.setParameters(p);
+		
+		return (long) q.executeUnique();
+	}
 
 	
 	

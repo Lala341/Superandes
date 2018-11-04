@@ -2403,7 +2403,7 @@ public class Superandes {
 	 * Adiciona entradas al log de la aplicación
 	* @return El objeto. null si ocurre alguna Excepción
 	 */
-	public ProductoOfrecido adicionarProductoOfrecido (double precioProveedor, int calificacionTotal, int calidad, int cumplimiento,  long proveedor, long productoId)
+	public ProductoOfrecido adicionarProductoOfrecido (double precioProveedor, int calificacionTotal, String calidad, String cumplimiento,  long proveedor, long productoId)
 	{
         log.info ("Adicionando ProductoOfrecido: " + productoId);
         ProductoOfrecido ProductoOfrecido = pp.adicionarProductoOfrecido ( precioProveedor, calificacionTotal, calidad,cumplimiento,   proveedor,productoId);		
@@ -2809,7 +2809,10 @@ public class Superandes {
 		
 		return existePedido;
 	}
-
+	public long finalizarOrdenPedido(long idPedido)
+	{
+		return pp.finalizarPedido(idPedido);
+	}
 	
 	public Producto registrarProductoPerecedero(  String nombre, String categoria, String codigoDeBarras, String especificacionDeEmpaquetado, boolean estado, String marca, double precioPorUnidadMedida,String presentacion, String unidadDeMedida, String tipoCategoria, Date fechaDeVencimiento){
 		long cat = 0;

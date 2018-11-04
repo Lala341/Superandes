@@ -3138,3 +3138,332 @@ null
 17:04:27,098 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Buscando CarritoCompras por IdConsumidor: 1
 17:04:27,111 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando ProductoCarritoCompras
 17:04:27,121 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando ProductoCarritoCompras: 0 existentes
+17:05:50,379 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+17:05:50,381 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+17:05:50,442 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+17:06:09,561 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Proveedores: Temp
+17:06:09,914 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Proveedores: Temp
+17:06:50,558 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Producto: Papas
+17:06:50,579 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Producto: Papas
+17:07:17,592 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Ciudad
+17:07:17,647 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Ciudad: 30 existentes
+17:07:44,259 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Sucursales
+17:07:44,344 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Sucursales: 21 Sucursales existentes
+17:07:44,345 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales
+17:07:44,410 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales: 21 Sucursales existentes
+17:08:09,828 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Sucursales
+17:08:09,887 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Sucursales: 21 Sucursales existentes
+17:08:09,887 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales
+17:08:09,940 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales: 21 Sucursales existentes
+17:09:16,157 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Promocion: Promo
+17:09:16,203 (AWT-EventQueue-0) ERROR [uniandes.isis2304.superandes.persistencia.PersistenciaSuperandes] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO PROMOCION(id, nombre, descripcion,tipoconsumidor, fechaInicio, fechaFinalizacion, estado, cantidadP) values (?, ?, ?, ?, ?, ?, ?, ?)".
+null
+17:09:16,207 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Promocion: Promo
+17:09:36,108 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Sucursales
+17:09:36,161 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Sucursales: 21 Sucursales existentes
+17:09:36,161 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales
+17:09:36,211 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales: 21 Sucursales existentes
+17:09:48,795 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Sucursales
+17:09:48,845 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Sucursales: 21 Sucursales existentes
+17:09:48,845 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales
+17:09:48,892 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales: 21 Sucursales existentes
+17:09:48,892 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores
+17:09:48,914 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores: 31 existentes
+17:09:48,914 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Proveedores
+17:09:48,934 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Proveedores: 31 existentes
+17:10:19,899 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Proveedores
+17:10:19,919 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Proveedores: 31 existentes
+17:10:19,919 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales
+17:10:19,966 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales: 21 Sucursales existentes
+17:10:19,967 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Buscando ProductoOfrecidoPorIdProveedor: 5446367205
+17:11:50,815 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+17:11:50,818 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+17:11:50,883 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+17:11:59,542 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Sucursales
+17:11:59,701 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Sucursales: 21 Sucursales existentes
+17:11:59,701 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales
+17:11:59,734 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales: 21 Sucursales existentes
+17:12:14,204 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Sucursales
+17:12:14,276 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Sucursales: 21 Sucursales existentes
+17:12:14,276 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales
+17:12:14,336 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales: 21 Sucursales existentes
+17:12:14,336 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores
+17:12:14,365 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores: 31 existentes
+17:12:14,365 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Proveedores
+17:12:14,387 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Proveedores: 31 existentes
+17:12:33,703 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Proveedores
+17:12:33,725 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Proveedores: 31 existentes
+17:12:33,725 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales
+17:12:33,778 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales: 21 Sucursales existentes
+17:12:33,778 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Buscando ProductoOfrecidoPorIdProveedor: 8915320496
+17:13:13,314 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Sucursales
+17:13:13,367 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Sucursales: 21 Sucursales existentes
+17:13:13,367 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales
+17:13:13,417 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales: 21 Sucursales existentes
+17:13:13,417 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores
+17:13:13,437 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores: 31 existentes
+17:13:13,438 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Proveedores
+17:13:13,456 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Proveedores: 31 existentes
+17:13:36,385 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Proveedores
+17:13:36,407 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Proveedores: 31 existentes
+17:13:36,407 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales
+17:13:36,461 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales: 21 Sucursales existentes
+17:13:36,461 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Buscando ProductoOfrecidoPorIdProveedor: 5066433098
+17:16:13,705 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+17:16:13,708 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+17:16:13,776 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+17:18:05,515 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Sucursales
+17:18:05,913 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Sucursales: 21 Sucursales existentes
+17:18:05,913 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales
+17:18:05,994 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales: 21 Sucursales existentes
+17:18:05,995 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores
+17:18:06,023 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores: 31 existentes
+17:18:06,024 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Proveedores
+17:18:06,046 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Proveedores: 31 existentes
+17:18:25,412 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Proveedores
+17:18:25,436 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Proveedores: 31 existentes
+17:18:25,436 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales
+17:18:25,501 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales: 21 Sucursales existentes
+17:18:25,501 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Buscando ProductoOfrecidoPorIdProveedor: 5066433098
+17:28:40,002 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+17:28:40,005 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+17:28:40,071 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+17:29:00,739 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Sucursales
+17:29:01,120 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Sucursales: 21 Sucursales existentes
+17:29:01,120 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales
+17:29:01,193 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales: 21 Sucursales existentes
+17:29:01,194 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores
+17:29:01,221 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores: 31 existentes
+17:29:01,221 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Proveedores
+17:29:01,244 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Proveedores: 31 existentes
+17:29:21,797 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Proveedores
+17:29:21,819 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Proveedores: 31 existentes
+17:29:21,820 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales
+17:29:21,881 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales: 21 Sucursales existentes
+17:29:21,882 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Buscando ProductoOfrecidoPorIdProveedor: 5066433098
+17:36:34,134 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+17:36:34,137 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+17:36:34,209 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+17:37:05,010 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando OrdenPedido
+17:37:05,328 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando OrdenPedido: 0 existentes
+17:43:40,595 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+17:43:40,598 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+17:43:40,665 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+17:43:49,969 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Sucursales
+17:43:50,354 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Sucursales: 21 Sucursales existentes
+17:43:50,354 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales
+17:43:50,423 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales: 21 Sucursales existentes
+17:43:50,423 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores
+17:43:50,448 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores: 31 existentes
+17:43:50,448 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Proveedores
+17:43:50,469 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Proveedores: 31 existentes
+17:44:12,746 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Proveedores
+17:44:12,770 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Proveedores: 31 existentes
+17:44:12,770 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales
+17:44:12,829 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales: 21 Sucursales existentes
+17:44:12,830 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Buscando ProductoOfrecidoPorIdProveedor: 6060781406
+17:44:22,028 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando OrdenPedido
+17:44:22,060 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando OrdenPedido: 0 existentes
+17:44:29,473 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Sucursales
+17:44:29,528 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Sucursales: 21 Sucursales existentes
+17:44:29,528 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales
+17:44:29,582 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales: 21 Sucursales existentes
+17:44:29,583 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores
+17:44:29,603 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores: 31 existentes
+17:44:29,603 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Proveedores
+17:44:29,623 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Proveedores: 31 existentes
+17:44:47,092 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Proveedores
+17:44:47,115 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Proveedores: 31 existentes
+17:44:47,116 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales
+17:44:47,168 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales: 21 Sucursales existentes
+17:44:47,169 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Buscando ProductoOfrecidoPorIdProveedor: 5066433098
+17:46:12,834 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+17:46:12,837 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+17:46:12,901 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+17:46:19,416 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Sucursales
+17:46:19,746 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Sucursales: 21 Sucursales existentes
+17:46:19,746 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales
+17:46:19,783 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales: 21 Sucursales existentes
+17:46:19,784 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores
+17:46:19,812 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores: 31 existentes
+17:46:19,812 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Proveedores
+17:46:19,836 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Proveedores: 31 existentes
+17:46:37,287 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Proveedores
+17:46:37,314 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Proveedores: 31 existentes
+17:46:37,315 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales
+17:46:37,348 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales: 21 Sucursales existentes
+17:46:37,348 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Buscando ProductoOfrecidoPorIdProveedor: 5066433098
+17:49:53,987 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+17:49:53,990 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+17:49:54,056 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+17:50:01,278 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Sucursales
+17:50:01,617 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Sucursales: 21 Sucursales existentes
+17:50:01,617 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales
+17:50:01,657 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales: 21 Sucursales existentes
+17:50:01,657 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores
+17:50:01,686 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores: 31 existentes
+17:50:01,687 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Proveedores
+17:50:01,711 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Proveedores: 31 existentes
+17:50:18,739 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Proveedores
+17:50:18,767 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Proveedores: 31 existentes
+17:50:18,767 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales
+17:50:18,802 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales: 21 Sucursales existentes
+17:50:18,802 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Buscando ProductoOfrecidoPorIdProveedor: 5066433098
+17:50:48,653 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+17:50:48,656 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+17:50:48,723 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+17:51:05,263 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando OrdenPedido
+17:51:05,591 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando OrdenPedido: 0 existentes
+17:51:10,484 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Sucursales
+17:51:10,539 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Sucursales: 21 Sucursales existentes
+17:51:10,539 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales
+17:51:10,584 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales: 21 Sucursales existentes
+17:51:10,584 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores
+17:51:10,619 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores: 31 existentes
+17:51:10,619 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Proveedores
+17:51:10,647 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Proveedores: 31 existentes
+17:51:26,757 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Proveedores
+17:51:26,786 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Proveedores: 31 existentes
+17:51:26,787 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales
+17:51:26,825 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales: 21 Sucursales existentes
+17:51:26,825 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Buscando ProductoOfrecidoPorIdProveedor: 5066433098
+17:53:16,831 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+17:53:16,834 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+17:53:16,899 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+17:53:25,388 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Sucursales
+17:53:25,730 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Sucursales: 21 Sucursales existentes
+17:53:25,731 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales
+17:53:25,768 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales: 21 Sucursales existentes
+17:53:25,768 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores
+17:53:25,798 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores: 31 existentes
+17:53:25,798 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Proveedores
+17:53:25,824 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Proveedores: 31 existentes
+17:53:41,433 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Proveedores
+17:53:41,461 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Proveedores: 31 existentes
+17:53:41,461 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales
+17:53:41,497 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales: 21 Sucursales existentes
+17:53:41,497 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Buscando ProductoOfrecidoPorIdProveedor: 5066433098
+17:54:22,680 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+17:54:22,682 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+17:54:22,748 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+17:54:29,675 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Sucursales
+17:54:30,014 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Sucursales: 21 Sucursales existentes
+17:54:30,014 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales
+17:54:30,051 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales: 21 Sucursales existentes
+17:54:30,052 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores
+17:54:30,080 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores: 31 existentes
+17:54:30,080 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Proveedores
+17:54:30,106 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Proveedores: 31 existentes
+17:54:46,737 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Proveedores
+17:54:46,764 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Proveedores: 31 existentes
+17:54:46,764 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales
+17:54:46,799 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales: 21 Sucursales existentes
+17:54:46,799 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Buscando ProductoOfrecidoPorIdProveedor: 5066433098
+17:58:23,803 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+17:58:23,806 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+17:58:23,873 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+17:58:30,023 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Sucursales
+17:58:30,348 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Sucursales: 21 Sucursales existentes
+17:58:30,348 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales
+17:58:30,386 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales: 21 Sucursales existentes
+17:58:30,386 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores
+17:58:30,416 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores: 31 existentes
+17:58:30,416 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Proveedores
+17:58:30,442 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Proveedores: 31 existentes
+17:58:47,232 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Proveedores
+17:58:47,260 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Proveedores: 31 existentes
+17:58:47,260 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales
+17:58:47,294 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales: 21 Sucursales existentes
+17:58:47,295 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Buscando ProductoOfrecidoPorIdProveedor: 5066433098
+18:01:39,167 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+18:01:39,168 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+18:01:39,197 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+18:01:45,497 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Sucursales
+18:01:45,847 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Sucursales: 21 Sucursales existentes
+18:01:45,848 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales
+18:01:45,887 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales: 21 Sucursales existentes
+18:01:45,888 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores
+18:01:45,919 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores: 31 existentes
+18:01:45,919 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Proveedores
+18:01:45,948 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Proveedores: 31 existentes
+18:02:01,030 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Proveedores
+18:02:01,061 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Proveedores: 31 existentes
+18:02:01,061 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales
+18:02:01,098 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales: 21 Sucursales existentes
+18:02:01,099 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Buscando ProductoOfrecidoPorIdProveedor: 5066433098
+18:03:28,179 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+18:03:28,181 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+18:03:28,247 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+18:03:35,500 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Sucursales
+18:03:35,841 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Sucursales: 21 Sucursales existentes
+18:03:35,841 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales
+18:03:35,883 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales: 21 Sucursales existentes
+18:03:35,883 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores
+18:03:35,915 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores: 31 existentes
+18:03:35,916 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Proveedores
+18:03:35,944 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Proveedores: 31 existentes
+18:03:52,308 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Proveedores
+18:03:52,335 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Proveedores: 31 existentes
+18:03:52,335 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales
+18:03:52,371 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales: 21 Sucursales existentes
+18:03:52,371 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Buscando ProductoOfrecidoPorIdProveedor: 5066433098
+18:08:26,029 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+18:08:26,031 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+18:08:26,088 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+18:08:32,837 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Sucursales
+18:08:33,164 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Sucursales: 21 Sucursales existentes
+18:08:33,164 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales
+18:08:33,203 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales: 21 Sucursales existentes
+18:08:33,203 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores
+18:08:33,231 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores: 31 existentes
+18:08:33,231 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Proveedores
+18:08:33,258 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Proveedores: 31 existentes
+18:08:48,080 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Proveedores
+18:08:48,108 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Proveedores: 31 existentes
+18:08:48,108 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales
+18:08:48,142 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales: 21 Sucursales existentes
+18:08:48,142 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Buscando ProductoOfrecidoPorIdProveedor: 5066433098
+18:10:21,675 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+18:10:21,678 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+18:10:21,746 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+18:10:29,088 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Sucursales
+18:10:29,419 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Sucursales: 21 Sucursales existentes
+18:10:29,419 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales
+18:10:29,458 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales: 21 Sucursales existentes
+18:10:29,459 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores
+18:10:29,490 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores: 31 existentes
+18:10:29,490 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Proveedores
+18:10:29,514 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Proveedores: 31 existentes
+18:10:43,887 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Proveedores
+18:10:43,915 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Proveedores: 31 existentes
+18:10:43,915 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales
+18:10:43,949 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales: 21 Sucursales existentes
+18:10:43,950 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Buscando ProductoOfrecidoPorIdProveedor: 5066433098
+18:12:51,635 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+18:12:51,638 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+18:12:51,707 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+18:13:02,235 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+18:13:02,238 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+18:13:02,304 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+18:13:10,374 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Sucursales
+18:13:10,715 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Sucursales: 21 Sucursales existentes
+18:13:10,715 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales
+18:13:10,755 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales: 21 Sucursales existentes
+18:13:10,756 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores
+18:13:10,785 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores: 31 existentes
+18:13:10,786 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Proveedores
+18:13:10,811 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Proveedores: 31 existentes
+18:13:25,462 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Proveedores
+18:13:25,491 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Proveedores: 31 existentes
+18:13:25,492 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales
+18:13:25,525 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales: 21 Sucursales existentes
+18:13:25,525 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Buscando ProductoOfrecidoPorIdProveedor: 5066433098
+18:13:36,682 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando OrdenPedido: 5066433098
+18:13:36,815 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando OrdenPedido: 5066433098
+18:13:42,547 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando OrdenPedido
+18:13:42,566 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando OrdenPedido: 0 existentes
+18:21:04,727 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+18:21:04,730 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+18:21:04,805 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+18:21:12,442 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando OrdenPedido
+18:21:12,746 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando OrdenPedido: 0 existentes

@@ -5,6 +5,7 @@ import java.util.List;
 import javax.jdo.PersistenceManager;
 import javax.jdo.Query;
 
+import uniandes.isis2304.superandes.negocio.ProductoBodega;
 import uniandes.isis2304.superandes.negocio.ProductoOfrecido;
 
 
@@ -36,7 +37,7 @@ public class SQLProductoOfrecido {
 	/**
 	 * Crea y ejecuta la sentencia SQL para adicionar 
 	 */
-	public long adicionar (PersistenceManager pm, long id, double precioProveedor, int calificacionTotal, int calidad, int cumplimiento,  long productoId, long proveedor) 
+	public long adicionar (PersistenceManager pm, long id, double precioProveedor, int calificacionTotal, String calidad, String cumplimiento,  long productoId, long proveedor) 
 	{
         Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaProductoOfrecido () + "(id, precioProveedor, calificacionTotal, calidad, cumplimiento,  productoId, proveedor) values (?, ?, ?, ?, ?, ?, ?)");
         q.setParameters(id, precioProveedor, calificacionTotal, calidad, cumplimiento,  proveedor, productoId);
@@ -82,10 +83,11 @@ public class SQLProductoOfrecido {
 	 */
 	public List<ProductoOfrecido> darListaPorIdProveedor (PersistenceManager pm, long proveedor)
 	{
-		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaProductoOfrecido()+ " WHERE proveedor = ?");
+		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaProductoOfrecido()+ " WHERE (proveedor = ?)");
 		q.setResultClass(ProductoOfrecido.class);
 		q.setParameters(proveedor);
-		return (List<ProductoOfrecido>) q.executeList();
+		List<ProductoOfrecido> resp = (List<ProductoOfrecido>) q.executeList();
+		return resp;
 	}
 
 	

@@ -3444,7 +3444,7 @@ public class PersistenciaSuperandes {
 	 * Adiciona entradas al log de la aplicación
 	  * @return El objeto adicionado. null si ocurre alguna Excepción
 	 */
-	public ProductoOfrecido adicionarProductoOfrecido( double precioProveedor, int calificacionTotal, int calidad, int cumplimiento,  long productoId, long proveedor)
+	public ProductoOfrecido adicionarProductoOfrecido( double precioProveedor, int calificacionTotal, String calidad, String cumplimiento,  long productoId, long proveedor)
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
         Transaction tx=pm.currentTransaction();
@@ -3616,6 +3616,11 @@ public class PersistenciaSuperandes {
 	{
 		return sqlOrdenPedido.darLista(pmf.getPersistenceManager());
 	}
+	public long finalizarPedido (long p)
+	{
+		return sqlOrdenPedido.finalizarOrden(pmf.getPersistenceManager(), p);
+	}
+ 
  
 	/**
 	 * Método que consulta todas las tuplas en la tabla 

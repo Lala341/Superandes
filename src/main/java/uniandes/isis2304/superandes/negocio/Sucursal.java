@@ -8,13 +8,13 @@ import java.util.ArrayList;
  */
 public class Sucursal implements VOSucursal {
 
-	private double tamanho;
-	private String tipoMercado;
-	private double ventasTotales;
-	private long id;
-	private long ciudad;
-	private String direccion;
-	private String nombre;
+	public double tamanho;
+	public String tipoMercado;
+	public double ventasTotales;
+	public long id;
+	public long ciudad;
+	public String direccion;
+	public String nombre;
 	/**
 	 * Constructor por defecto
 	 */
