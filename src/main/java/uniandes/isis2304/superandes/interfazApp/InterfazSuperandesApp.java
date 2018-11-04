@@ -17,6 +17,7 @@ import java.io.IOException;
 import java.lang.reflect.Method;
 import java.sql.Date;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 import javax.jdo.JDODataStoreException;
@@ -2185,8 +2186,132 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 			String resultado = generarMensajeError(e);
 			panelDatos.actualizarInterfaz(resultado);
 		}
+   }
+public void RFC8_EncontrarClientesFrecuentes(){
+	try{
+		 List<VOSucursal> sucursales=superandes.darVOSucursales();
+		   
+		   String[] sucursalesn= new String[sucursales.size()];
+		     
+		   int i=0;
+		   for (VOSucursal voSucursal :superandes.darSucursales()) {
+			   sucursalesn[i]=voSucursal.getNombre();
+			   i=i+1;
+			   
+		   }
+		   if(sucursales.size()==0){
+
+			   JOptionPane.showMessageDialog(this, "No existen sucursales registradas (Menu requerimientos F).");
+			   
+		   }
+		String sucursal= (String) JOptionPane.showInputDialog(null,"Seleccione la sucursal", "Clientes Frecuentes por sucursal", JOptionPane.DEFAULT_OPTION, null, sucursalesn, sucursalesn[0]);
+		Sucursal sucu=null;
+		i=0;
+		for (String string : sucursalesn) {
+			if(string.equals(sucursal)){
+				sucu=(Sucursal) sucursales.get(i);
+				break;
+			}
+			i=i+1;
+		}   
+		
+		Date fechaIOperacion= new Date(Date.parse("01/06/2018"));
+		List<Venta> ventas=superandes.darVentasPorSucursal(sucu.getId());
+		int d=1;
+		int m=6;
+		int a=2018;
+		Date voy=new Date((Date.parse(d+"/"+m+"/"+a)));
+		int d2=1;
+		int m2=7;
+		int a2=2018;
+		Date voy2=new Date((Date.parse(d2+"/"+m2+"/"+a2)));
+		
+		Long[] t= new Long[2];
+		List<Long[] > cli= new ArrayList();
+		List<Consumidor> clientesF= new ArrayList();
+		
+		Date actual = new Date(Calendar.getInstance().getTimeInMillis());
+		
+		while(voy.after(actual)&&!ventas.isEmpty()){
+			
+			for (int j=0; j<ventas.size();j++) {
+				Date t2=new Date((Date.parse(ventas.get(j).getFecha())));
+				
+				if(t2.after(voy)&&t2.before(voy2)){
+					boolean entre=false;
+					for (Long[] longs : cli) {
+						if(longs[0]==ventas.get(j).getConsumidor()){
+							longs[1]=longs[1]+1;
+							entre=true;
+						}
+					}
+					if(entre==false){
+						Long[] te={ventas.get(j).getConsumidor(), (long) 1};
+						cli.add(te);
+					}
+					ventas.remove(j);
+				}
+			}
+			if(voy.equals(fechaIOperacion)){
+				for (Long[] longs : cli) {
+					if(longs[1]>=2){
+						clientesF.add(superandes.darConsumidorPorId(longs[1]));
+					}
+				}
+			}else{
+			for(int j=0; j<clientesF.size();j++){
+				boolean enc=false;
+				for (Long[] longs : cli) {
+					if(clientesF.get(j).getId()==longs[1]&&longs[1]>=2){
+						enc=true;
+					}
+				}
+				if(enc==false){
+					clientesF.remove(j);
+				}
+			}
+			}
+			cli= new ArrayList();
+			
+			m=m+1;
+			m2=m2+1;
+			if(m==13){
+				m=1;
+				a=a+1;
+			}
+			if(m2==13){
+				m2=1;
+				a2=a2+1;
+			}
+		}
+		
+		
+		  if (!clientesF.isEmpty())
+			{
+			  String resultado = "La lista de clientes Frecuentes de la sucursal :" + sucursal ;
+				for (Consumidor ordenPedido : clientesF) {
+					resultado += "\n" + ordenPedido;
+				}
+				JOptionPane.showMessageDialog(this, "Los clientes frecuentes de la sucursal se imprimieron en el panel de datos.");
+
+				panelDatos.actualizarInterfaz(resultado);
+				
+			}
+			else
+			{
+				panelDatos.actualizarInterfaz("No existen clientes frecuentes.");
+			}
+		   
+		} 
+		catch (Exception e) 
+		{
+//			e.printStackTrace();
+			String resultado = generarMensajeError(e);
+			panelDatos.actualizarInterfaz(resultado);
+		}
+
 	   
-   }  
+   }
    
    public void agregarProductoOfrecido(){
 	   

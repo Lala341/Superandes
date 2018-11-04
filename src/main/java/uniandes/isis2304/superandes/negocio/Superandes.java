@@ -1237,6 +1237,12 @@ public class Superandes {
 		return !tb.isEmpty () ? tb.get (0) : null;
 	}
 
+	public Consumidor darConsumidorPorId (long i)
+	{
+		log.info ("Buscando Consumidor por id: " + i);
+		Consumidor tb = pp.darConsumidorPorId (i);
+		return tb;
+	}
 	
 	
 	/* ****************************************************************
@@ -1356,6 +1362,13 @@ public class Superandes {
 	{
 		log.info ("Consultando Venta");
         List<Venta> tiposBebida = pp.darVentas();	
+        log.info ("Consultando Venta: " + tiposBebida.size() + " existentes");
+        return tiposBebida;
+	}
+	public List<Venta> darVentasPorSucursal(long id)
+	{
+		log.info ("Consultando Venta");
+        List<Venta> tiposBebida = pp.darVentasPorSucursal(id);	
         log.info ("Consultando Venta: " + tiposBebida.size() + " existentes");
         return tiposBebida;
 	}
