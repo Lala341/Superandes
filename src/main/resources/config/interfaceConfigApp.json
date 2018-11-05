@@ -63,6 +63,10 @@
                 {
 					"label": "Eliminar producto de un carrito de compras",
 					"event": "RFF14_EliminarUnProductoCarritoCompras"
+				},
+				{
+					"label": "Recolectar productos abandonados",
+					"event": "RFF17_RecolectarProductosAbandonados"
 				}
 			]
         },
@@ -93,10 +97,15 @@
                       "label": "Mostrar ventas de un usuario dado",
                       "event": "RFC6_VentasUsuarioDado"
 				  },
+				  {
+                      "label": "Mostrar analisis de una operacion",
+                      "event": "RFC7_AnalisisDeLaOperacion"
+				  },
                   {
                       "label": "Mostrar clientes frecuentes dada una sucursal",
                       "event": "RFC8_EncontrarClientesFrecuentes"
                   }
+                 
               ]
           },
           { "menuTitle": "Agregar elementos",

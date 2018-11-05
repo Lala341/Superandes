@@ -69,6 +69,7 @@ import uniandes.isis2304.superandes.negocio.VOProductoEstante;
 import uniandes.isis2304.superandes.negocio.VOProductoOfrecido;
 import uniandes.isis2304.superandes.negocio.VOProductoVenta;
 import uniandes.isis2304.superandes.negocio.VOPromocion;
+import uniandes.isis2304.superandes.negocio.VOPromocionProducto;
 import uniandes.isis2304.superandes.negocio.VOProveedores;
 import uniandes.isis2304.superandes.negocio.VOSucursal;
 import uniandes.isis2304.superandes.negocio.VOVenta;
@@ -1784,9 +1785,6 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 					boolean encontrado = false;
 					
 					List<VOProducto> productosP = superandes.darVOProductos();
-					for (int i = 0; i < productosP.size(); i++) {
-						JOptionPane.showMessageDialog(this,productosP.get(i).getNombre());
-					}
 					
 					for (int j = 0; j < productosP.size() && !encontrado; j++) {
 						
@@ -1953,17 +1951,19 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 			   
 		   }
 		   else{
-			   String fechaInicial= JOptionPane.showInputDialog (this, "Ingrese la fecha inicial. (Ej: 03/12/2016)", "Fecha inicial", JOptionPane.QUESTION_MESSAGE);
-			   String fechaFinal = JOptionPane.showInputDialog (this, "Ingrese la fecha final. (Ej: 22/12/2016)", "Fecha final", JOptionPane.QUESTION_MESSAGE);
-			   
 			   List<VOVenta> ventas=superandes.darVOVentas();
 			   
+			   String fechaInicial= JOptionPane.showInputDialog (this, "Ingrese la fecha inicial. (Ej: 03/11/2018)", "Fecha inicial", JOptionPane.QUESTION_MESSAGE);
+			   String fechaFinal = JOptionPane.showInputDialog (this, "Ingrese la fecha final. (Ej: 05/11/2018)", "Fecha final", JOptionPane.QUESTION_MESSAGE);
+			   
+			   
+			   
 			   String mensaje = "El dinero recolectado por ventas dentro de ese rango de fecha en cada Sucursal fueron:\n";
-			   for (int j = 1; j <= ventas.size(); j++) {
-				   if (ventas.get(i).getFecha().compareTo(fechaInicial)>=0 || ventas.get(i).getFecha().compareTo(fechaFinal)<=0) {
+			   
+			   for (int j = 0; j < ventas.size(); j++) {
+				   if (ventas.get(j).getFecha().compareTo(fechaInicial)>=0 || ventas.get(j).getFecha().compareTo(fechaFinal)<=0) {
 					
-					mensaje += i + ". " + sucursales.get(i).getVentasTotales() + "\n";
-					
+				   mensaje += "Sucursal con id: "+ventas.get(j).getSucursal()+" y ventas de: " + ventas.get(j).getValorTotal() + "\n";
 				   }
 			   }
 			   JOptionPane.showMessageDialog(this, mensaje);
@@ -1971,9 +1971,9 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 			   String mensaje1 = "El dinero recolectado por ventas en el año corrido en cada Sucursal fueron:\n";
 			   for (int j = 0; j < ventas.size(); j++) {
 				   String hoy = superandes.darFechaCortaDeHoy();
-				   if (ventas.get(i).getFecha().compareTo(fechaInicial)>=0 || ventas.get(i).getFecha().compareTo(hoy)<=0) {
-						mensaje1 += i + ". " + sucursales.get(i).getVentasTotales() + "\n";
-					   }
+				   if (ventas.get(j).getFecha().compareTo(fechaInicial)>=0 || ventas.get(j).getFecha().compareTo(hoy)<=0) {
+					   mensaje1 += "Sucursal con id: "+ventas.get(j).getSucursal()+" y ventas de: " + ventas.get(j).getValorTotal() + "\n";
+				   }
 			   }JOptionPane.showMessageDialog(this, mensaje1);
 			
 		   }
@@ -1990,13 +1990,31 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 	   
 	   try {
 		   		   
-		int cantidadPromociones = 0;
-		List<VOPromocion> promociones = superandes.darVOPromociones();
+		JOptionPane.showMessageDialog(this, "Las 20 promociones más populares son:");
+		List<VOPromocionProducto> promocionesProductos = superandes.darVOPromocionProductoes();
+		List<VOProductoVenta> productos = superandes.darVOProductoVentaes();
+		
+		 
 			   
-			   
-		for (int i = 0; i < promociones.size(); i++) {
+		String cadena = "";
+		
+		
+		productos.sort(Comparator.comparing(VOProductoVenta::getCantidadVenta));
+		int contador = 0;
+		for (int i = 0; i < promocionesProductos.size(); i++) {
+			for (int j = 1; j < productos.size(); j++) {
+				if (promocionesProductos.get(i).getProducto() == productos.get(j).getProducto()) {
 					
+					cadena += "id de la promocion: "+promocionesProductos.get(i).getPromocion()+" y el # de ventas: "+productos.get(j).getCantidadVenta();
+					contador++;
+					if (contador > 20) {
+						break;
+					}
+				}
+			}JOptionPane.showMessageDialog(this, cadena);
 		}
+		
+		
 		
 	   } 
 	   catch (Exception e) 
