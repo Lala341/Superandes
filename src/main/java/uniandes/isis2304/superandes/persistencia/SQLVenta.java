@@ -102,6 +102,14 @@ public class SQLVenta {
 		
 		return (List<Venta>) q.executeList();
 	}
+	public Venta darListaPorId(PersistenceManager pm, long id)
+	{
+		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaVenta ()+ " WHERE (id=?)");
+		q.setResultClass(Venta.class);
+		q.setParameters(id);
+		
+		return (Venta) q.executeList();
+	}
 
 	
 	

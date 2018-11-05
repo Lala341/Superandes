@@ -1242,7 +1242,7 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 				   JOptionPane.showMessageDialog(this, "Agrege una Sucursal antes de registrar un producto (Menu requerimientos F).");
 				   
 			   }
-			String sucursal= (String) JOptionPane.showInputDialog(null,"Seleccione la sucursal de la venta", "Venta", JOptionPane.DEFAULT_OPTION, null, sucursalesn, sucursalesn[0]);
+			String sucursal= (String) JOptionPane.showInputDialog(null,"Seleccione la sucursal de la venta", "VentaTest", JOptionPane.DEFAULT_OPTION, null, sucursalesn, sucursalesn[0]);
 			Sucursal sucu=null;
 			i=0;
 			for (String string : sucursalesn) {
@@ -1808,7 +1808,7 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 						   JOptionPane.showMessageDialog(this, "Agrege una Sucursal antes de registrar un producto (Menu requerimientos F).");
 						   
 					   }
-					String sucursal= (String) JOptionPane.showInputDialog(null,"Seleccione la sucursal de la venta", "Venta", JOptionPane.DEFAULT_OPTION, null, sucursalesn, sucursalesn[0]);
+					String sucursal= (String) JOptionPane.showInputDialog(null,"Seleccione la sucursal de la venta", "VentaTest", JOptionPane.DEFAULT_OPTION, null, sucursalesn, sucursalesn[0]);
 					Sucursal sucu=null;
 					i=0;
 					for (String string : sucursalesn) {
@@ -2183,7 +2183,7 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 			   String fechaFinal = JOptionPane.showInputDialog (this, "Ingrese la fecha final (Ej: 03/11/2018)", JOptionPane.QUESTION_MESSAGE);
 			   for (int i = 0; i < ventas.size() && (ventas.get(i).getConsumidor() == (Long.parseLong(idConsumidor))); i++) {
 				if (ventas.get(i).getFecha().compareTo(fechaInicial)>=0 || ventas.get(i).getFecha().compareTo(fechaFinal)<=0) {
-					JOptionPane.showMessageDialog(null, "Venta#"+ i + " " + ventas.get(i).getId()
+					JOptionPane.showMessageDialog(null, "VentaTest#"+ i + " " + ventas.get(i).getId()
                             + "\n");
 				}
 			}

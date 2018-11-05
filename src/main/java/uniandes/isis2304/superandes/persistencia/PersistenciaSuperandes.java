@@ -2062,7 +2062,7 @@ public class PersistenciaSuperandes {
 	
 	
 	/* ****************************************************************
-	 * 			Métodos para manejar  Venta
+	 * 			Métodos para manejar  VentaTest
 	 *****************************************************************/
 	
 	/**
@@ -2080,7 +2080,7 @@ public class PersistenciaSuperandes {
             long tuplasInsertadas = sqlVenta.adicionar(pm, id, fecha, formaPago, valorTotal, consumidor, sucursal);
             tx.commit();
             
-            log.trace ("Inserción de Venta: " + id + ": " + tuplasInsertadas + " tuplas insertadas");
+            log.trace ("Inserción de VentaTest: " + id + ": " + tuplasInsertadas + " tuplas insertadas");
             
             return new Venta (id, fecha, formaPago, valorTotal, consumidor, sucursal);
         }
@@ -2176,6 +2176,10 @@ public class PersistenciaSuperandes {
 	public List<Venta> darVentasPorSucursal (long id)
 	{
 		return sqlVenta.darListaPorSucursal(pmf.getPersistenceManager(), id);
+	}
+	public Venta darVentasPorId (long id)
+	{
+		return sqlVenta.darListaPorId(pmf.getPersistenceManager(), id);
 	}
 	
  

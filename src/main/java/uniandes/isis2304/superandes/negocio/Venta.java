@@ -133,7 +133,7 @@ public class Venta implements VOVenta{
 	 */
 	public String toString() 
 	{
-		return "Venta [id=" + id + ", fecha=" + fecha + ", formaPago=" + formaPago + ", valorTotal=" + valorTotal
+		return "VentaTest [id=" + id + ", fecha=" + fecha + ", formaPago=" + formaPago + ", valorTotal=" + valorTotal
 				+"]";
 	}
 
