@@ -4999,3 +4999,177 @@ null
 20:57:34,124 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
 20:57:34,191 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
 >>>>>>> branch 'master' of https://github.com/Lala341/Superandes.git
+21:33:25,987 (main) INFO  [uniandes.isis2304.superandes.test.TransaccionalidadTest] - Probando la restricción de UNICIDAD 
+21:33:26,149 (main) INFO  [uniandes.isis2304.superandes.test.TransaccionalidadTest] - Se encontró un archivo de configuración de tablas válido
+21:33:29,767 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Ciudad
+21:33:30,094 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Ciudad: 30 existentes
+21:33:30,095 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Limpiando la BD de Superandes
+21:33:30,095 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Limpiando la BD de Superandes: Listo!
+21:33:41,593 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontrï¿½ un archivo de configuraciï¿½n vï¿½lido: Interfaz
+21:33:41,595 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuraciï¿½n indicada en el archivo de configuraciï¿½n
+21:33:41,664 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontrï¿½ un archivo de configuraciï¿½n vï¿½lido: Tablas BD
+21:33:58,606 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Consumidor
+21:33:58,977 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Consumidor: 61 existentes
+21:35:00,828 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontrï¿½ un archivo de configuraciï¿½n vï¿½lido: Interfaz
+21:35:00,831 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuraciï¿½n indicada en el archivo de configuraciï¿½n
+21:35:00,900 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontrï¿½ un archivo de configuraciï¿½n vï¿½lido: Tablas BD
+21:35:11,104 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Consumidor
+21:35:11,470 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Consumidor: 61 existentes
+21:36:05,280 (main) INFO  [uniandes.isis2304.superandes.test.TransaccionalidadTest] - Probando la restricción de UNICIDAD 
+21:36:05,437 (main) INFO  [uniandes.isis2304.superandes.test.TransaccionalidadTest] - Se encontró un archivo de configuración de tablas válido
+21:36:08,620 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Ciudad
+21:36:08,950 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Ciudad: 30 existentes
+21:36:08,950 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Ciudad: Cali
+21:36:09,072 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando ciudad: Cali
+21:36:09,072 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Ciudad
+21:36:09,111 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Ciudad: 31 existentes
+21:36:09,111 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Ciudad: Cali
+21:36:09,143 (main) ERROR [uniandes.isis2304.superandes.persistencia.PersistenciaSuperandes] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO CIUDAD(id, nombre) values (?, ?)".
+null
+21:36:09,147 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando ciudad: Cali
+21:36:09,147 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Limpiando la BD de Superandes
+21:36:09,147 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Limpiando la BD de Superandes: Listo!
+21:37:28,149 (main) INFO  [uniandes.isis2304.superandes.test.TransaccionalidadTest] - Probando la restricción de UNICIDAD 
+21:37:28,308 (main) INFO  [uniandes.isis2304.superandes.test.TransaccionalidadTest] - Se encontró un archivo de configuración de tablas válido
+21:37:31,795 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Ciudad
+21:37:32,106 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Ciudad: 31 existentes
+21:37:32,106 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Ciudad: Cali
+21:37:32,232 (main) ERROR [uniandes.isis2304.superandes.persistencia.PersistenciaSuperandes] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO CIUDAD(id, nombre) values (?, ?)".
+null
+21:37:32,241 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando ciudad: Cali
+21:37:32,241 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Ciudad
+21:37:32,282 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Ciudad: 31 existentes
+21:37:32,282 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Ciudad: Cali
+21:37:32,293 (main) ERROR [uniandes.isis2304.superandes.persistencia.PersistenciaSuperandes] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO CIUDAD(id, nombre) values (?, ?)".
+null
+21:37:32,296 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando ciudad: Cali
+21:37:32,297 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Limpiando la BD de Superandes
+21:37:32,297 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Limpiando la BD de Superandes: Listo!
+21:37:32,305 (main) INFO  [uniandes.isis2304.superandes.test.TransaccionalidadTest] - Probando las operaciones CRD
+21:37:32,306 (main) INFO  [uniandes.isis2304.superandes.test.TransaccionalidadTest] - Se encontró un archivo de configuración de tablas válido
+21:37:32,477 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Ciudad
+21:37:32,510 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Ciudad: 31 existentes
+21:37:32,511 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Limpiando la BD de Superandes
+21:37:32,511 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Limpiando la BD de Superandes: Listo!
+21:37:45,938 (main) INFO  [uniandes.isis2304.superandes.test.TransaccionalidadTest] - Probando la restricción de UNICIDAD 
+21:37:46,098 (main) INFO  [uniandes.isis2304.superandes.test.TransaccionalidadTest] - Se encontró un archivo de configuración de tablas válido
+21:37:49,234 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Ciudad
+21:37:49,496 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Ciudad: 31 existentes
+21:37:49,496 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Ciudad: Cali
+21:37:49,564 (main) ERROR [uniandes.isis2304.superandes.persistencia.PersistenciaSuperandes] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO CIUDAD(id, nombre) values (?, ?)".
+null
+21:37:49,568 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando ciudad: Cali
+21:37:49,568 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Ciudad
+21:37:49,589 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Ciudad: 31 existentes
+21:37:49,589 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Ciudad: Cali
+21:37:49,597 (main) ERROR [uniandes.isis2304.superandes.persistencia.PersistenciaSuperandes] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO CIUDAD(id, nombre) values (?, ?)".
+null
+21:37:49,599 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando ciudad: Cali
+21:37:49,599 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Limpiando la BD de Superandes
+21:37:49,599 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Limpiando la BD de Superandes: Listo!
+21:37:49,604 (main) INFO  [uniandes.isis2304.superandes.test.TransaccionalidadTest] - Probando las operaciones CRD
+21:37:49,604 (main) INFO  [uniandes.isis2304.superandes.test.TransaccionalidadTest] - Se encontró un archivo de configuración de tablas válido
+21:37:49,695 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Ciudad
+21:37:49,715 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Ciudad: 31 existentes
+21:37:49,715 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Ciudad: Cali
+21:37:49,767 (main) ERROR [uniandes.isis2304.superandes.persistencia.PersistenciaSuperandes] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO CIUDAD(id, nombre) values (?, ?)".
+null
+21:37:49,768 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando ciudad: Cali
+21:37:49,768 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Ciudad
+21:37:49,786 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Ciudad: 31 existentes
+21:37:49,787 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Ciudad: Bogota
+21:37:49,799 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando ciudad: Bogota
+21:37:49,799 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Ciudad
+21:37:49,816 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Ciudad: 32 existentes
+21:37:49,816 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores
+21:37:49,829 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores: 31 existentes
+21:37:49,829 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Proveedores: Cali
+21:37:49,840 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Proveedores: Cali
+21:37:49,840 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores
+21:37:49,851 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores: 32 existentes
+21:37:49,851 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Limpiando la BD de Superandes
+21:37:49,851 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Limpiando la BD de Superandes: Listo!
+21:38:33,740 (main) INFO  [uniandes.isis2304.superandes.test.TransaccionalidadTest] - Probando la restricción de UNICIDAD 
+21:38:33,905 (main) INFO  [uniandes.isis2304.superandes.test.TransaccionalidadTest] - Se encontró un archivo de configuración de tablas válido
+21:38:37,394 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Ciudad
+21:38:37,716 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Ciudad: 32 existentes
+21:38:37,716 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Ciudad: Cali
+21:38:37,836 (main) ERROR [uniandes.isis2304.superandes.persistencia.PersistenciaSuperandes] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO CIUDAD(id, nombre) values (?, ?)".
+null
+21:38:37,846 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando ciudad: Cali
+21:38:37,846 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Ciudad
+21:38:37,890 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Ciudad: 32 existentes
+21:38:37,890 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Ciudad: Cali
+21:38:37,902 (main) ERROR [uniandes.isis2304.superandes.persistencia.PersistenciaSuperandes] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO CIUDAD(id, nombre) values (?, ?)".
+null
+21:38:37,905 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando ciudad: Cali
+21:38:37,905 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Limpiando la BD de Superandes
+21:38:37,905 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Limpiando la BD de Superandes: Listo!
+21:38:37,914 (main) INFO  [uniandes.isis2304.superandes.test.TransaccionalidadTest] - Probando las operaciones CRD
+21:38:37,915 (main) INFO  [uniandes.isis2304.superandes.test.TransaccionalidadTest] - Se encontró un archivo de configuración de tablas válido
+21:38:38,071 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Ciudad
+21:38:38,108 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Ciudad: 32 existentes
+21:38:38,108 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Ciudad: Cali
+21:38:38,186 (main) ERROR [uniandes.isis2304.superandes.persistencia.PersistenciaSuperandes] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO CIUDAD(id, nombre) values (?, ?)".
+null
+21:38:38,188 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando ciudad: Cali
+21:38:38,188 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Ciudad
+21:38:38,220 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Ciudad: 32 existentes
+21:38:38,220 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Ciudad: Bogota
+21:38:38,230 (main) ERROR [uniandes.isis2304.superandes.persistencia.PersistenciaSuperandes] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO CIUDAD(id, nombre) values (?, ?)".
+null
+21:38:38,232 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando ciudad: Bogota
+21:38:38,232 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Ciudad
+21:38:38,261 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Ciudad: 32 existentes
+21:38:38,261 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores
+21:38:38,283 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores: 32 existentes
+21:38:38,283 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Proveedores: Cali
+21:38:38,289 (main) ERROR [uniandes.isis2304.superandes.persistencia.PersistenciaSuperandes] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO PROVEEDORES(NIT, nombre) values (?, ?)".
+null
+21:38:38,291 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Proveedores: Cali
+21:38:38,291 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores
+21:38:38,309 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores: 32 existentes
+21:38:38,310 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Limpiando la BD de Superandes
+21:38:38,310 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Limpiando la BD de Superandes: Listo!
+21:39:31,184 (main) INFO  [uniandes.isis2304.superandes.test.TransaccionalidadTest] - Probando la restricción de UNICIDAD 
+21:39:31,257 (main) INFO  [uniandes.isis2304.superandes.test.TransaccionalidadTest] - Se encontró un archivo de configuración de tablas válido
+21:39:33,845 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Ciudad
+21:39:34,139 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Ciudad: 32 existentes
+21:39:34,139 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Ciudad: Cali
+21:39:34,259 (main) ERROR [uniandes.isis2304.superandes.persistencia.PersistenciaSuperandes] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO CIUDAD(id, nombre) values (?, ?)".
+null
+21:39:34,268 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando ciudad: Cali
+21:39:34,268 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Ciudad
+21:39:34,313 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Ciudad: 32 existentes
+21:39:34,313 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Ciudad: Cali
+21:39:34,324 (main) ERROR [uniandes.isis2304.superandes.persistencia.PersistenciaSuperandes] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO CIUDAD(id, nombre) values (?, ?)".
+null
+21:39:34,328 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando ciudad: Cali
+21:39:34,328 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Limpiando la BD de Superandes
+21:39:34,328 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Limpiando la BD de Superandes: Listo!
+21:39:34,337 (main) INFO  [uniandes.isis2304.superandes.test.TransaccionalidadTest] - Probando las operaciones CRD
+21:39:34,338 (main) INFO  [uniandes.isis2304.superandes.test.TransaccionalidadTest] - Se encontró un archivo de configuración de tablas válido
+21:39:34,523 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Ciudad
+21:39:34,562 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Ciudad: 32 existentes
+21:39:34,562 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Ciudad: Cali
+21:39:34,645 (main) ERROR [uniandes.isis2304.superandes.persistencia.PersistenciaSuperandes] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO CIUDAD(id, nombre) values (?, ?)".
+null
+21:39:34,648 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando ciudad: Cali
+21:39:34,648 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Ciudad
+21:39:34,684 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Ciudad: 32 existentes
+21:39:34,684 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Ciudad: Bogota
+21:39:34,694 (main) ERROR [uniandes.isis2304.superandes.persistencia.PersistenciaSuperandes] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO CIUDAD(id, nombre) values (?, ?)".
+null
+21:39:34,696 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando ciudad: Bogota
+21:39:34,696 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Ciudad
+21:39:34,732 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Ciudad: 32 existentes
+21:39:34,732 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores
+21:39:34,758 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores: 32 existentes
+21:39:34,759 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Proveedores: Cali
+21:39:34,766 (main) ERROR [uniandes.isis2304.superandes.persistencia.PersistenciaSuperandes] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO PROVEEDORES(NIT, nombre) values (?, ?)".
+null
+21:39:34,769 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Proveedores: Cali
+21:39:34,769 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores
+21:39:34,790 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores: 32 existentes
+21:39:34,790 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Limpiando la BD de Superandes
+21:39:34,790 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Limpiando la BD de Superandes: Listo!
