@@ -4729,3 +4729,9 @@ null
 19:45:14,132 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Sucursales: 23 Sucursales existentes
 19:45:14,132 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Limpiando la BD de Superandes
 19:45:14,132 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Limpiando la BD de Superandes: Listo!
+20:56:00,783 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+20:56:00,786 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+20:56:00,859 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+20:57:34,121 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Interfaz
+20:57:34,124 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuración indicada en el archivo de configuración
+20:57:34,191 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontró un archivo de configuración válido: Tablas BD

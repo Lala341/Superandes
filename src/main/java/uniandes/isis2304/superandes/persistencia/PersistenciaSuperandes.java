@@ -669,6 +669,9 @@ public class PersistenciaSuperandes {
 
 		PersistenceManager pm = pmf.getPersistenceManager();
         Transaction tx=pm.currentTransaction();
+        
+        tx.setIsolationLevel("serializable");
+        
         try
         {
             tx.begin();
@@ -771,6 +774,8 @@ public class PersistenciaSuperandes {
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
         Transaction tx=pm.currentTransaction();
+        tx.setIsolationLevel("serializable");
+        
         try
         {
             tx.begin();
@@ -895,6 +900,8 @@ public class PersistenciaSuperandes {
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
         Transaction tx=pm.currentTransaction();
+        tx.setIsolationLevel("serializable");
+        
         try
         {
             tx.begin();
@@ -1661,6 +1668,7 @@ public class PersistenciaSuperandes {
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
         Transaction tx=pm.currentTransaction();
+        tx.setIsolationLevel("serializable");
         try
         {
             tx.begin();
@@ -1792,6 +1800,8 @@ public class PersistenciaSuperandes {
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
         Transaction tx=pm.currentTransaction();
+        tx.setIsolationLevel("serializable");
+        
         try
         {
             tx.begin();
@@ -1888,6 +1898,8 @@ public class PersistenciaSuperandes {
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
         Transaction tx=pm.currentTransaction();
+        tx.setIsolationLevel("serializable");
+        
         try
         {
             tx.begin();
@@ -2073,6 +2085,8 @@ public class PersistenciaSuperandes {
 	public Venta adicionarVenta(String fecha, String formaPago, double valorTotal, long consumidor, long sucursal){
 		PersistenceManager pm = pmf.getPersistenceManager();
         Transaction tx=pm.currentTransaction();
+        tx.setIsolationLevel("serializable");
+        
         try
         {
             tx.begin();
@@ -2300,6 +2314,8 @@ public class PersistenciaSuperandes {
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
         Transaction tx=pm.currentTransaction();
+        tx.setIsolationLevel("serializable");
+        
         try
         {
             tx.begin();
@@ -2432,6 +2448,8 @@ public class PersistenciaSuperandes {
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
         Transaction tx=pm.currentTransaction();
+        tx.setIsolationLevel("serializable");
+        
         try
         {
             tx.begin();
@@ -3321,6 +3339,7 @@ public class PersistenciaSuperandes {
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
         Transaction tx=pm.currentTransaction();
+        tx.setIsolationLevel("serializable");
         try
         {
             tx.begin();
