@@ -590,6 +590,8 @@ insert into productocarritocompras (carritocompras,  producto, cantidadproducto,
 insert into productocarritocompras (carritocompras,  producto, cantidadproducto, unidadMedida) values (1, 29, 16,'UNIDAD');
 update bodega set cantidadproductos=(cantidadproductos-48) where id=19;
 
+commit;
+SELECT * FROM PRODUCTOOFRECIDO WHERE (proveedor = 5066433098);
 
 insert into productocarritocompras (carritocompras,  producto, cantidadproducto, unidadMedida) values (2, 8, 16,'UNIDAD');
 update bodega set cantidadproductos=(cantidadproductos-16) where id=8;
@@ -708,3 +710,5 @@ insert into ordenpedido (id, estado, calificacion, fecha, fechaentrega, proveedo
 insert into ordenpedido (id, estado, calificacion, fecha, fechaentrega, proveedor, productoofrecido, cantidadproducto, unidadmedida, sucursal) values (20, 'FINALIZADO', 2, '6/3/2018', '1/9/2018', 7200084562, 10, 39, 'UNIDAD', 4);
 
 commit;
+
+

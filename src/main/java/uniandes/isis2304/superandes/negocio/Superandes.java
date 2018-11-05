@@ -1319,82 +1319,121 @@ public class Superandes {
 
 	
 	/* ****************************************************************
+<<<<<<< HEAD
 	 * 			Mï¿½todos para manejar Venta
+=======
+	 * 			Métodos para manejar VentaTest
+>>>>>>> branch 'master' of https://github.com/Lala341/Superandes.git
 	 *****************************************************************/
 	/**
+<<<<<<< HEAD
 	 * Adiciona Venta de manera persistente 
 	 * Adiciona entradas al log de la aplicaciï¿½n
 	* @return El objeto. null si ocurre alguna Excepciï¿½n
+=======
+	 * Adiciona VentaTest de manera persistente 
+	 * Adiciona entradas al log de la aplicación
+	* @return El objeto. null si ocurre alguna Excepción
+>>>>>>> branch 'master' of https://github.com/Lala341/Superandes.git
 	 */
 	public Venta adicionarVenta (String fecha, String formaPago, double valorTotal, long consumidor, long sucu)
 	{
-        log.info ("Adicionando Venta: " + consumidor);
+        log.info ("Adicionando VentaTest: " + consumidor);
         Venta Venta = pp.adicionarVenta (fecha, formaPago, valorTotal,  consumidor, sucu);		
-        log.info ("Adicionando Venta: " + consumidor);
+        log.info ("Adicionando VentaTest: " + consumidor);
         return Venta;
 	}
 	
 	/**
+<<<<<<< HEAD
 	 * Elimina Venta por su fecha
 	 * Adiciona entradas al log de la aplicaciï¿½n
+=======
+	 * Elimina VentaTest por su fecha
+	 * Adiciona entradas al log de la aplicación
+>>>>>>> branch 'master' of https://github.com/Lala341/Superandes.git
 	 * @param nombre - El nombre a eliminar
 	 * @return El nï¿½mero de tuplas eliminadas
 	 */
 	public long eliminarVentaPorFecha (String f)
 	{
-		log.info ("Eliminando Venta por fecha: " + f);
+		log.info ("Eliminando VentaTest por fecha: " + f);
         long resp = pp.eliminarVentaPorFecha (f);		
-        log.info ("Eliminando Venta por fecha: " + resp + " tuplas eliminadas");
+        log.info ("Eliminando VentaTest por fecha: " + resp + " tuplas eliminadas");
         return resp;
 	}
 	
 	/**
+<<<<<<< HEAD
 	 * Elimina Venta por su identificador
 	 * Adiciona entradas al log de la aplicaciï¿½n
 	 * @return El nï¿½mero de tuplas eliminadas
+=======
+	 * Elimina VentaTest por su identificador
+	 * Adiciona entradas al log de la aplicación
+	 * @return El número de tuplas eliminadas
+>>>>>>> branch 'master' of https://github.com/Lala341/Superandes.git
 	 */
 	public long eliminarVentaPorId (long id)
 	{
-		log.info ("Eliminando Venta por id: " + id);
+		log.info ("Eliminando VentaTest por id: " + id);
         long resp = pp.eliminarVentaPorId (id);		
-        log.info ("Eliminando Venta por id: " + resp + " tuplas eliminadas");
+        log.info ("Eliminando VentaTest por id: " + resp + " tuplas eliminadas");
         return resp;
 	}
 	
 	/**
+<<<<<<< HEAD
 	 *	Lista  Venta en Superandes
 	 * Adiciona entradas al log de la aplicaciï¿½n
 	 * @return Una lista de Venta, llenos con su informaciï¿½n bï¿½sica
+=======
+	 *	Lista  VentaTest en Superandes
+	 * Adiciona entradas al log de la aplicación
+	 * @return Una lista de VentaTest, llenos con su información básica
+>>>>>>> branch 'master' of https://github.com/Lala341/Superandes.git
 	 */
 	public List<Venta> darVentas ()
 	{
-		log.info ("Consultando Venta");
+		log.info ("Consultando VentaTest");
         List<Venta> tiposBebida = pp.darVentas();	
-        log.info ("Consultando Venta: " + tiposBebida.size() + " existentes");
+        log.info ("Consultando VentaTest: " + tiposBebida.size() + " existentes");
         return tiposBebida;
 	}
 	public List<Venta> darVentasPorSucursal(long id)
 	{
-		log.info ("Consultando Venta");
+		log.info ("Consultando VentaTest");
         List<Venta> tiposBebida = pp.darVentasPorSucursal(id);	
-        log.info ("Consultando Venta: " + tiposBebida.size() + " existentes");
+        log.info ("Consultando VentaTest: " + tiposBebida.size() + " existentes");
         return tiposBebida;
 	}
 
+	public Venta darVentasPorId(long id)
+	{
+		log.info ("Consultando VentaTest");
+		 return pp.darVentasPorId(id);	
+       
+	}
 	/**
+<<<<<<< HEAD
 	 * Encuentra Venta en Superandes y los devuelve como una lista de VOVenta
 	 * Adiciona entradas al log de la aplicaciï¿½n
 	 * @return Una lista de objetos VOVenta con todos los tipos de Venta que conoce la aplicaciï¿½n, llenos con su informaciï¿½n bï¿½sica
+=======
+	 * Encuentra VentaTest en Superandes y los devuelve como una lista de VOVenta
+	 * Adiciona entradas al log de la aplicación
+	 * @return Una lista de objetos VOVenta con todos los tipos de VentaTest que conoce la aplicación, llenos con su información básica
+>>>>>>> branch 'master' of https://github.com/Lala341/Superandes.git
 	 */
 	public List<VOVenta> darVOVentas ()
 	{
-		log.info ("Generando los VO de Venta");        
+		log.info ("Generando los VO de VentaTest");        
         List<VOVenta> voTipos = new LinkedList<VOVenta> ();
         for (Venta tb : pp.darVentas ())
         {
         	voTipos.add (tb);
         }
-        log.info ("Generando los VO de Venta: " + voTipos.size() + " existentes");
+        log.info ("Generando los VO de VentaTest: " + voTipos.size() + " existentes");
         return voTipos;
 	}
 
@@ -2987,9 +3026,8 @@ public class Superandes {
 	public long [] limpiarSuperandes ()
 	{
         log.info ("Limpiando la BD de Superandes");
-        long [] borrrados = pp.limpiarSuperandes();	
         log.info ("Limpiando la BD de Superandes: Listo!");
-        return borrrados;
+        return null;
 	}
 
 	

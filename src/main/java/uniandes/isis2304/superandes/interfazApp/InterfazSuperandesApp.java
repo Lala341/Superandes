@@ -1256,7 +1256,7 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 				   JOptionPane.showMessageDialog(this, "Agrege una Sucursal antes de registrar un producto (Menu requerimientos F).");
 				   
 			   }
-			String sucursal= (String) JOptionPane.showInputDialog(null,"Seleccione la sucursal de la venta", "Venta", JOptionPane.DEFAULT_OPTION, null, sucursalesn, sucursalesn[0]);
+			String sucursal= (String) JOptionPane.showInputDialog(null,"Seleccione la sucursal de la venta", "VentaTest", JOptionPane.DEFAULT_OPTION, null, sucursalesn, sucursalesn[0]);
 			Sucursal sucu=null;
 			i=0;
 			for (String string : sucursalesn) {
@@ -1819,7 +1819,7 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 						   JOptionPane.showMessageDialog(this, "Agrege una Sucursal antes de registrar un producto (Menu requerimientos F).");
 						   
 					   }
-					String sucursal= (String) JOptionPane.showInputDialog(null,"Seleccione la sucursal de la venta", "Venta", JOptionPane.DEFAULT_OPTION, null, sucursalesn, sucursalesn[0]);
+					String sucursal= (String) JOptionPane.showInputDialog(null,"Seleccione la sucursal de la venta", "VentaTest", JOptionPane.DEFAULT_OPTION, null, sucursalesn, sucursalesn[0]);
 					Sucursal sucu=null;
 					i=0;
 					for (String string : sucursalesn) {
@@ -2192,7 +2192,7 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 			
 			if (tb == null)
     		{
-    			throw new Exception ("No se pudo obtener las ordenes de pedido");
+    			throw new Exception ("No existen ordenes de pedido para el proveedor seleccionado");
     		}
 			String resultado = "El proveedor con NIT:" + proveedores.get(posPro).getNit() + "tienen los siguientes pedidos:" ;
 			for (OrdenPedido ordenPedido : tb) {
@@ -2240,12 +2240,12 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 			   for (int i = 0; i < ventas.size() && (ventas.get(i).getConsumidor() == (Long.parseLong(idConsumidor))); i++) {
 				if (ventas.get(i).getFecha().compareTo(fechaInicial)>=0 || ventas.get(i).getFecha().compareTo(fechaFinal)<=0) {
 					mensaje += "Venta#"+ i + " " + ventas.get(i).getId()+ "\n";
-					
-				}
+					JOptionPane.showMessageDialog(null, "VentaTest#"+ i + " " + ventas.get(i).getId()
+                            + "\n");
 			}JOptionPane.showMessageDialog(null, mensaje);
 		   }
-		   
-		} 
+		   } 
+		 } 
 		catch (Exception e) 
 		{
 //			e.printStackTrace();
