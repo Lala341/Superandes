@@ -1396,24 +1396,35 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
    }
  public void RFF13_AdicionarUnProductoCarritoCompras(){
 	 try {
-		
-		 List<Consumidor> consumidores=superandes.darConsumidor();
+		 
+		List<Consumidor> consumidores=superandes.darConsumidor();
 		if (consumidores.isEmpty()) {
 			 panelDatos.actualizarInterfaz("No existen ning�n cliente. Es necesario agregar uno nuevo para a�adir un producto al carrito de compras");
 		}
 		else
 		{
-			String idCon = JOptionPane.showInputDialog (this, "Para acceder al carrito de compras ingrese el Id del consumidor", JOptionPane.QUESTION_MESSAGE);
-			long idConsumidor = Long.parseLong(idCon);
-			List<VOCarritoCompras> carritos=superandes.darVOCarritoCompras();
+
 			VOCarritoCompras carritoPorId = null;
-			for (int i = 0; i < carritos.size(); i++) {
-				 JOptionPane.showMessageDialog(this, carritos.get(i).toString());
+			List<VOCarritoCompras> carritos=superandes.darVOCarritoCompras();
+		    
+			   String[] carritosn= new String[carritos.size()];
+			   long id = 0;
+			   
+			   for (int i = 0; i < carritos.size(); i++) {
+				   id = carritos.get(i).getConsumidor();
+				   carritosn[i]=String.valueOf(id);
+				   carritoPorId = carritos.get(i);
+			   }
+			   
+			   if(carritos.size()==0){
+
+				   JOptionPane.showMessageDialog(this, "Agrege un carrito antes de registrar un producto (Menu requerimientos F).");
 				   
-				if (idConsumidor == carritos.get(i).getConsumidor()) {
-					carritoPorId = carritos.get(i);				
-				}
-			}
+			   }else {
+				String idCon= (String) JOptionPane.showInputDialog(null,"Seleccione el id del consumidor", "Adicionar Producto", JOptionPane.DEFAULT_OPTION, null, carritosn, carritosn[0]);
+
+			long idConsumidor = Long.parseLong(idCon);
+			
 			if(carritoPorId!=null){
 				String[] tcategorias= {"ASEO", "ABARROTES", "PRENDASDEVESTIR", "MUEBLES", "HERRAMIENTAS", "ELECTRODOMESTICOS", "CONGELADOS"};
 				String tipoCategoria = (String) JOptionPane.showInputDialog(null,"Seleccione el tipoconsumidor de producto", "Tipo producto", JOptionPane.DEFAULT_OPTION, null, tcategorias, tcategorias[0]);
@@ -1437,20 +1448,19 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 						estante = estantes.get(i);
 					}
 				}
-				List<VOProducto> productos = superandes.darVOProductos();
-				for (int i = 0; i < productos.size(); i++) {
-					JOptionPane.showMessageDialog(this,productos.get(i).getNombre());
-				}
 				
-				String productoAgregar = JOptionPane.showInputDialog (this, "Escriba el producto que quiere a�adir al carrito de compras", JOptionPane.QUESTION_MESSAGE);
+				List<VOProducto> productos = superandes.darVOProductos();
+			    
+				   String[] productosn= new String[productos.size()];
+				   
+				   for (int i = 0; i < productos.size(); i++) {
+					   productosn[i]= productos.get(i).getNombre();
+				   }
+				String productoAgregar= (String) JOptionPane.showInputDialog(null,"Seleccione el producto a vender", "Adicionar Producto", JOptionPane.DEFAULT_OPTION, null, productosn, productosn[0]);
+
 				long producto = 0;
 				String unidadMedida = "";
 				boolean encontrado = false;
-				
-				
-				for (int i = 0; i < productos.size(); i++) {
-					JOptionPane.showMessageDialog(this,productos.get(i).getNombre());
-				}
 				
 				for (int j = 0; j < productos.size() && !encontrado; j++) {
 					
@@ -1463,12 +1473,7 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 				
 				String cantidadP = JOptionPane.showInputDialog (this, "Ingrese la cantidad del producto", JOptionPane.QUESTION_MESSAGE);
 				int cantidadProducto = Integer.parseInt(cantidadP);
-				superandes.adicionarProductoCarritoCompras(carritoPorId.getId(), producto, cantidadProducto, unidadMedida);
-				
-				List<ProductoCarritoCompras> pp = superandes.darProductoCarritoCompras();
-				for (int i = 0; i < pp.size(); i++) {
-					JOptionPane.showMessageDialog(this,pp.get(i).getCantidadProducto());
-				}
+				ProductoCarritoCompras p = superandes.adicionarProductoCarritoCompras(carritoPorId.getId(), producto, cantidadProducto, unidadMedida);
 				
 				int cant = estante.getCantidadProductos();
 				int nuevaCantidad = cant - cantidadProducto;			
@@ -1478,14 +1483,15 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 					superandes.sacarCantidadDeProductoB(idConsumidor, producto, cantidadProducto);	
 					superandes.adicionarProductoEstante(estante.getId(), producto, estante.getNivelDeAbastecimiento()-nuevaCantidad);
 				}
-				JOptionPane.showMessageDialog(this, "Se ha a�adido exitosamente el producto");
+				String resultado = "En agregar producto a  carrito de compras\n\n";
+	    		resultado += " producto adicionado exitosamente: " + p;
+				resultado += "\n Operaci�n terminada";
+				panelDatos.actualizarInterfaz(resultado);
 				
-			}
-			else
-			{
+			}else {
 				panelDatos.actualizarInterfaz("El consumidor no tiene un carrito de compras creado");
 			}
-		}
+		}}
 		 
 	} 
 	catch (Exception e) 
