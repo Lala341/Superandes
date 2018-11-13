@@ -1403,95 +1403,96 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 		}
 		else
 		{
-
 			VOCarritoCompras carritoPorId = null;
 			List<VOCarritoCompras> carritos=superandes.darVOCarritoCompras();
 		    
-			   String[] carritosn= new String[carritos.size()];
-			   long id = 0;
+			String[] carritosn= new String[carritos.size()];
+			long id = 0;
 			   
-			   for (int i = 0; i < carritos.size(); i++) {
-				   id = carritos.get(i).getConsumidor();
-				   carritosn[i]=String.valueOf(id);
-				   carritoPorId = carritos.get(i);
-			   }
+			for (int i = 0; i < carritos.size(); i++) {
+				id = carritos.get(i).getConsumidor();
+				carritosn[i]=String.valueOf(id);
+				 carritoPorId = carritos.get(i);
+			 }
 			   
-			   if(carritos.size()==0){
+			 if(carritos.size()==0){
 
-				   JOptionPane.showMessageDialog(this, "Agrege un carrito antes de registrar un producto (Menu requerimientos F).");
+				 JOptionPane.showMessageDialog(this, "Agrege un carrito antes de registrar un producto (Menu requerimientos F).");
 				   
-			   }else {
-				String idCon= (String) JOptionPane.showInputDialog(null,"Seleccione el id del consumidor", "Adicionar Producto", JOptionPane.DEFAULT_OPTION, null, carritosn, carritosn[0]);
+			 }
+			 else {
+				 String idCon= (String) JOptionPane.showInputDialog(null,"Seleccione el id del consumidor", "Adicionar Producto", JOptionPane.DEFAULT_OPTION, null, carritosn, carritosn[0]);
 
-			long idConsumidor = Long.parseLong(idCon);
-			
-			if(carritoPorId!=null){
-				String[] tcategorias= {"ASEO", "ABARROTES", "PRENDASDEVESTIR", "MUEBLES", "HERRAMIENTAS", "ELECTRODOMESTICOS", "CONGELADOS"};
-				String tipoCategoria = (String) JOptionPane.showInputDialog(null,"Seleccione el tipoconsumidor de producto", "Tipo producto", JOptionPane.DEFAULT_OPTION, null, tcategorias, tcategorias[0]);
-				
-				
-				List<VOBodega> bodegas = superandes.darVOBodegas();
-				List<VOEstante> estantes = superandes.darVOEstantes();
-				long idBodega = 0;
-				VOEstante estante = null;
-				boolean encontro = false;
-				for (int i = 0; i < bodegas.size() && !encontro; i++) {
-					if (bodegas.get(i).getTipoProducto().equals(tipoCategoria)) {
-						encontro = true;
-						idBodega = bodegas.get(i).getId();
-					}
-				}
-				encontro = false;
-				for (int i = 0; i < estantes.size() && !encontro; i++) {
-					if (estantes.get(i).getTipoProducto().equals(tipoCategoria)) {
-						encontro = true;
-						estante = estantes.get(i);
-					}
-				}
-				
-				List<VOProducto> productos = superandes.darVOProductos();
-			    
-				   String[] productosn= new String[productos.size()];
-				   
-				   for (int i = 0; i < productos.size(); i++) {
-					   productosn[i]= productos.get(i).getNombre();
-				   }
-				String productoAgregar= (String) JOptionPane.showInputDialog(null,"Seleccione el producto a vender", "Adicionar Producto", JOptionPane.DEFAULT_OPTION, null, productosn, productosn[0]);
-
-				long producto = 0;
-				String unidadMedida = "";
-				boolean encontrado = false;
-				
-				for (int j = 0; j < productos.size() && !encontrado; j++) {
+				long idConsumidor = Long.parseLong(idCon);
 					
-					if (productos.get(j).getNombre().equals(productoAgregar)) {
-						producto = productos.get(j).getId();
-						unidadMedida = productos.get(j).getUnidadMedida();
-						encontrado = true;
+				if(carritoPorId!=null){
+					String[] tcategorias= {"ASEO", "ABARROTES", "PRENDASDEVESTIR", "MUEBLES", "HERRAMIENTAS", "ELECTRODOMESTICOS", "CONGELADOS"};
+					String tipoCategoria = (String) JOptionPane.showInputDialog(null,"Seleccione el tipoconsumidor de producto", "Tipo producto", JOptionPane.DEFAULT_OPTION, null, tcategorias, tcategorias[0]);
+						
+						
+					List<VOBodega> bodegas = superandes.darVOBodegas();
+					List<VOEstante> estantes = superandes.darVOEstantes();
+					long idBodega = 0;
+					VOEstante estante = null;
+					boolean encontro = false;
+					for (int i = 0; i < bodegas.size() && !encontro; i++) {
+						if (bodegas.get(i).getTipoProducto().equals(tipoCategoria)) {
+							encontro = true;
+							idBodega = bodegas.get(i).getId();
+						}
 					}
+					encontro = false;
+					for (int i = 0; i < estantes.size() && !encontro; i++) {
+						if (estantes.get(i).getTipoProducto().equals(tipoCategoria)) {
+							encontro = true;
+							estante = estantes.get(i);
+						}
+					}
+						
+					List<VOProducto> productos = superandes.darVOProductos();
+					    
+					String[] productosn= new String[productos.size()];
+						   
+					for (int i = 0; i < productos.size(); i++) {
+						productosn[i]= productos.get(i).getNombre();
+					}
+					String productoAgregar= (String) JOptionPane.showInputDialog(null,"Seleccione el producto a vender", "Adicionar Producto", JOptionPane.DEFAULT_OPTION, null, productosn, productosn[0]);
+
+					long producto = 0;
+					String unidadMedida = "";
+					boolean encontrado = false;
+						
+					for (int j = 0; j < productos.size() && !encontrado; j++) {
+							
+						if (productos.get(j).getNombre().equals(productoAgregar)) {
+							producto = productos.get(j).getId();
+							unidadMedida = productos.get(j).getUnidadMedida();
+							encontrado = true;
+							}
+					}
+						
+					String cantidadP = JOptionPane.showInputDialog (this, "Ingrese la cantidad del producto", JOptionPane.QUESTION_MESSAGE);
+					int cantidadProducto = Integer.parseInt(cantidadP);
+					ProductoCarritoCompras p = superandes.adicionarProductoCarritoCompras(carritoPorId.getId(), producto, cantidadProducto, unidadMedida);
+						
+					int cant = estante.getCantidadProductos();
+					int nuevaCantidad = cant - cantidadProducto;			
+						
+						
+					if (nuevaCantidad <= estante.getNivelDeAbastecimiento()) {
+						superandes.sacarCantidadDeProductoB(idConsumidor, producto, cantidadProducto);	
+						superandes.adicionarProductoEstante(estante.getId(), producto, estante.getNivelDeAbastecimiento()-nuevaCantidad);
+					}
+					String resultado = "En agregar producto a  carrito de compras\n\n";
+			    	resultado += " producto adicionado exitosamente: " + p;
+					resultado += "\n Operaci?n terminada";
+					panelDatos.actualizarInterfaz(resultado);
 				}
-				
-				String cantidadP = JOptionPane.showInputDialog (this, "Ingrese la cantidad del producto", JOptionPane.QUESTION_MESSAGE);
-				int cantidadProducto = Integer.parseInt(cantidadP);
-				ProductoCarritoCompras p = superandes.adicionarProductoCarritoCompras(carritoPorId.getId(), producto, cantidadProducto, unidadMedida);
-				
-				int cant = estante.getCantidadProductos();
-				int nuevaCantidad = cant - cantidadProducto;			
-				
-				
-				if (nuevaCantidad <= estante.getNivelDeAbastecimiento()) {
-					superandes.sacarCantidadDeProductoB(idConsumidor, producto, cantidadProducto);	
-					superandes.adicionarProductoEstante(estante.getId(), producto, estante.getNivelDeAbastecimiento()-nuevaCantidad);
+				else {
+					panelDatos.actualizarInterfaz("El consumidor no tiene un carrito de compras creado");
 				}
-				String resultado = "En agregar producto a  carrito de compras\n\n";
-	    		resultado += " producto adicionado exitosamente: " + p;
-				resultado += "\n Operaci�n terminada";
-				panelDatos.actualizarInterfaz(resultado);
-				
-			}else {
-				panelDatos.actualizarInterfaz("El consumidor no tiene un carrito de compras creado");
-			}
-		}}
+			 }
+		}
 		 
 	} 
 	catch (Exception e) 
