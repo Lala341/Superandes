@@ -460,7 +460,7 @@ public class Superandes {
 =======
 	 * @param tipoDeAlmacenamiento - El tipoconsumidor de almacenamiento de la categoria
 	 * @param tipoDeManejo - El tipoconsumidor de manejo de la categoria 
-	 * @return El objeto Categoria adicionado. null si ocurre alguna Excepción
+	 * @return El objeto Categoria adicionado. null si ocurre alguna Excepciï¿½n
 >>>>>>> branch 'master' of https://github.com/Lala341/Superandes.git
 	 */
 	public Categoria adicionarCategoria (long id, String nombre, String tipoAlmacenamiento, String tipoManejo)
@@ -1322,7 +1322,7 @@ public class Superandes {
 <<<<<<< HEAD
 	 * 			Mï¿½todos para manejar Venta
 =======
-	 * 			Métodos para manejar VentaTest
+	 * 			Mï¿½todos para manejar VentaTest
 >>>>>>> branch 'master' of https://github.com/Lala341/Superandes.git
 	 *****************************************************************/
 	/**
@@ -1332,8 +1332,8 @@ public class Superandes {
 	* @return El objeto. null si ocurre alguna Excepciï¿½n
 =======
 	 * Adiciona VentaTest de manera persistente 
-	 * Adiciona entradas al log de la aplicación
-	* @return El objeto. null si ocurre alguna Excepción
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	* @return El objeto. null si ocurre alguna Excepciï¿½n
 >>>>>>> branch 'master' of https://github.com/Lala341/Superandes.git
 	 */
 	public Venta adicionarVenta (String fecha, String formaPago, double valorTotal, long consumidor, long sucu)
@@ -1350,7 +1350,7 @@ public class Superandes {
 	 * Adiciona entradas al log de la aplicaciï¿½n
 =======
 	 * Elimina VentaTest por su fecha
-	 * Adiciona entradas al log de la aplicación
+	 * Adiciona entradas al log de la aplicaciï¿½n
 >>>>>>> branch 'master' of https://github.com/Lala341/Superandes.git
 	 * @param nombre - El nombre a eliminar
 	 * @return El nï¿½mero de tuplas eliminadas
@@ -1370,8 +1370,8 @@ public class Superandes {
 	 * @return El nï¿½mero de tuplas eliminadas
 =======
 	 * Elimina VentaTest por su identificador
-	 * Adiciona entradas al log de la aplicación
-	 * @return El número de tuplas eliminadas
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return El nï¿½mero de tuplas eliminadas
 >>>>>>> branch 'master' of https://github.com/Lala341/Superandes.git
 	 */
 	public long eliminarVentaPorId (long id)
@@ -1389,8 +1389,8 @@ public class Superandes {
 	 * @return Una lista de Venta, llenos con su informaciï¿½n bï¿½sica
 =======
 	 *	Lista  VentaTest en Superandes
-	 * Adiciona entradas al log de la aplicación
-	 * @return Una lista de VentaTest, llenos con su información básica
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return Una lista de VentaTest, llenos con su informaciï¿½n bï¿½sica
 >>>>>>> branch 'master' of https://github.com/Lala341/Superandes.git
 	 */
 	public List<Venta> darVentas ()
@@ -1421,8 +1421,8 @@ public class Superandes {
 	 * @return Una lista de objetos VOVenta con todos los tipos de Venta que conoce la aplicaciï¿½n, llenos con su informaciï¿½n bï¿½sica
 =======
 	 * Encuentra VentaTest en Superandes y los devuelve como una lista de VOVenta
-	 * Adiciona entradas al log de la aplicación
-	 * @return Una lista de objetos VOVenta con todos los tipos de VentaTest que conoce la aplicación, llenos con su información básica
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return Una lista de objetos VOVenta con todos los tipos de VentaTest que conoce la aplicaciï¿½n, llenos con su informaciï¿½n bï¿½sica
 >>>>>>> branch 'master' of https://github.com/Lala341/Superandes.git
 	 */
 	public List<VOVenta> darVOVentas ()
@@ -2996,23 +2996,16 @@ public class Superandes {
 	}
 	public String darFechaCortaDeHoy()
 	{
-		SimpleDateFormat d = new SimpleDateFormat("dd/MM/yy");
+		
 		String fecha = "";
 		Calendar fechaActual = new GregorianCalendar();
 		   String ano = String.valueOf(fechaActual.get(Calendar.YEAR));
 	       String mes = String.valueOf(fechaActual.get(Calendar.MONTH));
 	       String dia = String.valueOf(fechaActual.get(Calendar.DAY_OF_MONTH));
 	      
-	    fecha = ano+mes+dia;
-	    Calendar cal = Calendar.getInstance();
-	    try {
-			cal.setTime(d.parse(fecha));
-		} catch (ParseException e) {
-			e.printStackTrace();
-		}
-		String fechaF = cal.toString();
+	    fecha = dia+"/"+mes+"/"+ano;
 		 
-		 return fechaF;
+		 return fecha;
 	}
 	
 	/* ****************************************************************

@@ -69,7 +69,6 @@ import uniandes.isis2304.superandes.negocio.VOProductoEstante;
 import uniandes.isis2304.superandes.negocio.VOProductoOfrecido;
 import uniandes.isis2304.superandes.negocio.VOProductoVenta;
 import uniandes.isis2304.superandes.negocio.VOPromocion;
-import uniandes.isis2304.superandes.negocio.VOPromocionCantidad;
 import uniandes.isis2304.superandes.negocio.VOPromocionDescuento;
 import uniandes.isis2304.superandes.negocio.VOPromocionParteDescuento;
 import uniandes.isis2304.superandes.negocio.VOPromocionProducto;
@@ -687,7 +686,6 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 			String resultado = generarMensajeError(e);
 			panelDatos.actualizarInterfaz(resultado);
 		}
-	   
    }
    public void RF4_RegistrarSucursal(){
 	   try 
@@ -921,6 +919,7 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 					if(tipo.equals(tipos[0])){
 						String desc = JOptionPane.showInputDialog (this, "Seleccione un porcentaje descuento (sin %)", "Adicionar promocion con descuento", JOptionPane.QUESTION_MESSAGE);
 						superandes.adicionarPromocionDescuento(idPromocion, Double.parseDouble(desc));
+						
 					}
 					else if(tipo.equals(tipos[1])){
 						String desc2 = JOptionPane.showInputDialog (this, "Seleccione un porcentaje descuento (sin %)", "Adicionar promocion con parte descuento", JOptionPane.QUESTION_MESSAGE);
@@ -931,6 +930,7 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 					else if(tipo.equals(tipos[2])){
 						String unip = JOptionPane.showInputDialog (this, "Seleccione cantidad unidades pagadas", "Adicionar promocion con parte descuento", JOptionPane.QUESTION_MESSAGE);
 						String univ = JOptionPane.showInputDialog (this, "Seleccione cantidad unidades vendidad (entregadas)", "Adicionar promocion con parte descuento", JOptionPane.QUESTION_MESSAGE);
+						superandes.adicionarPromocionUnidad(idPromocion, Integer.parseInt(univ), Integer.parseInt(unip));
 						//No está registrando esta promoción
 					}
 					else if(tipo.equals(tipos[3])){
@@ -1205,78 +1205,92 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
    public void RF11_RegistrarVenta(){
 	   
 	   try {
-		   String nombreProducto = JOptionPane.showInputDialog (this, "Nombre de producto a vender", JOptionPane.QUESTION_MESSAGE);
-		   List<Consumidor> consumidores=superandes.darConsumidor();
-		   for (int i = 0; i < consumidores.size(); i++) {
-				 JOptionPane.showMessageDialog(this, consumidores.get(i).getId());
-			}
-		   List<VOProducto> productos=superandes.darVOProductos();
-			for (int i = 0; i < productos.size(); i++) {
-				JOptionPane.showMessageDialog(this,productos.get(i).getNombre());
-			}
-		   String unidadMedida = "";
-		   boolean existeConsumidor = false;
-		   boolean existeProducto = false;
-		   long producto = 0;
-		   String idConsumidor = JOptionPane.showInputDialog (this, "Id del consumidor", JOptionPane.QUESTION_MESSAGE);
-		   long idCon = (long ) Integer.parseInt(idConsumidor);
-		   for (int i = 0; i < consumidores.size() && !existeConsumidor; i++) {
-			   if (consumidores.get(i).getId() == (Long.parseLong(idConsumidor))) {
-				existeConsumidor = true;
-			}
-		   }
-		   for (int i = 0; i < productos.size() && !existeProducto; i++) {
-			   if (productos.get(i).getNombre().equals(nombreProducto)) {
-				existeProducto = false;
-				unidadMedida = productos.get(i).getUnidadMedida();
-				producto = productos.get(i).getId();
-			}
-		   }
 		   
-		   if(consumidores.size()==0){
-			   if (!existeConsumidor) {
-				  JOptionPane.showMessageDialog(this, "El consumidor debe de existir antes de registrar una venta ");
-			}if (!existeProducto) {
-				JOptionPane.showMessageDialog(this, "El producto debe de existir antes de registrar una venta.");
-				}			   
+		   List<VOProducto> productos=superandes.darVOProductos();
+		   String[] productosn= new String[productos.size()];
+		   int j=0;
+		   for (VOProducto voProducto : productos) {
+			   productosn[j]=voProducto.getNombre();
+			   j=j+1;
 		   }
-		   else{
+		   if(productosn.length==0){
+			  
+			   JOptionPane.showMessageDialog(this, "Agrege un producto antes de vender (Menu Requerimientos).");
 			   
-			   String fecha = superandes.darFechaCortaDeHoy();
-			   String formaPago = JOptionPane.showInputDialog (this, "Ingrese la forma de pago del cliente", JOptionPane.QUESTION_MESSAGE);
-			   String valorTotalS = JOptionPane.showInputDialog (this, "Ingrese el valor total de la venta", JOptionPane.QUESTION_MESSAGE);
-			   double valorTotal = Double.parseDouble(valorTotalS);
-			   String cantidadProducto = JOptionPane.showInputDialog (this, "Ingrese la cantidad del producto", JOptionPane.QUESTION_MESSAGE);
-			   String descripcionFactura = JOptionPane.showInputDialog (this, "Ingrese una descripcion de la factura", JOptionPane.QUESTION_MESSAGE);
-			   List<VOSucursal> sucursales=superandes.darVOSucursales();
-			    
-			   String[] sucursalesn= new String[sucursales.size()];
-			     
-			   int i=0;
-			   for (VOSucursal voSucursal :superandes.darSucursales()) {
-				   sucursalesn[i]=voSucursal.getNombre();
-				   i=i+1;
-				   
-			   }
-			   if(sucursales.size()==0){
-
-				   JOptionPane.showMessageDialog(this, "Agrege una Sucursal antes de registrar un producto (Menu requerimientos F).");
-				   
-			   }
-			String sucursal= (String) JOptionPane.showInputDialog(null,"Seleccione la sucursal de la venta", "VentaTest", JOptionPane.DEFAULT_OPTION, null, sucursalesn, sucursalesn[0]);
-			Sucursal sucu=null;
-			i=0;
-			for (String string : sucursalesn) {
-				if(string.equals(sucursal)){
-					sucu=(Sucursal) sucursales.get(i);
-					break;
+		   }else{
+		   
+			   String nombreProducto= (String) JOptionPane.showInputDialog(null,"Seleccione el producto que desea vender", "Registrar Venta", JOptionPane.DEFAULT_OPTION, null, productosn,productosn[0]);
+			   List<Consumidor> consumidores=superandes.darConsumidor();
+			   String unidadMedida = "";
+			   boolean existeConsumidor = false;
+			   boolean existeProducto = false;
+			   long producto = 0;
+			   String idConsumidor = JOptionPane.showInputDialog (this, "Id del consumidor", JOptionPane.QUESTION_MESSAGE);
+			   long idCon = (long ) Integer.parseInt(idConsumidor);
+			   for (int i = 0; i < consumidores.size() && !existeConsumidor; i++) {
+				   if (consumidores.get(i).getId() == (Long.parseLong(idConsumidor))) {
+					existeConsumidor = true;
 				}
-				i=i+1;
-			}
+			   }
+			   for (int i = 0; i < productos.size() && !existeProducto; i++) {
+				   if (productos.get(i).getNombre().equals(nombreProducto)) {
+					existeProducto = false;
+					unidadMedida = productos.get(i).getUnidadMedida();
+					producto = productos.get(i).getId();
+				}
+			   }
 			   
-			   Venta venta = superandes.adicionarVenta(fecha, formaPago, valorTotal, idCon, sucu.getId());
-			   superandes.adicionarProductoVenta(venta.getId(), producto, Integer.parseInt(cantidadProducto), unidadMedida);
-			   superandes.adicionarFactura(descripcionFactura);
+			   if(consumidores.size()==0){
+				   if (!existeConsumidor) {
+					  JOptionPane.showMessageDialog(this, "El consumidor debe de existir antes de registrar una venta ");
+				}if (!existeProducto) {
+					JOptionPane.showMessageDialog(this, "El producto debe de existir antes de registrar una venta.");
+					}			   
+			   }
+			   else{
+				   
+				   String fecha = superandes.darFechaCortaDeHoy();
+				   String formaPago = JOptionPane.showInputDialog (this, "Ingrese la forma de pago del cliente", JOptionPane.QUESTION_MESSAGE);
+				   String valorTotalS = JOptionPane.showInputDialog (this, "Ingrese el valor total de la venta", JOptionPane.QUESTION_MESSAGE);
+				   double valorTotal = Double.parseDouble(valorTotalS);
+				   String cantidadProducto = JOptionPane.showInputDialog (this, "Ingrese la cantidad del producto", JOptionPane.QUESTION_MESSAGE);
+				   String descripcionFactura = JOptionPane.showInputDialog (this, "Ingrese una descripcion de la factura", JOptionPane.QUESTION_MESSAGE);
+				   List<VOSucursal> sucursales=superandes.darVOSucursales();
+				    
+				   String[] sucursalesn= new String[sucursales.size()];
+				     
+				   int i=0;
+				   for (VOSucursal voSucursal :superandes.darSucursales()) {
+					   sucursalesn[i]=voSucursal.getNombre();
+					   i=i+1;
+					   
+				   }
+				   if(sucursales.size()==0){
+	
+					   JOptionPane.showMessageDialog(this, "Agrege una Sucursal antes de registrar un producto (Menu requerimientos F).");
+					   
+				   }
+					String sucursal= (String) JOptionPane.showInputDialog(null,"Seleccione la sucursal de la venta", "Venta", JOptionPane.DEFAULT_OPTION, null, sucursalesn, sucursalesn[0]);
+
+					
+					VOSucursal sucu=null;
+					for (int k = 0; k < sucursales.size(); k++) {
+						
+						if (sucursal.equals(sucursales.get(k).getNombre())) {
+							sucu= sucursales.get(k);
+							break;
+						}
+					}
+					   
+					   Venta venta = superandes.adicionarVenta(fecha, formaPago, valorTotal, idCon, sucu.getId());
+					   superandes.adicionarProductoVenta(venta.getId(), producto, Integer.parseInt(cantidadProducto), unidadMedida);
+					   superandes.adicionarFactura(descripcionFactura);
+					   
+					   String resultado = "Registrar una venta\n\n";
+			    		resultado += "Se registró una venta exitosamente: " + venta;
+						resultado += "\n Operaciòn terminada";
+						panelDatos.actualizarInterfaz(resultado);
+			   }
 		   }
 		
 	   } 
