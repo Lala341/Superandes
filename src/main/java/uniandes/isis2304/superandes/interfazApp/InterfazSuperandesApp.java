@@ -1429,18 +1429,10 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 					String[] tcategorias= {"ASEO", "ABARROTES", "PRENDASDEVESTIR", "MUEBLES", "HERRAMIENTAS", "ELECTRODOMESTICOS", "CONGELADOS"};
 					String tipoCategoria = (String) JOptionPane.showInputDialog(null,"Seleccione el tipoconsumidor de producto", "Tipo producto", JOptionPane.DEFAULT_OPTION, null, tcategorias, tcategorias[0]);
 						
-						
-					List<VOBodega> bodegas = superandes.darVOBodegas();
+					
 					List<VOEstante> estantes = superandes.darVOEstantes();
-					long idBodega = 0;
 					VOEstante estante = null;
 					boolean encontro = false;
-					for (int i = 0; i < bodegas.size() && !encontro; i++) {
-						if (bodegas.get(i).getTipoProducto().equals(tipoCategoria)) {
-							encontro = true;
-							idBodega = bodegas.get(i).getId();
-						}
-					}
 					encontro = false;
 					for (int i = 0; i < estantes.size() && !encontro; i++) {
 						if (estantes.get(i).getTipoProducto().equals(tipoCategoria)) {

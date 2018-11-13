@@ -5748,3 +5748,22 @@ null
 22:13:09,760 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Actualizando Estante [12]
 22:13:09,760 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando ProductoEstante [598, 5]
 22:13:09,817 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando ProductoEstante: ProductoEstante [idEstante=598, idProducto=5cantidadProducto:8] tuplas insertadas
+22:21:40,690 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontr� un archivo de configuraci�n v�lido: Interfaz
+22:21:40,691 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuraci�n indicada en el archivo de configuraci�n
+22:21:40,722 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontr� un archivo de configuraci�n v�lido: Tablas BD
+22:21:50,253 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Consumidor
+22:21:50,640 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Consultando Consumidor: 62 existentes
+22:21:50,640 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de CarritoCompras
+22:21:50,809 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de CarritoCompras: 37 existentes
+22:21:54,117 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Bodegas
+22:21:54,389 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Bodegas: 65 Bodegas existentes
+22:21:54,389 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Estantes
+22:21:54,786 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Estantes: 102 Estantes existentes
+22:21:54,786 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Productos
+22:21:54,955 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Productos: 43 Productos existentes
+22:21:59,130 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando ProductoCarritoCompras: 40
+22:21:59,575 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando ProductoCarritoCompras: 40
+22:21:59,575 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Actualizando Estante [8]
+22:21:59,639 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Actualizando Estante [8]
+22:21:59,639 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando ProductoEstante [598, 6]
+22:21:59,699 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando ProductoEstante: ProductoEstante [idEstante=598, idProducto=6cantidadProducto:8] tuplas insertadas
