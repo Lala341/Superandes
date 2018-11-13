@@ -5173,3 +5173,289 @@ null
 21:39:34,790 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores: 32 existentes
 21:39:34,790 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Limpiando la BD de Superandes
 21:39:34,790 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Limpiando la BD de Superandes: Listo!
+17:28:24,963 (main) INFO  [uniandes.isis2304.superandes.test.ConexionTest] - Probando el acceso a la base de datos con datos válidos (BD, credenciales, esquema
+17:28:25,207 (main) INFO  [uniandes.isis2304.superandes.test.ConexionTest] - Se encontró un archivo de configuración de tablas válido
+17:28:27,753 (main) INFO  [uniandes.isis2304.superandes.test.ConexionTest] - Conexión realizada correstamente
+17:28:27,753 (main) INFO  [uniandes.isis2304.superandes.test.ConexionTest] - Cerrando la conexión
+17:28:27,777 (main) INFO  [uniandes.isis2304.superandes.test.ConexionTest] - Conexión cerrada
+17:28:27,778 (main) INFO  [uniandes.isis2304.superandes.test.ProveedoresTest] - Probando las operaciones CRD
+17:28:27,780 (main) INFO  [uniandes.isis2304.superandes.test.ProveedoresTest] - Se encontr� un archivo de configuraci�n de tablas v�lido
+17:28:28,206 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores
+17:28:28,467 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores: 33 existentes
+17:28:28,467 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Limpiando la BD de Superandes
+17:28:28,468 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Limpiando la BD de Superandes: Listo!
+17:28:28,498 (main) INFO  [uniandes.isis2304.superandes.test.ProveedoresTest] - Probando la restricci�n de UNICIDAD 
+17:28:28,499 (main) INFO  [uniandes.isis2304.superandes.test.ProveedoresTest] - Se encontr� un archivo de configuraci�n de tablas v�lido
+17:28:28,930 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores
+17:28:29,090 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores: 33 existentes
+17:28:29,090 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Limpiando la BD de Superandes
+17:28:29,090 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Limpiando la BD de Superandes: Listo!
+17:28:29,113 (main) INFO  [uniandes.isis2304.superandes.test.SucursalTest] - Probando las operaciones CRD
+17:28:29,113 (main) INFO  [uniandes.isis2304.superandes.test.SucursalTest] - Se encontr� un archivo de configuraci�n de tablas v�lido
+17:28:29,507 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Sucursales
+17:28:29,672 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Sucursales: 24 Sucursales existentes
+17:28:29,672 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Sucursal: Londonderry
+17:28:29,809 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Sucursal: Sucursal [id=611, tamanho=1215.0, tipoDeMercado=n/a, ventasTotales=0.0, idCiudad=4]
+17:28:29,810 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Sucursales
+17:28:29,932 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Sucursales: 25 Sucursales existentes
+17:28:29,933 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Limpiando la BD de Superandes
+17:28:29,933 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Limpiando la BD de Superandes: Listo!
+17:28:29,951 (main) INFO  [uniandes.isis2304.superandes.test.SucursalTest] - Probando la restricci�n de UNICIDAD 
+17:28:29,951 (main) INFO  [uniandes.isis2304.superandes.test.SucursalTest] - Se encontr� un archivo de configuraci�n de tablas v�lido
+17:28:30,352 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Sucursales
+17:28:30,469 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Sucursales: 25 Sucursales existentes
+17:28:30,469 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Limpiando la BD de Superandes
+17:28:30,469 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Limpiando la BD de Superandes: Listo!
+17:28:30,509 (main) INFO  [uniandes.isis2304.superandes.test.EmpresaTest] - Probando la restricci�n de UNICIDAD 
+17:28:30,510 (main) INFO  [uniandes.isis2304.superandes.test.EmpresaTest] - Se encontr� un archivo de configuraci�n de tablas v�lido
+17:28:30,923 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Empresas
+17:28:31,056 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Empresas: 20 empresas existentes
+17:28:31,056 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Limpiando la BD de Superandes
+17:28:31,056 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Limpiando la BD de Superandes: Listo!
+17:28:31,074 (main) INFO  [uniandes.isis2304.superandes.test.EmpresaTest] - Probando las operaciones CRD
+17:28:31,075 (main) INFO  [uniandes.isis2304.superandes.test.EmpresaTest] - Se encontr� un archivo de configuraci�n de tablas v�lido
+17:28:31,526 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Empresas
+17:28:31,649 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Empresas: 20 empresas existentes
+17:28:31,650 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando empresa: 
+17:28:31,787 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando empresa: Empresa [NIT=49744, direccion=535 Fairfield Terrace]
+17:28:31,787 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Empresas
+17:28:31,886 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Empresas: 21 empresas existentes
+17:28:31,886 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Dar informaci�n de un empresa por id: 49744
+17:28:31,940 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Empresa [NIT=49744, direccion=535 Fairfield Terrace]
+17:28:31,940 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Dar informaci�n de un empresa por id: 49744
+17:28:31,995 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Empresa [NIT=49744, direccion=535 Fairfield Terrace]
+17:28:31,996 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando empresa: 
+17:28:32,152 (main) ERROR [uniandes.isis2304.superandes.persistencia.PersistenciaSuperandes] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO EMPRESA( idConsumidor, NIT, direccion) values (?, ?, ?)".
+null
+17:28:32,153 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando empresa: null
+17:28:32,153 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Empresas
+17:28:32,339 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Empresas: 21 empresas existentes
+17:28:32,339 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Dar informaci�n de un empresa por id: 49744
+17:28:32,396 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Empresa [NIT=49744, direccion=535 Fairfield Terrace]
+17:28:32,397 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Dar informaci�n de un empresa por id: 49744
+17:28:32,481 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Empresa [NIT=49744, direccion=535 Fairfield Terrace]
+17:28:32,482 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Limpiando la BD de Superandes
+17:28:32,482 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Limpiando la BD de Superandes: Listo!
+17:28:32,509 (main) INFO  [uniandes.isis2304.superandes.test.TransaccionalidadTest] - Probando la restricci�n de UNICIDAD 
+17:28:32,510 (main) INFO  [uniandes.isis2304.superandes.test.TransaccionalidadTest] - Se encontr� un archivo de configuraci�n de tablas v�lido
+17:28:32,855 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Ciudad
+17:28:33,009 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Ciudad: 32 existentes
+17:28:33,009 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Ciudad: Cali
+17:28:33,300 (main) ERROR [uniandes.isis2304.superandes.persistencia.PersistenciaSuperandes] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO CIUDAD(id, nombre) values (?, ?)".
+null
+17:28:33,339 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando ciudad: Cali
+17:28:33,339 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Ciudad
+17:28:33,475 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Ciudad: 32 existentes
+17:28:33,475 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Ciudad: Cali
+17:28:33,591 (main) ERROR [uniandes.isis2304.superandes.persistencia.PersistenciaSuperandes] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO CIUDAD(id, nombre) values (?, ?)".
+null
+17:28:33,629 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando ciudad: Cali
+17:28:33,629 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Limpiando la BD de Superandes
+17:28:33,629 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Limpiando la BD de Superandes: Listo!
+17:28:33,662 (main) INFO  [uniandes.isis2304.superandes.test.TransaccionalidadTest] - Probando las operaciones CRD
+17:28:33,663 (main) INFO  [uniandes.isis2304.superandes.test.TransaccionalidadTest] - Se encontr� un archivo de configuraci�n de tablas v�lido
+17:28:34,027 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Ciudad
+17:28:34,255 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Ciudad: 32 existentes
+17:28:34,255 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Ciudad: Cali
+17:28:34,593 (main) ERROR [uniandes.isis2304.superandes.persistencia.PersistenciaSuperandes] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO CIUDAD(id, nombre) values (?, ?)".
+null
+17:28:34,631 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando ciudad: Cali
+17:28:34,631 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Ciudad
+17:28:34,756 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Ciudad: 32 existentes
+17:28:34,756 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Ciudad: Bogota
+17:28:34,853 (main) ERROR [uniandes.isis2304.superandes.persistencia.PersistenciaSuperandes] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO CIUDAD(id, nombre) values (?, ?)".
+null
+17:28:34,960 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando ciudad: Bogota
+17:28:34,960 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Ciudad
+17:28:35,136 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Ciudad: 32 existentes
+17:28:35,136 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores
+17:28:35,290 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores: 33 existentes
+17:28:35,290 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Proveedores: Cali
+17:28:35,350 (main) ERROR [uniandes.isis2304.superandes.persistencia.PersistenciaSuperandes] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO PROVEEDORES(NIT, nombre) values (?, ?)".
+null
+17:28:35,379 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Proveedores: Cali
+17:28:35,380 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores
+17:28:35,520 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Proveedores: 33 existentes
+17:28:35,520 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Limpiando la BD de Superandes
+17:28:35,520 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Limpiando la BD de Superandes: Listo!
+17:28:35,585 (main) INFO  [uniandes.isis2304.superandes.test.CiudadTest] - Probando las operaciones CRD
+17:28:35,586 (main) INFO  [uniandes.isis2304.superandes.test.CiudadTest] - Se encontr� un archivo de configuraci�n de tablas v�lido
+17:28:35,944 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Ciudad
+17:28:36,070 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Ciudad: 32 existentes
+17:28:36,070 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Limpiando la BD de Superandes
+17:28:36,070 (main) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Limpiando la BD de Superandes: Listo!
+17:29:40,739 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontr� un archivo de configuraci�n v�lido: Interfaz
+17:29:40,740 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuraci�n indicada en el archivo de configuraci�n
+17:29:40,840 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontr� un archivo de configuraci�n v�lido: Tablas BD
+17:31:11,551 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Producto: Oreo
+17:31:11,720 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Producto: Oreo
+18:50:18,390 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontr� un archivo de configuraci�n v�lido: Interfaz
+18:50:18,391 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuraci�n indicada en el archivo de configuraci�n
+18:50:18,424 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontr� un archivo de configuraci�n v�lido: Tablas BD
+18:51:03,799 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontr� un archivo de configuraci�n v�lido: Interfaz
+18:51:03,801 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuraci�n indicada en el archivo de configuraci�n
+18:51:03,835 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontr� un archivo de configuraci�n v�lido: Tablas BD
+18:55:47,560 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontr� un archivo de configuraci�n v�lido: Interfaz
+18:55:47,561 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuraci�n indicada en el archivo de configuraci�n
+18:55:47,592 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontr� un archivo de configuraci�n v�lido: Tablas BD
+18:56:12,803 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Promocion: sdfg
+18:56:13,491 (AWT-EventQueue-0) ERROR [uniandes.isis2304.superandes.persistencia.PersistenciaSuperandes] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO PROMOCION(id, nombre, descripcion,tipoconsumidor, fechaInicio, fechaFinalizacion, estado, cantidadP) values (?, ?, ?, ?, ?, ?, ?, ?)".
+null
+18:56:13,537 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Promocion: sdfg
+18:56:48,869 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontr� un archivo de configuraci�n v�lido: Interfaz
+18:56:48,870 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuraci�n indicada en el archivo de configuraci�n
+18:56:48,900 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontr� un archivo de configuraci�n v�lido: Tablas BD
+18:57:12,914 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Promocion: df
+18:57:13,520 (AWT-EventQueue-0) ERROR [uniandes.isis2304.superandes.persistencia.PersistenciaSuperandes] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO PROMOCION(id, nombre, descripcion,tipoconsumidor, fechaInicio, fechaFinalizacion, estado, cantidadP) values (?, ?, ?, ?, ?, ?, ?, ?)".
+null
+18:57:13,559 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Promocion: df
+18:58:51,019 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontr� un archivo de configuraci�n v�lido: Interfaz
+18:58:51,020 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuraci�n indicada en el archivo de configuraci�n
+18:58:51,055 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontr� un archivo de configuraci�n v�lido: Tablas BD
+18:59:43,054 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Promocion: kkk
+18:59:43,614 (AWT-EventQueue-0) ERROR [uniandes.isis2304.superandes.persistencia.PersistenciaSuperandes] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO PROMOCION(id, nombre, descripcion,tipoconsumidor, fechaInicio, fechaFinalizacion, estado, cantidadP) values (?, ?, ?, ?, ?, ?, ?, ?)".
+null
+18:59:43,649 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Promocion: kkk
+19:00:11,653 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontr� un archivo de configuraci�n v�lido: Interfaz
+19:00:11,654 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuraci�n indicada en el archivo de configuraci�n
+19:00:11,686 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontr� un archivo de configuraci�n v�lido: Tablas BD
+19:01:20,967 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Promocion: ssd
+19:01:21,612 (AWT-EventQueue-0) ERROR [uniandes.isis2304.superandes.persistencia.PersistenciaSuperandes] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO PROMOCION(id, nombre, descripcion,tipoconsumidor, fechaInicio, fechaFinalizacion, estado, cantidadP) values (?, ?, ?, ?, ?, ?, ?, ?)".
+null
+19:01:21,648 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Promocion: ssd
+19:01:32,375 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontr� un archivo de configuraci�n v�lido: Interfaz
+19:01:32,377 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuraci�n indicada en el archivo de configuraci�n
+19:01:32,415 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontr� un archivo de configuraci�n v�lido: Tablas BD
+19:02:08,717 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Promocion: sfg
+19:02:10,109 (AWT-EventQueue-0) ERROR [uniandes.isis2304.superandes.persistencia.PersistenciaSuperandes] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO PROMOCION(id, nombre, descripcion,tipoconsumidor, fechaInicio, fechaFinalizacion, estado, cantidadP) values (?, ?, ?, ?, ?, ?, ?, ?)".
+null
+19:02:10,142 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Promocion: sfg
+19:02:33,528 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontr� un archivo de configuraci�n v�lido: Interfaz
+19:02:33,532 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuraci�n indicada en el archivo de configuraci�n
+19:02:33,602 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontr� un archivo de configuraci�n v�lido: Tablas BD
+19:03:00,356 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Promocion: sdd
+19:03:00,984 (AWT-EventQueue-0) ERROR [uniandes.isis2304.superandes.persistencia.PersistenciaSuperandes] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO PROMOCION(id, nombre, descripcion,tipoconsumidor, fechaInicio, fechaFinalizacion, estado, cantidadP) values (?, ?, ?, ?, ?, ?, ?, ?)".
+null
+19:03:01,048 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Promocion: sdd
+19:05:04,685 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontr� un archivo de configuraci�n v�lido: Interfaz
+19:05:04,686 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuraci�n indicada en el archivo de configuraci�n
+19:05:04,719 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontr� un archivo de configuraci�n v�lido: Tablas BD
+19:05:29,644 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Promocion: adde
+19:05:30,265 (AWT-EventQueue-0) ERROR [uniandes.isis2304.superandes.persistencia.PersistenciaSuperandes] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO PROMOCION(id, nombre, descripcion,tipoconsumidor, fechaInicio, fechaFinalizacion, estado, cantidadP) values (?, ?, ?, ?, ?, ?, ?, ?)".
+null
+19:05:30,304 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Promocion: adde
+19:06:11,977 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontr� un archivo de configuraci�n v�lido: Interfaz
+19:06:11,979 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuraci�n indicada en el archivo de configuraci�n
+19:06:12,023 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontr� un archivo de configuraci�n v�lido: Tablas BD
+19:06:21,940 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontr� un archivo de configuraci�n v�lido: Interfaz
+19:06:21,942 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuraci�n indicada en el archivo de configuraci�n
+19:06:21,969 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontr� un archivo de configuraci�n v�lido: Tablas BD
+19:07:00,733 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Promocion: asd
+19:07:01,344 (AWT-EventQueue-0) ERROR [uniandes.isis2304.superandes.persistencia.PersistenciaSuperandes] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO PROMOCION(id, nombre, descripcion,tipoconsumidor, fechaInicio, fechaFinalizacion, estado, cantidadP) values (?, ?, ?, ?, ?, ?, ?, ?)".
+null
+19:07:01,380 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Promocion: asd
+19:08:12,331 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontr� un archivo de configuraci�n v�lido: Interfaz
+19:08:12,333 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuraci�n indicada en el archivo de configuraci�n
+19:08:12,363 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontr� un archivo de configuraci�n v�lido: Tablas BD
+19:08:40,412 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Promocion: hhh
+19:08:40,941 (AWT-EventQueue-0) ERROR [uniandes.isis2304.superandes.persistencia.PersistenciaSuperandes] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO PROMOCION(id, nombre, descripcion,tipoconsumidor, fechaInicio, fechaFinalizacion, estado, cantidadP) values (?, ?, ?, ?, ?, ?, ?, ?)".
+null
+19:08:40,977 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Promocion: hhh
+19:23:21,050 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontr� un archivo de configuraci�n v�lido: Interfaz
+19:23:21,052 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuraci�n indicada en el archivo de configuraci�n
+19:23:21,083 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontr� un archivo de configuraci�n v�lido: Tablas BD
+19:23:43,523 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Promocion: sd
+19:23:44,232 (AWT-EventQueue-0) ERROR [uniandes.isis2304.superandes.persistencia.PersistenciaSuperandes] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO PROMOCION(id, nombre, descripcion,tipoconsumidor, fechaInicio, fechaFinalizacion, estado, cantidadP) values (?, ?, ?, ?, ?, ?, ?, ?)".
+null
+19:23:44,267 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Promocion: sd
+19:27:38,590 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontr� un archivo de configuraci�n v�lido: Interfaz
+19:27:38,591 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuraci�n indicada en el archivo de configuraci�n
+19:27:38,622 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontr� un archivo de configuraci�n v�lido: Tablas BD
+19:27:59,637 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Promocion: sd
+19:28:00,279 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Promocion: sd
+19:43:34,597 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontr� un archivo de configuraci�n v�lido: Interfaz
+19:43:34,599 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuraci�n indicada en el archivo de configuraci�n
+19:43:34,630 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontr� un archivo de configuraci�n v�lido: Tablas BD
+19:44:15,798 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Promocion: Oreo 2x1
+19:44:16,388 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Promocion: Oreo 2x1
+19:44:19,482 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando promocionDescuento: 
+19:44:19,567 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando promocionDescuento: PromocionDescuento [id=630, descuento=3.0]
+19:53:47,398 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontr� un archivo de configuraci�n v�lido: Interfaz
+19:53:47,399 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuraci�n indicada en el archivo de configuraci�n
+19:53:47,432 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontr� un archivo de configuraci�n v�lido: Tablas BD
+19:54:41,329 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Promocion: Más oreos
+19:54:41,934 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Promocion: Más oreos
+19:54:48,775 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando promocionParteDescuento: 
+19:54:48,941 (AWT-EventQueue-0) ERROR [uniandes.isis2304.superandes.persistencia.PersistenciaSuperandes] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO PROMOCIONPARTEDESCUENTO(idPromocion, descuento, unidadVendidos) values (?, ?, ?)".
+null
+19:54:48,942 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando promocionParteDescuento: null
+19:57:30,238 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontr� un archivo de configuraci�n v�lido: Interfaz
+19:57:30,239 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuraci�n indicada en el archivo de configuraci�n
+19:57:30,266 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontr� un archivo de configuraci�n v�lido: Tablas BD
+19:58:05,442 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Promocion: Oreo
+19:58:05,981 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Promocion: Oreo
+19:58:10,815 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando promocionParteDescuento: 
+19:58:10,924 (AWT-EventQueue-0) ERROR [uniandes.isis2304.superandes.persistencia.PersistenciaSuperandes] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO PROMOCIONPARTEDESCUENTO(idPromocion, descuento, unidadVendidos) values (?, ?, ?)".
+null
+19:58:10,925 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando promocionParteDescuento: null
+20:00:35,847 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontr� un archivo de configuraci�n v�lido: Interfaz
+20:00:35,848 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuraci�n indicada en el archivo de configuraci�n
+20:00:35,878 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontr� un archivo de configuraci�n v�lido: Tablas BD
+20:00:58,195 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Promocion: asd
+20:00:58,812 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Promocion: asd
+20:01:02,489 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando promocionParteDescuento: 
+20:01:02,588 (AWT-EventQueue-0) ERROR [uniandes.isis2304.superandes.persistencia.PersistenciaSuperandes] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO PROMOCIONPARTEDESCUENTO(idPromocion, descuento, unidadVendidos) values (?, ?, ?)".
+null
+20:01:02,588 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando promocionParteDescuento: null
+20:05:48,984 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontr� un archivo de configuraci�n v�lido: Interfaz
+20:05:48,985 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuraci�n indicada en el archivo de configuraci�n
+20:05:49,013 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontr� un archivo de configuraci�n v�lido: Tablas BD
+20:06:22,247 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Promocion: hj
+20:06:22,816 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Promocion: hj
+20:06:28,178 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando promocionUnidad: 
+20:06:28,288 (AWT-EventQueue-0) ERROR [uniandes.isis2304.superandes.persistencia.PersistenciaSuperandes] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO PROMOCIONUNIDAD(idPromocion, unidadVendidos, unidadPagados) values (?, ?, ?)".
+null
+20:06:28,288 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando promocionUnidad: null
+20:08:00,342 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontr� un archivo de configuraci�n v�lido: Interfaz
+20:08:00,343 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuraci�n indicada en el archivo de configuraci�n
+20:08:00,371 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontr� un archivo de configuraci�n v�lido: Tablas BD
+20:08:29,441 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Promocion: hjj
+20:08:30,024 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Promocion: hjj
+20:08:32,555 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando promocionParteDescuento: 
+20:08:32,708 (AWT-EventQueue-0) ERROR [uniandes.isis2304.superandes.persistencia.PersistenciaSuperandes] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO PROMOCIONPARTEDESCUENTO(idPromocion, descuento, unidadVendidos) values (?, ?, ?)".
+null
+20:08:32,709 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando promocionParteDescuento: null
+20:09:17,818 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontr� un archivo de configuraci�n v�lido: Interfaz
+20:09:17,819 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuraci�n indicada en el archivo de configuraci�n
+20:09:17,852 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontr� un archivo de configuraci�n v�lido: Tablas BD
+20:09:40,473 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Promocion: sdf
+20:09:40,990 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Promocion: sdf
+20:09:43,956 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando promocionUnidad: 
+20:09:44,047 (AWT-EventQueue-0) ERROR [uniandes.isis2304.superandes.persistencia.PersistenciaSuperandes] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO PROMOCIONUNIDAD(idPromocion, unidadVendidos, unidadPagados) values (?, ?, ?)".
+null
+20:09:44,048 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando promocionUnidad: null
+20:11:38,541 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontr� un archivo de configuraci�n v�lido: Interfaz
+20:11:38,542 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuraci�n indicada en el archivo de configuraci�n
+20:11:38,570 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontr� un archivo de configuraci�n v�lido: Tablas BD
+20:12:02,522 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Promocion: fee
+20:12:03,066 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Promocion: fee
+20:12:05,848 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando promocionUnidad: 
+20:12:05,979 (AWT-EventQueue-0) ERROR [uniandes.isis2304.superandes.persistencia.PersistenciaSuperandes] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO PROMOCIONUNIDAD(idPromocion, unidadVendidos, unidadPagados) values (?, ?, ?)".
+null
+20:12:05,980 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando promocionUnidad: null
+20:16:57,041 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontr� un archivo de configuraci�n v�lido: Interfaz
+20:16:57,042 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuraci�n indicada en el archivo de configuraci�n
+20:16:57,069 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontr� un archivo de configuraci�n v�lido: Tablas BD
+20:17:20,212 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Promocion: ff
+20:17:20,765 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Promocion: ff
+20:17:23,816 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando promocionCantidad: 
+20:17:23,949 (AWT-EventQueue-0) ERROR [uniandes.isis2304.superandes.persistencia.PersistenciaSuperandes] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO PROMOCIONCANTIDAD(idPromocion, cantidadVendidos, cantidadPagados) values (?, ?, ?)".
+null
+20:17:23,950 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando promocionCantidad: null
+20:18:22,313 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontr� un archivo de configuraci�n v�lido: Interfaz
+20:18:22,314 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuraci�n indicada en el archivo de configuraci�n
+20:18:22,341 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontr� un archivo de configuraci�n v�lido: Tablas BD
+20:18:57,344 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Promocion: sf
+20:18:58,149 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Promocion: sf
+20:18:59,579 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando promocionDescuento: 
+20:18:59,659 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando promocionDescuento: PromocionDescuento [id=639, descuento=3.0]

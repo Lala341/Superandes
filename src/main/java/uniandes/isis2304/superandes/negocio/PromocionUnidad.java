@@ -1,18 +1,12 @@
 package uniandes.isis2304.superandes.negocio;
 
-public class PromocionUnidad {
+public class PromocionUnidad implements VOPromocionUnidad {
 	
 	private long idPromocion;
 	private int unidadVendidos;
 	private int unidadPagados;
 	
-	/**
-	 * Constructor por defecto
-	 */
-	public PromocionUnidad()
-	{
-		
-	}
+	
 	
 	/**
 	 * @param idPromocion - id de la promocion

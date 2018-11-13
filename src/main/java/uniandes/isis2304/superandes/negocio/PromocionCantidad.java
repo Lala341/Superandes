@@ -6,13 +6,6 @@ public class PromocionCantidad implements VOPromocionCantidad {
 	private int cantidadVendidos;
 	private int cantidadPagados;
 	
-	/**
-	 * Constructor por defecto
-	 */
-	public PromocionCantidad()
-	{
-	
-	}
 
 	public PromocionCantidad(long idPromocion, int cantidadVendidos, int cantidadPagados)
 	{

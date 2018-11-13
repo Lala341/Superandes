@@ -69,7 +69,11 @@ import uniandes.isis2304.superandes.negocio.VOProductoEstante;
 import uniandes.isis2304.superandes.negocio.VOProductoOfrecido;
 import uniandes.isis2304.superandes.negocio.VOProductoVenta;
 import uniandes.isis2304.superandes.negocio.VOPromocion;
+import uniandes.isis2304.superandes.negocio.VOPromocionCantidad;
+import uniandes.isis2304.superandes.negocio.VOPromocionDescuento;
+import uniandes.isis2304.superandes.negocio.VOPromocionParteDescuento;
 import uniandes.isis2304.superandes.negocio.VOPromocionProducto;
+import uniandes.isis2304.superandes.negocio.VOPromocionUnidad;
 import uniandes.isis2304.superandes.negocio.VOProveedores;
 import uniandes.isis2304.superandes.negocio.VOSucursal;
 import uniandes.isis2304.superandes.negocio.VOVenta;
@@ -912,36 +916,39 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 			if (nombre != null)
 			{
 	    		VOPromocion tb = superandes.adicionarPromocion(nombre, descripcion, tipo, fecI, fecF, estado, Integer.parseInt(cantidadP));
+	    		long idPromocion = tb.getId();
 	    		if(tipo!=null){
 					if(tipo.equals(tipos[0])){
 						String desc = JOptionPane.showInputDialog (this, "Seleccione un porcentaje descuento (sin %)", "Adicionar promocion con descuento", JOptionPane.QUESTION_MESSAGE);
-						
+						superandes.adicionarPromocionDescuento(idPromocion, Double.parseDouble(desc));
 					}
 					else if(tipo.equals(tipos[1])){
 						String desc2 = JOptionPane.showInputDialog (this, "Seleccione un porcentaje descuento (sin %)", "Adicionar promocion con parte descuento", JOptionPane.QUESTION_MESSAGE);
-						String unip = JOptionPane.showInputDialog (this, "Seleccione cantidad unidades pagadas", "Adicionar promocion con parte descuento", JOptionPane.QUESTION_MESSAGE);
-						
+						String unip = JOptionPane.showInputDialog (this, "Seleccione cantidad unidades vendidas", "Adicionar promocion con parte descuento", JOptionPane.QUESTION_MESSAGE);
+						superandes.adicionarPromocionParteDescuento(idPromocion, Double.parseDouble(desc2), Integer.parseInt(unip));
+						//No está agregando esta promoción
 					}
 					else if(tipo.equals(tipos[2])){
 						String unip = JOptionPane.showInputDialog (this, "Seleccione cantidad unidades pagadas", "Adicionar promocion con parte descuento", JOptionPane.QUESTION_MESSAGE);
 						String univ = JOptionPane.showInputDialog (this, "Seleccione cantidad unidades vendidad (entregadas)", "Adicionar promocion con parte descuento", JOptionPane.QUESTION_MESSAGE);
-						
+						//No está registrando esta promoción
 					}
 					else if(tipo.equals(tipos[3])){
 						String cnip = JOptionPane.showInputDialog (this, "Seleccione cantidad pagado", "Adicionar promocion con parte descuento", JOptionPane.QUESTION_MESSAGE);
 						String cniv = JOptionPane.showInputDialog (this, "Seleccione cantidad vendido (entregado)", "Adicionar promocion con parte descuento", JOptionPane.QUESTION_MESSAGE);
-						
+						superandes.adicionarPromocionCantidad(idPromocion, Integer.parseInt(cniv), Integer.parseInt(cnip));
+						//No está registrando esta promoción
 					}
 					
 				}
 	    		
 	    		if (tb == null)
 	    		{
-	    			throw new Exception ("No se pudo crear un proveedor con nombre: " + nombre );
+	    			throw new Exception ("No se pudo crear una promocion con nombre: " + nombre );
 	    		}
-	    		String resultado = "En adicionarProveedor\n\n";
-	    		resultado += "Proveedor adicionado exitosamente: " + tb;
-				resultado += "\n Operaci�n terminada";
+	    		String resultado = "En adicionarPromociom\n\n";
+	    		resultado += "Promoción adicionado exitosamente: " + tb ;
+				resultado += "\n Operacion terminada";
 				panelDatos.actualizarInterfaz(resultado);
 			}
 			else

@@ -6,13 +6,7 @@ public class PromocionParteDescuento implements VOPromocionParteDescuento {
 	private double descuento;
 	private int unidadVendidos;
 	
-	/**
-	 * Constructor por defecto
-	 */
-	public PromocionParteDescuento()
-	{
-		
-	}
+	
 	
 	/**
 	 * 

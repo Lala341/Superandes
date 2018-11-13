@@ -3,8 +3,8 @@ package uniandes.isis2304.superandes.negocio;
 import java.sql.Date;
 
 /**
- * Interfaz para los métodos get de Bodega.
- * Sirve para proteger la información del negocio de posibles manipulaciones desde la interfaz 
+ * Interfaz para los mï¿½todos get de Bodega.
+ * Sirve para proteger la informaciï¿½n del negocio de posibles manipulaciones desde la interfaz 
  * 
  */
 public interface VOPromocion {
@@ -60,6 +60,11 @@ public interface VOPromocion {
 	 * @param cantidadP the cantidadP to set
 	 */
 	public void setCantidadP(int cantidadP);
+	
+	public String getDescripcion();
+	
+	public void setDescripcion(String descripcion);
+	
 	@Override
 	/**
 	 * @return Una cadena de caracteres con todos los atributos de la Promocion

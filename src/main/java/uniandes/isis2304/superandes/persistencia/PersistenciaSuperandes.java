@@ -520,13 +520,13 @@ public class PersistenciaSuperandes {
 	}
 
 	/* ****************************************************************
-	 * 			Métodos para manejar los CIUDAD
+	 * 			Mï¿½todos para manejar los CIUDAD
 	 *****************************************************************/
 	
 	/**
-	 * Método que inserta, de manera transaccional, una tupla en la tabla 
-	 * Adiciona entradas al log de la aplicación
-	  * @return El objeto adicionado. null si ocurre alguna Excepción
+	 * Mï¿½todo que inserta, de manera transaccional, una tupla en la tabla 
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	  * @return El objeto adicionado. null si ocurre alguna Excepciï¿½n
 	 */
 	public Ciudad adicionarCiudad(String nombre)
 	{
@@ -539,7 +539,7 @@ public class PersistenciaSuperandes {
             long tuplasInsertadas = sqlCiudad.adicionar(pm, id,nombre);
             tx.commit();
             
-            log.trace ("Inserción de Ciudad: " + nombre + ": " + tuplasInsertadas + " tuplas insertadas");
+            log.trace ("Inserciï¿½n de Ciudad: " + nombre + ": " + tuplasInsertadas + " tuplas insertadas");
             
             return new Ciudad (id, nombre);
         }
@@ -559,10 +559,10 @@ public class PersistenciaSuperandes {
         }
 	}
 	/**
-	 * Método que elimina, de manera transaccional, una tupla en la tabla
-	 * Adiciona entradas al log de la aplicación
+	 * Mï¿½todo que elimina, de manera transaccional, una tupla en la tabla
+	 * Adiciona entradas al log de la aplicaciï¿½n
 	 * @param nombre 
-	 * @return El número de tuplas eliminadas. -1 si ocurre alguna Excepción
+	 * @return El nï¿½mero de tuplas eliminadas. -1 si ocurre alguna Excepciï¿½n
 	 */
 	public long eliminarCiudadPorNombre (String nombre) 
 	{
@@ -592,9 +592,9 @@ public class PersistenciaSuperandes {
 	}
 
 	/**
-	 * Método que elimina, de manera transaccional, una tupla en la tabla
-	 * Adiciona entradas al log de la aplicación
-	 * @return El número de tuplas eliminadas. -1 si ocurre alguna Excepción
+	 * Mï¿½todo que elimina, de manera transaccional, una tupla en la tabla
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return El nï¿½mero de tuplas eliminadas. -1 si ocurre alguna Excepciï¿½n
 	 */
 	public long eliminarCiudadPorId (long id) 
 	{
@@ -624,7 +624,7 @@ public class PersistenciaSuperandes {
 	}
 
 	/**
-	 * Método que consulta todas las tuplas en la tabla
+	 * Mï¿½todo que consulta todas las tuplas en la tabla
 	 * @return La lista de objetos 
 	 */
 	public List<Ciudad> darCiudades ()
@@ -633,7 +633,7 @@ public class PersistenciaSuperandes {
 	}
  
 	/**
-	 * Método que consulta todas las tuplas en la tabla 
+	 * Mï¿½todo que consulta todas las tuplas en la tabla 
 	 * @return La lista de objetos 
 	 */
 	public List<Ciudad> darCiudadPorNombre (String nombre)
@@ -642,7 +642,7 @@ public class PersistenciaSuperandes {
 	}
  
 	/**
-	 * Método que consulta todas las tuplas en la tabla 
+	 * Mï¿½todo que consulta todas las tuplas en la tabla 
 	 * @return El objeto, construido con base en las tuplas de la tabla con el identificador dado
 	 */
 	public Ciudad darCiudadPorId (long id)
@@ -651,18 +651,18 @@ public class PersistenciaSuperandes {
 	}
 	
 	/* ****************************************************************
-	 * 			Métodos para manejar las SUCURSALES
+	 * 			Mï¿½todos para manejar las SUCURSALES
 	 *****************************************************************/
 	
 	/**
-	 * Método que inserta, de manera transaccional, una tupla en la tabla 
-	 * Adiciona entradas al log de la aplicación
+	 * Mï¿½todo que inserta, de manera transaccional, una tupla en la tabla 
+	 * Adiciona entradas al log de la aplicaciï¿½n
 	 * @param sucursal - El identificador del sucursal
 	 * @param tamanho - El tamanho del sucursal
 	 * @param tipoDeMercado - el tipoconsumidor de mercado del sucursal
 	 * @param ventasTotales - Las ventas totales de la sucursal
 	 * @param idCiudad
-	 * @return El objeto adicionado. null si ocurre alguna Excepción
+	 * @return El objeto adicionado. null si ocurre alguna Excepciï¿½n
 	 */
 	public Sucursal adicionarSucursal ( String nombre,long tamanho, String tipoDeMercado, double ventasTotales, long idCiudad, String direccion) 
 	{
@@ -679,7 +679,7 @@ public class PersistenciaSuperandes {
             long tuplasInsertadas = sqlSucursal.adicionarSucursal(pmf.getPersistenceManager(), idSucursal,nombre, tamanho, tipoDeMercado, ventasTotales, idCiudad,direccion);
             tx.commit();
 
-            log.trace ("Inserción de sucursal: " + idSucursal + ": " + tuplasInsertadas + " tuplas insertadas");
+            log.trace ("Inserciï¿½n de sucursal: " + idSucursal + ": " + tuplasInsertadas + " tuplas insertadas");
             
             return new Sucursal (idSucursal, nombre,  tamanho, tipoDeMercado, ventasTotales, idCiudad, direccion);
         }
@@ -700,10 +700,10 @@ public class PersistenciaSuperandes {
 	}
 	
 	/**
-	 * Método que elimina, de manera transaccional, una tupla en la tabla SUCURSAL, dado el identificador del sucursal
-	 * Adiciona entradas al log de la aplicación
+	 * Mï¿½todo que elimina, de manera transaccional, una tupla en la tabla SUCURSAL, dado el identificador del sucursal
+	 * Adiciona entradas al log de la aplicaciï¿½n
 	 * @param sucursal - El identificador del sucursal
-	 * @return El número de tuplas eliminadas. -1 si ocurre alguna Excepción
+	 * @return El nï¿½mero de tuplas eliminadas. -1 si ocurre alguna Excepciï¿½n
 	 */
 	public long eliminarSucursalPorId (long idSucursal) 
 	{
@@ -733,7 +733,7 @@ public class PersistenciaSuperandes {
 	}
 	
 	/**
-	 * Método que consulta todas las tuplas en la tabla 
+	 * Mï¿½todo que consulta todas las tuplas en la tabla 
 	 * @return El objeto, construido con base en las tuplas de la tabla con el identificador dado
 	 */
 	public Sucursal darSucursalPorId (long id)
@@ -743,7 +743,7 @@ public class PersistenciaSuperandes {
 	
 	
 	/**
-	 * Método que consulta todas las tuplas en la tabla 
+	 * Mï¿½todo que consulta todas las tuplas en la tabla 
 	 * @return La lista de objetos 
 	 */
 	public List<Sucursal> darSucursalesPorId (String id)
@@ -756,7 +756,7 @@ public class PersistenciaSuperandes {
 	}
 	
 	/* ****************************************************************
-	 * 			Métodos para manejar LAS BODEGAS
+	 * 			Mï¿½todos para manejar LAS BODEGAS
 	 *****************************************************************/
 	
 	/**
@@ -783,7 +783,7 @@ public class PersistenciaSuperandes {
             long tuplasInsertadas = sqlBodega.adicionarBodega(pmf.getPersistenceManager(),  idBodega, nombre, cantidadProductos, capacidadTotal, peso, volumen, tipoProducto, nivelDeReorden, idSucursal);
             tx.commit();
 
-            log.trace ("Inserción de Bodega: " + idBodega + ": " + tuplasInsertadas + " tuplas insertadas");
+            log.trace ("Inserciï¿½n de Bodega: " + idBodega + ": " + tuplasInsertadas + " tuplas insertadas");
             
             return new Bodega (idBodega,nombre,  cantidadProductos, capacidadTotal, tipoProducto, peso, volumen,nivelDeReorden, idSucursal);
         }
@@ -804,10 +804,10 @@ public class PersistenciaSuperandes {
 	}
 
 	/**
-	 * Método que elimina, de manera transaccional, una tupla en la tabla Bodega, dado el identificador del Bodega
-	 * Adiciona entradas al log de la aplicación
+	 * Mï¿½todo que elimina, de manera transaccional, una tupla en la tabla Bodega, dado el identificador del Bodega
+	 * Adiciona entradas al log de la aplicaciï¿½n
 	 * @param idBodega - El identificador del Bodega
-	 * @return El número de tuplas eliminadas. -1 si ocurre alguna Excepción
+	 * @return El nï¿½mero de tuplas eliminadas. -1 si ocurre alguna Excepciï¿½n
 	 */
 	public long eliminarBodegaPorId (long idBodega) 
 	{
@@ -837,7 +837,7 @@ public class PersistenciaSuperandes {
 	}
 
 	/**
-	 * Método que consulta todas las tuplas en la tabla Bodega que tienen el identificador dado
+	 * Mï¿½todo que consulta todas las tuplas en la tabla Bodega que tienen el identificador dado
 	 * @param idBodega - El identificador del Bodega
 	 * @return El objeto Bodega, construido con base en la tuplas de la tabla Bodega, que tiene el identificador dado
 	 */
@@ -847,7 +847,7 @@ public class PersistenciaSuperandes {
 	}
 
 	/**
-	 * Método que consulta todas las tuplas en la tabla Bodega
+	 * Mï¿½todo que consulta todas las tuplas en la tabla Bodega
 	 * @return La lista de objetos Bodega, construidos con base en las tuplas de la tabla Bodega
 	 */
 	public List<Bodega> darBodegas ()
@@ -855,7 +855,7 @@ public class PersistenciaSuperandes {
 		return sqlBodega.darBodegas (pmf.getPersistenceManager());
 	}
 	/**
-	 * Método que consulta todas las tuplas en la tabla Bodega
+	 * Mï¿½todo que consulta todas las tuplas en la tabla Bodega
 	 * @return La lista de objetos Bodega, construidos con base en las tuplas de la tabla Bodega
 	 */
 	public List<Bodega> darBodegasPorTipo (String tipo)
@@ -867,7 +867,7 @@ public class PersistenciaSuperandes {
 		return sqlBodega.darBodegasPorTipoYSucursal (pmf.getPersistenceManager(), tipo, s);
 	}
 	/**
-	 * Método que consulta todas las tuplas en la tabla Bodega
+	 * Mï¿½todo que consulta todas las tuplas en la tabla Bodega
 	 * @return La lista de objetos Bodega, construidos con base en las tuplas de la tabla Bodega
 	 */
 	public List<Bodega> darBodegasPorTipoSucursal (String tipo, long id)
@@ -880,7 +880,7 @@ public class PersistenciaSuperandes {
 	}
 	
 	/* ****************************************************************
-	 * 			Métodos para manejar los Estantes
+	 * 			Mï¿½todos para manejar los Estantes
 	 *****************************************************************/
 	
 	/**
@@ -894,7 +894,7 @@ public class PersistenciaSuperandes {
 	 * @param equipamientoAdicional el equipamiento adicional del estante
 	 * @param nivelDeAbastecimiento nivel de abastecimiento del estante
 	 * @param sucursal
-	 * @return El número de tuplas insertadas
+	 * @return El nï¿½mero de tuplas insertadas
 	 */
 	public Estante adicionarEstante ( String nombre, int cantidadProductos, int capacidadTotal, double peso, double volumen, String tipoProducto, String equipamientoAdicional, long nivelReorden, int nivelDeAbastecimiento, long idSucursal) 
 	{
@@ -909,7 +909,7 @@ public class PersistenciaSuperandes {
             long tuplasInsertadas = sqlEstante.adicionarEstante(pmf.getPersistenceManager(), idEstante, nombre, cantidadProductos, capacidadTotal, peso, volumen, tipoProducto, equipamientoAdicional,nivelReorden, nivelDeAbastecimiento, idSucursal);
             tx.commit();
 
-            log.trace ("Inserción de Estante: " + idEstante + ": " + tuplasInsertadas + " tuplas insertadas");
+            log.trace ("Inserciï¿½n de Estante: " + idEstante + ": " + tuplasInsertadas + " tuplas insertadas");
             
             return new Estante (idEstante, nombre, cantidadProductos, capacidadTotal, peso, volumen, tipoProducto, equipamientoAdicional, nivelReorden, nivelDeAbastecimiento, idSucursal);
         }
@@ -931,10 +931,10 @@ public class PersistenciaSuperandes {
 
 
 	/**
-	 * Método que elimina, de manera transaccional, una tupla en la tabla Estante, dado el identificador del Estante
-	 * Adiciona entradas al log de la aplicación
+	 * Mï¿½todo que elimina, de manera transaccional, una tupla en la tabla Estante, dado el identificador del Estante
+	 * Adiciona entradas al log de la aplicaciï¿½n
 	 * @param idEstante - El identificador del Estante
-	 * @return El número de tuplas eliminadas. -1 si ocurre alguna Excepción
+	 * @return El nï¿½mero de tuplas eliminadas. -1 si ocurre alguna Excepciï¿½n
 	 */
 	public long eliminarEstantePorId (long idEstante) 
 	{
@@ -964,7 +964,7 @@ public class PersistenciaSuperandes {
 	}
 
 	/**
-	 * Método que consulta todas las tuplas en la tabla Estante que tienen el identificador dado
+	 * Mï¿½todo que consulta todas las tuplas en la tabla Estante que tienen el identificador dado
 	 * @param idEstante - El identificador del Estante
 	 * @return El objeto Estante, construido con base en la tuplas de la tabla Estante, que tiene el identificador dado
 	 */
@@ -974,7 +974,7 @@ public class PersistenciaSuperandes {
 	}
 
 	/**
-	 * Método que consulta todas las tuplas en la tabla Estante
+	 * Mï¿½todo que consulta todas las tuplas en la tabla Estante
 	 * @return La lista de objetos Estante, construidos con base en las tuplas de la tabla Estante
 	 */
 	public List<Estante> darEstantes ()
@@ -996,7 +996,7 @@ public class PersistenciaSuperandes {
 	
 	
 	/* ****************************************************************
-	 * 			Métodos para manejar los Categorias
+	 * 			Mï¿½todos para manejar los Categorias
 	 *****************************************************************/
 	
 	/**
@@ -1005,7 +1005,7 @@ public class PersistenciaSuperandes {
 	 * @param nombre - El nombre de la categoria
 	 * @param tipoDeAlmacenamiento - El tipoconsumidor de almacenamiento de la categoria
 	 * @param tipoDeManejo - El tipoconsumidor de manejo de la categoria 
-	 * @return EL número de tuplas insertadas
+	 * @return EL nï¿½mero de tuplas insertadas
 	 */
 	public Categoria adicionarCategoria ( String nombre, String tipoDeAlmacenamiento, String tipoDeManejo) 
 	{
@@ -1018,7 +1018,7 @@ public class PersistenciaSuperandes {
             long tuplasInsertadas = sqlCategoria.adicionarCategoria(pmf.getPersistenceManager(), idCategoria, nombre, tipoDeAlmacenamiento, tipoDeManejo);
             tx.commit();
 
-            log.trace ("Inserción de Categoria: " + nombre + ": " + tuplasInsertadas + " tuplas insertadas");
+            log.trace ("Inserciï¿½n de Categoria: " + nombre + ": " + tuplasInsertadas + " tuplas insertadas");
             
             return new Categoria (idCategoria, nombre, tipoDeAlmacenamiento, tipoDeManejo);
         }
@@ -1039,10 +1039,10 @@ public class PersistenciaSuperandes {
 	}
 
 	/**
-	 * Método que elimina, de manera transaccional, una tupla en la tabla Categoria, dado el nombre del Categoria
-	 * Adiciona entradas al log de la aplicación
+	 * Mï¿½todo que elimina, de manera transaccional, una tupla en la tabla Categoria, dado el nombre del Categoria
+	 * Adiciona entradas al log de la aplicaciï¿½n
 	 * @param nombre - El nombre del Categoria
-	 * @return El número de tuplas eliminadas. -1 si ocurre alguna Excepción
+	 * @return El nï¿½mero de tuplas eliminadas. -1 si ocurre alguna Excepciï¿½n
 	 */
 	public long eliminarCategoriaPorNombre(String nombre) 
 	{
@@ -1072,10 +1072,10 @@ public class PersistenciaSuperandes {
 	}
 
 	/**
-	 * Método que elimina, de manera transaccional, una tupla en la tabla Categoria, dado el identificador del Categoria
-	 * Adiciona entradas al log de la aplicación
+	 * Mï¿½todo que elimina, de manera transaccional, una tupla en la tabla Categoria, dado el identificador del Categoria
+	 * Adiciona entradas al log de la aplicaciï¿½n
 	 * @param idCategoria - El identificador del Categoria
-	 * @return El número de tuplas eliminadas. -1 si ocurre alguna Excepción
+	 * @return El nï¿½mero de tuplas eliminadas. -1 si ocurre alguna Excepciï¿½n
 	 */
 	public long eliminarCategoriaPorId (long idCategoria) 
 	{
@@ -1105,7 +1105,7 @@ public class PersistenciaSuperandes {
 	}
 
 	/**
-	 * Método que consulta todas las tuplas en la tabla Categoria que tienen el nombre dado
+	 * Mï¿½todo que consulta todas las tuplas en la tabla Categoria que tienen el nombre dado
 	 * @param nombreCategoria - El nombre del Categoria
 	 * @return La lista de objetos Categoria, construidos con base en las tuplas de la tabla Categoria
 	 */
@@ -1114,7 +1114,7 @@ public class PersistenciaSuperandes {
 		return sqlCategoria.darCategoriasPorNombre (pmf.getPersistenceManager(), nombreCategoria);
 	}
 	/**
-	 * Método que consulta todas las tuplas en la tabla Categoria que tienen el nombre dado
+	 * Mï¿½todo que consulta todas las tuplas en la tabla Categoria que tienen el nombre dado
 	 * @param nombreCategoria - El nombre del Categoria
 	 * @return La lista de objetos Categoria, construidos con base en las tuplas de la tabla Categoria
 	 */
@@ -1124,7 +1124,7 @@ public class PersistenciaSuperandes {
 	}
 
 	/**
-	 * Método que consulta todas las tuplas en la tabla Categoria
+	 * Mï¿½todo que consulta todas las tuplas en la tabla Categoria
 	 * @return La lista de objetos Categoria, construidos con base en las tuplas de la tabla Categoria
 	 */
 	public List<Categoria> darCategorias ()
@@ -1134,7 +1134,7 @@ public class PersistenciaSuperandes {
 	
 	
 	/* ****************************************************************
-	 * 			Métodos para manejar los Perecederos
+	 * 			Mï¿½todos para manejar los Perecederos
 	 *****************************************************************/
 	
 	/**
@@ -1143,7 +1143,7 @@ public class PersistenciaSuperandes {
 	 * @param fechaDeVencimiento - la fecha de vencimiento del producto perecedero
 	 * @param tipoCategoriaPerecedera - el tipoconsumidor de cateogoria del producto perecedero
 	 * @param idCategoria
-	 * @return El número de tuplas insertadas
+	 * @return El nï¿½mero de tuplas insertadas
 	 */
 	public Perecedero adicionarPerecedero (Date fechaDeVencimiento, String tipoCategoriaPerecedera, long idCategoria) 
 	{
@@ -1156,7 +1156,7 @@ public class PersistenciaSuperandes {
             long tuplasInsertadas = sqlPerecedero.adicionarPerecedero(pmf.getPersistenceManager(), idPerecedero, fechaDeVencimiento, tipoCategoriaPerecedera, idCategoria);
             tx.commit();
 
-            log.trace ("Inserción de Perecedero: " + idPerecedero + ": " + tuplasInsertadas + " tuplas insertadas");
+            log.trace ("Inserciï¿½n de Perecedero: " + idPerecedero + ": " + tuplasInsertadas + " tuplas insertadas");
             
             return new Perecedero (idPerecedero, fechaDeVencimiento, tipoCategoriaPerecedera, idCategoria);
         }
@@ -1177,10 +1177,10 @@ public class PersistenciaSuperandes {
 	}
 
 	/**
-	 * Método que elimina, de manera transaccional, una tupla en la tabla Perecedero, dado el identificador del Perecedero
-	 * Adiciona entradas al log de la aplicación
+	 * Mï¿½todo que elimina, de manera transaccional, una tupla en la tabla Perecedero, dado el identificador del Perecedero
+	 * Adiciona entradas al log de la aplicaciï¿½n
 	 * @param idPerecedero - El identificador del Perecedero
-	 * @return El número de tuplas eliminadas. -1 si ocurre alguna Excepción
+	 * @return El nï¿½mero de tuplas eliminadas. -1 si ocurre alguna Excepciï¿½n
 	 */
 	public long eliminarPerecederoPorId (long idPerecedero) 
 	{
@@ -1210,7 +1210,7 @@ public class PersistenciaSuperandes {
 	}
 
 	/**
-	 * Método que consulta todas las tuplas en la tabla Perecedero que tienen el identificador dado
+	 * Mï¿½todo que consulta todas las tuplas en la tabla Perecedero que tienen el identificador dado
 	 * @param idPerecedero - El identificador del Perecedero
 	 * @return El objeto Perecedero, construido con base en la tuplas de la tabla Perecedero, que tiene el identificador dado
 	 */
@@ -1220,7 +1220,7 @@ public class PersistenciaSuperandes {
 	}
 
 	/**
-	 * Método que consulta todas las tuplas en la tabla Perecedero
+	 * Mï¿½todo que consulta todas las tuplas en la tabla Perecedero
 	 * @return La lista de objetos Perecedero, construidos con base en las tuplas de la tabla Perecedero
 	 */
 	public List<Perecedero> darPerecederos ()
@@ -1230,7 +1230,7 @@ public class PersistenciaSuperandes {
 	
 	
 	/* ****************************************************************
-	 * 			Métodos para manejar los NoPerecederos
+	 * 			Mï¿½todos para manejar los NoPerecederos
 	 *****************************************************************/
 	
 	/**
@@ -1238,7 +1238,7 @@ public class PersistenciaSuperandes {
 	 * @param idNoPerecedero - El identificador del noPerecedero
 	 * @param tipoCategoriaNoPerecedera - el tipoconsumidor de cateogoria del producto noPerecedero
 	 * @param idCategoria
-	 * @return El número de tuplas insertadas
+	 * @return El nï¿½mero de tuplas insertadas
 	 */
 	public NoPerecedero adicionarNoPerecedero ( String tipoCategoriaNoPerecedera, long idCategoria) 
 	{
@@ -1251,7 +1251,7 @@ public class PersistenciaSuperandes {
             long tuplasInsertadas = sqlNoPerecedero.adicionarNoPerecedero(pmf.getPersistenceManager(), idNoPerecedero, tipoCategoriaNoPerecedera, idCategoria);
             tx.commit();
 
-            log.trace ("Inserción de NoPerecedero: " + idNoPerecedero + ": " + tuplasInsertadas + " tuplas insertadas");
+            log.trace ("Inserciï¿½n de NoPerecedero: " + idNoPerecedero + ": " + tuplasInsertadas + " tuplas insertadas");
             
             return new NoPerecedero (idNoPerecedero, tipoCategoriaNoPerecedera, idCategoria);
         }
@@ -1272,10 +1272,10 @@ public class PersistenciaSuperandes {
 	}
 
 	/**
-	 * Método que elimina, de manera transaccional, una tupla en la tabla NoPerecedero, dado el identificador del NoPerecedero
-	 * Adiciona entradas al log de la aplicación
+	 * Mï¿½todo que elimina, de manera transaccional, una tupla en la tabla NoPerecedero, dado el identificador del NoPerecedero
+	 * Adiciona entradas al log de la aplicaciï¿½n
 	 * @param idNoPerecedero - El identificador del NoPerecedero
-	 * @return El número de tuplas eliminadas. -1 si ocurre alguna Excepción
+	 * @return El nï¿½mero de tuplas eliminadas. -1 si ocurre alguna Excepciï¿½n
 	 */
 	public long eliminarNoPerecederoPorId (long idNoPerecedero) 
 	{
@@ -1305,7 +1305,7 @@ public class PersistenciaSuperandes {
 	}
 
 	/**
-	 * Método que consulta todas las tuplas en la tabla NoPerecedero que tienen el identificador dado
+	 * Mï¿½todo que consulta todas las tuplas en la tabla NoPerecedero que tienen el identificador dado
 	 * @param idNoPerecedero - El identificador del NoPerecedero
 	 * @return El objeto NoPerecedero, construido con base en la tuplas de la tabla NoPerecedero, que tiene el identificador dado
 	 */
@@ -1315,7 +1315,7 @@ public class PersistenciaSuperandes {
 	}
 
 	/**
-	 * Método que consulta todas las tuplas en la tabla NoPerecedero
+	 * Mï¿½todo que consulta todas las tuplas en la tabla NoPerecedero
 	 * @return La lista de objetos NoPerecedero, construidos con base en las tuplas de la tabla NoPerecedero
 	 */
 	public List<NoPerecedero> darNoPerecederos ()
@@ -1324,7 +1324,7 @@ public class PersistenciaSuperandes {
 	}
 	
 	/* ****************************************************************
-	 * 			Métodos para manejar los Productos
+	 * 			Mï¿½todos para manejar los Productos
 	 *****************************************************************/
 	
 	/**
@@ -1341,7 +1341,7 @@ public class PersistenciaSuperandes {
 	 * @param precioUnitario precio unitario 
 	 * @param presentacion presentacion
 	 * @param unidadMedida unidad de medida
-	 * @return EL número de tuplas insertadas
+	 * @return EL nï¿½mero de tuplas insertadas
 	 */
 	public Producto adicionarProducto (  String nombre, long idCategoria, String codigoDeBarras, String especificacionDeEmpaquetado, boolean estado, String marca, double precioPorUnidadMedida, String presentacion, String unidadDeMedida) 
 	{
@@ -1354,7 +1354,7 @@ public class PersistenciaSuperandes {
             long tuplasInsertadas = sqlProducto.adicionarProducto(pmf.getPersistenceManager(), idProducto, nombre, idCategoria,  codigoDeBarras, especificacionDeEmpaquetado, estado, marca, precioPorUnidadMedida,  presentacion, unidadDeMedida);
             tx.commit();
 
-            log.trace ("Inserción de Producto: " + nombre + ": " + tuplasInsertadas + " tuplas insertadas");
+            log.trace ("Inserciï¿½n de Producto: " + nombre + ": " + tuplasInsertadas + " tuplas insertadas");
             
             return new Producto (idProducto, nombre, idCategoria, codigoDeBarras, especificacionDeEmpaquetado, estado, marca, precioPorUnidadMedida, presentacion, unidadDeMedida);
         }
@@ -1375,10 +1375,10 @@ public class PersistenciaSuperandes {
 	}
 
 	/**
-	 * Método que elimina, de manera transaccional, una tupla en la tabla Producto, dado el nombre del Producto
-	 * Adiciona entradas al log de la aplicación
+	 * Mï¿½todo que elimina, de manera transaccional, una tupla en la tabla Producto, dado el nombre del Producto
+	 * Adiciona entradas al log de la aplicaciï¿½n
 	 * @param nombre - El nombre del Producto
-	 * @return El número de tuplas eliminadas. -1 si ocurre alguna Excepción
+	 * @return El nï¿½mero de tuplas eliminadas. -1 si ocurre alguna Excepciï¿½n
 	 */
 	public long eliminarProductoPorNombre(String nombre) 
 	{
@@ -1408,10 +1408,10 @@ public class PersistenciaSuperandes {
 	}
 
 	/**
-	 * Método que elimina, de manera transaccional, una tupla en la tabla Producto, dado el identificador del Producto
-	 * Adiciona entradas al log de la aplicación
+	 * Mï¿½todo que elimina, de manera transaccional, una tupla en la tabla Producto, dado el identificador del Producto
+	 * Adiciona entradas al log de la aplicaciï¿½n
 	 * @param idProducto - El identificador del Producto
-	 * @return El número de tuplas eliminadas. -1 si ocurre alguna Excepción
+	 * @return El nï¿½mero de tuplas eliminadas. -1 si ocurre alguna Excepciï¿½n
 	 */
 	public long eliminarProductoPorId (long idProducto) 
 	{
@@ -1441,7 +1441,7 @@ public class PersistenciaSuperandes {
 	}
 
 	/**
-	 * Método que consulta todas las tuplas en la tabla Producto que tienen el nombre dado
+	 * Mï¿½todo que consulta todas las tuplas en la tabla Producto que tienen el nombre dado
 	 * @param nombreProducto - El nombre del Producto
 	 * @return La lista de objetos Producto, construidos con base en las tuplas de la tabla Producto
 	 */
@@ -1451,7 +1451,7 @@ public class PersistenciaSuperandes {
 	}
 
 	/**
-	 * Método que consulta todas las tuplas en la tabla Producto
+	 * Mï¿½todo que consulta todas las tuplas en la tabla Producto
 	 * @return La lista de objetos Producto, construidos con base en las tuplas de la tabla Producto
 	 */
 	public List<Producto> darProductos ()
@@ -1460,15 +1460,15 @@ public class PersistenciaSuperandes {
 	}
 	
 	/* ****************************************************************
-	 * 			Métodos para manejar la relación PRODUCTO_ESTANTE
+	 * 			Mï¿½todos para manejar la relaciï¿½n PRODUCTO_ESTANTE
 	 *****************************************************************/
 	
 	/**
-	 * Método que inserta, de manera transaccional, una tupla en la tabla PRODUCTO_ESTANTE
-	 * Adiciona entradas al log de la aplicación
+	 * Mï¿½todo que inserta, de manera transaccional, una tupla en la tabla PRODUCTO_ESTANTE
+	 * Adiciona entradas al log de la aplicaciï¿½n
 	 * @param idEstante - El identificador del estante
 	 * @param idProducto - El identificador de la producto
-	 * @return Un objeto PRODUCTO_ESTANTE con la información dada. Null si ocurre alguna Excepción
+	 * @return Un objeto PRODUCTO_ESTANTE con la informaciï¿½n dada. Null si ocurre alguna Excepciï¿½n
 	 */
 	public ProductoEstante adicionarProductoEstante(long idEstante, long idProducto, int cant) 
 	{
@@ -1480,7 +1480,7 @@ public class PersistenciaSuperandes {
             long tuplasInsertadas = sqlProductoEstante.adicionarProductoEstante (pm, idEstante, idProducto, cant);
             tx.commit();
 
-            log.trace ("Inserción de productoEstante: [" + idEstante + ", " + idProducto + "]. " + tuplasInsertadas + " tuplas insertadas");
+            log.trace ("Inserciï¿½n de productoEstante: [" + idEstante + ", " + idProducto + "]. " + tuplasInsertadas + " tuplas insertadas");
 
             return new ProductoEstante (idEstante, idProducto, cant);
         }
@@ -1501,10 +1501,10 @@ public class PersistenciaSuperandes {
 	}
 
 	/**
-	 * Método que elimina, de manera transaccional, una tupla en la tabla PRODUCTO_ESTANTE, dados los identificadores de promocionUnidad y bebida
+	 * Mï¿½todo que elimina, de manera transaccional, una tupla en la tabla PRODUCTO_ESTANTE, dados los identificadores de promocionUnidad y bebida
 	 * @param idEstante - El identificador del promocionUnidad
 	 * @param idProducto - El identificador de la bebida
-	 * @return El número de tuplas eliminadas. -1 si ocurre alguna Excepción
+	 * @return El nï¿½mero de tuplas eliminadas. -1 si ocurre alguna Excepciï¿½n
 	 */
 	public long eliminarProductoEstante(long idEstante, long idProducto) 
 	{
@@ -1535,7 +1535,7 @@ public class PersistenciaSuperandes {
 	}
 
 	/**
-	 * Método que consulta todas las tuplas en la tabla PRODUCTO_ESTANTE
+	 * Mï¿½todo que consulta todas las tuplas en la tabla PRODUCTO_ESTANTE
 	 * @return La lista de objetos PRODUCTO_ESTANTE, construidos con base en las tuplas de la tabla PRODUCTO_ESTANTE
 	 */
 	public List<ProductoEstante> darProductoEstante ()
@@ -1568,15 +1568,15 @@ public class PersistenciaSuperandes {
 	}
 	
 	/* ****************************************************************
-	 * 			Métodos para manejar la relación PRODUCTO_BODEGA
+	 * 			Mï¿½todos para manejar la relaciï¿½n PRODUCTO_BODEGA
 	 *****************************************************************/
 	
 	/**
-	 * Método que inserta, de manera transaccional, una tupla en la tabla PRODUCTO_BODEGA
-	 * Adiciona entradas al log de la aplicación
+	 * Mï¿½todo que inserta, de manera transaccional, una tupla en la tabla PRODUCTO_BODEGA
+	 * Adiciona entradas al log de la aplicaciï¿½n
 	 * @param idBodega - El identificador del promocionUnidad - Debe haber un promocionUnidad con ese identificador
 	 * @param idProducto - El identificador de la bebida - Debe haber una bebida con ese identificador
-	 * @return Un objeto PRODUCTO_BODEGA con la información dada. Null si ocurre alguna Excepción
+	 * @return Un objeto PRODUCTO_BODEGA con la informaciï¿½n dada. Null si ocurre alguna Excepciï¿½n
 	 */
 	public ProductoBodega adicionarProductoBodega(long idBodega, long idProducto, int cant) 
 	{
@@ -1588,7 +1588,7 @@ public class PersistenciaSuperandes {
             long tuplasInsertadas = sqlProductoBodega.adicionarProductoBodega (pm, idBodega, idProducto, cant);
             tx.commit();
 
-            log.trace ("Inserción de productoBodega: [" + idBodega + ", " + idProducto + "]. " + tuplasInsertadas + " tuplas insertadas");
+            log.trace ("Inserciï¿½n de productoBodega: [" + idBodega + ", " + idProducto + "]. " + tuplasInsertadas + " tuplas insertadas");
 
             return new ProductoBodega (idBodega, idProducto, cant);
         }
@@ -1609,10 +1609,10 @@ public class PersistenciaSuperandes {
 	}
 
 	/**
-	 * Método que elimina, de manera transaccional, una tupla en la tabla PRODUCTO_BODEGA, dados los identificadores de promocionUnidad y bebida
+	 * Mï¿½todo que elimina, de manera transaccional, una tupla en la tabla PRODUCTO_BODEGA, dados los identificadores de promocionUnidad y bebida
 	 * @param idBodega - El identificador del bodega
 	 * @param idProducto - El identificador de la producto
-	 * @return El número de tuplas eliminadas. -1 si ocurre alguna Excepción
+	 * @return El nï¿½mero de tuplas eliminadas. -1 si ocurre alguna Excepciï¿½n
 	 */
 	public long eliminarProductoBodega(long idBodega, long idProducto) 
 	{
@@ -1643,7 +1643,7 @@ public class PersistenciaSuperandes {
 	}
 
 	/**
-	 * Método que consulta todas las tuplas en la tabla PRODUCTO_BODEGA
+	 * Mï¿½todo que consulta todas las tuplas en la tabla PRODUCTO_BODEGA
 	 * @return La lista de objetos PRODUCTO_BODEGA, construidos con base en las tuplas de la tabla PRODUCTO_BODEGA
 	 */
 	public List<ProductoBodega> darProductoBodega ()
@@ -1656,13 +1656,13 @@ public class PersistenciaSuperandes {
 	}
 	
 	/* ****************************************************************
-	 * 			Métodos para manejar los Consumidor
+	 * 			Mï¿½todos para manejar los Consumidor
 	 *****************************************************************/
 	
 	/**
-	 * Método que inserta, de manera transaccional, una tupla en la tabla 
-	 * Adiciona entradas al log de la aplicación
-	  * @return El objeto adicionado. null si ocurre alguna Excepción
+	 * Mï¿½todo que inserta, de manera transaccional, una tupla en la tabla 
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	  * @return El objeto adicionado. null si ocurre alguna Excepciï¿½n
 	 */
 	public Consumidor adicionarConsumidor(String nombre,String correoElectronico, String tipoConsumidor)
 	{
@@ -1676,7 +1676,7 @@ public class PersistenciaSuperandes {
             long tuplasInsertadas = sqlConsumidor.adicionar(pm, id,nombre,correoElectronico, tipoConsumidor);
             tx.commit();
             
-            log.trace ("Inserción de Consumidor: " + nombre + ": " + tuplasInsertadas + " tuplas insertadas");
+            log.trace ("Inserciï¿½n de Consumidor: " + nombre + ": " + tuplasInsertadas + " tuplas insertadas");
             
             return new Consumidor ( id,nombre,correoElectronico,tipoConsumidor);
         }
@@ -1696,10 +1696,10 @@ public class PersistenciaSuperandes {
         }
 	}
 	/**
-	 * Método que elimina, de manera transaccional, una tupla en la tabla
-	 * Adiciona entradas al log de la aplicación
+	 * Mï¿½todo que elimina, de manera transaccional, una tupla en la tabla
+	 * Adiciona entradas al log de la aplicaciï¿½n
 	 * @param nombre 
-	 * @return El número de tuplas eliminadas. -1 si ocurre alguna Excepción
+	 * @return El nï¿½mero de tuplas eliminadas. -1 si ocurre alguna Excepciï¿½n
 	 */
 	public long eliminarConsumidorPorNombre (String nombre) 
 	{
@@ -1729,9 +1729,9 @@ public class PersistenciaSuperandes {
 	}
 
 	/**
-	 * Método que elimina, de manera transaccional, una tupla en la tabla
-	 * Adiciona entradas al log de la aplicación
-	 * @return El número de tuplas eliminadas. -1 si ocurre alguna Excepción
+	 * Mï¿½todo que elimina, de manera transaccional, una tupla en la tabla
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return El nï¿½mero de tuplas eliminadas. -1 si ocurre alguna Excepciï¿½n
 	 */
 	public long eliminarConsumidorPorId (long id) 
 	{
@@ -1761,7 +1761,7 @@ public class PersistenciaSuperandes {
 	}
 
 	/**
-	 * Método que consulta todas las tuplas en la tabla
+	 * Mï¿½todo que consulta todas las tuplas en la tabla
 	 * @return La lista de objetos 
 	 */
 	public List<Consumidor> darConsumidores ()
@@ -1770,7 +1770,7 @@ public class PersistenciaSuperandes {
 	}
  
 	/**
-	 * Método que consulta todas las tuplas en la tabla 
+	 * Mï¿½todo que consulta todas las tuplas en la tabla 
 	 * @return La lista de objetos 
 	 */
 	public List<Consumidor> darConsumidorPorNombre (String nombre)
@@ -1779,7 +1779,7 @@ public class PersistenciaSuperandes {
 	}
  
 	/**
-	 * Método que consulta todas las tuplas en la tabla 
+	 * Mï¿½todo que consulta todas las tuplas en la tabla 
 	 * @return El objeto, construido con base en las tuplas de la tabla con el identificador dado
 	 */
 	public Consumidor darConsumidorPorId (long id)
@@ -1788,7 +1788,7 @@ public class PersistenciaSuperandes {
 	}
 	
 	/* ****************************************************************
-	 * 			Métodos para manejar las PersonasNaturales
+	 * 			Mï¿½todos para manejar las PersonasNaturales
 	 *****************************************************************/
 	
 	/**
@@ -1809,7 +1809,7 @@ public class PersistenciaSuperandes {
             long tuplasInsertadas = sqlPersonaNatural.adicionarPersonaNatural(pmf.getPersistenceManager(), idConsumidor, documentoIdentidad);
             tx.commit();
 
-            log.trace ("Inserción de PersonaNatural: " + idPersonaNatural + ": " + tuplasInsertadas + " tuplas insertadas");
+            log.trace ("Inserciï¿½n de PersonaNatural: " + idPersonaNatural + ": " + tuplasInsertadas + " tuplas insertadas");
             
             return new PersonaNatural (idConsumidor, documentoIdentidad);
         }
@@ -1831,10 +1831,10 @@ public class PersistenciaSuperandes {
 
 
 	/**
-	 * Método que elimina, de manera transaccional, una tupla en la tabla PersonaNatural, dado el identificador del PersonaNatural
-	 * Adiciona entradas al log de la aplicación
+	 * Mï¿½todo que elimina, de manera transaccional, una tupla en la tabla PersonaNatural, dado el identificador del PersonaNatural
+	 * Adiciona entradas al log de la aplicaciï¿½n
 	 * @param idPersonaNatural - El identificador del PersonaNatural
-	 * @return El número de tuplas eliminadas. -1 si ocurre alguna Excepción
+	 * @return El nï¿½mero de tuplas eliminadas. -1 si ocurre alguna Excepciï¿½n
 	 */
 	public long eliminarPersonaNaturalPorId (long idPersonaNatural) 
 	{
@@ -1864,7 +1864,7 @@ public class PersistenciaSuperandes {
 	}
 
 	/**
-	 * Método que consulta todas las tuplas en la tabla PersonaNatural que tienen el identificador dado
+	 * Mï¿½todo que consulta todas las tuplas en la tabla PersonaNatural que tienen el identificador dado
 	 * @param idPersonaNatural - El identificador del PersonaNatural
 	 * @return El objeto PersonaNatural, construido con base en la tuplas de la tabla PersonaNatural, que tiene el identificador dado
 	 */
@@ -1874,7 +1874,7 @@ public class PersistenciaSuperandes {
 	}
 
 	/**
-	 * Método que consulta todas las tuplas en la tabla PersonaNatural
+	 * Mï¿½todo que consulta todas las tuplas en la tabla PersonaNatural
 	 * @return La lista de objetos PersonaNatural, construidos con base en las tuplas de la tabla PersonaNatural
 	 */
 	public List<PersonaNatural> darPersonasNaturales ()
@@ -1883,16 +1883,16 @@ public class PersistenciaSuperandes {
 	}
 	
 	/* ****************************************************************
-	 * 			Métodos para manejar las Empresas
+	 * 			Mï¿½todos para manejar las Empresas
 	 *****************************************************************/
 	
 	/**
-	 * Método que inserta, de manera transaccional, una tupla en la tabla Empresa
-	 * Adiciona entradas al log de la aplicación
+	 * Mï¿½todo que inserta, de manera transaccional, una tupla en la tabla Empresa
+	 * Adiciona entradas al log de la aplicaciï¿½n
 	 * @param idConsumidor - El identificador del Consumidor
 	 * @param NIT - id de Empresa
 	 * @param direccion direccion de Empresa
-	 * @return El número de tuplas insertadas
+	 * @return El nï¿½mero de tuplas insertadas
 	 */
 	public Empresa adicionarEmpresa (long idConsumidor, long nit, String direccion) 
 	{
@@ -1907,7 +1907,7 @@ public class PersistenciaSuperandes {
             long tuplasInsertadas = sqlEmpresa.adicionarEmpresa(pmf.getPersistenceManager(), idConsumidor, nit, direccion);
             tx.commit();
 
-            log.trace ("Inserción de Empresa: " + idEmpresa + ": " + tuplasInsertadas + " tuplas insertadas");
+            log.trace ("Inserciï¿½n de Empresa: " + idEmpresa + ": " + tuplasInsertadas + " tuplas insertadas");
             
             return new Empresa (idConsumidor, nit, direccion);
         }
@@ -1928,10 +1928,10 @@ public class PersistenciaSuperandes {
 	}
 
 	/**
-	 * Método que elimina, de manera transaccional, una tupla en la tabla Empresa, dado el identificador del Empresa
-	 * Adiciona entradas al log de la aplicación
+	 * Mï¿½todo que elimina, de manera transaccional, una tupla en la tabla Empresa, dado el identificador del Empresa
+	 * Adiciona entradas al log de la aplicaciï¿½n
 	 * @param idEmpresa - El identificador del Empresa
-	 * @return El número de tuplas eliminadas. -1 si ocurre alguna Excepción
+	 * @return El nï¿½mero de tuplas eliminadas. -1 si ocurre alguna Excepciï¿½n
 	 */
 	public long eliminarEmpresaPorId (long idEmpresa) 
 	{
@@ -1961,7 +1961,7 @@ public class PersistenciaSuperandes {
 	}
 
 	/**
-	 * Método que consulta todas las tuplas en la tabla Empresa que tienen el identificador dado
+	 * Mï¿½todo que consulta todas las tuplas en la tabla Empresa que tienen el identificador dado
 	 * @param idEmpresa - El identificador del Empresa
 	 * @return El objeto Empresa, construido con base en la tuplas de la tabla Empresa, que tiene el identificador dado
 	 */
@@ -1971,7 +1971,7 @@ public class PersistenciaSuperandes {
 	}
 
 	/**
-	 * Método que consulta todas las tuplas en la tabla Empresa
+	 * Mï¿½todo que consulta todas las tuplas en la tabla Empresa
 	 * @return La lista de objetos Empresa, construidos con base en las tuplas de la tabla Empresa
 	 */
 	public List<Empresa> darEmpresas ()
@@ -1980,13 +1980,13 @@ public class PersistenciaSuperandes {
 	}
 	
 	/* ****************************************************************
-	 * 			Métodos para manejar los Fidelizacion
+	 * 			Mï¿½todos para manejar los Fidelizacion
 	 *****************************************************************/
 	
 	/**
-	 * Método que inserta, de manera transaccional, una tupla en la tabla 
-	 * Adiciona entradas al log de la aplicación
-	  * @return El objeto adicionado. null si ocurre alguna Excepción
+	 * Mï¿½todo que inserta, de manera transaccional, una tupla en la tabla 
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	  * @return El objeto adicionado. null si ocurre alguna Excepciï¿½n
 	 */
 	public Fidelizacion adicionarFidelizacion(long id,int puntos)
 	{
@@ -1998,7 +1998,7 @@ public class PersistenciaSuperandes {
             long tuplasInsertadas = sqlFidelizacion.adicionar(pm, id,puntos);
             tx.commit();
             
-            log.trace ("Inserción de Fidelizacion: " + id + ": " + tuplasInsertadas + " tuplas insertadas");
+            log.trace ("Inserciï¿½n de Fidelizacion: " + id + ": " + tuplasInsertadas + " tuplas insertadas");
             
             return new Fidelizacion (id, puntos);
         }
@@ -2019,9 +2019,9 @@ public class PersistenciaSuperandes {
 	}
 	
 	/**
-	 * Método que elimina, de manera transaccional, una tupla en la tabla
-	 * Adiciona entradas al log de la aplicación
-	 * @return El número de tuplas eliminadas. -1 si ocurre alguna Excepción
+	 * Mï¿½todo que elimina, de manera transaccional, una tupla en la tabla
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return El nï¿½mero de tuplas eliminadas. -1 si ocurre alguna Excepciï¿½n
 	 */
 	public long eliminarFidelizacionPorId (long id) 
 	{
@@ -2051,7 +2051,7 @@ public class PersistenciaSuperandes {
 	}
 
 	/**
-	 * Método que consulta todas las tuplas en la tabla
+	 * Mï¿½todo que consulta todas las tuplas en la tabla
 	 * @return La lista de objetos 
 	 */
 	public List<Fidelizacion> darFidelizaciones ()
@@ -2062,7 +2062,7 @@ public class PersistenciaSuperandes {
 	
  
 	/**
-	 * Método que consulta todas las tuplas en la tabla 
+	 * Mï¿½todo que consulta todas las tuplas en la tabla 
 	 * @return El objeto, construido con base en las tuplas de la tabla con el identificador dado
 	 */
 	public Fidelizacion darFidelizacionPorId (long id)
@@ -2074,13 +2074,13 @@ public class PersistenciaSuperandes {
 	
 	
 	/* ****************************************************************
-	 * 			Métodos para manejar  VentaTest
+	 * 			Mï¿½todos para manejar  VentaTest
 	 *****************************************************************/
 	
 	/**
-	 * Método que inserta, de manera transaccional, una tupla en la tabla 
-	 * Adiciona entradas al log de la aplicación
-	  * @return El objeto adicionado. null si ocurre alguna Excepción
+	 * Mï¿½todo que inserta, de manera transaccional, una tupla en la tabla 
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	  * @return El objeto adicionado. null si ocurre alguna Excepciï¿½n
 	 */
 	public Venta adicionarVenta(String fecha, String formaPago, double valorTotal, long consumidor, long sucursal){
 		PersistenceManager pm = pmf.getPersistenceManager();
@@ -2094,7 +2094,7 @@ public class PersistenciaSuperandes {
             long tuplasInsertadas = sqlVenta.adicionar(pm, id, fecha, formaPago, valorTotal, consumidor, sucursal);
             tx.commit();
             
-            log.trace ("Inserción de VentaTest: " + id + ": " + tuplasInsertadas + " tuplas insertadas");
+            log.trace ("Inserciï¿½n de VentaTest: " + id + ": " + tuplasInsertadas + " tuplas insertadas");
             
             return new Venta (id, fecha, formaPago, valorTotal, consumidor, sucursal);
         }
@@ -2114,10 +2114,10 @@ public class PersistenciaSuperandes {
         }
 	}
 	/**
-	 * Método que elimina, de manera transaccional, una tupla en la tabla
-	 * Adiciona entradas al log de la aplicación
+	 * Mï¿½todo que elimina, de manera transaccional, una tupla en la tabla
+	 * Adiciona entradas al log de la aplicaciï¿½n
 	 * @param nombre 
-	 * @return El número de tuplas eliminadas. -1 si ocurre alguna Excepción
+	 * @return El nï¿½mero de tuplas eliminadas. -1 si ocurre alguna Excepciï¿½n
 	 */
 	public long eliminarVentaPorFecha (String fec) 
 	{
@@ -2147,9 +2147,9 @@ public class PersistenciaSuperandes {
 	}
 
 	/**
-	 * Método que elimina, de manera transaccional, una tupla en la tabla
-	 * Adiciona entradas al log de la aplicación
-	 * @return El número de tuplas eliminadas. -1 si ocurre alguna Excepción
+	 * Mï¿½todo que elimina, de manera transaccional, una tupla en la tabla
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return El nï¿½mero de tuplas eliminadas. -1 si ocurre alguna Excepciï¿½n
 	 */
 	public long eliminarVentaPorId (long id) 
 	{
@@ -2179,7 +2179,7 @@ public class PersistenciaSuperandes {
 	}
 
 	/**
-	 * Método que consulta todas las tuplas en la tabla
+	 * Mï¿½todo que consulta todas las tuplas en la tabla
 	 * @return La lista de objetos 
 	 */
 	public List<Venta> darVentas ()
@@ -2198,7 +2198,7 @@ public class PersistenciaSuperandes {
 	
  
 	/**
-	 * Método que consulta todas las tuplas en la tabla 
+	 * Mï¿½todo que consulta todas las tuplas en la tabla 
 	 * @return El objeto, construido con base en las tuplas de la tabla con el identificador dado
 	 */
 	public Venta darVentaPorId (long id)
@@ -2208,13 +2208,13 @@ public class PersistenciaSuperandes {
 	
 	
 	/* ****************************************************************
-	 * 			Métodos para manejar Factura
+	 * 			Mï¿½todos para manejar Factura
 	 *****************************************************************/
 	
 	/**
-	 * Método que inserta, de manera transaccional, una tupla en la tabla 
-	 * Adiciona entradas al log de la aplicación
-	  * @return El objeto adicionado. null si ocurre alguna Excepción
+	 * Mï¿½todo que inserta, de manera transaccional, una tupla en la tabla 
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	  * @return El objeto adicionado. null si ocurre alguna Excepciï¿½n
 	 */
 	public Factura adicionarFactura(String textoFactura)
 	{
@@ -2227,7 +2227,7 @@ public class PersistenciaSuperandes {
             long tuplasInsertadas = sqlFactura.adicionar(pm, id, textoFactura);
             tx.commit();
             
-            log.trace ("Inserción de Factura: " + id + ": " + tuplasInsertadas + " tuplas insertadas");
+            log.trace ("Inserciï¿½n de Factura: " + id + ": " + tuplasInsertadas + " tuplas insertadas");
             
             return new Factura (id,textoFactura);
         }
@@ -2249,9 +2249,9 @@ public class PersistenciaSuperandes {
 	
 
 	/**
-	 * Método que elimina, de manera transaccional, una tupla en la tabla
-	 * Adiciona entradas al log de la aplicación
-	 * @return El número de tuplas eliminadas. -1 si ocurre alguna Excepción
+	 * Mï¿½todo que elimina, de manera transaccional, una tupla en la tabla
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return El nï¿½mero de tuplas eliminadas. -1 si ocurre alguna Excepciï¿½n
 	 */
 	public long eliminarFacturaPorId (long id) 
 	{
@@ -2281,7 +2281,7 @@ public class PersistenciaSuperandes {
 	}
 
 	/**
-	 * Método que consulta todas las tuplas en la tabla
+	 * Mï¿½todo que consulta todas las tuplas en la tabla
 	 * @return La lista de objetos 
 	 */
 	public List<Factura> darFacturas ()
@@ -2291,7 +2291,7 @@ public class PersistenciaSuperandes {
 
  
 	/**
-	 * Método que consulta todas las tuplas en la tabla 
+	 * Mï¿½todo que consulta todas las tuplas en la tabla 
 	 * @return El objeto, construido con base en las tuplas de la tabla con el identificador dado
 	 */
 	public Factura darFacturaPorIdVenta (long id)
@@ -2302,13 +2302,13 @@ public class PersistenciaSuperandes {
 	
 	
 	/* ****************************************************************
-	 * 			Métodos para manejar CarritoCompras
+	 * 			Mï¿½todos para manejar CarritoCompras
 	 *****************************************************************/
 	
 	/**
-	 * Método que inserta, de manera transaccional, una tupla en la tabla 
-	 * Adiciona entradas al log de la aplicación
-	  * @return El objeto adicionado. null si ocurre alguna Excepción
+	 * Mï¿½todo que inserta, de manera transaccional, una tupla en la tabla 
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	  * @return El objeto adicionado. null si ocurre alguna Excepciï¿½n
 	 */
 	public CarritoCompras adicionarCarritoCompras( long consumidor, long s)
 	{
@@ -2323,7 +2323,7 @@ public class PersistenciaSuperandes {
             long tuplasInsertadas = sqlCarritoCompras.adicionar(pm, id, consumidor,s);
             tx.commit();
             
-            log.trace ("Inserción de CarritoCompras: " + id + ": " + tuplasInsertadas + " tuplas insertadas");
+            log.trace ("Inserciï¿½n de CarritoCompras: " + id + ": " + tuplasInsertadas + " tuplas insertadas");
             
             return new CarritoCompras(id, consumidor, s);
         }
@@ -2343,10 +2343,10 @@ public class PersistenciaSuperandes {
         }
 	}
 	/**
-	 * Método que elimina, de manera transaccional, una tupla en la tabla
-	 * Adiciona entradas al log de la aplicación
+	 * Mï¿½todo que elimina, de manera transaccional, una tupla en la tabla
+	 * Adiciona entradas al log de la aplicaciï¿½n
 	 * @param nombre 
-	 * @return El número de tuplas eliminadas. -1 si ocurre alguna Excepción
+	 * @return El nï¿½mero de tuplas eliminadas. -1 si ocurre alguna Excepciï¿½n
 	 */
 	public long eliminarCarritoComprasPoIdConsumidor (long con) 
 	{
@@ -2376,9 +2376,9 @@ public class PersistenciaSuperandes {
 	}
 
 	/**
-	 * Método que elimina, de manera transaccional, una tupla en la tabla
-	 * Adiciona entradas al log de la aplicación
-	 * @return El número de tuplas eliminadas. -1 si ocurre alguna Excepción
+	 * Mï¿½todo que elimina, de manera transaccional, una tupla en la tabla
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return El nï¿½mero de tuplas eliminadas. -1 si ocurre alguna Excepciï¿½n
 	 */
 	public long eliminarCarritoComprasPorId (long id) 
 	{
@@ -2408,7 +2408,7 @@ public class PersistenciaSuperandes {
 	}
 
 	/**
-	 * Método que consulta todas las tuplas en la tabla
+	 * Mï¿½todo que consulta todas las tuplas en la tabla
 	 * @return La lista de objetos 
 	 */
 	public List<CarritoCompras> darCarritosCompras ()
@@ -2417,7 +2417,7 @@ public class PersistenciaSuperandes {
 	}
  
 	/**
-	 * Método que consulta todas las tuplas en la tabla 
+	 * Mï¿½todo que consulta todas las tuplas en la tabla 
 	 * @return La lista de objetos 
 	 */
 	public List<CarritoCompras> darCarritoComprasPorIdConsumidor(long con)
@@ -2426,7 +2426,7 @@ public class PersistenciaSuperandes {
 	}
  
 	/**
-	 * Método que consulta todas las tuplas en la tabla 
+	 * Mï¿½todo que consulta todas las tuplas en la tabla 
 	 * @return El objeto, construido con base en las tuplas de la tabla con el identificador dado
 	 */
 	public CarritoCompras darCarritoComprasPorId (long id)
@@ -2436,13 +2436,13 @@ public class PersistenciaSuperandes {
 	
 	
 	/* ****************************************************************
-	 * 			Métodos para manejar ProductoVenta
+	 * 			Mï¿½todos para manejar ProductoVenta
 	 *****************************************************************/
 	
 	/**
-	 * Método que inserta, de manera transaccional, una tupla en la tabla 
-	 * Adiciona entradas al log de la aplicación
-	  * @return El objeto adicionado. null si ocurre alguna Excepción
+	 * Mï¿½todo que inserta, de manera transaccional, una tupla en la tabla 
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	  * @return El objeto adicionado. null si ocurre alguna Excepciï¿½n
 	 */
 	public ProductoVenta adicionarProductoVenta(long venta, long producto, int cantidadProducto, String unidadMedida)
 	{
@@ -2457,7 +2457,7 @@ public class PersistenciaSuperandes {
             long tuplasInsertadas = sqlProductoVenta.adicionar(pm, venta, producto, cantidadProducto, unidadMedida);
             tx.commit();
             
-            log.trace ("Inserción de ProductoVenta: " + venta + ": " + tuplasInsertadas + " tuplas insertadas");
+            log.trace ("Inserciï¿½n de ProductoVenta: " + venta + ": " + tuplasInsertadas + " tuplas insertadas");
             
             return new ProductoVenta (venta, cantidadProducto, unidadMedida, producto);
         }
@@ -2479,9 +2479,9 @@ public class PersistenciaSuperandes {
 	
 
 	/**
-	 * Método que elimina, de manera transaccional, una tupla en la tabla
-	 * Adiciona entradas al log de la aplicación
-	 * @return El número de tuplas eliminadas. -1 si ocurre alguna Excepción
+	 * Mï¿½todo que elimina, de manera transaccional, una tupla en la tabla
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return El nï¿½mero de tuplas eliminadas. -1 si ocurre alguna Excepciï¿½n
 	 */
 	public long eliminarProductoVentaPorIdVenta (long id) 
 	{
@@ -2511,7 +2511,7 @@ public class PersistenciaSuperandes {
 	}
 
 	/**
-	 * Método que consulta todas las tuplas en la tabla
+	 * Mï¿½todo que consulta todas las tuplas en la tabla
 	 * @return La lista de objetos 
 	 */
 	public List<ProductoVenta> darProductosVentas ()
@@ -2522,7 +2522,7 @@ public class PersistenciaSuperandes {
 	
  
 	/**
-	 * Método que consulta todas las tuplas en la tabla 
+	 * Mï¿½todo que consulta todas las tuplas en la tabla 
 	 * @return El objeto, construido con base en las tuplas de la tabla con el identificador dado
 	 */
 	public List<ProductoVenta> darProductoVentaPorIdVenta (long id)
@@ -2533,13 +2533,13 @@ public class PersistenciaSuperandes {
 	
 	
 	/* ****************************************************************
-	 * 			Métodos para manejar ProductoCarritoCompras
+	 * 			Mï¿½todos para manejar ProductoCarritoCompras
 	 *****************************************************************/
 	
 	/**
-	 * Método que inserta, de manera transaccional, una tupla en la tabla 
-	 * Adiciona entradas al log de la aplicación
-	  * @return El objeto adicionado. null si ocurre alguna Excepción
+	 * Mï¿½todo que inserta, de manera transaccional, una tupla en la tabla 
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	  * @return El objeto adicionado. null si ocurre alguna Excepciï¿½n
 	 */
 	public ProductoCarritoCompras adicionarProductoCarritoCompras(long carritoCompras, long producto, int cantidadProducto, String unidadMedida)
 	{
@@ -2552,7 +2552,7 @@ public class PersistenciaSuperandes {
             long tuplasInsertadas = sqlProductoCarritoCompras.adicionar(pm, carritoCompras, producto, cantidadProducto, unidadMedida);
             tx.commit();
             
-            log.trace ("Inserción de ProductoCarritoCompras: " + carritoCompras + ": " + tuplasInsertadas + " tuplas insertadas");
+            log.trace ("Inserciï¿½n de ProductoCarritoCompras: " + carritoCompras + ": " + tuplasInsertadas + " tuplas insertadas");
             
             return new ProductoCarritoCompras (carritoCompras, cantidadProducto, unidadMedida, producto);
         }
@@ -2574,9 +2574,9 @@ public class PersistenciaSuperandes {
 	
 
 	/**
-	 * Método que elimina, de manera transaccional, una tupla en la tabla
-	 * Adiciona entradas al log de la aplicación
-	 * @return El número de tuplas eliminadas. -1 si ocurre alguna Excepción
+	 * Mï¿½todo que elimina, de manera transaccional, una tupla en la tabla
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return El nï¿½mero de tuplas eliminadas. -1 si ocurre alguna Excepciï¿½n
 	 */
 	public long eliminarProductoCarritoComprasPorIdcarritoCompras (long id) 
 	{
@@ -2632,7 +2632,7 @@ public class PersistenciaSuperandes {
 	}
 
 	/**
-	 * Método que consulta todas las tuplas en la tabla
+	 * Mï¿½todo que consulta todas las tuplas en la tabla
 	 * @return La lista de objetos 
 	 */
 	public List<ProductoCarritoCompras> darProductoscarritoCompras ()
@@ -2643,7 +2643,7 @@ public class PersistenciaSuperandes {
 	
  
 	/**
-	 * Método que consulta todas las tuplas en la tabla 
+	 * Mï¿½todo que consulta todas las tuplas en la tabla 
 	 * @return El objeto, construido con base en las tuplas de la tabla con el identificador dado
 	 */
 	public List<ProductoCarritoCompras> darProductoCarritoComprasPorIdcarritoCompras (long id)
@@ -2652,15 +2652,15 @@ public class PersistenciaSuperandes {
 	}
 	
 	/* ****************************************************************
-	 * 			Métodos para manejar Promocion
+	 * 			Mï¿½todos para manejar Promocion
 	 *****************************************************************/
 	
 	/**
-	 * Método que inserta, de manera transaccional, una tupla en la tabla 
-	 * Adiciona entradas al log de la aplicación
-	  * @return El objeto adicionado. null si ocurre alguna Excepción
+	 * Mï¿½todo que inserta, de manera transaccional, una tupla en la tabla 
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	  * @return El objeto adicionado. null si ocurre alguna Excepciï¿½n
 	 */
-	public Promocion adicionarPromocion( String nombre, String descripcion, String tipo, Date fechaInicio, Date fechaFinalizacion, String estado, int cantidadP)
+	public Promocion adicionarPromocion(String nombre, String descripcion , String tipo, Date fechaInicio, Date fechaFinalizacion, String estado, int cantidadP)
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
         Transaction tx=pm.currentTransaction();
@@ -2671,9 +2671,9 @@ public class PersistenciaSuperandes {
             long tuplasInsertadas = sqlPromocion.adicionar(pm, id,nombre, descripcion, tipo, fechaInicio, fechaFinalizacion, estado, cantidadP);
             tx.commit();
             
-            log.trace ("Inserción de Promocion: " + nombre + ": " + tuplasInsertadas + " tuplas insertadas");
+            log.trace ("Inserciï¿½n de Promocion: " + nombre + ": " + tuplasInsertadas + " tuplas insertadas");
             
-            return new Promocion (id,nombre,fechaInicio, fechaFinalizacion, estado,cantidadP);
+            return new Promocion(id, nombre, descripcion, tipo, fechaInicio, fechaFinalizacion, estado, cantidadP);
         }
         catch (Exception e)
         {
@@ -2691,10 +2691,10 @@ public class PersistenciaSuperandes {
         }
 	}
 	/**
-	 * Método que elimina, de manera transaccional, una tupla en la tabla
-	 * Adiciona entradas al log de la aplicación
+	 * Mï¿½todo que elimina, de manera transaccional, una tupla en la tabla
+	 * Adiciona entradas al log de la aplicaciï¿½n
 	 * @param nombre 
-	 * @return El número de tuplas eliminadas. -1 si ocurre alguna Excepción
+	 * @return El nï¿½mero de tuplas eliminadas. -1 si ocurre alguna Excepciï¿½n
 	 */
 	public long eliminarPromocionPorNombre (String nombre) 
 	{
@@ -2724,9 +2724,9 @@ public class PersistenciaSuperandes {
 	}
 
 	/**
-	 * Método que elimina, de manera transaccional, una tupla en la tabla
-	 * Adiciona entradas al log de la aplicación
-	 * @return El número de tuplas eliminadas. -1 si ocurre alguna Excepción
+	 * Mï¿½todo que elimina, de manera transaccional, una tupla en la tabla
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return El nï¿½mero de tuplas eliminadas. -1 si ocurre alguna Excepciï¿½n
 	 */
 	public long eliminarPromocionPorId (long id) 
 	{
@@ -2755,9 +2755,9 @@ public class PersistenciaSuperandes {
         }
 	}
 	/**
-	 * Método que elimina, de manera transaccional, una tupla en la tabla
-	 * Adiciona entradas al log de la aplicación
-	 * @return El número de tuplas eliminadas. -1 si ocurre alguna Excepción
+	 * Mï¿½todo que elimina, de manera transaccional, una tupla en la tabla
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return El nï¿½mero de tuplas eliminadas. -1 si ocurre alguna Excepciï¿½n
 	 */
 	public long finalizarPromocion (long id) 
 	{
@@ -2787,7 +2787,7 @@ public class PersistenciaSuperandes {
 	}
 
 	/**
-	 * Método que consulta todas las tuplas en la tabla
+	 * Mï¿½todo que consulta todas las tuplas en la tabla
 	 * @return La lista de objetos 
 	 */
 	public List<Promocion> darPromociones ()
@@ -2796,7 +2796,7 @@ public class PersistenciaSuperandes {
 	}
  
 	/**
-	 * Método que consulta todas las tuplas en la tabla 
+	 * Mï¿½todo que consulta todas las tuplas en la tabla 
 	 * @return La lista de objetos 
 	 */
 	public List<Promocion> darPromocionPorNombre (String nombre)
@@ -2805,7 +2805,7 @@ public class PersistenciaSuperandes {
 	}
  
 	/**
-	 * Método que consulta todas las tuplas en la tabla 
+	 * Mï¿½todo que consulta todas las tuplas en la tabla 
 	 * @return El objeto, construido con base en las tuplas de la tabla con el identificador dado
 	 */
 	public Promocion darPromocionPorId (long id)
@@ -2815,16 +2815,16 @@ public class PersistenciaSuperandes {
 	
 	
 	/* ****************************************************************
-	 * 			Métodos para manejar los PROMOCION_UNIDAD
+	 * 			Mï¿½todos para manejar los PROMOCION_UNIDAD
 	 *****************************************************************/
 	
 	/**
-	 * Método que inserta, de manera transaccional, una tupla en la tabla PROMOCION_UNIDAD
-	 * Adiciona entradas al log de la aplicación
+	 * Mï¿½todo que inserta, de manera transaccional, una tupla en la tabla PROMOCION_UNIDAD
+	 * Adiciona entradas al log de la aplicaciï¿½n
 	 * @param idPromocion - id de la promocion
 	 * @param unidadVendidos unidad vendidos
 	 * @param unidadPagados unidad pagados
-	 * @return El objeto PROMOCION_UNIDAD adicionado. null si ocurre alguna Excepción
+	 * @return El objeto PROMOCION_UNIDAD adicionado. null si ocurre alguna Excepciï¿½n
 	 */
 	public PromocionUnidad adicionarPromocionUnidad(long idPromocion, int unidadVendidos, int unidadPagados) 
 	{
@@ -2836,7 +2836,7 @@ public class PersistenciaSuperandes {
             long tuplasInsertadas = sqlPromocionUnidad.adicionarPromocionUnidad(pmf.getPersistenceManager(), idPromocion, unidadVendidos, unidadPagados);
             tx.commit();
 
-            log.trace ("Inserción de promocionUnidad: " + idPromocion + ": " + tuplasInsertadas + " tuplas insertadas");
+            log.trace ("Inserciï¿½n de promocionUnidad: " + idPromocion + ": " + tuplasInsertadas + " tuplas insertadas");
             
             return new PromocionUnidad (idPromocion, unidadVendidos, unidadPagados);
         }
@@ -2857,10 +2857,10 @@ public class PersistenciaSuperandes {
 	}
 
 	/**
-	 * Método que elimina, de manera transaccional, una tupla en la tabla PROMOCION_UNIDAD, dado el identificador del promocionUnidad
-	 * Adiciona entradas al log de la aplicación
+	 * Mï¿½todo que elimina, de manera transaccional, una tupla en la tabla PROMOCION_UNIDAD, dado el identificador del promocionUnidad
+	 * Adiciona entradas al log de la aplicaciï¿½n
 	 * @param idPromocionUnidad - El identificador del promocionUnidad
-	 * @return El número de tuplas eliminadas. -1 si ocurre alguna Excepción
+	 * @return El nï¿½mero de tuplas eliminadas. -1 si ocurre alguna Excepciï¿½n
 	 */
 	public long eliminarPromocionUnidadPorId (long idPromocionUnidad) 
 	{
@@ -2890,7 +2890,7 @@ public class PersistenciaSuperandes {
 	}
 
 	/**
-	 * Método que consulta todas las tuplas en la tabla PROMOCION_UNIDAD que tienen el identificador dado
+	 * Mï¿½todo que consulta todas las tuplas en la tabla PROMOCION_UNIDAD que tienen el identificador dado
 	 * @param idPromocionUnidad - El identificador del promocionUnidad
 	 * @return El objeto PROMOCION_UNIDAD, construido con base en la tuplas de la tabla PROMOCION_UNIDAD, que tiene el identificador dado
 	 */
@@ -2900,7 +2900,7 @@ public class PersistenciaSuperandes {
 	}
 
 	/**
-	 * Método que consulta todas las tuplas en la tabla PROMOCION_UNIDAD
+	 * Mï¿½todo que consulta todas las tuplas en la tabla PROMOCION_UNIDAD
 	 * @return La lista de objetos PROMOCION_UNIDAD, construidos con base en las tuplas de la tabla PROMOCION_UNIDAD
 	 */
 	public List<PromocionUnidad> darPromocionesUnidad ()
@@ -2909,15 +2909,15 @@ public class PersistenciaSuperandes {
 	}
 	
 	/* ****************************************************************
-	 * 			Métodos para manejar los PROMOCION_DESCUENTO
+	 * 			Mï¿½todos para manejar los PROMOCION_DESCUENTO
 	 *****************************************************************/
 	
 	/**
-	 * Método que inserta, de manera transaccional, una tupla en la tabla PROMOCION_DESCUENTO
-	 * Adiciona entradas al log de la aplicación
+	 * Mï¿½todo que inserta, de manera transaccional, una tupla en la tabla PROMOCION_DESCUENTO
+	 * Adiciona entradas al log de la aplicaciï¿½n
 	 * @param idPromocion - id de la promocion
 	 * @param descuento el descuento
-	 * @return El objeto PROMOCION_DESCUENTO adicionado. null si ocurre alguna Excepción
+	 * @return El objeto PROMOCION_DESCUENTO adicionado. null si ocurre alguna Excepciï¿½n
 	 */
 	public PromocionDescuento adicionarPromocionDescuento(long idPromocion, double descuento) 
 	{
@@ -2929,7 +2929,7 @@ public class PersistenciaSuperandes {
             long tuplasInsertadas = sqlPromocionDescuento.adicionarPromocionDescuento(pmf.getPersistenceManager(), idPromocion, descuento);
             tx.commit();
 
-            log.trace ("Inserción de promocionDescuento: " + idPromocion + ": " + tuplasInsertadas + " tuplas insertadas");
+            log.trace ("Inserciï¿½n de promocionDescuento: " + idPromocion + ": " + tuplasInsertadas + " tuplas insertadas");
             
             return new PromocionDescuento (idPromocion, descuento);
         }
@@ -2950,10 +2950,10 @@ public class PersistenciaSuperandes {
 	}
 
 	/**
-	 * Método que elimina, de manera transaccional, una tupla en la tabla PROMOCION_DESCUENTO, dado el identificador del promocionDescuento
-	 * Adiciona entradas al log de la aplicación
+	 * Mï¿½todo que elimina, de manera transaccional, una tupla en la tabla PROMOCION_DESCUENTO, dado el identificador del promocionDescuento
+	 * Adiciona entradas al log de la aplicaciï¿½n
 	 * @param idPromocionDescuento - El identificador del promocionDescuento
-	 * @return El número de tuplas eliminadas. -1 si ocurre alguna Excepción
+	 * @return El nï¿½mero de tuplas eliminadas. -1 si ocurre alguna Excepciï¿½n
 	 */
 	public long eliminarPromocionDescuentoPorId (long idPromocionDescuento) 
 	{
@@ -2983,7 +2983,7 @@ public class PersistenciaSuperandes {
 	}
 
 	/**
-	 * Método que consulta todas las tuplas en la tabla PROMOCION_DESCUENTO que tienen el identificador dado
+	 * Mï¿½todo que consulta todas las tuplas en la tabla PROMOCION_DESCUENTO que tienen el identificador dado
 	 * @param idPromocionDescuento - El identificador del promocionDescuento
 	 * @return El objeto PROMOCION_DESCUENTO, construido con base en la tuplas de la tabla PROMOCION_DESCUENTO, que tiene el identificador dado
 	 */
@@ -2993,7 +2993,7 @@ public class PersistenciaSuperandes {
 	}
 
 	/**
-	 * Método que consulta todas las tuplas en la tabla PROMOCION_DESCUENTO
+	 * Mï¿½todo que consulta todas las tuplas en la tabla PROMOCION_DESCUENTO
 	 * @return La lista de objetos PROMOCION_DESCUENTO, construidos con base en las tuplas de la tabla PROMOCION_DESCUENTO
 	 */
 	public List<PromocionDescuento> darPromocionesDescuento ()
@@ -3003,15 +3003,15 @@ public class PersistenciaSuperandes {
 	
 	
 	/* ****************************************************************
-	 * 			Métodos para manejar los PROMOCION_PARTE_DESCUENTO
+	 * 			Mï¿½todos para manejar los PROMOCION_PARTE_DESCUENTO
 	 *****************************************************************/
 	
 	/**
-	 * Método que inserta, de manera transaccional, una tupla en la tabla PROMOCION_PARTE_DESCUENTO
-	 * Adiciona entradas al log de la aplicación
+	 * Mï¿½todo que inserta, de manera transaccional, una tupla en la tabla PROMOCION_PARTE_DESCUENTO
+	 * Adiciona entradas al log de la aplicaciï¿½n
 	 * @param idPromocion - id de la promocion
 	 * @param descuento el descuento
-	 * @return El objeto PROMOCION_PARTE_DESCUENTO adicionado. null si ocurre alguna Excepción
+	 * @return El objeto PROMOCION_PARTE_DESCUENTO adicionado. null si ocurre alguna Excepciï¿½n
 	 */
 	public PromocionParteDescuento adicionarPromocionParteDescuento(long idPromocion, double descuento, int unidadVendidos) 
 	{
@@ -3023,7 +3023,7 @@ public class PersistenciaSuperandes {
             long tuplasInsertadas = sqlPromocionParteDescuento.adicionarPromocionParteDescuento(pmf.getPersistenceManager(), idPromocion, descuento, unidadVendidos);
             tx.commit();
 
-            log.trace ("Inserción de promocionParteDescuento: " + idPromocion + ": " + tuplasInsertadas + " tuplas insertadas");
+            log.trace ("Inserciï¿½n de promocionParteDescuento: " + idPromocion + ": " + tuplasInsertadas + " tuplas insertadas");
             
             return new PromocionParteDescuento (idPromocion, descuento, unidadVendidos);
         }
@@ -3044,10 +3044,10 @@ public class PersistenciaSuperandes {
 	}
 
 	/**
-	 * Método que elimina, de manera transaccional, una tupla en la tabla PROMOCION_PARTE_DESCUENTO, dado el identificador del promocionParteDescuento
-	 * Adiciona entradas al log de la aplicación
+	 * Mï¿½todo que elimina, de manera transaccional, una tupla en la tabla PROMOCION_PARTE_DESCUENTO, dado el identificador del promocionParteDescuento
+	 * Adiciona entradas al log de la aplicaciï¿½n
 	 * @param idPromocionParteDescuento - El identificador del promocionParteDescuento
-	 * @return El número de tuplas eliminadas. -1 si ocurre alguna Excepción
+	 * @return El nï¿½mero de tuplas eliminadas. -1 si ocurre alguna Excepciï¿½n
 	 */
 	public long eliminarPromocionParteDescuentoPorId (long idPromocionParteDescuento) 
 	{
@@ -3077,7 +3077,7 @@ public class PersistenciaSuperandes {
 	}
 
 	/**
-	 * Método que consulta todas las tuplas en la tabla PROMOCION_PARTE_DESCUENTO que tienen el identificador dado
+	 * Mï¿½todo que consulta todas las tuplas en la tabla PROMOCION_PARTE_DESCUENTO que tienen el identificador dado
 	 * @param idPromocionParteDescuento - El identificador del promocionParteDescuento
 	 * @return El objeto PROMOCION_PARTE_DESCUENTO, construido con base en la tuplas de la tabla PROMOCION_PARTE_DESCUENTO, que tiene el identificador dado
 	 */
@@ -3087,7 +3087,7 @@ public class PersistenciaSuperandes {
 	}
 
 	/**
-	 * Método que consulta todas las tuplas en la tabla PROMOCION_PARTE_DESCUENTO
+	 * Mï¿½todo que consulta todas las tuplas en la tabla PROMOCION_PARTE_DESCUENTO
 	 * @return La lista de objetos PROMOCION_PARTE_DESCUENTO, construidos con base en las tuplas de la tabla PROMOCION_PARTE_DESCUENTO
 	 */
 	public List<PromocionParteDescuento> darPromocionesParteDescuento ()
@@ -3096,16 +3096,16 @@ public class PersistenciaSuperandes {
 	}
 	
 	/* ****************************************************************
-	 * 			Métodos para manejar los PROMOCION_CANTIDAD
+	 * 			Mï¿½todos para manejar los PROMOCION_CANTIDAD
 	 *****************************************************************/
 	
 	/**
-	 * Método que inserta, de manera transaccional, una tupla en la tabla PROMOCION_CANTIDAD
-	 * Adiciona entradas al log de la aplicación
+	 * Mï¿½todo que inserta, de manera transaccional, una tupla en la tabla PROMOCION_CANTIDAD
+	 * Adiciona entradas al log de la aplicaciï¿½n
 	 * @param idPromocion - id de la promocion
 	 * @param cantidadVendidos cantidad vendidos
 	 * @param cantidadPagados cantidad pagados
-	 * @return El objeto PROMOCION_CANTIDAD adicionado. null si ocurre alguna Excepción
+	 * @return El objeto PROMOCION_CANTIDAD adicionado. null si ocurre alguna Excepciï¿½n
 	 */
 	public PromocionCantidad adicionarPromocionCantidad(long idPromocion, int cantidadVendidos, int cantidadPagados) 
 	{
@@ -3117,7 +3117,7 @@ public class PersistenciaSuperandes {
             long tuplasInsertadas = sqlPromocionCantidad.adicionarPromocionCantidad(pmf.getPersistenceManager(), idPromocion, cantidadVendidos, cantidadPagados);
             tx.commit();
 
-            log.trace ("Inserción de PromocionCantidad: " + idPromocion + ": " + tuplasInsertadas + " tuplas insertadas");
+            log.trace ("Inserciï¿½n de PromocionCantidad: " + idPromocion + ": " + tuplasInsertadas + " tuplas insertadas");
             
             return new PromocionCantidad (idPromocion, cantidadVendidos, cantidadPagados);
         }
@@ -3138,10 +3138,10 @@ public class PersistenciaSuperandes {
 	}
 
 	/**
-	 * Método que elimina, de manera transaccional, una tupla en la tabla PROMOCION_CANTIDAD, dado el identificador del PromocionCantidad
-	 * Adiciona entradas al log de la aplicación
+	 * Mï¿½todo que elimina, de manera transaccional, una tupla en la tabla PROMOCION_CANTIDAD, dado el identificador del PromocionCantidad
+	 * Adiciona entradas al log de la aplicaciï¿½n
 	 * @param idPromocionCantidad - El identificador del PromocionCantidad
-	 * @return El número de tuplas eliminadas. -1 si ocurre alguna Excepción
+	 * @return El nï¿½mero de tuplas eliminadas. -1 si ocurre alguna Excepciï¿½n
 	 */
 	public long eliminarPromocionCantidadPorId (long idPromocionCantidad) 
 	{
@@ -3171,7 +3171,7 @@ public class PersistenciaSuperandes {
 	}
 
 	/**
-	 * Método que consulta todas las tuplas en la tabla PROMOCION_CANTIDAD que tienen el identificador dado
+	 * Mï¿½todo que consulta todas las tuplas en la tabla PROMOCION_CANTIDAD que tienen el identificador dado
 	 * @param idPromocionCantidad - El identificador del PromocionCantidad
 	 * @return El objeto PROMOCION_CANTIDAD, construido con base en la tuplas de la tabla PROMOCION_CANTIDAD, que tiene el identificador dado
 	 */
@@ -3181,7 +3181,7 @@ public class PersistenciaSuperandes {
 	}
 
 	/**
-	 * Método que consulta todas las tuplas en la tabla PROMOCION_CANTIDAD
+	 * Mï¿½todo que consulta todas las tuplas en la tabla PROMOCION_CANTIDAD
 	 * @return La lista de objetos PROMOCION_CANTIDAD, construidos con base en las tuplas de la tabla PROMOCION_CANTIDAD
 	 */
 	public List<PromocionCantidad> darPromocionesCantidad ()
@@ -3191,13 +3191,13 @@ public class PersistenciaSuperandes {
 	
 
 	/* ****************************************************************
-	 * 			Métodos para manejar PromocionProducto
+	 * 			Mï¿½todos para manejar PromocionProducto
 	 *****************************************************************/
 	
 	/**
-	 * Método que inserta, de manera transaccional, una tupla en la tabla 
-	 * Adiciona entradas al log de la aplicación
-	  * @return El objeto adicionado. null si ocurre alguna Excepción
+	 * Mï¿½todo que inserta, de manera transaccional, una tupla en la tabla 
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	  * @return El objeto adicionado. null si ocurre alguna Excepciï¿½n
 	 */
 	public PromocionProducto adicionarPromocionProducto(long promocion, long Producto)
 	{
@@ -3209,7 +3209,7 @@ public class PersistenciaSuperandes {
             long tuplasInsertadas = sqlPromocionProducto.adicionar(pm, promocion, Producto);
             tx.commit();
             
-            log.trace ("Inserción de PromocionProducto: " + promocion + ": " + tuplasInsertadas + " tuplas insertadas");
+            log.trace ("Inserciï¿½n de PromocionProducto: " + promocion + ": " + tuplasInsertadas + " tuplas insertadas");
             
             return new PromocionProducto (promocion, Producto);
         }
@@ -3231,9 +3231,9 @@ public class PersistenciaSuperandes {
 	
 
 	/**
-	 * Método que elimina, de manera transaccional, una tupla en la tabla
-	 * Adiciona entradas al log de la aplicación
-	 * @return El número de tuplas eliminadas. -1 si ocurre alguna Excepción
+	 * Mï¿½todo que elimina, de manera transaccional, una tupla en la tabla
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return El nï¿½mero de tuplas eliminadas. -1 si ocurre alguna Excepciï¿½n
 	 */
 	public long eliminarPromocionProductoPorIdPromocion (long id) 
 	{
@@ -3263,9 +3263,9 @@ public class PersistenciaSuperandes {
 	}
 
 	/**
-	 * Método que elimina, de manera transaccional, una tupla en la tabla
-	 * Adiciona entradas al log de la aplicación
-	 * @return El número de tuplas eliminadas. -1 si ocurre alguna Excepción
+	 * Mï¿½todo que elimina, de manera transaccional, una tupla en la tabla
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return El nï¿½mero de tuplas eliminadas. -1 si ocurre alguna Excepciï¿½n
 	 */
 	public long eliminarPromocionProductoPorIdProducto (long id) 
 	{
@@ -3295,7 +3295,7 @@ public class PersistenciaSuperandes {
 	}
 
 	/**
-	 * Método que consulta todas las tuplas en la tabla
+	 * Mï¿½todo que consulta todas las tuplas en la tabla
 	 * @return La lista de objetos 
 	 */
 	public List<PromocionProducto> darPromocionesProductoes ()
@@ -3306,7 +3306,7 @@ public class PersistenciaSuperandes {
 	
  
 	/**
-	 * Método que consulta todas las tuplas en la tabla 
+	 * Mï¿½todo que consulta todas las tuplas en la tabla 
 	 * @return El objeto, construido con base en las tuplas de la tabla con el identificador dado
 	 */
 	public List<PromocionProducto> darPromocionesProductoPorProducto (long id)
@@ -3315,7 +3315,7 @@ public class PersistenciaSuperandes {
 	}
 	
 	/**
-	 * Método que consulta todas las tuplas en la tabla 
+	 * Mï¿½todo que consulta todas las tuplas en la tabla 
 	 * @return El objeto, construido con base en las tuplas de la tabla con el identificador dado
 	 */
 	public List<PromocionProducto> darPromocionesProductoPorPromocion (long id)
@@ -3327,13 +3327,13 @@ public class PersistenciaSuperandes {
 	
 	
 	/* ****************************************************************
-	 * 			Métodos para manejar Proveedores
+	 * 			Mï¿½todos para manejar Proveedores
 	 *****************************************************************/
 	
 	/**
-	 * Método que inserta, de manera transaccional, una tupla en la tabla 
-	 * Adiciona entradas al log de la aplicación
-	  * @return El objeto adicionado. null si ocurre alguna Excepción
+	 * Mï¿½todo que inserta, de manera transaccional, una tupla en la tabla 
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	  * @return El objeto adicionado. null si ocurre alguna Excepciï¿½n
 	 */
 	public Proveedores adicionarProveedores(long nit,String nombre)
 	{
@@ -3346,7 +3346,7 @@ public class PersistenciaSuperandes {
             long tuplasInsertadas = sqlProveedores.adicionar(pm, nit,nombre);
             tx.commit();
             
-            log.trace ("Inserción de Proveedores: " + nombre + ": " + tuplasInsertadas + " tuplas insertadas");
+            log.trace ("Inserciï¿½n de Proveedores: " + nombre + ": " + tuplasInsertadas + " tuplas insertadas");
             
             return new Proveedores (nit, nombre);
         }
@@ -3366,10 +3366,10 @@ public class PersistenciaSuperandes {
         }
 	}
 	/**
-	 * Método que elimina, de manera transaccional, una tupla en la tabla
-	 * Adiciona entradas al log de la aplicación
+	 * Mï¿½todo que elimina, de manera transaccional, una tupla en la tabla
+	 * Adiciona entradas al log de la aplicaciï¿½n
 	 * @param nombre 
-	 * @return El número de tuplas eliminadas. -1 si ocurre alguna Excepción
+	 * @return El nï¿½mero de tuplas eliminadas. -1 si ocurre alguna Excepciï¿½n
 	 */
 	public long eliminarProveedoresPorNombre (String nombre) 
 	{
@@ -3399,9 +3399,9 @@ public class PersistenciaSuperandes {
 	}
 
 	/**
-	 * Método que elimina, de manera transaccional, una tupla en la tabla
-	 * Adiciona entradas al log de la aplicación
-	 * @return El número de tuplas eliminadas. -1 si ocurre alguna Excepción
+	 * Mï¿½todo que elimina, de manera transaccional, una tupla en la tabla
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return El nï¿½mero de tuplas eliminadas. -1 si ocurre alguna Excepciï¿½n
 	 */
 	public long eliminarProveedoresPorNit (long nit) 
 	{
@@ -3431,7 +3431,7 @@ public class PersistenciaSuperandes {
 	}
 
 	/**
-	 * Método que consulta todas las tuplas en la tabla
+	 * Mï¿½todo que consulta todas las tuplas en la tabla
 	 * @return La lista de objetos 
 	 */
 	public List<Proveedores> darProveedoreses ()
@@ -3440,7 +3440,7 @@ public class PersistenciaSuperandes {
 	}
  
 	/**
-	 * Método que consulta todas las tuplas en la tabla 
+	 * Mï¿½todo que consulta todas las tuplas en la tabla 
 	 * @return La lista de objetos 
 	 */
 	public List<Proveedores> darProveedoresPorNombre (String nombre)
@@ -3449,7 +3449,7 @@ public class PersistenciaSuperandes {
 	}
  
 	/**
-	 * Método que consulta todas las tuplas en la tabla 
+	 * Mï¿½todo que consulta todas las tuplas en la tabla 
 	 * @return El objeto, construido con base en las tuplas de la tabla con el identificador dado
 	 */
 	public Proveedores darProveedoresPorNIT(int i)
@@ -3459,13 +3459,13 @@ public class PersistenciaSuperandes {
 	
 	
 	/* ****************************************************************
-	 * 			Métodos para manejar ProductoOfrecido
+	 * 			Mï¿½todos para manejar ProductoOfrecido
 	 *****************************************************************/
 	
 	/**
-	 * Método que inserta, de manera transaccional, una tupla en la tabla 
-	 * Adiciona entradas al log de la aplicación
-	  * @return El objeto adicionado. null si ocurre alguna Excepción
+	 * Mï¿½todo que inserta, de manera transaccional, una tupla en la tabla 
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	  * @return El objeto adicionado. null si ocurre alguna Excepciï¿½n
 	 */
 	public ProductoOfrecido adicionarProductoOfrecido( double precioProveedor, int calificacionTotal, String calidad, String cumplimiento,  long productoId, long proveedor)
 	{
@@ -3478,7 +3478,7 @@ public class PersistenciaSuperandes {
             long tuplasInsertadas = sqlProductoOfrecido.adicionar(pm, id, precioProveedor, calificacionTotal, calidad, cumplimiento, productoId, proveedor);
             tx.commit();
             
-            log.trace ("Inserción de ProductoOfrecido: " + id + ": " + tuplasInsertadas + " tuplas insertadas");
+            log.trace ("Inserciï¿½n de ProductoOfrecido: " + id + ": " + tuplasInsertadas + " tuplas insertadas");
             
             return new ProductoOfrecido (id, precioProveedor, calificacionTotal, calidad, cumplimiento, productoId, proveedor);
         }
@@ -3500,9 +3500,9 @@ public class PersistenciaSuperandes {
 	
 
 	/**
-	 * Método que elimina, de manera transaccional, una tupla en la tabla
-	 * Adiciona entradas al log de la aplicación
-	 * @return El número de tuplas eliminadas. -1 si ocurre alguna Excepción
+	 * Mï¿½todo que elimina, de manera transaccional, una tupla en la tabla
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return El nï¿½mero de tuplas eliminadas. -1 si ocurre alguna Excepciï¿½n
 	 */
 	public long eliminarProductoOfrecidoPorId (long id) 
 	{
@@ -3532,7 +3532,7 @@ public class PersistenciaSuperandes {
 	}
 
 	/**
-	 * Método que consulta todas las tuplas en la tabla
+	 * Mï¿½todo que consulta todas las tuplas en la tabla
 	 * @return La lista de objetos 
 	 */
 	public List<ProductoOfrecido> darProductosOfrecidos ()
@@ -3540,7 +3540,7 @@ public class PersistenciaSuperandes {
 		return sqlProductoOfrecido.darLista(pmf.getPersistenceManager());
 	}
 	/**
-	 * Método que consulta todas las tuplas en la tabla
+	 * Mï¿½todo que consulta todas las tuplas en la tabla
 	 * @return La lista de objetos 
 	 */
 	public List<ProductoOfrecido> darProductosOfrecidosPorIdProveedor (long id)
@@ -3550,7 +3550,7 @@ public class PersistenciaSuperandes {
  
  
 	/**
-	 * Método que consulta todas las tuplas en la tabla 
+	 * Mï¿½todo que consulta todas las tuplas en la tabla 
 	 * @return El objeto, construido con base en las tuplas de la tabla con el identificador dado
 	 */
 	public ProductoOfrecido darProductoOfrecidoPorId (long id)
@@ -3560,13 +3560,13 @@ public class PersistenciaSuperandes {
 	
 	
 	/* ****************************************************************
-	 * 			Métodos para manejar OrdenPedido
+	 * 			Mï¿½todos para manejar OrdenPedido
 	 *****************************************************************/
 	
 	/**
-	 * Método que inserta, de manera transaccional, una tupla en la tabla 
-	 * Adiciona entradas al log de la aplicación
-	  * @return El objeto adicionado. null si ocurre alguna Excepción
+	 * Mï¿½todo que inserta, de manera transaccional, una tupla en la tabla 
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	  * @return El objeto adicionado. null si ocurre alguna Excepciï¿½n
 	 */
 	public OrdenPedido adicionarOrdenPedido(String estado, int calificacion, String fecha, String fechaEntrega, long proveedor, long productoOfrecido, double cantidadProducto, String unidadMedida, long sucursal)
 	{
@@ -3579,7 +3579,7 @@ public class PersistenciaSuperandes {
             long tuplasInsertadas = sqlOrdenPedido.adicionar(pm, id, estado, calificacion, fecha, fechaEntrega,proveedor, productoOfrecido, cantidadProducto, unidadMedida, sucursal);
             tx.commit();
             
-            log.trace ("Inserción de OrdenPedido: " + id + ": " + tuplasInsertadas + " tuplas insertadas");
+            log.trace ("Inserciï¿½n de OrdenPedido: " + id + ": " + tuplasInsertadas + " tuplas insertadas");
             
             return new OrdenPedido(  fechaEntrega, calificacion,  estado, fecha, id, proveedor, (int) cantidadProducto, unidadMedida, productoOfrecido,  sucursal);
         }
@@ -3600,9 +3600,9 @@ public class PersistenciaSuperandes {
 	}
 	
 	/**
-	 * Método que elimina, de manera transaccional, una tupla en la tabla
-	 * Adiciona entradas al log de la aplicación
-	 * @return El número de tuplas eliminadas. -1 si ocurre alguna Excepción
+	 * Mï¿½todo que elimina, de manera transaccional, una tupla en la tabla
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return El nï¿½mero de tuplas eliminadas. -1 si ocurre alguna Excepciï¿½n
 	 */
 	public long eliminarOrdenPedidoPorId (long id) 
 	{
@@ -3632,7 +3632,7 @@ public class PersistenciaSuperandes {
 	}
 
 	/**
-	 * Método que consulta todas las tuplas en la tabla
+	 * Mï¿½todo que consulta todas las tuplas en la tabla
 	 * @return La lista de objetos 
 	 */
 	public List<OrdenPedido> darOrdenesPedidos ()
@@ -3646,7 +3646,7 @@ public class PersistenciaSuperandes {
  
  
 	/**
-	 * Método que consulta todas las tuplas en la tabla 
+	 * Mï¿½todo que consulta todas las tuplas en la tabla 
 	 * @return La lista de objetos 
 	 */
 	public List<OrdenPedido> darListaOrdenPedidoPorFecha (String fecha)
@@ -3655,7 +3655,7 @@ public class PersistenciaSuperandes {
 	}
  
 	/**
-	 * Método que consulta todas las tuplas en la tabla 
+	 * Mï¿½todo que consulta todas las tuplas en la tabla 
 	 * @return El objeto, construido con base en las tuplas de la tabla con el identificador dado
 	 */
 	public OrdenPedido darOrdenPedidoPorId (long id)
@@ -3671,13 +3671,13 @@ public class PersistenciaSuperandes {
 		return sqlProducto.darCategoriaPorId(pmf.getPersistenceManager(), id);
 	}
 	/* ****************************************************************
-	 * 			Métodos para manejar  Administrador
+	 * 			Mï¿½todos para manejar  Administrador
 	 *****************************************************************/
 	
 	/**
-	 * Método que inserta, de manera transaccional, una tupla en la tabla 
-	 * Adiciona entradas al log de la aplicación
-	  * @return El objeto adicionado. null si ocurre alguna Excepción
+	 * Mï¿½todo que inserta, de manera transaccional, una tupla en la tabla 
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	  * @return El objeto adicionado. null si ocurre alguna Excepciï¿½n
 	 */
 	public Administrador adicionarAdministrador( int cantidadDeRecompra, String usuario,  String contrasenha)
 	{
@@ -3690,7 +3690,7 @@ public class PersistenciaSuperandes {
             long tuplasInsertadas = sqlAdministrador.adicionar(pm, id, cantidadDeRecompra, usuario, contrasenha);
             tx.commit();
             
-            log.trace ("Inserción de Administrador: " + usuario + ": " + tuplasInsertadas + " tuplas insertadas");
+            log.trace ("Inserciï¿½n de Administrador: " + usuario + ": " + tuplasInsertadas + " tuplas insertadas");
             
             return new Administrador (id, cantidadDeRecompra, usuario, contrasenha);
         }
@@ -3710,10 +3710,10 @@ public class PersistenciaSuperandes {
         }
 	}
 	/**
-	 * Método que elimina, de manera transaccional, una tupla en la tabla
-	 * Adiciona entradas al log de la aplicación
+	 * Mï¿½todo que elimina, de manera transaccional, una tupla en la tabla
+	 * Adiciona entradas al log de la aplicaciï¿½n
 	 * @param nombre 
-	 * @return El número de tuplas eliminadas. -1 si ocurre alguna Excepción
+	 * @return El nï¿½mero de tuplas eliminadas. -1 si ocurre alguna Excepciï¿½n
 	 */
 	public long eliminarAdministradorPorUsuario (String nombre) 
 	{
@@ -3743,9 +3743,9 @@ public class PersistenciaSuperandes {
 	}
 
 	/**
-	 * Método que elimina, de manera transaccional, una tupla en la tabla
-	 * Adiciona entradas al log de la aplicación
-	 * @return El número de tuplas eliminadas. -1 si ocurre alguna Excepción
+	 * Mï¿½todo que elimina, de manera transaccional, una tupla en la tabla
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return El nï¿½mero de tuplas eliminadas. -1 si ocurre alguna Excepciï¿½n
 	 */
 	public long eliminarAdministradorPorId (long id) 
 	{
@@ -3775,7 +3775,7 @@ public class PersistenciaSuperandes {
 	}
 
 	/**
-	 * Método que consulta todas las tuplas en la tabla
+	 * Mï¿½todo que consulta todas las tuplas en la tabla
 	 * @return La lista de objetos 
 	 */
 	public List<Administrador> darAdministradores ()
@@ -3784,7 +3784,7 @@ public class PersistenciaSuperandes {
 	}
  
 	/**
-	 * Método que consulta todas las tuplas en la tabla 
+	 * Mï¿½todo que consulta todas las tuplas en la tabla 
 	 * @return El objeto, construido con base en las tuplas de la tabla con el identificador dado
 	 */
 	public Administrador darAdministradorPorId (long id)
@@ -3793,13 +3793,13 @@ public class PersistenciaSuperandes {
 	}
 	
 	/* ****************************************************************
-	 * 			Métodos para manejar  AdministradorSucursal
+	 * 			Mï¿½todos para manejar  AdministradorSucursal
 	 *****************************************************************/
 	
 	/**
-	 * Método que inserta, de manera transaccional, una tupla en la tabla 
-	 * Adiciona entradas al log de la aplicación
-	  * @return El objeto adicionado. null si ocurre alguna Excepción
+	 * Mï¿½todo que inserta, de manera transaccional, una tupla en la tabla 
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	  * @return El objeto adicionado. null si ocurre alguna Excepciï¿½n
 	 */
 	public AdministradorSucursal adicionarAdministradorSucursal(long administrador, long sucursal)
 	{
@@ -3812,7 +3812,7 @@ public class PersistenciaSuperandes {
             long tuplasInsertadas = sqlAdministradorSucursal.adicionar(pm,administrador, sucursal);
             tx.commit();
             
-            log.trace ("Inserción de AdministradorSucursal: " + administrador + ": " + tuplasInsertadas + " tuplas insertadas");
+            log.trace ("Inserciï¿½n de AdministradorSucursal: " + administrador + ": " + tuplasInsertadas + " tuplas insertadas");
             
             return new AdministradorSucursal (administrador, sucursal);
         }
@@ -3833,9 +3833,9 @@ public class PersistenciaSuperandes {
 	}
 	
 	/**
-	 * Método que elimina, de manera transaccional, una tupla en la tabla
-	 * Adiciona entradas al log de la aplicación
-	 * @return El número de tuplas eliminadas. -1 si ocurre alguna Excepción
+	 * Mï¿½todo que elimina, de manera transaccional, una tupla en la tabla
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return El nï¿½mero de tuplas eliminadas. -1 si ocurre alguna Excepciï¿½n
 	 */
 	public long eliminarAdministradorSucursalPorIdAdministrador (long id) 
 	{
@@ -3864,9 +3864,9 @@ public class PersistenciaSuperandes {
         }
 	}
 	/**
-	 * Método que elimina, de manera transaccional, una tupla en la tabla
-	 * Adiciona entradas al log de la aplicación
-	 * @return El número de tuplas eliminadas. -1 si ocurre alguna Excepción
+	 * Mï¿½todo que elimina, de manera transaccional, una tupla en la tabla
+	 * Adiciona entradas al log de la aplicaciï¿½n
+	 * @return El nï¿½mero de tuplas eliminadas. -1 si ocurre alguna Excepciï¿½n
 	 */
 	public long eliminarAdministradorSucursalPorIdSucursal (long id) 
 	{
@@ -3896,7 +3896,7 @@ public class PersistenciaSuperandes {
 	}
 
 	/**
-	 * Método que consulta todas las tuplas en la tabla
+	 * Mï¿½todo que consulta todas las tuplas en la tabla
 	 * @return La lista de objetos 
 	 */
 	public List<AdministradorSucursal> darAdministradorSucursales ()
@@ -3907,7 +3907,7 @@ public class PersistenciaSuperandes {
 	
  
 	/**
-	 * Método que consulta todas las tuplas en la tabla 
+	 * Mï¿½todo que consulta todas las tuplas en la tabla 
 	 * @return El objeto, construido con base en las tuplas de la tabla con el identificador dado
 	 */
 	public AdministradorSucursal darAdministradorSucursalPorIdAdministrador (long id)
@@ -3915,7 +3915,7 @@ public class PersistenciaSuperandes {
 		return sqlAdministradorSucursal.darPorIdAdministrador (pmf.getPersistenceManager(), id);
 	}
 	/**
-	 * Método que consulta todas las tuplas en la tabla 
+	 * Mï¿½todo que consulta todas las tuplas en la tabla 
 	 * @return El objeto, construido con base en las tuplas de la tabla con el identificador dado
 	 */
 	public AdministradorSucursal darAdministradorSucursalPorIdSucursal (long id)

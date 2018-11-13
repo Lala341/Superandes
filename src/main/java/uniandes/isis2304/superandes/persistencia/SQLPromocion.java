@@ -39,7 +39,7 @@ public class SQLPromocion {
 	 */
 	public long adicionar (PersistenceManager pm, long id, String nombre,String descripcion , String tipo, Date fechaInicio, Date fechaFinalizacion, String estado, int cantidadP) 
 	{
-        Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaPromocion () + "(id, nombre, descripcion,tipoconsumidor, fechaInicio, fechaFinalizacion, estado, cantidadP) values (?, ?, ?, ?, ?, ?, ?, ?)");
+        Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaPromocion () + "(id, nombre, descripcion,tipo, fechaInicio, fechaFinalizacion, estado, cantidadP) values (?, ?, ?, ?, ?, ?, ?, ?)");
         q.setParameters(id, nombre, descripcion, tipo, fechaInicio, fechaFinalizacion, estado, cantidadP);
         return (long) q.executeUnique();
 	}

@@ -11,6 +11,7 @@ public class Promocion implements VOPromocion{
 
 	private long id;
 	private String nombre;
+	private String descripcion;
 	private Date fechaInicio;
 	private Date fechaFinalizacion;
 	private String estado;
@@ -19,9 +20,10 @@ public class Promocion implements VOPromocion{
 	public Promocion(){
 
 	}
-	public Promocion(long id, String nombre, Date fechaInicio, Date fechaFinalizacion, String estado, int cantidadP){
+	public Promocion(long id, String nombre,String descripcion , String tipo, Date fechaInicio, Date fechaFinalizacion, String estado, int cantidadP){
 		this.id=id;
 		this.nombre=nombre;
+		this.descripcion = descripcion;
 		this.fechaInicio=fechaInicio;
 		this.fechaFinalizacion=fechaFinalizacion;
 		this.estado=estado;
@@ -99,6 +101,12 @@ public class Promocion implements VOPromocion{
 	 */
 	public void setCantidadP(int cantidadP) {
 		this.cantidadP = cantidadP;
+	}
+	public String getDescripcion() {
+		return descripcion;
+	}
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
 	}
 	@Override
 	/**
