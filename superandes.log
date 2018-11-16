@@ -5767,3 +5767,35 @@ null
 22:21:59,639 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Actualizando Estante [8]
 22:21:59,639 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando ProductoEstante [598, 6]
 22:21:59,699 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando ProductoEstante: ProductoEstante [idEstante=598, idProducto=6cantidadProducto:8] tuplas insertadas
+15:13:14,377 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontr� un archivo de configuraci�n v�lido: Interfaz
+15:13:14,380 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuraci�n indicada en el archivo de configuraci�n
+15:13:14,402 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontr� un archivo de configuraci�n v�lido: Tablas BD
+15:13:23,321 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de ProductoCarritoCompras
+15:13:23,471 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de ProductoCarritoCompras: 4 existentes
+15:13:23,471 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Productos
+15:13:23,529 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Productos: 43 Productos existentes
+15:38:56,234 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontr� un archivo de configuraci�n v�lido: Interfaz
+15:38:56,235 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuraci�n indicada en el archivo de configuraci�n
+15:38:56,271 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontr� un archivo de configuraci�n v�lido: Tablas BD
+15:39:02,028 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de ProductoCarritoCompras
+15:39:02,293 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de ProductoCarritoCompras: 4 existentes
+15:39:02,293 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Productos
+15:39:02,340 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Productos: 43 Productos existentes
+15:39:05,968 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de CarritoCompras
+15:39:06,030 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de CarritoCompras: 37 existentes
+15:39:19,124 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Sucursales
+15:39:19,160 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Sucursales: 25 Sucursales existentes
+15:39:19,160 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales
+15:39:19,184 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Listando Sucursales: 25 Sucursales existentes
+15:39:23,210 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando VentaTest: 12
+15:39:23,412 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando VentaTest: 12
+15:39:23,412 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando ProductoVenta: 681
+15:39:23,434 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando ProductoVenta: 681
+15:39:23,434 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Factura: 
+15:39:23,463 (AWT-EventQueue-0) ERROR [uniandes.isis2304.superandes.persistencia.PersistenciaSuperandes] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO FACTURA(id, textoFactura) values (?, ?)".
+null
+15:39:23,469 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Adicionando Factura: 
+15:39:23,469 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Eliminando CarritoCompras por id: 40
+15:39:23,477 (AWT-EventQueue-0) ERROR [uniandes.isis2304.superandes.persistencia.PersistenciaSuperandes] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM CARRITOCOMPRAS WHERE id = ?".
+null
+15:39:23,481 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Eliminando CarritoCompras por id: -1 tuplas eliminadas
