@@ -64,7 +64,12 @@ public class Superandes {
 	}
 	
 
-	
+	public List<ConsumidorVenta> req10o( String i, String f, long id, boolean sucu, long sucuid, boolean t, String tipo) {
+		return pp.req10o(i, f, id, sucu, sucuid, t, tipo);
+	}
+	public List<ConsumidorVenta> req11o( String i, String f, long id, boolean sucu, long sucuid, boolean t, String tipo) {
+		return pp.req11o(i, f, id, sucu, sucuid, t, tipo);
+	}
 	
 	/* ****************************************************************
 	 * 			M�todos para manejar CIUDAD

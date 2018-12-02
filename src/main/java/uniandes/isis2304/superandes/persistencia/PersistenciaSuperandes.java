@@ -1727,6 +1727,58 @@ public class PersistenciaSuperandes {
             pm.close();
         }
 	}
+	public List<ConsumidorVenta> req10o( String i, String f, long id, boolean sucu, long sucuid, boolean t, String tipo) 
+	{
+		PersistenceManager pm = pmf.getPersistenceManager();
+        Transaction tx=pm.currentTransaction();
+        try
+        {
+            tx.begin();
+            List<ConsumidorVenta> resp = sqlVenta.req10o(pm, i, f, id, sucu, sucuid, t, tipo);
+            tx.commit();
+            return resp;
+        }
+        catch (Exception e)
+        {
+//        	e.printStackTrace();
+        	log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+            return null;
+        }
+        finally
+        {
+            if (tx.isActive())
+            {
+                tx.rollback();
+            }
+            pm.close();
+        }
+	}
+	public List<ConsumidorVenta> req11o( String i, String f, long id, boolean sucu, long sucuid, boolean t, String tipo) 
+	{
+		PersistenceManager pm = pmf.getPersistenceManager();
+        Transaction tx=pm.currentTransaction();
+        try
+        {
+            tx.begin();
+            List<ConsumidorVenta> resp = sqlVenta.req11o(pm, i, f, id, sucu, sucuid, t, tipo);
+            tx.commit();
+            return resp;
+        }
+        catch (Exception e)
+        {
+//        	e.printStackTrace();
+        	log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+            return null;
+        }
+        finally
+        {
+            if (tx.isActive())
+            {
+                tx.rollback();
+            }
+            pm.close();
+        }
+	}
 
 	/**
 	 * M�todo que elimina, de manera transaccional, una tupla en la tabla
