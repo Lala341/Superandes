@@ -5815,3 +5815,6 @@ null
 19:43:25,117 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superandes.negocio.Superandes] - Generando los VO de Productos
 =======
 >>>>>>> branch 'master' of https://github.com/Lala341/Superandes.git
+21:03:36,990 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontr� un archivo de configuraci�n v�lido: Interfaz
+21:03:36,992 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se aplica configuraci�n indicada en el archivo de configuraci�n
+21:03:37,046 (main) INFO  [uniandes.isis2304.superandes.interfazApp.InterfazSuperandesApp] - Se encontr� un archivo de configuraci�n v�lido: Tablas BD
