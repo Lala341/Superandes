@@ -8,21 +8,21 @@ import java.util.ArrayList;
  */
 public class ConsumidorVenta  {
 
-	public long producto;
+	public Long producto;
 	public String nombre;
 	public String correoElectronico;
 	public String tipoconsumidor;
-	public long venta;
+	public Long venta;
 	public String fecha;
 	public String formaPago;
 	public String unidadMedida;
-	public long id;
-	public int cantidadProducto;
+	public Long id;
+	public Integer cantidadProducto;
 	
 	
-	public double valorTotal;
-	public long consumidor;
-	public long sucursal;
+	public Double valorTotal;
+	public Long consumidor;
+	public Long sucursal;
 	
 	public ConsumidorVenta(){
 
@@ -91,10 +91,17 @@ public class ConsumidorVenta  {
 	 */
 	public String toString() 
 	{
+		if(this.venta!=null){
 		return "ConsumidorVenta [id=" + id + ", nombre=" + nombre + ", correoElectronico=" + correoElectronico + ", tipoconsumidor=" + tipoconsumidor
 				+ ", Producto: " + producto+ ", venta ="+ venta + ", fecha="+ fecha+ ", formaDePago="+ formaPago+ ", UnidadMedida="+ 
 				unidadMedida+ ", CantidadProducto=" +cantidadProducto+ ", valorTotal=" + valorTotal + ", sucursal="+ sucursal+ "]";
-	}
+		}
+		else{
+			return "ConsumidorVenta [ nombre=" + nombre + ", correoElectronico=" + correoElectronico + ", tipoconsumidor=" + tipoconsumidor
+					+  "]";
+			
+		}
+		}
 	public long getId() {
 		// TODO Auto-generated method stub
 		return id;
