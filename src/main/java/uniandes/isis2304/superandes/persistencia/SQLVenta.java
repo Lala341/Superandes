@@ -118,7 +118,7 @@ public class SQLVenta {
 		String g= "select * from(select t.fecha,formapago,valortotal,consumidor,sucursal,"
 				+ "venta,producto,cantidadproducto,unidadmedida from(select *from venta where "
 				+ "(fecha between '"+i+"' and '"+f+"') )"
-				+ "t inner join productoventa on t.id=productoventa.venta where productoventa.PRODUCTO="+3146+" "+
+				+ "t inner join productoventa on t.id=productoventa.venta where productoventa.PRODUCTO="+id+" "+
 ") m inner join consumidor on m.consumidor=consumidor.id  ";
 		if(sucu){
 			g=g+"where sucursal = "+sucuid;
@@ -138,11 +138,9 @@ public class SQLVenta {
 				+ "cantidadproducto,unidadmedida from(select *from venta where (fecha between '"+i+"' and '"+f+"') )"
 				+ "t inner join productoventa on t.id=productoventa.venta where productoventa.PRODUCTO="+id+" "+
 ") m right join consumidor on m.consumidor=consumidor.id where venta is null ";
-		if(sucu){
-			g=g+"and sucursal = "+sucuid;
-		}
+		
 		if(t){
-			g=g+"order by "+tipo;
+			g=g+" order by "+tipo;
 		}
 		Query q = pm.newQuery(SQL, g);
 		q.setResultClass(ConsumidorVenta.class);

@@ -2766,8 +2766,8 @@ public class Superandes {
 	public AdministradorSucursal darAdministradorSucursalPorIdAdministrador (long id)
 	{
 		log.info ("Buscando AdministradorSucursal por idAdmin: " + id);
-		List<AdministradorSucursal> tb = (List<AdministradorSucursal>) pp.darAdministradorSucursalPorIdAdministrador(id);
-		return !tb.isEmpty () ? tb.get (0) : null;
+		AdministradorSucursal tb = (AdministradorSucursal) pp.darAdministradorSucursalPorIdAdministrador(id);
+		return  tb;
 	}
 	public Administrador darAdministradorPorUsuario (String v)
 	{

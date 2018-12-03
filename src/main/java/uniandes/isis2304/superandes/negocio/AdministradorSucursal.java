@@ -2,9 +2,9 @@ package uniandes.isis2304.superandes.negocio;
 
 public class AdministradorSucursal implements VOAdministradorSucursal {
 	
-	private long administrador;
+	public long administrador;
 	
-	private long sucursal;
+	public long sucursal;
 	
 	public AdministradorSucursal() {
 		// TODO Auto-generated constructor stub
