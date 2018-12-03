@@ -1,9 +1,10 @@
 package uniandes.isis2304.superandes.negocio;
 
+import java.sql.Date;
 
 /**
- * Interfaz para los métodos get de Bodega.
- * Sirve para proteger la información del negocio de posibles manipulaciones desde la interfaz 
+ * Interfaz para los mï¿½todos get de Bodega.
+ * Sirve para proteger la informaciï¿½n del negocio de posibles manipulaciones desde la interfaz 
  * 
  */
 public interface VOVenta {
@@ -22,16 +23,7 @@ public interface VOVenta {
 	public void setId(long id);
 
 
-	/**
-	 * @return the fecha
-	 */
 	public String getFecha();
-
-
-	/**
-	 * @param fecha the fecha to set
-	 */
-	public void setFecha(String fecha);
 
 
 	/**

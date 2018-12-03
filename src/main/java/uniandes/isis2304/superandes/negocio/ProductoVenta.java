@@ -1,5 +1,6 @@
 package uniandes.isis2304.superandes.negocio;
 
+import java.sql.Date;
 
 /**
  * @version 1.0
@@ -11,6 +12,7 @@ public class ProductoVenta implements VOProductoVenta{
 	private int cantidadVenta;
 	private String unidadDeMedida;
 	private long producto;
+	private Date fecha;
 	
 	
 	public ProductoVenta(){
@@ -85,6 +87,14 @@ public class ProductoVenta implements VOProductoVenta{
 		this.producto = producto;
 	}
 
+	public Date getFecha() {
+		return fecha;
+	}
+
+	public void setFecha(Date fecha) {
+		this.fecha = fecha;
+	}
+
 	@Override
 	/**
 	 * @return Una cadena de caracteres con todos los atributos
@@ -94,5 +104,4 @@ public class ProductoVenta implements VOProductoVenta{
 		return "ProductoVenta [venta=" + venta + ", producto=" + producto + ", cantidadProducto=" + cantidadVenta + ", unidadMedida=" + unidadDeMedida
 				+"]";
 	}
-
 }

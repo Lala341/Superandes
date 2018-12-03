@@ -1628,10 +1628,10 @@ public class Superandes {
 	 * Adiciona entradas al log de la aplicaci�n
 	* @return El objeto. null si ocurre alguna Excepci�n
 	 */
-	public ProductoVenta adicionarProductoVenta ( long venta, long producto, int cantidadProducto, String unidadMedida)
+	public ProductoVenta adicionarProductoVenta ( long venta, long producto, int cantidadProducto, String unidadMedida, Date fecha)
 	{
         log.info ("Adicionando ProductoVenta: " + venta);
-        ProductoVenta ProductoVenta = pp.adicionarProductoVenta ( venta,producto, cantidadProducto,unidadMedida);		
+        ProductoVenta ProductoVenta = pp.adicionarProductoVenta ( venta,producto, cantidadProducto,unidadMedida, fecha);		
         log.info ("Adicionando ProductoVenta: " + venta);
         return ProductoVenta;
 	}
@@ -2999,7 +2999,7 @@ public class Superandes {
 		 fecha = ano+mes+dia+hora+minuto+segundo;
 		 return fecha;
 	}
-	public String darFechaCortaDeHoy()
+	public String darFechaCortaDeHoyString()
 	{
 		
 		String fecha = "";
@@ -3011,6 +3011,43 @@ public class Superandes {
 	    fecha = dia+"/"+mes+"/"+ano;
 		 
 		 return fecha;
+	}
+	
+	public Date darFechaCortaDeHoy()
+	{
+		
+		Date fecha = null;
+		Calendar fechaActual = new GregorianCalendar();
+		   String anio = String.valueOf(fechaActual.get(Calendar.YEAR));
+	       String mes = String.valueOf(fechaActual.get(Calendar.MONTH));
+	       String dia = String.valueOf(fechaActual.get(Calendar.DAY_OF_MONTH));
+	      
+	       fecha= new Date(Date.parse(dia+"/"+mes+ "/"+anio));
+		 
+		 return fecha;
+	}
+	
+	public List<ProductoProveedor> darProductoMasVendido()
+	{
+        
+		return pp.darProductoMasVendido();
+       
+	}
+	
+	public List<ProductoProveedor> darProductoMenosVendido()
+	{
+        
+        return pp.darProductoMenosVendido();
+	}
+	
+	public List<ProductoProveedor> darProveedorMasSolicitado()
+	{
+		return pp.darProveedorMasSolicitado();
+	}
+	
+	public List<ProductoProveedor> darProveedorMenosSolicitado()
+	{
+		return pp.darProveedorMenosSolicitado();
 	}
 	
 	/* ****************************************************************

@@ -102,7 +102,32 @@ public class SQLOrdenPedido {
 		
 		return (long) q.executeUnique();
 	}
-
+	
+	/**
+	 * Crea y ejecuta la sentencia SQL para encontrar la información de los elementos
+	 */
+	public List darProveedorMasSolicidado (PersistenceManager pm)
+	{
+		Query q = pm.newQuery(SQL, "SELECT * FROM( " 
+				+ "SELECT fecha, proveedor, COUNT(proveedor) FROM" + pp.darTablaProductoVenta ()
+				+ "group by fecha, proveedor" + "order by proveedor DESC)" 
+				+ "WHERE ROWNUM = 1");
+		q.setResultClass(OrdenPedido.class);
+		return (List) q.executeList();
+	}
+	
+	/**
+	 * Crea y ejecuta la sentencia SQL para encontrar la información de los elementos
+	 */
+	public List darProveedorMenosSolicidado (PersistenceManager pm)
+	{
+		Query q = pm.newQuery(SQL, "SELECT * FROM( " 
+				+ "SELECT fecha, proveedor, COUNT(proveedor) FROM" + pp.darTablaProductoVenta ()
+				+ "group by fecha, proveedor" + "order by proveedor ASC)" 
+				+ "WHERE ROWNUM = 1");
+		q.setResultClass(OrdenPedido.class);
+		return (List) q.executeList();
+	}
 	
 	
 

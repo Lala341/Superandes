@@ -113,6 +113,11 @@
                       "label": "Mostrar clientes frecuentes dada una sucursal",
                       "event": "RFC8_EncontrarClientesFrecuentes"
                   }
+                  ,
+                  {
+                      "label": "Consultar funcionamiento",
+                      "event": "RFC12_ConsultarFuncionamiento"
+                  }
                  
               ]
           },

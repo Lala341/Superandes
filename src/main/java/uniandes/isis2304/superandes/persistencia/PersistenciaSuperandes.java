@@ -2496,7 +2496,7 @@ public class PersistenciaSuperandes {
 	 * Adiciona entradas al log de la aplicaci�n
 	  * @return El objeto adicionado. null si ocurre alguna Excepci�n
 	 */
-	public ProductoVenta adicionarProductoVenta(long venta, long producto, int cantidadProducto, String unidadMedida)
+	public ProductoVenta adicionarProductoVenta(long venta, long producto, int cantidadProducto, String unidadMedida, Date fecha)
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
         Transaction tx=pm.currentTransaction();
@@ -2506,7 +2506,7 @@ public class PersistenciaSuperandes {
         {
             tx.begin();
             long id = nextval ();
-            long tuplasInsertadas = sqlProductoVenta.adicionar(pm, venta, producto, cantidadProducto, unidadMedida);
+            long tuplasInsertadas = sqlProductoVenta.adicionar(pm, venta, producto, cantidadProducto, unidadMedida, fecha);
             tx.commit();
             
             log.trace ("Inserci�n de ProductoVenta: " + venta + ": " + tuplasInsertadas + " tuplas insertadas");
@@ -4033,5 +4033,29 @@ public class PersistenciaSuperandes {
 	public List<Producto> ProductosRPrecioUnitario(double d1, double d2) {
 		// TODO Auto-generated method stub
 		return sqlProducto.ProductosRPrecioUnitario(pmf.getPersistenceManager(), d1, d2);
+	}
+	
+	public List<ProductoProveedor> darProductoMasVendido()
+	{
+		PersistenceManager pm = pmf.getPersistenceManager();
+        return sqlProductoVenta.darProductoMasVendido(pm);
+	}
+	
+	public List<ProductoProveedor> darProductoMenosVendido()
+	{
+		PersistenceManager pm = pmf.getPersistenceManager();
+        return sqlProductoVenta.darProductoMenosVendido(pm);
+	}
+	
+	public List<ProductoProveedor> darProveedorMasSolicitado()
+	{
+		PersistenceManager pm = pmf.getPersistenceManager();
+        return sqlOrdenPedido.darProveedorMasSolicidado(pm);
+	}
+	
+	public List<ProductoProveedor> darProveedorMenosSolicitado()
+	{
+		PersistenceManager pm = pmf.getPersistenceManager();
+        return sqlOrdenPedido.darProveedorMenosSolicidado(pm);
 	}
 }

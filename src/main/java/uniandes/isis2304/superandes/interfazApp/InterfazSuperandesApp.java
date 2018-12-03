@@ -53,6 +53,8 @@ import uniandes.isis2304.superandes.negocio.ProductoBodega;
 import uniandes.isis2304.superandes.negocio.ProductoCarritoCompras;
 import uniandes.isis2304.superandes.negocio.ProductoEstante;
 import uniandes.isis2304.superandes.negocio.ProductoOfrecido;
+import uniandes.isis2304.superandes.negocio.ProductoProveedor;
+import uniandes.isis2304.superandes.negocio.ProductoVenta;
 import uniandes.isis2304.superandes.negocio.Proveedores;
 import uniandes.isis2304.superandes.negocio.Sucursal;
 import uniandes.isis2304.superandes.negocio.Superandes;
@@ -1249,7 +1251,8 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 			   }
 			   else{
 				   
-				   String fecha = superandes.darFechaCortaDeHoy();
+				   String fecha = superandes.darFechaCortaDeHoyString();
+				   Date fechaD = superandes.darFechaCortaDeHoy();
 				   String formaPago = JOptionPane.showInputDialog (this, "Ingrese la forma de pago del cliente", JOptionPane.QUESTION_MESSAGE);
 				   String valorTotalS = JOptionPane.showInputDialog (this, "Ingrese el valor total de la venta", JOptionPane.QUESTION_MESSAGE);
 				   double valorTotal = Double.parseDouble(valorTotalS);
@@ -1283,7 +1286,7 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 					}
 					   
 					   Venta venta = superandes.adicionarVenta(fecha, formaPago, valorTotal, idCon, sucu.getId());
-					   superandes.adicionarProductoVenta(venta.getId(), producto, Integer.parseInt(cantidadProducto), unidadMedida);
+					   superandes.adicionarProductoVenta(venta.getId(), producto, Integer.parseInt(cantidadProducto), unidadMedida, fechaD);
 					   superandes.adicionarFactura(descripcionFactura);
 					   
 					   String resultado = "Registrar una venta\n\n";
@@ -1800,7 +1803,8 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 					String unidadMedida = "";
 					long idProducto = 0;
 					
-					String fecha = superandes.darFechaDeHoy();
+					String fecha = superandes.darFechaCortaDeHoyString();
+					Date fechaD = superandes.darFechaCortaDeHoy();
 					String productoAgregar = JOptionPane.showInputDialog (this, "Escriba el nombre de producto que quiere comprar", JOptionPane.QUESTION_MESSAGE);
 					boolean encontrado = false;
 					
@@ -1851,9 +1855,14 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 					}
 					     
 					Venta venta = superandes.adicionarVenta(fecha, formaPago, valorTotal, idConsumidor, sucu.getId());
-					superandes.adicionarProductoVenta(venta.getId(), idProducto, cantidadProducto, unidadMedida);									   
+					superandes.adicionarProductoVenta(venta.getId(), idProducto, cantidadProducto, unidadMedida, fechaD);									   
 					superandes.adicionarFactura(descripcionFactura);				
 					superandes.eliminarCarritoComprasPorId(idCarrito);
+					
+					 String resultado = "Registrar una compra\n\n";
+			    		resultado += "Se registró una compra exitosamente: " + venta;
+						resultado += "\n Operaciòn terminada";
+						panelDatos.actualizarInterfaz(resultado);
 					
 				}
 				else
@@ -1990,7 +1999,7 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
 			   
 			   String mensaje1 = "El dinero recolectado por ventas en el año corrido en cada Sucursal fueron:\n";
 			   for (int j = 0; j < ventas.size(); j++) {
-				   String hoy = superandes.darFechaCortaDeHoy();
+				   String hoy = superandes.darFechaCortaDeHoyString();
 				   if (ventas.get(j).getFecha().compareTo(fechaInicial)>=0 || ventas.get(j).getFecha().compareTo(hoy)<=0) {
 					   mensaje1 += "Sucursal con id: "+ventas.get(j).getSucursal()+" y ventas de: " + ventas.get(j).getValorTotal() + "\n";
 				   }
@@ -2518,6 +2527,15 @@ public void RFC8_EncontrarClientesFrecuentes(){
 
 	   
    }
+
+public void RFC12_ConsultarFuncionamiento(){
+	
+	List<ProductoProveedor> productoMas = superandes.darProductoMasVendido();
+	for (int i = 0; i < productoMas.size(); i++) {
+		panelDatos.actualizarInterfaz(productoMas.get(i).getFecha().toString());
+	}
+	
+}
    
    public void agregarProductoOfrecido(){
 	   
