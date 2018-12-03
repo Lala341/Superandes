@@ -112,6 +112,14 @@
                   {
                       "label": "Mostrar clientes frecuentes dada una sucursal",
                       "event": "RFC8_EncontrarClientesFrecuentes"
+                  },
+                  {
+                      "label": "Requerimiento 10",
+                      "event": "requerimiento10"
+                  },
+                  {
+                      "label": "Requerimiento 11",
+                      "event": "requerimiento11"
                   }
                  
               ]

@@ -91,8 +91,9 @@ public class ConsumidorVenta  {
 	 */
 	public String toString() 
 	{
-		return "Consumidor [id=" + id + ", nombre=" + nombre + ", correoElectronico=" + correoElectronico + ", tipoconsumidor=" + tipoconsumidor
-				+  "]";
+		return "ConsumidorVenta [id=" + id + ", nombre=" + nombre + ", correoElectronico=" + correoElectronico + ", tipoconsumidor=" + tipoconsumidor
+				+ ", Producto: " + producto+ ", venta ="+ venta + ", fecha="+ fecha+ ", formaDePago="+ formaPago+ ", UnidadMedida="+ 
+				unidadMedida+ ", CantidadProducto=" +cantidadProducto+ ", valorTotal=" + valorTotal + ", sucursal="+ sucursal+ "]";
 	}
 	public long getId() {
 		// TODO Auto-generated method stub

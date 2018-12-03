@@ -117,9 +117,9 @@ public class SQLVenta {
 	{
 		String g= "select * from(select t.fecha,formapago,valortotal,consumidor,sucursal,"
 				+ "venta,producto,cantidadproducto,unidadmedida from(select *from venta where "
-				+ "(fecha between ? and ?) )t inner join productoventa on "
-				+ "t.id=productoventa.venta where productoventa.PRODUCTO=? "+
-") m inner join consumidor on m.consumidor=consumidor.id ) ";
+				+ "(fecha between '"+i+"' and '"+f+"') )"
+				+ "t inner join productoventa on t.id=productoventa.venta where productoventa.PRODUCTO="+3146+" "+
+") m inner join consumidor on m.consumidor=consumidor.id  ";
 		if(sucu){
 			g=g+"where sucursal = "+sucuid;
 		}
@@ -127,16 +127,16 @@ public class SQLVenta {
 			g=g+"order by "+tipo;
 		}
 		Query q = pm.newQuery(SQL, g);
-		q.setResultClass(Venta.class);
-		q.setParameters(i,f,id);
+		q.setResultClass(ConsumidorVenta.class);
+		
 		
 		return (List<ConsumidorVenta>) q.executeList();
 	}
 	public List<ConsumidorVenta> req11o(PersistenceManager pm, String i, String f, long id, boolean sucu, long sucuid, boolean t, String tipo)
 	{
 		String g= "select * from(select t.fecha,formapago,valortotal,consumidor,sucursal,venta,producto,"
-				+ "cantidadproducto,unidadmedida from(select *from venta where (fecha between ? and ?) )"
-				+ "t inner join productoventa on t.id=productoventa.venta where productoventa.PRODUCTO=? "+
+				+ "cantidadproducto,unidadmedida from(select *from venta where (fecha between '"+i+"' and '"+f+"') )"
+				+ "t inner join productoventa on t.id=productoventa.venta where productoventa.PRODUCTO="+id+" "+
 ") m right join consumidor on m.consumidor=consumidor.id where venta is null ";
 		if(sucu){
 			g=g+"and sucursal = "+sucuid;
@@ -145,8 +145,8 @@ public class SQLVenta {
 			g=g+"order by "+tipo;
 		}
 		Query q = pm.newQuery(SQL, g);
-		q.setResultClass(Venta.class);
-		q.setParameters(i,f,id);
+		q.setResultClass(ConsumidorVenta.class);
+		
 		
 		return (List<ConsumidorVenta>) q.executeList();
 	}

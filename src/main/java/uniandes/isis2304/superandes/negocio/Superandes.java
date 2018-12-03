@@ -2769,6 +2769,12 @@ public class Superandes {
 		List<AdministradorSucursal> tb = (List<AdministradorSucursal>) pp.darAdministradorSucursalPorIdAdministrador(id);
 		return !tb.isEmpty () ? tb.get (0) : null;
 	}
+	public Administrador darAdministradorPorUsuario (String v)
+	{
+		log.info ("Buscando AdministradorSucursal por idAdmin: " + v);
+		List<Administrador> tb = (List<Administrador>) pp.darAdministradorPorUsuario(v);
+		return !tb.isEmpty () ? tb.get(0) : null;
+	}
 	/**
 	 * Encuentra en Superandes 
 	 * Adiciona entradas al log de la aplicaci�n
