@@ -1773,103 +1773,94 @@ public class InterfazSuperandesApp extends JFrame implements ActionListener{
  public void RFF15_PagarCompra(){
 	   
 	 try {
-		   
-		List<VOProductoCarritoCompras> productosCarrito=superandes.darVOProductoCarritoComprases();
-		if (productosCarrito.isEmpty()) {
-			   JOptionPane.showMessageDialog(this, "El carrito de compras no tiene ningun producto para vender");
+		   String nombreProducto = JOptionPane.showInputDialog (this, "P1", JOptionPane.QUESTION_MESSAGE);
+		   List<VOProductoCarritoCompras> productos=superandes.darVOProductoCarritoComprases();
+		   for (int i = 0; i < productos.size(); i++) {
+				 JOptionPane.showMessageDialog(this, productos.get(i).getProducto());
+			}
+		   if (productos.isEmpty()) {
+			   JOptionPane.showMessageDialog(this, "El carrito de compras no tiene ning�n producto para vender");
 		   }
-		else
-		{
-			List<VOProducto> productos=superandes.darVOProductos();
-			String[] productosn= new String[productosCarrito.size()];
-			long idP = 0;
-			for (int i = 0; i < productosCarrito.size(); i++) {
-				idP = productosCarrito.get(i).getProducto();
-				productosn[i]=String.valueOf(idP);
-			}
-			String idDelProducto= (String) JOptionPane.showInputDialog(null,"Seleccione el producto con el cual desea registrar la compra", "Registrar Compra", JOptionPane.DEFAULT_OPTION, null, productosn,productosn[0]);
-			long idProducto = Long.parseLong(idDelProducto);
-			
-			List<VOCarritoCompras> carritos=superandes.darVOCarritoCompras();
-			if (carritos.isEmpty()) {
-				JOptionPane.showMessageDialog(this, "El usuario no tiene un carrito de compras registrado");
-			}
-			else
-			{
+		   else
+		   {
+			   String idCon = JOptionPane.showInputDialog (this, "Ingrese el Id del consumidor", JOptionPane.QUESTION_MESSAGE);
+				long idConsumidor = Long.parseLong(idCon);
+				List<VOCarritoCompras> carritos=superandes.darVOCarritoCompras();
 				VOCarritoCompras carritoPorId = null;
-				long idC = 0;
-				String[] carritosn= new String[carritos.size()];
-				
-				for (int i = 0; i < carritos.size(); i++) {
-					idC = carritos.get(i).getConsumidor();
-					carritosn[i]=String.valueOf(idC);
-				}
-				
-				String idDelConsumidor= (String) JOptionPane.showInputDialog(null,"Seleccione el id del consumidor", "Registrar Compra", JOptionPane.DEFAULT_OPTION, null, carritosn,carritosn[0]);
-				long idConsumidor = Long.parseLong(idDelConsumidor);
-				
-				String unidadMedida = "";
-				String fecha = superandes.darFechaDeHoy();
-				boolean encontrado = false;
-				
-				for (int i = 0; i < productos.size() && !encontrado; i++) {
-					
-					if (productos.get(i).getId() == idProducto) {
-						unidadMedida = productos.get(i).getUnidadMedida();
-						encontrado = true;
-					}
-				}
 				long idCarrito = 0;
-				int cantidadProducto = 0;
-				for (int i = 0; i < productosCarrito.size(); i++) {
-					if (productosCarrito.get(i).getProducto() == idProducto) {
-						cantidadProducto = productosCarrito.get(i).getCantidadProducto();
-						idCarrito = productosCarrito.get(i).getCarritoCompras();
+				for (int i = 0; i < carritos.size(); i++) {
+					 JOptionPane.showMessageDialog(this, carritos.get(i).toString());
+					   
+					if (idConsumidor == carritos.get(i).getConsumidor()) {
+						carritoPorId = carritos.get(i);
+						idCarrito = carritos.get(i).getId();
 					}
 				}
-				String formaPago = JOptionPane.showInputDialog (this, "Ingrese la forma de pago del cliente", JOptionPane.QUESTION_MESSAGE);
-				String valorTotalS = JOptionPane.showInputDialog (this, "Ingrese el valor total de la venta", JOptionPane.QUESTION_MESSAGE);
-				double valorTotal = Double.parseDouble(valorTotalS);
-				String descripcionFactura = JOptionPane.showInputDialog (this, "Ingrese una descripcion de la factura", JOptionPane.QUESTION_MESSAGE);
-				
-				List<VOSucursal> sucursales=superandes.darVOSucursales();
-			    
-				   String[] sucursalesn= new String[sucursales.size()];
-				     
-				   int i=0;
-				   for (VOSucursal voSucursal :superandes.darSucursales()) {
-					   sucursalesn[i]=voSucursal.getNombre();
-					   i=i+1;
-					   
-				   }
-				   if(sucursales.size()==0){
-	
-					   JOptionPane.showMessageDialog(this, "Agrege una Sucursal antes de registrar un producto (Menu requerimientos F).");
-					   
-				   }
-					String sucursal= (String) JOptionPane.showInputDialog(null,"Seleccione la sucursal de la venta", "Venta", JOptionPane.DEFAULT_OPTION, null, sucursalesn, sucursalesn[0]);
-
+				if(carritoPorId!=null){
+					String unidadMedida = "";
+					long idProducto = 0;
 					
-					VOSucursal sucu=null;
-					for (int k = 0; k < sucursales.size(); k++) {
+					String fecha = superandes.darFechaDeHoy();
+					String productoAgregar = JOptionPane.showInputDialog (this, "Escriba el nombre de producto que quiere comprar", JOptionPane.QUESTION_MESSAGE);
+					boolean encontrado = false;
+					
+					List<VOProducto> productosP = superandes.darVOProductos();
+					
+					for (int j = 0; j < productosP.size() && !encontrado; j++) {
 						
-						if (sucursal.equals(sucursales.get(k).getNombre())) {
-							sucu= sucursales.get(k);
-							break;
+						if (productosP.get(j).getNombre().equals(productoAgregar)) {
+							idProducto = productosP.get(j).getId();
+							unidadMedida = productosP.get(j).getUnidadMedida();
+							encontrado = true;
 						}
 					}
-				
-				Venta venta = superandes.adicionarVenta(fecha, formaPago, valorTotal, idConsumidor, sucu.getId());
-				superandes.adicionarProductoVenta(venta.getId(), idProducto, cantidadProducto, unidadMedida);									   
-				superandes.adicionarFactura(descripcionFactura);				
-				superandes.eliminarCarritoComprasPorId(idCarrito);
-				
-				String resultado = "Pagar una compra\n\n";
-		  		resultado += "Se pudo registrar la compra exitosamente: " + venta;
-		  		resultado += "\n Operaci�n terminada";
-				panelDatos.actualizarInterfaz(resultado);
-			}
-		}
+					int cantidadProducto = 0;
+					for (int i = 0; i < productos.size(); i++) {
+						if (productos.get(i).getProducto() == idProducto) {
+							cantidadProducto = productos.get(i).getCantidadProducto();
+						}
+					}
+					   String formaPago = JOptionPane.showInputDialog (this, "Ingrese la forma de pago del cliente", JOptionPane.QUESTION_MESSAGE);
+					   String valorTotalS = JOptionPane.showInputDialog (this, "Ingrese el valor total de la venta", JOptionPane.QUESTION_MESSAGE);
+					   double valorTotal = Double.parseDouble(valorTotalS);
+					   String descripcionFactura = JOptionPane.showInputDialog (this, "Ingrese una descripcion de la factura", JOptionPane.QUESTION_MESSAGE);
+					   List<VOSucursal> sucursales=superandes.darVOSucursales();
+					    
+					   String[] sucursalesn= new String[sucursales.size()];
+					     
+					   int i=0;
+					   for (VOSucursal voSucursal :superandes.darSucursales()) {
+						   sucursalesn[i]=voSucursal.getNombre();
+						   i=i+1;
+						   
+					   }
+					   if(sucursales.size()==0){
+
+						   JOptionPane.showMessageDialog(this, "Agrege una Sucursal antes de registrar un producto (Menu requerimientos F).");
+						   
+					   }
+					String sucursal= (String) JOptionPane.showInputDialog(null,"Seleccione la sucursal de la venta", "VentaTest", JOptionPane.DEFAULT_OPTION, null, sucursalesn, sucursalesn[0]);
+					Sucursal sucu=null;
+					i=0;
+					for (String string : sucursalesn) {
+						if(string.equals(sucursal)){
+							sucu=(Sucursal) sucursales.get(i);
+							break;
+						}
+						i=i+1;
+					}
+					     
+					Venta venta = superandes.adicionarVenta(fecha, formaPago, valorTotal, idConsumidor, sucu.getId());
+					superandes.adicionarProductoVenta(venta.getId(), idProducto, cantidadProducto, unidadMedida);									   
+					superandes.adicionarFactura(descripcionFactura);				
+					superandes.eliminarCarritoComprasPorId(idCarrito);
+					
+				}
+				else
+				{
+					JOptionPane.showMessageDialog(this, "El usuario no tiene un carrito de compras registrado");
+				}				   
+		   }
 		
 	   } 
 	   catch (Exception e) 
