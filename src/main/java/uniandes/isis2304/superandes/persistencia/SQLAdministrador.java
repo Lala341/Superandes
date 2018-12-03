@@ -74,7 +74,14 @@ public class SQLAdministrador {
 		return (Administrador) q.executeUnique();
 	}
 
-	
+	public List<Administrador> darPorUsuario(PersistenceManager pm, String v) 
+	{
+		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaAdministrador () + " WHERE usuario = ?");
+		q.setResultClass(Administrador.class);
+		q.setParameters(v);
+		return ( List<Administrador>) q.executeList();
+	}
+
 
 	/**
 	 * Crea y ejecuta la sentencia SQL para encontrar la información de los elementos

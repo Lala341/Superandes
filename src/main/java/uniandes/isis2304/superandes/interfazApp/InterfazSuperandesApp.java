@@ -21,9 +21,13 @@ import java.util.Calendar;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import javax.swing.JCheckBox;
+import javax.swing.JOptionPane;
+
 
 import javax.jdo.JDODataStoreException;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JMenu;
@@ -43,9 +47,11 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.stream.JsonReader;
 
+import uniandes.isis2304.superandes.negocio.Administrador;
 import uniandes.isis2304.superandes.negocio.Bodega;
 import uniandes.isis2304.superandes.negocio.CarritoCompras;
 import uniandes.isis2304.superandes.negocio.Consumidor;
+import uniandes.isis2304.superandes.negocio.ConsumidorVenta;
 import uniandes.isis2304.superandes.negocio.Estante;
 import uniandes.isis2304.superandes.negocio.OrdenPedido;
 import uniandes.isis2304.superandes.negocio.Producto;
@@ -2697,6 +2703,130 @@ public void RFC12_ConsultarFuncionamiento(){
 			panelDatos.actualizarInterfaz(resultado);
 		}
 	   }
+   	public void requerimiento10(){
+	   
+	   try 
+		{
+		   
+			String nombre = JOptionPane.showInputDialog (this, "Usuario", "Consultar ventas clientes", JOptionPane.QUESTION_MESSAGE);
+			
+			
+			if (nombre != null)
+			{
+	   		Administrador tb = superandes.darAdministradorPorUsuario(nombre);
+	   		String con = JOptionPane.showInputDialog (this, "Contraseï¿½a", "Consultar ventas clientes", JOptionPane.QUESTION_MESSAGE);
+			
+	   		if(tb.getContrasenha().equals(con)){
+	   			
+	   			String fechai = JOptionPane.showInputDialog (this, "Fecha Inicio", "Consultar ventas clientes Formato(01/02/2017)", JOptionPane.QUESTION_MESSAGE);
+	   			String fechaf = JOptionPane.showInputDialog (this, "Fecha Final", "Consultar ventas clientes Formato(01/02/2017)", JOptionPane.QUESTION_MESSAGE);
+	   			
+	   			List<VOProducto> productos=superandes.darVOProductos();
+	   		   
+	   		   String[] productosn= new String[productos.size()];
+	   		     
+	   		   int i=0;
+	   		   for (VOProducto voSucursal :productos) {
+	   			   productosn[i]=voSucursal.getNombre();
+	   			   i=i+1;
+	   			   
+	   		   }
+	   		   i=0;
+	   		   
+	   		   if(productos.size()==0){
+	   			   JOptionPane.showMessageDialog(this, "Agrege un producto (de la tienda) antes de registrar un producto de proveedor (Menu requerimientos F).");
+	   			   
+	   		   }
+	   		   else{
+	   		   
+	   			String producto= (String) JOptionPane.showInputDialog(null,"Seleccione el producto de la query", "Consulta ventas", JOptionPane.DEFAULT_OPTION, null, productosn, productosn[0]);
+	   			System.out.println(productosn);
+	   			
+	   			int posPro=0;
+	   			int posProd=0;
+	   			i=0;
+	   			for (String string : productosn) {
+	   				if(string.equals(producto)){
+	   					posProd=i;
+	   				}
+	   				i=i+1;
+	   			}
+	   			String sol="";
+	   			long id= productos.get(posProd).getId();
+	   			JCheckBox check1 = new JCheckBox("Fecha");
+	   	        JCheckBox check2 = new JCheckBox("Nombre");
+	   	        JCheckBox check3 = new JCheckBox("CantidadProducto");
+	   	        JCheckBox check4 = new JCheckBox("Email");
+	   	     JCheckBox check5 = new JCheckBox("Ninguno");
+	   	        
+	   	        Object[] options = { check1,check2,check3,check4,check5,"Aceptar"};
+	   	        int x = JOptionPane.showOptionDialog(null, "Ordernar por",
+	   	                "Seleccione el criterio para ordenar",
+	   	                JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);
+
+	   	        if (check1.isSelected() && x != -1) {
+	   	            System.out.println("Your choice was " + options[x]);
+	   	        } else {
+	   	            System.out.println(":( no choice");
+	   	        }
+	   	        if(check5.isSelected()){
+	   	        	List<ConsumidorVenta> res= superandes.req10o(fechai, fechaf, id,false, 0, false, sol);
+	   	        	String y="";
+	   	        	for (ConsumidorVenta consumidorVenta : res) {
+						y=y+consumidorVenta.toString()+ "\n";
+					}
+	   	        	if(res.isEmpty()){
+	   	        		panelDatos.actualizarInterfaz("No se encontraron datos en los intervalos buscados");
+	   	        	}else{
+	   	        	panelDatos.actualizarInterfaz(y);
+	   	        	}
+	   	        }else{
+	   	        	String tipo= "";
+	   	        	if(check1.isSelected()){tipo=tipo+"fecha";};
+	   	        	if(check2.isSelected()){if(tipo.equals("")){tipo=tipo+"nombre";}else{tipo=tipo+" ,nombre";}};
+	   	        	if(check3.isSelected()){if(tipo.equals("")){tipo=tipo+"cantidadProducto";}else{tipo=tipo+" ,cantidadProducto";}};
+	   	        	if(check4.isSelected()){if(tipo.equals("")){tipo=tipo+"email";}else{tipo=tipo+" ,email";}};
+	   	        	
+	   	        	List<ConsumidorVenta> res= superandes.req10o(fechai, fechaf, id,false, 0, true, tipo);
+	   	        	String y="";
+	   	        	for (ConsumidorVenta consumidorVenta : res) {
+						y=y+consumidorVenta.toString()+ "\n";
+					}
+	   	        	if(res.isEmpty()){
+	   	        		panelDatos.actualizarInterfaz("No se encontraron datos en los intervalos buscados");
+	   	        	}else{
+	   	        	panelDatos.actualizarInterfaz(y + "Datos ordenados por "+tipo);
+	   	        	}
+	   	        	System.out.println("t");
+	   	        }
+	   			
+	   			
+	   			
+	   		   }
+	   			
+	   		}else{
+	   			throw new Exception ("La contraseña no concide con el usuario: " + nombre );
+	   			
+	   		}
+			
+	   		if (tb == null)
+	   		{
+	   			throw new Exception ("No se encontro administrador con usuario: " + nombre );
+	   		}
+	   		
+			}
+			else
+			{
+				panelDatos.actualizarInterfaz("Operaciï¿½n cancelada por el usuario");
+			}
+		} 
+		catch (Exception e) 
+		{
+//			e.printStackTrace();
+			String resultado = generarMensajeError(e);
+			panelDatos.actualizarInterfaz(resultado);
+		}
+	   }
 	/* ****************************************************************
 	 * 			Programa principal
 	 *****************************************************************/
@@ -2721,3 +2851,5 @@ public void RFC12_ConsultarFuncionamiento(){
     }
 
 }
+
+

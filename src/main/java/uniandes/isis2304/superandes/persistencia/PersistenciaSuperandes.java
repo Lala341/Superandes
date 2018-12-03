@@ -3843,7 +3843,10 @@ public class PersistenciaSuperandes {
 	{
 		return sqlAdministrador.darPorId (pmf.getPersistenceManager(), id);
 	}
-	
+	public List<Administrador> darAdministradorPorUsuario (String v)
+	{
+		return sqlAdministrador.darPorUsuario(pmf.getPersistenceManager(), v);
+	}
 	/* ****************************************************************
 	 * 			M�todos para manejar  AdministradorSucursal
 	 *****************************************************************/

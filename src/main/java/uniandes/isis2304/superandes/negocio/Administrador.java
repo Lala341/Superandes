@@ -2,32 +2,32 @@ package uniandes.isis2304.superandes.negocio;
 
 public class Administrador implements VOAdministrador {
 	
-	private int cantidadDeRecompra;
-	private long id;
-	private String usuario;
-	private String contrasenha;
+	public int cantidadRecompra;
+	public long id;
+	public String usuario;
+	public String contrasenha;
 
 	public Administrador(){
 
 	}
 	public Administrador( long id,int cantidadDeRecompra, String usuario,  String contrasenha){
-		this.cantidadDeRecompra=cantidadDeRecompra;
+		this.cantidadRecompra=cantidadDeRecompra;
 		this.id=id;
 		this.usuario=usuario;
 		this.contrasenha=contrasenha;
 	}
 
 	/**
-	 * @return the cantidadDeRecompra
+	 * @return the cantidadRecompra
 	 */
 	public int getCantidadDeRecompra() {
-		return cantidadDeRecompra;
+		return cantidadRecompra;
 	}
 	/**
-	 * @param cantidadDeRecompra the cantidadDeRecompra to set
+	 * @param cantidadRecompra the cantidadRecompra to set
 	 */
 	public void setCantidadDeRecompra(int cantidadDeRecompra) {
-		this.cantidadDeRecompra = cantidadDeRecompra;
+		this.cantidadRecompra = cantidadDeRecompra;
 	}
 	/**
 	 * @return the id
@@ -71,6 +71,6 @@ public class Administrador implements VOAdministrador {
 	 */
 	public String toString() 
 	{
-		return "Administrador [id=" + id +", cantidadDeRecompra=" + cantidadDeRecompra+ ", usuario=" + usuario + ", contrasenha=" + contrasenha+"]";
+		return "Administrador [id=" + id +", cantidadRecompra=" + cantidadRecompra+ ", usuario=" + usuario + ", contrasenha=" + contrasenha+"]";
 	}
 }
